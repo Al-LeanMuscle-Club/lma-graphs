@@ -1,0 +1,21 @@
+{
+  "target": "facebookresearch/detectron2",
+  "source_commit": "247691a1c292654867deb35cabb27f18d75a1363",
+  "harness_commit": "4626339c20151ab1e558e40f4c0035ac0599a169",
+  "manifest_sha256": "12fe72370c74dde55bffc48c9363f235fdf040e9ece7658aa5f7e2759bcaaf50",
+  "operation_contract_digest": "6fd0c51478768b4212981ca3335477004edecbf25ad1c92b160a06244c2ab12e",
+  "domains": 11,
+  "capabilities": 88,
+  "functional_steps": 291,
+  "baseline_source_files": 452,
+  "baseline_source_lines": 72035,
+  "initial_target_percent": 50,
+  "initial_scope": "all declared capabilities",
+  "source_mapping_complete": true,
+  "behavior_checks_configured": 0,
+  "behavior_verified": false,
+  "rewrite_started": false,
+  "submission_mode": "save_selection",
+  "ua_provenance": "Reuses the full graph for this exact upstream commit: UA static tools plus host-agent semantic analysis.",
+  "index_sha256": "da44d329004324dc5882614e3faac655a69e55d008f585a56ddf51ebcc21bcac"
+}
