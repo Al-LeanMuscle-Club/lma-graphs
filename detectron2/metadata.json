@@ -11,11 +11,14 @@
   "baseline_source_lines": 72035,
   "initial_target_percent": 50,
   "initial_scope": "all declared capabilities",
+  "tree_orientation": "left-to-right",
+  "tree_parent_alignment": "subtree-top",
+  "tree_fit": "width",
   "source_mapping_complete": true,
   "behavior_checks_configured": 0,
   "behavior_verified": false,
   "rewrite_started": false,
   "submission_mode": "save_selection",
   "ua_provenance": "Reuses the full graph for this exact upstream commit: UA static tools plus host-agent semantic analysis.",
-  "index_sha256": "da44d329004324dc5882614e3faac655a69e55d008f585a56ddf51ebcc21bcac"
+  "index_sha256": "aed501ea579ef7a6f512bb554557875e95ec6c96c8afefdbd4e5cc7fd3df34cd"
 }

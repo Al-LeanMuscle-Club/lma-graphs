@@ -306,7 +306,7 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 27px
 @media(min-width:1200px) { .editor-grid { grid-template-columns:minmax(0,1fr) 330px; } .side-column { position:sticky; top:18px; max-height:calc(100vh - 36px); overflow:auto; } }
 @media(max-width:700px) { .function-controls { padding-inline:15px; gap:8px; } .function-controls label { width:100%; } .function-controls select { flex:1; max-width:none; min-width:0; } .function-controls > span { margin-left:0; } .tree-viewport { height:540px; } }
 </style>
-<style>.review-guide{margin:0 0 24px;padding:24px;border:1px solid #ded7ec;border-radius:16px;background:linear-gradient(125deg,#faf7ff,#f5f8ff);color:#55526b;font-size:13px;line-height:1.65}.review-guide-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.review-eyebrow{font-size:10px;letter-spacing:.13em;color:#82739c;font-weight:700}.review-guide h2{font-size:23px;line-height:1.3;letter-spacing:-.04em;color:#332d45;margin:5px 0 10px}.review-guide p{max-width:980px;margin:10px 0}.review-guide ol{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding-left:18px;margin:20px 0}.review-guide li{padding-left:3px}.review-guide li b{display:block;color:#41364e}.review-status{border:1px solid #d9d1e7;border-radius:20px;padding:5px 11px;white-space:nowrap;font-size:11px;color:#736184;background:#fff}.review-facts{display:flex;flex-wrap:wrap;gap:8px 22px;border-top:1px solid #e3ddeb;padding-top:14px;font-size:11px;color:#82758c}.review-facts a{color:#76608e;text-decoration:none}.review-facts a:hover{text-decoration:underline}@media(max-width:700px){.review-guide{padding:18px}.review-guide-heading{align-items:flex-start;flex-direction:column;gap:4px}.review-guide ol{grid-template-columns:1fr;gap:12px}.review-guide h2{font-size:21px}}</style><style>.review-guide{padding:16px 22px;margin-bottom:18px}.review-guide h2{font-size:18px;margin:0}.review-guide p{margin:8px 0;font-size:12px}.review-guide summary{cursor:pointer;color:#735e92;font-size:11px}.review-facts{margin-top:9px;padding-top:8px}.review-guide ol{margin:14px 0}.overview{margin-bottom:18px}.workspace{padding-top:28px}.page-heading{margin-bottom:20px}@media(max-width:700px){.review-guide{padding:15px}.review-guide h2{font-size:17px}.review-guide-heading{flex-direction:row;flex-wrap:wrap}}</style></head>
+<style>.review-guide{margin:0 0 24px;padding:24px;border:1px solid #ded7ec;border-radius:16px;background:linear-gradient(125deg,#faf7ff,#f5f8ff);color:#55526b;font-size:13px;line-height:1.65}.review-guide-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.review-eyebrow{font-size:10px;letter-spacing:.13em;color:#82739c;font-weight:700}.review-guide h2{font-size:23px;line-height:1.3;letter-spacing:-.04em;color:#332d45;margin:5px 0 10px}.review-guide p{max-width:980px;margin:10px 0}.review-guide ol{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding-left:18px;margin:20px 0}.review-guide li{padding-left:3px}.review-guide li b{display:block;color:#41364e}.review-status{border:1px solid #d9d1e7;border-radius:20px;padding:5px 11px;white-space:nowrap;font-size:11px;color:#736184;background:#fff}.review-facts{display:flex;flex-wrap:wrap;gap:8px 22px;border-top:1px solid #e3ddeb;padding-top:14px;font-size:11px;color:#82758c}.review-facts a{color:#76608e;text-decoration:none}.review-facts a:hover{text-decoration:underline}@media(max-width:700px){.review-guide{padding:18px}.review-guide-heading{align-items:flex-start;flex-direction:column;gap:4px}.review-guide ol{grid-template-columns:1fr;gap:12px}.review-guide h2{font-size:21px}}</style><style>.review-guide{padding:16px 22px;margin-bottom:18px}.review-guide h2{font-size:18px;margin:0}.review-guide p{margin:8px 0;font-size:12px}.review-guide summary{cursor:pointer;color:#735e92;font-size:11px}.review-facts{margin-top:9px;padding-top:8px}.review-guide ol{margin:14px 0}.overview{margin-bottom:18px}.workspace{padding-top:28px}.page-heading{margin-bottom:20px}@media(max-width:700px){.review-guide{padding:15px}.review-guide h2{font-size:17px}.review-guide-heading{flex-direction:row;flex-wrap:wrap}}</style><style>.horizontal-tree .node-chevron{left:auto;right:-12px;top:calc(50% - 12px);bottom:auto}.horizontal-tree .node-chevron .branch-count{left:29px;top:3px}.horizontal-tree{scrollbar-gutter:stable}.horizontal-tree .tree-link{stroke-width:1.6}</style></head>
 <body>
   <header class="topbar">
     <a class="brand" href="#main" aria-label="LMA capability planner"><span class="brand-mark">L</span>LMA<span class="brand-divider"></span><span class="brand-section">Capability planner</span></a>
@@ -323,7 +323,7 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 27px
     </section>
 <section class="review-guide" aria-label="Choose your Detectron2 scope">
       <div class="review-guide-heading"><h2>Choose what stays. Decide how small.</h2><span class="review-status">Awaiting your selection</span></div>
-      <p><b>11 domains · 88 selectable capabilities · 291 functional steps.</b> All expanded. All selected. The code target starts at 50%; the slider never removes features.</p>
+      <p><b>11 domains · 88 selectable capabilities · 291 functional steps.</b> Read left to right; scroll down through the branches. All expanded and selected. The code target starts at 50%; the slider never removes features.</p>
       <details><summary>How to choose and submit</summary><ol><li><b>Choose functionality.</b> Click a capability to keep, pin or exclude it. Dependencies are applied automatically.</li><li><b>Set the code target.</b> Choose the size of the new implementation relative to the entire original source. The selected functionality stays fixed.</li><li><b>Submit your selection.</b> Save the chosen scope and target and receive a receipt. Behavior checks and the original baseline still need preparation before rewriting.</li></ol></details>
       <div class="review-facts"><span>Submit saves your scope; no rewrite starts at this review stage.</span><a href="https://github.com/facebookresearch/detectron2/tree/247691a1c292654867deb35cabb27f18d75a1363" target="_blank" rel="noopener noreferrer">Original 247691a1</a><span>LMA 4626339c</span></div>
     </section>
@@ -741,6 +741,42 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 27px
 
   return {layoutTree};
 });
+/* Presentation adapter: left-to-right functional trees with vertical reading order. */
+(function (root) {
+  "use strict";
+  const verticalLayout = root.LMATreeLayout.layoutTree;
+  function layoutTree(items, options = {}) {
+    const width = options.nodeWidth === undefined ? 224 : options.nodeWidth;
+    const height = options.nodeHeight === undefined ? 124 : options.nodeHeight;
+    const vertical = verticalLayout(items, {...options, nodeWidth: height, nodeHeight: width});
+    const nodes = vertical.nodes.map(node => ({...node, x: node.y, y: node.x,
+      width: node.height, height: node.width}));
+    const byId = new Map(nodes.map(node => [node.id, node]));
+    const children = new Map();
+    for (const node of nodes) {
+      if (node.parent === null) continue;
+      if (!children.has(node.parent)) children.set(node.parent, []);
+      children.get(node.parent).push(node);
+    }
+    // Put each parent beside its first child. Reading starts at the top, and
+    // adding more leaves extends the page downward without moving the root.
+    for (const node of [...nodes].sort((a, b) => b.depth - a.depth)) {
+      const branch = children.get(node.id);
+      if (branch) node.y = Math.min(...branch.map(child => child.y));
+    }
+    const links = nodes.filter(node => node.parent !== null).map(node => {
+      const parent = byId.get(node.parent);
+      const startX = parent.x + parent.width, startY = parent.y + parent.height / 2;
+      const endX = node.x, endY = node.y + node.height / 2;
+      const middleX = (startX + endX) / 2;
+      return {source: parent.id, target: node.id,
+        path: `M ${startX} ${startY} C ${middleX} ${startY} ${middleX} ${endY} ${endX} ${endY}`};
+    });
+    return {nodes, links, width: vertical.height, height: vertical.width, orientation: "left-to-right"};
+  }
+  root.LMATreeLayout = {...root.LMATreeLayout, layoutTree};
+})(globalThis);
+
 
 (function (root, factory) {
   "use strict";
@@ -1391,6 +1427,13 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 27px
   function fitTree(initial = false) {
     if (!treeGeometry) return;
     const viewport = $("capability-tree");
+    if (viewMode === "tree") {
+      const widthFit = Math.min(1, (viewport.clientWidth - 20) / treeGeometry.width);
+      setTreeZoom(initial ? Math.max(.55, widthFit) : widthFit);
+      viewport.scrollLeft = 0;
+      if (initial) viewport.scrollTop = 0;
+      return;
+    }
     const fit = Math.min(1, (viewport.clientWidth - 20) / treeGeometry.width,
       (viewport.clientHeight - 20) / treeGeometry.height);
     setTreeZoom(initial ? Math.max(.55, fit) : fit);
@@ -1454,6 +1497,11 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 27px
       ? graphView.layoutGraph(original.capabilities.filter(node => visible.has(node.id)), relationships)
       : globalThis.LMATreeLayout.layoutTree(items);
     viewport.classList.toggle("relationship-graph", viewMode === "graph");
+    viewport.classList.toggle("horizontal-tree", viewMode === "tree");
+    $("fit-tree").textContent = viewMode === "tree" ? "Fit width" : "Fit";
+    $("tree-navigation-help").textContent = viewMode === "tree"
+      ? "Left → right · Scroll vertically to explore · + / − to zoom · 0 to fit width"
+      : "Drag the background to explore · + / − to zoom · 0 to fit";
     const surface = element("div", {class: "tree-surface"}), stage = element("div", {class: "tree-stage"});
     stage.style.width = treeGeometry.width + "px"; stage.style.height = treeGeometry.height + "px";
     const connectors = svgElement("svg", {class: "tree-connectors", width: treeGeometry.width,
