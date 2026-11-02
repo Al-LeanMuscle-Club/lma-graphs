@@ -1,0 +1,12 @@
+{
+  "report_id": "918e53053ed6e33c7818540628711dfc40d96b71e142eac986393e992052e583",
+  "publication_ready": true,
+  "index_sha256": "3d0e1ad3113af0af3f57383fb750e42563ff830465507c6a3cf0467dc1206918",
+  "graph_node_ids_preserved": 106,
+  "graph_structure_before_sha256": "90d14a662f1aa183149e897d055dda243be64a674c633b6c2ac2a98d89ecd30e",
+  "graph_structure_after_sha256": "90d14a662f1aa183149e897d055dda243be64a674c633b6c2ac2a98d89ecd30e",
+  "graph_structure_preserved": true,
+  "capability_leaves": 89,
+  "detail_requirements": 367,
+  "candidate_git_head": "c6638216976b219960c352688c135ec31da0df70"
+}

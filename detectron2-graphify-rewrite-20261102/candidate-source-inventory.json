@@ -1,0 +1,1786 @@
+{
+  ".github/import-tests.sh": {
+    "lines": 3,
+    "sha256": "a3b76647fc221313f1311d8170294cecd2b7c62619e98ee2d8cf98a8057f7738"
+  },
+  ".github/workflows/levenshtein.js": {
+    "lines": 11,
+    "sha256": "ebe677f1ea5cbec944524638b544bae2ff7cd975ba1122ce2b5eaaa9ff2fa1a4"
+  },
+  "configs/COCO-Detection/fcos_R_50_FPN_1x.py": {
+    "lines": 4,
+    "sha256": "62bd4197f88a334e738dd18be9cc0c19fa3ad295e43aee5f73f9b8c8de99db4c"
+  },
+  "configs/COCO-Detection/retinanet_R_50_FPN_1x.py": {
+    "lines": 4,
+    "sha256": "653a2bb7991941c942bf691abae6e940e77a361a6bce5b6b399bd165d76ed81c"
+  },
+  "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x.py": {
+    "lines": 4,
+    "sha256": "98e3f36cd56fe15bf9bab9b7d0344662d79536769a957320b26488c96f843cae"
+  },
+  "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.py": {
+    "lines": 4,
+    "sha256": "4b21189047a2aa8e7caa5b0fe3186cf0eec938f10569453ef393e71c693166ac"
+  },
+  "configs/COCO-InstanceSegmentation/mask_rcnn_regnetx_4gf_dds_fpn_1x.py": {
+    "lines": 4,
+    "sha256": "4bdc2b06de03d70117b92c607378ea48c71af036edebb3b3baa5ae3bf8aaabe9"
+  },
+  "configs/COCO-InstanceSegmentation/mask_rcnn_regnety_4gf_dds_fpn_1x.py": {
+    "lines": 4,
+    "sha256": "a1fb2642d85d6d4f2ebd8140a35ad6070111df6cf7045f8b2c8cf6d0ebc58cc5"
+  },
+  "configs/COCO-Keypoints/keypoint_rcnn_R_50_FPN_1x.py": {
+    "lines": 4,
+    "sha256": "2296ec8f11f70ae360dafe526a5d0627f9aef0349248acd2deac3269fa9c3a11"
+  },
+  "configs/COCO-PanopticSegmentation/panoptic_fpn_R_50_1x.py": {
+    "lines": 4,
+    "sha256": "3c952aba33a4934c735d27cd11bb9084414f9863950ee3d14ca529df6688ee80"
+  },
+  "configs/Misc/mmdet_mask_rcnn_R_50_FPN_1x.py": {
+    "lines": 4,
+    "sha256": "db7b5a30048c62300b39d3b3505e896642bbdc1d098a13d92d8343ea3be52c5a"
+  },
+  "configs/Misc/torchvision_imagenet_R_50.py": {
+    "lines": 4,
+    "sha256": "3a1fa0e5420eb96849b32081d1e22f44bfedbfe289862d6b844946769f79d5fb"
+  },
+  "configs/common/coco_schedule.py": {
+    "lines": 4,
+    "sha256": "80de0d04b4544a5dcaaa7f38a75fc46bec50d2dab22d5debddb3a6bca9c0ff64"
+  },
+  "configs/common/data/coco.py": {
+    "lines": 4,
+    "sha256": "c658467555c01f0a2d0ddeb8dd3a6b714a17c85733322da29e023539fc3ca3af"
+  },
+  "configs/common/data/coco_keypoint.py": {
+    "lines": 4,
+    "sha256": "8f1d84486bbb00660dfe094becd63e664cceb265cb12e5e842ba5e817eaa7ff7"
+  },
+  "configs/common/data/coco_panoptic_separated.py": {
+    "lines": 4,
+    "sha256": "e51c2bcd547f11a02b0ef4fbe4f2023d2e4aa12e2d4f427e9b1e2fcfe8b69a4c"
+  },
+  "configs/common/data/constants.py": {
+    "lines": 4,
+    "sha256": "dffd185cc66fffdbbfcc9d4dfcdb77a9273e6f89fcceb6440a77a2026233af23"
+  },
+  "configs/common/models/cascade_rcnn.py": {
+    "lines": 4,
+    "sha256": "e1e8051ef9737c9d053b1ad88973d1656d1eec897c1f7e12ad14e0b9fa615844"
+  },
+  "configs/common/models/fcos.py": {
+    "lines": 4,
+    "sha256": "3c83b640e87e1738d103c6ecbdb040d793fb0277c61f6b1b01dcde391ec9cd2d"
+  },
+  "configs/common/models/keypoint_rcnn_fpn.py": {
+    "lines": 4,
+    "sha256": "b924a5ab281c831ff2637b3698d0ff04682d29f5d5698a84f8ca97171336313d"
+  },
+  "configs/common/models/mask_rcnn_c4.py": {
+    "lines": 4,
+    "sha256": "e3c3757fe55f68892ca8b98deb5cf1e52ae4265806d1fe83a65a678791b4db57"
+  },
+  "configs/common/models/mask_rcnn_fpn.py": {
+    "lines": 4,
+    "sha256": "c9063a4b15e9edd904fcdf941ec77c1c66d945d945c7bf74557040d31f1960b8"
+  },
+  "configs/common/models/mask_rcnn_vitdet.py": {
+    "lines": 4,
+    "sha256": "e555f1fe2c64a3bf5387070d8486527cb3ac05bef3e4b1c97d4d9925ac1a8d7b"
+  },
+  "configs/common/models/panoptic_fpn.py": {
+    "lines": 4,
+    "sha256": "d6ed6e599e20ad8e56a13f2c0a7081a5614b6e368ac7f4e70553845fb7d8a27d"
+  },
+  "configs/common/models/retinanet.py": {
+    "lines": 4,
+    "sha256": "ccf658672baaacee33afd46b1c6e78400917095310682b554c72f7a1722b621a"
+  },
+  "configs/common/optim.py": {
+    "lines": 4,
+    "sha256": "2599818a29a673309e2b2973d8ff77d7284b51fd57bb6c547fa44a7d0009abef"
+  },
+  "configs/common/train.py": {
+    "lines": 4,
+    "sha256": "1df500bc6339a78ebadbd6e7c93f49ead08a8edd2629d02b32fea63cd523b1a5"
+  },
+  "configs/new_baselines/mask_rcnn_R_101_FPN_100ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "d7bbe15eab8e3249f4462fc9d58989a1f697dfabe23394510865a766e420c47f"
+  },
+  "configs/new_baselines/mask_rcnn_R_101_FPN_200ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "17b243a5e8a0e797de66237c27abff1a709fb1b290f93582aac63c0583cf7e1e"
+  },
+  "configs/new_baselines/mask_rcnn_R_101_FPN_400ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "386422d417440187eed3efd79720a6324ce29b9c63ed0345370fb8acc2272556"
+  },
+  "configs/new_baselines/mask_rcnn_R_50_FPN_100ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "cf8d07efce77a65e86ee5c315f434ca2807763193acaac4e163e6749255c9aac"
+  },
+  "configs/new_baselines/mask_rcnn_R_50_FPN_200ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "23150c79c8441748b9cc054a2f8de4e03cc7774852a45745c8b5a4c1a67d0f04"
+  },
+  "configs/new_baselines/mask_rcnn_R_50_FPN_400ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "6413ebebf70db59f104f4ec5a09825bdd28249227fb0ea7f389d08740bf7e808"
+  },
+  "configs/new_baselines/mask_rcnn_R_50_FPN_50ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "432efbd9e1d7b455c99f93d1f2258ebaaad8f697f4e6f9859476e8ee8de9745e"
+  },
+  "configs/new_baselines/mask_rcnn_regnetx_4gf_dds_FPN_100ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "5637af49c2a677e95ed30a162c4b7bf2d1a02260980a15d022cb10f304174243"
+  },
+  "configs/new_baselines/mask_rcnn_regnetx_4gf_dds_FPN_200ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "5d5424e145cf5f4002fe4446bb35289d712493bbc60d7219cf65e4c5350896bd"
+  },
+  "configs/new_baselines/mask_rcnn_regnetx_4gf_dds_FPN_400ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "b881bae1d692d050c151e7f338d98e2cf54b269bcc9d78cd4ff311419d412b2f"
+  },
+  "configs/new_baselines/mask_rcnn_regnety_4gf_dds_FPN_100ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "70b01baa0356cc5b5293f261211cd8fcdf5fca42645d9d1b2c21d6d940b074a8"
+  },
+  "configs/new_baselines/mask_rcnn_regnety_4gf_dds_FPN_200ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "bf52fbaf6b001b4f9c64e77347aad3aa7d4ab605b26660b6fe00bd66c4740139"
+  },
+  "configs/new_baselines/mask_rcnn_regnety_4gf_dds_FPN_400ep_LSJ.py": {
+    "lines": 4,
+    "sha256": "23537acb38294ae1979a4a009c6e59e9b315ea6d383e57893be22ef74928173e"
+  },
+  "datasets/prepare_ade20k_sem_seg.py": {
+    "lines": 27,
+    "sha256": "e666432fa5682eb0158d8cb8a66b0008016e7d553a3f3d0e31d8ea958f541fe6"
+  },
+  "datasets/prepare_cocofied_lvis.py": {
+    "lines": 38,
+    "sha256": "578193f926274d47535985fb5aa8e3043ef087497d7475eb550a403bd0802bf7"
+  },
+  "datasets/prepare_for_tests.sh": {
+    "lines": 12,
+    "sha256": "e4d9bd5c075ba7d0b6d55e2b5a3249d6fb71d7823fc337b1a6b1aec0e736fc40"
+  },
+  "datasets/prepare_panoptic_fpn.py": {
+    "lines": 42,
+    "sha256": "e2fec65c280c578c19a4f6bfc1e559f78e526ff55ac24bbe8d4460b80aec0bd2"
+  },
+  "demo/__init__.py": {
+    "lines": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "demo/demo.py": {
+    "lines": 90,
+    "sha256": "b432fbe243aeb850257f356bde37b3ddb4d1740e7d470b274447232db2ec959d"
+  },
+  "demo/predictor.py": {
+    "lines": 152,
+    "sha256": "ac9bccad5452e5ee24499065107e7d695f94a663af98b5f91bd7c15ec216d010"
+  },
+  "densepose/__init__.py": {
+    "lines": 9,
+    "sha256": "5e6b1f4e44f9317fd06df02ca71b325d75cbc66b1697282fc139845f6105103f"
+  },
+  "detectron2/_C.py": {
+    "lines": 47,
+    "sha256": "7a2c12243a2d2261a6049e37c5549dfc6ac2e0bec1847978dcf5d3d3f37aeb47"
+  },
+  "detectron2/__init__.py": {
+    "lines": 3,
+    "sha256": "09e9d810ccd0dbb69ea3fd2c40a826e9d9cd82b934a4190236323ad341aaec43"
+  },
+  "detectron2/checkpoint/__init__.py": {
+    "lines": 2,
+    "sha256": "cf25bb38eeb29540aeb28d4def13df52a95f972d09190a6067fbe74c2ddcb043"
+  },
+  "detectron2/checkpoint/c2_model_loading.py": {
+    "lines": 97,
+    "sha256": "8078e3706f63140c7f43d5301beaaf466bdd0ce9fc13a1bd86fe7f42883bb0dc"
+  },
+  "detectron2/checkpoint/catalog.py": {
+    "lines": 30,
+    "sha256": "f17c9696e82894fbcbdbb3a6ccc8100c08ff672a01f003440935f83889b7e5c5"
+  },
+  "detectron2/checkpoint/detection_checkpoint.py": {
+    "lines": 78,
+    "sha256": "906a8563e58e6123a9d4fbfe8e113cc8f500d26ba0587e91e3758d602df05529"
+  },
+  "detectron2/config/__init__.py": {
+    "lines": 4,
+    "sha256": "aaa466420af5ead3951e391f5e01222fed7090c99176baa6e4ccd95ff2c11238"
+  },
+  "detectron2/config/compat.py": {
+    "lines": 83,
+    "sha256": "64bcee1dd7f16199accf5614949262f7812022bb09d6c22e54d3a949e83ed72c"
+  },
+  "detectron2/config/config.py": {
+    "lines": 68,
+    "sha256": "0d45962e23b513b2faee1ce97de08feca565aeee0cdbe9f5ca4470cd726f6d04"
+  },
+  "detectron2/config/defaults.py": {
+    "lines": 271,
+    "sha256": "a377311406ce49484f12d0073d761b27aed4591eb863cab2551d38b751a3d811"
+  },
+  "detectron2/config/instantiate.py": {
+    "lines": 55,
+    "sha256": "3a05399a01080e1d2ec1b4385e7d2cf387254ff3391958abb233829cc6203611"
+  },
+  "detectron2/config/lazy.py": {
+    "lines": 219,
+    "sha256": "0ec925730d707cbda9fc7cb997fc0f2d3148b5a99ccc123e63fb2bfaa605c236"
+  },
+  "detectron2/data/__init__.py": {
+    "lines": 5,
+    "sha256": "60c4260df504b62bfed4d8891b6b970da468b693c8a02a5735e19506f8e4fd01"
+  },
+  "detectron2/data/benchmark.py": {
+    "lines": 85,
+    "sha256": "200163005ea32e9b087d506de743c6256a7c322601c949ae178a1c76b9e7d10e"
+  },
+  "detectron2/data/build.py": {
+    "lines": 316,
+    "sha256": "52f6f74219c5af2824b36fb9423c0cb76ea85f85b7421fa34bfe71e274acd5ef"
+  },
+  "detectron2/data/catalog.py": {
+    "lines": 82,
+    "sha256": "f06f83cbfb5ccf024ac8cc09f76400e00c9ee1fd70755194b6d4a4fa1678682e"
+  },
+  "detectron2/data/common.py": {
+    "lines": 173,
+    "sha256": "7d87d96b2e4648c117ab49e6dc7e32e1b7d811c72024e19ad569b78b156b85e9"
+  },
+  "detectron2/data/dataset_mapper.py": {
+    "lines": 110,
+    "sha256": "b972b1a9c6b0cc69a679e0cc0ded4231fd8126ef48bb8d0f9593692310847b6d"
+  },
+  "detectron2/data/datasets/__init__.py": {
+    "lines": 7,
+    "sha256": "c2b5d2e4febb0a3c81d0fe7f490c9cb691a8f00b1023edc12744793d2f3bc52b"
+  },
+  "detectron2/data/datasets/builtin.py": {
+    "lines": 90,
+    "sha256": "e643fc7d131606be5dd50e22b1922f7bf6512b0b3bc6043fe170d19e3eb2c2d2"
+  },
+  "detectron2/data/datasets/builtin_meta.py": {
+    "lines": 60,
+    "sha256": "dd2fa9e3ff1c25e6727e01001775276ee1855bee82a89e343f3453ca7d5a0fc8"
+  },
+  "detectron2/data/datasets/cityscapes.py": {
+    "lines": 137,
+    "sha256": "57b3d81147038c352ef95e3881c411b1c5cdb3bb3fc94e132acdfcc551dd5d6e"
+  },
+  "detectron2/data/datasets/cityscapes_panoptic.py": {
+    "lines": 83,
+    "sha256": "94e075e80b28a367acd368f6af71e813e9a36136f276da15b9bbcd7152b0cdb7"
+  },
+  "detectron2/data/datasets/coco.py": {
+    "lines": 183,
+    "sha256": "560a70243ad4d5bf14bf65fc81a5fdc02be4737bc8aee124fa0554fc5ae428d2"
+  },
+  "detectron2/data/datasets/coco_panoptic.py": {
+    "lines": 104,
+    "sha256": "51a87ba317fd6b73d1ad28b9baa22f1dae82e39202a6ee6b858a28714777c590"
+  },
+  "detectron2/data/datasets/lvis.py": {
+    "lines": 110,
+    "sha256": "e9176c1dced4de5700cbb5b3a88b412a4b691dcf3a285104934f13d3782811e6"
+  },
+  "detectron2/data/datasets/lvis_v0_5_categories.py": {
+    "lines": 8,
+    "sha256": "52c53a04e15e9d4e376d76f64dd95c78860dbffe977a590eeda3719c735f0e2b"
+  },
+  "detectron2/data/datasets/lvis_v1_categories.py": {
+    "lines": 8,
+    "sha256": "0f37b71fd6e5030237aeea9215c270b8ab8c194efd6fe463c9b79e909263be5d"
+  },
+  "detectron2/data/datasets/lvis_v1_category_image_count.py": {
+    "lines": 5,
+    "sha256": "7d7bb8de98afe60336edd5f91b423a49a50bc3401f78ba60be604f02c6222c3c"
+  },
+  "detectron2/data/datasets/pascal_voc.py": {
+    "lines": 71,
+    "sha256": "29e18e8a2069d6b94fd425a9ee05de7463c58c7cf017635cd8aad01e8252f4d8"
+  },
+  "detectron2/data/datasets/register_coco.py": {
+    "lines": 1,
+    "sha256": "dbbde4709c59a5a73db00742dc3715babd5806dfcd0152cc13674ff3c743b0bc"
+  },
+  "detectron2/data/detection_utils.py": {
+    "lines": 250,
+    "sha256": "888cf82fd84b57a3343666d70445a035e2157213ff22ba9d96bda1923ec42c7e"
+  },
+  "detectron2/data/samplers/__init__.py": {
+    "lines": 2,
+    "sha256": "7ad4ab8a013e273a3047af1d5135a13a7381fb05e0cf51fa41414ff0cf5cf04b"
+  },
+  "detectron2/data/samplers/distributed_sampler.py": {
+    "lines": 111,
+    "sha256": "f34e0fbeee6ac3b9ba617c3956d84ba80dd3dc89e28ef65aa101e26c34f3fccf"
+  },
+  "detectron2/data/samplers/grouped_batch_sampler.py": {
+    "lines": 19,
+    "sha256": "20781eb7bc052717bdfcbd57e5b5685a67ce9c03903d9061f1117b34470ad253"
+  },
+  "detectron2/data/transforms/__init__.py": {
+    "lines": 3,
+    "sha256": "57eaac3395baea5066e3aab37b75a7f8dadccf6011e49c746f5ec5ac38617c9c"
+  },
+  "detectron2/data/transforms/augmentation.py": {
+    "lines": 110,
+    "sha256": "7ed99c6d1906a2ee8df35a75f532236897e76b38e9aca8ee836f7706d2cc9104"
+  },
+  "detectron2/data/transforms/augmentation_impl.py": {
+    "lines": 297,
+    "sha256": "c11ac0d057bdcfd5c38508c4a3d6c1684b38b0b6647407685bf79930934582d8"
+  },
+  "detectron2/data/transforms/transform.py": {
+    "lines": 196,
+    "sha256": "07802e4852e5d4d3d57c99990ab3bb8c3eb4a1ad9afc049612552ab15e26a755"
+  },
+  "detectron2/engine/__init__.py": {
+    "lines": 4,
+    "sha256": "7c11601806f7b4a585a471e013c853a3797adcfffd5b9c6f604fd524b3313d80"
+  },
+  "detectron2/engine/defaults.py": {
+    "lines": 310,
+    "sha256": "4f6933043e6c3d2e15ee2e3cbf638d14c4a0a80bd9c7d3e936d1383d96246300"
+  },
+  "detectron2/engine/hooks.py": {
+    "lines": 291,
+    "sha256": "460c2d5ed5618e00e424074dc5c83c67c017220b60719c98924327f65524cdf4"
+  },
+  "detectron2/engine/launch.py": {
+    "lines": 60,
+    "sha256": "85889d14155ec7a5977a757fcbddb7f32fd4494f475ffc518a08add20ba4737e"
+  },
+  "detectron2/engine/train_loop.py": {
+    "lines": 273,
+    "sha256": "f9b6e38d0b6e0877734a889886511ccf06a817dd0f766d53edfba5e76fe2b249"
+  },
+  "detectron2/evaluation/__init__.py": {
+    "lines": 9,
+    "sha256": "80cd40cce5658d70b1e24074b1c82405d02dda6f4fc50fae2b412a9180750136"
+  },
+  "detectron2/evaluation/_coco_eval_native.cpp": {
+    "lines": 123,
+    "sha256": "8c76e296d3f64dc22f0d05848598a6b576df4921c972732000bdd73dcc4aebb9"
+  },
+  "detectron2/evaluation/cityscapes_evaluation.py": {
+    "lines": 103,
+    "sha256": "399a4423f47ec0befc594ec8ff1ab2c5d7a98f047498a9d56a4846eb830d2fa5"
+  },
+  "detectron2/evaluation/coco_evaluation.py": {
+    "lines": 303,
+    "sha256": "d7bfe7221bf3ed34c3336d8f162d06cb024b00c4dfd5768f310b33ec07b7bdff"
+  },
+  "detectron2/evaluation/evaluator.py": {
+    "lines": 94,
+    "sha256": "a1c10a467ea14b70aa35cdba463dea1f4e62f7b3b30de31fe5c7f087156064b9"
+  },
+  "detectron2/evaluation/fast_eval_api.py": {
+    "lines": 167,
+    "sha256": "b187366671d42e8968b1392bf7decfc66e5ff884ada2238e437c8af0a09334be"
+  },
+  "detectron2/evaluation/lvis_evaluation.py": {
+    "lines": 131,
+    "sha256": "ba663411bbe1df671bfb8714b3bf0140fb9285e3a74381f34f8625d693b1d798"
+  },
+  "detectron2/evaluation/panoptic_evaluation.py": {
+    "lines": 115,
+    "sha256": "ad346725b52428dcf53bf4464bec756a3b935a82a988855c9ff1326ab6a182e5"
+  },
+  "detectron2/evaluation/pascal_voc_evaluation.py": {
+    "lines": 146,
+    "sha256": "3d58740e689b2f94ab0d52fedfbf61fee25072e6583976b76b8b96d98ce5ec4e"
+  },
+  "detectron2/evaluation/rotated_coco_evaluation.py": {
+    "lines": 103,
+    "sha256": "b15414b1b9568c0a4d5f7af060a278346656909849acb66ea00bf15f122874e2"
+  },
+  "detectron2/evaluation/sem_seg_evaluation.py": {
+    "lines": 147,
+    "sha256": "f6f35c7a6333ad12e5c185762758ec6b348b5f2a42c6b7bfda230175448bc3bd"
+  },
+  "detectron2/evaluation/testing.py": {
+    "lines": 45,
+    "sha256": "119cf421c24c054c9d21b965e9dabef3445372c7f0833c524057bc0caf243258"
+  },
+  "detectron2/export/__init__.py": {
+    "lines": 3,
+    "sha256": "da7d240f27c59f54887993ad792cb53674671417e44aa5b0eb8f38bc302b9ad7"
+  },
+  "detectron2/export/api.py": {
+    "lines": 95,
+    "sha256": "79a5b7a32ab076f9f7fb09d04e6a98377a2e8c74272391dfc512cee1ef2a3244"
+  },
+  "detectron2/export/c10.py": {
+    "lines": 172,
+    "sha256": "f53091784547e6d4ab53ed024659d5f2c65a49479008b4969a4b57516bce10d1"
+  },
+  "detectron2/export/caffe2_export.py": {
+    "lines": 23,
+    "sha256": "9f37555da7bcf18b7baee6a71778f4a3832ab66674b88ed23a08faf301e2c863"
+  },
+  "detectron2/export/caffe2_inference.py": {
+    "lines": 40,
+    "sha256": "d02c6b4b3958fe83ed9cd972d1c831897a8fb1511f077039ae56944f6da2b91d"
+  },
+  "detectron2/export/caffe2_modeling.py": {
+    "lines": 114,
+    "sha256": "326d360b78b0fde875f7db63d96d4e1ecb5f3e21ee222b3af72a8295599895a0"
+  },
+  "detectron2/export/caffe2_patch.py": {
+    "lines": 65,
+    "sha256": "018466ccf451d7fdc1482e9c5eeefdff4f693bfe2c5d2adc0af1a5e915cf1f4f"
+  },
+  "detectron2/export/flatten.py": {
+    "lines": 229,
+    "sha256": "f4ce5236b5564f53a818ebcc41dda8904fc61674554df571f369a280dfbad8c1"
+  },
+  "detectron2/export/shared.py": {
+    "lines": 299,
+    "sha256": "fa8216ed643d8e2be74e9fd6dc513a2b4c55ce7f6f835db35e835244240dd5fa"
+  },
+  "detectron2/export/torchscript.py": {
+    "lines": 55,
+    "sha256": "0bc0ec1d440c8113515aa45fc62939657074051398eaf5890b6da5273298733e"
+  },
+  "detectron2/export/torchscript_patch.py": {
+    "lines": 335,
+    "sha256": "bd0a595b8f6841ef3930d4643df0d6db9812004c70ba3276e298e68c122452b8"
+  },
+  "detectron2/layers/__init__.py": {
+    "lines": 25,
+    "sha256": "b78e965ccd3f8d385c9f90cec8def38885a31183405ba59028dff3b35847755e"
+  },
+  "detectron2/layers/aspp.py": {
+    "lines": 81,
+    "sha256": "3cb77bc3bf626cf357999206a32ff38d634a7ab8e9bbd57e952e2aebf2fa6c60"
+  },
+  "detectron2/layers/batch_norm.py": {
+    "lines": 98,
+    "sha256": "e8fa1b08c6557b07a5e8dcb05d937d5264911775d090963bf98388178814368a"
+  },
+  "detectron2/layers/blocks.py": {
+    "lines": 53,
+    "sha256": "827179f8781c987d6cbe5be0757a8d92638dc54c056ccba8acb1e4b5bf83166f"
+  },
+  "detectron2/layers/csrc/rotated.cpp": {
+    "lines": 31,
+    "sha256": "64f2362bdc8a458b794db928c3376ebabb63d2388e4e60ca89f57867a4e51572"
+  },
+  "detectron2/layers/csrc/rotated_cuda.cu": {
+    "lines": 33,
+    "sha256": "e372fb53409297b5661a3617e89d3cf6c854dd1f93434cf23f5d117002b470fa"
+  },
+  "detectron2/layers/csrc/rotated_geometry.h": {
+    "lines": 84,
+    "sha256": "aa99fa03e60eb430e26fd5a5d3e35575ff87ca10895b1f26357325f9e57bdff4"
+  },
+  "detectron2/layers/deform_conv.py": {
+    "lines": 116,
+    "sha256": "658b70f21ce99977d219e7dde7639bd93d1321b08022f8205fd82d5132586aaf"
+  },
+  "detectron2/layers/losses.py": {
+    "lines": 44,
+    "sha256": "de509b3c47d029fc44f2d7ba8ae9e5b8f9a6157aab953f010d280096596d520d"
+  },
+  "detectron2/layers/mask_ops.py": {
+    "lines": 61,
+    "sha256": "4b331f58028d4873c39e2d202ce2e78961fa0ff520cfc066f571ba75358c3eb4"
+  },
+  "detectron2/layers/nms.py": {
+    "lines": 30,
+    "sha256": "4482be7c435c3bd9cfb74334f3deec3ced46197b00bc6fdcbbcad372e8c252b5"
+  },
+  "detectron2/layers/roi_align.py": {
+    "lines": 22,
+    "sha256": "adc98b5a3a19f6637b03efbee53244999143645fcefd23a6078435841710d8a8"
+  },
+  "detectron2/layers/roi_align_rotated.py": {
+    "lines": 73,
+    "sha256": "82e6d6526f3d2b1660d1db1c0181b5de83299ace0ac42adc4fe3706b1669dbab"
+  },
+  "detectron2/layers/rotated_boxes.py": {
+    "lines": 6,
+    "sha256": "4466b1682d7f4fd7152ae3a48622259ef44294ee8e149f1e251151a7878dd300"
+  },
+  "detectron2/layers/rotated_geometry.py": {
+    "lines": 73,
+    "sha256": "5c69a3d87a517131a907c87feecb7485a6fe7544a7bbe55ebb3d797822d4388e"
+  },
+  "detectron2/layers/shape_spec.py": {
+    "lines": 10,
+    "sha256": "6ea21b0f9c740679dee1d7606bb2fbcad70dc0cd23a61c1317b16cfceaf51039"
+  },
+  "detectron2/layers/wrappers.py": {
+    "lines": 67,
+    "sha256": "4ddd4a20713debbb1cf48bc25bc204eac9f3ad7f0c20480407078f0ed3caa6fb"
+  },
+  "detectron2/model_zoo/__init__.py": {
+    "lines": 1,
+    "sha256": "4ab4a5a21400fae43b91548b7af89268f1967f260d9646b4ab52d58e092dff57"
+  },
+  "detectron2/model_zoo/model_zoo.py": {
+    "lines": 67,
+    "sha256": "4821aebaa3b23527c87855c854ff2d992ea50ac3c365d2354368bf81da741ef5"
+  },
+  "detectron2/model_zoo/resources.py": {
+    "lines": 56,
+    "sha256": "4fd382aa49da940dfeb634895f94c7db0775307eb5685edda6592ccd1a0f6fe6"
+  },
+  "detectron2/model_zoo/torchvision.py": {
+    "lines": 63,
+    "sha256": "4874d8f92755653fe40696dfe89e327340ec93038d789547be2243853def4243"
+  },
+  "detectron2/modeling/__init__.py": {
+    "lines": 15,
+    "sha256": "b3f8ea73a4631d59380af8d0c87a05a445bf2a8b036051c583d258d821910569"
+  },
+  "detectron2/modeling/anchor_generator.py": {
+    "lines": 174,
+    "sha256": "85f0147e8224e53f62e6220b83221302ceb73f8f8f29543ef3389ec6d34cd50a"
+  },
+  "detectron2/modeling/backbone/__init__.py": {
+    "lines": 22,
+    "sha256": "d57b40b5e3479a3900a4847edfdb8c1a2ffecfbeff523546d3bbbab809d4692d"
+  },
+  "detectron2/modeling/backbone/backbone.py": {
+    "lines": 21,
+    "sha256": "373e450b1584632a4fb93ddf4febdd098c8c23e755586efb595b8ac5c8b7bf82"
+  },
+  "detectron2/modeling/backbone/build.py": {
+    "lines": 10,
+    "sha256": "67d346d60b48b952212cb2208d52eb59459c5ced34d2a491aa04fdb515e29c66"
+  },
+  "detectron2/modeling/backbone/fpn.py": {
+    "lines": 147,
+    "sha256": "5b2fb54beaf3cabb7c1c369bec3e622dfc85e55c771498863966aaa43b0db52a"
+  },
+  "detectron2/modeling/backbone/mvit.py": {
+    "lines": 292,
+    "sha256": "971e2c8f8564e551eaa17d1a24bea2753318ddd0a93f9cb9cd7c98f56582eb53"
+  },
+  "detectron2/modeling/backbone/regnet.py": {
+    "lines": 276,
+    "sha256": "97165f59014b94f3b0818e0bdd3dd218696ec48d3d041bc183a4c35f517e6999"
+  },
+  "detectron2/modeling/backbone/resnet.py": {
+    "lines": 287,
+    "sha256": "d9009f770668c51878357c84c095e7121e94baad71208ec0a55574e723dbd3bc"
+  },
+  "detectron2/modeling/backbone/swin.py": {
+    "lines": 323,
+    "sha256": "1290cbe229c0d32c901a5b0cbe9ecb1f0d6fa33709c55923f96adfe74a6743e9"
+  },
+  "detectron2/modeling/backbone/utils.py": {
+    "lines": 93,
+    "sha256": "ab1da4f7f1c9b92bfb99333f7be29d3a8cc7db45ef51f6036f660a03209db9ae"
+  },
+  "detectron2/modeling/backbone/vit.py": {
+    "lines": 279,
+    "sha256": "dc9401460ba69fd9f9f4575cd79614723f7ed3e9f9a6524303a38e0db6d1eabc"
+  },
+  "detectron2/modeling/box_regression.py": {
+    "lines": 110,
+    "sha256": "33f0923767ee69996504c5ccad92f552337a07ca3eb2b56ede215672c1d9ae8d"
+  },
+  "detectron2/modeling/matcher.py": {
+    "lines": 39,
+    "sha256": "a6b9904276debcdabda859c6a121a16ea0391e0556da552986702231e8eb4e85"
+  },
+  "detectron2/modeling/meta_arch/__init__.py": {
+    "lines": 12,
+    "sha256": "30f7ebd5bc041de61865faacf2a6fda892c4627d1c983d018a71dc6eb352eb5e"
+  },
+  "detectron2/modeling/meta_arch/build.py": {
+    "lines": 10,
+    "sha256": "edd00bc37b1f28b5bfd6d098f6a72dcdf9eccff2686e6aca35972b0c3fc2552d"
+  },
+  "detectron2/modeling/meta_arch/dense_detector.py": {
+    "lines": 102,
+    "sha256": "0da3fbb2328856cb73fba9acb6a5a6574f9ba7fe6b2e312fb5fb750bd464de9d"
+  },
+  "detectron2/modeling/meta_arch/fcos.py": {
+    "lines": 205,
+    "sha256": "c041a205bfe27f10bf51ca9c5a29cdfac7774cab7b63f310ae5d5e308812c8cc"
+  },
+  "detectron2/modeling/meta_arch/panoptic_fpn.py": {
+    "lines": 116,
+    "sha256": "71fa7be878f3c1a3ace088f26c99c846b75e6be7d4849895dcaa3d97cd0d56a2"
+  },
+  "detectron2/modeling/meta_arch/rcnn.py": {
+    "lines": 147,
+    "sha256": "b59c2afa9113a91c61fa7f3205b5b8eded520fd1f291f321e43f2d93443ef357"
+  },
+  "detectron2/modeling/meta_arch/retinanet.py": {
+    "lines": 221,
+    "sha256": "f1e3df6edc9adafe9156100b5b27c1467f3c35440113ba13805ab11706aec891"
+  },
+  "detectron2/modeling/meta_arch/semantic_seg.py": {
+    "lines": 161,
+    "sha256": "94fa4ec4a7c31d991ae5f920cf378dafdbaeded31a4e6729b558801af7699090"
+  },
+  "detectron2/modeling/mmdet_wrapper.py": {
+    "lines": 119,
+    "sha256": "53fc16b4baae399f0a026c0533b05f1034394880f940a10fc3517c908940ff3c"
+  },
+  "detectron2/modeling/poolers.py": {
+    "lines": 79,
+    "sha256": "fdaac2172f4104842634f77aea95738f8fb900c203354ccbc3dea2aeaaeb8db3"
+  },
+  "detectron2/modeling/postprocessing.py": {
+    "lines": 36,
+    "sha256": "d7e41d3130ea15e43009f08fcc3258480756dd597f52f14aaa7be37426fe9824"
+  },
+  "detectron2/modeling/proposal_generator/__init__.py": {
+    "lines": 3,
+    "sha256": "7959d210c916a12a8f868d5fc687af17e697f295646c831b52acf878a6a10e24"
+  },
+  "detectron2/modeling/proposal_generator/build.py": {
+    "lines": 8,
+    "sha256": "bc9da1757fcde1ea94989141c03f0103f61c43fbd684cd66a12d3b9dca7e9fbd"
+  },
+  "detectron2/modeling/proposal_generator/proposal_utils.py": {
+    "lines": 59,
+    "sha256": "a1bdef893bd11aec62cc6ebad08bd734e1d9745d3a8fcd8f13d758e5838bef53"
+  },
+  "detectron2/modeling/proposal_generator/rpn.py": {
+    "lines": 218,
+    "sha256": "3c5b9f5bc35ed386ca95fc8587865e8f4f22e948e7d493f899304715bbee07b9"
+  },
+  "detectron2/modeling/proposal_generator/rrpn.py": {
+    "lines": 86,
+    "sha256": "e9f8aeae4da54e0e555ed5d4de209436b20d7019b0debdea27062f1ba38287e5"
+  },
+  "detectron2/modeling/roi_heads/__init__.py": {
+    "lines": 29,
+    "sha256": "9c680e9b31b00f644e4d0d90e98d1e0daaa10606503c9bdc24bbcd3246c9328b"
+  },
+  "detectron2/modeling/roi_heads/box_head.py": {
+    "lines": 52,
+    "sha256": "8aa6cf1a5ff87e24148fe4c69b54817ff1631f1c9b47dd2e647696f9f2e06e4b"
+  },
+  "detectron2/modeling/roi_heads/cascade_rcnn.py": {
+    "lines": 120,
+    "sha256": "18b18ed31029c8c8abee19541531ad4b8065dc796f2a3196d9673c94793b548b"
+  },
+  "detectron2/modeling/roi_heads/fast_rcnn.py": {
+    "lines": 218,
+    "sha256": "19e09234219476b71bdf973d99289b93905f4073222fb03b3a5b5bb728746397"
+  },
+  "detectron2/modeling/roi_heads/keypoint_head.py": {
+    "lines": 107,
+    "sha256": "5ec28c9316406388e01040055110ad161aa1c6f87e93f605a69ecd464c032a14"
+  },
+  "detectron2/modeling/roi_heads/mask_head.py": {
+    "lines": 107,
+    "sha256": "115d598875b93e34bc891b5f5985ae35c9c175d145da7469646bfa4781a3c938"
+  },
+  "detectron2/modeling/roi_heads/roi_heads.py": {
+    "lines": 380,
+    "sha256": "067d8c043bdd27cf8099d938642653d45e5aef9abdae586447aaa773692ee8aa"
+  },
+  "detectron2/modeling/roi_heads/rotated_fast_rcnn.py": {
+    "lines": 96,
+    "sha256": "675e947b8ce2e24fd6ff9f00c93f7c24549c31388926d584ffea7bc1b0f48e98"
+  },
+  "detectron2/modeling/sampling.py": {
+    "lines": 12,
+    "sha256": "9be59bdbe9535cabf8f99a811b887090b832429e00b6c8e42f166b436db336f4"
+  },
+  "detectron2/modeling/test_time_augmentation.py": {
+    "lines": 108,
+    "sha256": "c39016bba2590e536407646d0963a8ccea644c402c6ea8caec47da750cd2ca8b"
+  },
+  "detectron2/projects/__init__.py": {
+    "lines": 28,
+    "sha256": "e36ce25d58ab83a8ba67cd79a4c15ae6a01047a3ee54a1503c258ec067808900"
+  },
+  "detectron2/solver/__init__.py": {
+    "lines": 2,
+    "sha256": "27f651ad26787f2b4845872b40e74dd61045243fb08cb6bfaede8a35f05c579f"
+  },
+  "detectron2/solver/build.py": {
+    "lines": 175,
+    "sha256": "ac7ba467e22c7b7045f6569248c86704b7753e06c076039170a7a507c650464c"
+  },
+  "detectron2/solver/lr_scheduler.py": {
+    "lines": 132,
+    "sha256": "20cbea07221556447d96420d370f4783235297a10eae052b1e4f4ce063b6dbf2"
+  },
+  "detectron2/structures/__init__.py": {
+    "lines": 20,
+    "sha256": "dd007a4bdd78fb741194bbf08aa0183600c375cfdea9b5f839f53e7f62b9662c"
+  },
+  "detectron2/structures/boxes.py": {
+    "lines": 172,
+    "sha256": "d91e51b0dd5db100b0fa53f103c26f69737ac79991928caf96583fe80e06209a"
+  },
+  "detectron2/structures/image_list.py": {
+    "lines": 57,
+    "sha256": "10c21472bdbf9d1ce395ea8a872cdccabe16af24fc4ebadfeea2a66b7bd234f2"
+  },
+  "detectron2/structures/instances.py": {
+    "lines": 80,
+    "sha256": "fe214a832f39e2bed2189fd42ad426d0642dd91adb1b516dd9e642e230038335"
+  },
+  "detectron2/structures/keypoints.py": {
+    "lines": 63,
+    "sha256": "d8b36b3aa7b796c6d9491d43d6a8a95c5faf1993c1bf88599884af81c2cf75fd"
+  },
+  "detectron2/structures/masks.py": {
+    "lines": 164,
+    "sha256": "6bdef6854fe88a6a9245b53c3d803c9ef9f4aede70b872801aa06a31c8996777"
+  },
+  "detectron2/structures/rotated_boxes.py": {
+    "lines": 106,
+    "sha256": "2a6cfde333b31f38231dbe7aef87ac4f04d54abc98bfb5716a1c111785978b62"
+  },
+  "detectron2/tracking/__init__.py": {
+    "lines": 5,
+    "sha256": "195ed53c0bce826b7d48e65079abd5717aa5e63308829a465995f886e60230c8"
+  },
+  "detectron2/tracking/base_tracker.py": {
+    "lines": 21,
+    "sha256": "f083e111511399d5d4723998875918472066e9de1b44d6d7c4702262dfc88148"
+  },
+  "detectron2/tracking/bbox_iou_tracker.py": {
+    "lines": 139,
+    "sha256": "28d929f2976fc273d16b7fb3ee4702ca6b65bff412f6e75f91ef41458eae498a"
+  },
+  "detectron2/tracking/hungarian_tracker.py": {
+    "lines": 89,
+    "sha256": "0bde962427ed62fd5ec51c359c7824c88cc5cf68bb2aec9d48dd3a744968a0f3"
+  },
+  "detectron2/tracking/iou_weighted_hungarian_bbox_iou_tracker.py": {
+    "lines": 36,
+    "sha256": "3c2eb73669d7f411c3db4f70906c55ac24869c286059cf8507d5f6c12bcb4182"
+  },
+  "detectron2/tracking/utils.py": {
+    "lines": 13,
+    "sha256": "8e95fe43f9ce230cc8cb2216ec6ac702fb1f8d90c78c93a00ed29460b18caeae"
+  },
+  "detectron2/tracking/vanilla_hungarian_bbox_iou_tracker.py": {
+    "lines": 40,
+    "sha256": "612ee59f61cba8b573d9161bd0f860bae0c5eb6cb63b41dd191983ece5e00594"
+  },
+  "detectron2/utils/__init__.py": {
+    "lines": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "detectron2/utils/analysis.py": {
+    "lines": 123,
+    "sha256": "b3cc9ceb99e2a3b080975eaf6bcc3c1fa5e283f75b6c40b57673a5286b61a60e"
+  },
+  "detectron2/utils/collect_env.py": {
+    "lines": 72,
+    "sha256": "fd57fc47391b370f03e09b35102f35bb7d606fee4665359379bb7dc806d75054"
+  },
+  "detectron2/utils/colormap.py": {
+    "lines": 26,
+    "sha256": "6f4880a073b1655ff0c3e1b417d640cd225651763c799215e7135c0514987aa3"
+  },
+  "detectron2/utils/comm.py": {
+    "lines": 96,
+    "sha256": "e6d0dab9988e09440f805a8981d1a6d975ac52daae6740d88168a60950efc8a8"
+  },
+  "detectron2/utils/develop.py": {
+    "lines": 15,
+    "sha256": "aba2c70c7e734dbd85e0bf2cdb9ad9fdbcb285352e14f87907d5d90e870760fa"
+  },
+  "detectron2/utils/env.py": {
+    "lines": 66,
+    "sha256": "8308f6ede99da6704b82ab6c1e04b9b8cef27ab2bdc8ff389131bf7fb737914f"
+  },
+  "detectron2/utils/events.py": {
+    "lines": 268,
+    "sha256": "db580bc078fd59992bd36e8049724137c488155238213b8e48bb72ffd28ddaa3"
+  },
+  "detectron2/utils/file_io.py": {
+    "lines": 23,
+    "sha256": "65e0eaf2f26a499594010a9da8acbec1246a1df82ff34aec3482f4b80f65c9d1"
+  },
+  "detectron2/utils/logger.py": {
+    "lines": 125,
+    "sha256": "da74207f99c71877623b4feefd8f5e0451ce46f2012c2a2baca25a98225dfc1a"
+  },
+  "detectron2/utils/memory.py": {
+    "lines": 43,
+    "sha256": "747583de282a38aab47224ab4a671085b125f38abcb492f41edd8e93d75c8850"
+  },
+  "detectron2/utils/registry.py": {
+    "lines": 31,
+    "sha256": "e938971342ee212b47a7f815b1044390afcebf39357d2af4bed26534f21a7468"
+  },
+  "detectron2/utils/serialize.py": {
+    "lines": 17,
+    "sha256": "cad9fed956465ede3d20defe3ed3f01f070cd22e679fe7bb6ac111ff96ec0545"
+  },
+  "detectron2/utils/testing.py": {
+    "lines": 159,
+    "sha256": "5aeb01d91cdd39ecf7c0568e86763dac0ede76ea6a07c23aa8122ac6249f5ee8"
+  },
+  "detectron2/utils/torch_version_utils.py": {
+    "lines": 10,
+    "sha256": "bd1a297197768110a4bdba6857630f16b65f7dc28bd6731a76f30ed19ecdbe01"
+  },
+  "detectron2/utils/tracing.py": {
+    "lines": 15,
+    "sha256": "edea7c71069ef4e793a94ab63eb126b76cef47fb5f84877f4b8e71278f54047a"
+  },
+  "detectron2/utils/video_visualizer.py": {
+    "lines": 96,
+    "sha256": "ba2d8cc0bd9dfbb17cbf0ba32806a66615a6f97e82adf6b19d2835138b5f4924"
+  },
+  "detectron2/utils/visualizer.py": {
+    "lines": 559,
+    "sha256": "639516fae9ca6272bad3aba099932f7ca98a34979bf4e5663a13892ca9eed9db"
+  },
+  "dev/linter.sh": {
+    "lines": 4,
+    "sha256": "9536872ca54b754aa932368bba477ec2e1bdb40491d006a96d47afd95549e4f9"
+  },
+  "dev/packaging/build_all_wheels.sh": {
+    "lines": 3,
+    "sha256": "cd4a03458925a919c464eb6e0dba5bdea1165bc1e4fe07f59f17f138b659a192"
+  },
+  "dev/packaging/build_wheel.sh": {
+    "lines": 3,
+    "sha256": "cd4a03458925a919c464eb6e0dba5bdea1165bc1e4fe07f59f17f138b659a192"
+  },
+  "dev/packaging/build_wheels.py": {
+    "lines": 61,
+    "sha256": "6cdb78d1e2ea4f37a43cfe2157f7c25bc7467ef441a7cf224e0b99f58a88d1f1"
+  },
+  "dev/packaging/gen_wheel_index.sh": {
+    "lines": 3,
+    "sha256": "76ea9a7f81ae9c0ea225c6a9a1c71d430b88b2405afbf23fb42057d44413e022"
+  },
+  "dev/parse_results.sh": {
+    "lines": 3,
+    "sha256": "34af343d038cb336b3d8982082f321f9857b2c4d84f359a9a8e43433feedaaeb"
+  },
+  "dev/run_inference_tests.sh": {
+    "lines": 3,
+    "sha256": "87c59e065bf964ab530730da621d66cb6492f790bf05c22edb97aec0bcf315a5"
+  },
+  "dev/run_instant_tests.sh": {
+    "lines": 3,
+    "sha256": "c67f5241de33cb37901105a5d0ed3fa9d1fd501bcfc48d3547961592890d08af"
+  },
+  "docs/_static/css/custom.css": {
+    "lines": 6,
+    "sha256": "24138ddfcdc84e7d205292e8e41a2ad3866d3c48e8747c40cb7f40570d0d5726"
+  },
+  "docs/conf.py": {
+    "lines": 66,
+    "sha256": "2d7abe69351171c6372299c42d8084159409c45919c15f57d52a869c4dee1840"
+  },
+  "projects/DeepLab/deeplab/__init__.py": {
+    "lines": 14,
+    "sha256": "5425176e7f8d897b4a5c9689a9eb9d9ab7ff6a162a67a23b6036b811901dc423"
+  },
+  "projects/DeepLab/deeplab/build_solver.py": {
+    "lines": 17,
+    "sha256": "a149377a1653280e97aec5af1d8714e5da15a64577435ae911925f14378c5d98"
+  },
+  "projects/DeepLab/deeplab/config.py": {
+    "lines": 19,
+    "sha256": "054eefec8420a749cf7ce62853ed38614ed378b3a077e3f27deedd52e5ad0edf"
+  },
+  "projects/DeepLab/deeplab/loss.py": {
+    "lines": 29,
+    "sha256": "584d36eeeb25942c0eb25743c947a8f3f149bfbe3af2292cc80e22aaeff46735"
+  },
+  "projects/DeepLab/deeplab/lr_scheduler.py": {
+    "lines": 34,
+    "sha256": "e51a61213b2414bce59bcb60cd88b4f9e454064127157e4f551b7231ef77a486"
+  },
+  "projects/DeepLab/deeplab/resnet.py": {
+    "lines": 27,
+    "sha256": "b522adc76d7788bc95e8fac7400faff9dc0b5883c6676a1e6638b48cd65c05cd"
+  },
+  "projects/DeepLab/deeplab/semantic_seg.py": {
+    "lines": 137,
+    "sha256": "010b6633167c0578f7f289058e9b4749647ad00339c1717fbc0743120f872d45"
+  },
+  "projects/DeepLab/train_net.py": {
+    "lines": 19,
+    "sha256": "38bb1a55b2861214b381732be8cc1ab50173ecc6d1772c602a857a94b73726fb"
+  },
+  "projects/DensePose/apply_net.py": {
+    "lines": 50,
+    "sha256": "ad8c864c0bcc48a572b7b32e5a9fce37786280431b4f8be1f24544c89e1b6fd6"
+  },
+  "projects/DensePose/densepose/__init__.py": {
+    "lines": 4,
+    "sha256": "127377e71cc0bfe05e26eebcd7f641c8a478f6c05c21abf2d418cad160bf81df"
+  },
+  "projects/DensePose/densepose/config.py": {
+    "lines": 71,
+    "sha256": "b68ce38354e3363a9719d4287cc902faf6808212f056a98ee32502abcca16ff9"
+  },
+  "projects/DensePose/densepose/converters/__init__.py": {
+    "lines": 36,
+    "sha256": "cdf69f77fa6825475519ea36d63bae46c0a2907a80de8bc38e42c83f0540ae4f"
+  },
+  "projects/DensePose/densepose/converters/base.py": {
+    "lines": 33,
+    "sha256": "c38a85e53f1708d84fe441f393df84ba32ac03c4c4cc4faa1f62ece861a87c18"
+  },
+  "projects/DensePose/densepose/converters/builtin.py": {
+    "lines": 6,
+    "sha256": "7697fe121a8587c53a6301aeccd6b7f849b1e8b69f5c03e49c2c99467ca8312b"
+  },
+  "projects/DensePose/densepose/converters/chart_output_hflip.py": {
+    "lines": 39,
+    "sha256": "ddca44bfbfa0bba48abb19d2207f18657b59560c19edfa33eb895c26c6f8b8bd"
+  },
+  "projects/DensePose/densepose/converters/chart_output_to_chart_result.py": {
+    "lines": 61,
+    "sha256": "3f4cb7f4d4823ddceefebc71e7efda31e6214d9b04748705f78499c70700a22b"
+  },
+  "projects/DensePose/densepose/converters/hflip.py": {
+    "lines": 1,
+    "sha256": "871f1212c00ea75be83ae941b6707f0fb5b554f3c07f0520dceb0e564296ab86"
+  },
+  "projects/DensePose/densepose/converters/segm_to_mask.py": {
+    "lines": 51,
+    "sha256": "586ffb1b313990dbdb6f3161330150eed552db804f340100a3adbb4abefc0680"
+  },
+  "projects/DensePose/densepose/converters/to_chart_result.py": {
+    "lines": 1,
+    "sha256": "9de2231094e03e5e646adbb29c71aef0ee48025b4d63d7d6740d5f709be35d8c"
+  },
+  "projects/DensePose/densepose/converters/to_mask.py": {
+    "lines": 1,
+    "sha256": "5f4c1adcd9cf3507bf206bf80cd95c4a35a03a4052473e74a7ffe618839123e0"
+  },
+  "projects/DensePose/densepose/data/__init__.py": {
+    "lines": 3,
+    "sha256": "5f011d5551524a01d878ef1affe913e9180a4fe9d9944cfe2f96a45adbc04f4d"
+  },
+  "projects/DensePose/densepose/data/build.py": {
+    "lines": 138,
+    "sha256": "fe0ddb059a1e7b45dcf2620954c6c336da13d61d7a3cee853503503f6c1b2f20"
+  },
+  "projects/DensePose/densepose/data/combined_loader.py": {
+    "lines": 27,
+    "sha256": "758446bf09f6368068ff31589a135dc4cd08ac0f7d6d1b3eb50339de9b852259"
+  },
+  "projects/DensePose/densepose/data/dataset_mapper.py": {
+    "lines": 57,
+    "sha256": "fa1ea21d33727f7c5c629a82d6a4e6272aca286b8fe984cf703c37a4cba47f3e"
+  },
+  "projects/DensePose/densepose/data/datasets/__init__.py": {
+    "lines": 2,
+    "sha256": "264fb9973856c58c4354db17a4bad650cf5dc738d4df6d229a945f69c88eee74"
+  },
+  "projects/DensePose/densepose/data/datasets/builtin.py": {
+    "lines": 40,
+    "sha256": "882e4658eaa2539b4342b5efd88ffff693bdfb4eda8fac159a15c447f11e22a8"
+  },
+  "projects/DensePose/densepose/data/datasets/chimpnsee.py": {
+    "lines": 9,
+    "sha256": "6758d1c642a33e4fd62fa1bd0e98094d65c9998abe0b00dcc5cad79338741146"
+  },
+  "projects/DensePose/densepose/data/datasets/coco.py": {
+    "lines": 107,
+    "sha256": "3210c9689872e07d6898b8605ae869283ad6b24f9e7eefd8febd6d735810af35"
+  },
+  "projects/DensePose/densepose/data/datasets/dataset_type.py": {
+    "lines": 8,
+    "sha256": "616f6250cbbb9fe6894600540b54e5fddb881841c101a986a748da58e2670ab8"
+  },
+  "projects/DensePose/densepose/data/datasets/lvis.py": {
+    "lines": 50,
+    "sha256": "d970ebddf93125e5756bdc551009303c7f3c7963d63a2f16b3b261e54a6c79fa"
+  },
+  "projects/DensePose/densepose/data/image_list_dataset.py": {
+    "lines": 26,
+    "sha256": "946cb38fb24121190a2c78afd1cdb6c238b4002641d1f06516ffb3c5de0c9c50"
+  },
+  "projects/DensePose/densepose/data/inference_based_loader.py": {
+    "lines": 85,
+    "sha256": "188f5761fbbf2ea50cd23f99eb721dcb76e9facc80dde1e5037c1f4269fa31a0"
+  },
+  "projects/DensePose/densepose/data/meshes/__init__.py": {
+    "lines": 1,
+    "sha256": "9563848e39a24bc6c03df1c32ca6f31128318c5bf2caded87c6c95f2424f934a"
+  },
+  "projects/DensePose/densepose/data/meshes/catalog.py": {
+    "lines": 89,
+    "sha256": "d3d634141f468bac0f129bfd085af82166e86c95b9b2427808d7708613307712"
+  },
+  "projects/DensePose/densepose/data/samplers/__init__.py": {
+    "lines": 1,
+    "sha256": "e6c78243a70468a67d3313f0f0968314b6ca2df3f62848463ee47adeaa97eee9"
+  },
+  "projects/DensePose/densepose/data/samplers/_sampling.py": {
+    "lines": 199,
+    "sha256": "5dd12618fca7a3c9f4fa4b4104ec0c64ac70435f237e431611e9e0ed34b9e127"
+  },
+  "projects/DensePose/densepose/data/samplers/densepose_base.py": {
+    "lines": 1,
+    "sha256": "b3e0574d0a0052b18c75bb58c098b1e40812ad1c969b60a7ff3d49290c938c78"
+  },
+  "projects/DensePose/densepose/data/samplers/densepose_confidence_based.py": {
+    "lines": 1,
+    "sha256": "a90746ffd3bfc64f87c82efca685ff680eae2b88bee85b245a116980776f6e53"
+  },
+  "projects/DensePose/densepose/data/samplers/densepose_cse_base.py": {
+    "lines": 1,
+    "sha256": "d7a1034ca04d6336d7514b6d93c990f7c200d3130df1e821cd555b9ace604de8"
+  },
+  "projects/DensePose/densepose/data/samplers/densepose_cse_confidence_based.py": {
+    "lines": 1,
+    "sha256": "ede881d7dbd95c2af2bbc4619f0cf57798c660b345d782da61a395a8e23a4f2b"
+  },
+  "projects/DensePose/densepose/data/samplers/densepose_cse_uniform.py": {
+    "lines": 1,
+    "sha256": "9ae1d8005763503670e0ad82881a9a1e72eaee384ee7061385464c5a1deefbbb"
+  },
+  "projects/DensePose/densepose/data/samplers/densepose_uniform.py": {
+    "lines": 1,
+    "sha256": "fd3c6ca70f35f2f0eb8f17ef89028b3a1b442020c1535fce542bd397e70699eb"
+  },
+  "projects/DensePose/densepose/data/samplers/mask_from_densepose.py": {
+    "lines": 1,
+    "sha256": "1bcde6eaa769b5343941d0a0e7dab177bc287a4ead06d3d9a96b3cff38808309"
+  },
+  "projects/DensePose/densepose/data/samplers/prediction_to_gt.py": {
+    "lines": 1,
+    "sha256": "509fff49d0cf1f78c9c03587510125e37795783c24de417dabc688254e90d8ae"
+  },
+  "projects/DensePose/densepose/data/transform/__init__.py": {
+    "lines": 1,
+    "sha256": "bb0ba4b7429dc7a324341584a35e0e23ab29c18bee8aecc8e4a2857f3a340b77"
+  },
+  "projects/DensePose/densepose/data/transform/image.py": {
+    "lines": 28,
+    "sha256": "c6c4fd409363293b7bd201e68dbaff02abfdd3a1eb7638a6c72e12149eb33e5f"
+  },
+  "projects/DensePose/densepose/data/utils.py": {
+    "lines": 24,
+    "sha256": "97c6e4214d528349d3216c1c67281c04072f9034ffdc02bfb6e473ad65b6eaaa"
+  },
+  "projects/DensePose/densepose/data/video/__init__.py": {
+    "lines": 2,
+    "sha256": "aea8fef2b094e0e2453ce94ce32c54da9b88f5589e43df42ddfe2ba22161833e"
+  },
+  "projects/DensePose/densepose/data/video/frame_selector.py": {
+    "lines": 29,
+    "sha256": "be2cd4e25b72df6f0bee8c3b3433e959c6299ce14664dd7421af55f8bd65439e"
+  },
+  "projects/DensePose/densepose/data/video/video_keyframe_dataset.py": {
+    "lines": 81,
+    "sha256": "87324f26aff3b397dfeadb0d8b6a203f7d2911dc818780fb90895d196d24187d"
+  },
+  "projects/DensePose/densepose/engine/__init__.py": {
+    "lines": 1,
+    "sha256": "b947038ebf74e83e20f516fb988beb4d50d89ac24118be820337acd69acfd81a"
+  },
+  "projects/DensePose/densepose/engine/trainer.py": {
+    "lines": 48,
+    "sha256": "1b89445232eb5a9b7a83084faa6fc3c6423a9af845094678d516a6275340c6f5"
+  },
+  "projects/DensePose/densepose/evaluation/__init__.py": {
+    "lines": 4,
+    "sha256": "677cca1bb16e934c63315cb3ec68b518aab6bf510fe9ebbc597359746186f7f5"
+  },
+  "projects/DensePose/densepose/evaluation/d2_evaluator_adapter.py": {
+    "lines": 6,
+    "sha256": "b1986cc966150f21388d91cde9495684f71118d5d7e21650c1e1e33ef1e2f3e2"
+  },
+  "projects/DensePose/densepose/evaluation/densepose_coco_evaluation.py": {
+    "lines": 86,
+    "sha256": "02afd5d36d88682961bea7ed35fe108cb4f6ec2b7cff48dcc647a37cb5aaa1d8"
+  },
+  "projects/DensePose/densepose/evaluation/evaluator.py": {
+    "lines": 135,
+    "sha256": "60731295f4d813bf352577cad576aab5e269767f0187f4617da862d162939833"
+  },
+  "projects/DensePose/densepose/evaluation/mesh_alignment_evaluator.py": {
+    "lines": 32,
+    "sha256": "88d54b0ae704257a4f590d99221bdbb4381dfb5fc62fd919bf725426efee25a0"
+  },
+  "projects/DensePose/densepose/evaluation/tensor_storage.py": {
+    "lines": 140,
+    "sha256": "e309c2ab915fbdc6cd547339a6eec9833c4314648e966d1143cec2f89fcdc2f0"
+  },
+  "projects/DensePose/densepose/modeling/__init__.py": {
+    "lines": 10,
+    "sha256": "5ee017b6bc2acbfa85747e25417d09911dbcf312f8d7d702eaa6a6c14d2948e9"
+  },
+  "projects/DensePose/densepose/modeling/build.py": {
+    "lines": 32,
+    "sha256": "62701c6d5285321f849655212e2e23648cf37264c782a9daca807305fa164602"
+  },
+  "projects/DensePose/densepose/modeling/confidence.py": {
+    "lines": 38,
+    "sha256": "cc7bbc5b5bb511831e3bfc5f638aa40b21d7726f8f4e3832acd9946f36ad9477"
+  },
+  "projects/DensePose/densepose/modeling/cse/__init__.py": {
+    "lines": 4,
+    "sha256": "1a88c85f583223c516beb789c5431efabee38a925c75b3819181d0bf22643060"
+  },
+  "projects/DensePose/densepose/modeling/cse/embedder.py": {
+    "lines": 42,
+    "sha256": "f1c258eb88e287a847c70fccd6b0855d0d4fabe789007095126f6b46960e94cc"
+  },
+  "projects/DensePose/densepose/modeling/cse/utils.py": {
+    "lines": 25,
+    "sha256": "3166e8f43998c075d61bc95eec4b7a80b634623d94cf90c71213f70749de13b8"
+  },
+  "projects/DensePose/densepose/modeling/cse/vertex_direct_embedder.py": {
+    "lines": 21,
+    "sha256": "4f4514f0b77040f78264493de426cbf137ba5960495251e34105575f76147e2a"
+  },
+  "projects/DensePose/densepose/modeling/cse/vertex_feature_embedder.py": {
+    "lines": 34,
+    "sha256": "343c4b1af5c751cbf79368c213de53435d05e74a65d5be83d2c8b126ae056cae"
+  },
+  "projects/DensePose/densepose/modeling/densepose_checkpoint.py": {
+    "lines": 13,
+    "sha256": "35f45f65e94b6f9003e6dd01f3b64802be6211e1c53c9686af3cd2ae7fd21949"
+  },
+  "projects/DensePose/densepose/modeling/filter.py": {
+    "lines": 23,
+    "sha256": "bf256333c1ce670eaf571813ca653b88f275ebb98f0819e4b18cd3c9a72912ee"
+  },
+  "projects/DensePose/densepose/modeling/hrfpn.py": {
+    "lines": 46,
+    "sha256": "fa62f2d4d4a4797888b3486b523c6df340be0cde3937b3cbeb4d5eb54535939f"
+  },
+  "projects/DensePose/densepose/modeling/hrnet.py": {
+    "lines": 140,
+    "sha256": "6ee2205f2a1f5f977193062c7f4a21eeef5faba70f5c679613962c2b4174b30b"
+  },
+  "projects/DensePose/densepose/modeling/inference.py": {
+    "lines": 7,
+    "sha256": "f8bfb44f38f43eb85c0ab70b83630a89159b5383ba4e7abe2ab4d1daff036105"
+  },
+  "projects/DensePose/densepose/modeling/losses/__init__.py": {
+    "lines": 11,
+    "sha256": "747d3517a2ba6b9fea267d957d5a6abdb33537763d104b1d3a1b234286fc1597"
+  },
+  "projects/DensePose/densepose/modeling/losses/chart.py": {
+    "lines": 61,
+    "sha256": "f9b5b628675c93f9f4d0f67a1b3722422a6b7ab8039c2266c2329e924813f0ef"
+  },
+  "projects/DensePose/densepose/modeling/losses/chart_with_confidences.py": {
+    "lines": 74,
+    "sha256": "9c9011ed7c0292fd8b0b380842f7aacaae6f71e80bbb4918ddf680518a3335c5"
+  },
+  "projects/DensePose/densepose/modeling/losses/cse.py": {
+    "lines": 78,
+    "sha256": "f00c4a96b5e2a117135069619b2074261f4b8538f160fd9fc4060a9b96378569"
+  },
+  "projects/DensePose/densepose/modeling/losses/cycle_pix2shape.py": {
+    "lines": 18,
+    "sha256": "6438a4b75cfc44552bb046304c790395e9114338630ca97ac249ad05c20c310c"
+  },
+  "projects/DensePose/densepose/modeling/losses/cycle_shape2shape.py": {
+    "lines": 18,
+    "sha256": "5ea2075c4c22115e81f7d064148cf0a55f0aa8d5a4b8c15f007f71c8988b3051"
+  },
+  "projects/DensePose/densepose/modeling/losses/embed.py": {
+    "lines": 20,
+    "sha256": "c293e4199f910a92720d7f508a169cfddee40c1cec1da8e66a3e0ebceb94b75a"
+  },
+  "projects/DensePose/densepose/modeling/losses/embed_utils.py": {
+    "lines": 83,
+    "sha256": "dc578dae0dce529645c86c27934ba8a161a596e0bf3755ed4f8fbf946bf48ccb"
+  },
+  "projects/DensePose/densepose/modeling/losses/mask.py": {
+    "lines": 40,
+    "sha256": "5994408ee5f45ca0b5ffffda08a1ad6508645b75793ed465a7b337e4a4bd3f0a"
+  },
+  "projects/DensePose/densepose/modeling/losses/mask_or_segm.py": {
+    "lines": 17,
+    "sha256": "5b0e31ff290ede3ea1dcfc2f74aef0222d62410cfe211932f1295eb1ccbc42dd"
+  },
+  "projects/DensePose/densepose/modeling/losses/registry.py": {
+    "lines": 3,
+    "sha256": "076c73473caf65f3eb9efbaaaf8d56c89d18960ed5443940d4b5751cf4011eb8"
+  },
+  "projects/DensePose/densepose/modeling/losses/segm.py": {
+    "lines": 33,
+    "sha256": "b74baf4e283929148d8e85c26a672592721a7edc76a3ce3fc33c41fafdf5fed5"
+  },
+  "projects/DensePose/densepose/modeling/losses/soft_embed.py": {
+    "lines": 17,
+    "sha256": "08f0979df2b9a6bc94d02d7dc0c5d2ff8294c5ddfebe059c59e8054dc8101cff"
+  },
+  "projects/DensePose/densepose/modeling/losses/utils.py": {
+    "lines": 147,
+    "sha256": "c65e64fa6b5743e420d771fc5dfae6aa1221fe3a28da01b9b07bdbba5b4e6b74"
+  },
+  "projects/DensePose/densepose/modeling/predictors/__init__.py": {
+    "lines": 5,
+    "sha256": "b90c86020b50ca5e65e386250ee1d6a3512508a02edeee87a8aa534631cdc22c"
+  },
+  "projects/DensePose/densepose/modeling/predictors/chart.py": {
+    "lines": 51,
+    "sha256": "2f08bc3d77457db6e6fa68c9af7d0c0ef12bc88bc1b119e46943571166561ce9"
+  },
+  "projects/DensePose/densepose/modeling/predictors/chart_confidence.py": {
+    "lines": 38,
+    "sha256": "81c5813942262c7519878b59f48b96e6b70ab068fb4e83c9dc6f8999966d9367"
+  },
+  "projects/DensePose/densepose/modeling/predictors/chart_with_confidence.py": {
+    "lines": 10,
+    "sha256": "ddb85931275efed072b592c7b164456e39fde00b35af9cc8fd3f4acd83424449"
+  },
+  "projects/DensePose/densepose/modeling/predictors/cse.py": {
+    "lines": 32,
+    "sha256": "667f262348a2b6f093de743e5e18129d3725181bd33151d1750684dca8ae316c"
+  },
+  "projects/DensePose/densepose/modeling/predictors/cse_confidence.py": {
+    "lines": 21,
+    "sha256": "8c83eb9fce25e47a5ad703aa45f72449f97a7762d2d326cc8b63d053c066ff6d"
+  },
+  "projects/DensePose/densepose/modeling/predictors/cse_with_confidence.py": {
+    "lines": 10,
+    "sha256": "e2b6f45b436ac2fbc03f3d36321386d282fd5a67ba0b7cf17f1d054b4f6cc63c"
+  },
+  "projects/DensePose/densepose/modeling/predictors/registry.py": {
+    "lines": 3,
+    "sha256": "3bbe7cb9afd66ebe90729973199c73cb5f7fa57d1627d103049c02fe1445d3c6"
+  },
+  "projects/DensePose/densepose/modeling/roi_heads/__init__.py": {
+    "lines": 3,
+    "sha256": "aea5e412b6c0bd7e7249b1a5c5661abf243c439db1baf64a86c47fc5e680db5f"
+  },
+  "projects/DensePose/densepose/modeling/roi_heads/deeplab.py": {
+    "lines": 68,
+    "sha256": "e88fac946511e83f2a88fc72b1310f1883875445cb7533f1b8bfa6069293b459"
+  },
+  "projects/DensePose/densepose/modeling/roi_heads/registry.py": {
+    "lines": 3,
+    "sha256": "ec23830993200364332a9ecb1d07089ad6df9efabbe6276fb6f1131d84d35e81"
+  },
+  "projects/DensePose/densepose/modeling/roi_heads/roi_head.py": {
+    "lines": 104,
+    "sha256": "1e120e5def0caf654b76480c472fe580045316878ae9269dcd61220ed179d13f"
+  },
+  "projects/DensePose/densepose/modeling/roi_heads/v1convx.py": {
+    "lines": 27,
+    "sha256": "128ed9e24c1420555d4485abd1a0be7d76f5fb78d9eacccf702b6fe3cd2e2e8c"
+  },
+  "projects/DensePose/densepose/modeling/test_time_augmentation.py": {
+    "lines": 120,
+    "sha256": "8945c68da57a74cd4ee592ead972ea16113e840a2ec082d25a18ec2fe71d29a0"
+  },
+  "projects/DensePose/densepose/modeling/utils.py": {
+    "lines": 9,
+    "sha256": "705ed4e7581831f0c36cc775bb77028fcddb89eb90ba9e8ae85f2e8b1809e454"
+  },
+  "projects/DensePose/densepose/structures/__init__.py": {
+    "lines": 11,
+    "sha256": "0b82a2bfb7302d923cab8c3f5ec2ca766803b70c4f7c0e7b1955f84839c47ec0"
+  },
+  "projects/DensePose/densepose/structures/_tensor_data.py": {
+    "lines": 64,
+    "sha256": "aff031adfb580d21d8bb254e83d3218dde5233b8da0404b6c2fdf424db3a43d7"
+  },
+  "projects/DensePose/densepose/structures/chart.py": {
+    "lines": 11,
+    "sha256": "ebc9a113a1251612e71ebf6a3998c6abaff6ac47b6f6879121c28ecca4ac7265"
+  },
+  "projects/DensePose/densepose/structures/chart_confidence.py": {
+    "lines": 34,
+    "sha256": "cb158dc6f7a337fd2ea19cbe8ba23b985fa73d064063abcd176174e56b04441c"
+  },
+  "projects/DensePose/densepose/structures/chart_result.py": {
+    "lines": 60,
+    "sha256": "b15a09d69cdcb9599ec0edec075db7e3a3098310599c09893e6d320cbff1f2e0"
+  },
+  "projects/DensePose/densepose/structures/cse.py": {
+    "lines": 9,
+    "sha256": "e6efcf5cc8d1c05882da02bc69d154bdd62faddf1280cd2952e9f9ed60960cd7"
+  },
+  "projects/DensePose/densepose/structures/cse_confidence.py": {
+    "lines": 27,
+    "sha256": "eea31fe4d8368562721aef0e2233dec5469e7ffb9db5564123a68f6c96543edf"
+  },
+  "projects/DensePose/densepose/structures/data_relative.py": {
+    "lines": 173,
+    "sha256": "9258cb04efbc1fa6840a344dec13e9fde3149763e7b8ef3ff438610a8d74c559"
+  },
+  "projects/DensePose/densepose/structures/list.py": {
+    "lines": 51,
+    "sha256": "324a3b345a091d2a1207725d179ae185c6cd1b61679e659b99b15ac9fa6231c4"
+  },
+  "projects/DensePose/densepose/structures/mesh.py": {
+    "lines": 133,
+    "sha256": "1ce527e1a32950296a99f79cb78e83ea89756c6c198d5a6e3763aaeb343dab62"
+  },
+  "projects/DensePose/densepose/structures/transform_data.py": {
+    "lines": 44,
+    "sha256": "5740025f4d4f6c15b286f1730d2d9c681f67647e47e3ee7d167ae17fce1139b1"
+  },
+  "projects/DensePose/densepose/utils/__init__.py": {
+    "lines": 2,
+    "sha256": "d6ea4d981cf15b5e4a0200f67a6b861a6b2fda6f606ab9ef64757c8b7d09e3cd"
+  },
+  "projects/DensePose/densepose/utils/dbhelper.py": {
+    "lines": 64,
+    "sha256": "f445302447f4315408446a2f769e654ca68432eadf765472bbeb142df9282947"
+  },
+  "projects/DensePose/densepose/utils/logger.py": {
+    "lines": 5,
+    "sha256": "61acc5a52cc62425ee600c6b7a7cbcef793bcba6b3212d5568eee6a2a06ffbe6"
+  },
+  "projects/DensePose/densepose/utils/transform.py": {
+    "lines": 15,
+    "sha256": "e4a81098c761d53e85139ff86c8cda9fe43d5455f9d0c7ed265e187220b195a4"
+  },
+  "projects/DensePose/densepose/vis/__init__.py": {
+    "lines": 6,
+    "sha256": "02b06c8ac48fe3e721140290e5fd84059c782cb2840726d0b548277db582fac2"
+  },
+  "projects/DensePose/densepose/vis/base.py": {
+    "lines": 128,
+    "sha256": "1ad1554e794ae81dea691dfb505338db11bb06c1307df3f9dbcbfd5c5c97bc82"
+  },
+  "projects/DensePose/densepose/vis/bounding_box.py": {
+    "lines": 24,
+    "sha256": "921cf2e42c7674da67b6aa3b399bcdca95bca7f87f6c53d4545b532e5c07d1d8"
+  },
+  "projects/DensePose/densepose/vis/densepose_data_points.py": {
+    "lines": 60,
+    "sha256": "8ff5a2e6a29db3360a73fc8f6509b250600804bc5cd2df19ee0a70031314d9bf"
+  },
+  "projects/DensePose/densepose/vis/densepose_outputs_iuv.py": {
+    "lines": 41,
+    "sha256": "bad7652a4ee6004e1d22100c6c15f06509aca144e97cce7124aa4c6ced39db2f"
+  },
+  "projects/DensePose/densepose/vis/densepose_outputs_vertex.py": {
+    "lines": 75,
+    "sha256": "28c0208ab67311586beedde4f86c096d894be08824a867cd9578bc0f69bd9dba"
+  },
+  "projects/DensePose/densepose/vis/densepose_results.py": {
+    "lines": 78,
+    "sha256": "986d7cfe72a8fdee1342e1e31731844642066a5d16c9caf348438a0a24b4a641"
+  },
+  "projects/DensePose/densepose/vis/densepose_results_textures.py": {
+    "lines": 40,
+    "sha256": "3228c1cf631d768bb63ed992579c0d612bf2d67bc4fee923c48d730a456e91af"
+  },
+  "projects/DensePose/densepose/vis/extractor.py": {
+    "lines": 92,
+    "sha256": "a75438b221277189403df798db6683324b3c3eba649c72d2eb699dcb7315c20b"
+  },
+  "projects/DensePose/query_db.py": {
+    "lines": 25,
+    "sha256": "0bb82fa916db74e455d40b953d2ba4021cc8db68d42bdfd473ba1fd34489aadd"
+  },
+  "projects/DensePose/setup.py": {
+    "lines": 16,
+    "sha256": "f9086b8908a7541cb67e62f06f54dfbc4b46278e1f5f43fb451a577e6729ec5b"
+  },
+  "projects/DensePose/train_net.py": {
+    "lines": 25,
+    "sha256": "bb8ae14a07e1ac69f7b9913545f6a3213244f51f85b2bdeb7136f225628dddcb"
+  },
+  "projects/MViTv2/configs/cascade_mask_rcnn_mvitv2_b_3x.py": {
+    "lines": 10,
+    "sha256": "4702f3bc44e66344c17eb3644ef9125674152ef0335fd010be8bf2609c00094a"
+  },
+  "projects/MViTv2/configs/cascade_mask_rcnn_mvitv2_b_in21k_3x.py": {
+    "lines": 10,
+    "sha256": "4702f3bc44e66344c17eb3644ef9125674152ef0335fd010be8bf2609c00094a"
+  },
+  "projects/MViTv2/configs/cascade_mask_rcnn_mvitv2_h_in21k_lsj_3x.py": {
+    "lines": 10,
+    "sha256": "d37f6696ea705a74780180d179d655943336e21342633251514a318b0c1e424c"
+  },
+  "projects/MViTv2/configs/cascade_mask_rcnn_mvitv2_l_in21k_lsj_50ep.py": {
+    "lines": 10,
+    "sha256": "bfc21c7d1a93a4d0484b978bfd6977fec7ed0e19d1149432cfb58600875aa05d"
+  },
+  "projects/MViTv2/configs/cascade_mask_rcnn_mvitv2_s_3x.py": {
+    "lines": 10,
+    "sha256": "393f6cf11cb29ecc5f1bd5718fe68b5bb41f138968645c244578878f3d8d8b77"
+  },
+  "projects/MViTv2/configs/cascade_mask_rcnn_mvitv2_t_3x.py": {
+    "lines": 10,
+    "sha256": "3dc876bf7b4fa51b5668e3e7d977c62651891a0ab2909fda17d4c96f4c152eef"
+  },
+  "projects/MViTv2/configs/common/coco_loader.py": {
+    "lines": 3,
+    "sha256": "b6cb7158dfc4e012789d1cb54478a75405274b204d493f4f5cc158f98b38b47d"
+  },
+  "projects/MViTv2/configs/common/coco_loader_lsj.py": {
+    "lines": 3,
+    "sha256": "63e6a1ad7fbe9448f80ba2fb7845987229a5d31fc39c2e6e52437f544879c490"
+  },
+  "projects/MViTv2/configs/mask_rcnn_mvitv2_t_3x.py": {
+    "lines": 10,
+    "sha256": "e9e51884b99baf1deb5a55f418c66c8a82c2d35510ea84710e8b4f5bbefb367a"
+  },
+  "projects/Panoptic-DeepLab/panoptic_deeplab/__init__.py": {
+    "lines": 18,
+    "sha256": "2eaff65531b9becf7e215cdbb1c97c0c2d24fa1a5b42a835bbe1ec884186fa6f"
+  },
+  "projects/Panoptic-DeepLab/panoptic_deeplab/config.py": {
+    "lines": 33,
+    "sha256": "15a8ed3fb26fdf7dae8c1d3bfc366acbc47aed3761345e7c5237f177123c2246"
+  },
+  "projects/Panoptic-DeepLab/panoptic_deeplab/dataset_mapper.py": {
+    "lines": 43,
+    "sha256": "ff526b7d5661309ba7a1d751c12214e92c86cfa87b2a106d31e432aba541fe9c"
+  },
+  "projects/Panoptic-DeepLab/panoptic_deeplab/panoptic_seg.py": {
+    "lines": 193,
+    "sha256": "5b755cd8da8282c1642bb2f4a8b0b5201fc9673be419330ec4868cfcea1c5908"
+  },
+  "projects/Panoptic-DeepLab/panoptic_deeplab/post_processing.py": {
+    "lines": 95,
+    "sha256": "d98f3743860f6115c6020d12a5e0b0df1a3923c2341c0c2710a3fca602e9294f"
+  },
+  "projects/Panoptic-DeepLab/panoptic_deeplab/target_generator.py": {
+    "lines": 72,
+    "sha256": "1fd59be6e15a8f2a03bc109a4448f5840985e7b080bc6c6187cc59bd99280474"
+  },
+  "projects/Panoptic-DeepLab/train_net.py": {
+    "lines": 19,
+    "sha256": "303711db03856a037835fc8407f870aab31a1f228647d2e0f76512b481062ab0"
+  },
+  "projects/PointRend/point_rend/__init__.py": {
+    "lines": 17,
+    "sha256": "684de59f04e2978a0375c313f17b5c31e60328231dfc72e08a12ffd605ffc1c1"
+  },
+  "projects/PointRend/point_rend/color_augmentation.py": {
+    "lines": 30,
+    "sha256": "2da3756e84d84fe2f861ed9855d8779f4cec4bec5cc36f294844851d80d072f7"
+  },
+  "projects/PointRend/point_rend/config.py": {
+    "lines": 26,
+    "sha256": "1c4505df820347b378c59086bf76e7f2134f6afaa1fb36c293e3c7dce47ec88f"
+  },
+  "projects/PointRend/point_rend/mask_head.py": {
+    "lines": 187,
+    "sha256": "7b5c3b20455a1538d77b4d16e0b10f9310cb52aebb9df60ca5708c61da03a536"
+  },
+  "projects/PointRend/point_rend/point_features.py": {
+    "lines": 75,
+    "sha256": "50c3d2fa3d26ed9fc9de147e6ccb7ed1b72f4c07a7bdf15537e72d70dffdaacd"
+  },
+  "projects/PointRend/point_rend/point_head.py": {
+    "lines": 123,
+    "sha256": "33517d51bf8233e4a8e3744d6ff9e29ae1db24a7eeae628e0ff5b20b3043d09f"
+  },
+  "projects/PointRend/point_rend/roi_heads.py": {
+    "lines": 21,
+    "sha256": "e0aab76d67a4884ad9f995d8fe216acd19e74e67bf4525d0bee656c6c21bf67e"
+  },
+  "projects/PointRend/point_rend/semantic_seg.py": {
+    "lines": 38,
+    "sha256": "103c07f7fe3fbe8df29f5dc8420200044541cae76c81fd259fd588cef1351ee9"
+  },
+  "projects/PointRend/train_net.py": {
+    "lines": 19,
+    "sha256": "d75ab5009987de0ba87a0f3b8be4734041c2a4822f3dfc48a8cf0cc74e0bdd2b"
+  },
+  "projects/PointSup/point_sup/__init__.py": {
+    "lines": 4,
+    "sha256": "e5c18b158c50da4f8477b6f79251967a978a8d69c57553a212d994ce4979d566"
+  },
+  "projects/PointSup/point_sup/config.py": {
+    "lines": 7,
+    "sha256": "c8132f7537f2fd6e9d2c1b8c60309022296a03eb2e699a9d99adf75c9a973931"
+  },
+  "projects/PointSup/point_sup/dataset_mapper.py": {
+    "lines": 38,
+    "sha256": "728bd1555897520e504f9686d828c67bc19ac079bcf70bb256dbcbbc3b0d2dcb"
+  },
+  "projects/PointSup/point_sup/detection_utils.py": {
+    "lines": 42,
+    "sha256": "ee0f9393e0372f0d0c477aa91432282e3927fd0416912c5db8e82af146cdb523"
+  },
+  "projects/PointSup/point_sup/mask_head.py": {
+    "lines": 43,
+    "sha256": "4ec23daa7db7960593d64107e8084bc0e310e5834d95064be15fc680aefd6a83"
+  },
+  "projects/PointSup/point_sup/point_utils.py": {
+    "lines": 21,
+    "sha256": "3d6340becef8130b25b0db8e15b4d2f358e630fea88bc632ad649afb6368932b"
+  },
+  "projects/PointSup/point_sup/register_point_annotations.py": {
+    "lines": 26,
+    "sha256": "d62477d5c7ef88964c18de127269e88352b92996eb0987bd8665e019d8867e2c"
+  },
+  "projects/PointSup/tools/prepare_coco_point_annotations_without_masks.py": {
+    "lines": 23,
+    "sha256": "847d6c23f9af2978272f409b79c18453515214176142d12d66d4af70868ad274"
+  },
+  "projects/PointSup/train_net.py": {
+    "lines": 19,
+    "sha256": "f3502302d4040c7b14dd4cc550326e8335c87bfaced90cd8855b51ec791e32d6"
+  },
+  "projects/Rethinking-BatchNorm/configs/mask_rcnn_BNhead.py": {
+    "lines": 15,
+    "sha256": "e3bfdba7fd25b7cf27da4da47129bae02ef99981b1961b93e2bbaf5cbceb1b84"
+  },
+  "projects/Rethinking-BatchNorm/configs/mask_rcnn_BNhead_batch_stats.py": {
+    "lines": 15,
+    "sha256": "9b34d8d2607aec509f55d6691b341120d16d52fdda357e0462747801144fdacb"
+  },
+  "projects/Rethinking-BatchNorm/configs/mask_rcnn_BNhead_shuffle.py": {
+    "lines": 15,
+    "sha256": "768b1013b4a272cbfe71e5cd8ee325f146accf7cc90641589eb662da803c1b4a"
+  },
+  "projects/Rethinking-BatchNorm/configs/mask_rcnn_SyncBNhead.py": {
+    "lines": 15,
+    "sha256": "8e1b1f4c9d761a24ef6463d27e7b98f2280d5563c55c6addce774d46f81a7830"
+  },
+  "projects/Rethinking-BatchNorm/configs/retinanet_SyncBNhead.py": {
+    "lines": 15,
+    "sha256": "23ea6bca8f49879e0fe75426caa5fd3a353c9e903f18b9675c287d58e0234401"
+  },
+  "projects/Rethinking-BatchNorm/configs/retinanet_SyncBNhead_SharedTraining.py": {
+    "lines": 15,
+    "sha256": "4adbb3dd904ddb6a05377c43835ce6ee007dbabd042ad29f91fd45a0f1087a40"
+  },
+  "projects/Rethinking-BatchNorm/retinanet-eval-domain-specific.py": {
+    "lines": 21,
+    "sha256": "41a15477812173f75b543958aa17ef130dbfdaa97e1ab79923c6754f76303f56"
+  },
+  "projects/TensorMask/setup.py": {
+    "lines": 10,
+    "sha256": "3cf0ef162feda19075e4180a33ed248e7b68724305261860655416aefb9e4816"
+  },
+  "projects/TensorMask/tensormask/__init__.py": {
+    "lines": 8,
+    "sha256": "0a9d3dfe9ce2512136af2483db83d253af4fc4f903a1709fc00b286944f9723a"
+  },
+  "projects/TensorMask/tensormask/arch.py": {
+    "lines": 183,
+    "sha256": "a17e34c7b37d4d921145607ecfc8a1bf9e5187a403ba0b10f9a8be9e0d8b1ca1"
+  },
+  "projects/TensorMask/tensormask/config.py": {
+    "lines": 20,
+    "sha256": "5f45b84ba5fe4735d5310141fc9eafe75816ecc0450ff7a2af953383befaf69d"
+  },
+  "projects/TensorMask/tensormask/layers/__init__.py": {
+    "lines": 1,
+    "sha256": "5253c704111d8fb9c4e5f4d941d8ce45d1a17abe8352060d336c2fc3b3e07074"
+  },
+  "projects/TensorMask/tensormask/layers/swap_align2nat.py": {
+    "lines": 74,
+    "sha256": "696c0aa6e3af54ecf1b5dbd9075e2282d279fac6d8ec021c91059b9227dcb0af"
+  },
+  "projects/TensorMask/train_net.py": {
+    "lines": 19,
+    "sha256": "f495ce40784036ca283b92a390fb3ac5d83cc86cfd37a03207c6645e370a93bb"
+  },
+  "projects/TridentNet/train_net.py": {
+    "lines": 19,
+    "sha256": "de8d7f019cb56358c881f0575f9c97adee9a9e375d4d2a37206050b39c46a0e3"
+  },
+  "projects/TridentNet/tridentnet/__init__.py": {
+    "lines": 22,
+    "sha256": "30151bb594f7c547402642d54877032d5ef38323d30e64248965955047485ead"
+  },
+  "projects/TridentNet/tridentnet/config.py": {
+    "lines": 7,
+    "sha256": "6b0fc2a30cb9d8cfe28dff4147ff5030ad855baa682ef8abfb1375dbac22a943"
+  },
+  "projects/TridentNet/tridentnet/trident_backbone.py": {
+    "lines": 99,
+    "sha256": "d7082a9d40ce3f074104f9e9d895b8adecf2fa8bc0b545c3cbe1d23c00ddcbd2"
+  },
+  "projects/TridentNet/tridentnet/trident_conv.py": {
+    "lines": 88,
+    "sha256": "0850608a2b3c7829f0778251d840b21d1605dd05b5903748bd38b1fad38c2472"
+  },
+  "projects/TridentNet/tridentnet/trident_rcnn.py": {
+    "lines": 46,
+    "sha256": "d863476aa8e415d0c10d0473168e909573701de7c0d292c9729bd00414287cf4"
+  },
+  "projects/TridentNet/tridentnet/trident_rpn.py": {
+    "lines": 19,
+    "sha256": "5bef263151b7f120f048b401d01f46a360bc3002eb6bc7b8987de87535fd1d7e"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_mvitv2_b_in21k_100ep.py": {
+    "lines": 10,
+    "sha256": "62e790dfabb75452d86dc19280eb87879c7f8727048621c93445eb835b496888"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_mvitv2_h_in21k_36ep.py": {
+    "lines": 10,
+    "sha256": "d37f6696ea705a74780180d179d655943336e21342633251514a318b0c1e424c"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_mvitv2_l_in21k_50ep.py": {
+    "lines": 10,
+    "sha256": "bfc21c7d1a93a4d0484b978bfd6977fec7ed0e19d1149432cfb58600875aa05d"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_swin_b_in21k_50ep.py": {
+    "lines": 10,
+    "sha256": "5f32606c64d04757f1b51740173c8703cce2e0b05e064f45d2acfa2484a855fc"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_swin_l_in21k_50ep.py": {
+    "lines": 10,
+    "sha256": "4df92c8d0beab1de5fd6be3910b8c0b2db01866f20442658a5c7b91b95e59e9d"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_vitdet_b_100ep.py": {
+    "lines": 10,
+    "sha256": "c5369f6797502e5e06735bdec4b955a8953217dce470021769eeb2f70b1e1b98"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_vitdet_h_75ep.py": {
+    "lines": 10,
+    "sha256": "6aac872c72f3fe2bc9c2c66ab2fc806462aa8cac31caea3a00af51a513f34568"
+  },
+  "projects/ViTDet/configs/COCO/cascade_mask_rcnn_vitdet_l_100ep.py": {
+    "lines": 10,
+    "sha256": "2b23d623a065ada80a32330b92616e27e2978e84aa79166ea1c57acaf5feef86"
+  },
+  "projects/ViTDet/configs/COCO/mask_rcnn_vitdet_b_100ep.py": {
+    "lines": 10,
+    "sha256": "0a924d7169fbf5bbb197452b309eac1b6aef4953ee1ac4d8c4f53710e36a6544"
+  },
+  "projects/ViTDet/configs/COCO/mask_rcnn_vitdet_h_75ep.py": {
+    "lines": 10,
+    "sha256": "01b98d1568819853abde3c7701786835ee2c5723dfbc5b65d97868b47b52360e"
+  },
+  "projects/ViTDet/configs/COCO/mask_rcnn_vitdet_l_100ep.py": {
+    "lines": 10,
+    "sha256": "9e0a2122d18e7eff6e1a7f42ea143581e05e6a86f7e6a9ecaa63aa2e7154e5be"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_mvitv2_b_in21k_100ep.py": {
+    "lines": 10,
+    "sha256": "5f21269ac08d3a945a9ba743c9d06cdd6f5941a5dffa0818cea0c9a1e91e1089"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_mvitv2_h_in21k_50ep.py": {
+    "lines": 10,
+    "sha256": "7c069e57a4cf1a3bb0a7d44ac8f229b17ecbee9b8ea0bf79c8eb15b0e9aa18f1"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_mvitv2_l_in21k_50ep.py": {
+    "lines": 10,
+    "sha256": "e7f239e0be2b0ae3c48ca166b99fee8acc5109db19873afcf653dc12d6decd35"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_swin_b_in21k_50ep.py": {
+    "lines": 10,
+    "sha256": "15f054e386a7126c16e1ec9ae6ef85c8f70408ffd726c18c9143069c006d06df"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_swin_l_in21k_50ep.py": {
+    "lines": 10,
+    "sha256": "fc1c5d9101e4b1a2c9ebb9c7dcfe6e97f45389e7ccfc7600f5fd1ec9a898e893"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_vitdet_b_100ep.py": {
+    "lines": 10,
+    "sha256": "b63a2cbd29e15412714bd9eb26a9c7d59cd09748040a2a6cffe3a624df56a1d1"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_vitdet_h_100ep.py": {
+    "lines": 10,
+    "sha256": "d5873d367a5b580bf9aa80cce371adb0f17473b077d29055f9ec312645907d8c"
+  },
+  "projects/ViTDet/configs/LVIS/cascade_mask_rcnn_vitdet_l_100ep.py": {
+    "lines": 10,
+    "sha256": "9ebebb481101ca0c4be7f2dec16b369b0072089d6510c05a49667eae9bef1532"
+  },
+  "projects/ViTDet/configs/LVIS/mask_rcnn_vitdet_b_100ep.py": {
+    "lines": 10,
+    "sha256": "458f7d5b85308722c59b5a1eeb39e584dd0a4e34bc92db06b89646e8ace133ff"
+  },
+  "projects/ViTDet/configs/LVIS/mask_rcnn_vitdet_h_100ep.py": {
+    "lines": 10,
+    "sha256": "fb3bda3512245c7a93e62177c0df1afa836ddc3d658be67f95b0b3f5e539c8f3"
+  },
+  "projects/ViTDet/configs/LVIS/mask_rcnn_vitdet_l_100ep.py": {
+    "lines": 10,
+    "sha256": "87c05ef46a13c07b6bc064994b54c62c338ce049fdc53412186815c26b456ca9"
+  },
+  "projects/ViTDet/configs/common/coco_loader_lsj.py": {
+    "lines": 3,
+    "sha256": "63e6a1ad7fbe9448f80ba2fb7845987229a5d31fc39c2e6e52437f544879c490"
+  },
+  "projects/__init__.py": {
+    "lines": 1,
+    "sha256": "6afc575fc1402d46496aafc0e8096be0b60a03d8b9aaf44eb5f25b3a850c4d8f"
+  },
+  "projects/_batchnorm.py": {
+    "lines": 141,
+    "sha256": "ed5574f661c7ca5149f6fa2ebe312b6ec4c201820699b5b3093c103639755935"
+  },
+  "projects/_recipes.py": {
+    "lines": 160,
+    "sha256": "ddbeecdd3448dda0a01092d409cb7dc6f222dcb778433e5cdec5a472cad6932a"
+  },
+  "projects/_training.py": {
+    "lines": 39,
+    "sha256": "29dab5704d7623e61ecc08811f1f39f714f4b165a49be46fb342a4e5983f2fdf"
+  },
+  "projects/reconstruction_checks.py": {
+    "lines": 178,
+    "sha256": "8fa612251154b906a9ee21b0b88416c32247069bd996aa423891b16d774a126d"
+  },
+  "setup.py": {
+    "lines": 20,
+    "sha256": "9d26e0c7628a77cde1b225d1f2cffffe10f28f1db2038cd137230874507a02fb"
+  },
+  "tools/__init__.py": {
+    "lines": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tools/analyze_model.py": {
+    "lines": 70,
+    "sha256": "908e9b06169eb4b291d07a130157b51ca75bb9eebf005df86de883809fefe8bd"
+  },
+  "tools/benchmark.py": {
+    "lines": 95,
+    "sha256": "d5612ef0319dc1751e03e4d395d3a923c5159e9485911504175f59f8bdca034b"
+  },
+  "tools/convert-torchvision-to-d2.py": {
+    "lines": 34,
+    "sha256": "06df8cdea1cd6c03b88554a95dd61a3efa9503afb29e3ad01f342982c46cb7d2"
+  },
+  "tools/deploy/__init__.py": {
+    "lines": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tools/deploy/export_model.py": {
+    "lines": 108,
+    "sha256": "996499087502a7453cd4b77aa50e738693dadeb772ad618e6afa1982f30b4495"
+  },
+  "tools/deploy/torchscript_mask_rcnn.cpp": {
+    "lines": 110,
+    "sha256": "878d0ecf253ff90aacff232c02775acff862a0f22809cca0af0b4da3eea969eb"
+  },
+  "tools/lazyconfig_train_net.py": {
+    "lines": 83,
+    "sha256": "40737000a31a9503f5f43f1f0ae67e95be817581e1af6389b712e4d277d8882b"
+  },
+  "tools/lightning_train_net.py": {
+    "lines": 92,
+    "sha256": "e235c26f26cfa2a7ea93c54dc1eab3a1b62ea715407527991ab6ea487db2b363"
+  },
+  "tools/plain_train_net.py": {
+    "lines": 95,
+    "sha256": "eca893758ceb95c3a450032c3c17328faee04e6ca79512abbc8c90cbf4efef53"
+  },
+  "tools/train_net.py": {
+    "lines": 101,
+    "sha256": "9fc10a2d74b4cb2c0c9452e4469c45a8289052a3acbfec27fc253ccc82ceb517"
+  },
+  "tools/visualize_data.py": {
+    "lines": 41,
+    "sha256": "1002e870037f4e12635686e98c43cf2b70b98cd5305d8c219690c6156163b17f"
+  },
+  "tools/visualize_json_results.py": {
+    "lines": 66,
+    "sha256": "5327dce6b23541b4af684c1cf59e6cf7d49e64e96d167dff982de88325a209d8"
+  }
+}

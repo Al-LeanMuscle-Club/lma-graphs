@@ -1,0 +1,1413 @@
+{
+  "original": {
+    "source_bytes": 3195073,
+    "configuration_data_bytes": 113541,
+    "configuration_data_files": 181,
+    "configuration_data_inventory": [
+      {
+        "path": "configs/Base-RCNN-C4.yaml",
+        "bytes": 368,
+        "sha256": "a75f77d0bb5ae9692b623f94c1aa43a7c8ba3d035e61704f976dee9b17c1c5db"
+      },
+      {
+        "path": "configs/Base-RCNN-DilatedC5.yaml",
+        "bytes": 665,
+        "sha256": "3d17fa6a69d56e0e6116c7b3ec45d015811c9c181174d5ddd598acd5cc3e694d"
+      },
+      {
+        "path": "configs/Base-RCNN-FPN.yaml",
+        "bytes": 1318,
+        "sha256": "95306a7335903880e35b8c919a7daad1d8ce4b2c926a69506be1c7116a0799d7"
+      },
+      {
+        "path": "configs/Base-RetinaNet.yaml",
+        "bytes": 720,
+        "sha256": "b3f717f0d46bc443a69e616fe716c1d6768ab86d1f52b4b01715ca9c42a657d6"
+      },
+      {
+        "path": "configs/COCO-Detection/fast_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 628,
+        "sha256": "b94a2e457004ee7905c754e0574927dc4821ad22cf9eb87776e738b7bedaa1dd"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_101_C4_3x.yaml",
+        "bytes": 194,
+        "sha256": "76b73baee93d55dd9377e5fdb9050ce26b77a4ea5c9c90357c019c7e21f31e7c"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_101_DC5_3x.yaml",
+        "bytes": 201,
+        "sha256": "49a34d8d4f35006a27ecd1fac742cd4a7c72429dd728bd17a144fcde55ae2647"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml",
+        "bytes": 195,
+        "sha256": "98eedfde7a7e1519af354d8d90105be3253b1452f1c72af6ab49f2db4e7780e5"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_C4_1x.yaml",
+        "bytes": 139,
+        "sha256": "4accb551cee094b8662787497a51e06623ab66aba8620f530130198c8b5a5e69"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_C4_3x.yaml",
+        "bytes": 192,
+        "sha256": "0b3dd855153694ab6d77523f52e354b65516865f51f27961f39263b55e206b4b"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_DC5_1x.yaml",
+        "bytes": 146,
+        "sha256": "0f6647f8bbd7e5936428aae6467a3b9503faa3415bd186011320be9163d5bbc1"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_DC5_3x.yaml",
+        "bytes": 199,
+        "sha256": "c14a8617afbf8c5a314d8554d9735eb605328c5e4004bcea82bc8323919531b7"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 140,
+        "sha256": "7b360f9f0e0a778d993e76901333f66f288b854b40756833d92536cf850bfd03"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 193,
+        "sha256": "ebe4544242c3c59d768c3f4a4568ffc594bbdb873066d0b195bb54c1f568d048"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "bytes": 328,
+        "sha256": "f8718310a771db1555ba2f5088261bfef7f1e7809bffea610f6f4f17cab4086f"
+      },
+      {
+        "path": "configs/COCO-Detection/retinanet_R_101_FPN_3x.yaml",
+        "bytes": 179,
+        "sha256": "25697d196f83c9a740a6c33bb20ddf343e7940250412378fd81ebe40f00c582f"
+      },
+      {
+        "path": "configs/COCO-Detection/retinanet_R_50_FPN_1x.yaml",
+        "bytes": 124,
+        "sha256": "f085c44952ac6db0f0cc2ee738474bf6edfd5fdab02f9426481f2dc812543428"
+      },
+      {
+        "path": "configs/COCO-Detection/retinanet_R_50_FPN_3x.yaml",
+        "bytes": 177,
+        "sha256": "37b97c9b030567bde6f03906836b0bf8ffc3a0d0373addb03c2049459dcce4d5"
+      },
+      {
+        "path": "configs/COCO-Detection/rpn_R_50_C4_1x.yaml",
+        "bytes": 243,
+        "sha256": "340b7912c83f7a522056b70ae77673f70120bd38eaad0af29b0c18ad4615cb93"
+      },
+      {
+        "path": "configs/COCO-Detection/rpn_R_50_FPN_1x.yaml",
+        "bytes": 215,
+        "sha256": "2d82dd2819e8ab50036969847e3a32a035b1d6a784977740ec82988acc637a75"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x.yaml",
+        "bytes": 193,
+        "sha256": "b22745f05e2b5e9f43dae3544c08f84be67d1ccc24dc1aab3abed97442d6dde2"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x.yaml",
+        "bytes": 200,
+        "sha256": "6408ba2691af640cf0e1be1192b227120ce99a0a0b3357500064a23f3faaecbe"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x.yaml",
+        "bytes": 194,
+        "sha256": "64645c4d1e6328f5cb685cf2b5cc6f54f069e1f13ff5ed714677c626e9c87ae6"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x.yaml",
+        "bytes": 138,
+        "sha256": "254627e20469e7c224440d1f9c97bb0fb61d30d22b3b6f439d9b1510771e1ad5"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x.yaml",
+        "bytes": 191,
+        "sha256": "d9d14fd859daebed8b29def9dce08ac68bf4a8b62451863ea77b55a6b37fb191"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x.yaml",
+        "bytes": 145,
+        "sha256": "52e6e9b96978da8428609c9294f8aacdd515669d235b5e53fb3f2d63b5923203"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x.yaml",
+        "bytes": 198,
+        "sha256": "a616397dd38701c5c97a0946fc959e37d5388eda990f05eeb14c6172f4ea3351"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 139,
+        "sha256": "15267df5331b132a9387d328b901e721084258ba1a8e9a4250cdf7786cacceb8"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x_giou.yaml",
+        "bytes": 285,
+        "sha256": "03933e31af4be583363e584d2088cf943eee09341b8c74f04c86c6ef9240b816"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 192,
+        "sha256": "e51a639dea109a372822f1b38a603fdeab7f470119d9dcb8d8ad53bf533a46ba"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "bytes": 327,
+        "sha256": "12e70cef6733dee91208bf6deca8d3036cd2338b25dc535dba5c074e2bc3e26c"
+      },
+      {
+        "path": "configs/COCO-Keypoints/Base-Keypoint-RCNN-FPN.yaml",
+        "bytes": 527,
+        "sha256": "e44ff94327d2cf7c0d4d84e50e7ef4e245fd34c2d0cc71be163cfb2e6ae5849b"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_R_101_FPN_3x.yaml",
+        "bytes": 184,
+        "sha256": "cfa3c9c5261cb656320c1774f7b9c8761aa2ba0811eaf1e828955a3fd5e2f947"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 129,
+        "sha256": "842ce8410f4f3e43074b3ceac222e3a2efd2b4714c73b7004b6a87d2ecf11529"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 182,
+        "sha256": "16137f98e33180e8ca42944f2c0cb1c61544fe97f5bd25e97f1b40d353d269c5"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "bytes": 317,
+        "sha256": "371f731e493321406fee9595c9c11919c142fd8afb5cfe653ca9f59aae91bbbd"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/Base-Panoptic-FPN.yaml",
+        "bytes": 278,
+        "sha256": "fa10b79bb9365df18d89aa4208eda85d36c2629a93d02d3f7ab7b3dfffe89660"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_101_3x.yaml",
+        "bytes": 179,
+        "sha256": "76586c1c51e62618fd9236741cb6337a68b5a8fbe1177a4214c80d67def49dcd"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_50_1x.yaml",
+        "bytes": 124,
+        "sha256": "ee39945e4ef2e77e04d1e1a78b7d6ed143d4b3439aa9d5358d7dda45f534620e"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_50_3x.yaml",
+        "bytes": 177,
+        "sha256": "ae1ef776147f192dee5295bfadc6458e9c8054c0aefa861c3823100f9b704071"
+      },
+      {
+        "path": "configs/Cityscapes/mask_rcnn_R_50_FPN.yaml",
+        "bytes": 889,
+        "sha256": "627d38f363d08494398b5d130dddf281a691250cb8605c038934feb3f9c92203"
+      },
+      {
+        "path": "configs/Detectron1-Comparisons/faster_rcnn_R_50_FPN_noaug_1x.yaml",
+        "bytes": 449,
+        "sha256": "dbbad67baf01d9affea7914291c4eba526a04be9a842c84d9f1dc155ad01e1ce"
+      },
+      {
+        "path": "configs/Detectron1-Comparisons/keypoint_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 843,
+        "sha256": "3ae9caab1af5a05ed934d7aa78a6bcefe6c1200be93bfc58c86394e326acc437"
+      },
+      {
+        "path": "configs/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x.yaml",
+        "bytes": 522,
+        "sha256": "d10ebbf63330b9ee200c4f07656f21d7feffa1ebf57ad0f8f36faba1f72ce7aa"
+      },
+      {
+        "path": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_R_101_FPN_1x.yaml",
+        "bytes": 473,
+        "sha256": "581bffb3eb15b07756b2320c85cf2913bf3661ef1e7c0a08ba0e1fe73d818f3b"
+      },
+      {
+        "path": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 471,
+        "sha256": "347f4119ab98a2ee24c36988e80439e00209d2720d08c09ef235d783ce95c907"
+      },
+      {
+        "path": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_1x.yaml",
+        "bytes": 606,
+        "sha256": "38dafac40ff410abf4c7c2eb611b9f44bc5675b024d8e0c12338fc283682df73"
+      },
+      {
+        "path": "configs/LVISv1-InstanceSegmentation/mask_rcnn_R_101_FPN_1x.yaml",
+        "bytes": 560,
+        "sha256": "799c2f2297a33a867a518b0d7c15ca134702473f9c14d5d09adc516dca7cf220"
+      },
+      {
+        "path": "configs/LVISv1-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 558,
+        "sha256": "fdf7a1d3a68f04ca3aaec48ef3f8905290c71e8916f980868af8ff5ad464d029"
+      },
+      {
+        "path": "configs/LVISv1-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_1x.yaml",
+        "bytes": 693,
+        "sha256": "46c0cf484f0d7054e39f6df6998f08a6941efe5da6825fe8650c1bf7e2124b87"
+      },
+      {
+        "path": "configs/Misc/cascade_mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 263,
+        "sha256": "225ad6621c5cadd43f0aa66ce5f0fe7f840321a3964036c1888e98b0d4e116d4"
+      },
+      {
+        "path": "configs/Misc/cascade_mask_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 316,
+        "sha256": "dfe1e07ac34c2ed87ca4831baa0bebe97a41ab8ea0150119931e207107252d9b"
+      },
+      {
+        "path": "configs/Misc/cascade_mask_rcnn_X_152_32x8d_FPN_IN5k_gn_dconv.yaml",
+        "bytes": 768,
+        "sha256": "d98728818d4457bf763149a6b9bc28081e7fab6f8e9cfc41dee49136d5046d0e"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_1x_cls_agnostic.yaml",
+        "bytes": 232,
+        "sha256": "1222dc1df916e2607afba7247cb29fe69e699d4a65a169dc4fffde05522de92e"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_1x_dconv_c3-c5.yaml",
+        "bytes": 238,
+        "sha256": "d09eeef678ca97f74d8365b3a3eea75a2ef739d3c18a5c4caeaf27127799900f"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_3x_dconv_c3-c5.yaml",
+        "bytes": 291,
+        "sha256": "6036bdea02795c5e7b388ee451566d29c9f2ec1978f4884dea2b10d180f0605d"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_3x_gn.yaml",
+        "bytes": 390,
+        "sha256": "2823f26f9ece35144f25713e3fc9f0eea99ed5e5ae7c6b9b51a198488b19ebbc"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_3x_syncbn.yaml",
+        "bytes": 447,
+        "sha256": "95da4bbd7fc98c6c3c5f4f725e02236f0fdd60ce4ab3c3f339b7afb8ae6c9cad"
+      },
+      {
+        "path": "configs/Misc/panoptic_fpn_R_101_dconv_cascade_gn_3x.yaml",
+        "bytes": 649,
+        "sha256": "57168b474172d2a0080dbd80a1baeae6163605b40fcf31d06da04d8b0852b8f5"
+      },
+      {
+        "path": "configs/Misc/scratch_mask_rcnn_R_50_FPN_3x_gn.yaml",
+        "bytes": 516,
+        "sha256": "6b6da783805ab589a625a8b0e85e164310e8e3d9c116c3822992e385d3146634"
+      },
+      {
+        "path": "configs/Misc/scratch_mask_rcnn_R_50_FPN_9x_gn.yaml",
+        "bytes": 523,
+        "sha256": "2f3e330e4cbb5d005a7779312b99f4f444884f08721997b8414a476ecf391a48"
+      },
+      {
+        "path": "configs/Misc/scratch_mask_rcnn_R_50_FPN_9x_syncbn.yaml",
+        "bytes": 527,
+        "sha256": "d7fca25c2c796080525880cb122bf65d34e0dbf23595fe4c4ca5352061b9df98"
+      },
+      {
+        "path": "configs/Misc/semantic_R_50_FPN_1x.yaml",
+        "bytes": 325,
+        "sha256": "edfc63c29c2f18bb80c1525087780b27f95f2defd30de6e9a22fbf4704f2afae"
+      },
+      {
+        "path": "configs/PascalVOC-Detection/faster_rcnn_R_50_C4.yaml",
+        "bytes": 448,
+        "sha256": "e7d87e7157aa06d93e0515883351c781f8e71cf4b7a540a6f33093e2ff223d4b"
+      },
+      {
+        "path": "configs/PascalVOC-Detection/faster_rcnn_R_50_FPN.yaml",
+        "bytes": 449,
+        "sha256": "f373b1d1fc426a6674bec99e5474ecca58bf35b22fc42c726a677d2a88d893c3"
+      },
+      {
+        "path": "configs/quick_schedules/cascade_mask_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 310,
+        "sha256": "16cf156783cc03ba2256a28a8fc56e0748cb14a338f26674633c84deee659daa"
+      },
+      {
+        "path": "configs/quick_schedules/cascade_mask_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 229,
+        "sha256": "ce5e172fb6b2af6c6d577acd3a522c95f91308a09fd98ee3e813b8d70d8c300f"
+      },
+      {
+        "path": "configs/quick_schedules/fast_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 284,
+        "sha256": "d6eff6797076d229e501377791a241bef5422a92bd8d99055478c648765526a9"
+      },
+      {
+        "path": "configs/quick_schedules/fast_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 542,
+        "sha256": "47b49317a3cb7b06ca682e82886279a8250a59be9e17d9929d2776a90a5c217f"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 336,
+        "sha256": "ab9329ee81e0bff5bfaefbb2d32d7289ac430505f181569d5a19601b7ebed7f6"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 346,
+        "sha256": "b0522bf2fc6ef34ac8c1d6eb35495892c170847e45114ee077704187a297e0af"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_normalized_training_acc_test.yaml",
+        "bytes": 842,
+        "sha256": "379882a116c7a43597d8f39219dec24d9069b72466ebfc561db49f9f2c151e9a"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_training_acc_test.yaml",
+        "bytes": 772,
+        "sha256": "a22270952f2b7eafcae7d56b610d455e533b29b1ebf89de8f978c1e0b65ccbcb"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_GCV_instant_test.yaml",
+        "bytes": 368,
+        "sha256": "264d5e20c9ea5dd24b095bcdf4737df6a7b0e09de00ecb65606b082acd8be3c1"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_inference_acc_test.yaml",
+        "bytes": 333,
+        "sha256": "9133b305d6050174d842cb0776a74db2e02e80b9b0011d3e9e8503adebb06a2d"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_instant_test.yaml",
+        "bytes": 289,
+        "sha256": "6c0086748bcad9b26e9bdbaa8f2adc2a33cbebca23d732d0560cbda096cb3074"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_training_acc_test.yaml",
+        "bytes": 532,
+        "sha256": "25396c7a07ed712c593682d74b82fc8b40f7bb1f52fceee5037114e0813ec8fd"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_DC5_inference_acc_test.yaml",
+        "bytes": 335,
+        "sha256": "f2d2ca756ffa9a4d767519491632c3ed01973cf0e451227ce29082a944b9541c"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 474,
+        "sha256": "be217e6f773f88653023c9808eac560616d193804afbe914503c6a352e53bcbc"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 290,
+        "sha256": "4875b5eb68c4db432a65b7035ec497624537ebe44decac9e8d523fa78a868e59"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_pred_boxes_training_acc_test.yaml",
+        "bytes": 188,
+        "sha256": "5255a770f5bc69bd2b8d709e83ce8f97f4897c1ac52e28127ee8fa43a977960d"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_training_acc_test.yaml",
+        "bytes": 495,
+        "sha256": "ec6bbb6bdcf567d25270f0f45b44cc6e31d60b486234f5b6d6068bc6719f4465"
+      },
+      {
+        "path": "configs/quick_schedules/panoptic_fpn_R_50_inference_acc_test.yaml",
+        "bytes": 423,
+        "sha256": "047d139adb7faf3d35e380cc7604183ad44137f7f56009914c658584f76b6764"
+      },
+      {
+        "path": "configs/quick_schedules/panoptic_fpn_R_50_instant_test.yaml",
+        "bytes": 425,
+        "sha256": "3f3afadc0e5cade0131da6472dbefa0e87463b8b5d659191352cdfec8ad702c6"
+      },
+      {
+        "path": "configs/quick_schedules/panoptic_fpn_R_50_training_acc_test.yaml",
+        "bytes": 566,
+        "sha256": "1c7b6577a547de4f07ca7920dd8f9a25b5659e99590171539dbd6d48c8155cdc"
+      },
+      {
+        "path": "configs/quick_schedules/retinanet_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 255,
+        "sha256": "4c8c4553d7e073ad5b2fa9464849080cb495edb80723694def982634208e4ab8"
+      },
+      {
+        "path": "configs/quick_schedules/retinanet_R_50_FPN_instant_test.yaml",
+        "bytes": 297,
+        "sha256": "e755601c09b8521451b0803468033fd350379acabb18042efcafbe3438e9826c"
+      },
+      {
+        "path": "configs/quick_schedules/rpn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 286,
+        "sha256": "2d99c012ec5f5bcd5253cdd366a0d6cb11020bddcf6fe4dd518a74db0f41be5c"
+      },
+      {
+        "path": "configs/quick_schedules/rpn_R_50_FPN_instant_test.yaml",
+        "bytes": 291,
+        "sha256": "faa25adee6a7d12a9f7cb3d42f607dd95979998763ed9f1fdb52bf39c7fbddfa"
+      },
+      {
+        "path": "configs/quick_schedules/semantic_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 366,
+        "sha256": "1ffc5fa8e0af7e687e36a1ceca09e1acdcedc530005d92308c96c13f936d11fe"
+      },
+      {
+        "path": "configs/quick_schedules/semantic_R_50_FPN_instant_test.yaml",
+        "bytes": 434,
+        "sha256": "5f837ed1cda63531b0cb912596ac39653fd461542df81c5605ef399099433bcb"
+      },
+      {
+        "path": "configs/quick_schedules/semantic_R_50_FPN_training_acc_test.yaml",
+        "bytes": 520,
+        "sha256": "d2b9168cb4046ed7474693a18f05b6257ff3dc75342490f44567ad062d955da5"
+      },
+      {
+        "path": "projects/DeepLab/configs/Cityscapes-SemanticSegmentation/Base-DeepLabV3-OS16-Semantic.yaml",
+        "bytes": 868,
+        "sha256": "5e2ac44bec3655b1fc61864a43694d18ea266bd7b00b9d7ef10ea2ba860f3b78"
+      },
+      {
+        "path": "projects/DeepLab/configs/Cityscapes-SemanticSegmentation/deeplab_v3_R_103_os16_mg124_poly_90k_bs16.yaml",
+        "bytes": 464,
+        "sha256": "f38f6a457f8e07945e94f3967e134beece82dbc79b95271aab485d8a13ec5917"
+      },
+      {
+        "path": "projects/DeepLab/configs/Cityscapes-SemanticSegmentation/deeplab_v3_plus_R_103_os16_mg124_poly_90k_bs16.yaml",
+        "bytes": 616,
+        "sha256": "fa04388b0c46ce79802729ddc84507616e527889ff67edc9db48f6aca6cb5718"
+      },
+      {
+        "path": "projects/DensePose/configs/Base-DensePose-RCNN-FPN.yaml",
+        "bytes": 1519,
+        "sha256": "277dd3823c47b330a9dd3e272eba28e1680d36eba163170d7f5b6d727f145033"
+      },
+      {
+        "path": "projects/DensePose/configs/HRNet/densepose_rcnn_HRFPN_HRNet_w32_s1x.yaml",
+        "bytes": 398,
+        "sha256": "f3c06bc943d05073287b5bdb39a003514c0e32ca9cf920bf9e356dc1fd11d3ca"
+      },
+      {
+        "path": "projects/DensePose/configs/HRNet/densepose_rcnn_HRFPN_HRNet_w40_s1x.yaml",
+        "bytes": 545,
+        "sha256": "16f48e1d184777a927949a6680595c5f38b0ade655c38e76cf6ddab79b14eb65"
+      },
+      {
+        "path": "projects/DensePose/configs/HRNet/densepose_rcnn_HRFPN_HRNet_w48_s1x.yaml",
+        "bytes": 545,
+        "sha256": "356a841cac677e3bc21e6b331a705a734127ca9bab27f7fafa0b939cca8addff"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/Base-DensePose-RCNN-FPN-Human.yaml",
+        "bytes": 574,
+        "sha256": "5ee357a2242ec72e4759042a83ace683783cce77e5b8d1dee73150ae98648075"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/Base-DensePose-RCNN-FPN.yaml",
+        "bytes": 1764,
+        "sha256": "542a590fb27a455d9fc1f3c4c2f94bed7c3fd316d08aef66db720c8059b77ae6"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_101_FPN_DL_s1x.yaml",
+        "bytes": 294,
+        "sha256": "c72d46f5d94fde0d303c654806e8afce5c3cdaae375de0909678678bef49598e"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_101_FPN_DL_soft_s1x.yaml",
+        "bytes": 298,
+        "sha256": "72f981004143cdc4ed8a21ea3fca89d56503173f58b440b6b1649e21a472fddb"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_101_FPN_s1x.yaml",
+        "bytes": 294,
+        "sha256": "197f6b648d2b24634b10de7c6fbe3d43e25f881d8f9b6e72ffce45e1e78d8920"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_101_FPN_soft_s1x.yaml",
+        "bytes": 298,
+        "sha256": "82eb600b28a76a4ec3aa697c3c817307559243f1eeeaebc0c8209f40d140a5e0"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_DL_s1x.yaml",
+        "bytes": 292,
+        "sha256": "066a7a46679891c6da9065e7d632d1041e22cf832b8dce1891b302bf3b76b250"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_DL_soft_s1x.yaml",
+        "bytes": 296,
+        "sha256": "b85a57261c7bbfb010947bba61d6abb52a4dd3320806cea71e99859d72339c34"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_s1x.yaml",
+        "bytes": 292,
+        "sha256": "9db11001c06ef2e90bdccee30b77a2fd04d761dfe3aa3f3fdfe4c5c49e3db8d2"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_CA_finetune_16k.yaml",
+        "bytes": 4470,
+        "sha256": "98a16dabaf5e78f2ac1b8e3ebfb2a54643059924dd470396299224127eedc42e"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_CA_finetune_4k.yaml",
+        "bytes": 4467,
+        "sha256": "cae4b44dbf9640b94d80df0fbdea4a078f838530287116ae95a5eafbb9be741f"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_I0_finetune_16k.yaml",
+        "bytes": 3860,
+        "sha256": "d9e59b4d49d2b3d5418be2e409b5f6053b2c4e5c2f25791a5c1d3b34f2668e50"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_I0_finetune_i2m_16k.yaml",
+        "bytes": 3913,
+        "sha256": "31f8eeee95575ffc5f2c0c2aa24d33fc72a2678f93346542560e0bd14cd84935"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_I0_finetune_m2m_16k.yaml",
+        "bytes": 4370,
+        "sha256": "e1d0f9e88d8137e33d9d60fab11b615c13828b0ff7cfc110e7acd078b057acc5"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_finetune_16k.yaml",
+        "bytes": 3834,
+        "sha256": "15d09fc771a9e50e3dd7c367079a08f8e1afa40d1ff8759a76e8086562c29e4d"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_finetune_4k.yaml",
+        "bytes": 3831,
+        "sha256": "34b0f3539a15fe749d5cdeb37dc4623bd16b9ac043df49ce8111233cb54a565b"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_animals_finetune_maskonly_24k.yaml",
+        "bytes": 3809,
+        "sha256": "aba230f9d1300905ed1d5bd915c65af4ad80ac0330e2e220497b7adbc0508e1b"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_chimps_finetune_4k.yaml",
+        "bytes": 862,
+        "sha256": "80daaec20c67c93696c2a7ed4c66ab588d0d8519ca564d47aab35d348037e712"
+      },
+      {
+        "path": "projects/DensePose/configs/cse/densepose_rcnn_R_50_FPN_soft_s1x.yaml",
+        "bytes": 296,
+        "sha256": "b96fc600515f035daf192879de43179b3718bebe4e488e92c47d87a806c92da2"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_DL_WC1M_s1x.yaml",
+        "bytes": 415,
+        "sha256": "4530e3560066443d0e5644f8b382c0d12b089ee86cdf8069b40872b6e2ea7c23"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_DL_WC1_s1x.yaml",
+        "bytes": 374,
+        "sha256": "c672da0bac9c0a775b2bc8b81b4d4f57a786027199be2d8b6e3a6fefeaefd00f"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_DL_WC2M_s1x.yaml",
+        "bytes": 419,
+        "sha256": "af87124394162f457819e8024b6d23d37d4e070b6d2f22303447eebb50664a8e"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_DL_WC2_s1x.yaml",
+        "bytes": 378,
+        "sha256": "8b44a2fff4823f344fd057752dfbccf482d83a65691f75afb65f701f1f507204"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_DL_s1x.yaml",
+        "bytes": 240,
+        "sha256": "960c523a3ac30348facf99e81320fb825870f887de621907d3bff4dd546393fb"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_WC1M_s1x.yaml",
+        "bytes": 405,
+        "sha256": "08805cdf4686f10f7c7350c83815f800946f45fec0a22b2329e7bf16b46dc513"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_WC1_s1x.yaml",
+        "bytes": 364,
+        "sha256": "d73a76f4204794af93de5001d4078112a4ba7b7721b1eac6221d556b341e493e"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_WC2M_s1x.yaml",
+        "bytes": 409,
+        "sha256": "46eb3b889d4ec4c980425fcc97f7f5a5b81c76dabcb955806c1fbb631ab5594c"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_WC2_s1x.yaml",
+        "bytes": 368,
+        "sha256": "13f7201f6b8014ff75149ef5cbc018b15a043e8430e2a30088047c020cc4c303"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_s1x.yaml",
+        "bytes": 185,
+        "sha256": "0ea718fd058e629360f691a17792fc344176f94ba36f08ca1b2d65f622874790"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_101_FPN_s1x_legacy.yaml",
+        "bytes": 405,
+        "sha256": "37fd8a5d69ae354aa913f585f0c1729d02aca582c656cb19e5980f3d091e1110"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_DL_WC1M_s1x.yaml",
+        "bytes": 413,
+        "sha256": "d2435c75f8b0d35c9456ea57e2382d5ac1908332ac3c08a7cecded6199d32afa"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_DL_WC1_s1x.yaml",
+        "bytes": 372,
+        "sha256": "5414ebd1a707b7285d5212647746ef748246b67b0db5bed8eefdc12f6d864947"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_DL_WC2M_s1x.yaml",
+        "bytes": 417,
+        "sha256": "34892808a348224755e744ffb3ab227ba7ce65eaf1556fbab9f34ecb152747c5"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_DL_WC2_s1x.yaml",
+        "bytes": 376,
+        "sha256": "879c0de766a4a8127e313570652f1a54d324d8d5eac48b46424ab597f0432c28"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_DL_s1x.yaml",
+        "bytes": 238,
+        "sha256": "070a016b479d01e210e81b7687d3bbc62cb1629ad29296a5dea75e0f4da45954"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_WC1M_s1x.yaml",
+        "bytes": 445,
+        "sha256": "8e8e86e97ddaedf7f4235b5834c0339ba84e20f84afc6edf5a74dc2b8dc1715e"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_WC1_s1x.yaml",
+        "bytes": 362,
+        "sha256": "71f521ac0807ae77a9065990f14e8c31453da6b5fdcd237bad5c3ee1a4760a30"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_WC2M_s1x.yaml",
+        "bytes": 407,
+        "sha256": "f02c3f5dc0fd121613a6ec144908fb9bea294ce25ff811dcfb8083917e5d434c"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_WC2_s1x.yaml",
+        "bytes": 366,
+        "sha256": "ecd877f44b924bce8e8cabf49f2056554e2772a865d2cbd1a583c02e0d7a7246"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_s1x.yaml",
+        "bytes": 183,
+        "sha256": "68c83ba2e86f4b857ff5953ac96c7d607fa7bc7b2277b6def7e6c6d21ddb07ef"
+      },
+      {
+        "path": "projects/DensePose/configs/densepose_rcnn_R_50_FPN_s1x_legacy.yaml",
+        "bytes": 403,
+        "sha256": "d090eaf5e9d44019f5c4d4ae84e4bff3a43616ded09c88f4eb8704b7b83e0343"
+      },
+      {
+        "path": "projects/DensePose/configs/evolution/Base-RCNN-FPN-Atop10P_CA.yaml",
+        "bytes": 2568,
+        "sha256": "addb6dce13f06ad0b9d7c199aca5c0bc71f0150dfd54d574c5cc9c31aca106cd"
+      },
+      {
+        "path": "projects/DensePose/configs/evolution/densepose_R_50_FPN_DL_WC1M_3x_Atop10P_CA.yaml",
+        "bytes": 684,
+        "sha256": "15943cd72c166f8802edfd49a526b5a8011e798f0c3704fba8f98a8d64eaba63"
+      },
+      {
+        "path": "projects/DensePose/configs/evolution/densepose_R_50_FPN_DL_WC1M_3x_Atop10P_CA_B_coarsesegm.yaml",
+        "bytes": 1558,
+        "sha256": "4da2b20ad7f4f12b0257e9b74cbba7ba951104b58602c5d826dbfd588a0c5619"
+      },
+      {
+        "path": "projects/DensePose/configs/evolution/densepose_R_50_FPN_DL_WC1M_3x_Atop10P_CA_B_finesegm.yaml",
+        "bytes": 1556,
+        "sha256": "6a91ab05484258bc6447f718b62184d6c091132e980b4ced19081df6da27f580"
+      },
+      {
+        "path": "projects/DensePose/configs/evolution/densepose_R_50_FPN_DL_WC1M_3x_Atop10P_CA_B_uniform.yaml",
+        "bytes": 1543,
+        "sha256": "de267f91a669d2a08a6ddf3e8e30363f55a98067fba1efccb49a9cd2f7e30cdb"
+      },
+      {
+        "path": "projects/DensePose/configs/evolution/densepose_R_50_FPN_DL_WC1M_3x_Atop10P_CA_B_uv.yaml",
+        "bytes": 1549,
+        "sha256": "a5d8f5baebeadc858a1db0cccce79248fb11a0fa8efb6bc6189d175e5e98b9bc"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/cse/densepose_rcnn_R_50_FPN_DL_instant_test.yaml",
+        "bytes": 317,
+        "sha256": "ffeed5c36fdb21fcc75380de6390fa9979ae7fc550881550141b5236cc16a847"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/cse/densepose_rcnn_R_50_FPN_soft_animals_finetune_instant_test.yaml",
+        "bytes": 3887,
+        "sha256": "f6448d4f63a57b87cd9594d1a496c5f9c0b49e48a255f2ea267104e7420b07fb"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_HRFPN_HRNet_w32_instant_test.yaml",
+        "bytes": 217,
+        "sha256": "b2f33226ab904c754d8c6f0f46d035e599e0c4af30c43be4aa732a7a4b50c966"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_R_50_FPN_DL_instant_test.yaml",
+        "bytes": 302,
+        "sha256": "5c748dfb67257970af570093e7bef09c69f1eaa58d7c4a5666de0ca176170039"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_R_50_FPN_TTA_inference_acc_test.yaml",
+        "bytes": 504,
+        "sha256": "7d095f32bd61d4d1cc632498217f28afff0bb027253c2e44690746b795ae5ea3"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_R_50_FPN_WC1_instant_test.yaml",
+        "bytes": 451,
+        "sha256": "c1a7800474ddf2c01ecee5b65564f33641fdcf75a4788986f3ccd3e6a77259b7"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_R_50_FPN_WC2_instant_test.yaml",
+        "bytes": 456,
+        "sha256": "28e90a998c15a14399a1e3471998e238efcd239c1644e851047ab742b3ef5270"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 370,
+        "sha256": "c6287ba666bab3f0d7fb1efb12548c748be26e774e23cbe4d7ef257acaf43647"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 247,
+        "sha256": "622d23bb55511cc397e4cd5344f1204d81726af2afae9a8dfaa858764d015390"
+      },
+      {
+        "path": "projects/DensePose/configs/quick_schedules/densepose_rcnn_R_50_FPN_training_acc_test.yaml",
+        "bytes": 493,
+        "sha256": "4623d8538c2a9594a99b4a668ccd8d5bbb6c98776bf67cd64fa0e02efd9aa999"
+      },
+      {
+        "path": "projects/Panoptic-DeepLab/configs/COCO-PanopticSegmentation/panoptic_deeplab_R_52_os16_mg124_poly_200k_bs64_crop_640_640_coco_dsconv.yaml",
+        "bytes": 1085,
+        "sha256": "e0b5d60807fc6a5fffe14890b883f8e34c1297bfcc77b97f49a4d7694bd61300"
+      },
+      {
+        "path": "projects/Panoptic-DeepLab/configs/Cityscapes-PanopticSegmentation/Base-PanopticDeepLab-OS16.yaml",
+        "bytes": 1643,
+        "sha256": "c032c356abcd374ae9e8cca26a009aac0007d6f1986ba4f713b42de197d1645d"
+      },
+      {
+        "path": "projects/Panoptic-DeepLab/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_R_52_os16_mg124_poly_90k_bs32_crop_512_1024.yaml",
+        "bytes": 454,
+        "sha256": "2746a545d0a29507afbe842292b24154692239edfcebb5e7ebf4e4f9a5a99df1"
+      },
+      {
+        "path": "projects/Panoptic-DeepLab/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_R_52_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml",
+        "bytes": 568,
+        "sha256": "432136318361fd345eaff75b96f5b1fec5139353f703c3f0374e3e966ec5d6cb"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/Base-Implicit-PointRend.yaml",
+        "bytes": 701,
+        "sha256": "26777c92dcf2aeb0c16544ce5980170c94974ffaaad36cabe17e509a2d427be8"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/Base-PointRend-RCNN-FPN.yaml",
+        "bytes": 568,
+        "sha256": "276024aab29a9d4fbc79a78b505d6a894b404a88b1c6d471757eb45aecbf795e"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/implicit_pointrend_R_50_FPN_1x_coco.yaml",
+        "bytes": 267,
+        "sha256": "6adab1dd2087fef1de67dd63c5dae7cfa3f26d028ee29cc96bce34bd51f6a607"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/implicit_pointrend_R_50_FPN_3x_coco.yaml",
+        "bytes": 320,
+        "sha256": "92c60d2ca387d0563672e5444b084f8cb156586280e4f25cfc0e9e5d291f9baf"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/pointrend_rcnn_R_101_FPN_3x_coco.yaml",
+        "bytes": 336,
+        "sha256": "e8d7fef8792ec422f72c0077f34b4380208f4b2bdebf81944b26b3951ca33e55"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/pointrend_rcnn_R_50_FPN_1x_cityscapes.yaml",
+        "bytes": 509,
+        "sha256": "601732b5f921088d5f516457fa338c9c3b2761f5654b19dbdefdfa3d18d2af00"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/pointrend_rcnn_R_50_FPN_1x_coco.yaml",
+        "bytes": 265,
+        "sha256": "d2dc5cdeb6e1b4a30b9878fd4e612d099b486b1595b3684658fed0e061329351"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/pointrend_rcnn_R_50_FPN_3x_coco.yaml",
+        "bytes": 319,
+        "sha256": "d39a296149a9f6805bb095d910c71b5a073c4a4db32f15ef720de2aa8bf54f03"
+      },
+      {
+        "path": "projects/PointRend/configs/InstanceSegmentation/pointrend_rcnn_X_101_32x8d_FPN_3x_coco.yaml",
+        "bytes": 471,
+        "sha256": "bfe561e4ee98a4ab374d97f47a520e415d90d08970b2d05c5aa00162c68f0696"
+      },
+      {
+        "path": "projects/PointRend/configs/SemanticSegmentation/Base-PointRend-Semantic-FPN.yaml",
+        "bytes": 532,
+        "sha256": "152967d874a2c07e71814a457d61e2c59e243b4bff1f9ed208e30e14c33a3967"
+      },
+      {
+        "path": "projects/PointRend/configs/SemanticSegmentation/pointrend_semantic_R_101_FPN_1x_cityscapes.yaml",
+        "bytes": 768,
+        "sha256": "28d409a19464851f77695a74ce9412bc8cfd98be1f39eb86e9b0c9ee51be038a"
+      },
+      {
+        "path": "projects/PointSup/configs/implicit_pointrend_R_50_FPN_3x_point_sup_point_aug_coco.yaml",
+        "bytes": 274,
+        "sha256": "8125f35f62413533bf757e0ccf3fe5ac89293ca8ad4034cb71ebf6612fe8b22e"
+      },
+      {
+        "path": "projects/PointSup/configs/mask_rcnn_R_50_FPN_3x_point_sup_coco.yaml",
+        "bytes": 361,
+        "sha256": "c1159fd8ef6038e66614c3c0d30bc637b7b76abd087b3e2ae4db416f4696b0de"
+      },
+      {
+        "path": "projects/PointSup/configs/mask_rcnn_R_50_FPN_3x_point_sup_point_aug_coco.yaml",
+        "bytes": 78,
+        "sha256": "dfe19a3aa64400339e37830d2449896e00e9b3bc6c08223ab5d0406bcee059ee"
+      },
+      {
+        "path": "projects/TensorMask/configs/Base-TensorMask.yaml",
+        "bytes": 610,
+        "sha256": "c914c540e7a10ccf6091081e0be342096ac5460aa1b03ff1ad05617936c89294"
+      },
+      {
+        "path": "projects/TensorMask/configs/tensormask_R_50_FPN_1x.yaml",
+        "bytes": 122,
+        "sha256": "2c852f6ccef91a127d216c056f2ff983f1473d7d2e06a0b5ce62288dbc6e94de"
+      },
+      {
+        "path": "projects/TensorMask/configs/tensormask_R_50_FPN_6x.yaml",
+        "bytes": 246,
+        "sha256": "75d24f19953303f18472399459e1b11625e8258482051fa11f55771128e43e3a"
+      },
+      {
+        "path": "projects/TridentNet/configs/Base-TridentNet-Fast-C4.yaml",
+        "bytes": 643,
+        "sha256": "7601b5447648a2bc6108b04bb046982038922714205a51d8723d49b68454582d"
+      },
+      {
+        "path": "projects/TridentNet/configs/tridentnet_fast_R_101_C4_3x.yaml",
+        "bytes": 202,
+        "sha256": "7c3485f444b4e8f8ee6ce60850415a4686cc1b4cc2b6f647332b8506836af1f1"
+      },
+      {
+        "path": "projects/TridentNet/configs/tridentnet_fast_R_50_C4_1x.yaml",
+        "bytes": 147,
+        "sha256": "54291f7a9f3d688ceaa18b797eedaff1272e74b4e14a0634166c1dd53f66908c"
+      },
+      {
+        "path": "projects/TridentNet/configs/tridentnet_fast_R_50_C4_3x.yaml",
+        "bytes": 200,
+        "sha256": "2ed4abc0ccc0ac095251ce002824dd8e09740370bd70d1f811ac93785e8647dd"
+      }
+    ],
+    "configuration_data_inventory_sha256": "23c680071167352b6d10379f821693c228378f055b3e1c0e8068f2b49153ab92"
+  },
+  "candidate": {
+    "source_bytes": 913811,
+    "configuration_data_bytes": 1189008,
+    "configuration_data_files": 98,
+    "configuration_data_inventory": [
+      {
+        "path": "configs/Base-ObservedDefaults.yaml",
+        "bytes": 5656,
+        "sha256": "d627df3b8d77b9d9451f631eb63e37f777f6d837b783ad44c99600de19569268"
+      },
+      {
+        "path": "configs/Base-RCNN-C4.yaml",
+        "bytes": 244,
+        "sha256": "084915344095754ea4a7eae24f07f5f81c5c90e0a2859dfd4d43ecbbb0caa8ec"
+      },
+      {
+        "path": "configs/Base-RCNN-DilatedC5.yaml",
+        "bytes": 532,
+        "sha256": "d6feb3c8e74e7e51c03f599ad634d60ee7fd6464fa123eadbf2f0b6c7215e760"
+      },
+      {
+        "path": "configs/Base-RCNN-FPN.yaml",
+        "bytes": 895,
+        "sha256": "66b47802c42e725354c54e0d6a7130b0f12fd23df07046a29847f3bf94b20993"
+      },
+      {
+        "path": "configs/Base-RetinaNet.yaml",
+        "bytes": 855,
+        "sha256": "b54f372a4f9237f007f8b2c7552750fd6c31b93026b633ea89d314745db3dfe7"
+      },
+      {
+        "path": "configs/COCO-Detection/fast_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 1303,
+        "sha256": "4d70b3f5df8c7d84261d84065e7e744e947dc20f9ea9f3dfdcd4d03cce60360f"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_101_C4_3x.yaml",
+        "bytes": 341,
+        "sha256": "a4af5d4b1417b5d10d2078c94fb09e53233529b7e706deefd4d8fdf7ba074e91"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_101_DC5_3x.yaml",
+        "bytes": 611,
+        "sha256": "ce83f5a41cb2ad7ed724e1427c0b2189fff82174a079304c8f328f65061acfc7"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml",
+        "bytes": 974,
+        "sha256": "7ca96bc2d5fc34d9e70c5b44dc77e47d8bf1339415a02261d445874ea09a566a"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_C4_1x.yaml",
+        "bytes": 311,
+        "sha256": "b271f6f8042f7763355c4e8e091708b025180f97d15d4c75b7c58da64aaf79b9"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_C4_3x.yaml",
+        "bytes": 314,
+        "sha256": "510e15a8583253f9d7caa7e5f63902d27c4b6edfbd3b1b1dcf15b9884c3569b6"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_DC5_1x.yaml",
+        "bytes": 592,
+        "sha256": "c42c217e7f6ea926058ca6665309e8f7a75c36326416f27bbab61066bd4ddb03"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_DC5_3x.yaml",
+        "bytes": 595,
+        "sha256": "5e049edccbce6ba55dde762cf779d1f241942ad3a6e542a7fdf80b1eedec6024"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 955,
+        "sha256": "ecc21633f9afb9230a535d263c93fe66ec2456d078adaf33654a50d4bb61f778"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 958,
+        "sha256": "3fc073a0ee64c90a814a71ed2c665160d1a219779940e67258c07b27b99758f6"
+      },
+      {
+        "path": "configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "bytes": 1092,
+        "sha256": "8b07c345c418fbd75f901283b59c0546d5d11109ec6842a87572e7e40bf22460"
+      },
+      {
+        "path": "configs/COCO-Detection/retinanet_R_101_FPN_3x.yaml",
+        "bytes": 934,
+        "sha256": "2284b6f799c9f0498c15dd6db6e4e89668178a0dc37bb9a39a249b0a886c1878"
+      },
+      {
+        "path": "configs/COCO-Detection/retinanet_R_50_FPN_1x.yaml",
+        "bytes": 915,
+        "sha256": "784dd052d36b634b235c3faed62f2bb94ca4dc997f44422201b472e86d830179"
+      },
+      {
+        "path": "configs/COCO-Detection/retinanet_R_50_FPN_3x.yaml",
+        "bytes": 918,
+        "sha256": "0fc85ce9a3373c420a679d3938f9921a838cc780f187b35bc17e3103ce8f6a50"
+      },
+      {
+        "path": "configs/COCO-Detection/rpn_R_50_C4_1x.yaml",
+        "bytes": 413,
+        "sha256": "50650802e1aa84eec13c1699302bf2b40ff06d33c0279ffe2d08be30478071c6"
+      },
+      {
+        "path": "configs/COCO-Detection/rpn_R_50_FPN_1x.yaml",
+        "bytes": 1021,
+        "sha256": "1a72b41bf298a71bbbebafa882f973dc16ccbdeedd3b639ac617697a7623e2f6"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x.yaml",
+        "bytes": 357,
+        "sha256": "957bbb803d4330ded617747a63193a3f7f71def756afe77496773da5ac005e98"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x.yaml",
+        "bytes": 627,
+        "sha256": "70a9eb7f29aeec340ae625b126847b739520da8c7bf4afd31d0f7370a781f8a0"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x.yaml",
+        "bytes": 990,
+        "sha256": "b188627a7118aaf980f516c6f8d84c98fc31e85a8dcf5ae6f891a66863b07842"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x.yaml",
+        "bytes": 327,
+        "sha256": "9ee2137bcec0b63524c3c62c44860db4019924ae68a8ddd1865992a1004e25fb"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x.yaml",
+        "bytes": 330,
+        "sha256": "f2a69c9405d3d4dd86a3e767348b65eb77be37ab0111f2e097888e2024314a11"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x.yaml",
+        "bytes": 608,
+        "sha256": "bf4be747101c7ba7d8a6356c6999909fb17121586a6713dcffda5fe00fe5e6ac"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x.yaml",
+        "bytes": 611,
+        "sha256": "772a48c4115763abcd05a3294cce6a478761bf4a1c27a3d87646c66394586f16"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 971,
+        "sha256": "92f8ac70b2b88e0d4ac903394adeb53451bba571812a851f87be46ee3bd36c6b"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x_giou.yaml",
+        "bytes": 1090,
+        "sha256": "492a72470a71cffd736fe0388828aa220bfb0af0a3df6a88362697c00ad25983"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 974,
+        "sha256": "1e09477fed7dcb77312fb5a8966b483cab498e1f81c03dfcdc3809161f600c6e"
+      },
+      {
+        "path": "configs/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "bytes": 1108,
+        "sha256": "4572ca003234ca9cd23beb9d53514f4b72034fbb566ea3d11f827396940a9b35"
+      },
+      {
+        "path": "configs/COCO-Keypoints/Base-Keypoint-RCNN-FPN.yaml",
+        "bytes": 981,
+        "sha256": "9c63e565c2f6a659da400b6d626485c63385f46c2a3bf716fccc48a4384e7758"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_R_101_FPN_3x.yaml",
+        "bytes": 1057,
+        "sha256": "ccfd8f74cd1de0aa3576561f1bdc70ae118fdffcab2e240f76b638bb9e2215d6"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 1038,
+        "sha256": "8b16e953335a016828cd2bf411b058afd71d1296ad8fa90b0e1a67a3c8a4585a"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 1041,
+        "sha256": "25890f71de1418f4a2ae334bf677fdd422af31ed5ba032f171c7f51d05d7871d"
+      },
+      {
+        "path": "configs/COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "bytes": 1175,
+        "sha256": "07d93b166012791e4c10864ba68e84b73a82263f32a6ba66c80a6aa51916fc51"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/Base-Panoptic-FPN.yaml",
+        "bytes": 1068,
+        "sha256": "0dd70eea80a9692c529ede48a67ed3b55f3647b9ce2be3f0997882e4897ad4ec"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_101_3x.yaml",
+        "bytes": 1144,
+        "sha256": "cdd5a4a6884c9daa3fb7d549d05b60774d74e3758e9cfad53ff243f82bd0d623"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_50_1x.yaml",
+        "bytes": 1125,
+        "sha256": "96f97c3dbd038837f1ade839beac89db34bc797ae038642a5f257a974777727f"
+      },
+      {
+        "path": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_50_3x.yaml",
+        "bytes": 1128,
+        "sha256": "cf67045c936ca264ebe18e995313ce50787dd4ecc933e0371b6af32207a80ea3"
+      },
+      {
+        "path": "configs/Cityscapes/mask_rcnn_R_50_FPN.yaml",
+        "bytes": 1195,
+        "sha256": "80c365c48102757cbb9445449fff16efc1cf6a9fa35691c3ab4e81ef3776216f"
+      },
+      {
+        "path": "configs/Detectron1-Comparisons/faster_rcnn_R_50_FPN_noaug_1x.yaml",
+        "bytes": 988,
+        "sha256": "4a1bbaf8762162e8f6e88345b3bf149d4960789158dbed3dbd52c6f59f976d6e"
+      },
+      {
+        "path": "configs/Detectron1-Comparisons/keypoint_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 1196,
+        "sha256": "ad811fc942fdf1ec5f9a7ba846672543568a7424ed2729ae2542bf640485918f"
+      },
+      {
+        "path": "configs/Detectron1-Comparisons/mask_rcnn_R_50_FPN_noaug_1x.yaml",
+        "bytes": 1059,
+        "sha256": "fde96f42ea4bb83b8e82ee8551dfd901bc55d1addab29e364916b48048fdea05"
+      },
+      {
+        "path": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_R_101_FPN_1x.yaml",
+        "bytes": 1156,
+        "sha256": "5f2e9f4046bf9386e89e440afd4865aa8e5858720e8511500821f8cd58cb39fb"
+      },
+      {
+        "path": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 1140,
+        "sha256": "02ceaba841ddd785c7de8c9d8feec31215a5e5c293bd427d11e9f32776294bed"
+      },
+      {
+        "path": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_1x.yaml",
+        "bytes": 1274,
+        "sha256": "7f84070df9eb8bdf2d0deebe104c2e5e43999c728bb3d95ab7c316338e486008"
+      },
+      {
+        "path": "configs/LVISv1-InstanceSegmentation/mask_rcnn_R_101_FPN_1x.yaml",
+        "bytes": 1155,
+        "sha256": "1a0de4c4da3e961aeee353d311a8a39d0f366e5444640e6986a5334af88596b1"
+      },
+      {
+        "path": "configs/LVISv1-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 1139,
+        "sha256": "2272ff443ab8d557655a0c76f9487d6c84e146e5c9b7a65e5f185b3a0d1f4afb"
+      },
+      {
+        "path": "configs/LVISv1-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_1x.yaml",
+        "bytes": 1273,
+        "sha256": "4b6a2f03e844bb34da11c9def4daeb532dea477f08976d8ff384dfe87ef885b3"
+      },
+      {
+        "path": "configs/Misc/cascade_mask_rcnn_R_50_FPN_1x.yaml",
+        "bytes": 972,
+        "sha256": "58cad6961e7910fc139d8e09ee9b4158520e889d6996d070307856dbca560821"
+      },
+      {
+        "path": "configs/Misc/cascade_mask_rcnn_R_50_FPN_3x.yaml",
+        "bytes": 975,
+        "sha256": "48b1640c636e5013ccabf24f714eed8692f96e2b7031f46143572ab93036cc9a"
+      },
+      {
+        "path": "configs/Misc/cascade_mask_rcnn_X_152_32x8d_FPN_IN5k_gn_dconv.yaml",
+        "bytes": 1268,
+        "sha256": "482f5ad95f4f086bdadb2d9aa1523a617d089cc2bd609fc5a96dbfffe99f8ded"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_1x_cls_agnostic.yaml",
+        "bytes": 1031,
+        "sha256": "a43057c0ce75390224dd25b92ba974897b409837fd8098d8262b10e116d394fb"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_1x_dconv_c3-c5.yaml",
+        "bytes": 1041,
+        "sha256": "df661f4158420723e8236d48db29fccbe790e124a0a9dbb205ee3c9060199931"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_3x_dconv_c3-c5.yaml",
+        "bytes": 1044,
+        "sha256": "c05ba62f15ec6fc82ca42b75627aa2cf24c7b8adcd1b8222aff0b251207cb00b"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_3x_gn.yaml",
+        "bytes": 1063,
+        "sha256": "f622c74eaa2f6e3f7b962edc403020378ee916df7d2365d48aaf335e70d2219e"
+      },
+      {
+        "path": "configs/Misc/mask_rcnn_R_50_FPN_3x_syncbn.yaml",
+        "bytes": 1096,
+        "sha256": "85d761a1424769bb90cdd980ae6add7093eca135b2f1eeca2bf049479187e89f"
+      },
+      {
+        "path": "configs/Misc/panoptic_fpn_R_101_dconv_cascade_gn_3x.yaml",
+        "bytes": 1295,
+        "sha256": "10933b83637e89040f8e3280ff69642df6b47c4b14d62170a83fa8dfe1f027a9"
+      },
+      {
+        "path": "configs/Misc/scratch_mask_rcnn_R_50_FPN_3x_gn.yaml",
+        "bytes": 1027,
+        "sha256": "487ef99fa2c8b9d42cc3ea1e51bd69140cdd3a7531b6170dafce73aae9488afe"
+      },
+      {
+        "path": "configs/Misc/scratch_mask_rcnn_R_50_FPN_9x_gn.yaml",
+        "bytes": 1118,
+        "sha256": "56a1b5a2abd5d77119932be7e163a70befbd442e620e5435fbda0a91dabc6b52"
+      },
+      {
+        "path": "configs/Misc/scratch_mask_rcnn_R_50_FPN_9x_syncbn.yaml",
+        "bytes": 1166,
+        "sha256": "3a5107bac7325d49cdcc23251792e0053e1fc42272ef8cddc59457de256bae58"
+      },
+      {
+        "path": "configs/Misc/semantic_R_50_FPN_1x.yaml",
+        "bytes": 1032,
+        "sha256": "cd7bc68ff941474757f50545f0c265bf86388cd9a6d5295ff97916b56270a545"
+      },
+      {
+        "path": "configs/PascalVOC-Detection/faster_rcnn_R_50_C4.yaml",
+        "bytes": 428,
+        "sha256": "c3e229d516826e3da8607ccbc18d3275b483265d95dbdcc1fab84a3a935ff7ef"
+      },
+      {
+        "path": "configs/PascalVOC-Detection/faster_rcnn_R_50_FPN.yaml",
+        "bytes": 1059,
+        "sha256": "2631ca90cfd4832916af2785e5724154caeaf382073ab037e7bc7185c1975cc9"
+      },
+      {
+        "path": "configs/quick_schedules/cascade_mask_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 1153,
+        "sha256": "d78b0e54f2160f3527e7ba8a30fc839be2626f12bafcbcc2ee63fadeb19d29ea"
+      },
+      {
+        "path": "configs/quick_schedules/cascade_mask_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 1011,
+        "sha256": "7ab128de32aea5bc4d5a7af774616511abe1a6d48c6dbab3102750376d0bbc2f"
+      },
+      {
+        "path": "configs/quick_schedules/fast_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 1439,
+        "sha256": "fb323a33b9e16fba32fd05a205862a41805d160ba0b589445c84e97193cbf903"
+      },
+      {
+        "path": "configs/quick_schedules/fast_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 1311,
+        "sha256": "19a071152d3feee07702f0b28927ecc951ed4e6dc642b49764cbdc62f602d83d"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 1230,
+        "sha256": "3299795a236479b48a5bf990e230bcfe4d6e97c34e375190edd1c59b7e685a50"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 1053,
+        "sha256": "867d975ee26b0fcfd5a6a35252ac9374284c7086c470aa42043aa61d4859bff1"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_normalized_training_acc_test.yaml",
+        "bytes": 1368,
+        "sha256": "914d82a2a393d53e78f73cf3a6f06685754966e61551cae2423d1c32a654506f"
+      },
+      {
+        "path": "configs/quick_schedules/keypoint_rcnn_R_50_FPN_training_acc_test.yaml",
+        "bytes": 1298,
+        "sha256": "b6ae7656701c756b43cbb748d4afff6f354de5ccb893f8fb189d4b36ec406180"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_GCV_instant_test.yaml",
+        "bytes": 385,
+        "sha256": "135a6a34e6f27faf79a88f9625f8586014be250327ab45ef0a87062192e51658"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_inference_acc_test.yaml",
+        "bytes": 520,
+        "sha256": "2d17b2d0b84a3c4bee6163848fdfce0d5696f728b521562e3f4967541571320c"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_instant_test.yaml",
+        "bytes": 349,
+        "sha256": "c75e8397a789501cc6dc5ba98ca08c22de5ad5583e11dce8317975582cd8507b"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_C4_training_acc_test.yaml",
+        "bytes": 547,
+        "sha256": "fa8a65e9792652ee6bea82aa5c24e4f366927898aa3f285f60881ea0950b522a"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_DC5_inference_acc_test.yaml",
+        "bytes": 802,
+        "sha256": "e299960208b0487219d4794d966ce2d96fed67eb5cef3c44a0196ccd8c4e3a03"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 1319,
+        "sha256": "a0e54bec615181e2262820e26e85aff5903900dbb1001160c5a5dafc684e97f5"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_instant_test.yaml",
+        "bytes": 1010,
+        "sha256": "975fbcf83120fe92384bf714df45a4518b3374ccc03c262d0c259793e68d734b"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_pred_boxes_training_acc_test.yaml",
+        "bytes": 1186,
+        "sha256": "01c8039e0199d9c87b61c42b4d9d877c11fe4ef426f3a483f195c8829362e457"
+      },
+      {
+        "path": "configs/quick_schedules/mask_rcnn_R_50_FPN_training_acc_test.yaml",
+        "bytes": 1156,
+        "sha256": "e7c361ea45b47dd5045ce0f7d2ffc959d9f60a4240511e58e73b3974d9ed857c"
+      },
+      {
+        "path": "configs/quick_schedules/panoptic_fpn_R_50_inference_acc_test.yaml",
+        "bytes": 1417,
+        "sha256": "26e31bc285b415adba85681f8c4c6d1e864a85647b0b4c4da302c1935d029fc9"
+      },
+      {
+        "path": "configs/quick_schedules/panoptic_fpn_R_50_instant_test.yaml",
+        "bytes": 1118,
+        "sha256": "368f097e846bfc4300ff0105e391860e7c9862f668aed0209ba08f4c0a3cfe5e"
+      },
+      {
+        "path": "configs/quick_schedules/panoptic_fpn_R_50_training_acc_test.yaml",
+        "bytes": 1290,
+        "sha256": "886a0ff09419c9d8c3375f2c79ebdc656bbe5b8d591cfa6b5d2529dfe1566a83"
+      },
+      {
+        "path": "configs/quick_schedules/retinanet_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 1028,
+        "sha256": "91ca933cdeae61db8f7cc95c5526e2ed547efd75b2e314ac66da56bd45843974"
+      },
+      {
+        "path": "configs/quick_schedules/retinanet_R_50_FPN_instant_test.yaml",
+        "bytes": 954,
+        "sha256": "1c4ab16ab333883a88d1a28cc9ff5697a3ae60c1c9f9e7c6a3d7479c137ca31e"
+      },
+      {
+        "path": "configs/quick_schedules/rpn_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 1166,
+        "sha256": "f1ca360ecbe0f4444e571383e5be175a5ce0972edc185f1ed5ed3204c11d18da"
+      },
+      {
+        "path": "configs/quick_schedules/rpn_R_50_FPN_instant_test.yaml",
+        "bytes": 1060,
+        "sha256": "f4fc46c1809c517545643d65ddc767d206bd914e2c343be7b7ecd4f8edc97d4a"
+      },
+      {
+        "path": "configs/quick_schedules/semantic_R_50_FPN_inference_acc_test.yaml",
+        "bytes": 1185,
+        "sha256": "b86d3c836b52161d9001f8792793ce87c22934bd9f31ecd16191200b8aeccc00"
+      },
+      {
+        "path": "configs/quick_schedules/semantic_R_50_FPN_instant_test.yaml",
+        "bytes": 1071,
+        "sha256": "ea9afdea20a0f4328e5510b31f00067d6e5ccdb673cb7cfd6968ee939526c4b4"
+      },
+      {
+        "path": "configs/quick_schedules/semantic_R_50_FPN_training_acc_test.yaml",
+        "bytes": 1085,
+        "sha256": "e586cfef615382d51056cc46985f641a8dd5f8b759e2284870da02e5ce1f3416"
+      },
+      {
+        "path": "detectron2/data/datasets/builtin_metadata.json",
+        "bytes": 980397,
+        "sha256": "001a9af9a822a5c067352bbf9bdbb66a86cdf0a0c220944e05e7a8db463a803a"
+      },
+      {
+        "path": "detectron2/model_zoo/observed-recipes.json",
+        "bytes": 101911,
+        "sha256": "f17cdbc421436631cba7796d95eb2962961e2925e356933e978b9592872756d3"
+      },
+      {
+        "path": "projects/DensePose/densepose/_public_defaults.json",
+        "bytes": 2915,
+        "sha256": "2893de62b2e9bc24114fce396d6ad0d8905ca6df5204ce4df56711ed2d9f9fb3"
+      },
+      {
+        "path": "projects/DensePose/densepose/data/datasets/_public_datasets.json",
+        "bytes": 4537,
+        "sha256": "3b67a71e30ca7e1f418185d8b326caa7e304095d3fa249b1128cd883dceefd9e"
+      },
+      {
+        "path": "projects/DensePose/densepose/data/meshes/_public_meshes.json",
+        "bytes": 5368,
+        "sha256": "884506038fb566101bcdee760b0256daad6084081a354126f4d28a94bfe46179"
+      }
+    ],
+    "configuration_data_inventory_sha256": "609c5500d77299defbb758abf8bd263c90e0bd0ce15889e188000a5661863a49"
+  }
+}
