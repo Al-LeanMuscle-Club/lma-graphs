@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "d2k60_007d2f758d6915e861c160b11c44133ad8f5273ecac1aa704e9d3b8c5db6d36a",
+  "files": [
+    {
+      "path": "attribution.json",
+      "sha256": "47509037a45797167521fda877a7d8d43089729605d8043b46b7c6d5939bbc6b"
+    },
+    {
+      "path": "data.json",
+      "sha256": "5d7b945bc710ccb8c85743fb39e16d44327d04d50798d8fe4cf5f5ac9e9733df"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "bdf88dbe041f2b032748009e2c9b42d52dc69fc052692052557983e2b70835ca"
+    },
+    {
+      "path": "index.html",
+      "sha256": "7ff24479f27a97c823559170c72e1c7d2ab0f01665802ae942ef2266b7058c67"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "1a19c03fdd630b195b34f5aa6fcab706dcd14c406b2bd0c9917a1baa79bdbd4f"
+    },
+    {
+      "path": "run-summary.js",
+      "sha256": "4c56a18cb3ae2a7dc691f1b5815051baca6f10f88ec5a81867fc63c0af5b5855"
+    },
+    {
+      "path": "verification-detail.json",
+      "sha256": "bb2bf2583e6804dfd8d8724afa16e5f1e518271e9a5dbeaeea4bdc73459ba7d5"
+    }
+  ]
+}
