@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "d2k60_90dc6ed69a1f887fae64ac9aa12a9972d40e137a78a608e9b8e1df76de0fe87f",
+  "files": [
+    {
+      "path": "attribution.json",
+      "sha256": "35f724ef5463270d4a74231fb6cf7012456adf814809565f495456baf7d468d8"
+    },
+    {
+      "path": "data.json",
+      "sha256": "ecb652e3e3c2757af6f1af9a70d401afcc067ce5ba8ac2ee6b4bdba8eae0b8e8"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "dc0dc75c53ab51ef7d41d803d427700e0bf873b2920b5ad8c1f3fa97e1d04061"
+    },
+    {
+      "path": "index.html",
+      "sha256": "4cdc0645bcc062fff4acb0c0708ea160ad6732c4c6847caf56c5a99bdacec0b9"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "6f169d118447aad09b2565db9d2b5440cfd09e249403e4c679a4c2ab0a8569d0"
+    },
+    {
+      "path": "run-summary.js",
+      "sha256": "2ecc5b68906d6e9d3b4e55bc7f8b11c5bc99da1cbfe32ccb7736987c2501bb86"
+    },
+    {
+      "path": "verification-detail.json",
+      "sha256": "2c6d0d6ba084f09b00eff602675bb36f9a3ff40747bf7a79b3be15546fb20466"
+    }
+  ]
+}

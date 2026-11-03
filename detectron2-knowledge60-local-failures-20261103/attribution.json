@@ -1,0 +1,877 @@
+{
+  "schema_version": 1,
+  "operation": "reviewed_direct_test_attribution",
+  "review_date": "2026-11-03",
+  "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+  "frozen_plan_file_sha256": "5d3090d06a0df945ca72aa57624d870e4ba5177f3b9ea6857055759bb322ef8a",
+  "frozen_plan_semantic_sha256": "b7338785df4ec358ccd0ed50edbb24d8c5bbee8ba94c36a054b19cadd6ecd38b",
+  "frozen_test_manifest_sha256": "80cf19e2a7e5039064e7011030e9f7345aa5bad6e9bf95121796970f4625d9c7",
+  "release_evidence_file_sha256": "fe4cd2cc1687d3bd1f2f76d90bd208e17975123fac24e8eeff1a2c4dda485028",
+  "scope": "Per-case primary test-subject attribution under the user-authorized local-status policy. This is a metadata review, not a new test run or a root-cause analysis.",
+  "rules": {
+    "unreviewed_import_associations": "context_only",
+    "parent_aggregation": "no_status_propagation",
+    "function_steps": "no_inherited_test_status",
+    "failures_counted_globally": "unchanged",
+    "passing_tests": "bounded evidence only; never full functionality proof"
+  },
+  "failed_upstream_tests": [
+    {
+      "upstream_id": "tests/modeling/test_rpn.py::RPNTest::test_rpn",
+      "target_capability": "graphify-model-rpn-0ca332bc5509",
+      "target_label": "Region proposal generation",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.modeling.proposal_generator.RPN"
+      ],
+      "rationale": "Constructs RPN directly and checks its seeded proposal losses, decoded proposals, objectness scores and image-size outputs. Configuration, backbone shapes, containers and event storage support that subject.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/modeling/test_rpn.py",
+        "test_class": "RPNTest",
+        "test_method": "test_rpn",
+        "method_line": 35,
+        "test_file_sha256": "929def20f87f875c6232e3168c4cc9ecfe0e832b6691a1fa66a04f138d31ebbf",
+        "subject_module_paths": [
+          "detectron2/modeling/proposal_generator/rpn.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/modeling/proposal_generator/rpn.py": "21437d93fad02ba0eef236c1a297c62af37adcc96183d3bd1c968ae55567ba7c"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_roi_heads",
+      "target_capability": "graphify-model-roi-box-74b7ff0ac572",
+      "target_label": "ROI pooling and box prediction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.modeling.roi_heads.StandardROIHeads"
+      ],
+      "rationale": "Constructs StandardROIHeads directly and checks the composed detector losses. The frozen ROI capability explicitly owns StandardROIHeads and the head-composition contract.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/modeling/test_roi_heads.py",
+        "test_class": "ROIHeadsTest",
+        "test_method": "test_roi_heads",
+        "method_line": 39,
+        "test_file_sha256": "40a211b3b6143b26b26314786c7dc7d59cdb7563613ee886f7a83d703b92fe47",
+        "subject_module_paths": [
+          "detectron2/modeling/roi_heads/roi_heads.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/modeling/roi_heads/roi_heads.py": "e72abea05f5039e103b75c092ff82ccad6e826d59e7e2044522a82537dd75c7e"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      },
+      "scope_limitation": "This is a composite StandardROIHeads test: its assertion includes box, mask and proposal losses. Primary-subject ownership is not exclusive blame for whichever component causes the mismatch."
+    },
+    {
+      "upstream_id": "tests/modeling/test_rpn.py::RPNTest::test_rrpn",
+      "target_capability": "graphify-model-rotated-detection-7a246d01a50b",
+      "target_label": "Oriented object detection and rotated geometry",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.modeling.proposal_generator.rrpn.RRPN"
+      ],
+      "rationale": "Selects RRPN and rotated anchors, constructs the proposal generator through its factory, then checks rotated proposal losses, rotated boxes and objectness outputs. The frozen graph assigns rrpn.py to oriented detection, rather than axis-aligned RPN.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/modeling/test_rpn.py",
+        "test_class": "RPNTest",
+        "test_method": "test_rrpn",
+        "method_line": 124,
+        "test_file_sha256": "929def20f87f875c6232e3168c4cc9ecfe0e832b6691a1fa66a04f138d31ebbf",
+        "subject_module_paths": [
+          "detectron2/modeling/proposal_generator/rrpn.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/modeling/proposal_generator/rrpn.py": "93716277a57f4108c9c163777db4c2178ddb50a1ac59da00385a0ad29ef84119"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_rroi_heads",
+      "target_capability": "graphify-model-rotated-detection-7a246d01a50b",
+      "target_label": "Oriented object detection and rotated geometry",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.modeling.proposal_generator.rrpn.RRPN",
+        "detectron2.modeling.roi_heads.rotated_fast_rcnn.RROIHeads"
+      ],
+      "rationale": "Explicitly selects RRPN and RROIHeads with rotated ROI pooling, then checks their composed losses. Both specialized implementations belong to the same frozen oriented-detection capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/modeling/test_roi_heads.py",
+        "test_class": "ROIHeadsTest",
+        "test_method": "test_rroi_heads",
+        "method_line": 94,
+        "test_file_sha256": "40a211b3b6143b26b26314786c7dc7d59cdb7563613ee886f7a83d703b92fe47",
+        "subject_module_paths": [
+          "detectron2/modeling/proposal_generator/rrpn.py",
+          "detectron2/modeling/roi_heads/rotated_fast_rcnn.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/modeling/proposal_generator/rrpn.py": "93716277a57f4108c9c163777db4c2178ddb50a1ac59da00385a0ad29ef84119",
+          "detectron2/modeling/roi_heads/rotated_fast_rcnn.py": "e0b7ac99e26971c59da5ba099a46a56a3f264e26b8febe6dd95d02e11fef2797"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      },
+      "scope_limitation": "The assertion combines rotated ROI and rotated proposal losses; it does not locate the defect inside one of those classes."
+    }
+  ],
+  "reviewed_passed_upstream_tests": [
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_bad_lazycall",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_bad_lazycall",
+        "method_line": 94,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_basic_construct",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_basic_construct",
+        "method_line": 31,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_dataclass",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_instantiate_dataclass",
+        "method_line": 76,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_dataclass_as_subconfig",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_instantiate_dataclass_as_subconfig",
+        "method_line": 85,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_lazy_target",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_instantiate_lazy_target",
+        "method_line": 62,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_list",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_instantiate_list",
+        "method_line": 68,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_other_obj",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_instantiate_other_obj",
+        "method_line": 52,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/config/test_instantiate_config.py::TestConstruction::test_interpolation",
+      "target_capability": "graphify-foundation-config-d9928761e096",
+      "target_label": "Configuration and object construction",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.config.instantiate",
+        "detectron2.config.LazyCall"
+      ],
+      "rationale": "Directly checks lazy object construction, nested targets, containers, dataclasses, interpolation and invalid LazyCall targets. Test classes, ShapeSpec and serialization helpers are fixtures or supporting context.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/config/test_instantiate_config.py",
+        "test_class": "TestConstruction",
+        "test_method": "test_interpolation",
+        "method_line": 98,
+        "test_file_sha256": "57905b094e79deb169cfdb298ada250b8afd112a6c33ca65a454e5dab2c64b3c",
+        "subject_module_paths": [
+          "detectron2/config/instantiate.py",
+          "detectron2/config/lazy.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/config/instantiate.py": "433dc1e25fa79f3a60dc274fda5e06151fe6d049e7681d3b425dbdf4ef050e72",
+          "detectron2/config/lazy.py": "ab5982cf290f2129a0a09eada117880e10aabd071271ddd2064acbd312d96b7f"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxIOU::test_pairwise_ioa",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxIOU",
+        "test_method": "test_pairwise_ioa",
+        "method_line": 180,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxIOU::test_pairwise_iou",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxIOU",
+        "test_method": "test_pairwise_iou",
+        "method_line": 168,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_array",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_array",
+        "method_line": 36,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_cpu_tensor",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_cpu_tensor",
+        "method_line": 44,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_list",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_list",
+        "method_line": 25,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_array",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_xywh_to_xywha_array",
+        "method_line": 115,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_list",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_xywh_to_xywha_list",
+        "method_line": 105,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_tensor",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_xywh_to_xywha_tensor",
+        "method_line": 125,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_array",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_xywha_to_xyxy_array",
+        "method_line": 74,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_list",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_xywha_to_xyxy_list",
+        "method_line": 64,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_tensor",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_box_convert_xywha_to_xyxy_tensor",
+        "method_line": 89,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_convert_int_mode",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_convert_int_mode",
+        "method_line": 22,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_json_deserializable",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_json_deserializable",
+        "method_line": 143,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxMode::test_json_serializable",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxMode",
+        "test_method": "test_json_serializable",
+        "method_line": 136,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxes::test_empty_cat",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxes",
+        "test_method": "test_empty_cat",
+        "method_line": 190,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_boxes.py::TestBoxes::test_to",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Boxes",
+        "detectron2.structures.BoxMode",
+        "detectron2.structures.pairwise_iou",
+        "detectron2.structures.pairwise_ioa"
+      ],
+      "rationale": "Directly checks Boxes, BoxMode conversions, pairwise box overlaps or their container operations. All subject APIs are owned by the structures capability.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_boxes.py",
+        "test_class": "TestBoxes",
+        "test_method": "test_to",
+        "method_line": 194,
+        "test_file_sha256": "8af9c75f1296146414797e6519a11cc52670dc6ea86702e90c3ce0e8290709ae",
+        "subject_module_paths": [
+          "detectron2/structures/boxes.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/boxes.py": "d597561ee888c4066a22c2a87bd1bab412bce4259acb7771e9a427a3ff1d1e86"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    },
+    {
+      "upstream_id": "tests/structures/test_instances.py::TestInstances::test_int_indexing",
+      "target_capability": "graphify-foundation-structures-585ecc6f966f",
+      "target_label": "Image and prediction data structures",
+      "attribution_kind": "reviewed_primary_test_subject",
+      "subject_apis": [
+        "detectron2.structures.Instances.__getitem__"
+      ],
+      "rationale": "Directly checks positive/negative integer selection and index errors on aligned Instances fields. TorchScript-related tests in this file are deliberately left unreviewed here.",
+      "fault_localization": false,
+      "provenance": {
+        "test_path": "tests/structures/test_instances.py",
+        "test_class": "TestInstances",
+        "test_method": "test_int_indexing",
+        "method_line": 12,
+        "test_file_sha256": "8de51bac9c441f6941eec6201cfe8235920d7e69419803d0263a5228669b55ba",
+        "subject_module_paths": [
+          "detectron2/structures/instances.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/structures/instances.py": "c25b08e473cbf31d94c6090652147d9955b704ebd4a61c6fa83979a0cef81ca2"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    }
+  ],
+  "model_oracles": [
+    {
+      "model": "COCO-Detection/retinanet_R_50_FPN_1x.yaml",
+      "check_fields": [
+        "checkpoint_schema",
+        "inference"
+      ],
+      "target_capability": "graphify-model-retinanet-b003c5b2fc90",
+      "target_label": "RetinaNet one-stage detection",
+      "attribution_kind": "reviewed_primary_model_subject",
+      "subject_apis": [
+        "detectron2.modeling.meta_arch.retinanet.RetinaNet"
+      ],
+      "rationale": "The fixed-state comparison selects a recipe whose observed meta-architecture is RetinaNet. Attribute its checkpoint-schema and one-input inference observations only to the frozen RetinaNet pipeline capability.",
+      "fault_localization": false,
+      "scope_limitation": "One fixed original state and one CPU input; pipeline observation, not an independent test of all backbones, heads, layers or helpers. It remains outside upstream-test counts.",
+      "provenance": {
+        "recipe": "COCO-Detection/retinanet_R_50_FPN_1x.yaml",
+        "original_recipe_path": "configs/COCO-Detection/retinanet_R_50_FPN_1x.yaml",
+        "original_recipe_sha256": "f085c44952ac6db0f0cc2ee738474bf6edfd5fdab02f9426481f2dc812543428",
+        "observed_meta_architecture": "RetinaNet",
+        "subject_module_paths": [
+          "detectron2/modeling/meta_arch/retinanet.py"
+        ],
+        "subject_module_sha256": {
+          "detectron2/modeling/meta_arch/retinanet.py": "fdb2a17e4c08e6a894881d7404ef7679793b5f47edca4ea64ab9448ba0572998"
+        },
+        "ownership_source": "frozen-plan-v3 capability own files"
+      }
+    }
+  ],
+  "summary": {
+    "failed_upstream_cases": 4,
+    "reviewed_failed_upstream_target_modules": 3,
+    "additional_failed_model_target_modules": 1,
+    "expected_direct_failed_modules": 4,
+    "reviewed_passed_cases": 25,
+    "reviewed_passed_target_modules": 2
+  },
+  "limitations": [
+    "This review identifies the declared primary subject exercised by each listed check, not the implementation component at fault.",
+    "The standard ROI test combines proposal, box and mask losses; its chosen owner is the frozen head-composition capability.",
+    "Only explicitly listed passed cases received a semantic review. Other existing test associations remain context until separately reviewed.",
+    "No original test assertions, recorded outcomes, candidate code or frozen graph ownership were changed. No target code was executed."
+  ],
+  "release_evidence_file": "verification-detail.json",
+  "combined_observations_sha256": "117a3e0421552b89889434eeb263be2f7572e1fee8b1fe168dbdbe41becaa80e",
+  "combined_observations_file": "verifier/combined-release.json",
+  "observation_binding_review": {
+    "detail_tests_equal_sanitized_combined_tests": true,
+    "observation_count": 392,
+    "existing_outcomes_unchanged": true
+  }
+}
