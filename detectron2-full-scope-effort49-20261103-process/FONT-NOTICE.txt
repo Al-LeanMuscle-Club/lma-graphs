@@ -1,0 +1,4 @@
+Diagram SC is a character subset of Noto Sans CJK SC Regular, distributed under the SIL Open Font License 1.1.
+Source: https://github.com/notofonts/noto-cjk/tree/main/Sans
+See FONT-LICENSE.txt. Font copyright/name metadata is preserved in the subset.
+The font is bundled locally; this page does not contact a font CDN.

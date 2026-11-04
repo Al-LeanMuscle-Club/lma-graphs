@@ -1,0 +1,709 @@
+{
+  "title_zh": "Detectron2：从功能知识到独立重写，再到逐轮验证",
+  "summary_zh": "本次没有删减所选功能。先冻结原版与语义知识，再从空实现工作区重写；经过 7 轮候选、独立安装/CPU/GPU/补充检查和真实任务发现的问题反馈，最终实现与运行配置等合计保留 47.417%。固定行为检查通过，但任务成本验收尚无定论。",
+  "source_repository": "facebookresearch/detectron2",
+  "original_commit": "247691a1c292654867deb35cabb27f18d75a1363",
+  "target": {
+    "capability_nodes_selected": 106,
+    "excluded": 0,
+    "requested_retained_percent_below": 50,
+    "operational_source_target_percent": 49,
+    "initial_source_lines": 72035,
+    "initial_source_integer_ceiling": 35297,
+    "combined_line_ceiling": 37619,
+    "combined_ceiling_unchanged_after_accounting_v3": true
+  },
+  "preparation": {
+    "graphify_version": "0.9.100",
+    "graph_sha256": "522b80a201327190d6afa4b69c7bd66d485dcfda0cecc2eb0bb9653dfd64e4bf",
+    "knowledge_counts": {
+      "capabilities": 106,
+      "contracts": 7394,
+      "evidence": 1494,
+      "relations": 999
+    },
+    "knowledge_form": [
+      "capabilities.json",
+      "contracts.jsonl",
+      "evidence.jsonl",
+      "relations.jsonl",
+      "overview.md",
+      "index.json"
+    ],
+    "narrative_zh": [
+      "给人的功能图用于理解和范围选择；给作者的是更完整的语义知识包。",
+      "用户授权跳过 Submit，不删减能力，并要求低于原代码量的 50%；运行采用 49% 目标。",
+      "独立作者不接收原始实现、测试和 Git 历史；验证器保留原版，反馈语义契约、API/数学规则和必要的声明数据。",
+      "这条隔离边界由运行契约约束，共享文件系统没有提供 OS 级绝对隔离证明。",
+      "原版先冻结 CPU/GPU/预训练及后续针对性探针结果；语义图本身不是行为等价证明。"
+    ],
+    "evidence_ids": [
+      "plan",
+      "knowledge",
+      "source_boundary",
+      "baseline_coverage"
+    ]
+  },
+  "rounds": [
+    {
+      "id": "rewrite_1",
+      "round": 1,
+      "title_zh": "从语义知识独立重写",
+      "candidate_commit": "31bbf7b64a425841485bccfdb7784d7e9fb4df10",
+      "implementation_source_lines": 18948,
+      "source_count_note_zh": null,
+      "repairs_zh": [
+        "全选 106 个能力节点，独立生成实现；只提供语义知识，不把原始实现、测试或 Git 历史复制给作者。",
+        "生成的 C++ 扩展独立构建；安装检查与功能检查分开执行。"
+      ],
+      "observations_zh": [
+        "候选存在真实 API、脚本化、训练/评估及 DensePose 缺口；Panoptic 0/7、DensePose 0/14。",
+        "GPU 的 14 个 error 来自同一导入收集失败，3 个 timeout 来自同一旋转 NMS 组，不能当作 17 个独立数值失败。",
+        "预训练预测数值匹配，但旧 checkpoint 出现 5 个多余 anchor-buffer 键，严格检查仍失败。",
+        "源码仅 18,948 行，却产生 71,570 行配置数据；只看源码会高估压缩效果。"
+      ],
+      "installation": {
+        "passed": 4,
+        "total": 4,
+        "status": "passed"
+      },
+      "cpu": {
+        "total_groups": 160,
+        "behavior_passed": 101,
+        "behavior_regressed": 59,
+        "execution_passed": 108,
+        "execution_failed": 52,
+        "overall_raw_status": "unverified",
+        "environment_qualified": false,
+        "interpretation_zh": "环境与基线不一致；101/59 为诊断性对照，整轮状态 unverified，不能当作合格验收。"
+      },
+      "gpu": {
+        "selected": 23,
+        "passed": 6,
+        "failed": null,
+        "not_executed_collection": 14,
+        "collection_root_causes": 1,
+        "timeout_marked": 3,
+        "timeout_groups": 1
+      },
+      "strict_pretrained": {
+        "status": "failed",
+        "scope_zh": "1 个官方 Mask R-CNN R50-FPN checkpoint + 1 张真实 COCO 图；包括键名、类别/形状、框/分数/掩码容差。"
+      },
+      "supplemental": [
+        {
+          "name": "Panoptic",
+          "passed": 0,
+          "total": 7,
+          "failed": 7
+        },
+        {
+          "name": "DensePose",
+          "passed": 0,
+          "total": 14,
+          "failed": 14
+        }
+      ],
+      "evidence_ids": [
+        "r1_installation",
+        "r1_cpu",
+        "r1_gpu",
+        "r1_panoptic-v1",
+        "r1_densepose-v1"
+      ]
+    },
+    {
+      "id": "rewrite_2",
+      "round": 2,
+      "title_zh": "修复 Panoptic 并去重配置",
+      "candidate_commit": "461231891eac2aa03fdc25a038e84d2810c9847d",
+      "implementation_source_lines": 19009,
+      "source_count_note_zh": "19,009 行来自下一轮冻结反馈中的第 2 轮实测记录。",
+      "repairs_zh": [
+        "修复 Panoptic 实例评分、实例编号为零、空结果字段、速度模式、可选权重及 head 返回接口等 7 项行为。",
+        "用共享模板和显式覆盖减少重复配置；保留配方、元数据与可变实例独立性。"
+      ],
+      "observations_zh": [
+        "全量 CPU 对照尚未完成时第 3 轮已经就绪，该轮全量运行取消并标记 superseded；不能声称该轮全量通过。"
+      ],
+      "installation": {
+        "passed": 4,
+        "total": 4,
+        "status": "passed"
+      },
+      "cpu": {
+        "status": "superseded_without_complete_result",
+        "behavior_passed": null,
+        "behavior_regressed": null
+      },
+      "gpu": {
+        "status": "not_run_for_this_commit"
+      },
+      "strict_pretrained": {
+        "status": "not_run_for_this_commit"
+      },
+      "supplemental": [
+        {
+          "name": "Panoptic",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        }
+      ],
+      "evidence_ids": [
+        "r2_installation",
+        "r2_superseded",
+        "r2_feedback",
+        "r2_integration",
+        "r2_panoptic-v1"
+      ]
+    },
+    {
+      "id": "rewrite_3",
+      "round": 3,
+      "title_zh": "补齐接口、DensePose 与原生算子",
+      "candidate_commit": "75f6f569b317e0e1ae2f76156df9cfafa75c1fdf",
+      "implementation_source_lines": 39155,
+      "source_count_note_zh": "原始报告含重复安装自检树；39,155 不是清理后的交付体积，后续第 4 轮重新计量。",
+      "repairs_zh": [
+        "按语义反馈修复配置、数据结构、追踪、训练/日志、脚本化、导出和项目扩展兼容性。",
+        "修复旋转几何入口、旋转 NMS 执行及旧 checkpoint anchor-buffer 加载；从候选 C++ 重建。",
+        "补齐 DensePose 数学/API 与完整 LVIS 元数据；使用有明确字段的 TSV/JSON。"
+      ],
+      "observations_zh": [
+        "CPU 仍有 41 组行为回归；GPU 9 个通过，14 个因一个 structures 层缺失导入而未执行。",
+        "安装自检副本混入交付树，原始行数读数 39,155 包含重复目录；后续清理，原报告不回写。"
+      ],
+      "installation": {
+        "passed": 4,
+        "total": 4,
+        "status": "passed"
+      },
+      "cpu": {
+        "total_groups": 160,
+        "behavior_passed": 119,
+        "behavior_regressed": 41,
+        "execution_passed": 127,
+        "execution_failed": 33,
+        "overall_raw_status": "regressed",
+        "environment_qualified": true
+      },
+      "gpu": {
+        "selected": 23,
+        "passed": 9,
+        "failed": 0,
+        "not_executed_collection": 14,
+        "collection_root_causes": 1,
+        "timeout_marked": 0
+      },
+      "strict_pretrained": {
+        "status": "passed",
+        "scope_zh": "1 个官方 Mask R-CNN R50-FPN checkpoint + 1 张真实 COCO 图；包括键名、类别/形状、框/分数/掩码容差。"
+      },
+      "supplemental": [
+        {
+          "name": "Panoptic",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        },
+        {
+          "name": "DensePose",
+          "passed": 14,
+          "total": 14,
+          "failed": 0
+        }
+      ],
+      "evidence_ids": [
+        "r3_installation",
+        "r3_cpu",
+        "r3_feedback",
+        "r3_integration",
+        "r3_gpu",
+        "r3_panoptic-v1",
+        "r3_densepose-v1",
+        "r3_safe_summary"
+      ]
+    },
+    {
+      "id": "rewrite_4",
+      "round": 4,
+      "title_zh": "清理交付目录并修复兼容性",
+      "candidate_commit": "1ea1d22e13e35189fc03623176e59c4a0037fe94",
+      "implementation_source_lines": 20290,
+      "source_count_note_zh": null,
+      "repairs_zh": [
+        "修复 30 项细化 CPU 契约与兼容性补充包，补全 structures 层旋转 IoU 公共入口。",
+        "移出作者自检生成的重复安装树及工作目录；保留独立重建原生扩展所需源码。"
+      ],
+      "observations_zh": [
+        "剩余 11 组 CPU 回归和 4/7 DensePose 忽略规则差异。",
+        "独立分解显示初始化、anchors 和预测一致；极小 IoU 舍入差异改变精确并列组，继而改变采样和 RRPN 损失。"
+      ],
+      "installation": {
+        "passed": 4,
+        "total": 4,
+        "status": "passed"
+      },
+      "cpu": {
+        "total_groups": 160,
+        "behavior_passed": 149,
+        "behavior_regressed": 11,
+        "execution_passed": 150,
+        "execution_failed": 10,
+        "overall_raw_status": "regressed",
+        "environment_qualified": true
+      },
+      "gpu": {
+        "selected": 23,
+        "passed": 23,
+        "failed": 0,
+        "not_executed_collection": 0,
+        "collection_root_causes": 0,
+        "timeout_marked": 0
+      },
+      "strict_pretrained": {
+        "status": "passed",
+        "scope_zh": "1 个官方 Mask R-CNN R50-FPN checkpoint + 1 张真实 COCO 图；包括键名、类别/形状、框/分数/掩码容差。"
+      },
+      "supplemental": [
+        {
+          "name": "Panoptic",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        },
+        {
+          "name": "DensePose",
+          "passed": 14,
+          "total": 14,
+          "failed": 0
+        },
+        {
+          "name": "DensePose ignore",
+          "passed": 3,
+          "total": 7,
+          "failed": 4
+        }
+      ],
+      "evidence_ids": [
+        "r4_installation",
+        "r4_cpu",
+        "r4_feedback",
+        "r4_integration",
+        "r4_gpu",
+        "r4_panoptic-v1",
+        "r4_densepose-v1",
+        "r4_densepose-ignore-v1",
+        "r4_safe_summary"
+      ]
+    },
+    {
+      "id": "rewrite_5",
+      "round": 5,
+      "title_zh": "修复训练匹配与忽略规则",
+      "candidate_commit": "2709a98fd6f602d5060c50966f88095e64a6f9fd",
+      "implementation_source_lines": 20441,
+      "source_count_note_zh": null,
+      "repairs_zh": [
+        "修复 Cityscapes/Lightning、配置诊断与持久化、类型/序列输入、脚本化和计时 warmup 等 12 项契约。",
+        "修复 DensePose 图像忽略区域过滤及 annotation-ignore 优先级。",
+        "修复旋转 IoU 的精度与几何次序，使 RRPN 精确并列匹配、采样和损失兼容；不放宽 Matcher 相等规则。"
+      ],
+      "observations_zh": [
+        "CPU 剩 4 组回归；GPU 22/23，通过既有测试并不单调。",
+        "旋转 IoU 精度改动引入近重合矩形回归：原生路径重叠低估且有操作数次序依赖，候选自己的 fallback 可通过。"
+      ],
+      "installation": {
+        "passed": 4,
+        "total": 4,
+        "status": "passed"
+      },
+      "cpu": {
+        "total_groups": 160,
+        "behavior_passed": 156,
+        "behavior_regressed": 4,
+        "execution_passed": 158,
+        "execution_failed": 2,
+        "overall_raw_status": "regressed",
+        "environment_qualified": true
+      },
+      "gpu": {
+        "selected": 23,
+        "passed": 22,
+        "failed": 1,
+        "not_executed_collection": 0,
+        "collection_root_causes": 0,
+        "timeout_marked": 0
+      },
+      "strict_pretrained": {
+        "status": "passed",
+        "scope_zh": "1 个官方 Mask R-CNN R50-FPN checkpoint + 1 张真实 COCO 图；包括键名、类别/形状、框/分数/掩码容差。"
+      },
+      "supplemental": [
+        {
+          "name": "Panoptic",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        },
+        {
+          "name": "DensePose",
+          "passed": 14,
+          "total": 14,
+          "failed": 0
+        },
+        {
+          "name": "DensePose ignore",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        }
+      ],
+      "evidence_ids": [
+        "r5_installation",
+        "r5_cpu",
+        "r5_feedback",
+        "r5_integration",
+        "r5_gpu",
+        "r5_panoptic-v1",
+        "r5_densepose-v1",
+        "r5_densepose-ignore-v1",
+        "r5_safe_summary"
+      ]
+    },
+    {
+      "id": "rewrite_6",
+      "round": 6,
+      "title_zh": "修复边界几何，进入真实任务",
+      "candidate_commit": "29b1a2af225ed7c2e3d678865acd329a267c928e",
+      "implementation_source_lines": 20504,
+      "source_count_note_zh": null,
+      "repairs_zh": [
+        "修复 Cityscapes segment 字段、Lightning checkpoint iteration，以及 DensePose chart 累加器中间索引类型。",
+        "修复原生几何对近重合矩形的重叠低估与操作数次序不一致，同时保留已修复的 RRPN 并列语义；不以输出对称化或放宽容差掩盖错误。"
+      ],
+      "observations_zh": [
+        "既有行为检查全部通过后，真实修改任务仍揭示 SemSeg 旧指标聚合/键名不兼容，3 次修改任务真实失败。",
+        "针对该缺口冻结的 8 场景独立检查为 0/8；不是资源未验证，也不是判分器误报。"
+      ],
+      "installation": {
+        "passed": 4,
+        "total": 4,
+        "status": "passed"
+      },
+      "cpu": {
+        "total_groups": 160,
+        "behavior_passed": 160,
+        "behavior_regressed": 0,
+        "execution_passed": 160,
+        "execution_failed": 0,
+        "overall_raw_status": "checks_passed",
+        "environment_qualified": true
+      },
+      "gpu": {
+        "selected": 23,
+        "passed": 23,
+        "failed": 0,
+        "not_executed_collection": 0,
+        "collection_root_causes": 0,
+        "timeout_marked": 0
+      },
+      "strict_pretrained": {
+        "status": "passed",
+        "scope_zh": "1 个官方 Mask R-CNN R50-FPN checkpoint + 1 张真实 COCO 图；包括键名、类别/形状、框/分数/掩码容差。"
+      },
+      "supplemental": [
+        {
+          "name": "Panoptic",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        },
+        {
+          "name": "DensePose",
+          "passed": 14,
+          "total": 14,
+          "failed": 0
+        },
+        {
+          "name": "DensePose ignore",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        },
+        {
+          "name": "SemSeg legacy",
+          "passed": 0,
+          "total": 8,
+          "failed": 8
+        }
+      ],
+      "evidence_ids": [
+        "r6_installation",
+        "r6_cpu",
+        "r6_feedback",
+        "r6_integration",
+        "r6_gpu",
+        "r6_panoptic-v1",
+        "r6_densepose-v1",
+        "r6_densepose-ignore-v1",
+        "r6_semseg-legacy-v1"
+      ]
+    },
+    {
+      "id": "rewrite_7",
+      "round": 7,
+      "title_zh": "修复真实任务发现的 SemSeg 缺口",
+      "candidate_commit": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "implementation_source_lines": 20559,
+      "source_count_note_zh": null,
+      "repairs_zh": [
+        "定向修复 SemSeg 类别有效性、聚合、空值约定和公开指标键名；保留并复验修复前已经 8/8 通过的 reset。",
+        "为新发现的问题冻结原版先运行的 8 场景检查，再验证新候选；原 160 组检查和已有 28 项补充检查不改。"
+      ],
+      "observations_zh": [
+        "固定行为验收全部通过；真实任务 token 验收仍为 inconclusive，不能据此宣称认知负担全面降低。"
+      ],
+      "installation": {
+        "passed": 4,
+        "total": 4,
+        "status": "passed"
+      },
+      "cpu": {
+        "total_groups": 160,
+        "behavior_passed": 160,
+        "behavior_regressed": 0,
+        "execution_passed": 160,
+        "execution_failed": 0,
+        "overall_raw_status": "checks_passed",
+        "environment_qualified": true
+      },
+      "gpu": {
+        "selected": 23,
+        "passed": 23,
+        "failed": 0,
+        "not_executed_collection": 0,
+        "collection_root_causes": 0,
+        "timeout_marked": 0
+      },
+      "strict_pretrained": {
+        "status": "passed",
+        "scope_zh": "1 个官方 Mask R-CNN R50-FPN checkpoint + 1 张真实 COCO 图；包括键名、类别/形状、框/分数/掩码容差。"
+      },
+      "supplemental": [
+        {
+          "name": "Panoptic",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        },
+        {
+          "name": "DensePose",
+          "passed": 14,
+          "total": 14,
+          "failed": 0
+        },
+        {
+          "name": "DensePose ignore",
+          "passed": 7,
+          "total": 7,
+          "failed": 0
+        },
+        {
+          "name": "SemSeg legacy",
+          "passed": 8,
+          "total": 8,
+          "failed": 0
+        }
+      ],
+      "evidence_ids": [
+        "r7_installation",
+        "r7_cpu",
+        "r7_feedback",
+        "r7_integration",
+        "r7_gpu",
+        "r7_panoptic-v1",
+        "r7_densepose-v1",
+        "r7_densepose-ignore-v1",
+        "r7_semseg-legacy-v1"
+      ]
+    }
+  ],
+  "protocol_and_reporting_issues": [
+    {
+      "kind": "validation_environment",
+      "title_zh": "对照环境漂移",
+      "detail_zh": "保留第 1 轮 unverified 原记录，后续恢复基线环境与验证器 PYTHONPATH 后重新运行；没有把旧结果改为通过。",
+      "evidence_ids": [
+        "r1_cpu",
+        "r3_cpu"
+      ]
+    },
+    {
+      "kind": "measurement_and_packaging",
+      "title_zh": "源码小不等于交付体积小",
+      "detail_zh": "首轮大量重复配置暴露体积假象；第 3 轮又出现重复安装目录。通过共享配置与交付清理修复，新增源码+运行配置/数据+构建输入的互斥计量。",
+      "evidence_ids": [
+        "initial_footprint",
+        "r3_feedback",
+        "packaging_cleanup",
+        "final_footprint"
+      ]
+    },
+    {
+      "kind": "measurement_correction",
+      "title_zh": "计量分类更正保留历史",
+      "detail_zh": "CSS 按冻结 harness 计入源码，TOML 归配置；不能重复或漏计。v3 对原版和候选同时计入 CMakeLists.txt、MANIFEST.in 等构建声明，但验收上限仍为 37,619 行。",
+      "evidence_ids": [
+        "final_footprint"
+      ]
+    },
+    {
+      "kind": "count_interpretation",
+      "title_zh": "运行成功、行为匹配与功能等价分开",
+      "detail_zh": "例如第 4 轮 150 组命令成功退出，但仅 149 组与原版行为匹配。一个导入失败可阻塞 14 个 GPU case；不能当作 14 个独立数值错误。",
+      "evidence_ids": [
+        "r4_cpu",
+        "r3_gpu"
+      ]
+    },
+    {
+      "kind": "scope_vs_proof",
+      "title_zh": "106 个保留节点不是 106 项完整功能证明",
+      "detail_zh": "图中 89 个叶节点有直接关联检查，17 个结构节点展示子节点相关结果。局部失败只标注自身；不能用父级汇总冒充直接证明。",
+      "evidence_ids": [
+        "final_cpu_coverage"
+      ]
+    }
+  ],
+  "final_behavior": {
+    "candidate_commit": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "installation": {
+      "passed": 4,
+      "total": 4
+    },
+    "cpu": {
+      "behavior_groups_passed": 160,
+      "behavior_groups_total": 160,
+      "unique_upstream_nodes_passed": 319,
+      "unique_upstream_nodes_total": 319
+    },
+    "gpu": {
+      "passed": 23,
+      "total": 23,
+      "overlap_with_cpu_test_ids": 12,
+      "combined_unique_upstream_test_ids": 330
+    },
+    "strict_pretrained": "passed_single_checkpoint_single_image",
+    "supplemental_scenarios": {
+      "panoptic": 7,
+      "densepose": 14,
+      "densepose_ignore": 7,
+      "semseg_legacy": 8,
+      "passed": 36,
+      "total": 36,
+      "add_to_unique_upstream_total": false
+    },
+    "implementation_source": {
+      "original_lines": 72035,
+      "candidate_lines": 20559,
+      "retained_percent": 28.5403
+    },
+    "implementation_runtime_build": {
+      "original_lines": 76888,
+      "candidate_lines": 36458,
+      "retained_percent": 47.417,
+      "original_bytes": 3337061,
+      "candidate_bytes": 1412898,
+      "retained_bytes_percent": 42.3396
+    },
+    "all_inspected_text": {
+      "original_lines": 94658,
+      "candidate_lines": 46122,
+      "retained_percent": 48.7249,
+      "includes_preserved_tests": true
+    },
+    "task_acceptance": "inconclusive; see independently audited real-task timeline",
+    "evidence_ids": [
+      "r7_cpu",
+      "r7_installation",
+      "r7_gpu",
+      "final_footprint",
+      "final_cpu_coverage"
+    ]
+  },
+  "limits_zh": [
+    "所有数字是选定检查的有限观察，不证明整个 Detectron2 功能完全等价。",
+    "319 CPU 与 23 GPU case 有 12 个重复 ID，去重为 330；36 个补充场景不应直接相加当作独立上游用例总数。",
+    "历史已知缺口中有 39 个 ID 没有本次成功重跑；这不是 39 个当前候选失败，也不能一律解释为资源问题。",
+    "一张图和一个 checkpoint 的推理不证明数据集级 AP、训练收敛、多卡训练、所有模型/设备/可选集成或部署路径。",
+    "图上压缩率只计实现源码；LVIS 等声明数据从 Python 移到 TSV/JSON 后必须看合并体积。代码行数减少也不直接证明 token 或认知负担降低。",
+    "“不删减功能”是选择约束；文档与开发辅助材料已精简，不能解释为原仓库所有文件完全保留。",
+    "原版理解和测试由验证侧完成；作者获得的文字语义可能不完整，源代码隔离并非 OS 强制边界。"
+  ],
+  "diagram_nodes": [
+    {
+      "id": "scope",
+      "label_zh": "全选 106 节点\n目标保留 49%"
+    },
+    {
+      "id": "knowledge",
+      "label_zh": "Graphify + 审阅语义知识\n原版与测试留在验证侧"
+    },
+    {
+      "id": "baseline",
+      "label_zh": "冻结原版对照\nCPU / GPU / 预训练 / 安装"
+    },
+    {
+      "id": "author",
+      "label_zh": "从空实现区独立重写\n后续只改生成代码"
+    },
+    {
+      "id": "repair_loop",
+      "label_zh": "7 轮候选与语义修复\n失败 → 定位 → 契约反馈 → 重验"
+    },
+    {
+      "id": "task_discovery",
+      "label_zh": "真实修改任务发现 SemSeg 缺口\n第 7 轮修复并加入 8 场景"
+    },
+    {
+      "id": "report",
+      "label_zh": "最终代码与有限验证报告\n行为检查通过；token 验收未定"
+    }
+  ],
+  "diagram_edges": [
+    [
+      "scope",
+      "knowledge"
+    ],
+    [
+      "knowledge",
+      "baseline"
+    ],
+    [
+      "knowledge",
+      "author"
+    ],
+    [
+      "baseline",
+      "repair_loop"
+    ],
+    [
+      "author",
+      "repair_loop"
+    ],
+    [
+      "repair_loop",
+      "task_discovery"
+    ],
+    [
+      "task_discovery",
+      "repair_loop"
+    ],
+    [
+      "repair_loop",
+      "report"
+    ]
+  ]
+}

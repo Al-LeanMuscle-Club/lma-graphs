@@ -1,0 +1,76 @@
+{
+  "kind": "derived-experiment-process-visualization",
+  "new_benchmark_model_calls": 0,
+  "source_report": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/",
+  "source_candidate": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+  "files": {
+    "FONT-LICENSE.txt": {
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+      "bytes": 4301
+    },
+    "FONT-NOTICE.txt": {
+      "sha256": "b58d4e050329faa5a014f700f532c5940f3cba573e29e46569332615bcf66bb5",
+      "bytes": 319
+    },
+    "app.js": {
+      "sha256": "21c1e75b442f8910b70b77cc8eb936e14dc5411113bb31fd8e06937f8b8349b2",
+      "bytes": 23651
+    },
+    "data.json": {
+      "sha256": "5dc5dfb185e3307c3dcaf26b9f7a1063d5d55fc40dc3f85a6f400c009b68b28b",
+      "bytes": 83130
+    },
+    "diagram-font.woff2": {
+      "sha256": "7cd02f530645379ef74a687c53285611e1cbf80e29c3aa693af99d6a76ae323c",
+      "bytes": 191568
+    },
+    "index.html": {
+      "sha256": "f2715b245e6a3de9896c0941e38939440ba46785f55b1cd99b83541f638158e2",
+      "bytes": 7876
+    },
+    "overview-en.png": {
+      "sha256": "ecc6da1d27015121d707f1a6e93930d33776d213fde4e9d022ed0c41e80ccd84",
+      "bytes": 103460
+    },
+    "overview-en.svg": {
+      "sha256": "42e2fc8efb212abefd6225cc02688b748770bb489c7082046f06e7380a7ab373",
+      "bytes": 266591
+    },
+    "overview-zh.png": {
+      "sha256": "38e54395d0dadf90935db1c6be384ddeea57477e38a3f5223f52d1301f79ef96",
+      "bytes": 147255
+    },
+    "overview-zh.svg": {
+      "sha256": "30bcf75f64eae3c13d9cdeea0e2dd9a205456d7693676826dfc785289deb5d5f",
+      "bytes": 266187
+    },
+    "rewrite-history.json": {
+      "sha256": "04eb6c1fe2351d25f4f17895253d2852bdbf8eb9a27815bd9198edf5c09191a5",
+      "bytes": 23481
+    },
+    "rounds-en.svg": {
+      "sha256": "308010d9bc978e27c5c09c398bb9c382a1aae078f0c71c7e5d2c5f15ba9f0320",
+      "bytes": 264351
+    },
+    "rounds-zh.svg": {
+      "sha256": "f460e900b0bf45f75035b7c42211417e94720c1946a8920d15b1b8e7cb74a99e",
+      "bytes": 264067
+    },
+    "styles.css": {
+      "sha256": "b071f611d9ab16ed8a64c1823c3e88599afbec5d5028fc22d62cc84c1753e3a5",
+      "bytes": 11070
+    },
+    "task-history.json": {
+      "sha256": "0e64b405c9e41a42e549711e3f026ec1698165c4fb1e4bc5a9d200ce821c07fb",
+      "bytes": 25302
+    },
+    "tasks-en.svg": {
+      "sha256": "3320dc8c8dd77f02c7fab614f0d8d276f48c35c94d7be1acbb6f8ac01e7ce67a",
+      "bytes": 265225
+    },
+    "tasks-zh.svg": {
+      "sha256": "1640f4de29a5682635d8dabb5904884452a22747f04efa3e25c1005c2279156d",
+      "bytes": 264892
+    }
+  }
+}

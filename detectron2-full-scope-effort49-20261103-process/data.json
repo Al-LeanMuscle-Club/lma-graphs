@@ -1,0 +1,1913 @@
+{
+  "schema": 1,
+  "reportURL": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/",
+  "codeURL": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/examples/detectron2-full-scope-effort49-20261103",
+  "graphs": {
+    "overview": {
+      "width": 1390,
+      "height": 700,
+      "nodes": [
+        {
+          "id": "scope",
+          "x": 24,
+          "y": 110,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Freeze scope & budget",
+            "zh": "冻结范围与预算"
+          },
+          "brief": {
+            "en": "No scope pruning. Skip Submit. Target: under 50% of original lines.",
+            "zh": "不删减功能，跳过 Submit；目标保留原版 50% 以下代码。"
+          },
+          "kind": "neutral",
+          "badge": {
+            "en": "01 · USER CHOICE",
+            "zh": "01 · 用户选择"
+          },
+          "short": {
+            "en": "Scope",
+            "zh": "范围"
+          }
+        },
+        {
+          "id": "knowledge",
+          "x": 300,
+          "y": 110,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Graphify → knowledge",
+            "zh": "Graphify → 知识包"
+          },
+          "brief": {
+            "en": "Human capability graph + richer author contracts. Original code stays with verifier.",
+            "zh": "人看的功能图 + 作者用的完整契约；原代码留在验证侧。"
+          },
+          "kind": "neutral",
+          "badge": {
+            "en": "02 · SOURCE-FREE INPUT",
+            "zh": "02 · 无原源码输入"
+          },
+          "short": {
+            "en": "Knowledge",
+            "zh": "知识包"
+          }
+        },
+        {
+          "id": "rewrite",
+          "x": 576,
+          "y": 110,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Build & repair · R1–R6",
+            "zh": "实现与修复 · R1–R6"
+          },
+          "brief": {
+            "en": "Empty workspace → behavior feedback → six revisions. All recorded gates pass at R6.",
+            "zh": "空工作区起步，六轮实现；R6 通过当时已设置的行为检查。"
+          },
+          "kind": "pass",
+          "badge": {
+            "en": "03 · BEHAVIOR LOOP",
+            "zh": "03 · 行为验证循环"
+          },
+          "short": {
+            "en": "R1–R6",
+            "zh": "实现 R1–R6"
+          }
+        },
+        {
+          "id": "r7fix",
+          "x": 852,
+          "y": 110,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Repair SemSeg · R7",
+            "zh": "修复 SemSeg · R7"
+          },
+          "brief": {
+            "en": "API / math feedback only. Keep legacy metrics compatible with the original.",
+            "zh": "仅传 API 与数学反馈，修复旧指标与公开字段的兼容性。"
+          },
+          "kind": "pass",
+          "badge": {
+            "en": "05 · REAL DEFECT REPAIRED",
+            "zh": "05 · 修复真实缺陷"
+          },
+          "short": {
+            "en": "SemSeg repair",
+            "zh": "SemSeg 修复"
+          }
+        },
+        {
+          "id": "frozen",
+          "x": 24,
+          "y": 410,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Freeze independent checks",
+            "zh": "冻结独立验收"
+          },
+          "brief": {
+            "en": "CPU / GPU / install / pretrained checks + four real tasks with hidden variants.",
+            "zh": "CPU、GPU、安装、预训练检查；四种任务各含隐藏变体。"
+          },
+          "kind": "neutral",
+          "badge": {
+            "en": "VERIFIER LANE",
+            "zh": "验证侧"
+          },
+          "short": {
+            "en": "Checks & tasks",
+            "zh": "验收与任务"
+          }
+        },
+        {
+          "id": "original",
+          "x": 300,
+          "y": 410,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Measure original · 24/24",
+            "zh": "测量原版 · 24/24"
+          },
+          "brief": {
+            "en": "Fix verifier protocol; explicit evidence audit. No answers or oracles changed.",
+            "zh": "修正验证协议并显式审计；不改变已测答案或判题标准。"
+          },
+          "kind": "protocol",
+          "badge": {
+            "en": "BASELINE · AUDITED",
+            "zh": "原版基线 · 已审计"
+          },
+          "short": {
+            "en": "Original baseline",
+            "zh": "原版基线"
+          }
+        },
+        {
+          "id": "attempt1",
+          "x": 576,
+          "y": 410,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Real tasks · attempt 1",
+            "zh": "真实任务 · 第 1 轮"
+          },
+          "brief": {
+            "en": "9/12 correct. Modify: 0/3. Tasks expose a legacy SemSeg defect.",
+            "zh": "9/12 正确；修改类 0/3，暴露旧 SemSeg 行为缺陷。"
+          },
+          "kind": "failure",
+          "badge": {
+            "en": "04 · IMPLEMENTATION FAILURE",
+            "zh": "04 · 实现失败"
+          },
+          "short": {
+            "en": "Task failure",
+            "zh": "任务失败"
+          }
+        },
+        {
+          "id": "attempt2",
+          "x": 852,
+          "y": 410,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Reverify → task attempt 2",
+            "zh": "全面复验 → 任务第 2 轮"
+          },
+          "brief": {
+            "en": "Behavior checks pass again. Fresh task runs: 12/12 correct; 3/4 cost gates pass.",
+            "zh": "行为检查再次通过；全新任务 12/12 正确，成本判定 3/4 通过。"
+          },
+          "kind": "pass",
+          "badge": {
+            "en": "06 · NEW CANDIDATE COHORT",
+            "zh": "06 · 新候选测量"
+          },
+          "short": {
+            "en": "Reverify & retest",
+            "zh": "复验与重测"
+          }
+        },
+        {
+          "id": "published",
+          "x": 1128,
+          "y": 260,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Publish with limits",
+            "zh": "发布，并保留结论边界"
+          },
+          "brief": {
+            "en": "47.42% retained. Diagnosis cost inconclusive. Candidate held-out tasks not run.",
+            "zh": "保留 47.42%；诊断成本不确定；候选隐藏任务未运行。"
+          },
+          "kind": "uncertain",
+          "badge": {
+            "en": "07 · FINAL RECORDED RESULT",
+            "zh": "07 · 最终记录"
+          },
+          "short": {
+            "en": "Final result",
+            "zh": "最终结论"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "to": "knowledge",
+          "from": "scope"
+        },
+        {
+          "to": "rewrite",
+          "from": "knowledge"
+        },
+        {
+          "to": "frozen",
+          "start": "bottom",
+          "end": "top",
+          "from": "scope"
+        },
+        {
+          "to": "original",
+          "kind": "protocol",
+          "from": "frozen"
+        },
+        {
+          "to": "attempt1",
+          "kind": "protocol",
+          "from": "original"
+        },
+        {
+          "to": "attempt1",
+          "start": "bottom",
+          "end": "top",
+          "kind": "pass",
+          "from": "rewrite"
+        },
+        {
+          "to": "r7fix",
+          "start": "right",
+          "end": "bottom",
+          "kind": "failure",
+          "via": [
+            [
+              831,
+              488
+            ],
+            [
+              831,
+              335
+            ],
+            [
+              969,
+              335
+            ]
+          ],
+          "label": {
+            "en": "Semantic bug feedback",
+            "zh": "语义缺陷反馈"
+          },
+          "labelX": 900,
+          "labelY": 322,
+          "from": "attempt1"
+        },
+        {
+          "to": "attempt2",
+          "start": "right",
+          "end": "top",
+          "kind": "pass",
+          "via": [
+            [
+              1110,
+              188
+            ],
+            [
+              1110,
+              374
+            ],
+            [
+              969,
+              374
+            ]
+          ],
+          "from": "r7fix"
+        },
+        {
+          "to": "published",
+          "kind": "uncertain",
+          "from": "attempt2"
+        },
+        {
+          "to": "attempt2",
+          "start": "bottom",
+          "end": "bottom",
+          "dashed": true,
+          "kind": "protocol",
+          "via": [
+            [
+              417,
+              619
+            ],
+            [
+              969,
+              619
+            ]
+          ],
+          "label": {
+            "en": "Reuse the same frozen original measurements once",
+            "zh": "复用同一组冻结原版测量，不重复计费"
+          },
+          "labelX": 693,
+          "labelY": 641,
+          "from": "original"
+        }
+      ],
+      "lanes": [
+        {
+          "x": 24,
+          "y": 89,
+          "label": {
+            "en": "SEMANTIC RECONSTRUCTION",
+            "zh": "语义重构"
+          }
+        },
+        {
+          "x": 24,
+          "y": 389,
+          "label": {
+            "en": "INDEPENDENT VALIDATION & REAL TASKS",
+            "zh": "独立验证与真实任务"
+          }
+        }
+      ]
+    },
+    "rounds": {
+      "width": 1850,
+      "height": 410,
+      "nodes": [
+        {
+          "id": "r1",
+          "x": 30,
+          "y": 130,
+          "w": 234,
+          "h": 174,
+          "kind": "failure",
+          "title": {
+            "en": "R1 · Independent rewrite",
+            "zh": "第 1 轮 · 独立重写"
+          },
+          "brief": {
+            "en": "Small source; large configs, missing APIs and an unqualified CPU comparison.",
+            "zh": "源码变小，但配置膨胀、接口缺失，CPU 对照环境不一致。"
+          },
+          "badge": {
+            "en": "Failures + environment mismatch",
+            "zh": "真实缺陷＋环境漂移"
+          },
+          "short": {
+            "en": "First candidate",
+            "zh": "首个候选"
+          }
+        },
+        {
+          "id": "r2",
+          "x": 290,
+          "y": 130,
+          "w": 234,
+          "h": 174,
+          "kind": "protocol",
+          "title": {
+            "en": "R2 · Configs and Panoptic",
+            "zh": "第 2 轮 · 配置与 Panoptic"
+          },
+          "brief": {
+            "en": "Deduplicate recipes and repair Panoptic; the full CPU run is superseded.",
+            "zh": "去重配置并修复 Panoptic；全量 CPU 运行被后续轮次替代。"
+          },
+          "badge": {
+            "en": "Full run superseded",
+            "zh": "全量运行已取消替代"
+          },
+          "short": {
+            "en": "Targeted fixes",
+            "zh": "定向修复"
+          }
+        },
+        {
+          "id": "r3",
+          "x": 550,
+          "y": 130,
+          "w": 234,
+          "h": 174,
+          "kind": "failure",
+          "title": {
+            "en": "R3 · Compatibility repair",
+            "zh": "第 3 轮 · 兼容性修复"
+          },
+          "brief": {
+            "en": "More behaviors match; one import blocks GPU cases and staging inflates line counts.",
+            "zh": "更多行为匹配，但导入阻塞 GPU 用例，安装副本虚增行数。"
+          },
+          "badge": {
+            "en": "119 / 160 CPU groups",
+            "zh": "CPU 行为匹配 119 / 160"
+          },
+          "short": {
+            "en": "Interfaces and packaging",
+            "zh": "接口与交付目录"
+          }
+        },
+        {
+          "id": "r4",
+          "x": 810,
+          "y": 130,
+          "w": 234,
+          "h": 174,
+          "kind": "failure",
+          "title": {
+            "en": "R4 · Matching and ignore rules",
+            "zh": "第 4 轮 · 匹配与忽略规则"
+          },
+          "brief": {
+            "en": "GPU checks pass; CPU regressions expose exact IoU ties and ignore-rule differences.",
+            "zh": "GPU 检查通过；CPU 暴露 IoU 精确并列和忽略规则差异。"
+          },
+          "badge": {
+            "en": "149 / 160 CPU groups",
+            "zh": "CPU 行为匹配 149 / 160"
+          },
+          "short": {
+            "en": "Numerical semantics",
+            "zh": "数值语义"
+          }
+        },
+        {
+          "id": "r5",
+          "x": 1070,
+          "y": 130,
+          "w": 234,
+          "h": 174,
+          "kind": "failure",
+          "title": {
+            "en": "R5 · A geometry regression",
+            "zh": "第 5 轮 · 几何边界回归"
+          },
+          "brief": {
+            "en": "RRPN and ignore rules improve; near-coincident rotated boxes reveal a new defect.",
+            "zh": "RRPN 与忽略规则修复后，近重合旋转框暴露新缺陷。"
+          },
+          "badge": {
+            "en": "156 / 160 CPU; 22 / 23 GPU",
+            "zh": "CPU 156 / 160；GPU 22 / 23"
+          },
+          "short": {
+            "en": "Precision tradeoff",
+            "zh": "精度边界"
+          }
+        },
+        {
+          "id": "r6",
+          "x": 1330,
+          "y": 130,
+          "w": 234,
+          "h": 174,
+          "kind": "failure",
+          "title": {
+            "en": "R6 · Tasks reveal a missed bug",
+            "zh": "第 6 轮 · 真实任务发现遗漏"
+          },
+          "brief": {
+            "en": "Existing checks pass, then real modification tasks uncover legacy SemSeg mismatches.",
+            "zh": "既有检查通过后，真实修改任务发现 SemSeg 旧行为不兼容。"
+          },
+          "badge": {
+            "en": "Checks pass; task exposes bug",
+            "zh": "既有检查通过，任务发现缺陷"
+          },
+          "short": {
+            "en": "Beyond the frozen suite",
+            "zh": "超出既有检查的缺口"
+          }
+        },
+        {
+          "id": "r7",
+          "x": 1590,
+          "y": 130,
+          "w": 234,
+          "h": 174,
+          "kind": "pass",
+          "title": {
+            "en": "R7 · SemSeg repair and recheck",
+            "zh": "第 7 轮 · 修复 SemSeg 并重验"
+          },
+          "brief": {
+            "en": "Metric values and public names match; bounded checks pass, token verdict stays inconclusive.",
+            "zh": "指标数值和名称修复，有限检查通过；token 验收仍未定。"
+          },
+          "badge": {
+            "en": "Bounded checks pass",
+            "zh": "有限行为检查通过"
+          },
+          "short": {
+            "en": "Final behavioral candidate",
+            "zh": "最终行为候选"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "to": "r2",
+          "kind": "neutral",
+          "from": "r1"
+        },
+        {
+          "to": "r3",
+          "kind": "neutral",
+          "from": "r2"
+        },
+        {
+          "to": "r4",
+          "kind": "neutral",
+          "from": "r3"
+        },
+        {
+          "to": "r5",
+          "kind": "neutral",
+          "from": "r4"
+        },
+        {
+          "to": "r6",
+          "kind": "neutral",
+          "from": "r5"
+        },
+        {
+          "to": "r7",
+          "kind": "neutral",
+          "from": "r6"
+        }
+      ],
+      "lanes": [
+        {
+          "x": 30,
+          "y": 103,
+          "label": {
+            "en": "EACH REVISION IS RECHECKED; PROGRESS IS NOT MONOTONIC",
+            "zh": "每个修订重新验收；进展并非单调改善"
+          }
+        }
+      ]
+    },
+    "tasks": {
+      "width": 1668,
+      "height": 645,
+      "nodes": [
+        {
+          "id": "t-original",
+          "x": 24,
+          "y": 120,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Original · 24/24 accepted",
+            "zh": "原版 · 24/24 有效通过"
+          },
+          "brief": {
+            "en": "Four types × two variants × three repetitions. Explicit audit preserves raw history.",
+            "zh": "4 类 × 2 变体 × 3 次；显式审计，保留原始记录。"
+          },
+          "kind": "protocol",
+          "badge": {
+            "en": "FROZEN BASELINE",
+            "zh": "冻结基线"
+          },
+          "short": {
+            "en": "Original 24",
+            "zh": "原版 24 项"
+          },
+          "detail": "original"
+        },
+        {
+          "id": "t-a1",
+          "x": 300,
+          "y": 120,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Attempt 1 · modify fails",
+            "zh": "第 1 轮 · 修改失败"
+          },
+          "brief": {
+            "en": "Understand / diagnose / execute: 3/3 each. Modify: 0/3. Real legacy-metric defect.",
+            "zh": "理解/诊断/执行各 3/3；修改 0/3，旧指标存在真实缺陷。"
+          },
+          "kind": "failure",
+          "badge": {
+            "en": "R6 · 29b1a2af",
+            "zh": "R6 · 29b1a2af"
+          },
+          "short": {
+            "en": "Attempt 1",
+            "zh": "任务第 1 轮"
+          },
+          "detail": "attempt1"
+        },
+        {
+          "id": "probe",
+          "x": 576,
+          "y": 120,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Freeze eight new probes",
+            "zh": "冻结 8 个独立探针"
+          },
+          "brief": {
+            "en": "0/8 full-case matches before repair. Reset already passes; metrics/names differ.",
+            "zh": "修复前完整匹配 0/8；reset 已通过，数值/键名不一致。"
+          },
+          "kind": "failure",
+          "badge": {
+            "en": "INDEPENDENT SEMSEG CHECKS",
+            "zh": "独立 SemSeg 检查"
+          },
+          "short": {
+            "en": "8-case probe",
+            "zh": "8 用例探针"
+          }
+        },
+        {
+          "id": "t-r7",
+          "x": 852,
+          "y": 120,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Semantic feedback → R7",
+            "zh": "语义反馈 → R7"
+          },
+          "brief": {
+            "en": "Fix evaluator compatibility. Eight probes pass; all behavior gates rerun.",
+            "zh": "修复评估兼容性；8 个探针通过，并重跑全部行为检查。"
+          },
+          "kind": "pass",
+          "badge": {
+            "en": "8080c703 · REPAIR",
+            "zh": "8080c703 · 修复"
+          },
+          "short": {
+            "en": "R7 repair",
+            "zh": "R7 修复"
+          },
+          "detail": "r7fix"
+        },
+        {
+          "id": "t-a2",
+          "x": 1128,
+          "y": 120,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Attempt 2 · 12/12 correct",
+            "zh": "第 2 轮 · 12/12 正确"
+          },
+          "brief": {
+            "en": "New sessions for all tasks. Four solver-token medians decrease.",
+            "zh": "全新会话重测所有任务；四类求解 tokens 中位数均下降。"
+          },
+          "kind": "pass",
+          "badge": {
+            "en": "FRESH TASK SAMPLES",
+            "zh": "全新任务样本"
+          },
+          "short": {
+            "en": "Attempt 2",
+            "zh": "任务第 2 轮"
+          },
+          "detail": "attempt2"
+        },
+        {
+          "id": "costgate",
+          "x": 1404,
+          "y": 120,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Cost gate · 3/4 passes",
+            "zh": "成本判定 · 3/4 通过"
+          },
+          "brief": {
+            "en": "Diagnosis ranges overlap. Inconclusive; no candidate hidden tasks or automatic retry.",
+            "zh": "诊断范围重叠：不确定；未运行候选隐藏任务，无自动重试。"
+          },
+          "kind": "uncertain",
+          "badge": {
+            "en": "EMPIRICAL LIMIT",
+            "zh": "经验测量边界"
+          },
+          "short": {
+            "en": "Cost result",
+            "zh": "成本结论"
+          },
+          "detail": "published"
+        },
+        {
+          "id": "protocol-fix",
+          "x": 24,
+          "y": 430,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Fix the verifier protocol",
+            "zh": "修正验证工具协议"
+          },
+          "brief": {
+            "en": "Paths, output shape, long commands, virtualenv control boundary, env prefixes.",
+            "zh": "路径、输出格式、长命令、虚拟环境控制边界、变量前缀。"
+          },
+          "kind": "protocol",
+          "badge": {
+            "en": "SEPARATE FROM CODE FAILURE",
+            "zh": "与代码失败分开"
+          },
+          "short": {
+            "en": "Protocol fixes",
+            "zh": "协议修复"
+          },
+          "detail": "original"
+        },
+        {
+          "id": "audit",
+          "x": 300,
+          "y": 430,
+          "w": 234,
+          "h": 156,
+          "title": {
+            "en": "Audit without a reroll",
+            "zh": "证据审计，不重抽样"
+          },
+          "brief": {
+            "en": "Nine proof false negatives corrected. No new model calls; raw failures retained.",
+            "zh": "纠正 9 条证明假阴性；零新模型调用，原始失败保留。"
+          },
+          "kind": "protocol",
+          "badge": {
+            "en": "DERIVED EVIDENCE VIEW",
+            "zh": "派生证据视图"
+          },
+          "short": {
+            "en": "Explicit audit",
+            "zh": "显式审计"
+          },
+          "detail": "original"
+        }
+      ],
+      "edges": [
+        {
+          "to": "t-a1",
+          "kind": "protocol",
+          "from": "t-original"
+        },
+        {
+          "to": "probe",
+          "kind": "failure",
+          "from": "t-a1"
+        },
+        {
+          "to": "t-r7",
+          "kind": "failure",
+          "from": "probe"
+        },
+        {
+          "to": "t-a2",
+          "kind": "pass",
+          "from": "t-r7"
+        },
+        {
+          "to": "costgate",
+          "kind": "pass",
+          "from": "t-a2"
+        },
+        {
+          "to": "audit",
+          "kind": "protocol",
+          "from": "protocol-fix"
+        },
+        {
+          "to": "t-original",
+          "start": "top",
+          "end": "bottom",
+          "kind": "protocol",
+          "via": [
+            [
+              417,
+              360
+            ],
+            [
+              141,
+              360
+            ]
+          ],
+          "label": {
+            "en": "Establish a valid original baseline",
+            "zh": "建立有效原版基线"
+          },
+          "labelX": 275,
+          "labelY": 345,
+          "from": "audit"
+        }
+      ],
+      "lanes": [
+        {
+          "x": 24,
+          "y": 95,
+          "label": {
+            "en": "REAL CODE FAILURE → BOUNDED REPAIR → FRESH RETEST",
+            "zh": "真实代码失败 → 有界修复 → 全新重测"
+          }
+        },
+        {
+          "x": 24,
+          "y": 407,
+          "label": {
+            "en": "EARLIER VERIFIER PROTOCOL HISTORY",
+            "zh": "此前的验证工具协议修复"
+          }
+        }
+      ]
+    }
+  },
+  "details": {
+    "scope": {
+      "title": {
+        "en": "Freeze the scope before optimization",
+        "zh": "优化前先冻结功能范围"
+      },
+      "problem": [
+        {
+          "en": "The user requested all selected features, no Submit pause, and fewer than 50% of the original lines.",
+          "zh": "用户要求保留所选全部功能，不等待 Submit，保留原版 50% 以下代码。"
+        },
+        {
+          "en": "Pin upstream Detectron2 to commit 247691a1c292654867deb35cabb27f18d75a1363.",
+          "zh": "固定原版 Detectron2 为 247691a1c292654867deb35cabb27f18d75a1363。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Select all 106 scope nodes: 89 functional leaves and 17 structural groups; exclude none.",
+          "zh": "选中全部 106 个范围节点：89 个功能叶节点、17 个结构分组；不排除任何节点。"
+        },
+        {
+          "en": "Initially freeze a 49% source target. After R1 exposes configuration inflation, add a combined implementation/runtime/build ceiling of 37,619 lines and keep it fixed.",
+          "zh": "最初冻结 49% 源码目标；R1 暴露配置膨胀后，增加 37,619 行实现/运行/构建合计上限，此后保持不变。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "The final combined footprint is 36,458 / 76,888 lines (47.42%). The fixed ceiling was not increased when build accounting was corrected.",
+          "zh": "最终合计 36,458 / 76,888 行（47.42%）；修正构建材料计量时，没有提高既定总上限。"
+        },
+        {
+          "en": "Selected scope is intent, not proof that every possible behavior is equivalent.",
+          "zh": "选中范围代表保留意图，不代表所有可能行为已经被证明等价。"
+        }
+      ],
+      "commit": "247691a1c292654867deb35cabb27f18d75a1363"
+    },
+    "knowledge": {
+      "title": {
+        "en": "Two representations, one controlled author input",
+        "zh": "两种知识表达，受限的作者输入"
+      },
+      "problem": [
+        {
+          "en": "A visual graph alone is too coarse to specify all implementation behavior.",
+          "zh": "仅凭人看的功能图，细节不足以定义全部实现行为。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Graphify 0.9.100 creates the human capability graph and a richer semantic package: capabilities, contracts, evidence, relations, overview and index.",
+          "zh": "Graphify 0.9.100 生成面向人的功能图，以及更完整的语义包：功能、契约、证据、关系、概览与索引。"
+        },
+        {
+          "en": "The author starts in an empty workspace with API/math contracts, declarative data and bounded verifier feedback; original implementations, tests and Git history are not supplied.",
+          "zh": "作者从空工作区开始，接收 API/数学契约、声明式数据与有界反馈；不提供原实现、测试或 Git 历史。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "The recorded package contains 106 capabilities, 7,394 contracts, 1,494 evidence records and 999 relations.",
+          "zh": "记录的知识包含 106 个功能节点、7,394 条契约、1,494 条证据与 999 条关系。"
+        },
+        {
+          "en": "The verifier retains original code and tests. This is a procedural input boundary on a shared filesystem, not OS-enforced isolation.",
+          "zh": "验证侧保留原代码与测试。这是共享文件系统中的输入边界，并非操作系统强制隔离。"
+        }
+      ],
+      "hashes": [
+        "522b80a201327190d6afa4b69c7bd66d485dcfda0cecc2eb0bb9653dfd64e4bf"
+      ]
+    },
+    "rewrite": {
+      "title": {
+        "en": "Six implementation rounds before the task failure",
+        "zh": "真实任务失败之前的六轮实现"
+      },
+      "problem": [
+        {
+          "en": "Early candidates had API, scriptability, training, evaluator, native geometry and checkpoint compatibility gaps.",
+          "zh": "早期实现存在 API、脚本化、训练、评估、原生几何与 checkpoint 兼容缺口。"
+        },
+        {
+          "en": "Source-only size hid 71,570 runtime/config lines in R1. The R1 CPU run also had an environment mismatch.",
+          "zh": "R1 只看源码会漏掉 71,570 行运行配置；CPU 比较还存在环境不一致。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Return semantic failure contracts to the author, deduplicate configuration without deleting variants, restore the exact CPU baseline environment, then recheck each revision.",
+          "zh": "把语义失败契约反馈给作者；保留配置变体并去重，恢复完全一致的 CPU 环境，再逐版复验。"
+        },
+        {
+          "en": "Keep regressions visible: R4 passed all 23 GPU groups, but R5 broke one near-coincident rotated-box overlap case. R6 repaired it.",
+          "zh": "保留回归历史：R4 已通过 23 组 GPU 检查，R5 却破坏一个近重合旋转框交叠用例；R6 再修复。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Qualified CPU behavior matches progress from R3 119/160 → R4 149/160 → R5 156/160 → R6 160/160.",
+          "zh": "合格 CPU 行为比较从 R3 的 119/160，经 R4 149/160、R5 156/160，到 R6 160/160。"
+        },
+        {
+          "en": "R6 passes CPU, GPU, strict pretrained, installation and the then-current 28 supplemental checks; real tasks still find another defect.",
+          "zh": "R6 通过 CPU、GPU、严格预训练、安装及当时的 28 个补充检查；真实任务仍发现新缺陷。"
+        }
+      ],
+      "commit": "29b1a2af225ed7c2e3d678865acd329a267c928e"
+    },
+    "frozen": {
+      "title": {
+        "en": "Correctness first, task cost second",
+        "zh": "先验证正确性，再比较任务成本"
+      },
+      "problem": [
+        {
+          "en": "Line reduction can preserve tested behavior while still increasing the work needed to understand or change the repository.",
+          "zh": "代码行减少、已有测试通过，并不保证理解或修改仓库更省精力。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Freeze four tasks: understand geometry, diagnose a class-channel regression, add Dice metrics, and run short training with checkpoint resume. Each has development and held-out variants.",
+          "zh": "冻结四种任务：理解几何变换、诊断类别通道回归、增加 Dice 指标、短程训练并恢复 checkpoint；每种都有开发和隐藏变体。"
+        },
+        {
+          "en": "Use independent solver and judge sessions, fresh copies, three repetitions, gpt-6-astra / xhigh, concurrency 2, and 30-minute per-call limits.",
+          "zh": "使用独立求解与裁判会话、新副本、3 次重复、gpt-6-astra / xhigh、并发 2、每次调用 30 分钟上限。"
+        },
+        {
+          "en": "Count solver input + output tokens only for task-cost comparisons; judges and failed protocol calls are recorded separately.",
+          "zh": "任务成本比较仅计求解者输入加输出 tokens；裁判和失败协议调用单独记录。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Correctness is mandatory. Cost improvement requires at least 5% lower median and candidate maximum below original minimum.",
+          "zh": "必须先正确；成本改善要求中位数至少下降 5%，且候选最大值低于原版最小值。"
+        },
+        {
+          "en": "Three observed repetitions provide an empirical range, not a confidence interval or statistical significance test.",
+          "zh": "3 次重复只提供经验范围，并非置信区间或统计显著性检验。"
+        }
+      ],
+      "hashes": [
+        "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f",
+        "f8b738eb8312905dbd16d10ade60012782aa06cd51d20f9b98e5b4864ecda9b5"
+      ]
+    },
+    "original": {
+      "title": {
+        "en": "Original baseline: repaired protocol, preserved evidence",
+        "zh": "原版基线：修正验证协议，保留原证据"
+      },
+      "problem": [
+        {
+          "en": "Path conventions, underspecified output schemas, long-command receipts, environment prefixes and virtual-environment scanning caused verifier failures.",
+          "zh": "路径约定、输出格式说明不足、长命令收据、环境变量前缀与虚拟环境扫描，导致验证工具失败。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Clarify the task contract equally for both repositories, freeze v2, fix control-scope checks, retain nine independently judged records and complete the other fifteen.",
+          "zh": "对原版和候选统一澄清任务接口并冻结 v2；修复控制区检查，保留 9 条已独立判定记录，完成其余 15 条。"
+        },
+        {
+          "en": "Audit exact successful frozen-check commands to recover eight early and one later proof-classification false negatives. Raw failed records remain unchanged.",
+          "zh": "核验精确且成功的冻结检查命令，纠正早期 8 条和后续 1 条证明分类假阴性；原始 failed 记录保持不变。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Effective baseline: 24/24 accepted, covering four types × two variants × three repetitions. The final proof audit made zero model calls.",
+          "zh": "有效原版基线为 24/24：4 类 × 2 个变体 × 3 次重复；最终证明审计新增模型调用为 0。"
+        },
+        {
+          "en": "The raw controller remains unverified; the accepted baseline is an explicit derived evidence view, not rewritten history.",
+          "zh": "原始控制器仍保留 unverified；通过的基线是显式派生证据视图，并非改写历史。"
+        }
+      ],
+      "hashes": [
+        "76bdf087315e5a74774925a4916d3898269191919a5dc8a85fa83e380c77d225"
+      ]
+    },
+    "attempt1": {
+      "title": {
+        "en": "Candidate task attempt 1: a real SemSeg defect",
+        "zh": "候选真实任务第 1 轮：真实 SemSeg 缺陷"
+      },
+      "problem": [
+        {
+          "en": "The R6 candidate passed its recorded behavior gates, but all three modify tasks failed while adding aggregate Dice metrics.",
+          "zh": "R6 候选已通过既定行为检查，但增加聚合 Dice 指标的 3 次修改任务全部失败。"
+        },
+        {
+          "en": "The newly added task feature was correct; existing candidate SemSeg metrics already differed from the original. This was not a proof-parser false negative.",
+          "zh": "任务新增功能本身正确，但候选原有 SemSeg 指标已与原版不一致；这不是证明解析器误判。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Preserve all failed results and token costs. Freeze an independent eight-case semantic compatibility probe before repair.",
+          "zh": "保留所有失败及其 tokens 开销；修复前冻结一组独立的 8 用例语义兼容探针。"
+        },
+        {
+          "en": "Identify class eligibility, empty/all-ignored conventions and an exact public boundary-metric key mismatch; give only API/math feedback to the author.",
+          "zh": "定位类别纳入规则、空/全忽略数据约定与公开边界指标键名偏差；只向作者提供 API/数学反馈。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Attempt 1: 9/12 correct; understand, diagnose and execute each 3/3, modify 0/3. Hidden variants do not start.",
+          "zh": "第 1 轮 9/12 正确：理解、诊断、执行各 3/3，修改 0/3；不启动隐藏变体。"
+        },
+        {
+          "en": "The independent old-candidate probe has 0/8 fully matching cases: numerical metrics 2/8, public names 0/8, reset already 8/8.",
+          "zh": "旧候选独立探针完整匹配 0/8：数值指标 2/8、公开键名 0/8；reset 原本已是 8/8。"
+        }
+      ],
+      "commit": "29b1a2af225ed7c2e3d678865acd329a267c928e",
+      "hashes": [
+        "2f9cf9fb8665e8ffc9f377771429a157e0b7a9fb49e5bb239b1408694ef6e175"
+      ]
+    },
+    "r7fix": {
+      "title": {
+        "en": "R7: repair compatibility without original implementation input",
+        "zh": "R7：不输入原实现，修复行为兼容性"
+      },
+      "problem": [
+        {
+          "en": "Ordinary IoU was including prediction-only classes; legacy aggregation and empty-data conventions differed. A public boundary key also differed.",
+          "zh": "普通 IoU 错把仅有预测的类别纳入聚合；历史聚合与空数据约定存在差异，公开边界键名也不一致。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Repair the generated evaluator using public API/math contracts. Ordinary IoU class eligibility and boundary IoU eligibility are distinct.",
+          "zh": "根据公开 API/数学契约修复生成的评估器；普通 IoU 与边界 IoU 的类别纳入条件须区分。"
+        },
+        {
+          "en": "Restore metric names and conventions; improve evaluator documentation/navigation. Recheck reset, which already passed before this repair.",
+          "zh": "恢复指标键名与约定，改善评估器文档与导航；复查原本就通过的 reset 行为。"
+        },
+        {
+          "en": "Authoring can overlap measurements of immutable R6, but integrate the repair only after attempt 1 is terminal and its resources are released.",
+          "zh": "作者修复可与不可变 R6 的测量并行，但只在第 1 轮结束且资源释放后合入新候选。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "The frozen independent probe changes from 0/8 to 8/8 full-case matches. No original source, task solution or hidden fixture was supplied to the author.",
+          "zh": "冻结独立探针从完整匹配 0/8 变为 8/8；不向作者提供原源码、任务答案或隐藏输入。"
+        },
+        {
+          "en": "Final commit 8080c703 is rechecked before fresh task sampling. Old candidate samples are not reused.",
+          "zh": "最终提交 8080c703 全面复验后再运行全新任务；不复用旧候选样本。"
+        }
+      ],
+      "commit": "8080c703695dcfa2c8c8118305018e65e0112e8b"
+    },
+    "attempt2": {
+      "title": {
+        "en": "Reverify every gate, then measure fresh tasks",
+        "zh": "重新验证全部门槛，再测全新任务"
+      },
+      "problem": [
+        {
+          "en": "A targeted metric repair might fix one task while regressing unrelated behavior; old candidate measurements cannot validate the new commit.",
+          "zh": "局部指标修复可能损坏其他行为；旧候选的任务测量不能验证新提交。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Rerun CPU, GPU, strict pretrained, fresh-install and all supplemental checks on 8080c703, then run twelve fresh development task sessions and twelve independent judges.",
+          "zh": "在 8080c703 上重跑 CPU、GPU、严格预训练、全新安装和全部补充检查；再运行 12 次全新开发任务与 12 次独立裁判。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "CPU 160/160 behavior groups (319 upstream node IDs), GPU 23/23, installation 4/4, strict pretrained match, supplemental cases 36/36.",
+          "zh": "CPU 160/160 行为组（319 个原版测试节点），GPU 23/23、安装 4/4、严格预训练匹配、补充用例 36/36。"
+        },
+        {
+          "en": "All 12 development tasks are correct; all 24 new model calls have complete usage, and pending cleanup is zero.",
+          "zh": "12 次开发任务全部正确；24 次新增模型调用用量完整，待清理资源为 0。"
+        },
+        {
+          "en": "Cost medians fall in all four types, but diagnosis ranges overlap. Three of four cost gates pass.",
+          "zh": "四种任务中位成本均下降，但诊断类范围重叠；成本判定通过 3/4。"
+        }
+      ],
+      "commit": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "hashes": [
+        "4e5a720aa6ce5015208dd597592bce60b0d7a255c2086ec052dd8dab8d524e21"
+      ]
+    },
+    "published": {
+      "title": {
+        "en": "Publish the code and the qualified result",
+        "zh": "发布代码，以及有边界的结论"
+      },
+      "problem": [
+        {
+          "en": "Code-size and recorded correctness goals are met, but not every empirical task-cost gate passes.",
+          "zh": "代码量与已执行正确性目标达到，但并非全部经验任务成本判定通过。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Publish the final code branch and evidence report with original failures, protocol audits, two candidate attempts and cost accounting.",
+          "zh": "发布最终代码分支与证据报告，保留原始失败、协议审计、两轮候选与成本记录。"
+        },
+        {
+          "en": "Keep diagnosis inconclusive. Do not change thresholds or selectively rerun cheap samples; candidate held-out tasks remain unexecuted.",
+          "zh": "诊断类保留“不确定”；不改阈值、不挑便宜样本重跑；候选隐藏任务仍未执行。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Source: 72,035 → 20,559 lines (28.54% retained). Combined source/runtime/config/build: 76,888 → 36,458 (47.42%).",
+          "zh": "源码：72,035 → 20,559 行（保留 28.54%）；源码/运行配置/构建合计：76,888 → 36,458（47.42%）。"
+        },
+        {
+          "en": "No actionable regression remains under the frozen retry policy. The final stop is not 48M budget exhaustion.",
+          "zh": "冻结重试策略下没有可执行的已确认退步；最后停止并非因 4,800 万预算耗尽。"
+        },
+        {
+          "en": "Recorded checks do not prove every Detectron2 feature equivalent or the complete cognitive-cost goal achieved.",
+          "zh": "这些已记录检查不能证明 Detectron2 所有功能等价，也不能宣布完整认知成本目标已达成。"
+        }
+      ],
+      "commit": "8080c703695dcfa2c8c8118305018e65e0112e8b"
+    },
+    "probe": {
+      "title": {
+        "en": "An independent compatibility check isolates the defect",
+        "zh": "用独立兼容检查隔离问题"
+      },
+      "problem": [
+        {
+          "en": "The real modify task fails when a new Dice extension is added, but the root cause lies in pre-existing candidate legacy metrics.",
+          "zh": "新增 Dice 扩展时真实修改任务失败，但根因在候选已存在的旧指标行为。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Freeze eight tiny semantic-segmentation comparison cases on the verifier side and compare original versus old candidate before accepting a repair.",
+          "zh": "验证侧冻结 8 个小型语义分割对照用例，先比较原版与旧候选，再验收修复。"
+        },
+        {
+          "en": "Check metric values, exact public metric names and reset behavior separately; send only general API/math requirements to the author.",
+          "zh": "分别检查指标数值、精确公开键名与 reset；只把一般 API/数学要求给作者。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Before: 0/8 full cases match; metric values 2/8, names 0/8, reset 8/8. After R7: 8/8 full cases match.",
+          "zh": "修复前完整匹配 0/8：数值 2/8、键名 0/8、reset 8/8；R7 后完整匹配 8/8。"
+        },
+        {
+          "en": "These are eight cases of one evaluator, not eight failed modules. Reset was verified again, not newly repaired.",
+          "zh": "这是同一个评估器的 8 个用例，不是 8 个失败模块；reset 只是再次验证，并非新修复。"
+        }
+      ]
+    },
+    "r1": {
+      "title": {
+        "en": "R1 · Independent rewrite",
+        "zh": "第 1 轮 · 独立重写"
+      },
+      "problem": [
+        {
+          "en": "CPU observed 101 matching groups and 59 regressions, but the environment differed from baseline. The raw verdict remains unverified.",
+          "zh": "CPU 观察到 101 组匹配、59 组回归，但环境与基线不同；原始结论仍为未验证。"
+        },
+        {
+          "en": "One missing import blocked 14 GPU cases; one timeout group affected 3 cases. Numeric inference matched, but 5 unexpected checkpoint keys failed strict loading.",
+          "zh": "一个导入缺失阻塞 14 个 GPU 用例，一个超时组影响 3 个用例。推理数值匹配，但 5 个多余 checkpoint 键导致严格加载失败。"
+        },
+        {
+          "en": "18,948 implementation lines hid 71,570 configuration/data lines. Source-only reduction was misleading.",
+          "zh": "18,948 行实现之外还有 71,570 行配置数据，仅看源码会高估压缩效果。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Start from a fresh implementation workspace with Graphify-derived semantic knowledge, retaining all 106 selected nodes.",
+          "zh": "从新的实现工作区出发，使用 Graphify 衍生语义知识，保留全部 106 个所选节点。"
+        },
+        {
+          "en": "Keep original implementation, tests and history on the verifier side; return semantic requirements to the author. This is a runner contract, not OS-enforced isolation.",
+          "zh": "原始实现、测试和历史留在验证侧，向作者反馈语义要求；这是运行契约，并非 OS 强制隔离。"
+        },
+        {
+          "en": "Rebuild candidate native source independently; separate installation, behavioral checks and strict checkpoint acceptance.",
+          "zh": "独立重建候选原生源码，分别检查安装、行为与严格 checkpoint 兼容性。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Installation: 4/4. GPU: 6 passed; 14 blocked by one import; 3 timeout-marked. Strict pretrained check: failed.",
+          "zh": "安装 4/4；GPU 6 项通过、14 项被一个导入阻塞、3 项标记超时；严格预训练检查失败。"
+        },
+        {
+          "en": "CPU: 101/160 behavior matches, diagnostic only. Successful command exits were 108/160, not behavioral acceptance.",
+          "zh": "CPU 行为匹配 101/160，仅供诊断；108/160 命令成功退出并不等于行为通过。"
+        },
+        {
+          "en": "Targeted Panoptic: 0/7. DensePose: 0/14. These are separate scenario counts, not additional unique upstream tests.",
+          "zh": "定向 Panoptic 0/7、DensePose 0/14；这是独立场景计数，不能直接加到去重上游测试数中。"
+        }
+      ],
+      "commit": "31bbf7b64a425841485bccfdb7784d7e9fb4df10"
+    },
+    "r2": {
+      "title": {
+        "en": "R2 · Configs and Panoptic",
+        "zh": "第 2 轮 · 配置与 Panoptic"
+      },
+      "problem": [
+        {
+          "en": "The first candidate differed on all 7 targeted Panoptic scenarios. Duplicated recipe snapshots also inflated the delivered footprint.",
+          "zh": "首个候选的 7 项 Panoptic 场景全部不符，重复配方快照也使交付体积膨胀。"
+        },
+        {
+          "en": "Round 3 became ready before the full CPU run finished. This run was cancelled and retained as superseded, not passed.",
+          "zh": "第 3 轮就绪时全量 CPU 运行尚未完成；该运行被取消并保留为已替代，不能记为通过。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Repair instance scoring, zero instance IDs, empty outputs, speed mode, optional weights and head return contracts.",
+          "zh": "修复实例评分、零实例编号、空输出、速度模式、可选权重及 head 返回契约。"
+        },
+        {
+          "en": "Share readable config templates with explicit overrides; preserve recipe values, metadata and independent mutable instances.",
+          "zh": "用可读共享配置模板和显式覆盖去重，保留配方值、元数据与可变实例独立性。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Installation: 4/4. Panoptic: 7/7. No complete CPU result or GPU/pretrained rerun for this commit.",
+          "zh": "安装 4/4；Panoptic 7/7。本提交没有完整 CPU 结果，也未重跑 GPU/预训练检查。"
+        },
+        {
+          "en": "Recorded footprint: 19,009 implementation lines plus 16,845 config/data lines; both categories count toward compression.",
+          "zh": "记录体积为 19,009 行实现加 16,845 行配置数据；两类都必须纳入压缩判断。"
+        }
+      ],
+      "commit": "461231891eac2aa03fdc25a038e84d2810c9847d"
+    },
+    "r3": {
+      "title": {
+        "en": "R3 · Compatibility repair",
+        "zh": "第 3 轮 · 兼容性修复"
+      },
+      "problem": [
+        {
+          "en": "41 of 160 CPU behavior groups still regressed. A missing structures-level import prevented 14 GPU cases from running.",
+          "zh": "160 组 CPU 行为中仍有 41 组回归；structures 层缺失一个导入，导致 14 个 GPU 用例未运行。"
+        },
+        {
+          "en": "The raw 39,155-line reading included duplicate installation self-check directories. It is not the cleaned release footprint.",
+          "zh": "原始 39,155 行读数包含重复安装自检目录，不能当作清理后的交付体积。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Repair API compatibility, scripting, training/logging, DensePose mathematics, checkpoint loading and rotated-NMS execution.",
+          "zh": "修复 API 兼容性、脚本化、训练与日志、DensePose 数学、checkpoint 加载和旋转 NMS 执行。"
+        },
+        {
+          "en": "Restore complete declarative catalogs in readable TSV/JSON; do not drop metadata to meet the target.",
+          "zh": "用可读 TSV/JSON 补齐声明目录，不为满足体积目标而删减元数据。"
+        },
+        {
+          "en": "Archive duplicate self-check trees before the next integration; preserve the raw round-3 report and rebuild candidate native source.",
+          "zh": "在下一轮集成前移出重复自检树；保留第 3 轮原报告，并重建候选原生源码。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "CPU behavior: 119/160; successful exits: 127/160. GPU: 9 passed, 14 unexecuted due to one collection error.",
+          "zh": "CPU 行为匹配 119/160，命令成功退出 127/160；GPU 9 项通过，14 项因一个收集错误未执行。"
+        },
+        {
+          "en": "Installation: 4/4. Strict pretrained: passed. Panoptic: 7/7; DensePose: 14/14.",
+          "zh": "安装 4/4；严格预训练检查通过；Panoptic 7/7、DensePose 14/14。"
+        }
+      ],
+      "commit": "75f6f569b317e0e1ae2f76156df9cfafa75c1fdf"
+    },
+    "r4": {
+      "title": {
+        "en": "R4 · Matching and ignore rules",
+        "zh": "第 4 轮 · 匹配与忽略规则"
+      },
+      "problem": [
+        {
+          "en": "11 CPU groups still differed; DensePose ignore preparation matched only 3 of 7 scenarios.",
+          "zh": "仍有 11 组 CPU 行为不符；DensePose 忽略区域预处理仅 3/7 场景匹配。"
+        },
+        {
+          "en": "Tiny rotated-IoU rounding differences changed exact best-match ties, sampled labels and RRPN losses, despite matching model state and anchors.",
+          "zh": "模型状态和 anchors 一致，但旋转 IoU 的微小舍入差异改变精确并列组、采样标签及 RRPN 损失。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Add the public rotated-IoU entry point and repair the narrowed CPU/API contracts, without changing frozen checks.",
+          "zh": "补上公开旋转 IoU 入口，并修复细化后的 CPU/API 契约，保持冻结检查不变。"
+        },
+        {
+          "en": "Localize RRPN by comparing initialization, anchors, predictions and matching stages. Preserve exact tie rules instead of adding an epsilon.",
+          "zh": "按初始化、anchors、预测和匹配阶段定位 RRPN；保留精确并列规则，不通过添加 epsilon 放宽要求。"
+        },
+        {
+          "en": "Keep ignore-region failures separate and return their filtering/precedence contracts for the next repair.",
+          "zh": "单独记录忽略区域失败，向下一轮反馈过滤与优先级契约。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "CPU behavior: 149/160; successful exits: 150/160. GPU: 23/23; strict pretrained and installation 4/4 passed.",
+          "zh": "CPU 行为匹配 149/160，命令成功退出 150/160；GPU 23/23、严格预训练与安装 4/4 通过。"
+        },
+        {
+          "en": "Panoptic: 7/7; DensePose: 14/14; ignore preparation: 3/7. Cleaned implementation: 20,290 lines.",
+          "zh": "Panoptic 7/7、DensePose 14/14、忽略区域预处理 3/7；清理后实现为 20,290 行。"
+        }
+      ],
+      "commit": "1ea1d22e13e35189fc03623176e59c4a0037fe94"
+    },
+    "r5": {
+      "title": {
+        "en": "R5 · A geometry regression",
+        "zh": "第 5 轮 · 几何边界回归"
+      },
+      "problem": [
+        {
+          "en": "Four CPU groups still regressed: Cityscapes, Lightning, DensePose chart accumulation and rotated-box geometry.",
+          "zh": "CPU 仍有 4 组回归：Cityscapes、Lightning、DensePose chart 累加器和旋转框几何。"
+        },
+        {
+          "en": "A precision repair introduced native overlap underestimation for nearly coincident rectangles. Reversing operands changed the result; the candidate fallback behaved correctly.",
+          "zh": "精度修复引入近重合矩形的原生重叠低估；交换操作数会改变结果，而候选 fallback 行为正确。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Repair 12 narrowed CPU contracts plus image-region filtering and annotation-ignore precedence.",
+          "zh": "修复 12 项细化 CPU 契约，以及图像区域过滤和 annotation-ignore 优先级。"
+        },
+        {
+          "en": "Diagnose the new near-coincident geometry regression and give R6 the requirement to preserve exact RRPN ties without relaxed tolerances or post-hoc symmetrization.",
+          "zh": "诊断新出现的近重合几何回归，向 R6 提供修复要求：保留精确 RRPN 并列语义，不放宽容差，不靠事后对称化。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "CPU behavior: 156/160; successful exits: 158/160. GPU: 22/23; strict pretrained and installation 4/4 passed.",
+          "zh": "CPU 行为匹配 156/160，命令成功退出 158/160；GPU 22/23、严格预训练与安装 4/4 通过。"
+        },
+        {
+          "en": "All 28 earlier supplemental scenarios passed. Implementation: 20,441 lines; the near-coincident geometry failure remained genuine.",
+          "zh": "此前 28 项补充场景全通过；实现为 20,441 行，近重合几何仍是真实失败。"
+        }
+      ],
+      "commit": "2709a98fd6f602d5060c50966f88095e64a6f9fd"
+    },
+    "r6": {
+      "title": {
+        "en": "R6 · Tasks reveal a missed bug",
+        "zh": "第 6 轮 · 真实任务发现遗漏"
+      },
+      "problem": [
+        {
+          "en": "All existing behavior gates passed, but 3 real modification tasks failed retained SemSeg behavior. Their requested extension logic was accepted.",
+          "zh": "既有行为门槛全部通过，但 3 次真实修改任务因原有 SemSeg 行为失败；新增功能逻辑本身被接受。"
+        },
+        {
+          "en": "A new original-first probe matched 0 of 8 complete legacy-metric scenarios. Numeric aggregation and public names differed; reset behavior already passed.",
+          "zh": "新增的原版先运行探针中，8 个完整旧指标场景均不匹配：数值聚合和公开名称有差异；reset 行为此前已通过。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Repair the last Cityscapes, Lightning and chart-index contracts; stabilize native near-coincident geometry while preserving RRPN behavior.",
+          "zh": "修复最后的 Cityscapes、Lightning 和 chart 索引契约；稳定原生近重合几何，保留 RRPN 行为。"
+        },
+        {
+          "en": "After task failure, freeze 8 additional original-first SemSeg scenarios and send only API/mathematical requirements for round 7.",
+          "zh": "任务失败后冻结 8 项原版先运行的 SemSeg 场景，仅反馈 API/数学要求供第 7 轮修复。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "Existing CPU: 160/160 groups, 319/319 upstream nodes. GPU: 23/23; installation: 4/4; strict pretrained and 28 scenarios passed.",
+          "zh": "既有 CPU 160/160 组、上游节点 319/319；GPU 23/23、安装 4/4、严格预训练及 28 项场景通过。"
+        },
+        {
+          "en": "Later SemSeg probe: 0/8 complete scenarios matched. Three modification-task failures remain recorded; earlier green checks were not erased.",
+          "zh": "后续 SemSeg 探针 0/8 完整场景匹配；保留 3 次修改任务失败，也不抹去先前已通过的检查。"
+        }
+      ],
+      "commit": "29b1a2af225ed7c2e3d678865acd329a267c928e"
+    },
+    "r7": {
+      "title": {
+        "en": "R7 · SemSeg repair and recheck",
+        "zh": "第 7 轮 · 修复 SemSeg 并重验"
+      },
+      "problem": [
+        {
+          "en": "The remaining genuine bug concerned SemSeg class eligibility, undefined/empty conventions, aggregation and public metric names.",
+          "zh": "剩余真实缺陷涉及 SemSeg 类别有效性、未定义/空值约定、聚合及公开指标名称。"
+        },
+        {
+          "en": "Passing finite behavior checks does not establish full equivalence. The final task-cost verdict is inconclusive; held-out candidate tasks did not run.",
+          "zh": "有限行为检查通过不代表完整等价；最终任务成本结论仍未定，候选 held-out 任务没有运行。"
+        }
+      ],
+      "repair": [
+        {
+          "en": "Repair class validity, legacy numeric aggregates, empty/undefined results and exact public metric names. Preserve already-passing reset behavior.",
+          "zh": "修复类别有效性、旧数值聚合、空值/未定义结果和准确公开指标名；保留此前已经通过的 reset 行为。"
+        },
+        {
+          "en": "Rebuild and rerun the unchanged CPU/GPU/install gates and all 36 supplemental scenarios against the new commit.",
+          "zh": "针对新提交重建，并重跑不变的 CPU/GPU/安装门槛及全部 36 项补充场景。"
+        },
+        {
+          "en": "Count implementation, runtime data/config and build inputs together; keep the conservative 37,619-line ceiling unchanged.",
+          "zh": "合并计量实现、运行数据/配置和构建输入；保守上限仍为 37,619 行，不调高门槛。"
+        }
+      ],
+      "evidence": [
+        {
+          "en": "CPU: 160/160 groups and 319/319 upstream nodes; GPU: 23/23; installation: 4/4; strict pretrained and all 36 scenarios passed.",
+          "zh": "CPU 160/160 组、上游节点 319/319；GPU 23/23、安装 4/4、严格预训练及 36 项场景全通过。"
+        },
+        {
+          "en": "Final implementation: 20,559/72,035 lines. Implementation + runtime/config/build: 36,458/76,888 lines, retaining 47.417%.",
+          "zh": "最终实现为 20,559/72,035 行；合并运行配置/数据与构建输入后为 36,458/76,888 行，保留 47.417%。"
+        },
+        {
+          "en": "The 319 CPU and 23 GPU IDs overlap by 12: 330 unique upstream IDs, not 342. Finite checks do not prove full equivalence.",
+          "zh": "319 个 CPU 与 23 个 GPU ID 重复 12 个，去重为 330 而非 342；有限检查不证明完整等价。"
+        }
+      ],
+      "commit": "8080c703695dcfa2c8c8118305018e65e0112e8b"
+    }
+  },
+  "tasks": [
+    {
+      "id": "understand",
+      "label": {
+        "en": "Understand",
+        "zh": "理解"
+      },
+      "description": {
+        "en": "Predict image / coordinate / prediction transforms, with source evidence.",
+        "zh": "预测图像、坐标与输出转换，并给出源码依据。"
+      },
+      "firstCorrect": 3,
+      "firstNote": {
+        "en": "Correct before and after; no task-driven implementation repair.",
+        "zh": "修复前后均正确；没有因此修改实现。"
+      },
+      "status": "passed",
+      "original": {
+        "max": 448960,
+        "median": 445141,
+        "min": 405245
+      },
+      "candidate": {
+        "max": 293511,
+        "median": 282700,
+        "min": 275698
+      },
+      "change": -36.492
+    },
+    {
+      "id": "diagnose",
+      "label": {
+        "en": "Locate & diagnose",
+        "zh": "定位与诊断"
+      },
+      "description": {
+        "en": "Reproduce and explain a COCO class-mapping / output-channel integration regression.",
+        "zh": "复现并解释 COCO 类别映射与输出通道的集成回归。"
+      },
+      "firstCorrect": 3,
+      "firstNote": {
+        "en": "Correct; attempt 1 cost gate passed. The fresh final sample has a wider range.",
+        "zh": "正确，第 1 轮成本通过；最终全新样本范围更宽。"
+      },
+      "status": "inconclusive",
+      "original": {
+        "max": 537098,
+        "median": 505659,
+        "min": 388256
+      },
+      "candidate": {
+        "max": 464933,
+        "median": 318525,
+        "min": 302583
+      },
+      "change": -37.008
+    },
+    {
+      "id": "modify",
+      "label": {
+        "en": "Modify",
+        "zh": "修改"
+      },
+      "description": {
+        "en": "Add aggregate Dice metrics while preserving legacy semantic-evaluation behavior.",
+        "zh": "增加聚合 Dice 指标，保持旧语义评估行为兼容。"
+      },
+      "firstCorrect": 0,
+      "firstNote": {
+        "en": "Genuine legacy SemSeg defect → eight probes → R7 evaluator repair.",
+        "zh": "真实 SemSeg 兼容缺陷 → 8 个探针 → R7 修复。"
+      },
+      "status": "passed",
+      "original": {
+        "max": 538274,
+        "median": 422422,
+        "min": 408166
+      },
+      "candidate": {
+        "max": 388619,
+        "median": 320312,
+        "min": 303863
+      },
+      "change": -24.173
+    },
+    {
+      "id": "execute",
+      "label": {
+        "en": "Use & execute",
+        "zh": "使用与执行"
+      },
+      "description": {
+        "en": "Clean environment → tiny CPU training → save and resume through real trainer APIs.",
+        "zh": "干净环境 → 小型 CPU 训练 → 使用真实训练器接口保存并恢复。"
+      },
+      "firstCorrect": 3,
+      "firstNote": {
+        "en": "Correct before and after. This is not full detector training or an accuracy benchmark.",
+        "zh": "修复前后均正确；不等于完整检测模型训练或精度评估。"
+      },
+      "status": "passed",
+      "original": {
+        "max": 860604,
+        "median": 826954,
+        "min": 807526
+      },
+      "candidate": {
+        "max": 635730,
+        "median": 536969,
+        "min": 431791
+      },
+      "change": -35.067
+    }
+  ],
+  "protocol": [
+    {
+      "kind": {
+        "en": "Validation protocol",
+        "zh": "验证流程"
+      },
+      "title": {
+        "en": "Align fixture and deliverable paths",
+        "zh": "统一输入与交付路径约定"
+      },
+      "description": {
+        "en": "The examiner supplied eight fixture paths with a reserved directory prefix, while the harness expected paths relative to their input group. The harness also rejected legitimate deliverables in permitted task directories. The fix normalized only the exact prefix and allowed non-control deliverables, while retaining traversal, symlink and artifact-integrity checks.",
+        "zh": "examiner 给出的8个输入路径带有保留目录前缀，框架却要求组内相对路径；合法任务目录中的交付物也被拒绝。修复仅规范化准确的前缀，并允许非控制区交付物，同时保留越界、符号链接和产物完整性检查。"
+      },
+      "result": {
+        "en": "Inputs, checks and scoring criteria were unchanged. The incomplete trial was stopped and preserved; it did not become a successful baseline.",
+        "zh": "输入内容、检查和评分标准没有改变。未完成试验被停止并保留，不能算作成功基线。"
+      }
+    },
+    {
+      "kind": {
+        "en": "Resource restart",
+        "zh": "资源规划与重启"
+      },
+      "title": {
+        "en": "Explicitly stop the 8M trial; start a new 48M trial",
+        "zh": "明确中止8M试验，新建48M试验"
+      },
+      "description": {
+        "en": "The first two completed original-repository solver calls consumed 951,077 tokens. This showed that the initial 8M allowance was unlikely to cover repeated original and candidate tasks plus independent judges. The owner stopped that trial, confirmed cleanup, and started a new trial with a 48M observed-token ceiling, keeping the model and three repetitions per task.",
+        "zh": "原版最早两次已完成的solver调用消耗951,077 tokens，显示8M预算预计不足以覆盖原版、候选的重复任务与独立裁判。因此明确停止该次试验并确认清理，再新建48M可观测费用上限的试验；模型和每项3次重复保持不变。"
+      },
+      "result": {
+        "en": "This was a planned restart, not a task-answer failure or a 48M budget-exhaustion event. Completed costs remain recorded; interrupted calls with unknown usage remain unknown.",
+        "zh": "这是资源规划后的主动重启，不是任务答案错误，也不是触发48M耗尽。已知费用继续保留，中断调用的未知用量仍记为未知。"
+      }
+    },
+    {
+      "kind": {
+        "en": "Task contract",
+        "zh": "任务契约"
+      },
+      "title": {
+        "en": "Clarify output types, then freeze the same v2 suite for both sides",
+        "zh": "澄清输出类型，两边使用同一冻结v2套件"
+      },
+      "description": {
+        "en": "In v1, an answer could have correct calculations and source evidence yet fail an output-type requirement that the prompt had not stated. Eight prompt variants received explicit output-interface descriptions. Existing prompt text, fixtures, hidden checks, numerical oracles and thresholds stayed unchanged. Original and candidate measurements then used the same newly frozen v2 suite.",
+        "zh": "v1中曾出现计算与源码依据正确，却因提示未写明的输出类型要求而失败。随后为8个提示变体补充明确的输出接口说明；原有文字、输入、隐藏检查、数值判定和阈值均未改变。原版与候选之后统一使用重新冻结的v2套件。"
+      },
+      "result": {
+        "en": "Old outcomes were not relabeled or reused as v2 measurements. Their costs remain historical overhead; the original baseline was measured under v2.",
+        "zh": "旧结果没有被改名，也没有冒充v2测量。其费用保留为历史开销；原版基线按v2重新测量。"
+      }
+    },
+    {
+      "kind": {
+        "en": "Command evidence",
+        "zh": "命令证据"
+      },
+      "title": {
+        "en": "Keep long-command metadata without weakening acceptance proof",
+        "zh": "保留长命令元数据，验收证明要求不变"
+      },
+      "description": {
+        "en": "A judge executed the fixed acceptance check successfully, but the collector dropped long auxiliary command bodies and marked the overall command record incomplete. The revised collector retains their hashes, lengths and exit states. A successful acceptance still requires the complete, exact command for the frozen launcher and check; an omitted command body cannot supply that proof.",
+        "zh": "独立裁判已成功执行固定验收检查，但收集器丢掉过长的辅助命令正文，导致整份命令记录被判不完整。修复后保留其哈希、长度和退出状态。验收通过仍必须有完整、准确的冻结启动器及检查命令；被省略的正文不能作为通过证明。"
+      },
+      "result": {
+        "en": "The new runtime records complete metadata. Existing receipts remain unchanged, and judge prose alone never establishes a pass.",
+        "zh": "新运行时保留完整元数据。旧收据原样保存，不能仅凭裁判文字宣称通过。"
+      }
+    },
+    {
+      "kind": {
+        "en": "Incomplete original cohort",
+        "zh": "未完成的原版队列"
+      },
+      "title": {
+        "en": "Retain nine proven observations; leave fifteen pending",
+        "zh": "保留9条有效观测，15项继续待验证"
+      },
+      "description": {
+        "en": "Nine v2 observations had successful independent judgments, although eight task records were false negatives from benign environment-prefix parsing. Later execution work stopped after solving, before independent judgment, during post-run inventory or control checks. Explicit continuation reused only the nine proven observations. Frozen source inventory and ignore rules were added for generated build outputs. The earliest interruption lacked an exact traceback, so its sole cause cannot be asserted.",
+        "zh": "v2已有9条独立裁判通过的观测，其中8条因合法环境变量前缀解析而被任务记录误判。之后执行任务在求解后、独立裁判前的库存或控制检查阶段中断。显式续跑只复用9条有完整证明的观测，并为生成的构建产物加入冻结源码清单和忽略规则。最早中断缺少精确堆栈，不能断言唯一根因。"
+      },
+      "result": {
+        "en": "Fifteen unjudged or missing observations remained pending. Partial records were not passes. Known interrupted-call costs were retained separately, and missing usage was never converted to zero.",
+        "zh": "15项未判定或缺失观测仍待完成。部分记录不能算通过；已知中断费用单列保留，缺失用量不按0处理。"
+      }
+    },
+    {
+      "kind": {
+        "en": "Control-directory guard",
+        "zh": "控制目录检查"
+      },
+      "title": {
+        "en": "Allow real virtual environments without relaxing frozen controls",
+        "zh": "允许真实虚拟环境，保留冻结控制保护"
+      },
+      "description": {
+        "en": "The first continuation exposed a concrete guard defect: it walked the whole task directory and rejected legitimate Python symlinks inside a newly created virtual environment. Two solvers completed but never reached a judge. A real local virtual-environment reproduction verified the fix: protect only frozen inputs, checks and launcher directories, with their ancestor protections intact, and verify submitted artifacts separately.",
+        "zh": "第一次续跑暴露了明确的检查错误：框架遍历整个任务目录，把新建虚拟环境中的合法Python符号链接也拒绝了。两次solver完成，却均未进入judge。真实本地虚拟环境复现验证了修复：仅保护冻结输入、检查和启动器及其祖先目录，交付产物另外检查。"
+      },
+      "result": {
+        "en": "A new successor reused the same nine valid observations and retried only the fifteen unjudged or missing slots. It inherited 2,331,651 additional observed tokens and one additional unknown canceled call; old failures were not rewritten.",
+        "zh": "新建后继队列仍复用9条有效观测，仅补跑15项未判定或缺失任务。新增2,331,651已观测tokens及1次未知取消调用一并继承；旧失败不改写。"
+      }
+    },
+    {
+      "kind": {
+        "en": "Explicit proof audit",
+        "zh": "显式证明审计"
+      },
+      "title": {
+        "en": "Nine retained plus fifteen completed; audit eight plus one false negatives",
+        "zh": "9条继承＋15条完成，审计修正8＋1条假阴性"
+      },
+      "description": {
+        "en": "The successor completed all 24 original observations. After eight earlier proof corrections, one more task record still failed because two legitimate thread-limit variables were not recognized, even though its independent judge and fixed check passed. Once the controller stopped and resources were released, an explicit audit archived byte-identical evidence and revalidated the full grid, frozen bindings, receipts, commands and ledger.",
+        "zh": "后继队列完成原版全部24条观测。除先前8条证明修正外，又有1条因两个合法线程限制变量未被识别而保持任务失败，但其独立裁判和固定检查均通过。待控制器结束、资源释放后，显式审计归档字节不变的证据，并重新核对完整任务网格、冻结绑定、收据、命令和账本。"
+      },
+      "result": {
+        "en": "The derived view is 24/24 passed, with zero new model calls. All raw failed statuses remain visible; costs count once, including unknown and partial usage. Historical guards for deleted workspaces rely on the frozen original validator. Genuine answer failures are ineligible for this correction.",
+        "zh": "派生视图为24/24通过，新增模型调用为0。全部原始失败状态仍可追溯，费用只计一次，未知和部分用量继续保留。已删除工作区的历史保护依赖当时冻结的验证器；真实答案失败不能这样修正。"
+      }
+    },
+    {
+      "kind": {
+        "en": "ENVIRONMENT",
+        "zh": "环境"
+      },
+      "title": {
+        "en": "R1 CPU results were not a qualified comparison",
+        "zh": "R1 CPU 结果不能作为合格对照"
+      },
+      "description": {
+        "en": "The first CPU invocation differed from the pinned baseline environment. Its raw 101/160 behavior matches and 59 regressions remain diagnostic-only. Restore the exact environment and PYTHONPATH for later comparisons; do not rebaseline away the original behavior.",
+        "zh": "首次 CPU 调用与固定基线环境不同；原始 101/160 行为匹配和 59 个回归只能作诊断。后续恢复精确环境与 PYTHONPATH，不通过重设基线消除原行为。"
+      },
+      "result": {
+        "en": "R2 full CPU work was cancelled when R3 superseded it. Qualified complete CPU results begin with R3 119/160. Neither R1 nor R2 is relabeled as a completed successful comparison.",
+        "zh": "R2 全量 CPU 运行在 R3 替代时取消；合格完整 CPU 比较从 R3 的 119/160 起。不能把 R1 或 R2 改称完整成功对照。"
+      }
+    },
+    {
+      "kind": {
+        "en": "ACCOUNTING",
+        "zh": "计量"
+      },
+      "title": {
+        "en": "Source-only size missed configuration and build inputs",
+        "zh": "只计源码会漏掉配置与构建材料"
+      },
+      "description": {
+        "en": "R1 had 18,948 source lines but another 71,570 runtime/configuration lines. Deduplicate configuration while preserving variants. R3 also accidentally counted an installation staging copy; keep its raw over-budget result and fix the staging/accounting issue.",
+        "zh": "R1 源码仅 18,948 行，却另有 71,570 行运行配置。需保留变体并去重。R3 还误计了安装暂存副本；保留原始超预算结果，再修正暂存与计量。"
+      },
+      "result": {
+        "en": "Accounting v3 includes build inputs on both sides: 76,888 → 36,458 lines, below the unchanged 37,619-line ceiling. Source-only 28.54% is displayed separately from combined 47.42%.",
+        "zh": "v3 在两侧一致计入构建输入：76,888 → 36,458 行，低于未更改的 37,619 行上限；源码保留 28.54% 与合计 47.42% 分开显示。"
+      }
+    }
+  ],
+  "limits": [
+    {
+      "en": "All 106 selected scope nodes remain: 89 leaves and 17 groups. Selection is not proof of universal functional equivalence; group-level links must not be treated as independent tests.",
+      "zh": "106 个所选范围节点全部保留：89 个叶节点与 17 个分组。选择不等于全部功能等价，分组关联也不是独立测试。"
+    },
+    {
+      "en": "CPU 319 + GPU 23 upstream test IDs include 12 overlaps: 330 distinct selected IDs, plus 36 separate supplemental cases. There are 39 known historical test IDs without a successful rerun; they are not 39 current failures or necessarily all resource skips.",
+      "zh": "CPU 319 与 GPU 23 个原版测试节点含 12 个重复，共 330 个不同已选节点，另有 36 个补充用例。已知还有 39 个历史节点未成功重跑；它们不是 39 个当前失败，也不能全归为资源跳过。"
+    },
+    {
+      "en": "The pretrained check covers one Mask R-CNN R50-FPN checkpoint and one image, repeated twice. The execute task uses a three-parameter CPU regression model through real training/checkpoint APIs. Neither establishes full-dataset AP, convergence, multi-node training or all optional integrations.",
+      "zh": "预训练检查覆盖一个 Mask R-CNN R50-FPN checkpoint 与一张图，重复两次；执行任务用三参数 CPU 回归模型调用真实训练/checkpoint 接口。这些不能证明全数据集 AP、收敛、多节点训练或全部可选集成。"
+    },
+    {
+      "en": "Only three observed repetitions per task; ranges are not confidence intervals. Final candidate held-out tasks were not run. Lower medians alone do not complete the cognitive-cost acceptance goal.",
+      "zh": "每种任务只观察 3 次重复，范围不是置信区间；最终候选隐藏任务没有运行。仅凭中位数下降，不能宣布认知成本目标完整通过。"
+    },
+    {
+      "en": "Source-free authoring was controlled by supplied inputs and session instructions on a shared filesystem, not an OS access barrier. All 81 original test/fixture files were preserved; preserving files does not prove all tests ran.",
+      "zh": "不参考原源码由输入与会话约束控制，文件系统仍共享，并非系统访问隔离。原版 81 个测试/fixture 文件均保留；保留文件不代表所有测试均执行。"
+    },
+    {
+      "en": "The shared observed task ledger is 46,735,781 tokens. Earlier trial overhead adds 3,940,952 known tokens outside it; task-related known usage is at least 50,676,733. Authoring, coordination and unknown calls prevent a complete experiment total.",
+      "zh": "共享任务账本已知 46,735,781 tokens；更早试验另有 3,940,952 已知 tokens，因此任务相关已知总量至少 50,676,733。作者生成/修复、协调和未知调用仍使完整实验总量不确定。"
+    }
+  ],
+  "provenance": {
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "plan_sha256": "cd0d908962a46a00ac2a037f94dbcc447ef68827249f9a42a9c7312aaf11f8cf",
+    "settings_sha256": "f8b738eb8312905dbd16d10ade60012782aa06cd51d20f9b98e5b4864ecda9b5",
+    "suite_sha256": "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f",
+    "original_audit_sha256": "76bdf087315e5a74774925a4916d3898269191919a5dc8a85fa83e380c77d225",
+    "original_continuation_sha256": "a55e4b55a770edf210e6535ab268ff0e3d62d3868d33ee55ec349c9f2897bb5a",
+    "final_report_sha256": "4e5a720aa6ce5015208dd597592bce60b0d7a255c2086ec052dd8dab8d524e21",
+    "ledger_sha256": "7424b2e44a0fd8776539c3e17950ad7d1b8ddc7a7beb4d767c43f1637f8d96a2"
+  },
+  "measurementDesign": {
+    "task_types": [
+      "understand",
+      "diagnose",
+      "modify",
+      "execute"
+    ],
+    "variants": [
+      "development",
+      "heldout"
+    ],
+    "original_planned_runs": 24,
+    "candidate_planned_development_runs": 12,
+    "candidate_planned_heldout_runs": 12,
+    "independent_solver_and_judge": true,
+    "fresh_repository_copies_and_sessions": true,
+    "hidden_checks_private": true,
+    "model_tokens": "每项任务仅比较solver的输入+输出tokens；cached input与reasoning output为子集，不重复相加。独立judge、任务设计与协议失败开销单列。",
+    "success_requirement": "正确性先于tokens；失败、资源未验证或缺失用量不能当作廉价成功。",
+    "improvement_rule": "每类任务中位tokens至少降低5%，且候选最大观测值严格小于原版最小观测值；所有任务类型都必须通过。",
+    "regression_rule": "中位tokens增加超过5%，且候选最小观测值严格大于原版最大观测值，才认定明确成本退步。",
+    "range_limit": "3次重复的经验范围是保守波动防护，不是置信区间或统计显著性检验。",
+    "holdout_rule": "候选开发任务的正确性和成本门槛全部通过后，才启动独立隐藏变体；本实验两轮均未到达该门槛。",
+    "automatic_retry_rule": "只对真实任务错误或已确认成本退步进行有界修复；范围重叠的不确定结果不自动重试。"
+  },
+  "accounting": {
+    "shared_observed_token_ceiling": 48000000,
+    "shared_observed_tokens": 46735781,
+    "observed_remaining_tokens": 1264219,
+    "shared_call_count": 102,
+    "shared_unknown_usage_calls": 2,
+    "shared_known_partial_usage_calls": 1,
+    "shared_usage_complete": false,
+    "partitions": [
+      {
+        "label": "原版24项solver",
+        "tokens": 12934811
+      },
+      {
+        "label": "原版24项judge",
+        "tokens": 10511142
+      },
+      {
+        "label": "原版建立期间的未判定/中止协议开销",
+        "observed_tokens": 4048686,
+        "unknown_calls": 2
+      },
+      {
+        "label": "候选第1轮solver",
+        "tokens": 5305285
+      },
+      {
+        "label": "候选第1轮judge",
+        "tokens": 4591211
+      },
+      {
+        "label": "候选第2轮solver",
+        "tokens": 4555234
+      },
+      {
+        "label": "候选第2轮judge",
+        "tokens": 4789412
+      }
+    ],
+    "earlier_trials_outside_shared_ledger": {
+      "observed_tokens": 3940952,
+      "components": {
+        "examiner_design": 1315398,
+        "readiness_probes": 45671,
+        "cancelled_8M_trial_completed_solvers": 951077,
+        "superseded_v1_trial_observed_tasks": 1628806
+      },
+      "unknowns": [
+        "取消中的2次judge用量",
+        "取消中的2次solver用量",
+        "早期取消的代码作者用量"
+      ]
+    },
+    "combined_known_task_related_observed_lower_bound": 50676733,
+    "complete_experiment_tokens": null,
+    "excluded_or_not_fully_metered": [
+      "完整代码重写与各轮修复的全部作者开销",
+      "协调会话及其他未计量活动",
+      "上述历史取消调用的未知用量"
+    ],
+    "limitations": [
+      "48M是当前共享账本的可观测停止阈值，历史外部试验单列；不是完整实验的硬总账单上限。",
+      "并发中的调用可能在下一次检查前产生额外tokens；本次没有发生预算耗尽停止。",
+      "原版有效样本继承一次；审计新增模型调用为0；失败和取消开销不删除、不当作0。",
+      "最终本地时延不能当作严格性能比较：原版任务曾与独立重写任务并行。"
+    ]
+  }
+}

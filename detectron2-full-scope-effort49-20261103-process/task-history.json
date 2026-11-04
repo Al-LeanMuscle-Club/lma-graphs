@@ -1,0 +1,585 @@
+{
+  "title": "Detectron2真实任务评测：从验证流程修正到真实兼容性修复",
+  "summary": "原版经显式证据审计取得24/24有效任务；候选第1轮真实暴露SemSeg兼容性错误，第7轮源代码隔离修复后，第2轮12/12开发任务正确。4类任务中位tokens均减少，但诊断区间重叠，最终仍为inconclusive，不能宣称完整认知成本验收通过。",
+  "category_legend": {
+    "design": "任务与范围固定",
+    "validation_protocol_defect": "验证流程缺陷：不等于仓库功能失败",
+    "resource_restart": "资源规划与主动中止",
+    "derived_evidence_audit": "显式证据审计：不改写原始判断",
+    "implementation_failure": "实际实现/兼容性错误",
+    "implementation_repair": "源代码隔离的行为修复",
+    "empirical_inconclusive": "观测不确定：不是统计显著结论，也不是已确认退步"
+  },
+  "scope": {
+    "upstream_commit": "247691a1c292654867deb35cabb27f18d75a1363",
+    "retained_capabilities": 106,
+    "excluded_capabilities": 0,
+    "target_retain_percent": 49,
+    "source_free_authoring": true,
+    "boundary_note": "重写会话使用知识与契约，不获取原版实现；验证侧可以核对原版。该流程是工作区/会话隔离，不是操作系统级安全沙箱。"
+  },
+  "frozen_protocol": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "xhigh",
+    "repetitions": 3,
+    "concurrency": 2,
+    "run_timeout": 1800.0,
+    "max_total_tokens": 48000000,
+    "min_improvement_percent": 5.0,
+    "regression_tolerance_percent": 5.0,
+    "max_optimization_rounds": 3,
+    "no_improvement_rounds": 2,
+    "synthetic": false
+  },
+  "measurement_design": {
+    "task_types": [
+      "understand",
+      "diagnose",
+      "modify",
+      "execute"
+    ],
+    "variants": [
+      "development",
+      "heldout"
+    ],
+    "original_planned_runs": 24,
+    "candidate_planned_development_runs": 12,
+    "candidate_planned_heldout_runs": 12,
+    "independent_solver_and_judge": true,
+    "fresh_repository_copies_and_sessions": true,
+    "hidden_checks_private": true,
+    "model_tokens": "每项任务仅比较solver的输入+输出tokens；cached input与reasoning output为子集，不重复相加。独立judge、任务设计与协议失败开销单列。",
+    "success_requirement": "正确性先于tokens；失败、资源未验证或缺失用量不能当作廉价成功。",
+    "improvement_rule": "每类任务中位tokens至少降低5%，且候选最大观测值严格小于原版最小观测值；所有任务类型都必须通过。",
+    "regression_rule": "中位tokens增加超过5%，且候选最小观测值严格大于原版最大观测值，才认定明确成本退步。",
+    "range_limit": "3次重复的经验范围是保守波动防护，不是置信区间或统计显著性检验。",
+    "holdout_rule": "候选开发任务的正确性和成本门槛全部通过后，才启动独立隐藏变体；本实验两轮均未到达该门槛。",
+    "automatic_retry_rule": "只对真实任务错误或已确认成本退步进行有界修复；范围重叠的不确定结果不自动重试。"
+  },
+  "tasks": [
+    {
+      "type": "understand",
+      "label": "理解",
+      "description": "预测图像尺寸、坐标、实例输出和padding之间的变换关系，并提供源码依据。"
+    },
+    {
+      "type": "diagnose",
+      "label": "定位与诊断",
+      "description": "复现并解释COCO数据集类别映射与模型输出通道的集成回归，提出可验证的修复。"
+    },
+    {
+      "type": "modify",
+      "label": "修改",
+      "description": "为语义分割评估增加聚合Dice指标，同时保持旧指标和既有行为兼容。"
+    },
+    {
+      "type": "execute",
+      "label": "使用与执行",
+      "description": "从干净环境通过仓库训练与checkpoint接口完成确定性短程训练、保存及恢复。",
+      "limit": "使用小型CPU回归模型验证训练/恢复流程，不替代完整检测模型推理或精度验证。"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "design",
+      "title": "固定范围并设计真实任务",
+      "category": "design",
+      "observed": "保留全部106个功能模块，代码预算为原版的49%；真实 examiner 为理解、诊断、修改、执行各设计一项任务，每项包含开发和隐藏变体。",
+      "action": "固定原版修订、任务套件、模型和评分规则；求解与裁判使用不同的新会话和仓库副本。",
+      "outcome": "任务设计实际消耗1,315,398 tokens，保存在历史开销中；不是免费的内置模板。",
+      "evidence_refs": [
+        "initial_experiment",
+        "path_normalization",
+        "settings",
+        "suite"
+      ]
+    },
+    {
+      "id": "path_protocol",
+      "title": "输入与交付路径约定不一致",
+      "category": "validation_protocol_defect",
+      "observed": "examiner 返回的8个输入路径包含保留目录前缀，旧实现只接受组内相对路径；允许的交付目录也被旧校验一并拒绝，原版基线未就绪。",
+      "action": "仅规范化约定前缀，允许非控制区交付物；仍拒绝越界/符号链接逃逸，并在独立裁判前后冻结交付物字节。取消未完成试验，保留原始证据。",
+      "outcome": "输入、测试、评分标准均未更改；旧试验不能充当已完成任务比较。",
+      "evidence_refs": [
+        "initial_baseline",
+        "path_normalization"
+      ],
+      "harness_after": "1e0a5250840e97421b1f2322672441f9c4314c40"
+    },
+    {
+      "id": "resource_restart",
+      "title": "8M初始预算不足，显式新开48M试验",
+      "category": "resource_restart",
+      "observed": "修正路径后，最早两次原版solver已消耗951,077 tokens；据此判断8M上限不足以覆盖原版和候选的重复求解与独立裁判。",
+      "action": "停止该次运行并确认清理；新试验将可观测费用上限设为48M，保留每项3次、并发2、相同模型与原有任务。",
+      "outcome": "这次是预期资源不足后的主动中止，不是任务答案失败，也不是已触发48M耗尽。取消中的未知费用继续记为未知。",
+      "evidence_refs": [
+        "early_trials"
+      ],
+      "historical_known_solver_tokens": 951077
+    },
+    {
+      "id": "contract_clarification",
+      "title": "任务输出接口未写清，重新冻结v2",
+      "category": "validation_protocol_defect",
+      "observed": "v1出现数值与源码依据正确、但交付JSON字段形状未满足裁判要求的情况；提示中没有明确这些必需类型。",
+      "action": "在8个任务变体提示中追加输出接口说明；原有文字、输入、隐藏检查、数值标准和阈值保持不变。原版与候选均改用同一个新冻结套件。",
+      "outcome": "v1记录保持原状、费用计入历史开销；重新取得v2原版测量，不把旧失败改名为新通过。",
+      "evidence_refs": [
+        "v1_superseded",
+        "suite_v2"
+      ],
+      "suite_sha256": "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f"
+    },
+    {
+      "id": "command_receipts",
+      "title": "长辅助命令被截掉，证明元数据误判不完整",
+      "category": "validation_protocol_defect",
+      "observed": "独立裁判运行了固定检查并通过，但旧收集器丢弃过长的辅助命令正文，从而把整个命令证明标成不完整。",
+      "action": "保留每条长命令的长度、哈希、退出状态等元数据；真正验收仍必须有完整、精确且成功的固定检查启动命令。",
+      "outcome": "没有降低检查条件，也没有改写旧收据；新运行时支持完整追溯。",
+      "evidence_refs": [
+        "v1_command_record",
+        "v2_context"
+      ],
+      "harness_after": "323e47aaeb37fd243d71d3402ad3a6092f537455"
+    },
+    {
+      "id": "partial_original",
+      "title": "原版完成9项，证明解析和运行后扫描仍有问题",
+      "category": "validation_protocol_defect",
+      "observed": "v2的9项已独立判定任务在底层裁判中均通过，其中8条因合法的环境变量命令前缀被严格解析器误记失败。执行类任务随后在运行后库存/控制检查阶段中断，未取得独立裁判。",
+      "action": "新增显式派生审计和部分续跑入口：只继承有完整独立证据的9项；未判定的15项继续运行。冻结原始源码清单与忽略规则，检查新生成构建产物。",
+      "outcome": "不把未判定任务宣称为通过；9项solver与judge费用只保留一次，未判定调用费用单独计入开销。最早扫描异常未保留精确堆栈，不能声称已由该记录定位唯一根因。",
+      "evidence_refs": [
+        "original_partial",
+        "original_execute_incomplete",
+        "continuation"
+      ],
+      "time": {
+        "started_utc": "2026-11-03T19:37:34.826195+00:00",
+        "finished_utc": "2026-11-03T20:39:00.654835+00:00"
+      },
+      "reused_task_records": 9,
+      "pending_task_records": 15,
+      "historical_observed_tokens": 9459450
+    },
+    {
+      "id": "venv_control_guard",
+      "title": "第一次续跑暴露真正的控制目录遍历错误",
+      "category": "validation_protocol_defect",
+      "observed": "两次执行类solver完成后，框架遍历了整个任务工作区，连合法虚拟环境内的Python符号链接也当作受保护控制文件越界；两次均未进入judge。",
+      "action": "将不可变控制检查限定到输入、隐藏检查和固定启动器，保留这些目录及祖先的严格符号链接保护；交付物仍单独校验。经真实本地venv复现修复后，新建显式后继续跑。",
+      "outcome": "未改写旧收据、未把这两次标成通过。新增2,331,651已知tokens和1次未知取消调用一并继承；仍复用原9项，只重做15项未判定/缺失任务。",
+      "evidence_refs": [
+        "continuation_status",
+        "continuation_error_0",
+        "continuation_error_1",
+        "successor",
+        "control_guard_code"
+      ],
+      "time": {
+        "started_utc": "2026-11-03T21:33:36.163286+00:00",
+        "finished_utc": "2026-11-03T21:45:26.636279+00:00"
+      },
+      "harness_before": "0963c3568a35c3559057c40cf02a5db9e5bd43c7",
+      "harness_after": "8dbec98b9c57533ef18ae89a66148aa6c654e5e4",
+      "additional_observed_protocol_tokens": 2331651
+    },
+    {
+      "id": "successor_original",
+      "title": "后继队列完成全部24项，保留一条新的证明假阴性",
+      "category": "validation_protocol_defect",
+      "observed": "原9项加15项新观测全部完成。一个隐藏修改任务的固定检查和原始独立裁判均通过，但线程环境变量前缀未被解析器识别，原始任务记录仍为failed。",
+      "action": "等待队列终止、资源释放，保持整个运行时和所有原始记录不变；仅在独立新版本中为两个受限正整数线程变量扩展白名单。",
+      "outcome": "原控制器仍保留unverified；仅凭裁判文字不回写通过，也没有重跑昂贵的正确求解。",
+      "evidence_refs": [
+        "successor_status",
+        "successor_raw_baseline",
+        "thread_prefix_false_negative"
+      ],
+      "time": {
+        "started_utc": "2026-11-03T22:44:24.522791+00:00",
+        "finished_utc": "2026-11-04T00:10:46.795508+00:00"
+      }
+    },
+    {
+      "id": "completed_cohort_audit",
+      "title": "显式审计确认原版24/24，零新增模型调用",
+      "category": "derived_evidence_audit",
+      "observed": "原始历史记录包含9条证明分类失败：8条早期前缀问题，以及1条新线程变量问题。它们的独立裁判与固定检查实际通过。",
+      "action": "复制字节不变的原始证据，绑定原/新验证器、任务、模型、源码、收据、事件、账本和控制器终止状态，重新核对精确24项网格及验收命令。",
+      "outcome": "派生有效视图为24/24通过；原始failed仍可追溯。审计不调用模型、不改测试、不改变答案，仅更正可独立证明的分类错误。已删除工作区的历史控制保护依赖当时冻结验证器的记录。",
+      "evidence_refs": [
+        "cohort_audit",
+        "cohort_audit_status",
+        "proof_audit_code"
+      ],
+      "time": {
+        "started_utc": "2026-11-04T00:35:25.757565+00:00",
+        "finished_utc": "2026-11-04T00:36:35.016771+00:00"
+      },
+      "new_model_calls": 0,
+      "original_effective_passes": 24,
+      "harness_after": "0e427c9042934573622971ab8b7b20573590d566"
+    },
+    {
+      "id": "candidate_attempt_1",
+      "title": "候选第一轮：发现真正的SemSeg兼容性缺陷",
+      "category": "implementation_failure",
+      "observed": "候选在原有行为验收通过后进入真实任务评测。12次开发任务中9次正确，3次修改任务均被独立裁判判失败；固定检查实际失败，属于真实功能问题。",
+      "action": "验证侧确认旧语义分割指标在候选基线中已存在类纳入规则/未定义值等兼容性偏差；求解者新增指标时暴露了该问题。保留3次失败及其全部费用，按有界修复规则生成公开API层面的反馈。",
+      "outcome": "不是证明解析器问题，不能通过审计改成通过，也不能用失败任务的低tokens宣称改善。允许后续修复；隐藏阶段未启动。",
+      "evidence_refs": [
+        "attempt_1",
+        "attempt_1_status",
+        "semseg_failed_record",
+        "semseg_before"
+      ],
+      "time": {
+        "started_utc": "2026-11-04T00:39:34.302907+00:00",
+        "finished_utc": "2026-11-04T01:45:20.173625+00:00"
+      },
+      "candidate_git_head": "29b1a2af225ed7c2e3d678865acd329a267c928e",
+      "correct_development_runs": 9,
+      "planned_development_runs": 12,
+      "raw_status": "failed",
+      "retry": {
+        "allowed": true,
+        "reason": "task_cost_not_improved",
+        "requested": true
+      }
+    },
+    {
+      "id": "source_free_repair",
+      "title": "按公开API契约进行第7轮独立重构修复",
+      "category": "implementation_repair",
+      "observed": "问题定位到应保留的SemSeg历史聚合行为，而非任务求解者新增功能代码或执行环境。",
+      "action": "向源代码隔离的重写会话提供公开API/数学行为要求；不提供原版实现、原版任务解答或隐藏输入。原版优先的独立兼容性探针用于验证修复，随后重新执行完整候选行为验收。",
+      "outcome": "独立SemSeg对照由8个用例整体不一致变为8/8一致；新的候选修订随后使用全新任务样本进入第二轮评测，旧候选样本不复用。",
+      "evidence_refs": [
+        "semseg_before",
+        "semseg_after",
+        "attempt_2_status"
+      ],
+      "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "independent_probe_cases": 8
+    },
+    {
+      "id": "candidate_attempt_2",
+      "title": "候选第二轮：12/12任务正确，成本结论仍不确定",
+      "category": "empirical_inconclusive",
+      "observed": "修复后的候选12次开发任务全部正确，4类任务的solver中位tokens均降低。理解、修改、执行满足冻结改善门槛；诊断的观测区间仍与原版重叠。",
+      "action": "按既定规则保留inconclusive，不调整阈值、不选择性重跑便宜样本、不把随机波动当作明确退步。",
+      "outcome": "开发成本门槛未全部通过，候选隐藏阶段未运行。没有已确认的错误或成本退步可继续优化，因此自动重试关闭；结束原因不是48M预算耗尽。",
+      "evidence_refs": [
+        "attempt_2",
+        "attempt_2_status",
+        "comparison_policy",
+        "retry_policy"
+      ],
+      "time": {
+        "started_utc": "2026-11-04T02:14:27.293917+00:00",
+        "finished_utc": "2026-11-04T03:13:53.063430+00:00"
+      },
+      "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "correct_development_runs": 12,
+      "planned_development_runs": 12,
+      "raw_status": "inconclusive",
+      "retry": {
+        "allowed": false,
+        "reason": "no_actionable_regression",
+        "requested": false
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "failed",
+      "candidate_git_head": "29b1a2af225ed7c2e3d678865acd329a267c928e",
+      "rows": [
+        {
+          "type": "understand",
+          "correct_runs": 3,
+          "runs": 3,
+          "status": "passed",
+          "original_solver_tokens": {
+            "max": 448960,
+            "median": 445141,
+            "min": 405245
+          },
+          "candidate_solver_tokens": {
+            "max": 392392,
+            "median": 361580,
+            "min": 309971
+          },
+          "median_change_percent": -18.772,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        },
+        {
+          "type": "diagnose",
+          "correct_runs": 3,
+          "runs": 3,
+          "status": "passed",
+          "original_solver_tokens": {
+            "max": 537098,
+            "median": 505659,
+            "min": 388256
+          },
+          "candidate_solver_tokens": {
+            "max": 381667,
+            "median": 372355,
+            "min": 343410
+          },
+          "median_change_percent": -26.362,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        },
+        {
+          "type": "modify",
+          "correct_runs": 0,
+          "runs": 3,
+          "status": "failed",
+          "original_solver_tokens": {
+            "max": 538274,
+            "median": 422422,
+            "min": 408166
+          },
+          "candidate_solver_tokens": {
+            "max": 462464,
+            "median": 452987,
+            "min": 243650
+          },
+          "median_change_percent": null,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        },
+        {
+          "type": "execute",
+          "correct_runs": 3,
+          "runs": 3,
+          "status": "passed",
+          "original_solver_tokens": {
+            "max": 860604,
+            "median": 826954,
+            "min": 807526
+          },
+          "candidate_solver_tokens": {
+            "max": 734942,
+            "median": 658407,
+            "min": 591460
+          },
+          "median_change_percent": -20.382,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        }
+      ],
+      "retry": {
+        "allowed": true,
+        "reason": "task_cost_not_improved",
+        "requested": true
+      },
+      "report_sha256": "2f9cf9fb8665e8ffc9f377771429a157e0b7a9fb49e5bb239b1408694ef6e175"
+    },
+    {
+      "attempt": 2,
+      "status": "inconclusive",
+      "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "rows": [
+        {
+          "type": "understand",
+          "correct_runs": 3,
+          "runs": 3,
+          "status": "passed",
+          "original_solver_tokens": {
+            "max": 448960,
+            "median": 445141,
+            "min": 405245
+          },
+          "candidate_solver_tokens": {
+            "max": 293511,
+            "median": 282700,
+            "min": 275698
+          },
+          "median_change_percent": -36.492,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        },
+        {
+          "type": "diagnose",
+          "correct_runs": 3,
+          "runs": 3,
+          "status": "inconclusive",
+          "original_solver_tokens": {
+            "max": 537098,
+            "median": 505659,
+            "min": 388256
+          },
+          "candidate_solver_tokens": {
+            "max": 464933,
+            "median": 318525,
+            "min": 302583
+          },
+          "median_change_percent": -37.008,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        },
+        {
+          "type": "modify",
+          "correct_runs": 3,
+          "runs": 3,
+          "status": "passed",
+          "original_solver_tokens": {
+            "max": 538274,
+            "median": 422422,
+            "min": 408166
+          },
+          "candidate_solver_tokens": {
+            "max": 388619,
+            "median": 320312,
+            "min": 303863
+          },
+          "median_change_percent": -24.173,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        },
+        {
+          "type": "execute",
+          "correct_runs": 3,
+          "runs": 3,
+          "status": "passed",
+          "original_solver_tokens": {
+            "max": 860604,
+            "median": 826954,
+            "min": 807526
+          },
+          "candidate_solver_tokens": {
+            "max": 635730,
+            "median": 536969,
+            "min": 431791
+          },
+          "median_change_percent": -35.067,
+          "heldout_status": "not_run",
+          "original_heldout_runs": 3,
+          "candidate_heldout_runs": 0
+        }
+      ],
+      "retry": {
+        "allowed": false,
+        "reason": "no_actionable_regression",
+        "requested": false
+      },
+      "report_sha256": "4e5a720aa6ce5015208dd597592bce60b0d7a255c2086ec052dd8dab8d524e21"
+    }
+  ],
+  "accounting": {
+    "shared_observed_token_ceiling": 48000000,
+    "shared_observed_tokens": 46735781,
+    "observed_remaining_tokens": 1264219,
+    "shared_call_count": 102,
+    "shared_unknown_usage_calls": 2,
+    "shared_known_partial_usage_calls": 1,
+    "shared_usage_complete": false,
+    "partitions": [
+      {
+        "label": "原版24项solver",
+        "tokens": 12934811
+      },
+      {
+        "label": "原版24项judge",
+        "tokens": 10511142
+      },
+      {
+        "label": "原版建立期间的未判定/中止协议开销",
+        "observed_tokens": 4048686,
+        "unknown_calls": 2
+      },
+      {
+        "label": "候选第1轮solver",
+        "tokens": 5305285
+      },
+      {
+        "label": "候选第1轮judge",
+        "tokens": 4591211
+      },
+      {
+        "label": "候选第2轮solver",
+        "tokens": 4555234
+      },
+      {
+        "label": "候选第2轮judge",
+        "tokens": 4789412
+      }
+    ],
+    "earlier_trials_outside_shared_ledger": {
+      "observed_tokens": 3940952,
+      "components": {
+        "examiner_design": 1315398,
+        "readiness_probes": 45671,
+        "cancelled_8M_trial_completed_solvers": 951077,
+        "superseded_v1_trial_observed_tasks": 1628806
+      },
+      "unknowns": [
+        "取消中的2次judge用量",
+        "取消中的2次solver用量",
+        "早期取消的代码作者用量"
+      ]
+    },
+    "combined_known_task_related_observed_lower_bound": 50676733,
+    "complete_experiment_tokens": null,
+    "excluded_or_not_fully_metered": [
+      "完整代码重写与各轮修复的全部作者开销",
+      "协调会话及其他未计量活动",
+      "上述历史取消调用的未知用量"
+    ],
+    "limitations": [
+      "48M是当前共享账本的可观测停止阈值，历史外部试验单列；不是完整实验的硬总账单上限。",
+      "并发中的调用可能在下一次检查前产生额外tokens；本次没有发生预算耗尽停止。",
+      "原版有效样本继承一次；审计新增模型调用为0；失败和取消开销不删除、不当作0。",
+      "最终本地时延不能当作严格性能比较：原版任务曾与独立重写任务并行。"
+    ]
+  },
+  "final_state": {
+    "original_effective_correct_runs": 24,
+    "original_planned_runs": 24,
+    "candidate_2_development_correct_runs": 12,
+    "candidate_2_development_runs": 12,
+    "candidate_heldout_runs": 0,
+    "status": "inconclusive",
+    "cost_task_types_passed": 3,
+    "cost_task_types_inconclusive": 1,
+    "retry": {
+      "allowed": false,
+      "reason": "no_actionable_regression",
+      "requested": false
+    },
+    "cleanup_pending": 0,
+    "not_claimed": [
+      "全部隐藏任务通过",
+      "严格认知成本验收通过",
+      "完整功能数学等价",
+      "完整实验tokens已知"
+    ]
+  },
+  "public_fingerprints": {
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "plan_sha256": "cd0d908962a46a00ac2a037f94dbcc447ef68827249f9a42a9c7312aaf11f8cf",
+    "settings_sha256": "f8b738eb8312905dbd16d10ade60012782aa06cd51d20f9b98e5b4864ecda9b5",
+    "suite_sha256": "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f",
+    "original_audit_sha256": "76bdf087315e5a74774925a4916d3898269191919a5dc8a85fa83e380c77d225",
+    "original_continuation_sha256": "a55e4b55a770edf210e6535ab268ff0e3d62d3868d33ee55ec349c9f2897bb5a",
+    "final_report_sha256": "4e5a720aa6ce5015208dd597592bce60b0d7a255c2086ec052dd8dab8d524e21",
+    "ledger_sha256": "7424b2e44a0fd8776539c3e17950ad7d1b8ddc7a7beb4d767c43f1637f8d96a2"
+  }
+}
