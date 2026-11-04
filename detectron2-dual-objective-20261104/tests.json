@@ -1,0 +1,6039 @@
+{
+  "schema_version": 1,
+  "fixture": false,
+  "report_id": "nrs_65cd989d4ae1c6f912865726641ee2853d7cd74bc6b9f5d0246f7b43593ade0c",
+  "binding": {
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "candidate_git_head": "5d10fe00e91ed1a24fb164799b8f4e566ab5057e",
+    "candidate_source_sha256": "91e805a559f6901551e69c867de466f65807dcfc350b1e246dfb0de21461d739",
+    "candidate_contract_sha256": "153cc1f993b6d7c1c8b9c5195d4275c66ba5d2cf558f34db9cf958f65d64ffd2",
+    "plan_sha256": "2c5ad83a1f24c47ac6e88746c910cbda7e2909061cf22e15a593720c4da53097",
+    "verification_sha256": "58482dfc54a3e03bcff934a355803d9dd26b1d48f2b5da03dfa00b7ac66f13bd"
+  },
+  "test_results": [
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_chart_based_annotations_accumulator.py::TestChartBasedAnnotationsAccumulator::test_chart_based_annotations_accumulator_gt_densepose",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_chart_based_annotations_accumulator.py::TestChartBasedAnnotationsAccumulator::test_chart_based_annotations_accumulator_gt_densepose_none",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_chart_based_annotations_accumulator.py::TestChartBasedAnnotationsAccumulator::test_chart_based_annotations_accumulator_no_gt_densepose",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_combine_data_loader.py::TestCombinedDataLoader::test_combine_loaders_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_combined",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_fulldp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_nodp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_sparsedp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_first_k_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_first_k_2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_last_k_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_last_k_2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_random_k_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_random_k_2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_image_list_dataset.py::TestImageListDataset::test_image_list_dataset",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_image_list_dataset.py::TestImageListDataset::test_image_list_dataset_with_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_image_resize_transform.py::TestImageResizeTransform::test_image_resize_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_model_e2e.py::DensePoseRCNNE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_evolution_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_hrnet_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_quick_schedules_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_structures.py::TestStructures::test_normalized_coords_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestMultiProcessFileTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestMultiProcessRamTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestSingleProcessFileTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestSingleProcessRamTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_video_keyframe_dataset.py::TestVideoKeyframeDataset::test_read_keyframes_all",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_video_keyframe_dataset.py::TestVideoKeyframeDataset::test_read_keyframes_with_selector",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/DensePose/tests/test_video_keyframe_dataset.py::TestVideoKeyframeDataset::test_read_keyframes_with_selector_with_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "projects/TensorMask/tests/test_swap_align2nat.py::SwapAlign2NatTest::test_swap_align2nat_gradcheck_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_bad_lazycall",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_basic_construct",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_dataclass",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_dataclass_as_subconfig",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_lazy_target",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_other_obj",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_interpolation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_bad_import",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_bad_import2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_failed_save",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_invalid_overrides",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_load",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_load_rel",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_overrides",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_save_load",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_to_py",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigVersioning::test_auto_upgrade",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigVersioning::test_guess_v1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigVersioning::test_upgrade_downgrade_consistency",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testBadClass",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testFuncWithCfg",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithArgs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithCfg",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithCfgOverwrite",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithCfgWrongArgs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testOmegaConf",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testPatchedAttr",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_coco.py::TestConvertCOCO::test_convert_to_coco",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_coco.py::TestRLEToJson::test",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_coco.py::TestRLEToJson::test_uncompressed_RLE",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_coco_evaluation.py::TestCOCOeval::test_fast_eval",
+      "baseline": "failed",
+      "candidate": "failed",
+      "comparison": "both_failed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_coco_evaluation.py::TestCOCOeval::test_unknown_category",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestAspectRatioGrouping::test_reiter_leak",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_batch_dataloader_inference",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_batch_dataloader_inference_incomplete_batch",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_dataloader_inference",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_dataloader_train",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_iterable_dataloader_from_cfg",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_iterable_dataloader_inference",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_iterable_dataloader_train",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDatasetFromList::test_alternative_serialize_method",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDatasetFromList::test_change_default_serialize_method",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestDatasetFromList::test_using_lazy_path",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestMapDataset::test_iter_style",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestMapDataset::test_map_style",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_dataset.py::TestMapDataset::test_pickleability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_crop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_flip_keypoints",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_gen_crop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_gen_crop_outside_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_opencv_exif_orientation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_read_exif_orientation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_read_sem_seg",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_RLE",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_RLE_resize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_empty_annotation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_simple_annotation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test180",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test45_coords",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test90",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test90_expand",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test_center_expand",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test_inverse_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_sampler.py::TestGroupedBatchSampler::test_groups",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_sampler.py::TestGroupedBatchSampler::test_missing_group_id",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_sampler.py::TestInferenceSampler::test_local_indices",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_sampler.py::TestRepeatFactorTrainingSampler::test_repeat_factors_from_category_frequency",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_sampler.py::TestSamplerDeterministic::test_to_iterable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_sampler.py::TestSamplerDeterministic::test_training_sampler_seed",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_apply_rotated_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_apply_rotated_boxes_unequal_scaling_factor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_augmentation_input_args",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_augmentation_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_color_transforms",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_extent_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_print_augmentation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_prob_out_of_range_check",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_probability_not_occured_evaluation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_wrapping_aug_probability_occured_evaluation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_wrapping_std_transform_probability_occured_evaluation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_resize_and_crop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_resize_shorted_edge_scriptable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_resize_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_aspp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_frozen_batchnorm_fp16",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_resnet_unused_stages",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_separable_conv",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output_on_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output_on_cpu_equals_output_on_gpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_raise_exception",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_repr",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_small_input",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_losses.py::TestLosses::test_ciou_loss",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_losses.py::TestLosses::test_diou_loss",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_mask_ops.py::TestMaskCropPaste::test_crop_paste_consistency",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_mask_ops.py::TestMaskCropPaste::test_paste_mask_scriptable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_mask_ops.py::TestMaskCropPaste::test_polygon_area",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms.py::TestNMS::test_nms_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_batched_nms_rotated_0_degree_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_batched_nms_rotated_0_degree_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_0_degree_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_0_degree_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_180_degrees_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_90_degrees_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestScriptable::test_scriptable_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestScriptable::test_scriptable_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_empty_batch",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_empty_box",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_forward_output",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_grid_sample_equivalence",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_resize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_empty_box",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_forward_output_0_90_180_270",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_resize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_roi_align_rotated_gradcheck_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_roi_align_rotated_gradient_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_anchor_generator.py::TestAnchorGenerator::test_default_anchor_generator",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_anchor_generator.py::TestAnchorGenerator::test_default_anchor_generator_centered",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_anchor_generator.py::TestAnchorGenerator::test_rrpn_anchor_generator",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_backbone.py::TestBackBone::test_fpn_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_backbone.py::TestBackBone::test_resnet_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransform::test_apply_deltas_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransform::test_reconstruction",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransformLinear::test_reconstruction",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransformRotated::test_reconstruction",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn_empty_batch",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn_empty_batch_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn_rotated",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_predict_boxes_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_predict_probs_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_matcher.py::TestMatcher::test_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_mmdet.py::TestMMDetWrapper::test_backbone",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_mmdet.py::TestMMDetWrapper::test_detector",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::FCOSE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::FCOSE2ETest::test_eval_tocpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_autocast",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_eval_tocpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_half_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_roiheads_inf_nan_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_autocast",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_eval_tocpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_inf_nan_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::SemSegE2ETest::test_forward",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_PointRend_mask_head_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_StandardROIHeads_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_box_head_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_keypoint_head_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_mask_head_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_roi_heads",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_rroi_heads",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_no_images",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_roi_pooler_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_roialignv2_roialignrotated_match_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_roialignv2_roialignrotated_match_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_scriptability_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_scriptability_gpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_append_gt_to_proposal",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_find_rpn_proposals_inf",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_find_rpn_proposals_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn_conv_dims_not_set",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn_larger_num_convs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rrpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxIOU::test_pairwise_ioa",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxIOU::test_pairwise_iou",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_array",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_cpu_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_cuda_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_array",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_array",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_convert_int_mode",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_json_deserializable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_json_serializable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxes::test_empty_cat",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxes::test_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxes::test_to",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_imagelist.py::TestImageList::test_imagelist_from_tensors_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_imagelist.py::TestImageList::test_imagelist_padding_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_imagelist.py::TestImageList::test_imagelist_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_from_to_instances",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_int_indexing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_access_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_cat",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_getitem",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_has",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_init_args",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_len",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_new_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_to",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_keypoints.py::TestKeypoints::test_cat_keypoints",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_masks.py::TestBitMask::test_from_empty_polygons",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_masks.py::TestBitMask::test_get_bounding_box",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_masks.py::TestBitMask::test_getitem",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_0_dim_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_0_dim_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_extreme",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_half_overlap_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_half_overlap_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2154",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2167",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_precision",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_too_many_boxes_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_clip_area_0_degree",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_clip_area_arbitrary_angle",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_empty_cat",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_normalize_angles",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_0_degree",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_45_degrees",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207_simplified",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_large_close_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_many_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_orthogonal",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_complex_model_loaded",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_custom_path_manager_handler",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_lcp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_load_with_matching_heuristics",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_async_write_metrics",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_best_checkpointer",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_checkpoint_resume",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_default_trainer",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_eval_hook",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_metric_gather_and_write",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_setup_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_simple_trainer",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_simple_trainer_cuda",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_simple_trainer_reset_dataloader",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_writer_hooks",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testEventStorage",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testPrintETA",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testPrintNonLosses",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testScalar",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testScalarMismatchedPeriod",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testSmoothingWithWindowSize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testCascadeRCNN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testKeypointHead",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNFPN_batched",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNFPN_with_postproc",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestScripting::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestScripting::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestScripting::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_allow_non_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_dump_IR_function",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_dump_IR_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_flatten_basic",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_flatten_instances_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testCascadeRCNN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testKeypointHead",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN_batched",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN_with_postproc",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_analysis.py::FasterRCNNTest::test_flop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_analysis.py::FasterRCNNTest::test_flop_with_output_shape",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_analysis.py::FasterRCNNTest::test_param_count",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_analysis.py::MaskRCNNTest::test_flop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_analysis.py::RetinaNetTest::test_flop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_analysis.py::RetinaNetTest::test_param_count",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_analysis.py::UnusedParamTest::test_unused",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_get_invalid_model",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_get_returns_model",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_get_url",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_mask_rcnn_c4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_mask_rcnn_fpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_panoptic_fpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_schedule",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_packaging.py::TestCollectEnv::test",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_packaging.py::TestProjects::test_import",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_basic",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_builtin",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_compress_target",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_failure",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_inside_class",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_pytorch_optim",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_cosine",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_cosine_end_value",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_multistep",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_stepwithfixedgamma",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_solver.py::TestOptimizer::testExpandParamsGroups",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_solver.py::TestOptimizer::testReduceParamGroups",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_BWmode_nomask",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_border_mask_with_holes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_border_polygons",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_correct_output_shape",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_binary_mask",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_dataset_dict",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_empty_mask_predictions",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_instance_predictions",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_no_metadata",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_rotated_dataset_dict",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_soft_mask",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_overlay_instances",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_overlay_instances_no_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_overlay_rotated_instances",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_assign_new_id",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_from_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_update",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_hungarian_tracker.py::TestBaseHungarianTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_hungarian_tracker.py::TestBaseHungarianTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_assign_cost_matrix_values",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_from_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_process_matched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_process_unmatched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_process_unmatched_prev_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_update",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_assign_cost_matrix_values",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_from_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_process_matched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_process_unmatched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_process_unmatched_prev_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_update",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/utils/test_tensorboardx.py::TestTensorboardXWriter::test_no_files_created",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 GPU 测试",
+      "id": "tests/utils/test_tensorboardx.py::TestTensorboardXWriter::test_single_write",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "GPU 收集阶段缺口",
+      "id": "projects/DensePose/tests/test_dataset_loaded_annotations.py",
+      "baseline": "error",
+      "candidate": "error",
+      "comparison": "both_failed",
+      "unit": "test_files"
+    },
+    {
+      "suite": "GPU 收集阶段缺口",
+      "id": "tests/export/test_c10.py",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "test_files"
+    },
+    {
+      "suite": "GPU 收集阶段缺口",
+      "id": "tests/test_export_caffe2.py",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "test_files"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestScripting::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestScripting::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestScripting::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_allow_non_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_dump_IR_function",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_dump_IR_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_flatten_basic",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_flatten_instances_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTracing::testCascadeRCNN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTracing::testKeypointHead",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN_batched",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN_with_postproc",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "双 GPU TorchScript",
+      "id": "tests/test_export_torchscript.py::TestTracing::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_chart_based_annotations_accumulator.py::TestChartBasedAnnotationsAccumulator::test_chart_based_annotations_accumulator_gt_densepose",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_chart_based_annotations_accumulator.py::TestChartBasedAnnotationsAccumulator::test_chart_based_annotations_accumulator_gt_densepose_none",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_chart_based_annotations_accumulator.py::TestChartBasedAnnotationsAccumulator::test_chart_based_annotations_accumulator_no_gt_densepose",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_combine_data_loader.py::TestCombinedDataLoader::test_combine_loaders_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_combined",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_fulldp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_nodp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_cse_annotations_accumulator.py::TestCseAnnotationsAccumulator::test_cse_annotations_accumulator_sparsedp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_first_k_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_first_k_2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_last_k_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_last_k_2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_random_k_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_frame_selector.py::TestFrameSelector::test_frame_selector_random_k_2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_image_list_dataset.py::TestImageListDataset::test_image_list_dataset",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_image_list_dataset.py::TestImageListDataset::test_image_list_dataset_with_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_image_resize_transform.py::TestImageResizeTransform::test_image_resize_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_model_e2e.py::DensePoseRCNNE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_evolution_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_hrnet_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_setup.py::TestSetup::test_setup_quick_schedules_configs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_structures.py::TestStructures::test_normalized_coords_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestMultiProcessFileTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestMultiProcessRamTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestSingleProcessFileTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_tensor_storage.py::TestSingleProcessRamTensorStorage::test_read_write_1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_video_keyframe_dataset.py::TestVideoKeyframeDataset::test_read_keyframes_all",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_video_keyframe_dataset.py::TestVideoKeyframeDataset::test_read_keyframes_with_selector",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/DensePose/tests/test_video_keyframe_dataset.py::TestVideoKeyframeDataset::test_read_keyframes_with_selector_with_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "projects/TensorMask/tests/test_swap_align2nat.py::SwapAlign2NatTest::test_swap_align2nat_gradcheck_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_bad_lazycall",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_basic_construct",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_dataclass",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_dataclass_as_subconfig",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_lazy_target",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_instantiate_other_obj",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_instantiate_config.py::TestConstruction::test_interpolation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_bad_import",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_bad_import2",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_failed_save",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_invalid_overrides",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_load",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_load_rel",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_overrides",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_save_load",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_lazy_config.py::TestLazyPythonConfig::test_to_py",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigVersioning::test_auto_upgrade",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigVersioning::test_guess_v1",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigVersioning::test_upgrade_downgrade_consistency",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testBadClass",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testFuncWithCfg",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithArgs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithCfg",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithCfgOverwrite",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testInitWithCfgWrongArgs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testOmegaConf",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/config/test_yacs_config.py::TestConfigurable::testPatchedAttr",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_coco.py::TestConvertCOCO::test_convert_to_coco",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_coco.py::TestRLEToJson::test",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_coco.py::TestRLEToJson::test_uncompressed_RLE",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_coco_evaluation.py::TestCOCOeval::test_fast_eval",
+      "baseline": "failed",
+      "candidate": "failed",
+      "comparison": "both_failed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_coco_evaluation.py::TestCOCOeval::test_unknown_category",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestAspectRatioGrouping::test_reiter_leak",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_batch_dataloader_inference",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_batch_dataloader_inference_incomplete_batch",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_dataloader_inference",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_dataloader_train",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_iterable_dataloader_from_cfg",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_iterable_dataloader_inference",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDataLoader::test_build_iterable_dataloader_train",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDatasetFromList::test_alternative_serialize_method",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDatasetFromList::test_change_default_serialize_method",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestDatasetFromList::test_using_lazy_path",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestMapDataset::test_iter_style",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestMapDataset::test_map_style",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_dataset.py::TestMapDataset::test_pickleability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_crop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_flip_keypoints",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_gen_crop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_gen_crop_outside_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_opencv_exif_orientation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_read_exif_orientation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_read_sem_seg",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_RLE",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_RLE_resize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_empty_annotation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_detection_utils.py::TestTransformAnnotations::test_transform_simple_annotation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test180",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test45_coords",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test90",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test90_expand",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test_center_expand",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_rotation_transform.py::TestRotationTransform::test_inverse_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_sampler.py::TestGroupedBatchSampler::test_groups",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_sampler.py::TestGroupedBatchSampler::test_missing_group_id",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_sampler.py::TestInferenceSampler::test_local_indices",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_sampler.py::TestRepeatFactorTrainingSampler::test_repeat_factors_from_category_frequency",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_sampler.py::TestSamplerDeterministic::test_to_iterable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_sampler.py::TestSamplerDeterministic::test_training_sampler_seed",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_apply_rotated_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_apply_rotated_boxes_unequal_scaling_factor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_augmentation_input_args",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_augmentation_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_color_transforms",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_extent_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_print_augmentation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_prob_out_of_range_check",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_probability_not_occured_evaluation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_wrapping_aug_probability_occured_evaluation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_random_apply_wrapping_std_transform_probability_occured_evaluation",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_resize_and_crop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_resize_shorted_edge_scriptable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/data/test_transforms.py::TestTransforms::test_resize_transform",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_aspp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_frozen_batchnorm_fp16",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_resnet_unused_stages",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_blocks.py::TestBlocks::test_separable_conv",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output_on_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output_on_cpu_equals_output_on_gpu",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_raise_exception",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_repr",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_deformable.py::DeformableTest::test_small_input",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_losses.py::TestLosses::test_ciou_loss",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_losses.py::TestLosses::test_diou_loss",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_mask_ops.py::TestMaskCropPaste::test_crop_paste_consistency",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_mask_ops.py::TestMaskCropPaste::test_paste_mask_scriptable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_mask_ops.py::TestMaskCropPaste::test_polygon_area",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms.py::TestNMS::test_nms_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_batched_nms_rotated_0_degree_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_batched_nms_rotated_0_degree_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_0_degree_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_0_degree_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_180_degrees_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_90_degrees_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestScriptable::test_scriptable_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_nms_rotated.py::TestScriptable::test_scriptable_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_empty_batch",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_empty_box",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_forward_output",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_grid_sample_equivalence",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_resize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_empty_box",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_forward_output_0_90_180_270",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_resize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_roi_align_rotated_gradcheck_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_roi_align_rotated_gradient_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_anchor_generator.py::TestAnchorGenerator::test_default_anchor_generator",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_anchor_generator.py::TestAnchorGenerator::test_default_anchor_generator_centered",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_anchor_generator.py::TestAnchorGenerator::test_rrpn_anchor_generator",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_backbone.py::TestBackBone::test_fpn_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_backbone.py::TestBackBone::test_resnet_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransform::test_apply_deltas_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransform::test_reconstruction",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransformLinear::test_reconstruction",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_box2box_transform.py::TestBox2BoxTransformRotated::test_reconstruction",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn_empty_batch",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn_empty_batch_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_fast_rcnn_rotated",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_predict_boxes_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_fast_rcnn.py::FastRCNNTest::test_predict_probs_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_matcher.py::TestMatcher::test_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_mmdet.py::TestMMDetWrapper::test_backbone",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_mmdet.py::TestMMDetWrapper::test_detector",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::FCOSE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::FCOSE2ETest::test_eval_tocpu",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_autocast",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_eval_tocpu",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_half_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::MaskRCNNE2ETest::test_roiheads_inf_nan_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_autocast",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_empty_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_eval_tocpu",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::RetinaNetE2ETest::test_inf_nan_data",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_model_e2e.py::SemSegE2ETest::test_forward",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_PointRend_mask_head_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_StandardROIHeads_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_box_head_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_keypoint_head_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_mask_head_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_roi_heads",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_heads.py::ROIHeadsTest::test_rroi_heads",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_no_images",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_roi_pooler_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_roialignv2_roialignrotated_match_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_roialignv2_roialignrotated_match_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_scriptability_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_roi_pooler.py::TestROIPooler::test_scriptability_gpu",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_append_gt_to_proposal",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_find_rpn_proposals_inf",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_find_rpn_proposals_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn_conv_dims_not_set",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn_larger_num_convs",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rpn_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/modeling/test_rpn.py::RPNTest::test_rrpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxIOU::test_pairwise_ioa",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxIOU::test_pairwise_iou",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_array",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_cpu_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_cuda_tensor",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_array",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywh_to_xywha_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_array",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_list",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_box_convert_xywha_to_xyxy_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_convert_int_mode",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_json_deserializable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxMode::test_json_serializable",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxes::test_empty_cat",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxes::test_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_boxes.py::TestBoxes::test_to",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_imagelist.py::TestImageList::test_imagelist_from_tensors_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_imagelist.py::TestImageList::test_imagelist_padding_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_imagelist.py::TestImageList::test_imagelist_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_from_to_instances",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_int_indexing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_access_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_cat",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_getitem",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_has",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_init_args",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_len",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_new_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_instances.py::TestInstances::test_script_to",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_keypoints.py::TestKeypoints::test_cat_keypoints",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_masks.py::TestBitMask::test_from_empty_polygons",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_masks.py::TestBitMask::test_get_bounding_box",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_masks.py::TestBitMask::test_getitem",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_0_dim_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_0_dim_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_extreme",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_half_overlap_cpu",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_half_overlap_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2154",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2167",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_precision",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_too_many_boxes_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_clip_area_0_degree",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_clip_area_arbitrary_angle",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_empty_cat",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_normalize_angles",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_0_degree",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_45_degrees",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207_simplified",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_large_close_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_many_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_orthogonal",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_scriptability",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_complex_model_loaded",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_custom_path_manager_handler",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_lcp",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_checkpoint.py::TestCheckpointer::test_load_with_matching_heuristics",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_async_write_metrics",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_best_checkpointer",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_checkpoint_resume",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_default_trainer",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_eval_hook",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_metric_gather_and_write",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_setup_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_simple_trainer",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_simple_trainer_cuda",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_simple_trainer_reset_dataloader",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_engine.py::TestTrainer::test_writer_hooks",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testEventStorage",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testPrintETA",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testPrintNonLosses",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testScalar",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testScalarMismatchedPeriod",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_events.py::TestEventWriter::testSmoothingWithWindowSize",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testCascadeRCNN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testKeypointHead",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNFPN_batched",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testMaskRCNNFPN_with_postproc",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_onnx.py::TestONNXTracingExport::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestScripting::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestScripting::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestScripting::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_allow_non_tensor",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_dump_IR_function",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_dump_IR_tracing",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_flatten_basic",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTorchscriptUtils::test_flatten_instances_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testCascadeRCNN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testKeypointHead",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNC4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN_batched",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testMaskRCNNFPN_with_postproc",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_export_torchscript.py::TestTracing::testRetinaNet",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_analysis.py::FasterRCNNTest::test_flop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_analysis.py::FasterRCNNTest::test_flop_with_output_shape",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_analysis.py::FasterRCNNTest::test_param_count",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_analysis.py::MaskRCNNTest::test_flop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_analysis.py::RetinaNetTest::test_flop",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_analysis.py::RetinaNetTest::test_param_count",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_analysis.py::UnusedParamTest::test_unused",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_get_invalid_model",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_get_returns_model",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_get_url",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_mask_rcnn_c4",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_mask_rcnn_fpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_panoptic_fpn",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_model_zoo.py::TestModelZoo::test_schedule",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_packaging.py::TestCollectEnv::test",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_packaging.py::TestProjects::test_import",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_basic",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_builtin",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_compress_target",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_failure",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_inside_class",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_registry.py::TestLocate::test_pytorch_optim",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_cosine",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_cosine_end_value",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_multistep",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_scheduler.py::TestScheduler::test_warmup_stepwithfixedgamma",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_solver.py::TestOptimizer::testExpandParamsGroups",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_solver.py::TestOptimizer::testReduceParamGroups",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_BWmode_nomask",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_border_mask_with_holes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_border_polygons",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_correct_output_shape",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_binary_mask",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_dataset_dict",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_empty_mask_predictions",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_instance_predictions",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_no_metadata",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_rotated_dataset_dict",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_draw_soft_mask",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_overlay_instances",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_overlay_instances_no_boxes",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/test_visualizer.py::TestVisualizer::test_overlay_rotated_instances",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_assign_new_id",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_from_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_bbox_iou_tracker.py::TestBBoxIOUTracker::test_update",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_hungarian_tracker.py::TestBaseHungarianTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_hungarian_tracker.py::TestBaseHungarianTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_assign_cost_matrix_values",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_from_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_process_matched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_process_unmatched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_process_unmatched_prev_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py::TestIOUWeightedHungarianBBoxIOUTracker::test_update",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_assign_cost_matrix_values",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_from_config",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_init",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_initialize_extra_fields",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_process_matched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_process_unmatched_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_process_unmatched_prev_idx",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py::TestVanillaHungarianBBoxIOUTracker::test_update",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/utils/test_tensorboardx.py::TestTensorboardXWriter::test_no_files_created",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "原仓库 CPU 测试",
+      "id": "tests/utils/test_tensorboardx.py::TestTensorboardXWriter::test_single_write",
+      "baseline": "passed",
+      "candidate": "passed",
+      "comparison": "both_passed",
+      "unit": "tests"
+    },
+    {
+      "suite": "CPU 收集阶段缺口",
+      "id": "projects/DensePose/tests/test_dataset_loaded_annotations.py",
+      "baseline": "error",
+      "candidate": "error",
+      "comparison": "both_failed",
+      "unit": "test_files"
+    },
+    {
+      "suite": "CPU 收集阶段缺口",
+      "id": "tests/export/test_c10.py",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "test_files"
+    },
+    {
+      "suite": "CPU 收集阶段缺口",
+      "id": "tests/test_export_caffe2.py",
+      "baseline": "skipped",
+      "candidate": "skipped",
+      "comparison": "both_skipped",
+      "unit": "test_files"
+    }
+  ]
+}

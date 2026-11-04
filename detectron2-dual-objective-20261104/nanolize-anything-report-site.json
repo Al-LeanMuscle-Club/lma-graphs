@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "nrs_65cd989d4ae1c6f912865726641ee2853d7cd74bc6b9f5d0246f7b43593ade0c",
+  "files": [
+    {
+      "path": "data.json",
+      "sha256": "faf77627443ab26570bb16c527876b69c10031998312d89ab3b4276c22ac6c0f"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "4af7d634d056ca065511aceb631c085e220dfba4f42548e9a7ffea2f1057ff49"
+    },
+    {
+      "path": "index.html",
+      "sha256": "44837bf2929069e8d7c4714a194a0d8f81f83f73900c6cd2e94fb68c1f317408"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "36dfc5c36a375410913ac0095f886d1b540fe7f31dd91a13806cd6132ced63d0"
+    },
+    {
+      "path": "supplementary-summary.json",
+      "sha256": "10f9cf02d1946c0e38632506f7e92645d5f427c8997c072506e6a16409a08a19"
+    },
+    {
+      "path": "supplementary.css",
+      "sha256": "e1495217c1c6a68f7a26aa043df5ee5794945ccbf94877d482400d3edc709b42"
+    },
+    {
+      "path": "supplementary.html",
+      "sha256": "64691b570b4f53dab2d62f4583a189b4c789b7cbd4966f85ebefc4f5d1675b95"
+    },
+    {
+      "path": "tests.json",
+      "sha256": "4de58ae7f364f51a82bd45d1fd45454f5fefbe7df7d1443475f6eab4a2d2e6fc"
+    }
+  ],
+  "supplementary": {
+    "schema_version": 1,
+    "operation": "allowlisted_public_supplement",
+    "fixture": false,
+    "original_manifest_sha256": "b01a5ab15350bae81ae88e9a0541c08763498a9d2d301c3965c26c37d0ba0d15",
+    "core_report_id": "nrs_65cd989d4ae1c6f912865726641ee2853d7cd74bc6b9f5d0246f7b43593ade0c",
+    "core_binding": {
+      "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+      "candidate_git_head": "5d10fe00e91ed1a24fb164799b8f4e566ab5057e",
+      "candidate_source_sha256": "91e805a559f6901551e69c867de466f65807dcfc350b1e246dfb0de21461d739",
+      "candidate_contract_sha256": "153cc1f993b6d7c1c8b9c5195d4275c66ba5d2cf558f34db9cf958f65d64ffd2",
+      "plan_sha256": "2c5ad83a1f24c47ac6e88746c910cbda7e2909061cf22e15a593720c4da53097",
+      "verification_sha256": "58482dfc54a3e03bcff934a355803d9dd26b1d48f2b5da03dfa00b7ac66f13bd"
+    },
+    "summary_sha256": "10f9cf02d1946c0e38632506f7e92645d5f427c8997c072506e6a16409a08a19",
+    "presentation": {
+      "decorator": "reviewed_report_title_v1",
+      "document_title": "Detectron2 · 保全功能重构验证",
+      "project_headline": "Detectron2 · 保全功能重构验证",
+      "embedded_data_unchanged": true,
+      "graph_node_labels_unchanged": true
+    },
+    "built_at": "2026-11-04T19:36:34.453491+00:00"
+  }
+}
