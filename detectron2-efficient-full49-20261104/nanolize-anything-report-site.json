@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "nrs_4192d4664f4b47d7ec1baac0e997a8cd4fc6a27e8c1f728f73fdfcf744ed7e1b",
+  "native_report_id": "nrs_1a20f39ac45e7e8cf7eb8e9baa0ee1f9a36636444b16fefee524d1d7fb8b91ce",
+  "files": [
+    {
+      "path": "graph/data.json",
+      "sha256": "1c291a88277e335aae9ce3d7063eb61589791f9dbc8946c7161f385df38d4d4d"
+    },
+    {
+      "path": "graph/evidence.json",
+      "sha256": "9b2be2ca557e69ad7c3df6e48a3c48a37908999b244dbc5d2bcec127fdb623f6"
+    },
+    {
+      "path": "graph/index.html",
+      "sha256": "d667b7fd20a3a6db9797b116a006bc13dbc1942c5fab0d7fa54d760e12f22795"
+    },
+    {
+      "path": "graph/metrics.csv",
+      "sha256": "9c84509a27a1137abf3b7a23a9b2b8a32a45bd6dd438fbc9adfa0391c79878af"
+    },
+    {
+      "path": "graph/nanolize-anything-report-site.json",
+      "sha256": "3a7f2198fe0884ebe5ccac70fa50e5f42ff7a7ae4eea19a0e8b28e8ced8a96b4"
+    },
+    {
+      "path": "index.html",
+      "sha256": "071a85ffa7ae51500af4ca0a1763e87ca78b3f224ee44b8ba94a25e805ba24f5"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "4ea142a79d55c014781cb8404c084f38f26dfd17dd05c76121762b9b46d2b79c"
+    }
+  ]
+}
