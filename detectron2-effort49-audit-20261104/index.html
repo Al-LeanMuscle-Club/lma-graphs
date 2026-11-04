@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#172b29">
+  <meta name="description" content="对 Detectron2 effort49 压缩分支的独立源码审查：区分物理体积、结构简化、行为回归和验证边界。含计量对比、固定提交源码证据及改进建议。">
+  <title>Detectron2 压缩审查报告 · nanolize</title>
+  <meta property="og:title" content="Detectron2 压缩审查报告 · nanolize">
+  <meta property="og:description" content="52.58%的体积缩减，是否等于结构简化？核查统计口径、具体行为回归与验证边界。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-effort49-audit-20261104/">
+  <link rel="canonical" href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-effort49-audit-20261104/">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到报告正文</a>
+<header class="topbar"><a href="#" class="brand"><span class="brand-mark">n.</span> nanolize <span class="brand-sub">RESEARCH NOTES</span></a><div class="top-actions"><span class="edition">独立审查 / 2026.11.04</span><button id="print" type="button">打印 / PDF <span aria-hidden="true">↗</span></button></div></header>
+<div class="layout">
+<aside class="sidebar" aria-label="报告目录">
+  <div class="sidebar-heading">IN THIS REPORT</div>
+  <nav><a href="#overview" class="active"><span>01</span> 核心判断</a><a href="#metrics"><span>02</span> 压缩数字的含义</a><a href="#findings"><span>03</span> 行为回归与风险</a><a href="#structure"><span>04</span> 结构与认知负担</a><a href="#verification"><span>05</span> 验证的边界</a><a href="#recommendations"><span>06</span> 改进验收机制</a><a href="#method"><span>07</span> 方法与来源</a></nav>
+  <div class="sidebar-footer"><span class="status-dot"></span> 静态源码审查<br><small>固定提交 · 可追溯证据<br>本次未补跑完整测试</small><a class="data-download" href="report-data.json" download>下载审查数据 ↓</a></div>
+</aside>
+<main id="main">
+<section class="hero" id="overview">
+  <div class="eyebrow"><span class="small-square"></span> CODE COMPRESSION · REVIEW 01</div>
+  <h1>Detectron2<br><span>压缩审查报告</span></h1>
+  <p class="hero-question">代码更短了。系统是否也更简单？</p>
+  <p class="hero-description">针对 <code>effort49</code> 分支，核查代码量下降来自哪里、哪些行为发生变化，以及现有验证究竟能证明什么。</p>
+  <div class="hero-meta"><span>候选 <a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/README.md"><code>8080c703</code> ↗</a></span><span>基准 <a href="https://github.com/facebookresearch/detectron2/tree/247691a1c292654867deb35cabb27f18d75a1363"><code>247691a1</code> ↗</a></span><span>审查日期 2026-11-04 UTC</span></div>
+  <div class="verdict"><div class="verdict-label">审查结论</div><p><strong>有真实的体积缩减和局部重构，<br>尚未达到“保留全部功能的结构简化”。</strong><span>最终结果混合了逻辑去重、解释性内容减少、配置迁移、排版压缩，以及具体的行为回归。不能将 52.58% 的物理行数降幅直接解释为架构或认知负担的降幅。</span></p></div>
+  <div class="summary-strip"><div><b>52.58<span>%</span></b><span>实现与运行资源合计行数减少</span></div><div><b>3<span> 类</span></b><span>静态确认的行为回归</span></div><div><b class="text-value">未完整验收</b><span>历史任务实验仍为 inconclusive</span></div></div>
+</section>
+
+<section id="metrics" class="report-section">
+  <div class="section-kicker">02 / MEASUREMENT</div><h2>一个“压缩率”，多种含义。</h2>
+  <p class="section-intro">52.58% 的数字有真实物理体积依据。关键是区分源码、运行资源、排版和解释性内容，避免把不同口径混为结构收益。</p>
+  <div class="chart-panel">
+    <div class="chart-header"><div><h3 id="chart-title">实现源码 + 运行资源</h3><p id="chart-unit">物理行数 · 排除测试</p></div><label for="metric-select" class="sr-only">选择代码量统计口径</label><select id="metric-select"><option value="combined">完整运行体积</option><option value="source">仅实现源码</option><option value="pythonRaw">Python · 原始排版</option><option value="pythonBlack">Python · 统一 Black</option><option value="pythonAst">Python · 去注释并统一 AST 输出</option></select></div>
+    <div class="chart" role="img" aria-label="实现源码和运行资源行数：原版76888，候选36458，减少52.58%">
+      <div class="bar-row"><span>原版</span><div class="bar-track"><div class="bar original" id="bar-original" style="width:100%"><i id="part-original" style="width:93.69%"></i></div></div><b id="value-original">76,888</b></div>
+      <div class="bar-row"><span>压缩版</span><div class="bar-track"><div class="bar candidate" id="bar-candidate" style="width:47.417%"><i id="part-candidate" style="width:56.39%"></i></div></div><b id="value-candidate">36,458</b></div>
+    </div>
+    <div class="chart-bottom"><div id="chart-legend"><span class="legend-dot solid"></span> 实现源码 <span class="legend-dot pale"></span> 运行配置、数据等</div><strong id="chart-reduction">−52.58%</strong></div>
+    <p class="chart-note" id="chart-note" aria-live="polite">最终统计已经计入 JSON、表格等运行资源。因此，不能把 52.58% 简单归为漏算配置的假数字。</p>
+  </div>
+  <div class="table-wrap"><table><caption>报告公布的完整体积统计</caption><thead><tr><th>范围</th><th>原版</th><th>压缩版</th><th>变化</th></tr></thead><tbody><tr><th>实现源码</th><td>72,035</td><td>20,559</td><td>−71.46%</td></tr><tr><th>配置、运行数据等</th><td>4,853</td><td>15,899</td><td class="muted">+227.61%</td></tr><tr class="total-row"><th>合计行数</th><td>76,888</td><td>36,458</td><td>−52.58%</td></tr><tr><th>合计字节数</th><td>3,337,061</td><td>1,412,898</td><td>−57.66%</td></tr><tr><th>合计文件数</th><td>652</td><td>727</td><td class="muted">+75 个</td></tr></tbody></table></div>
+  <p class="source-note">字节数同样下降，说明全部收益并非仅来自减少换行。文件数增加也不能单独证明结构变差。<a href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/experiment-supplement.json">查看原始体积统计 ↗</a></p>
+  <div class="two-col measurement-notes"><div><span class="mini-label">排版归一化</span><h3>Python 行数降幅：69.24% → 56.41%</h3><p>两边统一使用 Black 26.10.0、88 字符行宽后，原版为 68,303 行，候选为 29,773 行。可见原始行数对排版敏感。</p><p>再移除注释和 docstring，用同一 AST 输出方式计算，为 30,815 → 18,452 行，减少 40.12%。<strong>40.12% 仍不是“真实架构压缩率”</strong>：它只覆盖 Python，仍受配置迁移、依赖委托和行为遗漏影响。</p></div><div><span class="mini-label">解释性内容</span><h3>注释与 docstring 占行减少 98.87%</h3><p>Python 纯注释行：4,097 → 31。Docstring 占用行：12,732 → 160。两项合计：16,829 → 191。</p><p>消失的内容包含 Hook 生命周期、计时约束、预训练模型归一化参数的原因等使用知识。删除过期解释合理；丢失有效契约，会把理解成本转移给下一位维护者。</p><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/engine/train_loop.py#L12">查看缩减后的 HookBase ↗</a></div></div>
+</section>
+
+<section id="findings" class="report-section">
+  <div class="section-kicker">03 / BEHAVIOR</div><h2>有些差异，已经改变了行为。</h2>
+  <p class="section-intro">以下三类问题来自原版与候选源码的直接比对。尺寸公式和分支差异可以静态确定；本次没有新增运行验证，也不推测精度损失的大小。</p>
+  <article class="finding" id="tensormask"><div class="finding-head"><span class="finding-num">01</span><div><span class="badge confirmed">静态确认 · 数值与形状</span><h3>TensorMask：边缘输出丢失，采样位置改变</h3></div></div>
+    <p>原版 <code>SwapAlign2Nat</code> 使用 <code>ceil(H / λ)</code>，新版 C++ 和 Python fallback 都使用向下取整。原 API 没有要求 H、W 必须被 λ 整除。</p>
+    <div class="shape-demo"><div><span class="mini-label">合法输入</span><code>N=1 · C=4 · H=W=5 · λ=2</code></div><div class="shape-example"><div class="grid-demo grid-three" aria-label="原版3乘3输出"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div><b>原版</b><code>(1, 16, 3, 3)</code></div></div><span class="shape-arrow" aria-hidden="true">→</span><div class="shape-example"><div class="grid-demo grid-three candidate-grid" aria-label="候选2乘2输出，右侧和下侧边缘缺失"><i></i><i></i><i class="missing"></i><i></i><i></i><i class="missing"></i><i class="missing"></i><i class="missing"></i><i class="missing"></i></div><div><b>压缩版</b><code>(1, 16, 2, 2)</code></div></div></div>
+    <p>即使尺寸可以整除，候选坐标公式仍比原版多偏 <code>(λ − 1) / 2</code> 个输入像素。λ=2 时，两轴各偏 0.5 像素。因此，这不是仅移除 CUDA 文件，而是替代实现改变了算子的数学行为。</p>
+    <details><summary>展开公式与源码证据</summary><div class="detail-body"><pre><code>原版：y × λ + v − Vout / 2 + 0.5
+候选：(y + 0.5) × λ − 0.5 + v − (Vout − 1) / 2
+    = y × λ + v − Vout / 2 + λ / 2</code></pre><div class="evidence-links"><a href="https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/TensorMask/tensormask/layers/csrc/SwapAlign2Nat/SwapAlign2Nat_cuda.cu#L427">原版输出尺寸 ↗</a><a href="https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/TensorMask/tensormask/layers/csrc/SwapAlign2Nat/SwapAlign2Nat_cuda.cu#L82">原版采样坐标 ↗</a><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/TensorMask/tensormask/csrc/swap_align2nat.cpp#L11">候选 C++ ↗</a><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/TensorMask/tensormask/layers/swap_align2nat.py#L20">候选 Python ↗</a></div></div></details>
+  </article>
+  <article class="finding"><div class="finding-head"><span class="finding-num">02</span><div><span class="badge confirmed">静态确认 · 项目入口</span><h3>PointRend / DeepLab：共享入口抹掉了必要差异</h3></div></div><p>候选统一使用 <code>ProjectTrainer</code>。评估器选择变为语义分割使用普通 <code>SemSegEvaluator</code>，其余使用 <code>COCOEvaluator</code>，遗漏原有 LVIS、Cityscapes 专属分发。</p><p>专用数据增强也没有完整接入。PointRend 的配置仍声明类别面积约束裁剪和 SSD 颜色增强，但共享入口使用默认 mapper，没有消费这些设置。相关类仍存在，不代表原来的训练入口仍能使用它们。</p><details><summary>查看调用链与证据</summary><div class="detail-body"><pre><code>PointRend / DeepLab train_net.py
+  → projects._train.ProjectTrainer
+  → 继承 DefaultTrainer.build_train_loader
+  → DatasetMapper(cfg, True)
+  → 普通 RandomCrop + Resize / RandomFlip</code></pre><p>合并共同流程有价值，但项目差异需要通过明确策略或参数保留，不能静默回落到通用行为。</p><div class="evidence-links"><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/_train.py#L9">共享 Trainer ↗</a><a href="https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/PointRend/train_net.py#L30">原版 PointRend 增强 ↗</a><a href="https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/PointRend/train_net.py#L73">原版评估器分发 ↗</a><a href="https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/DeepLab/train_net.py#L21">原版 DeepLab ↗</a></div></div></details></article>
+  <article class="finding"><div class="finding-head"><span class="finding-num">03</span><div><span class="badge confirmed">静态确认 · 导出契约</span><h3>Caffe2：旋转框和关键点转换被简化掉了</h3></div></div><p>候选统一截取框的最后四列构造 <code>Boxes</code>。对于原版支持的五列旋转框 <code>(cx, cy, w, h, angle)</code>，这会丢失旋转框语义。</p><p>关键点输出直接赋值，遗漏从 <code>[N, 4, K]</code> 到 <code>[N, K, 3]</code> 的转换，以及 <code>kps_score</code> 热图处理分支。候选导出 forward 也未保留关键点输出。此结论针对这些具体路径，不代表整个 Caffe2 系统均无法运行。</p><div class="evidence-links"><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/export/caffe2_modeling.py#L15">候选输出转换 ↗</a><a href="https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/detectron2/export/caffe2_modeling.py#L56">原版旋转框与关键点处理 ↗</a></div></article>
+  <div class="risk-panel"><span class="badge caution">性能风险 · 尚未实测</span><h3>能在 GPU 上运行，不等于保留了原有执行特性。</h3><p>新版 rotated ROIAlign 逐 ROI 循环，并从 CUDA 张量读取 Python 标量，存在同步开销。Rotated NMS 则从紧凑 bitmask 改为完整的 N×N IoU 矩阵。</p><p>仅 float32 IoU 矩阵的理论存储量约为 4N² 字节，而原 bitmask 约为 N²/8 字节，前者约 32 倍。<strong>这不是实测峰值内存比，更不是“慢 32 倍”。</strong>原版本来也会把 bitmask 传到 CPU，不能把 <code>.cpu()</code> 本身当成新回归。</p><div class="evidence-links"><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/layers/roi_align_rotated.py#L15">ROIAlignRotated ↗</a><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/layers/nms_rotated.py#L23">Rotated NMS ↗</a></div></div>
+  <p class="balance-note"><strong>合理的 CUDA 复用应保留：</strong>deformable convolution 委托 Torchvision、用 ATen 张量算子替代自写内核，本身都可以是有效简化。候选没有 .cu 文件，不等于删除了全部 GPU 功能；必须依据具体行为判断。</p>
+</section>
+
+<section id="structure" class="report-section"><div class="section-kicker">04 / COGNITIVE LOAD</div><h2>减少逻辑，还是搬走复杂度？</h2><p class="section-intro">这个分支有值得保留的重构。需要把它们与仅改变表示方式、删去解释或丢掉特殊行为的缩减区分开。</p>
+  <div class="good-refactors"><div><span>01 / 逻辑去重</span><h3>Box regression</h3><p>用向量运算替代逐坐标拼装；将 GIoU、DIoU、CIoU 分支中的共同解码提取为一次操作。</p><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/modeling/box_regression.py#L73">查看实现 ↗</a></div><div><span>02 / 构造复用</span><h3>ResNet bottleneck</h3><p>提取 conv、norm、初始化公共构造；普通与 deformable bottleneck 共享部分结构。</p><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/modeling/backbone/resnet.py#L13">查看实现 ↗</a></div><div><span>03 / 数据规范化</span><h3>数据集元数据</h3><p>使用共享类别表和模板，按版本投影 LVIS 数据，减少重复定义并保留独立可变容器。</p><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/data/datasets/_catalog_data.py#L20">查看实现 ↗</a></div></div>
+  <div class="config-story"><span class="mini-label">复杂度迁移的实例</span><h3>从 95 行 Python 到 3 行 loader，阅读路径却变长了。</h3><p>理解候选 Mask R-CNN 配置，需要沿下面的链路追踪。共享模板可以减少重复，但这些资源与解释协议同样需要计入理解和修改成本。</p><ol class="config-chain"><li><code>mask_rcnn_fpn.py</code><span>3 行加载器</span></li><li><code>mask_rcnn_fpn.json</code><span>99 行 · 删除继承的 keypoint 字段</span></li><li><code>keypoint_rcnn_fpn.json</code><span>146 行 · 继续继承</span></li><li><code>cascade_rcnn.json</code><span>383 行 · 上游配置</span></li></ol><p>另外还需要理解 <code>_BASE_</code>、<code>_INDEX_</code>、<code>_DELETE_</code>、callable 解码等自定义规则。上述文件共享使用，不能把链上行数简单累加归到一个功能；这里展示的是追踪路径。</p><div class="evidence-links"><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/configs/common/models/mask_rcnn_fpn.json#L2">继承与删除规则 ↗</a><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/model_zoo/_recipe.py#L24">配置解释器 ↗</a></div></div>
+  <div class="editorial-note"><h3>多行合一，可以接受吗？</h3><p>简短 getter、空方法、短表达式适度合并通常可以接受。本次 Python 扫描未发现分号语句挤压；但部分表达式很长，缩短的是排版。应统一格式后计量，让选择换行风格不再产生压缩奖励。</p><p>保留原 API 路径也不等于没有重构。判断重点应是内部逻辑是否重复、概念是否减少、修改一个功能需要跨越多少层，而不是仅看文件数或单文件长度。</p></div>
+</section>
+
+<section id="verification" class="report-section"><div class="section-kicker">05 / EVIDENCE BOUNDARY</div><h2>绿色节点，不代表完整等价。</h2><p class="section-intro">以下是已有实验报告的结果，本次审查没有重新执行这些测试。明确证据来源与覆盖范围，比一个总体通过率更有用。</p>
+  <div class="verification-grid"><div class="verification-item"><span class="badge historical">历史记录 · 通过</span><b>160 / 160</b><h3>检查组</h3><p>71 组名称为 upstream，89 组为 behavior / runtime / characterize 等表征检查。不是 160 个全量单测，也不是全部功能都验证完整。</p></div><div class="verification-item"><span class="badge historical">历史记录 · 通过</span><b>23 / 23</b><h3>GPU 测试</h3><p>GB200 上的部分冻结上游算子测试，涉及 rotated geometry、NMS、ROIAlign、deformable。名单不含 TensorMask 采样算子。</p></div><div class="verification-item"><span class="badge historical">历史记录 · 通过</span><b>1 <small>张图片</small></b><h3>预训练推理比较</h3><p>Mask R-CNN R50-FPN 3x 在一张 COCO 图上的比较通过。不能据此推导完整 COCO/LVIS 精度、其他架构或训练收敛。</p></div></div>
+  <div class="coverage-explainer"><h3>“保留 106 个能力”是范围要求，不是完成证明。</h3><p>功能图中 89 个叶节点有直接通过记录，17 个容器节点的本地状态为 unknown，仅有关联检查通过。例如，TensorMask 的一项关联检查只注册并读取配置，没有执行采样 forward，因此无法拦住此次发现的数学行为变化。</p><p>完整数据集精度、每条 CUDA 路径、其他预训练架构、训练收敛、多节点部署及性能可扩展性等，仍不能宣称已完成验证。</p></div>
+  <div class="task-panel"><div><span class="badge caution">最终状态 · inconclusive</span><h3>任务 token 实验：有积极信号，验收仍未完成。</h3><p>Development 完成 12/12 次，四类任务的 token 中位数减少约 24%–37%。但 diagnose 样本区间重叠，heldout 0/12 尚未运行。execute 任务是小型 CPU 回归模型实验，不是目标检测训练效果验证。</p></div><div class="task-status"><span>overall</span><code>incomplete</code><span>behavioral_checks</span><code>passed</code><span>candidate_tasks</span><code>inconclusive</code></div></div>
+  <p class="source-note"><a href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/data.json">功能图数据 ↗</a> · <a href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/experiment-supplement.json">补充实验 ↗</a> · <a href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/candidate-attempt-accounting.json">最终任务验收 ↗</a>。候选 README 的部分“待验证”说明早于最终补测，不能用它断言从未跑 GPU。</p>
+</section>
+
+<section id="recommendations" class="report-section"><div class="section-kicker">06 / NEXT DESIGN</div><h2>让验收奖励真正的简洁。</h2><p class="section-intro">此次运行的 harness 已有“禁止 minification、不得删能力”的文字要求，但可计算的尺寸门槛仍主要依赖物理行数。删除说明、压行或较短的替代路径，都可能得分，而损失未必被检查覆盖。</p>
+  <div class="recommendations"><article><span>01</span><div><h3>消除排版与说明删除的奖励</h3><p>两边使用统一格式；实现、配置、数据和解释器共同计量。把有效契约文档的保留作为独立检查，不把它算作需要消灭的冗余。</p></div></article><article><span>02</span><div><h3>按行为验收，不按名称验收</h3><p>能力约束应包含形状、数值、设备、梯度、项目入口与必要外部行为。配置加载、可导入、forward、训练和性能分别标记；没有证据的路径保持未知。</p></div></article><article><span>03</span><div><h3>要求结构收益可解释</h3><p>每项主要缩减说明消除了哪段重复逻辑、哪层间接调用，或让修改一个功能少理解哪些模块。共享抽象应显式保留差异，避免通用分支静默替代专属行为。</p></div></article><article><span>04</span><div><h3>把 LOC 作为辅助结果</h3><p>用结构指标发现问题，再通过少量代表性理解、诊断、修改和执行任务检验成本。任务成功率与 token 消耗共同看，保留 heldout，不把单一静态指标当认知负担本身。</p></div></article></div>
+  <div class="closing-thesis">要减少的是需要理解的概念、重复逻辑和跨模块追踪。<br><strong>更少的行数，是可能的结果；更简单的系统，才是目标。</strong></div>
+</section>
+
+<section id="method" class="report-section methods"><div class="section-kicker">07 / METHODOLOGY</div><h2>方法、限制与可核查来源。</h2>
+  <dl><dt>审查对象</dt><dd><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/examples/detectron2-full-scope-effort49-20261103">examples/detectron2-full-scope-effort49-20261103</a><br>候选固定为 <code>8080c703695dcfa2c8c8118305018e65e0112e8b</code>；原版为 <code>247691a1c292654867deb35cabb27f18d75a1363</code>。结论不自动适用于后续修复提交。</dd><dt>审查方法</dt><dd>只读源码比对、调用链与公式检查、独立文件计数、Python tokenize / AST 分析及统一格式化计量。未导入或执行目标项目，未补跑完整测试。</dd><dt>Python 统计</dt><dd>采用与源码预算一致的文件选择和测试排除口径。Black 26.10.0、行宽 88；AST 口径先移除模块、类、函数 docstring，再使用同一 Python 3.13 的 ast.unparse 输出。两项只适用于 Python；不与全语言、含运行资源的 52.58% 混用。</dd><dt>如何解读</dt><dd>不同口径相互重叠，不是可相加的“压缩来源占比”。注释占行不等于注释质量；AST 行数不等于语义复杂度。文件更多、路径保留或 CUDA 文件消失，都不能单独证明重构优劣。</dd><dt>验证证据</dt><dd>历史实验按最终公开报告引用；静态确认与未实测风险分别标记。没有根据单张图推理、局部测试或功能图状态声称完整等价。</dd><dt>来源访问</dt><dd>本报告和历史实验网站公开可读。候选源码所在仓库当前为 private，部分固定提交链接需要仓库访问权限；本次发布不改变仓库权限。</dd><dt>Harness 版本</dt><dd>初始流程使用 <code>323e47aa</code>，最终追加任务 cohort 使用 <code>0e427c904</code>。对本次运行机制的分析不等于断言当前 main 的所有行为相同。</dd></dl>
+  <div id="sources" class="sources"><h3>主要来源</h3><a href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/experiment-supplement.json"><span>01</span> 最终体积统计与补充验证 <small>JSON ↗</small></a><a href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/candidate-attempt-accounting.json"><span>02</span> 任务实验与最终验收状态 <small>JSON ↗</small></a><a href="https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/data.json"><span>03</span> 功能图原始数据 <small>JSON ↗</small></a><a href="report-data.json" download><span>04</span> 本次审查的结构化数据与来源 <small>下载 ↓</small></a><a href="https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/0e427c9042934573622971ab8b7b20573590d566/src/nanolize_anything/capabilities.py#L695"><span>05</span> 本次 harness 的物理行数预算口径 <small>源码 ↗</small></a></div>
+</section>
+<footer><span class="brand">n. <span>nanolize / engineering review</span></span><p>公开审查报告 · 2026-11-04<br>固定提交的证据快照；非完整功能等价认证。</p><a href="#overview">返回顶部 ↑</a></footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

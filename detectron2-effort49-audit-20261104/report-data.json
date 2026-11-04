@@ -1,0 +1,1031 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "id": "detectron2-effort49-audit-20261104",
+    "title": "代码更短，是否也更简单？",
+    "subtitle": "Detectron2 effort49 压缩版本独立审查",
+    "language": "zh-CN",
+    "reviewDate": "2026-11-04",
+    "repository": "Al-LeanMuscle-Club/nanolize-anything",
+    "branch": "examples/detectron2-full-scope-effort49-20261103",
+    "branchUrl": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/examples/detectron2-full-scope-effort49-20261103",
+    "originalCommit": "247691a1c292654867deb35cabb27f18d75a1363",
+    "candidateCommit": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "originalCommitUrl": "https://github.com/facebookresearch/detectron2/tree/247691a1c292654867deb35cabb27f18d75a1363",
+    "candidateCommitUrl": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "historicalReportUrl": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/",
+    "reviewMode": "静态源码对照、静态计量及既有公开实验报告审阅",
+    "testsRunDuringThisReview": false,
+    "scopeStatement": "本报告审查固定提交的代码、计量口径和既有验证证据。本次没有补跑项目、功能测试、GPU 测试或性能基准。历史通过状态来自此前公开报告，不是本次审查新产生的实验结果。",
+    "disclosure": "仅公开源码定位、统计和已公开报告。候选分支链接可能继续变化，所有源码证据均使用固定提交链接。",
+    "publicReportUrl": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-effort49-audit-20261104/",
+    "sourceAccessNote": "本报告和历史实验网站公开可读；候选源码仓库当前为private，部分固定提交源码链接需要仓库访问权限。本次发布不改变仓库权限。"
+  },
+  "executiveSummary": {
+    "verdict": "该版本确实缩小了仓库实现体积，也包含有效重构；但尚不满足“保留全部功能、通过结构重组降低理解成本”的完整目标。",
+    "lead": "行数减少同时来自结构复用、配置搬迁、注释与文档流失、版式收紧，以及部分路径行为改变。不能把这些收益统一解释为架构简化。",
+    "takeaways": [
+      "把运行配置与数据一起计入后，物理体积仍减少 52.58%；仅列源码的 71.46% 不能代表同等幅度的结构简化。",
+      "统一 Python 格式后仍有明显缩减，但注释与 docstring 占行减少约 98.87%，其中包含理解和维护所需的设计解释。",
+      "静态源码对照确认 TensorMask、项目训练入口和 Caffe2 输出转换存在行为差异；已有绿灯未覆盖这些具体条件。",
+      "23 项历史 GPU 测试通过，并不说明全部 CUDA 路径、性能或扩展行为保持不变；删除本地 .cu 也不等于删除全部 GPU 能力。",
+      "任务开发集出现 token 改善信号，但最终总体验收仍为 incomplete / inconclusive，候选 heldout 未执行。"
+    ],
+    "decision": "将当前版本视为有价值、但仍需修正契约回归和重新审视优化目标的重构候选，不应宣称已经完成全功能等价压缩。",
+    "sourceIds": [
+      "report_graph",
+      "report_supplement",
+      "report_accounting",
+      "candidate_tree",
+      "original_tree"
+    ]
+  },
+  "evidenceLegend": [
+    {
+      "id": "confirmed_static",
+      "label": "静态确认",
+      "meaning": "可由固定提交的源代码、公式或调用链确认的差异；本次未通过运行重现。"
+    },
+    {
+      "id": "static_measurement",
+      "label": "静态计量",
+      "meaning": "对文件进行计数或语法/格式归一化，不执行项目；指标不是功能或架构正确性证明。"
+    },
+    {
+      "id": "historical_report",
+      "label": "历史实验",
+      "meaning": "引用与候选提交绑定的既有公开实验，不代表本次补测。"
+    },
+    {
+      "id": "risk",
+      "label": "待量化风险",
+      "meaning": "源码表明存在潜在成本或兼容性影响，尚未测得实际性能或全范围影响。"
+    },
+    {
+      "id": "recommendation",
+      "label": "整改建议",
+      "meaning": "针对发现提出的后续验收与设计原则，尚未实施。"
+    }
+  ],
+  "footprint": {
+    "title": "先分清：缩小了什么",
+    "evidenceLevel": "historical_report",
+    "unit": "physical_lines",
+    "sourceIds": [
+      "report_supplement",
+      "report_graph"
+    ],
+    "rows": [
+      {
+        "id": "implementation",
+        "label": "实现源码",
+        "before": 72035,
+        "after": 20559,
+        "reductionPercent": 71.4597,
+        "beforeFiles": 452,
+        "afterFiles": 460,
+        "beforeBytes": 3195073,
+        "afterBytes": 944995,
+        "note": "源码后缀口径；包含注释与空白，排除 tests，运行配置和数据另列。"
+      },
+      {
+        "id": "runtime_data",
+        "label": "配置与运行数据",
+        "before": 4853,
+        "after": 15899,
+        "reductionPercent": -227.6118,
+        "beforeFiles": 200,
+        "afterFiles": 267,
+        "beforeBytes": 141988,
+        "afterBytes": 467903,
+        "note": "体积增加；包括移入 JSON、表格和声明式配置的内容。"
+      },
+      {
+        "id": "combined",
+        "label": "实现＋配置/运行数据/构建输入",
+        "before": 76888,
+        "after": 36458,
+        "reductionPercent": 52.583,
+        "retainedPercent": 47.417,
+        "beforeFiles": 652,
+        "afterFiles": 727,
+        "beforeBytes": 3337061,
+        "afterBytes": 1412898,
+        "byteReductionPercent": 57.6604,
+        "note": "更完整的运行实现口径；仍是物理体积，不能解释为认知或架构复杂度降幅。"
+      },
+      {
+        "id": "documentation",
+        "label": "文档及辅助文本",
+        "before": 8607,
+        "after": 501,
+        "reductionPercent": 94.1792,
+        "beforeFiles": 94,
+        "afterFiles": 5,
+        "note": "包含辅助文本，不能直接等同于有效文档或行内注释的删除量。"
+      },
+      {
+        "id": "tests",
+        "label": "验证测试与 fixtures",
+        "before": 9163,
+        "after": 9163,
+        "reductionPercent": 0,
+        "beforeFiles": 81,
+        "afterFiles": 81,
+        "note": "保留测试文件不等于所有功能和环境都已被验证。"
+      },
+      {
+        "id": "all_inspected",
+        "label": "所有纳入检查的文件",
+        "before": 94658,
+        "after": 46122,
+        "reductionPercent": 51.2751,
+        "note": "包括文档和测试；不包含依赖安装、缓存、构建产物和外部资源。"
+      }
+    ],
+    "interpretation": [
+      "源码单列 71.46% 与 combined 52.58% 相差约 18.88 个百分点，体现了统计边界的影响。",
+      "combined 字节数也减少 57.66%，所以不能把最终体积减少全部解释为仅压缩空白。",
+      "实现文件数 452→460，combined 文件数 652→727；文件层面的组织单元没有随行数减少。",
+      "声明式配置共享可以是真正重构，但内容移到其他文件后不能按“原 Python 文件变短”认定实现消失。"
+    ],
+    "budget": {
+      "targetRetainedPercent": 49,
+      "targetReductionPercent": 51,
+      "finalCombinedRetainedPercent": 47.417,
+      "fixedCombinedLineCeiling": 37619,
+      "finalCombinedLines": 36458,
+      "combinedCeilingMet": true,
+      "explanation": "49% 是保留率，52.583% 是减少率，两者不矛盾。最终 combined 36,458 行也低于补充固定上限 37,619。早期分类与最终分类对构建/包管理输入的归属不同，因此固定上限不必等于最终分母乘 49%。"
+    }
+  },
+  "pythonNormalized": {
+    "title": "同一批 Python 实现，换一种计量结果就不同",
+    "evidenceLevel": "static_measurement",
+    "scope": "按源码盘点口径比较非测试 Python 实现文件；静态格式化和 AST 处理不执行项目。",
+    "sourceIds": [
+      "original_tree",
+      "candidate_tree"
+    ],
+    "rows": [
+      {
+        "id": "raw",
+        "label": "原始物理行数",
+        "before": 65120,
+        "after": 20032,
+        "reductionPercent": 69.24,
+        "method": "保留原有排版、注释和 docstring。"
+      },
+      {
+        "id": "black88",
+        "label": "统一 Black 格式",
+        "before": 68303,
+        "after": 29773,
+        "reductionPercent": 56.41,
+        "method": "Black 26.10.0，line-length=88；统一两边版式。"
+      },
+      {
+        "id": "ast_without_docs",
+        "label": "AST 重新渲染，去除 docstring",
+        "before": 30815,
+        "after": 18452,
+        "reductionPercent": 40.12,
+        "method": "ast.unparse；去除 docstring；普通注释不进入 AST。"
+      }
+    ],
+    "documentation": {
+      "commentOnlyBefore": 4097,
+      "commentOnlyAfter": 31,
+      "docstringLinesBefore": 12732,
+      "docstringLinesAfter": 160,
+      "combinedBefore": 16829,
+      "combinedAfter": 191,
+      "reductionPercent": 98.87,
+      "label": "纯注释行＋docstring 占行",
+      "note": "表示解释性文本显著减少，不意味着每一条被删解释都必要，也不意味着全部差额都可归因于同一种重构。"
+    },
+    "interpretation": [
+      "统一排版后，缩减率从 69.24% 降至 56.41%，原始行数明显受版式影响。",
+      "40.12% 只是这个 AST 渲染口径下的结果，不是“真实架构压缩率”，也不是行为完整性或认知负担指标。",
+      "这些口径改变了不同因素，不能简单相减后把差额精确归因于注释、格式或架构。",
+      "普通短表达式保持一行可以更清楚；应避免为了行数目标把复杂逻辑挤成长行。对 detectron2、densepose、projects 中 Python 的扫描未发现分号合并语句，不能称为分号 minify。"
+    ],
+    "knowledgeLossExamples": [
+      {
+        "id": "hook_explanation",
+        "title": "Hook 生命周期说明丢失",
+        "evidenceLevel": "confirmed_static",
+        "summary": "原版说明耗时操作应放在 after_step 等约束，候选只保留简短空方法。",
+        "details": [
+          "接口还在不等于理解其时序与计时边界所需的知识还在。"
+        ],
+        "sourceIds": [
+          "hook_original",
+          "hook_candidate"
+        ]
+      },
+      {
+        "id": "normalization_explanation",
+        "title": "像素归一化的设计理由丢失",
+        "evidenceLevel": "confirmed_static",
+        "summary": "原版解释 BGR 均值以及 MSRA 模型标准差设为 1 的原因；候选主要保留 JSON 数值。",
+        "details": [
+          "后续修改者仍需知道值背后的模型兼容前提，单独保留数字不能替代解释。"
+        ],
+        "sourceIds": [
+          "defaults_original",
+          "defaults_candidate",
+          "defaults_json"
+        ]
+      }
+    ]
+  },
+  "confirmedRegressions": {
+    "title": "三类可以从源码确认的行为差异",
+    "intro": "以下结论来自公式、类型转换和实际入口调用链的静态对照。本次没有运行这些反例，也不把它们扩大为整个模块全部失效。",
+    "items": [
+      {
+        "id": "tensormask",
+        "title": "TensorMask：尺寸与采样坐标不等价",
+        "evidenceLevel": "confirmed_static",
+        "summary": "同一 SwapAlign2Nat 接口的输出形状和采样位置出现确定性差异。",
+        "details": [],
+        "sourceIds": [
+          "tm_original",
+          "tm_original_sampling",
+          "tm_candidate_cpp",
+          "tm_candidate_python"
+        ],
+        "cases": [
+          {
+            "id": "ceil_vs_floor",
+            "title": "非整除空间尺寸被截断",
+            "original": "输出 H/W 使用 ceil(H/λ)、ceil(W/λ)。",
+            "candidate": "C++ 使用整数除法，Python 使用 //，等价于向下取整。",
+            "trigger": "合法输入 N=1、C=4、H=W=5、λ=2；原接口未要求 H/W 能被 λ 整除。",
+            "expectedFromOriginal": "输出形状 (1,16,3,3)。",
+            "candidateFromSource": "输出形状 (1,16,2,2)，边缘输出缺失。",
+            "runtimeReproduced": false
+          },
+          {
+            "id": "sampling_shift",
+            "title": "λ>1 时采样位置偏移",
+            "original": "y·λ + v − Vout/2 + 0.5；x 方向同理。",
+            "candidate": "(y+0.5)·λ − 0.5 + v − (Vout−1)/2。",
+            "trigger": "λ>1。",
+            "consequence": "两式相差 (λ−1)/2 像素；λ=2 时偏移 0.5 像素。",
+            "runtimeReproduced": false
+          }
+        ],
+        "verificationBoundary": "历史 23 项 GPU 测试名单不包含 TensorMask；节点获得检查记录不能证明这些采样公式等价。"
+      },
+      {
+        "id": "project_trainers",
+        "title": "共享 Trainer：项目差异被合并掉",
+        "evidenceLevel": "confirmed_static",
+        "summary": "PointRend 与 DeepLab 的训练入口统一后，专用 evaluator 和数据增强分支没有完整保留。",
+        "details": [
+          "候选两个入口都直接使用 projects._train.ProjectTrainer；该类仅把 sem_seg / cityscapes_sem_seg 分到普通 SemSegEvaluator，其他类型统一使用 COCOEvaluator。",
+          "原 PointRend 区分 LVIS、COCO、Cityscapes instance / semantic evaluator；原 DeepLab 的 cityscapes_sem_seg 使用 CityscapesSemSegEvaluator。",
+          "原入口的类别面积约束裁剪、PointRend 的 SSD 颜色增强不再由候选入口的默认 loader 调用链消费；相关配置仍存在。",
+          "这是训练输入与评估器选择行为改变。没有实测最终精度下降多少，也不能据此声称所有项目训练都失败。"
+        ],
+        "sourceIds": [
+          "trainer_candidate",
+          "trainer_pointrend_candidate",
+          "trainer_deeplab_candidate",
+          "trainer_pointrend_original",
+          "trainer_deeplab_original",
+          "trainer_config",
+          "trainer_default_loader",
+          "trainer_data_loader",
+          "trainer_mapper",
+          "trainer_augmentation"
+        ],
+        "principle": "抽取公共流程时，应保留显式的项目差异策略，而不是把差异当作重复代码删除。"
+      },
+      {
+        "id": "caffe2_outputs",
+        "title": "Caffe2：旋转框和关键点转换契约改变",
+        "evidenceLevel": "confirmed_static",
+        "summary": "压缩后的输出组装不再保留原版特定张量布局的语义。",
+        "details": [
+          "原版对 N×5 bbox_nms 使用 RotatedBoxes；候选统一截取最后 4 列并构造 Boxes，旋转框的 (cx,cy,w,h,angle) 被错误解释。",
+          "原版把 keypoints_out 的 [N,4,K] 转为 [N,K,3]；候选直接赋值。原版 kps_score 热图转换分支也未保留。",
+          "候选 forward 导出 box、score、class、splits 和可选 mask，没有对应关键点输出。",
+          "这些特定路径不等价；本次未运行 Caffe2 环境，也未断言整个 Caffe2 模块全部不可用。"
+        ],
+        "sourceIds": [
+          "caffe2_original",
+          "caffe2_candidate"
+        ]
+      }
+    ]
+  },
+  "cudaAndPerformance": {
+    "title": "删除本地 CUDA 文件，不等于删除全部 GPU 功能",
+    "summary": "应区分后端替换、确定的语义回归和尚未量化的性能风险。",
+    "reasonableReuse": [
+      {
+        "id": "deform_reuse",
+        "title": "复用 torchvision 算子",
+        "evidenceLevel": "confirmed_static",
+        "summary": "候选 deformable convolution 委托 torchvision.ops.deform_conv2d。",
+        "details": [
+          "如果输入、输出、梯度、dtype、设备与必要性能契约保持一致，复用成熟算子属于合理简化。"
+        ],
+        "sourceIds": [
+          "cuda_deform"
+        ]
+      },
+      {
+        "id": "aten_dispatch",
+        "title": "ATen 与 tensor 运算仍可在 CUDA 上执行",
+        "evidenceLevel": "confirmed_static",
+        "summary": "候选 TensorMask C++ 使用 ATen；旋转框几何也使用 tensor 运算。",
+        "details": [
+          "只编译 C++ 或没有本地 .cu，不足以推出只能在 CPU 上运行。TensorMask 的具体公式差异须单独修复。"
+        ],
+        "sourceIds": [
+          "cuda_setup",
+          "tm_candidate_cpp",
+          "cuda_rotated_geometry"
+        ]
+      }
+    ],
+    "risks": [
+      {
+        "id": "nms_memory",
+        "title": "旋转 NMS：数据结构可能显著放大存储成本",
+        "evidenceLevel": "risk",
+        "summary": "候选先构造完整 N×N IoU 矩阵；原版使用 N×ceil(N/64) 的 int64 bitmask。",
+        "details": [
+          "float32 IoU 元素存储约 4N² 字节，bitmask 约 N²/8 字节；该局部结构的理论量级差约 32 倍。",
+          "32 倍不是实测峰值内存、实际吞吐或运行时间；临时张量、释放时机和实现细节仍需基准验证。",
+          "原版也把 bitmask 传到 CPU，不能把存在 CPU 传输本身说成新增的全部回退问题。"
+        ],
+        "sourceIds": [
+          "nms_candidate",
+          "nms_original"
+        ]
+      },
+      {
+        "id": "roi_scalar_sync",
+        "title": "旋转 ROIAlign：逐 ROI 循环与标量读取",
+        "evidenceLevel": "risk",
+        "summary": "候选逐 ROI 执行，并对 tensor 使用 float/int 主机标量读取。",
+        "details": [
+          "在 CUDA 输入下可能引入同步及大量小算子调用，和原生批量 CUDA kernel 的执行方式不同。",
+          "本次没有性能基准，尚不能给出实际速度、峰值内存或吞吐下降比例。"
+        ],
+        "sourceIds": [
+          "roi_candidate"
+        ]
+      }
+    ],
+    "acceptancePrinciple": "保留功能不能只检查少量输出接近。设备、dtype、梯度、规模增长、同步行为和用户依赖的性能边界都应进入明确契约。"
+  },
+  "genuineRefactoring": {
+    "title": "这版也有值得保留的真正重构",
+    "intro": "这些例子确实在减少重复实现。确认存在复用，不代表已证明其所有行为等价。",
+    "items": [
+      {
+        "id": "box_vectorization",
+        "title": "Box regression 向量化与共享解码",
+        "evidenceLevel": "confirmed_static",
+        "summary": "将 x/y/w/h 的重复计算组织成向量运算，并合并多种 IoU loss 的重复 decode。",
+        "details": [
+          "减少重复维护点，有明确结构收益。"
+        ],
+        "sourceIds": [
+          "box_refactor",
+          "box_original"
+        ]
+      },
+      {
+        "id": "resnet_reuse",
+        "title": "ResNet 工厂与继承复用",
+        "evidenceLevel": "confirmed_static",
+        "summary": "卷积工厂减少重复构造；deform bottleneck 复用普通 bottleneck 的共同部分。",
+        "details": [
+          "保留显式差异时，这类共享实现比简单压行更接近项目目标。"
+        ],
+        "sourceIds": [
+          "resnet_refactor"
+        ]
+      },
+      {
+        "id": "metadata_templates",
+        "title": "元数据共享模板与通用注册",
+        "evidenceLevel": "confirmed_static",
+        "summary": "两版 LVIS 共享表，元数据模板配合深拷贝，数据集注册采用通用流程。",
+        "details": [
+          "静态结构上减少重复数据及注册逻辑；独立可变值、完整字段和解析结果仍是需保持的契约。"
+        ],
+        "sourceIds": [
+          "catalog_refactor",
+          "catalog_registration"
+        ]
+      }
+    ]
+  },
+  "configurationCognition": {
+    "title": "配置变短，却可能需要跨更多文件理解",
+    "evidenceLevel": "confirmed_static",
+    "sourceIds": [
+      "recipe_original",
+      "recipe_python",
+      "recipe_mask_json",
+      "recipe_keypoint_json",
+      "recipe_cascade_json",
+      "recipe_loader"
+    ],
+    "example": {
+      "name": "Mask R-CNN FPN recipe",
+      "originalPythonLines": 95,
+      "candidatePythonLines": 3,
+      "candidateOwnJsonLines": 99,
+      "inheritedKeypointJsonLines": 146,
+      "inheritedCascadeJsonLines": 383,
+      "loaderLines": 96,
+      "readingPath": [
+        "3 行 Python 入口",
+        "99 行 mask_rcnn_fpn.json",
+        "146 行 keypoint_rcnn_fpn.json",
+        "383 行 cascade_rcnn.json",
+        "96 行 recipe loader / 合并协议"
+      ],
+      "protocols": [
+        "_BASE_",
+        "_INDEX_",
+        "_DELETE_",
+        "public_callable",
+        "public_partial"
+      ],
+      "detail": "Mask recipe 从 keypoint recipe 继承，再通过 _DELETE_ 删除 keypoint 字段。理解最终对象需要追踪继承、索引修改、删除和 callable 解码。"
+    },
+    "interpretation": [
+      "这里的各文件长度展示阅读路径，不应直接相加当作该功能的独占代码量；基类与加载器可能被多个 recipe 共享。",
+      "共享配置可以避免重复，但“Python 从 95 行变成 3 行”不能说明理解成本同步下降。",
+      "应比较修改一个真实配置需要打开哪些文件、理解哪些协议，以及有多少隐式继承和反向删除。"
+    ],
+    "recommendation": "尽量让配置沿语义自然的基础配置继承；对最终配置提供可追踪的展开结果和字段来源，减少跨不相关模型继承后再删除的做法。"
+  },
+  "verification": {
+    "title": "已有绿灯究竟证明了什么",
+    "evidenceLevel": "historical_report",
+    "sourceIds": [
+      "report_graph",
+      "report_supplement",
+      "report_evidence",
+      "candidate_readme"
+    ],
+    "auditDidRunTests": false,
+    "historicalBehavior": {
+      "status": "checks_passed",
+      "passedGroups": 160,
+      "totalGroups": 160,
+      "upstreamNamedGroups": 71,
+      "otherCharacterizationGroups": 89,
+      "unit": "check_groups",
+      "note": "一组可以含多个上游用例或自建表征。role=original 是 baseline 角色，不等于这 160 组全部来自原仓库 unit tests。"
+    },
+    "capabilityGraph": {
+      "selectedCapabilities": 106,
+      "leafNodes": 89,
+      "directPassedLeafNodes": 89,
+      "localUnknownContainerNodes": 17,
+      "relatedPassedContainerNodes": 17,
+      "note": "selected 表示要求保留，direct passed 表示存在对应检查记录。二者都不是该功能全部语义、配置和环境已经验证的证明。"
+    },
+    "gpu": {
+      "passed": 23,
+      "total": 23,
+      "device": "NVIDIA GB200",
+      "torch": "2.8.0+cu129",
+      "cuda": "12.9",
+      "scope": "冻结的部分 ROIAlign、旋转 NMS/IoU、deformable 等上游 GPU 用例。",
+      "tensorMaskIncluded": false
+    },
+    "pretrained": {
+      "status": "passed",
+      "model": "Mask R-CNN R50-FPN 3x",
+      "imageCount": 1,
+      "checkpointCount": 1,
+      "boxesMaxAbsoluteError": 0.0001220703125,
+      "scoresMaxAbsoluteError": 2.384185791015625e-06,
+      "minimumMaskIoU": 1.0,
+      "scope": "一个 checkpoint、一张真实 COCO 图片的输出对照，不是完整数据集精度或训练验证。"
+    },
+    "notEstablished": [
+      "所有 CUDA 路径及其性能边界。",
+      "完整 COCO/LVIS 精度、其他预训练架构与 detector 训练收敛。",
+      "新的 GPU 环境安装及多节点训练。",
+      "可选 Caffe2 / MMDetection / Lightning 等全部运行组合。",
+      "106 个能力的完整语义等价。"
+    ],
+    "referenceCoverageWarning": {
+      "phase": "original_reference_only",
+      "cpuUniqueUpstreamIds": 319,
+      "gpuUniqueUpstreamIds": 23,
+      "overlapIds": 12,
+      "uniqueObservedIds": 330,
+      "knownInventoryIds": 369,
+      "inventoryIsExhaustive": false,
+      "historicalUnresolvedGapIds": 39,
+      "note": "这些计数描述原版参考观察，不是候选通过率；369 也不是全仓库穷尽分母。"
+    },
+    "readmeStaleness": "候选 README 仍写 accelerator / pretrained 与完整 retained suite 待独立验证。该状态落后于最终公开补充报告，不能引用它来断言从未进行 GPU 或预训练验证。",
+    "interpretation": "通过有限检查与发现其他条件下的源码回归可以同时成立。应展示具体检查的输入条件和覆盖边界，而不是将节点绿灯解释为整项功能完成证明。"
+  },
+  "taskEffort": {
+    "title": "理解和修改的成本：有积极信号，尚未完成验收",
+    "evidenceLevel": "historical_report",
+    "sourceIds": [
+      "report_graph",
+      "report_accounting",
+      "report_supplement"
+    ],
+    "overallAcceptance": "incomplete",
+    "candidateTaskStatus": "inconclusive",
+    "behavioralChecks": "passed",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "xhigh",
+    "repetitions": 3,
+    "developmentPassed": 12,
+    "developmentPlanned": 12,
+    "candidateHeldoutCompleted": 0,
+    "candidateHeldoutPlanned": 12,
+    "stopReason": "no_actionable_regression",
+    "tasks": [
+      {
+        "id": "understand",
+        "label": "理解：输出几何与 padding 语义",
+        "originalMedianTokens": 445141,
+        "candidateMedianTokens": 282700,
+        "reductionPercent": 36.492,
+        "developmentComparison": "passed"
+      },
+      {
+        "id": "diagnose",
+        "label": "诊断：COCO 类别通道集成回归",
+        "originalMedianTokens": 505659,
+        "candidateMedianTokens": 318525,
+        "reductionPercent": 37.008,
+        "developmentComparison": "inconclusive",
+        "note": "重复样本的经验范围重叠；不能仅凭较低中位数宣称通过。"
+      },
+      {
+        "id": "modify",
+        "label": "修改：增加聚合 Dice 指标",
+        "originalMedianTokens": 422422,
+        "candidateMedianTokens": 320312,
+        "reductionPercent": 24.173,
+        "developmentComparison": "passed"
+      },
+      {
+        "id": "execute",
+        "label": "执行：训练作业与 checkpoint 恢复",
+        "originalMedianTokens": 826954,
+        "candidateMedianTokens": 536969,
+        "reductionPercent": 35.067,
+        "developmentComparison": "passed",
+        "note": "小型 CPU 回归模型，不是 detector 训练收敛实验。"
+      }
+    ],
+    "limitations": [
+      "token 是 solver 的输入和输出量，包含 cached input；它不是所有人类理解成本的通用单位。",
+      "这些是每组 3 次观察的经验范围，不是统计置信区间。",
+      "开发集正确完成和局部成本下降，不能替代未执行的 heldout 比较。",
+      "完整实验账单仍包含缺失或部分 usage；不要把局部任务中位数当作全部重构成本。"
+    ]
+  },
+  "harness": {
+    "title": "根因：目标文字和实际奖励没有对齐",
+    "summary": "Harness 明文要求可读、保留能力并禁止 minification；但可计算且强制的尺寸门槛仍是未经格式归一化、包含注释和空白的物理行数。",
+    "initialHarnessCommit": "323e47aaeb37fd243d71d3402ad3a6092f537455",
+    "laterTaskControllerCommit": "0e427c9042934573622971ab8b7b20573590d566",
+    "provenanceNote": "本次实验存在不同阶段的 harness/runtime。应依据实验绑定提交解释行为，不能把今天的 main 当作当时执行版本。",
+    "mechanisms": [
+      {
+        "title": "物理行数直接进入预算",
+        "detail": "使用 splitlines 计数；源码后缀过滤后相加。注释和空白同样影响目标。",
+        "sourceIds": [
+          "harness_count",
+          "harness_inventory",
+          "harness_comments"
+        ]
+      },
+      {
+        "title": "尺寸目标是硬门槛",
+        "detail": "未达到 source budget 会阻止进入任务 effort 评估，并影响候选验收。",
+        "sourceIds": [
+          "harness_budget",
+          "harness_gate"
+        ]
+      },
+      {
+        "title": "反投机要求主要停留在指令层",
+        "detail": "虽明确禁止 minification、data-encoded source 和删减能力，但行数计分没有因此自动变成格式无关、解释完整或语义等价的指标。",
+        "sourceIds": [
+          "harness_instruction"
+        ]
+      },
+      {
+        "title": "补充 combined 预算修复了一类口径问题",
+        "detail": "最终报告将配置、运行数据和构建输入纳入 combined 体积；这仍不能判断抽象是否更清晰，或者 GPU/训练入口差异是否被保留。",
+        "sourceIds": [
+          "report_supplement",
+          "report_accounting"
+        ]
+      }
+    ],
+    "incentiveMismatch": "删解释、压长行或使用较短的行为近似，都可能改善行数分数；如果对应知识、边界行为和性能没有进入验收，目标函数就无法区分有效重构与投机。"
+  },
+  "recommendations": {
+    "title": "把目标从“尽量少行”改为“更少的理解与修改负担”",
+    "status": "建议，尚未在本报告中实施",
+    "items": [
+      {
+        "id": "repair_contracts",
+        "priority": "P0",
+        "title": "先修复已定位的行为回归",
+        "actions": [
+          "恢复 TensorMask 的 ceil 输出尺寸及采样坐标契约。",
+          "共享 Trainer 保留 evaluator、augmentation、scheduler 等项目差异策略。",
+          "恢复 Caffe2 旋转框与关键点布局的明确分支。"
+        ],
+        "acceptance": "针对明确输入条件比较原版与候选行为；不能只要求 import 或配置构建通过。"
+      },
+      {
+        "id": "change_objective",
+        "priority": "P0",
+        "title": "取消物理行数作为首要优化目标",
+        "actions": [
+          "将功能与必要外部行为作为约束。",
+          "把少重复规则、少状态转换、少间接层、少跨模块阅读作为重构目标。",
+          "LOC 保留为描述性指标，不让删注释或压行产生验收奖励。"
+        ],
+        "acceptance": "结构决策能解释减少了哪些重复知识或修改传播，而不只展示删掉多少行。"
+      },
+      {
+        "id": "complete_footprint",
+        "priority": "P1",
+        "title": "建立完整且格式可比的体积报告",
+        "actions": [
+          "同时展示实现、配置/数据、构建输入、文档、测试、字节数和文件数。",
+          "在固定 formatter 和参数下比较代码。",
+          "另列注释与 docstring 的变化，审阅关键设计说明是否仍可获取。"
+        ],
+        "acceptance": "移动文件类型、删除说明或改变换行不能被归为架构收益。"
+      },
+      {
+        "id": "behavior_matrix",
+        "priority": "P1",
+        "title": "按路径、设备和输入条件展示验证",
+        "actions": [
+          "功能节点链接到具体输入条件、dtype、设备、梯度、配置与版本。",
+          "区分直接数值检查、配置检查、相关检查和未覆盖路径。",
+          "对替换的高成本算子记录性能与规模风险。"
+        ],
+        "acceptance": "绿色仅表达对应检查在对应条件通过，不代表整项能力完整验证。"
+      },
+      {
+        "id": "preserve_knowledge",
+        "priority": "P1",
+        "title": "保留需要解释“为什么”的知识",
+        "actions": [
+          "保留生命周期、数值约定、兼容前提和非直觉选择的说明。",
+          "删除重复的表面描述时，把必要解释放在共同抽象附近。",
+          "配置共享沿自然语义关系组织，并可展开追踪字段来源。"
+        ],
+        "acceptance": "新维护者能找到做出安全修改需要的理由，不需要从历史版本猜测。"
+      },
+      {
+        "id": "finish_tasks",
+        "priority": "P2",
+        "title": "以少量真实任务验证认知收益",
+        "actions": [
+          "保留理解、诊断、修改、执行这四类代表任务。",
+          "完整执行独立 heldout，公布成功率、token 经验范围和失败条件。",
+          "把真实任务作为核心证据，将静态复杂度指标作为问题定位工具。"
+        ],
+        "acceptance": "仅在任务正确性、计量和预定比较完整时才宣称成本改善；不将 40.12% AST 行数降幅当作架构压缩率。"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "report_graph",
+      "title": "历史功能图与节点数据",
+      "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/data.json",
+      "kind": "historical_report"
+    },
+    {
+      "id": "report_supplement",
+      "title": "历史补充实验、体积统计与覆盖限制",
+      "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/experiment-supplement.json",
+      "kind": "historical_report"
+    },
+    {
+      "id": "report_accounting",
+      "title": "历史任务比较与最终验收状态",
+      "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/candidate-attempt-accounting.json",
+      "kind": "historical_report"
+    },
+    {
+      "id": "report_evidence",
+      "title": "历史检查组证据",
+      "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/evidence.json",
+      "kind": "historical_report"
+    },
+    {
+      "id": "candidate_tree",
+      "title": "本次审查的候选提交",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "kind": "source_code"
+    },
+    {
+      "id": "original_tree",
+      "title": "原始 Detectron2 提交",
+      "url": "https://github.com/facebookresearch/detectron2/tree/247691a1c292654867deb35cabb27f18d75a1363",
+      "kind": "source_code"
+    },
+    {
+      "id": "candidate_readme",
+      "title": "候选 README：范围、知识缺口与当时状态",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/README.md#L103",
+      "kind": "source_code"
+    },
+    {
+      "id": "tm_original",
+      "title": "原版 TensorMask CUDA：尺寸与采样公式",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/TensorMask/tensormask/layers/csrc/SwapAlign2Nat/SwapAlign2Nat_cuda.cu#L413",
+      "kind": "source_code"
+    },
+    {
+      "id": "tm_original_sampling",
+      "title": "原版 TensorMask CUDA：采样坐标",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/TensorMask/tensormask/layers/csrc/SwapAlign2Nat/SwapAlign2Nat_cuda.cu#L82",
+      "kind": "source_code"
+    },
+    {
+      "id": "tm_candidate_cpp",
+      "title": "候选 TensorMask ATen/C++ 实现",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/TensorMask/tensormask/csrc/swap_align2nat.cpp#L5",
+      "kind": "source_code"
+    },
+    {
+      "id": "tm_candidate_python",
+      "title": "候选 TensorMask Python 回退",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/TensorMask/tensormask/layers/swap_align2nat.py#L20",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_candidate",
+      "title": "候选共享 ProjectTrainer",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/_train.py#L9",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_pointrend_candidate",
+      "title": "PointRend 改用共享 Trainer",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/PointRend/train_net.py#L1",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_deeplab_candidate",
+      "title": "DeepLab 改用共享 Trainer",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/DeepLab/train_net.py#L1",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_pointrend_original",
+      "title": "原版 PointRend 的 evaluator 与数据增强分支",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/PointRend/train_net.py#L30",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_deeplab_original",
+      "title": "原版 DeepLab 的 evaluator 与数据增强分支",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/projects/DeepLab/train_net.py#L21",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_config",
+      "title": "候选仍存在的类别面积约束与颜色增强配置",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/projects/PointRend/configs/SemanticSegmentation/pointrend_semantic_R_101_FPN_1x_cityscapes.yaml#L29",
+      "kind": "source_code"
+    },
+    {
+      "id": "caffe2_original",
+      "title": "原版 Caffe2：旋转框与关键点转换",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/detectron2/export/caffe2_modeling.py#L56",
+      "kind": "source_code"
+    },
+    {
+      "id": "caffe2_candidate",
+      "title": "候选 Caffe2：输出组装与导出",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/export/caffe2_modeling.py#L15",
+      "kind": "source_code"
+    },
+    {
+      "id": "cuda_setup",
+      "title": "候选原生扩展构建设置",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/setup.py#L14",
+      "kind": "source_code"
+    },
+    {
+      "id": "cuda_deform",
+      "title": "候选 deformable convolution 复用 torchvision",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/layers/deform_conv.py#L5",
+      "kind": "source_code"
+    },
+    {
+      "id": "cuda_rotated_geometry",
+      "title": "候选旋转框 tensor 几何计算",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/layers/rotated_boxes.py#L137",
+      "kind": "source_code"
+    },
+    {
+      "id": "nms_candidate",
+      "title": "候选旋转 NMS：完整 IoU 矩阵",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/layers/nms_rotated.py#L23",
+      "kind": "source_code"
+    },
+    {
+      "id": "nms_original",
+      "title": "原版旋转 NMS：bitmask 存储",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/detectron2/layers/csrc/nms_rotated/nms_rotated_cuda.cu#L95",
+      "kind": "source_code"
+    },
+    {
+      "id": "roi_candidate",
+      "title": "候选旋转 ROIAlign：逐 ROI 循环与主机标量读取",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/layers/roi_align_rotated.py#L15",
+      "kind": "source_code"
+    },
+    {
+      "id": "box_refactor",
+      "title": "候选 box regression：向量化及共享解码",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/modeling/box_regression.py#L14",
+      "kind": "source_code"
+    },
+    {
+      "id": "box_original",
+      "title": "原版 box regression：重复的 IoU loss 解码",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/detectron2/modeling/box_regression.py#L346",
+      "kind": "source_code"
+    },
+    {
+      "id": "resnet_refactor",
+      "title": "候选 ResNet：卷积工厂与 bottleneck 复用",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/modeling/backbone/resnet.py#L13",
+      "kind": "source_code"
+    },
+    {
+      "id": "catalog_refactor",
+      "title": "候选元数据：共享表、模板与深拷贝",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/data/datasets/_catalog_data.py#L20",
+      "kind": "source_code"
+    },
+    {
+      "id": "catalog_registration",
+      "title": "候选数据集通用注册",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/data/datasets/builtin.py#L37",
+      "kind": "source_code"
+    },
+    {
+      "id": "recipe_original",
+      "title": "原版 Mask R-CNN FPN Python recipe",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/configs/common/models/mask_rcnn_fpn.py#L1",
+      "kind": "source_code"
+    },
+    {
+      "id": "recipe_python",
+      "title": "候选 Mask R-CNN FPN Python 入口",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/configs/common/models/mask_rcnn_fpn.py#L1",
+      "kind": "source_code"
+    },
+    {
+      "id": "recipe_mask_json",
+      "title": "候选 Mask R-CNN FPN JSON recipe",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/configs/common/models/mask_rcnn_fpn.json#L1",
+      "kind": "source_code"
+    },
+    {
+      "id": "recipe_keypoint_json",
+      "title": "继承链：Keypoint R-CNN FPN JSON",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/configs/common/models/keypoint_rcnn_fpn.json#L1",
+      "kind": "source_code"
+    },
+    {
+      "id": "recipe_cascade_json",
+      "title": "继承链：Cascade R-CNN JSON",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/configs/common/models/cascade_rcnn.json#L1",
+      "kind": "source_code"
+    },
+    {
+      "id": "recipe_loader",
+      "title": "候选 recipe 协议与加载器",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/model_zoo/_recipe.py#L24",
+      "kind": "source_code"
+    },
+    {
+      "id": "hook_original",
+      "title": "原版 Hook 生命周期与计时解释",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/detectron2/engine/train_loop.py#L19",
+      "kind": "source_code"
+    },
+    {
+      "id": "hook_candidate",
+      "title": "候选 Hook 接口",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/engine/train_loop.py#L12",
+      "kind": "source_code"
+    },
+    {
+      "id": "defaults_original",
+      "title": "原版图像均值与标准差的设计解释",
+      "url": "https://github.com/facebookresearch/detectron2/blob/247691a1c292654867deb35cabb27f18d75a1363/detectron2/config/defaults.py#L39",
+      "kind": "source_code"
+    },
+    {
+      "id": "defaults_candidate",
+      "title": "候选默认配置加载入口",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/config/defaults.py#L6",
+      "kind": "source_code"
+    },
+    {
+      "id": "defaults_json",
+      "title": "候选默认配置数值",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/config/defaults.json#L62",
+      "kind": "source_code"
+    },
+    {
+      "id": "long_line",
+      "title": "候选 COCO evaluation 的长表达式",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/evaluation/coco_evaluation.py#L242",
+      "kind": "source_code"
+    },
+    {
+      "id": "harness_count",
+      "title": "Harness：直接统计物理行数",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/323e47aaeb37fd243d71d3402ad3a6092f537455/src/nanolize_anything/repository.py#L288",
+      "kind": "source_code"
+    },
+    {
+      "id": "harness_inventory",
+      "title": "Harness：源码后缀与测试排除",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/323e47aaeb37fd243d71d3402ad3a6092f537455/src/nanolize_anything/capabilities.py#L52",
+      "kind": "source_code"
+    },
+    {
+      "id": "harness_comments",
+      "title": "Harness：注释和空白纳入预算",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/323e47aaeb37fd243d71d3402ad3a6092f537455/src/nanolize_anything/capabilities.py#L695",
+      "kind": "source_code"
+    },
+    {
+      "id": "harness_budget",
+      "title": "Harness：source budget 计算与判定",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/323e47aaeb37fd243d71d3402ad3a6092f537455/src/nanolize_anything/capability_verification.py#L898",
+      "kind": "source_code"
+    },
+    {
+      "id": "harness_gate",
+      "title": "Harness：source budget 是进入任务评估的门槛",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/323e47aaeb37fd243d71d3402ad3a6092f537455/src/nanolize_anything/execution.py#L1051",
+      "kind": "source_code"
+    },
+    {
+      "id": "harness_instruction",
+      "title": "Harness：明确禁止 minification 与删能力",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/323e47aaeb37fd243d71d3402ad3a6092f537455/src/nanolize_anything/rewrite.py#L104",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_default_loader",
+      "title": "候选默认 Trainer 的 loader 入口",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/engine/defaults.py#L189",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_data_loader",
+      "title": "候选默认 loader 构造 DatasetMapper",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/data/build.py#L119",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_mapper",
+      "title": "候选默认 DatasetMapper 的增强构造",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/data/dataset_mapper.py#L23",
+      "kind": "source_code"
+    },
+    {
+      "id": "trainer_augmentation",
+      "title": "候选默认增强：Resize 与 RandomFlip",
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8080c703695dcfa2c8c8118305018e65e0112e8b/detectron2/data/detection_utils.py#L200",
+      "kind": "source_code"
+    }
+  ]
+}
