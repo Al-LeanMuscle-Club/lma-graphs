@@ -1,0 +1,1182 @@
+{
+  "schema_version": 2,
+  "operation": "candidate_attempt_cost_accounting",
+  "final_status": "inconclusive",
+  "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+  "binding": {
+    "candidate_contract_sha256": "06d38baf931e31784745b998a78fbf5380d135ab4468bad3522c444c398628b5",
+    "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "candidate_snapshot_sha256": "e58f2ee4a2602adea39d9336acb8105eea8f5ee66e0c6c594cd99b9ac08cf738",
+    "candidate_source_sha256": "1722d838d1adcc6429ed1851f9e882b88f188ed9205ac9105a5c97d28f7f6b12",
+    "original_audit_sha256": "76bdf087315e5a74774925a4916d3898269191919a5dc8a85fa83e380c77d225",
+    "original_continuation_sha256": "a55e4b55a770edf210e6535ab268ff0e3d62d3868d33ee55ec349c9f2897bb5a",
+    "original_contract_sha256": "414e492b646aac743eb7b9ba00b3f9a454184a0107bde5a804330fd893f913d9",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "original_snapshot_sha256": "7a3022fca52a651f157a3db77453665d67621ee203d89a224a2caecbbe506791",
+    "original_source_sha256": "e2418fed16c326824154c68ff133ebef35bbc2e1af419cd6f34b82857bada436",
+    "plan_sha256": "cd0d908962a46a00ac2a037f94dbcc447ef68827249f9a42a9c7312aaf11f8cf",
+    "settings_sha256": "f8b738eb8312905dbd16d10ade60012782aa06cd51d20f9b98e5b4864ecda9b5",
+    "suite_sha256": "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f"
+  },
+  "original_audit_sha256": "76bdf087315e5a74774925a4916d3898269191919a5dc8a85fa83e380c77d225",
+  "ledger_sha256": "7424b2e44a0fd8776539c3e17950ad7d1b8ddc7a7beb4d767c43f1637f8d96a2",
+  "historical_ledger_snapshot": null,
+  "adapter_sha256": "bc95e60601533a509a3968904118be2189a1c788ef18ffd0e214ef7d22e2fee6",
+  "supplement_builder_sha256": "f3039bc04b429d3952de14f1f20eb275f9c1f617648ed5703164143b1a337f85",
+  "preserved_predecessor_adapter_sha256": "426bb084b89b3085066de2547f632de0ab8130cae9ead23866335662f8b762ab",
+  "observed_token_ceiling": 48000000,
+  "fixed_combined_line_ceiling": 37619,
+  "original_cohort": {
+    "solver": {
+      "calls": 30,
+      "observed_tokens": 16983497,
+      "unknown_calls": 2,
+      "partial_calls": 1,
+      "usage_complete": false,
+      "complete_total_tokens": null
+    },
+    "judge": {
+      "calls": 24,
+      "observed_tokens": 10511142,
+      "unknown_calls": 0,
+      "partial_calls": 0,
+      "usage_complete": true,
+      "complete_total_tokens": 10511142
+    },
+    "examiner": {
+      "calls": 0,
+      "observed_tokens": 0,
+      "unknown_calls": 0,
+      "partial_calls": 0,
+      "usage_complete": true,
+      "complete_total_tokens": 0
+    },
+    "observed_total_tokens": 27494639,
+    "unknown_calls": 2,
+    "partial_calls": 1,
+    "usage_complete": false,
+    "complete_total_tokens": null
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "candidate_git_head": "29b1a2af225ed7c2e3d678865acd329a267c928e",
+      "status": "failed",
+      "planned_records": 24,
+      "recorded_records": 12,
+      "complete_records": 12,
+      "native_comparison_rows": 4,
+      "native_reported_candidate_solver_tokens": 5305285,
+      "costs": {
+        "solver": {
+          "calls": 12,
+          "observed_tokens": 5305285,
+          "unknown_calls": 0,
+          "partial_calls": 0,
+          "usage_complete": true,
+          "complete_total_tokens": 5305285
+        },
+        "judge": {
+          "calls": 12,
+          "observed_tokens": 4591211,
+          "unknown_calls": 0,
+          "partial_calls": 0,
+          "usage_complete": true,
+          "complete_total_tokens": 4591211
+        },
+        "examiner": {
+          "calls": 0,
+          "observed_tokens": 0,
+          "unknown_calls": 0,
+          "partial_calls": 0,
+          "usage_complete": true,
+          "complete_total_tokens": 0
+        },
+        "observed_total_tokens": 9896496,
+        "unknown_calls": 0,
+        "partial_calls": 0,
+        "usage_complete": true,
+        "complete_total_tokens": 9896496
+      },
+      "phases": {
+        "development": {
+          "planned_records": 12,
+          "recorded_records": 12,
+          "complete_records": 12,
+          "raw_outcomes": {
+            "passed": 9,
+            "failed": 3,
+            "blocked": 0,
+            "unverified": 0,
+            "timeout": 0
+          },
+          "unrecorded_slots": 0,
+          "costs": {
+            "solver": {
+              "calls": 12,
+              "observed_tokens": 5305285,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 5305285
+            },
+            "judge": {
+              "calls": 12,
+              "observed_tokens": 4591211,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 4591211
+            },
+            "examiner": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "observed_total_tokens": 9896496,
+            "unknown_calls": 0,
+            "partial_calls": 0,
+            "usage_complete": true,
+            "complete_total_tokens": 9896496
+          }
+        },
+        "heldout": {
+          "planned_records": 12,
+          "recorded_records": 0,
+          "complete_records": 0,
+          "raw_outcomes": {
+            "passed": 0,
+            "failed": 0,
+            "blocked": 0,
+            "unverified": 0,
+            "timeout": 0
+          },
+          "unrecorded_slots": 12,
+          "costs": {
+            "solver": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "judge": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "examiner": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "observed_total_tokens": 0,
+            "unknown_calls": 0,
+            "partial_calls": 0,
+            "usage_complete": true,
+            "complete_total_tokens": 0
+          }
+        }
+      },
+      "observed_task_samples": [
+        {
+          "type": "understand",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 445141,
+              "min": 405245,
+              "max": 448960
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 361580,
+              "min": 309971,
+              "max": 392392
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": {
+            "status": "passed",
+            "ratio": 0.812282,
+            "change_percent": -18.772,
+            "evidence_sha256": "af98d3f8cc4deb9394d29ced7f33b151f24e4b2950e9206d65e105cda321f636"
+          },
+          "comparison_unavailable_reasons": []
+        },
+        {
+          "type": "understand",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 471305,
+              "min": 453307,
+              "max": 548939
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        },
+        {
+          "type": "diagnose",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 505659,
+              "min": 388256,
+              "max": 537098
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 372355,
+              "min": 343410,
+              "max": 381667
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": {
+            "status": "passed",
+            "ratio": 0.736376,
+            "change_percent": -26.362,
+            "evidence_sha256": "1657a5eced54107e2bc29ab84c394f96eb56101e8788a6603403315b607d7049"
+          },
+          "comparison_unavailable_reasons": []
+        },
+        {
+          "type": "diagnose",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 516777,
+              "min": 490278,
+              "max": 548291
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        },
+        {
+          "type": "modify",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 422422,
+              "min": 408166,
+              "max": 538274
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 0,
+            "failed_runs": 3,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 452987,
+              "min": 243650,
+              "max": 462464
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_correctness_not_passed"
+          ]
+        },
+        {
+          "type": "modify",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 391693,
+              "min": 267188,
+              "max": 412594
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        },
+        {
+          "type": "execute",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 826954,
+              "min": 807526,
+              "max": 860604
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 658407,
+              "min": 591460,
+              "max": 734942
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": {
+            "status": "passed",
+            "ratio": 0.796183,
+            "change_percent": -20.382,
+            "evidence_sha256": "55c35d59aec21d7ea924ad97947e8306ee21d4f3e395e2e44873eee01d41b9db"
+          },
+          "comparison_unavailable_reasons": []
+        },
+        {
+          "type": "execute",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 755242,
+              "min": 676372,
+              "max": 808520
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        }
+      ],
+      "task_report_sha256": "2f9cf9fb8665e8ffc9f377771429a157e0b7a9fb49e5bb239b1408694ef6e175",
+      "controller_sha256": "a40e2d43f3df882e3287d3204e9d8e86c389cf59caf3f92669b62d2a4388c09c"
+    },
+    {
+      "attempt": 2,
+      "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "status": "inconclusive",
+      "planned_records": 24,
+      "recorded_records": 12,
+      "complete_records": 12,
+      "native_comparison_rows": 4,
+      "native_reported_candidate_solver_tokens": 4555234,
+      "costs": {
+        "solver": {
+          "calls": 12,
+          "observed_tokens": 4555234,
+          "unknown_calls": 0,
+          "partial_calls": 0,
+          "usage_complete": true,
+          "complete_total_tokens": 4555234
+        },
+        "judge": {
+          "calls": 12,
+          "observed_tokens": 4789412,
+          "unknown_calls": 0,
+          "partial_calls": 0,
+          "usage_complete": true,
+          "complete_total_tokens": 4789412
+        },
+        "examiner": {
+          "calls": 0,
+          "observed_tokens": 0,
+          "unknown_calls": 0,
+          "partial_calls": 0,
+          "usage_complete": true,
+          "complete_total_tokens": 0
+        },
+        "observed_total_tokens": 9344646,
+        "unknown_calls": 0,
+        "partial_calls": 0,
+        "usage_complete": true,
+        "complete_total_tokens": 9344646
+      },
+      "phases": {
+        "development": {
+          "planned_records": 12,
+          "recorded_records": 12,
+          "complete_records": 12,
+          "raw_outcomes": {
+            "passed": 12,
+            "failed": 0,
+            "blocked": 0,
+            "unverified": 0,
+            "timeout": 0
+          },
+          "unrecorded_slots": 0,
+          "costs": {
+            "solver": {
+              "calls": 12,
+              "observed_tokens": 4555234,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 4555234
+            },
+            "judge": {
+              "calls": 12,
+              "observed_tokens": 4789412,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 4789412
+            },
+            "examiner": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "observed_total_tokens": 9344646,
+            "unknown_calls": 0,
+            "partial_calls": 0,
+            "usage_complete": true,
+            "complete_total_tokens": 9344646
+          }
+        },
+        "heldout": {
+          "planned_records": 12,
+          "recorded_records": 0,
+          "complete_records": 0,
+          "raw_outcomes": {
+            "passed": 0,
+            "failed": 0,
+            "blocked": 0,
+            "unverified": 0,
+            "timeout": 0
+          },
+          "unrecorded_slots": 12,
+          "costs": {
+            "solver": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "judge": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "examiner": {
+              "calls": 0,
+              "observed_tokens": 0,
+              "unknown_calls": 0,
+              "partial_calls": 0,
+              "usage_complete": true,
+              "complete_total_tokens": 0
+            },
+            "observed_total_tokens": 0,
+            "unknown_calls": 0,
+            "partial_calls": 0,
+            "usage_complete": true,
+            "complete_total_tokens": 0
+          }
+        }
+      },
+      "observed_task_samples": [
+        {
+          "type": "understand",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 445141,
+              "min": 405245,
+              "max": 448960
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 282700,
+              "min": 275698,
+              "max": 293511
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": {
+            "status": "passed",
+            "ratio": 0.63508,
+            "change_percent": -36.492,
+            "evidence_sha256": "3a069753fe1ad815242dd0354f1846d030ae0a0f95566e04174cc1906439e2ee"
+          },
+          "comparison_unavailable_reasons": []
+        },
+        {
+          "type": "understand",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 471305,
+              "min": 453307,
+              "max": 548939
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        },
+        {
+          "type": "diagnose",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 505659,
+              "min": 388256,
+              "max": 537098
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 318525,
+              "min": 302583,
+              "max": 464933
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": {
+            "status": "inconclusive",
+            "ratio": 0.629921,
+            "change_percent": -37.008,
+            "evidence_sha256": "795d321e3d25d62b57164dec979b2866be120b3ff109bda27ec4068e5626ef8c"
+          },
+          "comparison_unavailable_reasons": []
+        },
+        {
+          "type": "diagnose",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 516777,
+              "min": 490278,
+              "max": 548291
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        },
+        {
+          "type": "modify",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 422422,
+              "min": 408166,
+              "max": 538274
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 320312,
+              "min": 303863,
+              "max": 388619
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": {
+            "status": "passed",
+            "ratio": 0.758275,
+            "change_percent": -24.173,
+            "evidence_sha256": "cfc05d785fa7b633c1f9d5dd70e67f462785885b16ab18e713b7d55aae19f7f9"
+          },
+          "comparison_unavailable_reasons": []
+        },
+        {
+          "type": "modify",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 391693,
+              "min": 267188,
+              "max": 412594
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        },
+        {
+          "type": "execute",
+          "phase": "development",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 826954,
+              "min": 807526,
+              "max": 860604
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 536969,
+              "min": 431791,
+              "max": 635730
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "comparison": {
+            "status": "passed",
+            "ratio": 0.649334,
+            "change_percent": -35.067,
+            "evidence_sha256": "d078e354b221eb91632120cd6bbc83e74b39d6e465b075bbf500a8cbd0c5f063"
+          },
+          "comparison_unavailable_reasons": []
+        },
+        {
+          "type": "execute",
+          "phase": "heldout",
+          "planned_runs": 3,
+          "original": {
+            "planned_runs": 3,
+            "recorded_runs": 3,
+            "finalized_runs": 3,
+            "passed_runs": 3,
+            "failed_runs": 0,
+            "missing_records": 0,
+            "solver_tokens": {
+              "median": 755242,
+              "min": 676372,
+              "max": 808520
+            },
+            "complete_solver_samples": 3,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": true
+          },
+          "candidate": {
+            "planned_runs": 3,
+            "recorded_runs": 0,
+            "finalized_runs": 0,
+            "passed_runs": 0,
+            "failed_runs": 0,
+            "missing_records": 3,
+            "solver_tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "complete_solver_samples": 0,
+            "partial_solver_usage": 0,
+            "unknown_solver_usage": 0,
+            "absent_solver_receipts": 0,
+            "observed_partial_solver_tokens": 0,
+            "all_recorded_solver_usage_complete": false
+          },
+          "comparison": null,
+          "comparison_unavailable_reasons": [
+            "candidate_samples_incomplete",
+            "candidate_correctness_not_passed",
+            "candidate_solver_usage_incomplete"
+          ]
+        }
+      ],
+      "task_report_sha256": "4e5a720aa6ce5015208dd597592bce60b0d7a255c2086ec052dd8dab8d524e21",
+      "controller_sha256": "beb5d058b24a4c797577991cd4c25278d116a25f6542e70be38c1a1f4ccd3702"
+    }
+  ],
+  "shared_ledger": {
+    "solver": {
+      "calls": 54,
+      "observed_tokens": 26844016,
+      "unknown_calls": 2,
+      "partial_calls": 1,
+      "usage_complete": false,
+      "complete_total_tokens": null
+    },
+    "judge": {
+      "calls": 48,
+      "observed_tokens": 19891765,
+      "unknown_calls": 0,
+      "partial_calls": 0,
+      "usage_complete": true,
+      "complete_total_tokens": 19891765
+    },
+    "examiner": {
+      "calls": 0,
+      "observed_tokens": 0,
+      "unknown_calls": 0,
+      "partial_calls": 0,
+      "usage_complete": true,
+      "complete_total_tokens": 0
+    },
+    "observed_total_tokens": 46735781,
+    "unknown_calls": 2,
+    "partial_calls": 1,
+    "usage_complete": false,
+    "complete_total_tokens": null
+  },
+  "disjoint_partitions": true,
+  "cleanup_confirmed": true,
+  "new_model_calls": 0,
+  "outcomes_reclassified": false,
+  "excluded_cost_categories": [
+    "Earlier prior-trial overhead",
+    "Author-controller and nested-agent costs",
+    "Owner coordination and other unmetered activity"
+  ],
+  "limits": [
+    "Raw task statuses and previous failures are preserved; this is billing reconciliation, not a new task evaluation.",
+    "Recorded calls can consume tokens without producing a completed task or native comparison row. Missing rows and unrecorded slots do not imply zero work.",
+    "Native reported candidate solver tokens may cover only a returned phase. The per-attempt observed costs here include every ledger-bound solver and judge call.",
+    "Cleaned task workspaces are not reconstructed or freshly certified. Source/control outcomes remain historical attestations from the bound validator; raw command events and billing receipts are rechecked.",
+    "Unknown and partial usage remain incomplete. Observed totals are lower bounds when any usage is unavailable.",
+    "The 48M threshold stops new calls based on observed usage; concurrent in-flight calls may overshoot it. Historical unknown usage remains unknown.",
+    "Original cohort costs are already part of the shared ledger. Do not add the original audit subtotal again; prior trials and authoring remain separate.",
+    "Observed task samples are descriptive and separate from native final acceptance. A phase interrupted by the budget can leave completed samples while native comparison rows remain empty.",
+    "Sample medians include only complete solver usage receipts, including failed task samples; incomplete observed costs stay in billing and are excluded from these distributions.",
+    "Per-task sample comparisons require all planned repetitions to be finalized, correct and metered on both sides. A descriptive comparison for one complete group never changes an incomplete or budget-exhausted overall verdict."
+  ],
+  "publication_ready": true,
+  "preserved_input_report_manifest_sha256": "a396470cdc8794361e3dfe4e62d835b611e75bd3da715498dd32aa384defb8be",
+  "acceptance": {
+    "overall": "incomplete",
+    "behavioral_checks": "passed",
+    "candidate_tasks": "inconclusive",
+    "interpretation": "Overall nanolize acceptance has not passed. Passing behavioral checks alone does not establish successful task completion or lower token costs."
+  },
+  "accounting_id": "acct_4f92bcb77ef1c7ccc0948f945eae18728cd6f1e013d7b2f1227ef2da01d4ac6d"
+}

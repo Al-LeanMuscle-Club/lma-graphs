@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "operation": "report_site_presentation",
+  "public_safe": true,
+  "report_id": "presentation_267362139326a188559d9c39f56ebe0e18fd6b505e1fb5bb2aa5156a97b3b56a",
+  "files": [
+    {
+      "path": "candidate-attempt-accounting.json",
+      "sha256": "fb106f7cb23f766f726717b8eef9a445ad708afbe7d8d74ab95f25b0464db6f2"
+    },
+    {
+      "path": "data.json",
+      "sha256": "a7571117e563a73b1b47b16318798c1ed02ca58eb74864453cdd6c6056c044be"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "7b2b8785a614f26038883499a1c3d45cdca7d2644b0b7f7e3295edd9049ed07a"
+    },
+    {
+      "path": "experiment-supplement.json",
+      "sha256": "2d22a2343c5e9c753a2eb01e5d6fc513fec81f3ab34da35ec0361200c10c8ab1"
+    },
+    {
+      "path": "index.html",
+      "sha256": "da8842edc0693f19c44ed40faf3ce6330999b582bfeaed2e0c13530a0ace51bb"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "9ad3f7f54fd205476154b26eea4e599545344bb91a9f094c935ccfd4ce74939e"
+    },
+    {
+      "path": "supplemental.css",
+      "sha256": "b37f7dcd9756986c45a83d111eb9a5eec5dec32660ef6450822533965b6b0fe3"
+    },
+    {
+      "path": "supplemental.html",
+      "sha256": "61a62ea83be878def223794e5d5703d39c2b4cef858ff22f98a0ff29a9a04d16"
+    }
+  ],
+  "native_report_id": "nrs_64595ca788be8d5fc43a7d936d1c2ede47c3c7327542a801d3f760834275c6b0",
+  "supplement_id": "supp_4f310f4817bb9516f242f4127b361122a56dee2698fb288544b2c167a582e31b",
+  "previous_report_id": "nrs_d75f72b1144953acc7033850ab3a52aaca953c21d94eef4b0129bb26ea95fc9a",
+  "accounting_id": "acct_4f92bcb77ef1c7ccc0948f945eae18728cd6f1e013d7b2f1227ef2da01d4ac6d",
+  "preserved_input_report_manifest_sha256": "b88cc98f42377e129f556cce027b33c2ff55d349aedbac943d0e4b41b8b7e210",
+  "accounting_publication_ready": true,
+  "presentation_only": {
+    "repository_display_name": "Detectron2",
+    "read_only_report_labels": true,
+    "unchanged_evidence_files": [
+      "candidate-attempt-accounting.json",
+      "data.json",
+      "evidence.json",
+      "experiment-supplement.json",
+      "metrics.csv",
+      "supplemental.css",
+      "supplemental.html"
+    ]
+  }
+}

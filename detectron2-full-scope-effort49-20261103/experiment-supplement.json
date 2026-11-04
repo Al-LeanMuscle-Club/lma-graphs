@@ -1,0 +1,1173 @@
+{
+  "schema_version": 1,
+  "operation": "experiment_supplement",
+  "public_safe": true,
+  "status": "candidate_passed",
+  "candidate_evidence_present": true,
+  "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+  "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+  "gpu_operators": {
+    "reference": {
+      "status": "passed",
+      "passed": 23,
+      "failed": 0,
+      "total": 23,
+      "tests": [
+        {
+          "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_empty_box",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_roi_align_rotated_gradient_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_batched_nms_rotated_0_degree_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_0_degree_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_nms_rotated.py::TestScriptable::test_scriptable_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output_on_cpu_equals_output_on_gpu",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_small_input",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_raise_exception",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_0_dim_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_half_overlap_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_precision",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_too_many_boxes_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_extreme",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2154",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2167",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_0_degree",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_45_degrees",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_orthogonal",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_large_close_boxes",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_many_boxes",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207_simplified",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207",
+          "status": "passed"
+        }
+      ],
+      "source_unchanged": true,
+      "origin_escape_count": 0,
+      "source_snapshot_sha256": "5c8783d74ad7f9ed93edddec4c2b8c524f30ad31937f1fd5e8ba5489ee72f647",
+      "evidence_sha256": "140d64e7be289f776ea50fc46aee22866bb02c1a255795d62263883caf59cf5b",
+      "frozen_tests_sha256": "6045793e288faae937b4d6bcb6d2f2aaf628e082a7febf2c6a8708b5a60adf89",
+      "job_id": "8591878",
+      "environments": [
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        }
+      ]
+    },
+    "candidate": {
+      "status": "passed",
+      "passed": 23,
+      "failed": 0,
+      "total": 23,
+      "tests": [
+        {
+          "id": "tests/layers/test_roi_align.py::ROIAlignTest::test_empty_box",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_roi_align_rotated.py::ROIAlignRotatedTest::test_roi_align_rotated_gradient_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_batched_nms_rotated_0_degree_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_nms_rotated.py::TestNMSRotated::test_nms_rotated_0_degree_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_nms_rotated.py::TestScriptable::test_scriptable_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_forward_output_on_cpu_equals_output_on_gpu",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_small_input",
+          "status": "passed"
+        },
+        {
+          "id": "tests/layers/test_deformable.py::DeformableTest::test_raise_exception",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_0_dim_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_half_overlap_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_precision",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_too_many_boxes_cuda",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_extreme",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2154",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesLayer::test_iou_issue_2167",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_0_degree",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_45_degrees",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_orthogonal",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_large_close_boxes",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_many_boxes",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207_simplified",
+          "status": "passed"
+        },
+        {
+          "id": "tests/structures/test_rotated_boxes.py::TestRotatedBoxesStructure::test_pairwise_iou_issue1207",
+          "status": "passed"
+        }
+      ],
+      "source_unchanged": true,
+      "origin_escape_count": 0,
+      "source_snapshot_sha256": "2d6374b2b24c2308fee8e1a0a57b050ebf5d0d22069d84cc1d6df5103ae11d93",
+      "evidence_sha256": "906954f25662e71a73dca24290c00a011602897245efb14444e9f6406d7d35c9",
+      "frozen_tests_sha256": "6045793e288faae937b4d6bcb6d2f2aaf628e082a7febf2c6a8708b5a60adf89",
+      "job_id": "8604073",
+      "environments": [
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        },
+        {
+          "device": "NVIDIA GB200",
+          "torch": "2.8.0+cu129",
+          "cuda": "12.9"
+        }
+      ]
+    }
+  },
+  "pretrained_inference": {
+    "reference": {
+      "status": "passed",
+      "detections": 6,
+      "shapes": {
+        "boxes": [
+          6,
+          4
+        ],
+        "classes": [
+          6
+        ],
+        "masks": [
+          6,
+          480,
+          640
+        ],
+        "scores": [
+          6
+        ]
+      },
+      "checkpoint": {
+        "loaded": true,
+        "missing_keys_count": 0,
+        "missing_keys": [],
+        "unexpected_keys_count": 0,
+        "unexpected_keys": []
+      },
+      "comparison": {
+        "passed": true,
+        "shapes_match": true,
+        "finite": true,
+        "classes_identical": true,
+        "boxes_within_tolerance": true,
+        "scores_within_tolerance": true,
+        "masks_within_tolerance": true,
+        "minimum_mask_iou": 1.0,
+        "boxes_max_absolute_error": 0.0,
+        "scores_max_absolute_error": 0.0
+      },
+      "source_unchanged": true,
+      "origin_escape_count": 0,
+      "environment": {
+        "device": "NVIDIA GB200",
+        "python": "3.13.11",
+        "torch": "2.8.0+cu129",
+        "cuda": "12.9",
+        "torchvision": "0.23.0",
+        "capability": [
+          10,
+          0
+        ]
+      },
+      "git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+      "source_snapshot_sha256": "bc04315df675b40960843a2ad5e0e06af33c4a105f51f57c5a9a52e31bad0836",
+      "evidence_sha256": "a6614de95e800b947a5ef6acfa5290db6483eb1c912348561a1b85749d963b14",
+      "artifact_sha256": "97715f6d1c044ae4097bdd3fbab75f565368f0605d4c3954c9ce87157ca76e3d",
+      "artifact_bytes": 4885,
+      "job_id": "8593254"
+    },
+    "candidate": {
+      "status": "passed",
+      "detections": 6,
+      "shapes": {
+        "boxes": [
+          6,
+          4
+        ],
+        "classes": [
+          6
+        ],
+        "masks": [
+          6,
+          480,
+          640
+        ],
+        "scores": [
+          6
+        ]
+      },
+      "checkpoint": {
+        "loaded": true,
+        "missing_keys_count": 0,
+        "missing_keys": [],
+        "unexpected_keys_count": 0,
+        "unexpected_keys": []
+      },
+      "comparison": {
+        "passed": true,
+        "shapes_match": true,
+        "finite": true,
+        "classes_identical": true,
+        "boxes_within_tolerance": true,
+        "scores_within_tolerance": true,
+        "masks_within_tolerance": true,
+        "minimum_mask_iou": 1.0,
+        "boxes_max_absolute_error": 0.0001220703125,
+        "scores_max_absolute_error": 2.384185791015625e-06,
+        "same_environment": true,
+        "same_checkpoint_keys": true
+      },
+      "source_unchanged": true,
+      "origin_escape_count": 0,
+      "environment": {
+        "device": "NVIDIA GB200",
+        "python": "3.13.11",
+        "torch": "2.8.0+cu129",
+        "cuda": "12.9",
+        "torchvision": "0.23.0",
+        "capability": [
+          10,
+          0
+        ]
+      },
+      "git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "source_snapshot_sha256": "22de42bcb6e1895bf63244a5033dff9aee1857ecfb1af7f8ea279ede61ad941e",
+      "evidence_sha256": "251c2ff0c5a4557ceaf0f718bd2b12f8264eb53038354d303a19f2d1302c07ea",
+      "artifact_sha256": "e6a52d2f05b516343c8850403f6bc6c740a1d757454d87ceeb393b01a5d43936",
+      "artifact_bytes": 4885,
+      "job_id": "8604073"
+    },
+    "model": "Mask R-CNN R50-FPN 3x",
+    "image_id": 366141,
+    "image_sha256": "750ecf4c01f7690671d20dac73f7ee0ab2929a6fea7db0e953abeb69e8e81b95",
+    "checkpoint_sha256": "9a737e290372f1f70994ebcbd89d8004dbb3ae30a605fd915a190fa4a782dd66",
+    "contract_sha256": "2454dfb4a36a2aae5618fcbee6d01898e6ef68c0187ff9ed10512c80cc31db7e",
+    "comparison_rules": {
+      "detection_count": "exact",
+      "classes": "exact ordered category ids",
+      "array_shapes": "exact boxes/scores/classes/masks shapes",
+      "finite": true,
+      "boxes_atol_pixels": 0.05,
+      "boxes_rtol": 1e-05,
+      "scores_atol": 0.0001,
+      "scores_rtol": 1e-05,
+      "minimum_per_instance_mask_iou": 0.995,
+      "checkpoint_missing_unexpected_keys": "same as original, empty required for reference",
+      "loaded_state_dict_observed": true,
+      "minimum_detections": 1
+    }
+  },
+  "reference_coverage": {
+    "phase": "original_reference_only",
+    "candidate_acceptance": false,
+    "evidence_sha256": "0c6960096c54a6c9f5e2a9d29a91ac31203fd05c02fc31c3a9708cb1de0f445a",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "cpu_evidence_sha256": "4c43440ff9af51e9a5932d506739e7477a13a3933a09a3ccecfd68399a447c4b",
+    "gpu_and_pretrained_reference_reused": true,
+    "cpu_command_groups_passed": 160,
+    "cpu_unique_upstream_ids_passed": 319,
+    "gpu_unique_upstream_ids_passed": 23,
+    "cpu_gpu_overlap_ids": 12,
+    "upstream_executions": 342,
+    "unique_upstream_ids_passed": 330,
+    "known_inventory_ids": 369,
+    "inventory_is_exhaustive": false,
+    "characterization_groups_uninspected_by_scope_auditor": 89,
+    "historical_gap_ids": 50,
+    "historical_gap_ids_recovered": 11,
+    "historical_gap_ids_unresolved": 39,
+    "interpretation": [
+      "These counts describe original-reference observations, not candidate acceptance or complete functionality equivalence.",
+      "CPU and GPU executions overlap; 342 executions cover 330 distinct upstream IDs, plus a separate pretrained inference experiment.",
+      "The known inventory is not an exhaustive repository denominator and does not establish a whole-project pass percentage.",
+      "The 39 historical gaps are cases without a successful current rerun, not current candidate failures; their causes are not all proven resource/configuration blockers.",
+      "The 89 characterization groups passed execution, but their complete semantic coverage remains uninspected by the scope auditor."
+    ]
+  },
+  "run_provenance": {
+    "previous_trial_status": "cancelled_before_candidate_acceptance",
+    "cancellation_reason": "Fixture and deliverable path protocol mismatch",
+    "canonical_suite_payload_sha256": "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f",
+    "original_examiner_suite_payload_sha256": "99de4ec1f008b428c28fb38aacedbbe251ad897c34253ae74aa3c3ecca67a142",
+    "suite_revision": {
+      "kind": "output_interface_clarification",
+      "provenance_sha256": "d80c7cef0863f6d448529bb1c245c4d17f0e3f3dc9972c4a5072c1fcc6263224",
+      "prompt_fields_clarified": 8,
+      "check_code_unchanged": true,
+      "fixtures_unchanged": true,
+      "rubrics_unchanged": true,
+      "numerical_oracles_and_thresholds_unchanged": true,
+      "previous_prompt_text_preserved": true,
+      "numeric_expected_answers_added": false,
+      "both_sides_use_same_new_suite": true,
+      "old_outcomes_relabelled": false
+    },
+    "provenance_sha256": "14134bcaea0119c5a1d562fa523ec98517c6f722183710fc74215caaa1c9d3cc",
+    "original_source_binding": {
+      "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+      "original_source_sha256": "e2418fed16c326824154c68ff133ebef35bbc2e1af419cd6f34b82857bada436",
+      "original_contract_sha256": "414e492b646aac743eb7b9ba00b3f9a454184a0107bde5a804330fd893f913d9",
+      "original_snapshot_sha256": "7a3022fca52a651f157a3db77453665d67621ee203d89a224a2caecbbe506791"
+    },
+    "path_normalization": {
+      "changed_prefix_count": 8,
+      "check_content_unchanged": true,
+      "fixture_content_unchanged": true,
+      "prompts_unchanged": true,
+      "rubrics_unchanged": true,
+      "numerical_acceptance_criteria_unchanged": true,
+      "implementation_sha256": "5e4ec441f66de629f3756d05e48973b1bac0fc96d7241c53c4fc11921dc28e0b"
+    },
+    "previous_trial_task_design": {
+      "usage": {
+        "status": "complete",
+        "synthetic": false,
+        "source": "codex_turn_events",
+        "input_tokens": 1256205,
+        "output_tokens": 59193,
+        "total_tokens": 1315398,
+        "cached_input_tokens": 1166592,
+        "reasoning_output_tokens": 13916
+      },
+      "model": "gpt-6-astra",
+      "duration_seconds": 1286.7612,
+      "processes_released": true
+    },
+    "infrastructure_probes": [
+      {
+        "label": "Agent readiness",
+        "role": "infrastructure_probe",
+        "usage": {
+          "status": "complete",
+          "synthetic": false,
+          "source": "codex_turn_events",
+          "input_tokens": 14882,
+          "output_tokens": 33,
+          "total_tokens": 14915,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0
+        },
+        "receipt_sha256": "9e80ecac3adb5d64e5ec65ad73a23986856c38b368ebe19c8966392cdb1f8b56",
+        "processes_released": true
+      },
+      {
+        "label": "Tool execution readiness",
+        "role": "infrastructure_probe",
+        "usage": {
+          "status": "complete",
+          "synthetic": false,
+          "source": "codex_turn_events",
+          "input_tokens": 30405,
+          "output_tokens": 351,
+          "total_tokens": 30756,
+          "cached_input_tokens": 14848,
+          "reasoning_output_tokens": 0
+        },
+        "receipt_sha256": "55743e315c0996a1409830ee243058b81ece0b69c14392c2c3da8b62712682b8",
+        "processes_released": true
+      }
+    ],
+    "infrastructure_total_tokens": 45671,
+    "observed_previous_design_and_setup_tokens": 1361069,
+    "cancelled_trial_solver_tokens": 951077,
+    "superseded_trial_task_tokens": 1628806,
+    "observed_known_previous_tokens": 3940952,
+    "previous_trials": [
+      {
+        "ordinal": 1,
+        "status": "cancelled",
+        "cleanup_released": true,
+        "known_examiner_tokens": 1315398
+      },
+      {
+        "ordinal": 2,
+        "status": "cancelled",
+        "cleanup_released": true,
+        "known_solver_tokens": 951077,
+        "cancelled_judges": 2,
+        "cancelled_judge_tokens": null
+      },
+      {
+        "ordinal": 3,
+        "status": "cancelled",
+        "cleanup_released": true,
+        "known_task_tokens": 1628806,
+        "cancelled_solvers": 2,
+        "cancelled_solver_tokens": null
+      }
+    ],
+    "continuation_sha256": "0410c43a8595b0b896f68d4bf8905840cbe01b3762f45d273a4d1210cbc6c8b2",
+    "unknown_previous_costs": {
+      "cancelled_author_tokens": null,
+      "cancelled_judge_count": 2,
+      "cancelled_judge_tokens": null,
+      "cancelled_solver_count": 2,
+      "cancelled_solver_tokens": null
+    },
+    "current_benchmark": {
+      "total_token_ceiling": 48000000,
+      "repetitions": 3,
+      "concurrency": 2,
+      "run_timeout_seconds": 1800,
+      "optimization_rounds": 3,
+      "same_suite_for_original_and_candidate": true,
+      "suite_unchanged_since_previous_trial": false,
+      "old_task_results_reused_as_current_measurements": false,
+      "original_benchmark_overlaps_authoring": true,
+      "walltime_is_controlled_performance_comparison": false
+    },
+    "harness": {
+      "commit": "323e47aaeb37fd243d71d3402ad3a6092f537455",
+      "validation_counts": {
+        "targeted_runner": 17,
+        "targeted_core": 38
+      },
+      "full_python_status": "not_recorded"
+    },
+    "complete_experiment_token_total": null,
+    "accounting_rules": [
+      "Four-task comparisons use solver tokens only; examiner, judge and infrastructure-probe tokens are excluded from those comparisons.",
+      "The current suite derives from the original examiner design. A zero current-run examiner counter does not mean task design was free.",
+      "Previous task design and readiness probes are recorded once here, separately from the native current-run ledger.",
+      "The known historical subtotal includes previous task design, two readiness probes and completed task activity from cancelled trials; it is not a complete experiment total.",
+      "Historical completed solvers are accounting overhead only; their results are not reused as measurements in the restarted comparison.",
+      "Original and candidate comparisons use the same current immutable suite. Old failed outcomes stay failed and are not relabelled as new passes.",
+      "Cancelled-author work, cancelled judges and solvers, current code authoring, interactive coordination and other unmetered activity have unknown costs, never zero.",
+      "Original task benchmarking overlaps source-free authoring on separate workspaces; walltime is not a controlled performance comparison.",
+      "Cached-input and reasoning-output counters are subsets, not additional tokens to add to total_tokens."
+    ]
+  },
+  "scope_limits": [
+    "GPU operator evidence covers exactly 23 frozen upstream tests, not every CUDA path.",
+    "Pretrained inference covers one Mask R-CNN R50-FPN checkpoint and one real COCO image, repeated twice.",
+    "Full COCO/LVIS dataset accuracy, other pretrained architectures and training convergence were not measured by these probes.",
+    "GPU installation into a new environment and multi-node training are outside this supplemental experiment.",
+    "Supplemental results do not change native functional-graph badges, the 160-check contract or task-token assessment.",
+    "Retaining all 106 selected capabilities states the requested scope; it does not establish 106 fully verified features.",
+    "The execute task uses a small CPU regression model through trainer/checkpoint APIs; it does not validate detector training or accuracy."
+  ],
+  "hosting": "Local artifact only; this tool does not publish",
+  "code": {
+    "url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/examples/detectron2-full-scope-effort49-20261103",
+    "evaluated_commit": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "evaluated_commit_url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/commit/8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "link_kind": "branch",
+    "note": "The evidence binds to the evaluated commit; branch contents may change later."
+  },
+  "original_task_proof_audit": {
+    "operation": "completed_original_cohort_proof_audit",
+    "audit_sha256": "76bdf087315e5a74774925a4916d3898269191919a5dc8a85fa83e380c77d225",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "suite_sha256": "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f",
+    "source_validator_commit": "8dbec98b9c57533ef18ae89a66148aa6c654e5e4",
+    "continuation_sha256": "a55e4b55a770edf210e6535ab268ff0e3d62d3868d33ee55ec349c9f2897bb5a",
+    "raw_baseline_ready": false,
+    "effective_baseline_ready": true,
+    "recorded_outcomes": {
+      "blocked": 0,
+      "failed": 9,
+      "not_run": 0,
+      "passed": 15,
+      "timeout": 0,
+      "unverified": 0
+    },
+    "source_cohort_outcomes": {
+      "blocked": 0,
+      "failed": 1,
+      "not_run": 0,
+      "passed": 23,
+      "timeout": 0,
+      "unverified": 0
+    },
+    "derived_outcomes": {
+      "blocked": 0,
+      "failed": 0,
+      "not_run": 0,
+      "passed": 24,
+      "timeout": 0,
+      "unverified": 0
+    },
+    "recovered_records": 1,
+    "prior_recovered_records": 8,
+    "recovered_raw_judges_passed": 1,
+    "total_records": 24,
+    "raw_evidence_manifest_sha256": "cb44fd0a9c388eb3544893a69a3e9f7ec4b42b4c237d2737e93e3fc3863278d0",
+    "accounting": {
+      "new_model_calls": 0,
+      "source_calls_reused": 54,
+      "original_solver_tokens": 12934811,
+      "original_judge_tokens": 10511142,
+      "source_observed_total_tokens": 27494639,
+      "source_unknown_calls": 2,
+      "protocol_overhead_observed_tokens": 4048686,
+      "protocol_overhead_unknown_calls": 2,
+      "tokens_counted_once": true,
+      "source_usage_complete": false,
+      "prior_experiment_overhead_included": false,
+      "original_calls_reused": 54
+    },
+    "limitations": [
+      "For newly recovered entries, the raw task record remains failed with acceptance_checks_failed while its independent raw judge verdict remains passed. Only explicit command-proof classification is corrected.",
+      "Underlying historical task records, prior proof corrections and the new completed-cohort correction are separate views. No raw task or judge record is rewritten.",
+      "The audit uses zero new model calls. Existing solver, judge and discarded-protocol costs remain counted once in the copied cohort ledger; unknown historical usage remains unknown.",
+      "Deleted workspace guards rely on the reviewed historical validator; the audit revalidates archived receipts, commands and frozen contracts without rerunning target tests.",
+      "A ready audited original cohort does not establish candidate correctness or lower task-token costs."
+    ]
+  },
+  "original_task_continuation": {
+    "operation": "original_task_cohort_continuation",
+    "continuation_sha256": "a55e4b55a770edf210e6535ab268ff0e3d62d3868d33ee55ec349c9f2897bb5a",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "suite_sha256": "ccefb27ecfa6e1588539f52d40983690e45c316a0da8dc2c3de1ae891061558f",
+    "source_validator_commit": "323e47aaeb37fd243d71d3402ad3a6092f537455",
+    "raw_baseline_ready": false,
+    "effective_baseline_ready": false,
+    "historical_recorded_outcomes": {
+      "blocked": 0,
+      "failed": 8,
+      "not_run": 0,
+      "passed": 1,
+      "timeout": 0,
+      "unverified": 0
+    },
+    "historical_derived_outcomes": {
+      "blocked": 0,
+      "failed": 0,
+      "not_run": 0,
+      "passed": 9,
+      "timeout": 0,
+      "unverified": 0
+    },
+    "historical_recovered_records": 8,
+    "historical_task_records": 9,
+    "fresh_task_records_required": 15,
+    "fresh_task_records_completed": 15,
+    "fresh_task_records_incomplete": 0,
+    "fresh_outcomes": {
+      "blocked": 0,
+      "failed": 1,
+      "not_run": 0,
+      "passed": 14,
+      "timeout": 0,
+      "unverified": 0
+    },
+    "expected_task_records": 24,
+    "raw_evidence_manifest_sha256": "9fd6508e7701b2b8aa0e48c1ac7882adb84984e7239c88ba7b28cafb19fc7c65",
+    "accounting": {
+      "historical_calls": 24,
+      "reused_task_records": 9,
+      "reused_solver_tokens": 4099221,
+      "reused_judge_tokens": 3643194,
+      "discarded_protocol_calls": 6,
+      "discarded_protocol_observed_tokens": 4048686,
+      "discarded_protocol_unknown_calls": 2,
+      "historical_observed_tokens": 11791101,
+      "new_model_calls_at_import": 0,
+      "tokens_counted_once": true,
+      "discarded_protocol_usage_complete": false,
+      "prior_experiment_overhead_included": false,
+      "historical_tokens_already_in_cohort_ledger": true,
+      "discarded_protocol_total_tokens": null
+    },
+    "cohort_ledger_observed_tokens": 27494639,
+    "cohort_ledger_usage_complete": false,
+    "limitations": [
+      "Immutable historical outcomes and their derived proof interpretation remain separate; no raw record is rewritten.",
+      "Only previously unjudged or absent original task slots are continued. A completed judgment is never rerolled to seek a pass.",
+      "Importing the cohort makes no model calls; the remaining slots require fresh, independently judged runs against the same frozen suite.",
+      "Known discarded protocol costs are observed overhead, not task-comparison solver costs. Unknown interrupted usage remains unknown, never zero.",
+      "All historical observed tokens already occur once in the current cohort ledger. Do not add this subtotal to that ledger again.",
+      "Prior-trial overhead predating this cohort is separate; neither ledger is a complete experiment total.",
+      "Historical source/control/artifact guards rely on the reviewed validator. Deleted workspaces are not freshly inspected.",
+      "A ready original cohort is not candidate acceptance and does not establish task-token savings."
+    ],
+    "predecessor": {
+      "commit": "0963c3568a35c3559057c40cf02a5db9e5bd43c7",
+      "manifest_sha256": "518d3f3a8218b03c170350a8a33770ab3dbbaf306916d174edc6498dc5d0d2f9",
+      "archive_manifest_sha256": "d07eed036621cfb27187967f2597c501e9f298d7937d734e83e423d5a0d71239",
+      "initial_protocol_observed_tokens": 1717035,
+      "initial_protocol_unknown_calls": 1,
+      "stopped_continuation_observed_tokens": 2331651,
+      "stopped_continuation_unknown_calls": 1,
+      "stopped_continuation_calls": 3,
+      "new_model_calls_at_import": 0,
+      "completed_judgments_discarded": false,
+      "same_frozen_suite_and_budget": true,
+      "note": "These are components of the discarded protocol total, already counted once in the cohort ledger."
+    },
+    "embedded_in_completed_audit_sha256": "76bdf087315e5a74774925a4916d3898269191919a5dc8a85fa83e380c77d225",
+    "view": "Source cohort before the new completed-cohort proof correction"
+  },
+  "repository_footprint": {
+    "operation": "static_repository_footprint",
+    "classification_version": 3,
+    "categories_are_disjoint": true,
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "original_snapshot_sha256": "d22726ec1fc1a28ff125099072e8e5f1427e1457f0a5f96ce817b4ec715787c6",
+    "candidate_snapshot_sha256": "22de42bcb6e1895bf63244a5033dff9aee1857ecfb1af7f8ea279ede61ad941e",
+    "rows": [
+      {
+        "category": "implementation_source",
+        "label": "Implementation source",
+        "original": {
+          "files": 452,
+          "bytes": 3195073,
+          "physical_lines": 72035
+        },
+        "candidate": {
+          "files": 460,
+          "bytes": 944995,
+          "physical_lines": 20559
+        },
+        "retained_percent": {
+          "bytes": 29.5766,
+          "physical_lines": 28.5403
+        }
+      },
+      {
+        "category": "configuration_and_data",
+        "label": "Configuration and runtime data",
+        "original": {
+          "files": 200,
+          "bytes": 141988,
+          "physical_lines": 4853
+        },
+        "candidate": {
+          "files": 267,
+          "bytes": 467903,
+          "physical_lines": 15899
+        },
+        "retained_percent": {
+          "bytes": 329.537,
+          "physical_lines": 327.6118
+        }
+      },
+      {
+        "category": "documentation_and_auxiliary",
+        "label": "Documentation and auxiliary text",
+        "original": {
+          "files": 94,
+          "bytes": 389359,
+          "physical_lines": 8607
+        },
+        "candidate": {
+          "files": 5,
+          "bytes": 24429,
+          "physical_lines": 501
+        },
+        "retained_percent": {
+          "bytes": 6.2742,
+          "physical_lines": 5.8208
+        }
+      },
+      {
+        "category": "verifier_tests_and_fixtures",
+        "label": "Verifier tests and fixtures",
+        "original": {
+          "files": 81,
+          "bytes": 357150,
+          "physical_lines": 9163
+        },
+        "candidate": {
+          "files": 81,
+          "bytes": 357150,
+          "physical_lines": 9163
+        },
+        "retained_percent": {
+          "bytes": 100.0,
+          "physical_lines": 100.0
+        }
+      },
+      {
+        "category": "binary",
+        "label": "Other binary assets",
+        "original": {
+          "files": 1,
+          "bytes": 65682,
+          "physical_lines": 0
+        },
+        "candidate": {
+          "files": 0,
+          "bytes": 0,
+          "physical_lines": 0
+        },
+        "retained_percent": {
+          "bytes": 0.0,
+          "physical_lines": null
+        }
+      }
+    ],
+    "implementation_plus_runtime_data": {
+      "label": "Implementation + configuration/runtime data + build/package inputs",
+      "original": {
+        "files": 652,
+        "bytes": 3337061,
+        "physical_lines": 76888
+      },
+      "candidate": {
+        "files": 727,
+        "bytes": 1412898,
+        "physical_lines": 36458
+      },
+      "retained_percent": {
+        "bytes": 42.3396,
+        "physical_lines": 47.417
+      }
+    },
+    "all_inspected_files": {
+      "label": "All inspected files",
+      "original": {
+        "files": 828,
+        "bytes": 4149252,
+        "physical_lines": 94658
+      },
+      "candidate": {
+        "files": 813,
+        "bytes": 1794477,
+        "physical_lines": 46122
+      },
+      "retained_percent": {
+        "bytes": 43.2482,
+        "physical_lines": 48.7249
+      }
+    },
+    "limitations": [
+      "Every inspected file belongs to exactly one category. Harness source suffixes include CSS; TOML belongs to configuration/data when not classified as source or tests.",
+      "Source-budget lines use the harness source/test classification. Configuration/data are shown separately and combined with implementation source.",
+      "Configuration/data also include declarative CMake, Make, Docker and package-manifest build inputs, including documentation builds. These were auxiliary text in classification version 2; source and all-inspected totals are unchanged.",
+      "Physical lines depend on formatting. Compare byte counts as well; moving code into JSON or changing whitespace is not by itself a reduction in cognitive effort.",
+      "Documentation and auxiliary text include the author knowledge-gap document. Tests and fixtures remain visible in the separate totals.",
+      "Ignored build products, installed dependencies, cached weights/data and private run state are outside the inspected repository footprint.",
+      "The same complete static snapshot rules apply to both repositories; target modules are not imported or executed.",
+      "Footprint reduction does not establish functional equivalence, successful validation or lower task-token costs."
+    ]
+  },
+  "author_controller_usage": {
+    "operation": "observed_author_controller_usage",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "context_sha256": "7cd5b3cc5d71fba5dd084c23033768e94dc1f020629086cd1eb432facdfed459",
+    "driver_sha256": "dd179595a8cdd92e56baa2d2a5a423f5f5d4df871c2433cd62e05388646e9c1f",
+    "adapter_sha256": "1173337963429c71f61eae95b94104c95ca8f18510a9cb7a444d6c1e935d491d",
+    "frozen_inputs_sha256": "718106953ebb8e4f59d014cfd28e5a19f16f1353c8d5c29949c9f1556fd79683",
+    "usage_parser_sha256": "480eeebf1a75c065a0b706fbc9822a2d1cd7dae9dc5c83b3787378de1892d8a1",
+    "records": [
+      {
+        "round": 1,
+        "phase": "Initial rewrite",
+        "status": "completed",
+        "observed_controller_tokens": 25709495,
+        "receipt_usage_status": "complete",
+        "complete_author_cost": null,
+        "hashes": {
+          "request_sha256": "0037ea6956f32baf766aa6a212e2ab6adfeb5b448a0d47d3f25b42ded9a2266a",
+          "owner_sha256": "e5e22327baff97d92f94b599150e46ad70f139e3d9852cbb2e9df4a338c36eb5",
+          "owner_script_sha256": "dd179595a8cdd92e56baa2d2a5a423f5f5d4df871c2433cd62e05388646e9c1f",
+          "run_sha256": "ad2012edf1c0425bee5a6a9752d861177efc529019626b63789a39d3060e3ee2",
+          "supervisor_sha256": "542ddeb81bc7015f112233d9ba0abcd01eaa1847f41757c0a25b1ab924b5e1a0",
+          "processes_sha256": "ad1415bda28437512f95f7cfea2d2f2dbd14af7dfb5858f9dcd3780b8ca76a20",
+          "events_sha256": "4382ea8759b2080e79afee5d50e8650158444aa1022a61ee3689577e2a5c5371"
+        },
+        "observed_usage": {
+          "input_tokens": 25606191,
+          "output_tokens": 103304,
+          "total_tokens": 25709495,
+          "cached_input_tokens": 25344512,
+          "reasoning_output_tokens": 24782
+        },
+        "processes_released": true
+      },
+      {
+        "round": 2,
+        "phase": "Repair round 2",
+        "status": "completed",
+        "observed_controller_tokens": 4212754,
+        "receipt_usage_status": "partial",
+        "complete_author_cost": null,
+        "hashes": {
+          "request_sha256": "47922f19d05167bfc941adb4692a76df9afab97e9b7f395766ee5c2fb1c1d51d",
+          "owner_sha256": "01560522238c9ee7abebe74ae5a04be1cc1a38fb2633f8c03c1d88663538dc9d",
+          "owner_script_sha256": "9d7f28a2929b8b307591cd1a07ef805fd3c5ff33f764a60c1301c1b6b35eb5fe",
+          "input_binding_sha256": "a319c5bf17b79223e9c13355aafa931f948a53b07a04771f58afb7312324eab3",
+          "run_sha256": "b51f49ffca600ada9615183382522a0af95b8304dd80c625b8318084e0bc53a9",
+          "supervisor_sha256": "2c9ba7e06ad789796fe612763ada560b5604d94e75dbb35827ef30ab31dca077",
+          "processes_sha256": "606c48371aab23e76c265c9d0087fe8725f3057513c3822fa4da168250b545a4",
+          "events_sha256": "571b41f118247081fc616228f25f9bc1d532eec2f56ba6e418af8027161b63b2"
+        },
+        "observed_usage": {
+          "input_tokens": 4194211,
+          "output_tokens": 18543,
+          "total_tokens": 4212754,
+          "cached_input_tokens": 4027776,
+          "reasoning_output_tokens": 7183
+        },
+        "processes_released": true
+      },
+      {
+        "round": 3,
+        "phase": "Repair round 3",
+        "status": "completed",
+        "observed_controller_tokens": 5540576,
+        "receipt_usage_status": "complete",
+        "complete_author_cost": null,
+        "hashes": {
+          "request_sha256": "4a80bbe3ddb46fcbb0a04fe1ad77c3404e9452a013776eb6b714fc1946a86b61",
+          "owner_sha256": "c0502243bf3b2ac642da9fde067c3361c92f35ec68e14f09f58c2caa73947f2f",
+          "owner_script_sha256": "0166af989c917adbc2b3243080d49ef0578522e23189260dab5f0621c4864953",
+          "input_binding_sha256": "21fe2c5048c9230a653f6027532a92aea5eda4bf9fcfcbe46bf8bc40f91d2a31",
+          "run_sha256": "9a5f98554215d8018c6b116c7f37baebc4b4798650119038472e8f83ecc346c4",
+          "supervisor_sha256": "7bf13fd4b58b14c96015c9dafd5102600b0cacc21332921dcef4e48a9b09876b",
+          "processes_sha256": "770b5ba05b113bff5141fd670356f734979854f829090348097bcd3c531e4882",
+          "events_sha256": "f52b25e85b7dc74157160633710250efb291fedd33262cd8a3108963df40fc8f"
+        },
+        "observed_usage": {
+          "input_tokens": 5510397,
+          "output_tokens": 30179,
+          "total_tokens": 5540576,
+          "cached_input_tokens": 5373312,
+          "reasoning_output_tokens": 10312
+        },
+        "processes_released": true
+      },
+      {
+        "round": 4,
+        "phase": "Repair round 4",
+        "status": "completed",
+        "observed_controller_tokens": 5825168,
+        "receipt_usage_status": "complete",
+        "complete_author_cost": null,
+        "hashes": {
+          "request_sha256": "b42fbe887dc419b77bf46bb7b7e37903de1c63705429a78e9851dafede7ca7ce",
+          "owner_sha256": "ebb1a535a07f62792c4a46b8f0dbbd14462f7d28d6e45866c946413feb087147",
+          "owner_script_sha256": "f771bcd5e8bcd2880cd97c3fcbcc7a1d7c2bc89fe31d26e7852393e78ad5b0bc",
+          "input_binding_sha256": "71b9c40fb0751292ea44100d963379be51c96a32757ae6b26077e117260d6c2d",
+          "run_sha256": "6389ec93585577cbdffd8e355ebf9f9b3a58964d54c5e1a904a101cc7681fb1a",
+          "supervisor_sha256": "13b61e4ff9321b99abfb182c37ef46480be4ed99262f7eb1c27ee0ac33ec2fca",
+          "processes_sha256": "369d6906235dc87f46bbb34185b9f3e53615a54682b6e9880dbe259bf9c263cc",
+          "events_sha256": "fa2fd116ac909a8468b910df2e4d073bd4a0dd319d3a4eaaee1c7ee1940950a1"
+        },
+        "observed_usage": {
+          "input_tokens": 5795717,
+          "output_tokens": 29451,
+          "total_tokens": 5825168,
+          "cached_input_tokens": 5655552,
+          "reasoning_output_tokens": 11140
+        },
+        "processes_released": true
+      },
+      {
+        "round": 5,
+        "phase": "Repair round 5",
+        "status": "completed",
+        "observed_controller_tokens": 3678609,
+        "receipt_usage_status": "complete",
+        "complete_author_cost": null,
+        "hashes": {
+          "request_sha256": "9056b16701d0cc4dd965df341caca3a20178b0af6d5a22b604e4609a40a0de61",
+          "owner_sha256": "48eb73a869391ecd214c69bb16d956fe2f6751e42d33df59af7fcac17e82bbfa",
+          "owner_script_sha256": "cc03eb94e2e40312c1e85b357c04bfcc3df8e26fbfeb309a212580e710333423",
+          "input_binding_sha256": "a7469935046fbf09ab846fb7bb45cd71408aeaa3dee266237ea1a7073b8807cb",
+          "run_sha256": "101125a7c59dd1ead637e58310b77e0210ccf4be2c5ce678ffe30e45a54bf635",
+          "supervisor_sha256": "1274713bf0faaae77894a59a8cb056301fac653a71c54ac2bf8f8dcfa9856574",
+          "processes_sha256": "cf8e36d10f96de1a4fa067e8c5a2883184700d959aad0ab7b04a886c163163c5",
+          "events_sha256": "bc50b5f753d7cc7b1dc75d7b440aa34ba4184759ad6058a53dc64a554d352f02"
+        },
+        "observed_usage": {
+          "input_tokens": 3659537,
+          "output_tokens": 19072,
+          "total_tokens": 3678609,
+          "cached_input_tokens": 3553024,
+          "reasoning_output_tokens": 5615
+        },
+        "processes_released": true
+      },
+      {
+        "round": 6,
+        "phase": "Repair round 6",
+        "status": "completed",
+        "observed_controller_tokens": 2773249,
+        "receipt_usage_status": "complete",
+        "complete_author_cost": null,
+        "hashes": {
+          "request_sha256": "e05b3fde21e88fb0bc1d99263b1a69d3a3b5edc51d9a99b2bd6e2f69950079c5",
+          "owner_sha256": "73d84fd7b96ffe664c8fc663fca4060e3e253b49b56618c46b4268c0a0ee13e0",
+          "owner_script_sha256": "2b91d25c1d46a960535c47a3bf9a8cf48101323e5f81fc34fd5008ced6e65e3d",
+          "input_binding_sha256": "25e9eb0b7db8b5f70976db70fbf6ca023d7bf45b449659aa364a59180e1d89ba",
+          "run_sha256": "0af00111b16aa83aa0f9916b1a5f52b1f8a788dad47a1eeac7c9a87db9d614a5",
+          "supervisor_sha256": "6f161bbea704fd878563a2f3e20ee325d8507b77208ed64d5c3f9f10b39b062f",
+          "processes_sha256": "c0f74333ce59814093ef90b10c3cf9ed538e648a11ede92ecd6d41acfbc14da4",
+          "events_sha256": "4886316fb4606ab39c275519694502246312749bcb78ae0232c8cb8668d38e8d"
+        },
+        "observed_usage": {
+          "input_tokens": 2752822,
+          "output_tokens": 20427,
+          "total_tokens": 2773249,
+          "cached_input_tokens": 2663424,
+          "reasoning_output_tokens": 9118
+        },
+        "processes_released": true
+      },
+      {
+        "round": 7,
+        "phase": "Repair round 7",
+        "status": "completed",
+        "observed_controller_tokens": 611701,
+        "receipt_usage_status": "complete",
+        "complete_author_cost": null,
+        "hashes": {
+          "request_sha256": "068d5d5351fd5433d4cd4566e461b1ed2720986157b8b0f1246059b3324f45af",
+          "owner_sha256": "ce8b093f8d3127b7949c6e48aefa66b664df67a96152194aef0f8a9f5d02dd33",
+          "owner_script_sha256": "2d5b412fc6de9ebfb6ba67526a6f96d7193138fb9695624e5ba6ecbcc188b216",
+          "input_binding_sha256": "c628422657d59542b82f063bfbd18ef15e531f7a2c64c4e407b72316bc9e31fa",
+          "run_sha256": "650e0dc4f793dcb9b174352eae682a8fa983586cdcbc3cb86b2f5868b777aeb6",
+          "supervisor_sha256": "989c539deec9442f8be4b2db33d3408de7a998cf5962ee430514d2f668ea0e09",
+          "processes_sha256": "140b9363d3fe1513475582f73aceff3811153b4665a2805edec08a02bf4e8db5",
+          "events_sha256": "e4260d8cb28e3b1919ea6aaebce65d750724e244b6b9748fdcc61a78e8b38bc4"
+        },
+        "observed_usage": {
+          "input_tokens": 600757,
+          "output_tokens": 10944,
+          "total_tokens": 611701,
+          "cached_input_tokens": 537088,
+          "reasoning_output_tokens": 3037
+        },
+        "processes_released": true
+      }
+    ],
+    "observed_controller_tokens": 48351552,
+    "pending_or_unknown_records": 0,
+    "complete_author_tokens": null,
+    "complete_experiment_tokens": null,
+    "excluded_from_task_solver_comparisons": true,
+    "limitations": [
+      "Counts are recomputed from actual controller event streams and checked against run/supervisor receipts, invocation identity and frozen owner configuration.",
+      "These are observed author-controller costs, separate from task solvers, task judges and earlier prior-trial overhead.",
+      "Nested author-agent usage, root coordination and other unmetered work may be missing even when a controller receipt reports complete usage.",
+      "A partial receipt's known observed counters remain visible; pending or missing counters are unknown, not zero.",
+      "No complete author or experiment total is established. Cached input and reasoning output are subsets of the reported token totals."
+    ]
+  },
+  "supplement_builder": {
+    "version": 4,
+    "sha256": "f3039bc04b429d3952de14f1f20eb275f9c1f617648ed5703164143b1a337f85",
+    "preserved_predecessor_sha256": "2958d5658f547a781898e2c8bc52d89862a3730166f638a8762f393dc2585fbd"
+  },
+  "ignore_policy": {
+    "status": "passed",
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "comparison_sha256": "848b735a91c99defe05dec6b430f09209c403497824572ce628bdddc0e0698f2",
+    "manifest_sha256": "25bc2caa1fa82c2e1a4a3c0beb6083962b6c57cead721d8d96db4e361de633db",
+    "reference_sha256": "361aefcd25e32625536c0e81b04ce948e69ea56bdca6839723a7df188aba489c",
+    "candidate_sha256": "0e3de1a5c4287ff1e74cf45b542805b4cfe02ce8cfc81cbce7bc7a785e60acf0",
+    "scope": "DensePose evaluator preparation and ignore-region policy; not dataset accuracy, GPS/AP or training.",
+    "limits": "Seven supplementary controlled scenarios, separate from the frozen 160-check contract and upstream unique-test counts. One annotation-flag scenario bypasses an unused calibration-resource loader."
+  },
+  "semseg_policy": {
+    "operation": "supplementary_semseg_legacy_contract",
+    "status": "passed",
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "legacy_metrics_passed": 8,
+    "public_metric_names_passed": 8,
+    "reset_stage_count_passed": 8,
+    "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363",
+    "candidate_snapshot_sha256": "22de42bcb6e1895bf63244a5033dff9aee1857ecfb1af7f8ea279ede61ad941e",
+    "comparison_sha256": "ddbd74d40daa1476882e21a52d6b4de982a529f521d7d6573d9f1f49045bcc4a",
+    "manifest_sha256": "4468183a66a5885173b0d4f440675ce64fd376f316e5e600f870969e3a5bd7e4",
+    "reference_sha256": "99411598513f55fb5eb3ed726fc11ddd3af7f34d449d3bd7af4e5714205dc9fa",
+    "candidate_sha256": "8a003e73c516387a23b0a99c689a6e147f296fcd39a2a3f77398ef0fc897d0fd",
+    "source_unchanged": true,
+    "scope": "Eight independent tiny SemSegEvaluator reset/process/evaluate scenarios: legacy metric aggregation, public metric names and reset-stage behavior.",
+    "limits": "Separate from the frozen 160 check groups, the earlier 28 supplementary checks and actual task-benchmark failures. Eight scenarios concern one evaluator, not eight modules. This probe does not establish dataset accuracy or complete segmentation behavior; actual task failures remain recorded."
+  },
+  "native_binding": {
+    "candidate_git_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+    "candidate_source_sha256": "1722d838d1adcc6429ed1851f9e882b88f188ed9205ac9105a5c97d28f7f6b12",
+    "candidate_contract_sha256": "06d38baf931e31784745b998a78fbf5380d135ab4468bad3522c444c398628b5",
+    "original_git_head": "247691a1c292654867deb35cabb27f18d75a1363"
+  },
+  "native_behavior": {
+    "status": "checks_passed",
+    "passed": 160,
+    "failed": 0,
+    "total": 160
+  },
+  "graph_evidence": {
+    "operation": "native_graph_evidence_summary",
+    "nodes": 106,
+    "leaf_nodes": 89,
+    "direct_passed_leaf_nodes": 89,
+    "unknown_leaf_nodes": 0,
+    "unknown_container_nodes": 17,
+    "related_passed_unknown_containers": 17,
+    "native_statuses_unchanged": true,
+    "interpretation": "Direct and related passes count mapped check evidence, not complete functionality. Containers with related passes retain local unknown status because no checks directly verify the container as a whole. A leaf without direct evidence remains a coverage gap."
+  },
+  "gpu_pretrained_status": "candidate_passed",
+  "status_scope": "Attached behavioral checks; candidate task acceptance and token savings require their separate complete comparison.",
+  "supplement_id": "supp_4f310f4817bb9516f242f4127b361122a56dee2698fb288544b2c167a582e31b"
+}
