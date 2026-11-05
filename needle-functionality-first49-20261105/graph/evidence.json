@@ -1,0 +1,1186 @@
+{
+  "limitations": [
+    "Only summary results are published; captured command output is omitted."
+  ],
+  "status": "checks_passed",
+  "tests": {
+    "original_total": 31,
+    "retained": 31,
+    "retired": 0,
+    "needs_adaptation": 0,
+    "adapted": 0,
+    "contract": 0,
+    "passed": 31,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 0
+  },
+  "capability_results": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-runtime-d92c6a81b2ff",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-modeling-e39da5b66920",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-training-c2fb788c7dee",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-integration-eb92cc52a766",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-runtime-api-640141eea678",
+      "status": "passed",
+      "checks": [
+        "upstream-grounding",
+        "upstream-worker",
+        "api-contract",
+        "upstream-heavy-inference"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tools-schema-e8dbe1b08297",
+      "status": "passed",
+      "checks": [
+        "upstream-tools",
+        "upstream-grounding",
+        "api-contract",
+        "schema-performance",
+        "upstream-heavy-inference"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-native-transport-a1c04d1dc6d6",
+      "status": "passed",
+      "checks": [
+        "upstream-worker"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-artifacts-0f50505ce224",
+      "status": "passed",
+      "checks": [
+        "upstream-fetch"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-speech-api-212b39367ce7",
+      "status": "passed",
+      "checks": [
+        "api-contract",
+        "upstream-speech",
+        "upstream-heavy-whistle"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-telemetry-16091175048a",
+      "status": "passed",
+      "checks": [
+        "telemetry-policy"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-checkpoint-tokenizer-52642038278b",
+      "status": "passed",
+      "checks": [
+        "upstream-weights",
+        "upstream-render",
+        "upstream-generation",
+        "tiny-numerical-checkpoint-forward-export-generation",
+        "upstream-heavy-build"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-architecture-59fcdd3ad36a",
+      "status": "passed",
+      "checks": [
+        "upstream-weights",
+        "tiny-numerical-checkpoint-forward-export-generation",
+        "upstream-heavy-build",
+        "upstream-heavy-mlx"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-mlx-backend-d5aa55b116a2",
+      "status": "passed",
+      "checks": [
+        "upstream-quantization",
+        "tiny-numerical-checkpoint-forward-export-generation",
+        "upstream-heavy-mlx",
+        "upstream-heavy-quantize-mlx"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-quantization-00337646bb39",
+      "status": "passed",
+      "checks": [
+        "upstream-quantization",
+        "upstream-heavy-quantize-mlx"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-export-build-89bc1943b6ab",
+      "status": "passed",
+      "checks": [
+        "tiny-numerical-checkpoint-forward-export-generation",
+        "upstream-heavy-build",
+        "upstream-heavy-finetune",
+        "upstream-heavy-whistle-finetune"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-generation-e661f4c935e8",
+      "status": "passed",
+      "checks": [
+        "upstream-generation",
+        "tiny-numerical-checkpoint-forward-export-generation",
+        "upstream-heavy-run"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-text-finetune-fbcf4f6be965",
+      "status": "passed",
+      "checks": [
+        "upstream-generate",
+        "upstream-render",
+        "upstream-lora",
+        "upstream-heavy-finetune"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-speech-model-training-838e6054fb43",
+      "status": "passed",
+      "checks": [
+        "upstream-speech-training-interfaces",
+        "upstream-heavy-whistle-finetune"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-platform-client-00f43f81ba6e",
+      "status": "passed",
+      "checks": [
+        "upstream-platform"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-cli-99bb88401742",
+      "status": "passed",
+      "checks": [
+        "upstream-fetch",
+        "upstream-speech"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-playground-f3cc87f78b21",
+      "status": "passed",
+      "checks": [
+        "upstream-playground",
+        "browser-playground-contract"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-environments-d5f6d542a192",
+      "status": "passed",
+      "checks": [
+        "upstream-environments",
+        "upstream-heavy-environments"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-packaging-71669691cb0b",
+      "status": "passed",
+      "checks": [
+        "upstream-packaging",
+        "upstream-release"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    }
+  ],
+  "checks": [
+    {
+      "name": "upstream-tools",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tools-schema-e8dbe1b08297"
+      ]
+    },
+    {
+      "name": "upstream-grounding",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-runtime-api-640141eea678",
+        "graphify-tools-schema-e8dbe1b08297"
+      ]
+    },
+    {
+      "name": "upstream-fetch",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-artifacts-0f50505ce224",
+        "graphify-cli-99bb88401742"
+      ]
+    },
+    {
+      "name": "upstream-platform",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-platform-client-00f43f81ba6e"
+      ]
+    },
+    {
+      "name": "upstream-playground",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-playground-f3cc87f78b21"
+      ]
+    },
+    {
+      "name": "upstream-packaging",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-packaging-71669691cb0b"
+      ]
+    },
+    {
+      "name": "upstream-release",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-packaging-71669691cb0b"
+      ]
+    },
+    {
+      "name": "upstream-worker",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-native-transport-a1c04d1dc6d6",
+        "graphify-runtime-api-640141eea678"
+      ]
+    },
+    {
+      "name": "upstream-generate",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-text-finetune-fbcf4f6be965"
+      ]
+    },
+    {
+      "name": "upstream-weights",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-checkpoint-tokenizer-52642038278b",
+        "graphify-model-architecture-59fcdd3ad36a"
+      ]
+    },
+    {
+      "name": "api-contract",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-runtime-api-640141eea678",
+        "graphify-tools-schema-e8dbe1b08297",
+        "graphify-speech-api-212b39367ce7"
+      ]
+    },
+    {
+      "name": "schema-performance",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tools-schema-e8dbe1b08297"
+      ]
+    },
+    {
+      "name": "telemetry-policy",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-telemetry-16091175048a"
+      ]
+    },
+    {
+      "name": "upstream-environments",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-environments-d5f6d542a192"
+      ]
+    },
+    {
+      "name": "upstream-speech",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-speech-api-212b39367ce7",
+        "graphify-cli-99bb88401742"
+      ]
+    },
+    {
+      "name": "upstream-render",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-checkpoint-tokenizer-52642038278b",
+        "graphify-text-finetune-fbcf4f6be965"
+      ]
+    },
+    {
+      "name": "upstream-lora",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-text-finetune-fbcf4f6be965"
+      ]
+    },
+    {
+      "name": "upstream-quantization",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-quantization-00337646bb39",
+        "graphify-mlx-backend-d5aa55b116a2"
+      ]
+    },
+    {
+      "name": "upstream-generation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-generation-e661f4c935e8",
+        "graphify-checkpoint-tokenizer-52642038278b"
+      ]
+    },
+    {
+      "name": "upstream-speech-training-interfaces",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-speech-model-training-838e6054fb43"
+      ]
+    },
+    {
+      "name": "tiny-numerical-checkpoint-forward-export-generation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-architecture-59fcdd3ad36a",
+        "graphify-mlx-backend-d5aa55b116a2",
+        "graphify-export-build-89bc1943b6ab",
+        "graphify-generation-e661f4c935e8",
+        "graphify-checkpoint-tokenizer-52642038278b"
+      ]
+    },
+    {
+      "name": "upstream-heavy-build",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-export-build-89bc1943b6ab",
+        "graphify-checkpoint-tokenizer-52642038278b",
+        "graphify-model-architecture-59fcdd3ad36a"
+      ]
+    },
+    {
+      "name": "upstream-heavy-environments",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-environments-d5f6d542a192"
+      ]
+    },
+    {
+      "name": "upstream-heavy-finetune",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-text-finetune-fbcf4f6be965",
+        "graphify-export-build-89bc1943b6ab"
+      ]
+    },
+    {
+      "name": "upstream-heavy-inference",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-runtime-api-640141eea678",
+        "graphify-tools-schema-e8dbe1b08297"
+      ]
+    },
+    {
+      "name": "upstream-heavy-mlx",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-mlx-backend-d5aa55b116a2",
+        "graphify-model-architecture-59fcdd3ad36a"
+      ]
+    },
+    {
+      "name": "upstream-heavy-quantize-mlx",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-quantization-00337646bb39",
+        "graphify-mlx-backend-d5aa55b116a2"
+      ]
+    },
+    {
+      "name": "upstream-heavy-run",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-generation-e661f4c935e8"
+      ]
+    },
+    {
+      "name": "upstream-heavy-whistle",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-speech-api-212b39367ce7"
+      ]
+    },
+    {
+      "name": "upstream-heavy-whistle-finetune",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-speech-model-training-838e6054fb43",
+        "graphify-export-build-89bc1943b6ab"
+      ]
+    },
+    {
+      "name": "browser-playground-contract",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-playground-f3cc87f78b21"
+      ]
+    }
+  ],
+  "actual_size": {
+    "baseline_source_lines": 9118,
+    "source_lines": 4185,
+    "source_files": 39,
+    "retained_percent": 42.47752406714933,
+    "target_percent": 29.644931407203664,
+    "target_source_lines": 2703.0248457088305,
+    "estimated_source_lines": null,
+    "metric": "tokens",
+    "tokenizer": {
+      "classification": "source_and_configuration_v1",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "encoding": "cl100k_base",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+      "file_boundaries": "independent_sum",
+      "library": "tiktoken",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "special_tokens": "ordinary_text",
+      "text_policy": "raw_decoded_text_per_file",
+      "version": "0.12.0"
+    },
+    "measurement_sha256": "1adc0803368cef7ac120b28aceb4502eb9b9b9a3238d90406cf2c2536282b2ff",
+    "source_tokens": 65217,
+    "configuration_tokens": 9529,
+    "total_tokens": 74746,
+    "baseline_tokens": 175966,
+    "target_tokens": 52165,
+    "source_retained_percent": 45.898223294582145,
+    "complete": true,
+    "target_met": false
+  },
+  "budget_status": "unmet",
+  "verification_scope": "full",
+  "rewrite_progress": {
+    "priority": "functionality_first",
+    "author_attempts": 8,
+    "repair_attempts": 4,
+    "optimization_attempts": 3,
+    "restorations": 1,
+    "max_optimization_attempts": 3,
+    "accepted_candidate_available": true,
+    "behavior_acceptance": "passed",
+    "size_acceptance": "unmet"
+  },
+  "installation_evidence": {
+    "status": "passed",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "environment_metadata_complete": true
+  },
+  "obligation_ledger": {
+    "records": [
+      {
+        "capability": "graphify-root-ddcb2dfa42d8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-runtime-d92c6a81b2ff",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-modeling-e39da5b66920",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-training-c2fb788c7dee",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-integration-eb92cc52a766",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-runtime-api-640141eea678",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-grounding",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-worker",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "api-contract",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-inference",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tools-schema-e8dbe1b08297",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-tools",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-grounding",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "api-contract",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "schema-performance",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-inference",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-native-transport-a1c04d1dc6d6",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-worker",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-artifacts-0f50505ce224",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-fetch",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-speech-api-212b39367ce7",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "api-contract",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-speech",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-whistle",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-telemetry-16091175048a",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "telemetry-policy",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-checkpoint-tokenizer-52642038278b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-weights",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-render",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "tiny-numerical-checkpoint-forward-export-generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-build",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-architecture-59fcdd3ad36a",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-weights",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "tiny-numerical-checkpoint-forward-export-generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-build",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-mlx",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-mlx-backend-d5aa55b116a2",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-quantization",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "tiny-numerical-checkpoint-forward-export-generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-mlx",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-quantize-mlx",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-quantization-00337646bb39",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-quantization",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-quantize-mlx",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-export-build-89bc1943b6ab",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "tiny-numerical-checkpoint-forward-export-generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-build",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-finetune",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-whistle-finetune",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-generation-e661f4c935e8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "tiny-numerical-checkpoint-forward-export-generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-run",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-text-finetune-fbcf4f6be965",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-generate",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-render",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-lora",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-finetune",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-speech-model-training-838e6054fb43",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-speech-training-interfaces",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-whistle-finetune",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-platform-client-00f43f81ba6e",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-platform",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-cli-99bb88401742",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-fetch",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-speech",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-playground-f3cc87f78b21",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-playground",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "browser-playground-contract",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-environments-d5f6d542a192",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-environments",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-heavy-environments",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-packaging-71669691cb0b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-packaging",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-release",
+            "kind": "declared_check"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "unknown": 0,
+      "failed": 0,
+      "retired": 0,
+      "verified": 24,
+      "partial": 0,
+      "total": 24,
+      "retained": 24,
+      "complete": true
+    },
+    "limitations": [
+      "Public summaries omit private evidence bindings and raw output."
+    ]
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "disabled",
+    "binding": {},
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true
+    },
+    "tasks": [],
+    "overhead": {
+      "examiner_tokens": null,
+      "judge_tokens": null,
+      "solver_tokens": null,
+      "total_tokens": null,
+      "usage_complete": false,
+      "observed_total_tokens": null,
+      "role_usage_complete": {
+        "examiner": false,
+        "solver": false,
+        "judge": false
+      }
+    },
+    "resources": {
+      "completed_runs": 0,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0
+    },
+    "iterations": [],
+    "limitations": [
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ],
+    "stop_reason": "owner_disabled"
+  }
+}
