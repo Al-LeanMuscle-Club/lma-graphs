@@ -1,0 +1,76 @@
+Nanolize Anything｜领导汇报
+12 页主讲 + 3 页附录｜建议约 15 分钟
+
+01｜让大型代码库更容易理解、修改与验证
+开场约 50 秒。这个项目要解决的是：复杂代码库不断增长，但人和 AI 每次做开发仍需重新理解大量历史实现。我们的目标是保留必要能力，通过结构重构降低后续正确完成任务的成本。今天汇报项目意义、工作流程、设计原则、已有证据和下一步试点。请特别区分当前 main、token 设计分支和历史 Detectron2 候选；它们不是同一个版本。
+来源：Nanolize Anything · 项目与设计演进 · 2026.11.05
+
+
+02｜目标是降低后续研发成本，核心能力是可验证的重构闭环
+约 70 秒。用三个结论帮助领导建立判断：价值是减少后续重复理解、定位和修改的负担；方法是把功能契约、重构和验证组成可复用流程；当前工程闭环已经实现，但真实项目的收益还需要按固定任务完整验收。架构与源码体积是中间指标，最终要看成功完成研发任务的成本。业务 ROI 是下一阶段要验证的假设，不是已经兑现的数字。
+来源：依据：main README 与 task-effort；设计分支 refactoring policy
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/f83bd58cdce2a434706b2264e15857cfd5c51deb/README.zh-CN.md
+
+03｜复杂度的代价，会在每一次开发任务中重新支付
+约 60 秒。将复杂度拆成三个具体问题：实现重复导致修改需要同步多个位置；隐式依赖和配置协议让理解需要跨文件追踪；验证结论不清楚导致不知道哪里可以安全改变。这些成本会在理解、排障和修改时重复出现。因此项目希望把一次性的重构投入，换成长期任务成本下降。收益需要扣除重构、验证、人工审阅和运行开销，不能仅用代码变短来代替。
+来源：价值推导；尚未形成跨仓库、完整成本口径的 ROI 结论
+
+
+04｜外部契约保持稳定，内部结构可以重新设计
+约 75 秒。这页讲最重要的设计原则。必须保持所选功能、输入输出和类型契约、校验、错误说明、日志、边界行为及必要性能；可以重组模块、合并重复实现、向量化或复用已有算子。代码体积目标是软目标，不能成为删功能或删除保护逻辑的理由。显式选择范围和设定体积目标是两个控制项。统计指标只提示优化方向，最终仍需独立验证。
+来源：依据：token 分支 docs/graph-rewrite.md 与 refactoring policy
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8b95fb56bccec80c148668afc206830ac54bb5af/docs/graph-rewrite.md
+
+05｜先明确功能和基线，再重构、验证与交付
+约 80 秒。按从左到右的主流程讲：接入并盘点，理解功能并建立知识，确认选择并冻结原始行为与任务，生成新实现，验证行为与安装，再评测任务成本和生成报告。功能回归进入修复循环，确认的开发任务成本退步进入优化循环，但基线和功能范围不能随之放松。最后交付的是分支和绑定证据的报告，是否合并由后续评审决定。
+来源：依据：main README 工作流程；token 分支 graph-rewrite.md
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/f83bd58cdce2a434706b2264e15857cfd5c51deb/README.zh-CN.md
+
+06｜面向人解释功能，面向 Agent 提供可追溯的行为知识
+约 80 秒。功能图是人的操作界面，用来理解和选择能力；知识包是给实现 agent 的语义输入，记录接口、依赖、全局约束、来源和未知项。验证方保存原始测试、基线和隐藏任务，作者不自行证明通过。版本差异需要解释：main 的作者只读功能契约和知识；新的 token 分支额外提供不可改写的原始源码及配置参考，帮助解决知识缺口，但原始测试和隐藏任务仍归验证方。这里是工作流的输入分离，不等于操作系统隔离。
+来源：依据：main agent-knowledge / graph-rewrite；token 分支原码参考策略
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/f83bd58cdce2a434706b2264e15857cfd5c51deb/docs/agent-knowledge.md
+
+07｜用户用功能图确认范围，系统负责执行与追踪证据
+约 60 秒。展示仓库自带的功能规划器截图，这是合成示例，不是 Detectron2 的验收页面。用户首先看到能力图和依赖，默认保留全部功能；再决定是否明确排除可选模块。体积目标独立设置。系统随后冻结范围并执行，结果回到同一功能图中展示。截图中的行数和模块数量只用于说明交互，不能用作真实项目效果数据。
+来源：界面来自 main/docs/capability-planner.png；合成示例，非 Detectron2 实测结果
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/f83bd58cdce2a434706b2264e15857cfd5c51deb/docs/capability-planner.png
+
+08｜把“通过了什么”绑定到“哪一版代码”
+约 70 秒。可信性来自四个机制：先冻结原版的测试、输出和输入；独立执行候选对照，不能事后改预期；核对实际运行的是候选模块，并在新环境验证安装；报告绑定具体代码和证据，改代码后旧绿灯不能直接复用。通过只代表执行过的比较满足条件，缺口要显示。图中的绿灯和检查组数量不能被解释为全部语义覆盖。
+来源：依据：main README、reliable-workflows 与 post-nanolize-reports
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/f83bd58cdce2a434706b2264e15857cfd5c51deb/docs/reliable-workflows.md
+
+09｜Detectron2 试验说明了潜力，也推动了验收标准升级
+约 100 秒。这是历史 Detectron2 候选的公开审查，不是 token 分支的实验。较完整口径含实现源码、配置、运行数据和构建输入，物理行数从 76,888 降到 36,458，减少 52.58%。历史报告有 160/160 个检查组和 23/23 个部分 GPU 用例通过；但检查组不等于单测总数，也不是全功能证明。独立静态审查还发现 TensorMask 采样公式、部分训练入口及 Caffe2 输出转换的具体差异。任务成本开发集有积极信号，但候选隐藏验收没有执行，最终仍为 incomplete / inconclusive。这个案例的价值是帮助我们明确指标和验证边界；并不证明项目已完成全功能等价压缩。
+来源：来源：2026.11.04 Detectron2 effort49 独立审查；历史候选 8080c703，非 token 分支结果
+https://al-leanmuscle-club.github.io/lma-graphs/detectron2-effort49-audit-20261104/
+
+10｜设计演进：同时优化源码 tokens 与实现逻辑
+约 85 秒。这页是昨天完成的新分支，不是 main 的现状。第一个目标从代码行数改为生产源码原文的总 tokens，固定用 tiktoken o200k_base，各文件分别分词后求和，包含注释和 docstring。它减少了对排版行数的依赖，但仍只是文本体积。第二个目标保持为实现逻辑，当前以 Python AST 节点作为静态代理。两个指标独立报告，不合成一个加权分数；删注释不能记作逻辑简化，移动代码到配置或新 DSL 也不能冒充简化。是否更省力仍需真实任务评测。
+来源：依据：token 分支 8b95fb5 · refactoring.py / token_metrics.py / docs/graph-rewrite.md
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8b95fb56bccec80c148668afc206830ac54bb5af/docs/graph-rewrite.md
+
+11｜用固定任务的原版 / 候选对照，验证是否真的更省力
+约 80 秒。原版和候选使用固定任务、固定模型与推理设置、全新会话及独立副本，避免上下文继承干扰。main 默认理解、诊断、修改、执行四类；新分支默认先做一个代表性的修改并执行验证任务，降低评测开销，也可以显式选全四类。流程是单次筛选、完整重复、隐藏验收，默认每组完成三次。失败、缺失 usage 和不确定差异不能算成本改善。领导最终应看成功率、成功任务的 token 与耗时、一次性重构和评测成本，以及不同仓库的可重复性。
+来源：依据：main 与 token 分支 docs/task-effort.md；主讲采用 token 分支分阶段评测设计
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8b95fb56bccec80c148668afc206830ac54bb5af/docs/task-effort.md
+
+12｜下一步：用少量代表性仓库，建立可复用的验收样板
+约 80 秒。建议先选择两到三个代表性仓库或明确边界的子系统，先修正已知契约缺口、补齐性能条件，再完成端到端任务评测。第二步在固定版本和完整账单下评估是否持续降低成功任务的成本。第三步才把知识构建、检查配方和报告固化为可复用接入模板。建议争取的是试点仓库负责人、业务测试与性能基线、明确的模型和计算预算，以及独立验收人。今天不需要承诺泛化收益，而是确定用什么证据判断继续投入。
+来源：以下为建议路线与支持事项，尚未形成排期或投入承诺
+
+
+13｜附录 A｜三类版本与证据的边界
+供问答使用。main 的当前固定提交为 f83bd58，包含功能图、知识包、独立重写验证和四类任务评测。token 分支为 8b95fb5，改变代码体积目标、保留独立逻辑目标、提供只读原码参考，并采用代表性修改任务的分阶段评测。Detectron2 结果来自历史候选 8080c703 的公开审查，不能把它当作 token 新分支的实测。历史记录和指标不能在新版本下被自动重解释。
+来源：固定来源：main f83bd58 · token 分支 8b95fb5 · Detectron2 候选 8080c703
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/f83bd58cdce2a434706b2264e15857cfd5c51deb/README.zh-CN.md
+
+14｜附录 B｜三个指标，回答三个不同的问题
+供技术问答使用。源码 tokens 是原始生产源码逐文件用 o200k_base 计数的总和，包含注释、docstring 和类型标注；排除测试、独立文档、非源码配置数据及已排除的依赖构建产物。覆盖受快照及源码后缀限制；不完整或分词器不兼容时不比较，不从行数估算。AST 仅覆盖当前支持的 Python 逻辑，是代理指标，不证明架构质量。任务 tokens 来自实际 solver 模型调用输入输出，重试计入，cached input 仍计入输入；与推理已计入的输出不重复相加。出题、判卷和墙钟时间单列，token 不是货币成本，也不是人类认知负担的通用单位。
+来源：依据：token_metrics.py、logic_metrics.py、docs/task-effort.md（token 分支）
+https://github.com/Al-LeanMuscle-Club/nanolize-anything/blob/8b95fb56bccec80c148668afc206830ac54bb5af/src/nanolize_anything/token_metrics.py
+
+15｜附录 C｜资料来源与汇报使用说明
+可直接跳过本页。引用优先使用固定提交而非会继续变化的分支链接。第九页是历史报告与静态审查的汇总，本次制作幻灯片没有补跑项目。演示截图为仓库自带的合成功能规划器，不是实际仓库测量。十二页是建议路线，需与业务 owner 共同确定资源、范围和时间。
+来源：本资料仅整理项目现有代码、文档和公开审查；本次未重新运行 Detectron2 或 GPU 基准。
