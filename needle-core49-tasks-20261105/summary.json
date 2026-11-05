@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "title": "Needle \u00b7 core runtime",
+  "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/examples/needle-core49-tasks-20261105",
+  "source_repository": "https://github.com/cactus-compute/needle",
+  "original_commit": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+  "candidate_commit": "4b35478c962f26126a9ea1569537a3954a9e6a0f",
+  "harness_branch": "codex/task-check-annotation-isolation-20261105",
+  "harness_commit": "8fb43d5b1a4bb70098fd04952402bb327bc13bfd",
+  "task_evaluation_enabled": true,
+  "selected_leaf_features": [
+    "Native text inference and grounded extraction",
+    "Typed tool and extraction schemas",
+    "Isolated tuned-model workers",
+    "Native text engines and weight downloads",
+    "Telemetry controls and diagnostics",
+    "Runtime artifact CLI",
+    "Installable text runtime"
+  ],
+  "excluded_leaf_features": [
+    "Speech transcription and streaming",
+    "Safe checkpoints and tokenization",
+    "JAX attention model and subnetworks",
+    "MLX numerical backend",
+    "Deployment quantization numerics",
+    "Portable CACT export and deployment builds",
+    "Reference checkpoint generation",
+    "Text data generation and LoRA tuning",
+    "Whistle model and speech LoRA tuning",
+    "Hosted training and account workflows",
+    "Interactive local browser playground",
+    "Stateful device and application environments",
+    "Training checkpoint and speech-weight downloads",
+    "Training and reference-model CLI",
+    "Speech CLI",
+    "Hosted platform CLI",
+    "Browser playground CLI",
+    "Training, speech and web distribution extras",
+    "Upstream release automation"
+  ],
+  "size": {
+    "metric": "source_and_configuration_tokens",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "operational_original": 106460,
+    "native_original": 175966,
+    "candidate_total": 13820,
+    "operational_retained_percent": 12.981401465339095,
+    "native_retained_percent": 7.853789936692316,
+    "original_source": 101061,
+    "candidate_source": 13189,
+    "selected_mapped_source_estimate": 19045,
+    "candidate_configuration": 631,
+    "documentation_adjustment_tokens": 69506,
+    "target_met": true
+  },
+  "verification_status": "checks_passed",
+  "installation": {
+    "checks_passed": 3,
+    "checks_total": 3,
+    "environment_metadata_complete": true,
+    "status": "passed"
+  },
+  "original_unit_cases": {
+    "passed": 105,
+    "failed": 0,
+    "skipped": 0
+  },
+  "verification_summary": {
+    "original_total": 31,
+    "retained": 11,
+    "retired": 21,
+    "needs_adaptation": 3,
+    "adapted": 3,
+    "contract": 1,
+    "passed": 11,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 24
+  },
+  "attempts": 3,
+  "native_report_id": "nrs_7dad4fdb69c621f3b2c60b721d6deb4334270aa90a204a096cf3f50a76597f0c",
+  "limitations": [
+    "Passing the recorded checks is evidence for the retained scope, not full semantic equivalence.",
+    "Speech, training, hosted services, browser playground, demonstration environments and maintainer release automation are out of scope; their tests are not counted as passes.",
+    "Native inference was checked on Linux ARM64 in a 16-CPU Slurm allocation with the same external engines and pretrained assets for both versions. Target runtime and installation checks used Python 3.11. Other Python versions, operating systems and devices were not exercised end to end.",
+    "The original operational subtotal excludes only identified standalone SVG illustrations and llms.txt; candidate text receives no additional free exclusions. Both original totals and the shared tokenizer are provided.",
+    "Mapped selected-source size is an estimate: shared files can include excluded branches. Scope-removal and rewrite reductions must not be confused.",
+    "This assessment covers one modification workflow with one development observation per arm. The configured hidden variant did not run because the development cost gate was not met. It is not a statistical estimate of all future tasks or a universal measure of human cognitive burden.",
+    "Source-free authoring is a supplied-input boundary, not an OS-enforced sandbox; original source/tests/history were not supplied to the fresh author.",
+    "Portable verification bundle export is unavailable because the local check recipes include absolute verifier paths; local frozen verification evidence is retained.",
+    "The independent task suite was reused unchanged after fixing a launcher annotation-inheritance bug. Its initial design cost and invalid original observation are included separately in overhead, but the invalid verdict is excluded from task comparisons."
+  ],
+  "observed_author_usage": {
+    "input_tokens": 5202204,
+    "cached_input_tokens": 4895360,
+    "output_tokens": 68007,
+    "completed_turns": 3
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "inconclusive",
+    "binding": {
+      "plan_sha256": "a105e755159392c5639fcd5e2a685fbe4b9856d720ceaf9df4772c31ad3b155e",
+      "original_git_head": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+      "original_snapshot_sha256": "35ef1701933b3edf7f4146e1a597bd4778f48a5b3ad13d9e287d1a5c9f19ec76",
+      "candidate_git_head": "4b35478c962f26126a9ea1569537a3954a9e6a0f",
+      "candidate_snapshot_sha256": "17bd3b7c4b5fbf47b580b8936289c315f322733b64274d1d864c37d62e9d455c",
+      "candidate_source_sha256": "1cc6c987bdc13b7cba56ca0acbc7ebd9f77059be1a4d81fee78a6651d5dd5812",
+      "candidate_contract_sha256": "90d3c5fcd882068c74b1d43abbbaf95e50089738c4765b3f50125fa05b972598",
+      "suite_sha256": "3a5f3fab4ef5224cbd9dd317048d6b8b734383575a8cc9bab5373eb8bfc4a923",
+      "settings_sha256": "6031b473d6116474979f08b643e762b8fecee0cb1b72411c2a7236a7f49c9236"
+    },
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true,
+      "task_types": [
+        "modify"
+      ],
+      "grading": "lightweight",
+      "staged": true,
+      "heldout_deferred": true,
+      "repetitions": 1,
+      "min_improvement_percent": 5.0,
+      "regression_tolerance_percent": 5.0,
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh"
+    },
+    "tasks": [
+      {
+        "id": "modify",
+        "type": "modify",
+        "title": "Preserve Field constraints inside annotated list elements",
+        "capabilities": [
+          "graphify-tools-schema-e8dbe1b08297"
+        ],
+        "status": "inconclusive",
+        "development": {
+          "status": "inconclusive",
+          "original": {
+            "runs": 1,
+            "successes": 1,
+            "tokens": {
+              "median": 273083,
+              "min": 273083,
+              "max": 273083
+            },
+            "duration_seconds": {
+              "median": 282.3095,
+              "min": 282.3095,
+              "max": 282.3095
+            },
+            "blocked": 0
+          },
+          "candidate": {
+            "runs": 1,
+            "successes": 1,
+            "tokens": {
+              "median": 273551,
+              "min": 273551,
+              "max": 273551
+            },
+            "duration_seconds": {
+              "median": 322.4692,
+              "min": 322.4692,
+              "max": 322.4692
+            },
+            "blocked": 0
+          },
+          "ratio": 1.001714,
+          "change_percent": 0.171,
+          "evidence_sha256": "8bda71ff44e951eda675b4ad1afa0fb7166fda487925f993fdd633515e260238"
+        },
+        "heldout": {
+          "status": "not_run",
+          "original": {
+            "runs": 0,
+            "successes": 0,
+            "tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "duration_seconds": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "blocked": 0
+          },
+          "candidate": {
+            "runs": 0,
+            "successes": 0,
+            "tokens": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "duration_seconds": {
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "blocked": 0
+          },
+          "ratio": null,
+          "change_percent": null
+        }
+      }
+    ],
+    "overhead": {
+      "examiner_tokens": 0,
+      "judge_tokens": 0,
+      "solver_tokens": 546634,
+      "total_tokens": 546634,
+      "usage_complete": true,
+      "observed_total_tokens": 546634,
+      "role_usage_complete": {
+        "examiner": true,
+        "solver": true,
+        "judge": true
+      }
+    },
+    "resources": {
+      "completed_runs": 4,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0,
+      "roles": {
+        "examiner": {
+          "completed": 0,
+          "failed": 0
+        },
+        "solver": {
+          "completed": 2,
+          "failed": 0
+        },
+        "judge": {
+          "completed": 2,
+          "failed": 0
+        }
+      }
+    },
+    "iterations": [
+      {
+        "attempt": 3,
+        "status": "inconclusive",
+        "changed_tasks": [],
+        "total_candidate_tokens": 273551,
+        "retry": false
+      }
+    ],
+    "limitations": [
+      "This assessment covers one representative modification workflow, including executing the change. It does not measure understanding, diagnosis or execution as separate task types.",
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ],
+    "staging": {
+      "phase": "development",
+      "targeted_task_ids": [],
+      "screened_task_ids": [
+        "modify"
+      ],
+      "completed_development_runs": 1,
+      "expected_development_runs": 1
+    },
+    "stop_reason": "no_actionable_regression"
+  },
+  "task_session_timing": {
+    "judge": {
+      "calls": 2,
+      "duration_seconds": 1.9872
+    },
+    "solver": {
+      "calls": 2,
+      "duration_seconds": 604.7787000000001
+    }
+  },
+  "comparison_run": {
+    "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/examples/needle-core49-20261105",
+    "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/needle-core49-20261105/",
+    "note": "Same pinned original, core scope, frozen checks and tokenizer. A fresh implementation and refined semantic clarifications mean total elapsed differences are not solely the effect of enabling task evaluation."
+  },
+  "report_presentation_notes": [
+    "Module source mappings exclude configuration files, which remain fully counted in the global token total.",
+    "Direct check targets were reviewed from the actual retained tests; related evidence is kept separate.",
+    "The behavior verdict uses the final frozen verification result. Raw rewrite_progress retains an unset optimization-checkpoint bookkeeping flag; it does not override the passing checks.",
+    "Report export reconciles two plan hashes that differ only by the operation authorization digest. Exact plan content equality and the matching authorization were verified; raw evidence and every other binding check are unchanged."
+  ],
+  "report_binding_compatibility": {
+    "canonical_plan_sha256": "20daee111234388f63c420245a30a4ad0a966929ddc6eea7d30b87bcfffda99e",
+    "task_bound_plan_sha256": "a105e755159392c5639fcd5e2a685fbe4b9856d720ceaf9df4772c31ad3b155e",
+    "only_differing_key": "operation_contract_digest",
+    "authorization_matches_verification": true,
+    "plan_content_equal_after_removing_authorization_metadata": true,
+    "raw_evidence_sha256": {
+      "verification.json": "df968fb3886f80ec3d1a2fed3b1181481e75e0d747c059bbe2ffb593a2c79945",
+      "plan.json": "f5373643c95aff29c9491243101bc7fb750825f372936f3aff76e29bf6d9e16a"
+    },
+    "raw_evidence_unchanged": true,
+    "all_other_binding_checks_preserved": true,
+    "scope": "report_export_only"
+  },
+  "candidate_unit_cases": {
+    "passed": 105,
+    "failed": 0,
+    "skipped": 0
+  },
+  "retained_check_groups": {
+    "passed": 11,
+    "failed": 0
+  },
+  "verification_history": [
+    {
+      "attempt": 1,
+      "candidate_commit": "0683d478745eb68f83c92913b13a9e23cacf5231",
+      "tokens": 13662,
+      "passed_groups": [
+        "upstream-tools",
+        "upstream-worker",
+        "schema-performance",
+        "telemetry-policy",
+        "upstream-inference",
+        "core-packaging",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "unpassed_groups": [
+        "upstream-grounding",
+        "upstream-weights",
+        "core-fetch"
+      ],
+      "regressed_groups": [
+        "upstream-grounding",
+        "upstream-weights",
+        "core-fetch"
+      ],
+      "deferred_groups": [],
+      "unit_cases": {
+        "passed": 51,
+        "failed": 54,
+        "skipped": 0
+      }
+    },
+    {
+      "attempt": 2,
+      "candidate_commit": "408c6a49921637d4427835ebb61053246aae00ac",
+      "tokens": 13794,
+      "passed_groups": [
+        "upstream-tools",
+        "upstream-worker",
+        "schema-performance",
+        "telemetry-policy",
+        "upstream-inference",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "unpassed_groups": [
+        "upstream-grounding",
+        "upstream-weights",
+        "core-fetch",
+        "core-packaging"
+      ],
+      "regressed_groups": [
+        "upstream-grounding",
+        "upstream-weights",
+        "core-fetch"
+      ],
+      "deferred_groups": [
+        "core-packaging"
+      ],
+      "unit_cases": {
+        "passed": 51,
+        "failed": 54,
+        "skipped": 0
+      }
+    },
+    {
+      "attempt": 3,
+      "candidate_commit": "4b35478c962f26126a9ea1569537a3954a9e6a0f",
+      "tokens": 13820,
+      "passed_groups": [
+        "upstream-tools",
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "schema-performance",
+        "telemetry-policy",
+        "upstream-inference",
+        "core-fetch",
+        "core-packaging",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "unpassed_groups": [],
+      "regressed_groups": [],
+      "deferred_groups": [],
+      "unit_cases": {
+        "passed": 105,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "timing": {
+    "author_seconds": 1910.9403507709503,
+    "pipeline_elapsed_seconds": 2746.499561071396,
+    "note": "Pipeline timing covers submission through its final recorded event. Host preparation and report publication are excluded. Observed author tokens are not total experiment tokens.",
+    "elapsed_since_first_submission_seconds": 4142.178196430206,
+    "prior_task_design_seconds": 533.604,
+    "invalid_original_measurement_seconds": 255.7351
+  },
+  "prior_execution": {
+    "first_submission_epoch": 1793915000.0103927,
+    "task_design_tokens": 313877,
+    "task_design_seconds": 533.604,
+    "invalid_original_measurement_tokens": 376263,
+    "invalid_original_measurement_seconds": 255.7351,
+    "fixed_harness_commit": "8fb43d5b1a4bb70098fd04952402bb327bc13bfd",
+    "fix": "Execute each frozen acceptance script without inheriting the launcher future flags. Frozen task prompts, inputs, checks and rubrics are unchanged.",
+    "invalid_observation_excluded_from_comparison": true,
+    "author_calls_before_recovery": 0,
+    "fixed_harness_validation": {
+      "unit_tests": 782,
+      "unit_tests_passed": true,
+      "unit_test_seconds": 1270.508,
+      "demo_passed": true
+    },
+    "fixed_harness_branch": "codex/task-check-annotation-isolation-20261105"
+  },
+  "all_observed_agent_tokens_including_recovery": 6506985
+}
