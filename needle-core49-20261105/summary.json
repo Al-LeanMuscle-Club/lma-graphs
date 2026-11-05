@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "title": "Needle \u00b7 core runtime",
+  "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize-anything/tree/examples/needle-core49-20261105",
+  "source_repository": "https://github.com/cactus-compute/needle",
+  "original_commit": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+  "candidate_commit": "0bf120f038749d93166006035641ce2ec39b8145",
+  "harness_branch": "codex/core-first-scope",
+  "harness_commit": "a88ae0c02508c8fb14c217c9de21f7520d5c85e4",
+  "task_evaluation_enabled": false,
+  "selected_leaf_features": [
+    "Native text inference and grounded extraction",
+    "Typed tool and extraction schemas",
+    "Isolated tuned-model workers",
+    "Native text engines and weight downloads",
+    "Telemetry controls and diagnostics",
+    "Runtime artifact CLI",
+    "Installable text runtime"
+  ],
+  "excluded_leaf_features": [
+    "Speech transcription and streaming",
+    "Safe checkpoints and tokenization",
+    "JAX attention model and subnetworks",
+    "MLX numerical backend",
+    "Deployment quantization numerics",
+    "Portable CACT export and deployment builds",
+    "Reference checkpoint generation",
+    "Text data generation and LoRA tuning",
+    "Whistle model and speech LoRA tuning",
+    "Hosted training and account workflows",
+    "Interactive local browser playground",
+    "Stateful device and application environments",
+    "Training checkpoint and speech-weight downloads",
+    "Training and reference-model CLI",
+    "Speech CLI",
+    "Hosted platform CLI",
+    "Browser playground CLI",
+    "Training, speech and web distribution extras",
+    "Upstream release automation"
+  ],
+  "size": {
+    "metric": "source_and_configuration_tokens",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "operational_original": 106460,
+    "native_original": 175966,
+    "candidate_total": 13501,
+    "operational_retained_percent": 12.681758406913394,
+    "native_retained_percent": 7.672504915722356,
+    "original_source": 101061,
+    "candidate_source": 12733,
+    "selected_mapped_source_estimate": 19045,
+    "candidate_configuration": 768,
+    "documentation_adjustment_tokens": 69506,
+    "target_met": true
+  },
+  "verification_status": "checks_passed",
+  "installation": {
+    "checks_passed": 3,
+    "checks_total": 3,
+    "environment_metadata_complete": true,
+    "status": "passed"
+  },
+  "original_unit_cases": {
+    "passed": 105,
+    "failed": 0,
+    "skipped": 0
+  },
+  "verification_summary": {
+    "original_total": 31,
+    "retained": 11,
+    "retired": 21,
+    "needs_adaptation": 3,
+    "adapted": 3,
+    "contract": 1,
+    "passed": 11,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 24
+  },
+  "attempts": 6,
+  "native_report_id": "nrs_7a1b0ff2c2e5ed16110dc677553212b903bc0972519ef6982d6a3aec278fe8fe",
+  "limitations": [
+    "Passing the recorded checks is evidence for the retained scope, not full semantic equivalence.",
+    "Speech, training, hosted services, browser playground, demonstration environments and maintainer release automation are out of scope; their tests are not counted as passes.",
+    "Native inference was checked on Linux ARM64 in a 16-CPU Slurm allocation with the same external engines and pretrained assets for both versions. Other operating systems and devices were not exercised end to end.",
+    "The original operational subtotal excludes only identified standalone SVG illustrations and llms.txt; candidate text receives no additional free exclusions. Both original totals and the shared tokenizer are provided.",
+    "Mapped selected-source size is an estimate: shared files can include excluded branches. Scope-removal and rewrite reductions must not be confused.",
+    "Agent-designed development tasks, hidden tasks and task-effort token comparisons were disabled. No cognitive-cost improvement is claimed.",
+    "Source-free authoring is a supplied-input boundary, not an OS-enforced sandbox; original source/tests/history were not supplied to the fresh author.",
+    "Portable verification bundle export is unavailable because the local check recipes include absolute verifier paths; local frozen verification evidence is retained."
+  ],
+  "observed_author_usage": {
+    "input_tokens": 10193585,
+    "cached_input_tokens": 9667328,
+    "output_tokens": 131125,
+    "completed_turns": 6
+  },
+  "report_presentation_notes": [
+    "Module source mappings exclude configuration files, which remain fully counted in the global token total.",
+    "Direct check targets were reviewed from the actual retained tests; related evidence is kept separate.",
+    "The behavior verdict uses the final frozen verification result. Raw rewrite_progress retains an unset optimization-checkpoint bookkeeping flag; it does not override the passing checks."
+  ],
+  "candidate_unit_cases": {
+    "passed": 105,
+    "failed": 0,
+    "skipped": 0
+  },
+  "retained_check_groups": {
+    "passed": 11,
+    "failed": 0
+  },
+  "verification_history": [
+    {
+      "attempt": 1,
+      "candidate_commit": "507961d0756409c309f462125486e66886e11fc4",
+      "tokens": 13675,
+      "passed_groups": [
+        "schema-performance",
+        "telemetry-policy",
+        "core-native-output"
+      ],
+      "unpassed_groups": [
+        "upstream-tools",
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "upstream-inference",
+        "core-fetch",
+        "core-packaging",
+        "core-api-contract"
+      ],
+      "regressed_groups": [
+        "upstream-tools",
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "upstream-inference",
+        "core-fetch",
+        "core-packaging",
+        "core-api-contract"
+      ],
+      "deferred_groups": [],
+      "unit_cases": {
+        "passed": 29,
+        "failed": 71,
+        "skipped": 5
+      }
+    },
+    {
+      "attempt": 2,
+      "candidate_commit": "c1616a2802978a119ae6a29194700590e45c988f",
+      "tokens": 13024,
+      "passed_groups": [
+        "upstream-tools",
+        "schema-performance",
+        "telemetry-policy",
+        "core-packaging"
+      ],
+      "unpassed_groups": [
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "upstream-inference",
+        "core-fetch",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "regressed_groups": [
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "upstream-inference",
+        "core-fetch",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "deferred_groups": [],
+      "unit_cases": {
+        "passed": 73,
+        "failed": 27,
+        "skipped": 5
+      }
+    },
+    {
+      "attempt": 3,
+      "candidate_commit": "58655642ec102124739b0d82c71ef584265824c8",
+      "tokens": 13327,
+      "passed_groups": [
+        "upstream-tools",
+        "schema-performance",
+        "telemetry-policy",
+        "upstream-inference",
+        "core-fetch"
+      ],
+      "unpassed_groups": [
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "core-packaging",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "regressed_groups": [
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "deferred_groups": [
+        "core-packaging"
+      ],
+      "unit_cases": {
+        "passed": 81,
+        "failed": 24,
+        "skipped": 0
+      }
+    },
+    {
+      "attempt": 4,
+      "candidate_commit": "1d2690d7178950c160327f45eab554e1a554e53b",
+      "tokens": 13496,
+      "passed_groups": [
+        "upstream-tools",
+        "upstream-grounding",
+        "upstream-worker",
+        "schema-performance",
+        "telemetry-policy",
+        "upstream-inference",
+        "core-fetch",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "unpassed_groups": [
+        "upstream-weights",
+        "core-packaging"
+      ],
+      "regressed_groups": [
+        "upstream-weights"
+      ],
+      "deferred_groups": [
+        "core-packaging"
+      ],
+      "unit_cases": {
+        "passed": 95,
+        "failed": 10,
+        "skipped": 0
+      }
+    },
+    {
+      "attempt": 5,
+      "candidate_commit": "1d2690d7178950c160327f45eab554e1a554e53b",
+      "tokens": 13496,
+      "passed_groups": [
+        "upstream-tools",
+        "upstream-grounding",
+        "upstream-worker",
+        "schema-performance",
+        "telemetry-policy",
+        "upstream-inference",
+        "core-fetch",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "unpassed_groups": [
+        "upstream-weights",
+        "core-packaging"
+      ],
+      "regressed_groups": [
+        "upstream-weights"
+      ],
+      "deferred_groups": [
+        "core-packaging"
+      ],
+      "unit_cases": {
+        "passed": 95,
+        "failed": 10,
+        "skipped": 0
+      }
+    },
+    {
+      "attempt": 6,
+      "candidate_commit": "0bf120f038749d93166006035641ce2ec39b8145",
+      "tokens": 13501,
+      "passed_groups": [
+        "upstream-tools",
+        "upstream-grounding",
+        "upstream-worker",
+        "upstream-weights",
+        "schema-performance",
+        "telemetry-policy",
+        "upstream-inference",
+        "core-fetch",
+        "core-packaging",
+        "core-api-contract",
+        "core-native-output"
+      ],
+      "unpassed_groups": [],
+      "regressed_groups": [],
+      "deferred_groups": [],
+      "unit_cases": {
+        "passed": 105,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "timing": {
+    "author_seconds": 4386.9082000255585,
+    "pipeline_elapsed_seconds": 4834.404899597168,
+    "note": "Pipeline timing covers submission through its final recorded event. Host preparation and report publication are excluded. Observed author tokens are not total experiment tokens."
+  }
+}
