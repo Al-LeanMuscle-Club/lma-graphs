@@ -1,0 +1,167 @@
+{
+  "projects": [
+    {
+      "id": "itsdangerous",
+      "language": "Python",
+      "title": "ItsDangerous",
+      "upstream": "pallets/itsdangerous",
+      "scope": "签名与序列化、密钥轮换、时间戳与过期、URL-safe 与压缩载荷。",
+      "notes": {
+        "graphify": "297 项上游测试中 296 项通过；损坏时间戳的异常诊断不一致。确定性输出和安装检查通过。",
+        "codegraph": "上游测试导入私有辅助函数 _lazy_sha1 时失败，三个文件无法收集。公开 API 并非全部失败；确定性输出和安装检查通过。"
+      },
+      "original": 9581,
+      "configuration": 90493,
+      "commit": "672971d66a2ef9f85151e53283113f33d642dabd",
+      "providers": {
+        "graphify": {
+          "source": 5260,
+          "configuration": 67,
+          "candidate_commit": "2fa4588df9bb11dc4804af5dbca04719854d0846",
+          "verified_attempts": 10,
+          "installation": "passed",
+          "seconds": 2.1414879644289613,
+          "rss": 42.0,
+          "edges": 551,
+          "raw_edges": 551,
+          "nodes": 233,
+          "files": "8/8",
+          "calls": "8/8",
+          "wall_minutes": 58.72779833333333,
+          "tokens": 4649854,
+          "usage_status": "partial"
+        },
+        "codegraph": {
+          "source": 5239,
+          "configuration": 64,
+          "candidate_commit": "091e48b69f18038ad050f2c812079db4c660076c",
+          "verified_attempts": 10,
+          "installation": "passed",
+          "seconds": 2.9856237303465605,
+          "rss": 186.53125,
+          "edges": 613,
+          "raw_edges": 674,
+          "nodes": 306,
+          "files": "8/8",
+          "calls": "7/8",
+          "wall_minutes": 43.72983333333333,
+          "tokens": 4181873,
+          "usage_status": "partial"
+        }
+      }
+    },
+    {
+      "id": "p-queue",
+      "language": "TypeScript",
+      "title": "P-Queue",
+      "upstream": "sindresorhus/p-queue",
+      "scope": "并发与生命周期、优先级、自定义队列、取消、超时、固定与滑动窗口限流。",
+      "notes": {
+        "graphify": "原版计时验收 279/280 通过，一项失败，重写未启动。这不是生成代码的回归。",
+        "codegraph": "公共场景输出通过，但上游测试、编译及安装未通过。同提交补充重跑：244 通过、34 失败、2 取消；该计数不替代原生验收。"
+      },
+      "original": 14044,
+      "configuration": 922,
+      "commit": "7f272ab5ff2254c0dc2537b7977e88ede1cd55e8",
+      "providers": {
+        "graphify": {
+          "source": null,
+          "configuration": null,
+          "candidate_commit": null,
+          "verified_attempts": 0,
+          "installation": null,
+          "seconds": 2.6675575375556946,
+          "rss": 67.0,
+          "edges": 377,
+          "raw_edges": 377,
+          "nodes": 201,
+          "files": "5/5",
+          "calls": "8/8",
+          "wall_minutes": 15.363525000000001,
+          "tokens": 1419597,
+          "usage_status": "complete"
+        },
+        "codegraph": {
+          "source": 5722,
+          "configuration": 306,
+          "candidate_commit": "d392e9210b324063bfc4bafc5cd07e16fad9455d",
+          "verified_attempts": 1,
+          "installation": "failed",
+          "seconds": 5.985595182515681,
+          "rss": 265.5,
+          "edges": 879,
+          "raw_edges": 2477,
+          "nodes": 399,
+          "files": "5/5",
+          "calls": "8/8",
+          "wall_minutes": 30.496355,
+          "tokens": 2026998,
+          "usage_status": "partial"
+        }
+      }
+    },
+    {
+      "id": "glob",
+      "language": "Rust",
+      "title": "glob",
+      "upstream": "rust-lang/glob",
+      "scope": "模式解析、大小写与分隔符选项、隐藏文件、递归文件遍历和错误处理。",
+      "notes": {
+        "graphify": "缺少测试依赖 tempfile，原生验收无法编译；安装通过。临时补齐测试依赖后，公共单元测试 15/18 通过，文件系统集成测试失败。",
+        "codegraph": "缺少测试依赖 tempfile，原生验收无法编译；安装通过。补充诊断同样为 15/18，通过率不代表原生验收通过。"
+      },
+      "original": 11778,
+      "configuration": 3723,
+      "commit": "057cef2824f5a96f738e52d7d8ca3e024381bcc6",
+      "providers": {
+        "graphify": {
+          "source": 3792,
+          "configuration": 2559,
+          "candidate_commit": "368e4b5d29e3afc379d958cd66b33379eb8e2e58",
+          "verified_attempts": 7,
+          "installation": "passed",
+          "seconds": 0.7371356291696429,
+          "rss": 43.5,
+          "edges": 178,
+          "raw_edges": 178,
+          "nodes": 107,
+          "files": "1/1",
+          "calls": "8/8",
+          "wall_minutes": 59.50690833333333,
+          "tokens": 4664246,
+          "usage_status": "partial"
+        },
+        "codegraph": {
+          "source": 4006,
+          "configuration": 2571,
+          "candidate_commit": "cee2f3a1f807e95a2749b44d0a5b61913fc7b84a",
+          "verified_attempts": 7,
+          "installation": "passed",
+          "seconds": 2.2616870449855924,
+          "rss": 196.0,
+          "edges": 234,
+          "raw_edges": 324,
+          "nodes": 112,
+          "files": "1/1",
+          "calls": "8/8",
+          "wall_minutes": 43.77514333333333,
+          "tokens": 4862002,
+          "usage_status": "partial"
+        }
+      }
+    }
+  ],
+  "date": "2026-11-06",
+  "harnesses": {
+    "graphify": {
+      "branch": "main",
+      "commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+      "provider_version": "0.9.100"
+    },
+    "codegraph": {
+      "branch": "codex/codegraph-understanding",
+      "commit": "d499ce4521be1afaddec59f7d9bf63b2e29e6a18",
+      "provider_version": "1.6.2"
+    }
+  }
+}

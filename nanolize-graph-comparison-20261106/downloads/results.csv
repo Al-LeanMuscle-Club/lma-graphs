@@ -1,0 +1,7 @@
+repository,language,provider,original_commit,candidate_commit,original_selected_source_tokens,candidate_source_tokens,candidate_configuration_tokens,behavior_acceptance,installation,graph_seconds,peak_rss_mib,raw_edges,unique_typed_edges,observed_workflow_tokens,usage_status
+itsdangerous,Python,graphify,672971d66a2ef9f85151e53283113f33d642dabd,2fa4588df9bb11dc4804af5dbca04719854d0846,9581,5260,67,failed,passed,2.1414879644289613,42.0,551,551,4649854,partial
+itsdangerous,Python,codegraph,672971d66a2ef9f85151e53283113f33d642dabd,091e48b69f18038ad050f2c812079db4c660076c,9581,5239,64,failed,passed,2.9856237303465605,186.53125,674,613,4181873,partial
+p-queue,TypeScript,graphify,7f272ab5ff2254c0dc2537b7977e88ede1cd55e8,,14044,,,not_generated,,2.6675575375556946,67.0,377,377,1419597,complete
+p-queue,TypeScript,codegraph,7f272ab5ff2254c0dc2537b7977e88ede1cd55e8,d392e9210b324063bfc4bafc5cd07e16fad9455d,14044,5722,306,failed,failed,5.985595182515681,265.5,2477,879,2026998,partial
+glob,Rust,graphify,057cef2824f5a96f738e52d7d8ca3e024381bcc6,368e4b5d29e3afc379d958cd66b33379eb8e2e58,11778,3792,2559,failed,passed,0.7371356291696429,43.5,178,178,4664246,partial
+glob,Rust,codegraph,057cef2824f5a96f738e52d7d8ca3e024381bcc6,cee2f3a1f807e95a2749b44d0a5b61913fc7b84a,11778,4006,2571,failed,passed,2.2616870449855924,196.0,324,234,4862002,partial

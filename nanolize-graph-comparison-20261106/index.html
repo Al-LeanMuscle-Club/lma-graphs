@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#6135bb">
+<title>Graphify vs CodeGraph — nanolize 跨语言实测报告</title>
+<meta name="description" content="Python、TypeScript 与 Rust 的真实对照：建图成本、压缩候选、功能验收与实验限制。五份候选均未通过完整功能验收。">
+<meta property="og:title" content="Graphify vs CodeGraph · nanolize 实测报告">
+<meta property="og:description" content="3 种语言 · 6 组主对照 · 5 份候选。理解数字，也理解证据的边界。">
+<meta property="og:type" content="article">
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://al-leanmuscle-club.github.io/lma-graphs/nanolize-graph-comparison-20261106/">
+<script id="report-data" type="application/json">{"projects": [{"id": "itsdangerous", "language": "Python", "title": "ItsDangerous", "upstream": "pallets/itsdangerous", "scope": "签名与序列化、密钥轮换、时间戳与过期、URL-safe 与压缩载荷。", "notes": {"graphify": "297 项上游测试中 296 项通过；损坏时间戳的异常诊断不一致。确定性输出和安装检查通过。", "codegraph": "上游测试导入私有辅助函数 _lazy_sha1 时失败，三个文件无法收集。公开 API 并非全部失败；确定性输出和安装检查通过。"}, "original": 9581, "configuration": 90493, "commit": "672971d66a2ef9f85151e53283113f33d642dabd", "providers": {"graphify": {"source": 5260, "configuration": 67, "candidate_commit": "2fa4588df9bb11dc4804af5dbca04719854d0846", "verified_attempts": 10, "installation": "passed", "seconds": 2.1414879644289613, "rss": 42.0, "edges": 551, "raw_edges": 551, "nodes": 233, "files": "8/8", "calls": "8/8", "wall_minutes": 58.72779833333333, "tokens": 4649854, "usage_status": "partial"}, "codegraph": {"source": 5239, "configuration": 64, "candidate_commit": "091e48b69f18038ad050f2c812079db4c660076c", "verified_attempts": 10, "installation": "passed", "seconds": 2.9856237303465605, "rss": 186.53125, "edges": 613, "raw_edges": 674, "nodes": 306, "files": "8/8", "calls": "7/8", "wall_minutes": 43.72983333333333, "tokens": 4181873, "usage_status": "partial"}}}, {"id": "p-queue", "language": "TypeScript", "title": "P-Queue", "upstream": "sindresorhus/p-queue", "scope": "并发与生命周期、优先级、自定义队列、取消、超时、固定与滑动窗口限流。", "notes": {"graphify": "原版计时验收 279/280 通过，一项失败，重写未启动。这不是生成代码的回归。", "codegraph": "公共场景输出通过，但上游测试、编译及安装未通过。同提交补充重跑：244 通过、34 失败、2 取消；该计数不替代原生验收。"}, "original": 14044, "configuration": 922, "commit": "7f272ab5ff2254c0dc2537b7977e88ede1cd55e8", "providers": {"graphify": {"source": null, "configuration": null, "candidate_commit": null, "verified_attempts": 0, "installation": null, "seconds": 2.6675575375556946, "rss": 67.0, "edges": 377, "raw_edges": 377, "nodes": 201, "files": "5/5", "calls": "8/8", "wall_minutes": 15.363525000000001, "tokens": 1419597, "usage_status": "complete"}, "codegraph": {"source": 5722, "configuration": 306, "candidate_commit": "d392e9210b324063bfc4bafc5cd07e16fad9455d", "verified_attempts": 1, "installation": "failed", "seconds": 5.985595182515681, "rss": 265.5, "edges": 879, "raw_edges": 2477, "nodes": 399, "files": "5/5", "calls": "8/8", "wall_minutes": 30.496355, "tokens": 2026998, "usage_status": "partial"}}}, {"id": "glob", "language": "Rust", "title": "glob", "upstream": "rust-lang/glob", "scope": "模式解析、大小写与分隔符选项、隐藏文件、递归文件遍历和错误处理。", "notes": {"graphify": "缺少测试依赖 tempfile，原生验收无法编译；安装通过。临时补齐测试依赖后，公共单元测试 15/18 通过，文件系统集成测试失败。", "codegraph": "缺少测试依赖 tempfile，原生验收无法编译；安装通过。补充诊断同样为 15/18，通过率不代表原生验收通过。"}, "original": 11778, "configuration": 3723, "commit": "057cef2824f5a96f738e52d7d8ca3e024381bcc6", "providers": {"graphify": {"source": 3792, "configuration": 2559, "candidate_commit": "368e4b5d29e3afc379d958cd66b33379eb8e2e58", "verified_attempts": 7, "installation": "passed", "seconds": 0.7371356291696429, "rss": 43.5, "edges": 178, "raw_edges": 178, "nodes": 107, "files": "1/1", "calls": "8/8", "wall_minutes": 59.50690833333333, "tokens": 4664246, "usage_status": "partial"}, "codegraph": {"source": 4006, "configuration": 2571, "candidate_commit": "cee2f3a1f807e95a2749b44d0a5b61913fc7b84a", "verified_attempts": 7, "installation": "passed", "seconds": 2.2616870449855924, "rss": 196.0, "edges": 234, "raw_edges": 324, "nodes": 112, "files": "1/1", "calls": "8/8", "wall_minutes": 43.77514333333333, "tokens": 4862002, "usage_status": "partial"}}}], "date": "2026-11-06", "harnesses": {"graphify": {"branch": "main", "commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78", "provider_version": "0.9.100"}, "codegraph": {"branch": "codex/codegraph-understanding", "commit": "d499ce4521be1afaddec59f7d9bf63b2e29e6a18", "provider_version": "1.6.2"}}}</script><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到报告内容</a>
+<header class="topbar"><a class="brand" href="#top"><img src="icon.svg" alt="" width="30" height="30">nanolize <span>/ research</span></a><nav aria-label="主导航"><a href="#comparison">项目对照</a><a href="#method">实验方法</a><a href="#paper" data-open-report>完整报告 <span aria-hidden="true">↗</span></a></nav><a class="top-download" href="#downloads">下载 <span aria-hidden="true">↓</span></a></header>
+<main id="main">
+<section class="hero" id="top">
+<div class="eyebrow"><span class="dot"></span>ENGINEERING REPORT <span class="date">06 NOV 2026</span></div>
+<h1>Graphify <span class="versus">vs</span><br><em>CodeGraph.</em></h1>
+<div class="hero-bottom"><div><p class="hero-title">哪一种结构分析工具，更适合 nanolize？</p><p class="hero-copy">从真实仓库走到压缩候选，比较建图质量、源码体积与功能验收。<br class="desktop">保留核心与扩展工作流，并如实记录未通过的部分。</p></div><a class="primary" href="#comparison">探索对照结果 <span aria-hidden="true">↗</span></a></div>
+<div class="stat-strip" aria-label="实验概览"><div><strong>03</strong><span>编程语言</span></div><div><strong>06</strong><span>主对照运行</span></div><div><strong>05</strong><span>已验证候选</span></div><div class="critical-stat"><strong>00</strong><span>通过完整功能验收</span></div></div>
+</section>
+<div class="report-layout">
+<aside class="side-nav" aria-label="报告目录"><p>IN THIS REPORT</p><a href="#finding"><span>01</span>当前判断</a><a href="#comparison"><span>02</span>项目对照</a><a href="#graphs"><span>03</span>建图表现</a><a href="#method"><span>04</span>方法与限制</a><a href="#next"><span>05</span>下一步</a><a href="#paper" data-open-report><span>06</span>完整报告</a></aside>
+<div class="report-body">
+<section class="section finding" id="finding"><div class="section-label">01 / THE FINDING</div><h2>先保留 Graphify 为默认，<br><span>CodeGraph 作为可选后端。</span></h2><p class="lead">本轮没有证据支持全面替换。Graphify 在三个小仓库的单次建图测量中更快、内存更低；下游验收受到共同流程和环境问题的显著影响。</p><div class="finding-note"><span class="note-icon" aria-hidden="true">!</span><p><strong>缩得更小，不等于保留功能成功。</strong><br>五份候选均未通过全部冻结功能验收。部分运行被人工提前停止；这是一次探索性对照，不是统计显著的工具排名。</p></div></section>
+
+<section class="section" id="comparison"><div class="section-label">02 / REPOSITORY COMPARISON</div><div class="heading-row"><h2>看体积，也看验收。</h2><span class="subtle">同版本 · 同功能选择 · 同冻结检查</span></div>
+<div class="project-tabs" role="tablist" aria-label="选择项目"><button id="tab-itsdangerous" role="tab" aria-selected="true" aria-controls="project-panel" data-project="itsdangerous">Python <span>ItsDangerous</span></button><button id="tab-p-queue" role="tab" aria-selected="false" tabindex="-1" aria-controls="project-panel" data-project="p-queue">TypeScript <span>P-Queue</span></button><button id="tab-glob" role="tab" aria-selected="false" tabindex="-1" aria-controls="project-panel" data-project="glob">Rust <span>glob</span></button></div>
+<div class="project-panel" id="project-panel" role="tabpanel" aria-labelledby="tab-itsdangerous">
+<div class="project-header"><div><a id="project-link" target="_blank" rel="noopener noreferrer" href="https://github.com/pallets/itsdangerous"><h3 id="project-name">ItsDangerous <span aria-hidden="true">↗</span></h3></a><p id="project-scope">签名与序列化、密钥轮换、时间戳与过期、URL-safe 与压缩载荷。</p></div><span class="commit" id="project-commit">672971d6</span></div>
+<div class="chart-header"><h4>候选代码体积</h4><label for="size-metric">计量口径<select id="size-metric"><option value="source">源码 tokens</option><option value="total">源码 + 配置 tokens</option><option value="production">生产源码（Rust 去除内嵌测试）</option></select></label></div>
+<div id="size-chart" class="size-chart" aria-live="polite"></div><p id="size-note" class="chart-note"></p>
+<div id="outcomes" class="outcomes"></div><div class="project-foot"><span>计量：cl100k_base · tiktoken 0.12.0</span><span>失败候选，仅用于比较与排查</span></div>
+</div><noscript><p>交互图表需要 JavaScript。下方完整报告包含所有数据与结论。</p></noscript></section>
+
+<section class="section" id="graphs"><div class="section-label">03 / STATIC GRAPH ANALYSIS</div><div class="heading-row"><h2>建图只用了几秒。</h2><div class="segmented" role="group" aria-label="图表指标"><button data-metric="seconds" aria-pressed="true">耗时</button><button data-metric="rss" aria-pressed="false">内存</button><button data-metric="edges" aria-pressed="false">去重边数</button></div></div><div class="graph-box"><div class="legend"><span class="g">Graphify</span><span class="c">CodeGraph</span><span id="metric-unit">秒 / 首次建图与导出</span></div><div id="graph-chart" class="graph-chart" aria-live="polite"></div><p id="graph-note" class="chart-note">共享主机的单次观测；CodeGraph 的 init 已含索引，未重复计入额外重建。</p></div>
+<div class="graph-observations"><div><span class="observation-number">14 / 14</span><h4>选中源码文件均有图节点</h4><p>两种工具都是 8 + 5 + 1 个文件。覆盖文件不代表正确理解全部符号与行为。</p></div><div><span class="observation-number">2</span><h4>已定位的 CodeGraph 误连</h4><p>Python 的继承方法调用、Rust 的标准库迭代器调用。样本小且非随机，不能推算全图准确率。</p></div></div>
+<details class="detail"><summary>查看调用关系抽查与边数口径 <span aria-hidden="true">+</span></summary><div class="detail-content"><p>每种语言最初核对 8 条调用：Graphify 为 8/8、8/8、8/8，CodeGraph 为 7/8、8/8、8/8。后来补查 8 条 TypeScript 私有方法调用，两者均为 8/8。</p><p>误连实例：<code>TimestampSigner.sign → SigningAlgorithm.get_signature</code> 应指向继承的 <code>Signer.get_signature</code>；<code>glob_with</code> 中标准库 <code>Components.next</code> 被连到了 <code>Paths.next</code>。</p><p>CodeGraph 的 P-Queue 原始边数为 2,477，按起点、终点、关系类型去重后为 879；Graphify 为 377。节点与边的定义不同，更多边不等于更高准确率。经当前功能映射后，两种工具的功能关系数相同：19、24、12。</p></div></details></section>
+
+<section class="section" id="method"><div class="section-label">04 / METHOD & LIMITATIONS</div><h2>对照条件固定，<br><span>缺口同样公开。</span></h2><div class="method-flow"><div><span>01</span><strong>固定源码与范围</strong><p>三个仓库固定提交；保留全部对外运行能力及可选工作流。</p></div><div><span>02</span><strong>冻结原版验收</strong><p>相同语义要求与检查。原版测试与私有评估保持冻结。</p></div><div><span>03</span><strong>独立重写与修复</strong><p>从结构证据和语义包生成候选，记录体积、行为与安装结果。</p></div></div>
+<div class="version-line"><span><b>Graphify 0.9.100</b>main @ 8c0745a1</span><span><b>CodeGraph 1.6.2</b>codex/codegraph-understanding @ d499ce45</span></div>
+<details class="detail"><summary>默认配置与实际提前停止 <span aria-hidden="true">+</span></summary><div class="detail-content"><p>默认目标为完整原版源码及配置 tokens 的 50%，仅作建议。作者单次上限 60 分钟，整个任务上限 120 分钟；失败修复次数默认不限。任务评估开启，modify 类型、3 次重复、并发 2、单次 15 分钟，使用既有 gpt-6-astra / xhigh 配置。</p><p>Python/Rust 连续至少五次已验证尝试重复同错后人工停止，未跑满两小时。TypeScript 的 Graphify 原版基线失败，CodeGraph 首份候选完成验收后也停止单边重试。停止规则是事后加入的，不能推断完整预算下必然失败。</p></div></details>
+<details class="detail"><summary>语义交接、环境与任务评估缺口 <span aria-hidden="true">+</span></summary><div class="detail-content"><p>共同语义包覆盖主要工作流，但未列全私有测试兼容符号、测试依赖与边界诊断规则。修复反馈缺少可定位错误的安全摘要；这些因素限制了两组结果。</p><p>P-Queue 原版计时测试在 Node 22 和 Node 24 均出现偶发失败。Node 24 指宿主验收环境；作者登录 shell 又解析到 Node 22，且安装依赖出现 DNS 失败。</p><p>Python/Rust 的原版解题者被要求调用当时不可见的 accept.py。P-Queue 的出题单次就超过 100 万任务 tokens 预算。没有形成有效的原版—候选—隐藏任务完整对照，不能证明压缩后的任务 tokens 收益。</p></div></details>
+<details class="detail"><summary>tokens 成本应当如何解读 <span aria-hidden="true">+</span></summary><div class="detail-content"><p>所有试验（含准备与环境诊断）的已观察模型用量至少为 <strong>25,002,620 tokens</strong>，其中已记录缓存输入为 <strong>22,485,376</strong>。取消或超时调用缺少的 usage 保留为未知，不当作零，也未把缓存与非缓存按相同价格折算费用。</p><p>任务预算在调用之间检查，且不包括作者的重写和修复。P-Queue 出题分别为 Graphify 1,419,597、CodeGraph 1,195,633 tokens，随后任务预算耗尽。Python/Rust 复用的共同出题成本需归入两侧的对照口径，实际实验支出只计一次。</p><p>原版源码 tokens 包含注释；Rust 还包含内嵌测试。Python 的巨大锁文件让总 tokens 降幅远高于源码降幅。上方可切换口径查看。</p></div></details>
+</section>
+
+<section class="section next" id="next"><div class="section-label">05 / WHAT TO FIX NEXT</div><h2>先补齐流程，再重复比较。</h2><ol><li><span>01</span><div><h4>把原版验收放到出题之前</h4><p>原版检查失败时尽早停止，避免消耗昂贵的出题调用。</p></div></li><li><span>02</span><div><h4>补齐语义包和可定位的修复反馈</h4><p>明确测试依赖与运行环境，提供不泄露私有答案的错误摘要，并加入无进展停止条件。</p></div></li><li><span>03</span><div><h4>统一任务交付约定，再做重复实验</h4><p>区分作者可访问的自测与评审侧私有检查；得到完整验收和重复样本后，再判断工具适配性。</p></div></li></ol></section>
+
+<section class="section" id="paper"><div class="section-label">06 / FULL REPORT</div><h2>完整记录，供继续核对。</h2><details id="full-report" class="full-report"><summary><span>阅读完整公开版报告<small>范围、版本、建图数据、候选结果、模型成本与解释边界</small></span><span class="expand-icon" aria-hidden="true">+</span></summary><article class="paper"><h1 id="graphify-与-codegraphnanolize-跨语言对照实验">Graphify 与 CodeGraph：nanolize 跨语言对照实验</h1>
+
+<p>实验日期：2026 年 11 月 6 日。状态：六组主对照已结束，结果含验收缺口。</p>
+
+<h2 id="当前判断">当前判断</h2>
+
+<p>本轮尚无证据支持用 CodeGraph 全面替换 Graphify。静态建图方面，两者覆盖了选中的源文件；Graphify 在这三个小仓库的单次测量中更快、内存更低，人工检查还发现 CodeGraph 的两个错误调用目标。端到端方面，默认任务交接、修复反馈和计时测试的不稳定影响更大；失败候选的体积差异不足以证明图工具优劣。建议暂时保留 Graphify 为默认，把 CodeGraph 作为可选后端，先修复共同流程后再重复比较。这是当前证据下的工程判断，不是统计显著的胜负。</p>
+
+<p>六组主对照共生成五份完成验收的候选，没有一份通过全部冻结功能验收；其中四份安装通过，P-Queue CodeGraph 安装失败。P-Queue Graphify 在原版基线阶段受阻，没有压缩候选。不能将此报告描述为已完成六份可用压缩版本的公平性能排名。</p>
+
+<h2 id="实验范围">实验范围</h2>
+
+<p>比较固定的 main（8c0745a1，Graphify 0.9.100）与 codex/codegraph-understanding（d499ce45，CodeGraph 1.6.2）。两者重写、修复、任务评估逻辑一致；执行与评估文件仅增加分析产物的排除规则。所有实验均使用隔离分支，不修改原始仓库。</p>
+
+<div class="table-scroll"><table>
+<thead>
+<tr>
+  <th>语言</th>
+  <th>仓库</th>
+  <th>保留功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Python</td>
+  <td><a href="https://github.com/pallets/itsdangerous/tree/672971d66a2ef9f85151e53283113f33d642dabd">pallets/itsdangerous @ 672971d6</a></td>
+  <td>字节签名、序列化、密钥轮换、时间戳与过期、URL-safe 与压缩载荷</td>
+</tr>
+<tr>
+  <td>TypeScript</td>
+  <td><a href="https://github.com/sindresorhus/p-queue/tree/7f272ab5ff2254c0dc2537b7977e88ede1cd55e8">sindresorhus/p-queue @ 7f272ab5</a></td>
+  <td>并发与生命周期、优先级、自定义队列、取消、超时、固定与滑动窗口限流</td>
+</tr>
+<tr>
+  <td>Rust</td>
+  <td><a href="https://github.com/rust-lang/glob/tree/057cef2824f5a96f738e52d7d8ca3e024381bcc6">rust-lang/glob @ 057cef28</a></td>
+  <td>模式解析、大小写/分隔符/隐藏文件选项、递归文件遍历、错误恢复</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>选择这三个规模可控、带成熟上游测试的项目，是为了覆盖 Python 继承与序列化、TypeScript 异步调度与类型、Rust 迭代器与文件系统。保留全部对外运行能力，包含多项可选工作流；只排除开发辅助脚本和单独的 benchmark/type-demo 文件。没有为达成体积目标删除失败功能。此样本不代表大型框架、C/C++ 或多语言单体仓库。</p>
+
+<p>每对使用相同源码提交、功能选择、公共语义要求和冻结验收。默认目标为源码及配置 tokens 的 50%，仅作建议；功能失败默认继续修复，单次作者 60 分钟、整项任务 120 分钟。隐藏任务评估保持开启：modify 类型、3 次重复、并发 2、单次 15 分钟、最多 3 轮任务优化。使用现有配置中的 gpt-6-astra / xhigh，未替换模型。</p>
+
+<p>Python/Rust 由第一组默认出题 Agent 生成任务；任务冻结后、候选代码产生前，将任务复制给另一组，仅转换不透明功能 ID。出题是共同准备成本，不能当作第二组节省：复用组的任务 token 上限与整项时限，分别扣除已完成的共同出题 tokens 与耗时，维持相同的百万 tokens / 120 分钟有效总预算。其他默认参数不变。两个过早启动且未扣除准备成本的测量已取消，记录作为额外实验准备开销保留。</p>
+
+<p>例外：P-Queue 在初始 Node 22 试验中，CodeGraph 默认出题触发 900 秒超时，没有可用任务集，也没有完成的 usage 事件；Graphify 组因此独立走默认出题流程。恢复到 Node 24 后，两组也分别运行默认出题。P-Queue 的跨工具任务成本不作严格同题配对比较，功能/源码版本/验证条件仍固定。不能将超时调用的未知 tokens 当作零。</p>
+
+<p>P-Queue 环境恢复：Node 22.6 下原版的计时断言和 advanced 测试文件多次不稳定，串行执行也未稳定解决；main 初始组在没有生成候选前停止。Node 24.22.2 下原版连续两次通过全部 280 项测试后，两种工具统一重启了 Node 24 对照。源码、验收命令与断言均未改变；Node 22 试验完整保留为环境诊断，不归因于图工具。Node 24 属于当前受支持的 LTS 系列，见 <a href="https://nodejs.org/en/about/previous-releases">Node.js 官方发布记录</a>。</p>
+
+<p>恢复后的 Graphify 组仍在原版验收出现 279/280 通过：长时间空闲后的限流间隔测为 77 ms，未满足上游断言。它没有进入重写，不能算作 Graphify 生成代码回归。CodeGraph 组的原版验收通过。两种 Node 版本均出现偶发计时失败，因此不能把更换 Node 视为已证明解决环境问题；已有失败基线和断言保持冻结。</p>
+
+<p>Node 24 指宿主验收运行时。随后在 CodeGraph 作者日志中发现，作者使用的登录 shell 又解析到了系统 Node 22.6，npm 安装还发生 EAI_AGAIN，个别命令遇到嵌套沙箱挂载错误。冻结知识包仍提示 Node22，运行中没有修改它。这是运行环境一致性的限制，不能描述成所有 Agent 子命令都固定在 Node24，也不能将其归因于 CodeGraph 图质量。</p>
+
+<p>运行中追加的停止规则：Python/Rust 四组在连续至少五次已验证尝试重复相同错误后，由宿主人工停止，未跑满默认两小时。这是事后加入的节约成本措施，两组实际尝试数曾不同；不修改默认程序、提示词或验收来制造通过。停止时的未完成调用可能缺少 usage。因运行被提前截断，不能推断完整预算下必然失败，也不能比较到达成功所需的时间。</p>
+
+<p>TypeScript 另在 CodeGraph 第一份候选完成验收后停止继续修复：Graphify 对照已被原版计时基线阻塞，更多单边重试无法补齐这项可比性缺口。这也是事后人工停止，不是默认重试次数，更不是完整预算失败结论。原始运行、完整首轮验收和中断状态均保留。</p>
+
+<h2 id="原版验证与计量">原版验证与计量</h2>
+
+<p>原版 ItsDangerous 的 297 项测试通过；P-Queue 的 280 项上游 Node 测试（含生成声明的严格类型检查）和 TypeScript 编译通过；glob 的 18 项原版单元测试、文件系统集成测试及可运行文档测试通过。三个项目均通过独立安装验证。验收另外冻结了确定性输出检查。</p>
+
+<p>glob 原本将单元测试写在实现文件内。为防止重写删除测试后虚增通过率，另将原版公共 API 测试冻结在验证命令中，在候选代码之外执行；仅将导入改为外部 crate，并移除一个检查私有优化字段 is_recursive 的断言，原有递归匹配行为断言全部保留。</p>
+
+<div class="table-scroll"><table>
+<thead>
+<tr>
+  <th>仓库</th>
+  <th style="text-align:right;">选中实现 tokens</th>
+  <th style="text-align:right;">配置 tokens</th>
+  <th style="text-align:right;">选中合计 tokens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>itsdangerous</td>
+  <td style="text-align:right;">9,581</td>
+  <td style="text-align:right;">90,493</td>
+  <td style="text-align:right;">100,074</td>
+</tr>
+<tr>
+  <td>p-queue</td>
+  <td style="text-align:right;">14,044</td>
+  <td style="text-align:right;">922</td>
+  <td style="text-align:right;">14,966</td>
+</tr>
+<tr>
+  <td>glob</td>
+  <td style="text-align:right;">11,778</td>
+  <td style="text-align:right;">3,723</td>
+  <td style="text-align:right;">15,501</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>默认口径包含依赖锁文件和源文件内测试。ItsDangerous 的配置/锁文件 tokens 占比很高，不能将其删除带来的总体下降描述为实现算法的同等简化。最终同时看实现与配置的变化。</p>
+
+<p>程序的 50% 建议目标相对于完整原版计量：ItsDangerous 100,673、P-Queue 15,757、glob 15,501 tokens。上表是功能筛选后的计量；下文实现缩减率使用选中实现 tokens 作分母，避免把排除开发辅助脚本算作实现改写的收益。</p>
+
+<p>源码口径还包含注释与文档字符串。glob 原版的 11,778 个源码 tokens 中，去除内嵌测试模块和仅测试使用的 doctest 调用后为 8,248；这是补充拆分，未改变默认目标或外部冻结测试。以这 8,248 个 tokens 为参照，可以避免将删除内嵌测试误当作生产实现的简化。</p>
+
+<h2 id="结构分析实测">结构分析实测</h2>
+
+<div class="table-scroll"><table>
+<thead>
+<tr>
+  <th>仓库</th>
+  <th>工具</th>
+  <th style="text-align:right;">首次图生成及导出秒数</th>
+  <th style="text-align:right;">峰值 RSS MiB</th>
+  <th style="text-align:right;">节点 / 边</th>
+  <th style="text-align:right;">选中源码文件覆盖</th>
+  <th style="text-align:right;">抽查调用命中</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>itsdangerous</td>
+  <td>graphify</td>
+  <td style="text-align:right;">2.14</td>
+  <td style="text-align:right;">42.0</td>
+  <td style="text-align:right;">233 / 551</td>
+  <td style="text-align:right;">8/8</td>
+  <td style="text-align:right;">8/8</td>
+</tr>
+<tr>
+  <td>itsdangerous</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">2.99</td>
+  <td style="text-align:right;">186.5</td>
+  <td style="text-align:right;">306 / 674</td>
+  <td style="text-align:right;">8/8</td>
+  <td style="text-align:right;">7/8</td>
+</tr>
+<tr>
+  <td>p-queue</td>
+  <td>graphify</td>
+  <td style="text-align:right;">2.67</td>
+  <td style="text-align:right;">67.0</td>
+  <td style="text-align:right;">201 / 377</td>
+  <td style="text-align:right;">5/5</td>
+  <td style="text-align:right;">8/8</td>
+</tr>
+<tr>
+  <td>p-queue</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">5.99</td>
+  <td style="text-align:right;">265.5</td>
+  <td style="text-align:right;">399 / 2477</td>
+  <td style="text-align:right;">5/5</td>
+  <td style="text-align:right;">8/8</td>
+</tr>
+<tr>
+  <td>glob</td>
+  <td>graphify</td>
+  <td style="text-align:right;">0.74</td>
+  <td style="text-align:right;">43.5</td>
+  <td style="text-align:right;">107 / 178</td>
+  <td style="text-align:right;">1/1</td>
+  <td style="text-align:right;">8/8</td>
+</tr>
+<tr>
+  <td>glob</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">2.26</td>
+  <td style="text-align:right;">196.0</td>
+  <td style="text-align:right;">112 / 324</td>
+  <td style="text-align:right;">1/1</td>
+  <td style="text-align:right;">8/8</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>这些是共享主机上的单次观测，不是隔离环境的性能基准。CodeGraph 的 init 已执行索引，额外强制重建的时间单独保存在证据中，不重复计入首次生成。Graphify 计时包含解释器启动、AST 提取、聚类与导出。两种工具的节点/边定义不同，数量不能直接比较准确率；上述文件覆盖表示图中存在文件相关节点，不代表全部符号/行为被正确理解。</p>
+
+<p>人工核对了每种语言 8 条调用关系。该小样本不是随机抽样，不能估算全图准确率。另外发现两个 CodeGraph 误连：TimestampSigner.sign 的继承方法调用被连到 SigningAlgorithm.get<em>signature；glob</em>with 中标准库 Components.next 被连到项目自身 Paths.next。Graphify 在这两个例子中没有产生上述错误目标。两种图仍须进行人工语义审核。</p>
+
+<p>另补查 TypeScript 调度、限流和事件等待中的 8 条私有方法调用，两者均为 8/8；这是后加的非随机样本，单列于 typescript-private-method-audit.json。CodeGraph 的原始边数包含同一函数对的重复调用位置；P-Queue 的 2,477 条边按起点/终点/类型去重后为 879 条（Graphify 为 377），不能直接解释为理解能力提升 6.6 倍。Python 去重后为 613 对 551，Rust 为 234 对 178。</p>
+
+<p>CodeGraph 在 metadata 中提供数值 confidence 和 resolvedBy。当前适配层保守地把名称匹配等关系归为 ambiguous，较高分的其他解析归为 inferred，仅词法包含关系归为 extracted；没有将分数当作行为证明。Graphify 导出使用 EXTRACTED/INFERRED 等分类，含义与 CodeGraph 的数值不同。</p>
+
+<p>经过当前功能映射后，两种工具各项目的功能关系条数相同：ItsDangerous 19、P-Queue 24、glob 12；差异主要保留在结构证据中。这限制了从单次下游重写差异推断图工具因果效果的能力。</p>
+
+<p><img src="assets/graph-costs.png" alt="静态建图时间与内存" /></p>
+
+<h2 id="压缩后分支">压缩后分支</h2>
+
+<p>最近一次完成验收的候选（不包含中断时的输出）：</p>
+
+<div class="table-scroll"><table>
+<thead>
+<tr>
+  <th>仓库</th>
+  <th>工具</th>
+  <th style="text-align:right;">尝试</th>
+  <th>功能状态</th>
+  <th>安装</th>
+  <th style="text-align:right;">实现 tokens</th>
+  <th style="text-align:right;">配置 tokens</th>
+  <th style="text-align:right;">实现 tokens 下降</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>itsdangerous</td>
+  <td>graphify</td>
+  <td style="text-align:right;">10</td>
+  <td>regressed</td>
+  <td>passed</td>
+  <td style="text-align:right;">5260</td>
+  <td style="text-align:right;">67</td>
+  <td style="text-align:right;">45.1%</td>
+</tr>
+<tr>
+  <td>itsdangerous</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">10</td>
+  <td>regressed</td>
+  <td>passed</td>
+  <td style="text-align:right;">5239</td>
+  <td style="text-align:right;">64</td>
+  <td style="text-align:right;">45.3%</td>
+</tr>
+<tr>
+  <td>p-queue</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">1</td>
+  <td>regressed</td>
+  <td>failed</td>
+  <td style="text-align:right;">5722</td>
+  <td style="text-align:right;">306</td>
+  <td style="text-align:right;">59.3%</td>
+</tr>
+<tr>
+  <td>glob</td>
+  <td>graphify</td>
+  <td style="text-align:right;">7</td>
+  <td>regressed</td>
+  <td>passed</td>
+  <td style="text-align:right;">3792</td>
+  <td style="text-align:right;">2559</td>
+  <td style="text-align:right;">67.8%</td>
+</tr>
+<tr>
+  <td>glob</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">7</td>
+  <td>regressed</td>
+  <td>passed</td>
+  <td style="text-align:right;">4006</td>
+  <td style="text-align:right;">2571</td>
+  <td style="text-align:right;">66.0%</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>失败候选的缩减率只描述生成代码体积，不代表功能保留成功，也不能作为选型胜出的依据。所有未完成、失败或缺失证据均保持原状态；未将未运行的验收记为通过。生成代码的功能、安装、tokens 和任务成本结果须结合各组最终证据判断。</p>
+
+<p>Python 最后已验证候选：Graphify 为 296/297 测试通过，剩余问题涉及损坏时间戳的异常诊断；CodeGraph 缺少上游测试导入的私有函数 <em>lazy</em>sha1，导致三个测试文件收集失败。该收集阻塞不代表所有公开 API 都失败，也暴露出上游测试与私有实现的耦合。本轮保持冻结测试不变，不以补一个私有符号来事后改变验收结果。两组确定性签名/序列化输出检查及安装均通过。</p>
+
+<p>Rust 两组均因缺少上游测试依赖 tempfile 而无法执行原生冻结测试，但安装检查通过。在不改动候选分支的临时验证副本中补齐原版测试依赖，并加 --no-fail-fast 执行全部两个测试目标后，两者均为公共单元测试 15/18 通过、文件系统集成测试失败：包括错误位置索引不符、递归匹配多返回根目录。这个补充诊断保持公共断言不变，但不替代原生验收；对应提交与环境改动另有记录。</p>
+
+<p>TypeScript CodeGraph 的最后候选为 5,722 个源码 tokens，较选中原版 14,044 下降 59.3%；公共场景输出检查通过，但上游测试仍出现调度/取消行为与错误诊断不兼容，TypeScript 编译因 node:async_hooks 的 Node 类型配置失败，安装也失败。宿主验证环境已经提供 @types/node，不能把这个类型配置失败简单归为依赖未安装。</p>
+
+<p>原生 TypeScript 验证驱动只保存末尾 18,000 字符，遗漏了完整计数。为补齐诊断，对相同提交、相同 Node24 环境和未改变的断言重跑，仅扩大日志捕获，得到 280 项中的 244 通过、34 失败、2 取消。该计数属于补充重跑；原生首轮验收结果和原版失败基线均未覆盖。</p>
+
+<p><img src="assets/candidate-source-tokens.png" alt="候选源码 tokens" /></p>
+
+<p>候选提交保留在实验记录中。本站公开汇总结果、固定的原版版本及方法说明；候选体积不表示功能验收成功。</p>
+
+<h2 id="模型调用成本与时间">模型调用成本与时间</h2>
+
+<div class="table-scroll"><table>
+<thead>
+<tr>
+  <th>项目</th>
+  <th>工具</th>
+  <th style="text-align:right;">实际墙钟分钟</th>
+  <th style="text-align:right;">作者调用已返回 / 已启动</th>
+  <th style="text-align:right;">作者 tokens</th>
+  <th style="text-align:right;">出题/解题 tokens</th>
+  <th>任务基线</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>itsdangerous</td>
+  <td>graphify</td>
+  <td style="text-align:right;">58.7</td>
+  <td style="text-align:right;">10 / 11</td>
+  <td style="text-align:right;">≥ 3,774,103</td>
+  <td style="text-align:right;">875,751</td>
+  <td>unverified</td>
+</tr>
+<tr>
+  <td>itsdangerous</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">43.7</td>
+  <td style="text-align:right;">10 / 11</td>
+  <td style="text-align:right;">≥ 3,834,659</td>
+  <td style="text-align:right;">347,214</td>
+  <td>unverified</td>
+</tr>
+<tr>
+  <td>p-queue</td>
+  <td>graphify</td>
+  <td style="text-align:right;">15.4</td>
+  <td style="text-align:right;">0 / 0</td>
+  <td style="text-align:right;">未调用</td>
+  <td style="text-align:right;">1,419,597</td>
+  <td>budget_exhausted</td>
+</tr>
+<tr>
+  <td>p-queue</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">30.5</td>
+  <td style="text-align:right;">1 / 2</td>
+  <td style="text-align:right;">≥ 831,365</td>
+  <td style="text-align:right;">1,195,633</td>
+  <td>budget_exhausted</td>
+</tr>
+<tr>
+  <td>glob</td>
+  <td>graphify</td>
+  <td style="text-align:right;">59.5</td>
+  <td style="text-align:right;">7 / 8</td>
+  <td style="text-align:right;">≥ 3,132,582</td>
+  <td style="text-align:right;">1,531,664</td>
+  <td>unverified</td>
+</tr>
+<tr>
+  <td>glob</td>
+  <td>codegraph</td>
+  <td style="text-align:right;">43.8</td>
+  <td style="text-align:right;">7 / 8</td>
+  <td style="text-align:right;">≥ 4,209,002</td>
+  <td style="text-align:right;">653,000</td>
+  <td>unverified</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>“≥”表示有未完成或缺失 usage 的调用，只能给出已观察下界。未进入作者阶段的组没有作者消耗，表中未知不表示其发生了作者调用。上表任务成本是各组实际发生的调用；Python CodeGraph 还应归入共同出题 442,826 tokens / 764.7 秒，Rust CodeGraph 应归入 730,730 tokens / 829.6 秒。共同出题在整个实验的实际支出中仅计算一次，不能当作 CodeGraph 的节省。墙钟时间包含失败/停止，不是成功完成流程所需时间。</p>
+
+<p>默认 100 万 tokens 约束用于任务评估，不包含作者的重写和修复。预算在模型调用之间检查，单次调用可以超限：P-Queue 的 Node 24 出题 Graphify 为 1,419,597 tokens / 844.2 秒，CodeGraph 为 1,195,633 tokens / 868.5 秒；两者都在出题后耗尽任务预算，没有进入原版/压缩版的任务成本对照。</p>
+
+<p>所有实际试验（含取消的准备运行和 Node 22 环境诊断）共记录模型 tokens：≥ 25,002,620；其中准备/环境诊断部分为 ≥ 3,198,050。这些数值不包含宿主协调、人工语义整理、下载/安装过程。逐次机器 usage 见 实验逐次调用记录（本地留存），未知值保持为空。</p>
+
+<p>上述总量包含重复的缓存输入。已记录缓存输入为 22,485,376 tokens；它是输入总量的子集，不是额外相加的消耗。这里没有将缓存与非缓存 tokens 按相同价格折算成费用。</p>
+
+<h2 id="默认评估流程中观察到的问题">默认评估流程中观察到的问题</h2>
+
+<p>ItsDangerous 首次出题用时 764.7 秒，442,826 tokens，其中缓存输入 373,760；glob 首次出题用时 829.6 秒，730,730 tokens，其中缓存输入 632,448。P-Queue 初始 Node22 CodeGraph 组出题在 900 秒超时，usage 缺失。以上是自动调用的观测值，宿主的公共语义整理未计入。</p>
+
+<p>Python 及 Rust 已观察到原版解题报告缺少 accept.py：出题文本要求解题者执行该检查，而默认流程仅在解题结束后的评审阶段写入私有检查。解题者按要求报告阻塞，任务基线因此标为 unverified；这属于任务设计与交付约定不一致，不是候选代码回归。原版及候选的正式功能验收保持独立。</p>
+
+<p>同一 Python 原版、同题的首轮解题记录到 432,925 与 347,214 tokens，且均因上述问题阻塞。这种差异发生在尚未使用压缩代码时，说明不能将单次下游 token 差异直接归因于图工具。</p>
+
+<p>修复反馈只给作者不透明的 check ID、退出码和相关功能集合，没有提供可定位问题的安全摘要。Python/Rust 的相同错误因此多轮重现。本轮没有把私有测试体、预期输出或源码回灌给作者来强行修过；建议另行改进错误分类和不含答案的诊断摘要。</p>
+
+<p>宿主准备的共同语义包也不够完备：它覆盖了所选公开工作流，但没有逐项列出私有测试兼容符号、测试专用依赖和所有边界诊断规则。相同交接保证了两组输入可比，却不能保证交接充分。此次结果同时受到这个实验准备选择的影响，不能把失败全部归给图工具或默认 harness，更不能解释为两种工具的能力上限。</p>
+
+<p>原版行为检查失败后，当前流程仍先运行昂贵的出题 Agent，之后才拒绝开始重写。应把原版验收通过检查移到出题前；同时澄清 solver 可访问的自测与评审侧私有 accept.py 的边界，加入无进展停止条件，并限制单次出题规模。这些是本轮证据支持的后续修改建议，未混入本次固定分支。</p>
+
+<h2 id="解释边界">解释边界</h2>
+
+<ul>
+<li>主对照中每个项目/工具最多一条独立重写轨迹，P-Queue Graphify 因基线失败为零条；环境诊断的额外启动不算重复采样。配置中的 3 次任务重复也不等于 3 次独立重写。本轮没有形成有效的原版—候选—held-out 完整评估网格，不能证明压缩后的任务 tokens 改善。模型随机性、缓存与共享主机负载仍影响结果。</li>
+<li>共同功能描述由宿主审核并固定，避免因主动删功能造成虚假压缩。这也意味着此实验未测量完全无人审核的图到需求生成质量、自动社区划分质量或功能树所需的人工整理时间。</li>
+<li>测试通过仅支持已执行的行为；Linux 检查不证明 Windows 等平台完全等价。</li>
+<li>输出 tokens 已包含供应商报告的推理量；输入 tokens 包含缓存命中。缓存 tokens 不应再加到总量上。出题、作者、解题、评审成本分列，缺少 usage 时保留未知。</li>
+</ul>
+
+<h2 id="版本与公开数据">版本与公开数据</h2>
+
+<p>分析分支固定为 main（8c0745a1）和 codex/codegraph-understanding（d499ce45）。上文链接指向三个项目的固定原版提交。</p>
+
+<p><a href="downloads/results.csv">下载公开结果 CSV</a>。原始 Agent 日志、私有评估任务和本地运行目录不在公开网页中。</p>
+</article></details></section>
+<section class="downloads" id="downloads"><div><div class="section-label">OPEN REPORT</div><h2>带走这份结果。</h2><p>公开数据与图表，无需登录即可下载。</p></div><div class="download-links"><a href="downloads/report.md" download>公开报告 <span>MARKDOWN ↓</span></a><a href="downloads/results.csv" download>对照数据 <span>CSV ↓</span></a><a href="assets/graph-costs.pdf" download>建图表现图表 <span>PDF ↓</span></a><a href="assets/candidate-source-tokens.pdf" download>候选体积图表 <span>PDF ↓</span></a></div></section>
+</div></div>
+</main><footer><a class="brand" href="#top">nanolize <span>/ research</span></a><p>Exploratory evidence. Explicit limitations.</p><span>2026.11.06 · Public report</span></footer>
+</body></html>
