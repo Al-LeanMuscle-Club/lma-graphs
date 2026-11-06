@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "operation": "task_effort_evaluation",
+  "status": "regressed",
+  "binding": {
+    "plan_sha256": "0d4658cda8d1b73d2304e750e5da0aefe56ee72ac65873a768589f5c1b5154e8",
+    "original_git_head": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+    "original_snapshot_sha256": "35ef1701933b3edf7f4146e1a597bd4778f48a5b3ad13d9e287d1a5c9f19ec76",
+    "candidate_git_head": "cd6845960d5b04d8a4477e8138311d05598a6de7",
+    "candidate_snapshot_sha256": "ab365ae78e77c83f951276786672ddcc34966eb4a111679cb33419ec2c0c0e4a",
+    "candidate_source_sha256": "c147cf1045aaa10638bb940919f2ac2f3f900fe6d162712dc98db38352a0917b",
+    "candidate_contract_sha256": "78f1f7e0d51ee36eb842056d68a8d4634105fdaccc58b644618279badcecaffe",
+    "suite_sha256": "e2c3c6ea601d1277441f388d89c448c7c82439cccf4a6d3b945c540cf90b569e",
+    "settings_sha256": "4dbcde69eea56f2ed9f9a69c16bfe65fc77875898da5c79b1c2697a4ccc27003",
+    "original_heldout_sha256": "a31bbbaeb7211a4534cd5d2b341e6c64a2338db56aa6417035449db4d659dcaf"
+  },
+  "policy": {
+    "comparison": "empirical_range",
+    "strict_all_tasks": true,
+    "task_types": [
+      "modify"
+    ],
+    "grading": "lightweight",
+    "staged": true,
+    "heldout_deferred": true,
+    "repetitions": 1,
+    "min_improvement_percent": 5.0,
+    "regression_tolerance_percent": 5.0,
+    "model": "gpt-6-astra",
+    "reasoning_effort": "xhigh"
+  },
+  "tasks": [
+    {
+      "id": "modify",
+      "type": "modify",
+      "title": "Preserve Field constraints inside nested typed-list tool schemas",
+      "capabilities": [
+        "graphify-tools-schema-e8dbe1b08297"
+      ],
+      "status": "regressed",
+      "development": {
+        "status": "passed",
+        "original": {
+          "runs": 1,
+          "successes": 1,
+          "tokens": {
+            "median": 420651,
+            "min": 420651,
+            "max": 420651
+          },
+          "duration_seconds": {
+            "median": 277.1828,
+            "min": 277.1828,
+            "max": 277.1828
+          },
+          "blocked": 0
+        },
+        "candidate": {
+          "runs": 1,
+          "successes": 1,
+          "tokens": {
+            "median": 344330,
+            "min": 344330,
+            "max": 344330
+          },
+          "duration_seconds": {
+            "median": 300.0087,
+            "min": 300.0087,
+            "max": 300.0087
+          },
+          "blocked": 0
+        },
+        "ratio": 0.818565,
+        "change_percent": -18.144,
+        "evidence_sha256": "6797adc2f9366eca129e5b54561b5758141c50446e17335c7ef956fa578f2239"
+      },
+      "heldout": {
+        "status": "regressed",
+        "original": {
+          "runs": 1,
+          "successes": 1,
+          "tokens": {
+            "median": 273731,
+            "min": 273731,
+            "max": 273731
+          },
+          "duration_seconds": {
+            "median": 263.0054,
+            "min": 263.0054,
+            "max": 263.0054
+          },
+          "blocked": 0
+        },
+        "candidate": {
+          "runs": 1,
+          "successes": 1,
+          "tokens": {
+            "median": 373199,
+            "min": 373199,
+            "max": 373199
+          },
+          "duration_seconds": {
+            "median": 282.7392,
+            "min": 282.7392,
+            "max": 282.7392
+          },
+          "blocked": 0
+        },
+        "ratio": 1.363379,
+        "change_percent": 36.338,
+        "evidence_sha256": "79dda49bd4a71fc4eaaa9c71253b82f1978286c2e6ef85afdb53aef072b6432e"
+      }
+    }
+  ],
+  "overhead": {
+    "examiner_tokens": 0,
+    "judge_tokens": 0,
+    "solver_tokens": 1411911,
+    "total_tokens": 1411911,
+    "usage_complete": true,
+    "observed_total_tokens": 1411911,
+    "role_usage_complete": {
+      "examiner": true,
+      "solver": true,
+      "judge": true
+    }
+  },
+  "resources": {
+    "completed_runs": 8,
+    "cleanup_pending": false,
+    "cleanup_pending_runs": 0,
+    "roles": {
+      "examiner": {
+        "completed": 0,
+        "failed": 0
+      },
+      "solver": {
+        "completed": 4,
+        "failed": 0
+      },
+      "judge": {
+        "completed": 4,
+        "failed": 0
+      }
+    }
+  },
+  "iterations": [
+    {
+      "attempt": 3,
+      "status": "regressed",
+      "changed_tasks": [],
+      "total_candidate_tokens": 717529,
+      "retry": false
+    }
+  ],
+  "limitations": [
+    "This assessment covers one representative modification workflow, including executing the change. It does not measure understanding, diagnosis or execution as separate task types.",
+    "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+    "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+    "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+    "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+    "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+  ],
+  "staging": {
+    "phase": "heldout",
+    "targeted_task_ids": [],
+    "screened_task_ids": [
+      "modify"
+    ],
+    "completed_development_runs": 1,
+    "expected_development_runs": 1
+  },
+  "stop_reason": "heldout_acceptance_failed"
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "nrs_4838ba23519d579db04afd7413a826aa8f06c37626e5ed5d0f5bb4660a35b969",
+  "files": [
+    {
+      "path": "data.json",
+      "sha256": "158660b1e4f66e8d8512b68bc46b1ee78f12fbf17d24f64da5ac729b6ab3681f"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "c3d43e33e27902871facc6e1e71cc8121648552f1e097bb0ea97ea76ebe29312"
+    },
+    {
+      "path": "historical-task-assessment.json",
+      "sha256": "5794790025c4862036c50dbc98c1b06d1b147a4fe70c0fff2dd8ae45db6c53e8"
+    },
+    {
+      "path": "index.html",
+      "sha256": "a4ceacce4a2f0eb4953d1efba7b76fad46f6606fbd2a9779fa1fa8ed431567d7"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "566b3e1fb19614ba415b4b4828212ac6f2a12e10d4964d7f238a26be9045dff0"
+    },
+    {
+      "path": "observed-cli-usage.json",
+      "sha256": "ca265dae22d5099104e1d011d7cc58586f939aff76774e23931f8f979c9a0cd5"
+    },
+    {
+      "path": "schema-comparison.json",
+      "sha256": "912d53c2e1b493e75599b1318c263cba941c9fb80b61164821e02d5981da656b"
+    }
+  ]
+}

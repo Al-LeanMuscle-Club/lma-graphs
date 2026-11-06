@@ -1,0 +1,61 @@
+{
+  "original": {
+    "nested": {
+      "properties": {
+        "values": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "values"
+      ],
+      "type": "object"
+    },
+    "priority": {
+      "properties": {
+        "value": {
+          "maximum": 10,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "type": "object"
+    }
+  },
+  "candidate": {
+    "nested": {
+      "properties": {
+        "values": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "values"
+      ],
+      "type": "object"
+    },
+    "priority": {
+      "properties": {
+        "value": {
+          "maximum": 10,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "type": "object"
+    }
+  },
+  "match": true,
+  "cases": 2,
+  "candidate_git_head": "d266be7eb2718112a2acc18dd1a1438347d81fae"
+}
