@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f9f7"><meta name="description" content="从全局架构到具体功能，通过可缩放的树形图探索 Accelerate 的 10 个功能域、37 个模块和 104 个功能步骤。">
+<title>Accelerate · 功能树探索</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#graph">跳到功能树</a>
+<header class="topbar">
+ <a href="#" class="brand" id="brand-home" aria-label="返回 Accelerate 全局架构"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 4 6 19h9l-1 9 12-16h-9z"/></svg></span><span>Accelerate<span class="brand-divider">/</span><span class="brand-sub">功能树探索</span></span></a>
+ <div class="header-right"><span class="snapshot"><i></i> 架构快照 <code>3008af9</code></span><button class="quiet" id="help-button" aria-label="查看操作说明">操作指南 <span class="keycap">?</span></button><a class="source-link" href="https://github.com/huggingface/accelerate/tree/3008af926ffe3e04ffe6fbe3d87494193fc85041" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+</header>
+<main id="app">
+ <section class="intro"><div><p class="eyebrow">A SMALL MAP OF A BIG LIBRARY</p><h1>从全局，看进每一个模块。</h1><p class="intro-copy">沿着功能树探索 Accelerate。放大一个分支，让实现细节自然展开。</p></div><div class="intro-stats" aria-label="样例规模"><span><b>10</b> 功能域</span><i></i><span><b>37</b> 模块</span><i></i><span><b>104</b> 功能步骤</span></div></section>
+ <section class="explorer" aria-label="交互式 Accelerate 功能树">
+  <div class="map-panel">
+   <div class="map-toolbar"><nav id="breadcrumbs" aria-label="当前位置"></nav><div class="toolbar-actions"><button id="up-button" class="quiet" title="返回上一层" aria-label="返回上一层">← 上一层</button><div class="search-wrap"><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input id="search" type="search" placeholder="搜索模块、API 或文件" aria-label="搜索模块、API 或文件" autocomplete="off" aria-controls="search-results" aria-expanded="false"><kbd>/</kbd></label><div id="search-results" class="search-results" hidden></div></div></div></div>
+   <div class="map-context"><div class="level-track" aria-label="浏览层级"><span data-level="0" class="active"><b>01</b> 总览</span><i></i><span data-level="1"><b>02</b> 模块</span><i></i><span data-level="2"><b>03</b> 功能</span></div><button id="guided-entry" class="guided">探索训练流程 <span aria-hidden="true">↗</span></button><button id="mobile-detail" class="quiet" aria-label="打开节点详情">节点详情 ↗</button></div>
+   <div id="context-strip" class="context-strip" hidden></div>
+   <div id="canvas" class="canvas">
+    <div class="canvas-label"><span id="view-kicker">THE BIG PICTURE</span><span id="view-summary">10 个分支，一个清晰的全局</span></div>
+    <svg id="graph" aria-label="Accelerate 功能层级树。可拖动、缩放，双击节点展开。" role="group" tabindex="0"><defs><filter id="node-shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#243b35" flood-opacity=".045"/></filter></defs><g id="scene"><g id="edges"></g><g id="nodes"></g></g></svg>
+    <div class="canvas-note" id="canvas-note">每一条分支，都可以继续探索</div>
+    <div class="map-controls"><button id="zoom-out" aria-label="缩小" title="缩小">−</button><output id="zoom-label" aria-live="off">100%</output><button id="zoom-in" aria-label="放大" title="放大">＋</button><span></span><button id="fit" aria-label="适应画布" title="适应画布 · 0"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button><button id="fullscreen" aria-label="全屏浏览" title="全屏浏览"><svg viewBox="0 0 24 24"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6M3 3l6 6m12-6-6 6M3 21l6-6m12 6-6-6"/></svg></button></div>
+    <div id="depth-tip" class="depth-tip" role="status" hidden></div>
+   </div>
+   <div class="map-footer"><span class="gesture-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18m-18 0 3-3m-3 3 3 3m15-3-3-3m3 3-3 3M12 3 9 6m3-3 3 3m-3 15-3-3m3 3 3-3"/></svg>拖动画布<span>·</span>滚轮缩放<span>·</span>双击节点展开</span><span id="visible-count"></span></div>
+  </div>
+  <aside id="inspector" class="inspector" aria-label="节点详情"><button id="close-inspector" class="close-inspector" aria-label="关闭详情">×</button><div id="detail-content"></div><div class="inspector-foot"><i></i><span>基于公开源码的结构映射<br>此样例不表示测试或行为验证通过</span></div></aside>
+ </section>
+ <footer class="site-footer"><span>ACCELERATE ATLAS <i>·</i> 结构样例 / 语义缩放</span><div><a href="https://yukangchen.com/accelerate-validation-graph/" target="_blank" rel="noopener noreferrer">原始参考图 ↗</a><button id="reset" class="text-button">返回全局</button></div></footer>
+</main>
+<dialog id="help"><div class="dialog-header"><div><p class="eyebrow">EXPLORE AT YOUR OWN PACE</p><h2>像读一棵树一样，读懂代码。</h2></div><button id="close-help" aria-label="关闭操作指南">×</button></div><ol><li><strong>先看全局</strong><p>10 个功能域组成主干。点击任意节点，右侧显示其功能和源码映射。</p></li><li><strong>沿分支深入</strong><p>双击节点或点击节点中的展开箭头。把光标放在分支上继续滚轮放大，也会进入下一层。</p></li><li><strong>始终知道自己在哪里</strong><p>顶部路径可以返回祖先层级；同级模块可以直接切换。缩小到阈值后自动返回上一层。</p></li></ol><div class="shortcut-list"><span><kbd>/</kbd> 搜索</span><span><kbd>0</kbd> 适应画布</span><span><kbd>Esc</kbd> 返回上层</span><span><kbd>Enter</kbd> 展开聚焦节点</span></div><p class="help-note">触屏设备支持拖动与双指缩放；点击节点箭头展开。系统设置为减少动画时，层级切换会即时完成。</p><button id="start-exploring" class="primary">开始探索 <span>→</span></button></dialog>
+<div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
