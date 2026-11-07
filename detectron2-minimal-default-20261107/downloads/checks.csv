@@ -1,0 +1,254 @@
+attempt,check,status
+0,CPU behavior: Configuration and object construction,passed
+0,CPU behavior: Image and prediction data structures,passed
+0,CPU behavior: Shared neural-network and tensor operations,passed
+0,"CPU behavior: Model construction, matching and output geometry",passed
+0,CPU behavior: Runtime services and interoperability,passed
+0,runtime-build-package,passed
+0,upstream:tests/config/test_instantiate_config.py,failed
+0,upstream:tests/config/test_lazy_config.py,failed
+0,upstream:tests/config/test_yacs_config.py,failed
+0,upstream:tests/layers/test_blocks.py,failed
+0,upstream:tests/layers/test_losses.py,passed
+0,upstream:tests/layers/test_nms.py,failed
+0,upstream:tests/layers/test_roi_align.py,failed
+0,upstream:tests/modeling/test_anchor_generator.py,failed
+0,upstream:tests/modeling/test_box2box_transform.py,failed
+0,upstream:tests/modeling/test_matcher.py,failed
+0,upstream:tests/structures/test_boxes.py,failed
+0,upstream:tests/structures/test_imagelist.py,failed
+0,upstream:tests/structures/test_instances.py,failed
+0,upstream:tests/structures/test_keypoints.py,passed
+0,upstream:tests/structures/test_masks.py,passed
+0,upstream:tests/test_packaging.py::TestCollectEnv,passed
+0,upstream:tests/test_registry.py,failed
+1,CPU behavior: Configuration and object construction,passed
+1,CPU behavior: Image and prediction data structures,output_changed
+1,CPU behavior: Shared neural-network and tensor operations,passed
+1,"CPU behavior: Model construction, matching and output geometry",passed
+1,CPU behavior: Runtime services and interoperability,passed
+1,runtime-build-package,passed
+1,upstream:tests/config/test_instantiate_config.py,failed
+1,upstream:tests/config/test_lazy_config.py,failed
+1,upstream:tests/config/test_yacs_config.py,failed
+1,upstream:tests/layers/test_blocks.py,failed
+1,upstream:tests/layers/test_losses.py,passed
+1,upstream:tests/layers/test_nms.py,failed
+1,upstream:tests/layers/test_roi_align.py,failed
+1,upstream:tests/modeling/test_anchor_generator.py,failed
+1,upstream:tests/modeling/test_box2box_transform.py,failed
+1,upstream:tests/modeling/test_matcher.py,passed
+1,upstream:tests/structures/test_boxes.py,failed
+1,upstream:tests/structures/test_imagelist.py,failed
+1,upstream:tests/structures/test_instances.py,failed
+1,upstream:tests/structures/test_keypoints.py,passed
+1,upstream:tests/structures/test_masks.py,passed
+1,upstream:tests/test_packaging.py::TestCollectEnv,passed
+1,upstream:tests/test_registry.py,failed
+2,CPU behavior: Configuration and object construction,passed
+2,CPU behavior: Image and prediction data structures,output_changed
+2,CPU behavior: Shared neural-network and tensor operations,passed
+2,"CPU behavior: Model construction, matching and output geometry",passed
+2,CPU behavior: Runtime services and interoperability,passed
+2,runtime-build-package,passed
+2,upstream:tests/config/test_instantiate_config.py,failed
+2,upstream:tests/config/test_lazy_config.py,failed
+2,upstream:tests/config/test_yacs_config.py,failed
+2,upstream:tests/layers/test_blocks.py,failed
+2,upstream:tests/layers/test_losses.py,passed
+2,upstream:tests/layers/test_nms.py,failed
+2,upstream:tests/layers/test_roi_align.py,failed
+2,upstream:tests/modeling/test_anchor_generator.py,passed
+2,upstream:tests/modeling/test_box2box_transform.py,failed
+2,upstream:tests/modeling/test_matcher.py,passed
+2,upstream:tests/structures/test_boxes.py,failed
+2,upstream:tests/structures/test_imagelist.py,passed
+2,upstream:tests/structures/test_instances.py,failed
+2,upstream:tests/structures/test_keypoints.py,passed
+2,upstream:tests/structures/test_masks.py,passed
+2,upstream:tests/test_packaging.py::TestCollectEnv,passed
+2,upstream:tests/test_registry.py,failed
+3,CPU behavior: Configuration and object construction,passed
+3,CPU behavior: Image and prediction data structures,output_changed
+3,CPU behavior: Shared neural-network and tensor operations,passed
+3,"CPU behavior: Model construction, matching and output geometry",passed
+3,CPU behavior: Runtime services and interoperability,passed
+3,runtime-build-package,passed
+3,upstream:tests/config/test_instantiate_config.py,failed
+3,upstream:tests/config/test_lazy_config.py,failed
+3,upstream:tests/config/test_yacs_config.py,failed
+3,upstream:tests/layers/test_blocks.py,failed
+3,upstream:tests/layers/test_losses.py,passed
+3,upstream:tests/layers/test_nms.py,failed
+3,upstream:tests/layers/test_roi_align.py,failed
+3,upstream:tests/modeling/test_anchor_generator.py,passed
+3,upstream:tests/modeling/test_box2box_transform.py,failed
+3,upstream:tests/modeling/test_matcher.py,passed
+3,upstream:tests/structures/test_boxes.py,failed
+3,upstream:tests/structures/test_imagelist.py,passed
+3,upstream:tests/structures/test_instances.py,failed
+3,upstream:tests/structures/test_keypoints.py,passed
+3,upstream:tests/structures/test_masks.py,passed
+3,upstream:tests/test_packaging.py::TestCollectEnv,passed
+3,upstream:tests/test_registry.py,failed
+4,CPU behavior: Configuration and object construction,passed
+4,CPU behavior: Image and prediction data structures,output_changed
+4,CPU behavior: Shared neural-network and tensor operations,passed
+4,"CPU behavior: Model construction, matching and output geometry",passed
+4,CPU behavior: Runtime services and interoperability,passed
+4,runtime-build-package,passed
+4,upstream:tests/config/test_instantiate_config.py,failed
+4,upstream:tests/config/test_lazy_config.py,failed
+4,upstream:tests/config/test_yacs_config.py,failed
+4,upstream:tests/layers/test_blocks.py,failed
+4,upstream:tests/layers/test_losses.py,passed
+4,upstream:tests/layers/test_nms.py,failed
+4,upstream:tests/layers/test_roi_align.py,failed
+4,upstream:tests/modeling/test_anchor_generator.py,passed
+4,upstream:tests/modeling/test_box2box_transform.py,failed
+4,upstream:tests/modeling/test_matcher.py,passed
+4,upstream:tests/structures/test_boxes.py,failed
+4,upstream:tests/structures/test_imagelist.py,passed
+4,upstream:tests/structures/test_instances.py,failed
+4,upstream:tests/structures/test_keypoints.py,passed
+4,upstream:tests/structures/test_masks.py,passed
+4,upstream:tests/test_packaging.py::TestCollectEnv,passed
+4,upstream:tests/test_registry.py,failed
+5,CPU behavior: Configuration and object construction,passed
+5,CPU behavior: Image and prediction data structures,output_changed
+5,CPU behavior: Shared neural-network and tensor operations,passed
+5,"CPU behavior: Model construction, matching and output geometry",passed
+5,CPU behavior: Runtime services and interoperability,passed
+5,runtime-build-package,passed
+5,upstream:tests/config/test_instantiate_config.py,failed
+5,upstream:tests/config/test_lazy_config.py,failed
+5,upstream:tests/config/test_yacs_config.py,failed
+5,upstream:tests/layers/test_blocks.py,failed
+5,upstream:tests/layers/test_losses.py,passed
+5,upstream:tests/layers/test_nms.py,failed
+5,upstream:tests/layers/test_roi_align.py,failed
+5,upstream:tests/modeling/test_anchor_generator.py,passed
+5,upstream:tests/modeling/test_box2box_transform.py,failed
+5,upstream:tests/modeling/test_matcher.py,passed
+5,upstream:tests/structures/test_boxes.py,failed
+5,upstream:tests/structures/test_imagelist.py,passed
+5,upstream:tests/structures/test_instances.py,failed
+5,upstream:tests/structures/test_keypoints.py,passed
+5,upstream:tests/structures/test_masks.py,passed
+5,upstream:tests/test_packaging.py::TestCollectEnv,passed
+5,upstream:tests/test_registry.py,failed
+6,CPU behavior: Configuration and object construction,passed
+6,CPU behavior: Image and prediction data structures,output_changed
+6,CPU behavior: Shared neural-network and tensor operations,passed
+6,"CPU behavior: Model construction, matching and output geometry",passed
+6,CPU behavior: Runtime services and interoperability,passed
+6,runtime-build-package,passed
+6,upstream:tests/config/test_instantiate_config.py,failed
+6,upstream:tests/config/test_lazy_config.py,failed
+6,upstream:tests/config/test_yacs_config.py,failed
+6,upstream:tests/layers/test_blocks.py,failed
+6,upstream:tests/layers/test_losses.py,passed
+6,upstream:tests/layers/test_nms.py,failed
+6,upstream:tests/layers/test_roi_align.py,failed
+6,upstream:tests/modeling/test_anchor_generator.py,passed
+6,upstream:tests/modeling/test_box2box_transform.py,failed
+6,upstream:tests/modeling/test_matcher.py,passed
+6,upstream:tests/structures/test_boxes.py,failed
+6,upstream:tests/structures/test_imagelist.py,passed
+6,upstream:tests/structures/test_instances.py,failed
+6,upstream:tests/structures/test_keypoints.py,passed
+6,upstream:tests/structures/test_masks.py,passed
+6,upstream:tests/test_packaging.py::TestCollectEnv,passed
+6,upstream:tests/test_registry.py,failed
+7,CPU behavior: Configuration and object construction,passed
+7,CPU behavior: Image and prediction data structures,output_changed
+7,CPU behavior: Shared neural-network and tensor operations,passed
+7,"CPU behavior: Model construction, matching and output geometry",passed
+7,CPU behavior: Runtime services and interoperability,passed
+7,runtime-build-package,passed
+7,upstream:tests/config/test_instantiate_config.py,failed
+7,upstream:tests/config/test_lazy_config.py,failed
+7,upstream:tests/config/test_yacs_config.py,failed
+7,upstream:tests/layers/test_blocks.py,failed
+7,upstream:tests/layers/test_losses.py,passed
+7,upstream:tests/layers/test_nms.py,failed
+7,upstream:tests/layers/test_roi_align.py,failed
+7,upstream:tests/modeling/test_anchor_generator.py,passed
+7,upstream:tests/modeling/test_box2box_transform.py,failed
+7,upstream:tests/modeling/test_matcher.py,passed
+7,upstream:tests/structures/test_boxes.py,failed
+7,upstream:tests/structures/test_imagelist.py,passed
+7,upstream:tests/structures/test_instances.py,failed
+7,upstream:tests/structures/test_keypoints.py,passed
+7,upstream:tests/structures/test_masks.py,passed
+7,upstream:tests/test_packaging.py::TestCollectEnv,passed
+7,upstream:tests/test_registry.py,failed
+8,CPU behavior: Configuration and object construction,passed
+8,CPU behavior: Image and prediction data structures,output_changed
+8,CPU behavior: Shared neural-network and tensor operations,passed
+8,"CPU behavior: Model construction, matching and output geometry",passed
+8,CPU behavior: Runtime services and interoperability,passed
+8,runtime-build-package,passed
+8,upstream:tests/config/test_instantiate_config.py,failed
+8,upstream:tests/config/test_lazy_config.py,failed
+8,upstream:tests/config/test_yacs_config.py,failed
+8,upstream:tests/layers/test_blocks.py,failed
+8,upstream:tests/layers/test_losses.py,passed
+8,upstream:tests/layers/test_nms.py,failed
+8,upstream:tests/layers/test_roi_align.py,failed
+8,upstream:tests/modeling/test_anchor_generator.py,passed
+8,upstream:tests/modeling/test_box2box_transform.py,failed
+8,upstream:tests/modeling/test_matcher.py,passed
+8,upstream:tests/structures/test_boxes.py,failed
+8,upstream:tests/structures/test_imagelist.py,passed
+8,upstream:tests/structures/test_instances.py,failed
+8,upstream:tests/structures/test_keypoints.py,passed
+8,upstream:tests/structures/test_masks.py,passed
+8,upstream:tests/test_packaging.py::TestCollectEnv,passed
+8,upstream:tests/test_registry.py,failed
+9,CPU behavior: Configuration and object construction,passed
+9,CPU behavior: Image and prediction data structures,output_changed
+9,CPU behavior: Shared neural-network and tensor operations,passed
+9,"CPU behavior: Model construction, matching and output geometry",passed
+9,CPU behavior: Runtime services and interoperability,passed
+9,runtime-build-package,passed
+9,upstream:tests/config/test_instantiate_config.py,failed
+9,upstream:tests/config/test_lazy_config.py,failed
+9,upstream:tests/config/test_yacs_config.py,failed
+9,upstream:tests/layers/test_blocks.py,failed
+9,upstream:tests/layers/test_losses.py,passed
+9,upstream:tests/layers/test_nms.py,failed
+9,upstream:tests/layers/test_roi_align.py,failed
+9,upstream:tests/modeling/test_anchor_generator.py,passed
+9,upstream:tests/modeling/test_box2box_transform.py,failed
+9,upstream:tests/modeling/test_matcher.py,passed
+9,upstream:tests/structures/test_boxes.py,failed
+9,upstream:tests/structures/test_imagelist.py,passed
+9,upstream:tests/structures/test_instances.py,failed
+9,upstream:tests/structures/test_keypoints.py,passed
+9,upstream:tests/structures/test_masks.py,passed
+9,upstream:tests/test_packaging.py::TestCollectEnv,passed
+9,upstream:tests/test_registry.py,failed
+10,CPU behavior: Configuration and object construction,passed
+10,CPU behavior: Image and prediction data structures,output_changed
+10,CPU behavior: Shared neural-network and tensor operations,passed
+10,"CPU behavior: Model construction, matching and output geometry",passed
+10,CPU behavior: Runtime services and interoperability,passed
+10,runtime-build-package,passed
+10,upstream:tests/config/test_instantiate_config.py,failed
+10,upstream:tests/config/test_lazy_config.py,failed
+10,upstream:tests/config/test_yacs_config.py,failed
+10,upstream:tests/layers/test_blocks.py,failed
+10,upstream:tests/layers/test_losses.py,passed
+10,upstream:tests/layers/test_nms.py,failed
+10,upstream:tests/layers/test_roi_align.py,failed
+10,upstream:tests/modeling/test_anchor_generator.py,passed
+10,upstream:tests/modeling/test_box2box_transform.py,failed
+10,upstream:tests/modeling/test_matcher.py,passed
+10,upstream:tests/structures/test_boxes.py,failed
+10,upstream:tests/structures/test_imagelist.py,passed
+10,upstream:tests/structures/test_instances.py,failed
+10,upstream:tests/structures/test_keypoints.py,passed
+10,upstream:tests/structures/test_masks.py,passed
+10,upstream:tests/test_packaging.py::TestCollectEnv,passed
+10,upstream:tests/test_registry.py,failed

@@ -1,0 +1,1490 @@
+{
+  "date": "2026-11-06",
+  "status": "completed",
+  "job_id": "detectron2-minimal-default-20261106",
+  "harness": {
+    "branch": "minimal/lma-core",
+    "commit": "f6601f86ae6b5cc15203fe9d74baa6badbf94cdb"
+  },
+  "target_commit": "247691a1c292654867deb35cabb27f18d75a1363",
+  "best": {
+    "accepted": false,
+    "all_passed": false,
+    "branch": "nanolize/detectron2-minimal-default-20261106",
+    "failed": [
+      {
+        "name": "CPU behavior: Image and prediction data structures",
+        "status": "output_changed"
+      },
+      {
+        "name": "upstream:tests/config/test_instantiate_config.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/config/test_lazy_config.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/config/test_yacs_config.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/layers/test_blocks.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/layers/test_nms.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/layers/test_roi_align.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/modeling/test_box2box_transform.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/structures/test_boxes.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/structures/test_instances.py",
+        "status": "failed"
+      },
+      {
+        "name": "upstream:tests/test_registry.py",
+        "status": "failed"
+      }
+    ],
+    "n": 10,
+    "sha": "772b7bb8d6aa470bbbfdd3d0fa454c52f4db8bf3",
+    "size": {
+      "bytes": 118630,
+      "files": 59,
+      "lines": 2823
+    }
+  },
+  "original": {
+    "failing": [],
+    "passing": [
+      "CPU behavior: Configuration and object construction",
+      "CPU behavior: Image and prediction data structures",
+      "CPU behavior: Shared neural-network and tensor operations",
+      "CPU behavior: Model construction, matching and output geometry",
+      "CPU behavior: Runtime services and interoperability",
+      "runtime-build-package",
+      "upstream:tests/config/test_instantiate_config.py",
+      "upstream:tests/config/test_lazy_config.py",
+      "upstream:tests/config/test_yacs_config.py",
+      "upstream:tests/layers/test_blocks.py",
+      "upstream:tests/layers/test_losses.py",
+      "upstream:tests/layers/test_nms.py",
+      "upstream:tests/layers/test_roi_align.py",
+      "upstream:tests/modeling/test_anchor_generator.py",
+      "upstream:tests/modeling/test_box2box_transform.py",
+      "upstream:tests/modeling/test_matcher.py",
+      "upstream:tests/structures/test_boxes.py",
+      "upstream:tests/structures/test_imagelist.py",
+      "upstream:tests/structures/test_instances.py",
+      "upstream:tests/structures/test_keypoints.py",
+      "upstream:tests/structures/test_masks.py",
+      "upstream:tests/test_packaging.py::TestCollectEnv",
+      "upstream:tests/test_registry.py"
+    ],
+    "size": {
+      "bytes": 3160245,
+      "files": 447,
+      "lines": 71189
+    }
+  },
+  "defaults": {
+    "max_repairs": 10,
+    "retry_limit": 10,
+    "job_timeout": 14400,
+    "token_budget": null,
+    "task_effort": true,
+    "repetitions": 1,
+    "model": null,
+    "runner_timeout": 3600,
+    "solver_timeout": 900
+  },
+  "attempts": [
+    {
+      "n": 0,
+      "sha": "62d236b53d0c1f16d834850f2120b3eb3f03a46d",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Image and prediction data structures",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_anchor_generator.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_matcher.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_imagelist.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [
+        "tools"
+      ],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced test_matcher.py in workspace copies: original exited 0; candidate exited 1 because TorchScript rejects torch.nonzero(..., as_tuple=True) in the rewritten matcher. This is a genuine code regression, not a harness issue.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 1331.6811057776213,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 2753293
+    },
+    {
+      "n": 1,
+      "sha": "796d4620632ccf6201a39b4ba248b47bbf85403f",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_anchor_generator.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_imagelist.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [
+        "tools"
+      ],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced the box-conversion mismatch using identical interpreter and dependencies: original outputs [1, 2, 4, 6], candidate outputs [1.0, 2.0, 4.0, 6.0]. The candidate explicitly forces float64, causing a genuine stdout difference that violates compare=output.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 689.6520597552881,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 2401361
+    },
+    {
+      "n": 2,
+      "sha": "f3f0aec564e750f89e114d048d8432b7b5adff7d",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced BoxMode.convert returning integers on the original and floats on the candidate, changing the required stdout. Candidate config converters also explicitly raise NotImplementedError where the original implements conversion. These are code regressions, not environment failures.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 737.4686663001776,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 1692780
+    },
+    {
+      "n": 3,
+      "sha": "607edbcadaed576cd29724ddeb277ac5687cb52b",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced the BoxMode conversion mismatch using the same interpreter and dependencies: original returns [1, 2, 4, 6], candidate returns [1.0, 2.0, 4.0, 6.0]. The candidate explicitly forces float64, so the required identical stdout fails because of a code change, not the harness.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 464.98119235783815,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 1418295
+    },
+    {
+      "n": 4,
+      "sha": "7fa6d8044f48fbed9457bc7195c6618d0fecb329",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced the stdout mismatch under identical dependencies: BoxMode.convert returns [1, 2, 4, 6] originally but [1.0, 2.0, 4.0, 6.0] in the candidate. Candidate config converters also explicitly raise NotImplementedError, explaining reported failures. These are code regressions, not harness artifacts.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 465.59244369342923,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 1401159
+    },
+    {
+      "n": 5,
+      "sha": "0ed11f75143314eb1081eb5281472c8f29a64a54",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced the BoxMode.convert mismatch in the same environment: original returns integers, candidate returns floats, changing required stdout. Candidate config version converters also explicitly raise NotImplementedError, explaining reported test failures. These are code regressions, not harness artifacts.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 503.5195519719273,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 2245097
+    },
+    {
+      "n": 6,
+      "sha": "27324441d0c6a16cfa89be7340304c89eb93eeea",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced the BoxMode.convert mismatch using copied source files and the same interpreter: original returns [1, 2, 4, 6], candidate returns [1.0, 2.0, 4.0, 6.0]. The candidate explicitly forces floating-point dtype, causing a genuine stdout difference under compare=output.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 318.91150316689163,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 1306093
+    },
+    {
+      "n": 7,
+      "sha": "e382c7a4ab909531d03fc4800239f19dd943720f",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced the BoxMode.convert mismatch: original returns [1, 2, 4, 6], candidate returns [1.0, 2.0, 4.0, 6.0], violating exact stdout comparison. Candidate also replaces config version converters with unconditional NotImplementedError. These are code changes, not harness artifacts.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 337.13183706998825,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 1099076
+    },
+    {
+      "n": 8,
+      "sha": "b072b9d992b881e88ae60b44b52e130d440916a0",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced genuine code regressions in the same environment: box conversion outputs floats instead of integers, changing stdout; config upgrade/downgrade succeeds on the original but raises NotImplementedError in candidate ConverterV2.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 449.6595328329131,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 1520128
+    },
+    {
+      "n": 9,
+      "sha": "2b2e4f0f8f6de166c32775b175c87cd3170669c0",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced the BoxMode conversion mismatch in the same Python environment: original returns [1, 2, 4, 6], candidate returns [1.0, 2.0, 4.0, 6.0], changing required stdout. Candidate config converters also replace working migrations with unconditional NotImplementedError. These are code regressions, not harness failures.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 401.97734141908586,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 2032528
+    },
+    {
+      "n": 10,
+      "sha": "772b7bb8d6aa470bbbfdd3d0fa454c52f4db8bf3",
+      "passed": [
+        "CPU behavior: Configuration and object construction",
+        "CPU behavior: Shared neural-network and tensor operations",
+        "CPU behavior: Model construction, matching and output geometry",
+        "CPU behavior: Runtime services and interoperability",
+        "runtime-build-package",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_matcher.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/test_packaging.py::TestCollectEnv"
+      ],
+      "failed": [
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "output_changed"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "failed"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "failed"
+        }
+      ],
+      "accepted": false,
+      "outside": [],
+      "judge": {
+        "verify": {
+          "reason": "Reproduced BoxMode.convert returning [1, 2, 4, 6] on the original and [1.0, 2.0, 4.0, 6.0] on the candidate under the same interpreter. This changes the required stdout comparison and is caused by the candidate forcing float64, not the harness.",
+          "verdict": "fail"
+        }
+      },
+      "runner": {
+        "duration": 333.79000421706587,
+        "exit_code": 0,
+        "timed_out": false
+      },
+      "tokens": 999816
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "parent": null,
+      "label": "original",
+      "description": "",
+      "features": []
+    },
+    {
+      "id": "graphify-group-foundation-ffb19d83fdc2",
+      "parent": "graphify-root-ddcb2dfa42d8",
+      "label": "Core interfaces and numerical primitives",
+      "description": "Functional grouping for core interfaces and numerical primitives.",
+      "features": []
+    },
+    {
+      "id": "graphify-group-models-b89a9b620bcf",
+      "parent": "graphify-root-ddcb2dfa42d8",
+      "label": "Detection and segmentation models",
+      "description": "Functional grouping for detection and segmentation models.",
+      "features": []
+    },
+    {
+      "id": "graphify-foundation-config-d9928761e096",
+      "parent": "graphify-group-foundation-ffb19d83fdc2",
+      "label": "Configuration and object construction",
+      "description": "Define, compose, migrate and instantiate model and training configurations using both the legacy configuration tree and Python LazyConfig.",
+      "features": [
+        {
+          "label": "Legacy configuration trees",
+          "description": "Load and merge YAML settings, defaults and command-line overrides with CfgNode.",
+          "id": "foundation-config-1"
+        },
+        {
+          "label": "Version migration",
+          "description": "Upgrade or downgrade historical configuration keys through compatibility converters.",
+          "id": "foundation-config-2"
+        },
+        {
+          "label": "Lazy configuration graphs",
+          "description": "Load Python configurations and compose LazyCall object descriptions.",
+          "id": "foundation-config-3"
+        },
+        {
+          "label": "Dependency instantiation",
+          "description": "Resolve nested configured objects into constructor calls through instantiate.",
+          "id": "foundation-config-4"
+        },
+        {
+          "label": "Configurable constructors",
+          "description": "Adapt explicit keyword constructors to configuration-driven callers.",
+          "id": "foundation-config-5"
+        }
+      ]
+    },
+    {
+      "id": "graphify-foundation-structures-585ecc6f966f",
+      "parent": "graphify-group-foundation-ffb19d83fdc2",
+      "label": "Image and prediction data structures",
+      "description": "Represent batches of differently sized images and structured detections while retaining coordinate, indexing and device-transfer semantics.",
+      "features": [
+        {
+          "label": "Bounding-box geometry",
+          "description": "Axis-aligned and rotated boxes support clipping, scaling, overlap and coordinate conversions.",
+          "id": "foundation-structures-1"
+        },
+        {
+          "label": "Instance records",
+          "description": "Keep aligned fields such as labels, scores, boxes, masks and keypoints in an Instances container.",
+          "id": "foundation-structures-2"
+        },
+        {
+          "label": "Image batching",
+          "description": "Pad varying image sizes with ImageList and preserve each original image shape.",
+          "id": "foundation-structures-3"
+        },
+        {
+          "label": "Mask representations",
+          "description": "Represent polygon masks, bit masks and region masks with conversion and crop operations.",
+          "id": "foundation-structures-4"
+        },
+        {
+          "label": "Keypoint representation",
+          "description": "Transform annotated points between image coordinates and heatmap targets.",
+          "id": "foundation-structures-5"
+        }
+      ]
+    },
+    {
+      "id": "graphify-foundation-layers-00c1d3b4535b",
+      "parent": "graphify-group-foundation-ffb19d83fdc2",
+      "label": "Shared neural-network and tensor operations",
+      "description": "Supply reusable convolution blocks, normalization, tensor wrappers, ordinary ROI alignment and suppression, and native-extension registration.",
+      "features": [
+        {
+          "label": "Normalization choices",
+          "description": "Provide frozen batch normalization, synchronized variants and configurable normalization factories.",
+          "id": "foundation-layers-1"
+        },
+        {
+          "label": "Reusable image blocks",
+          "description": "Compose convolution blocks, depthwise-separable convolutions and atrous spatial pyramid pooling.",
+          "id": "foundation-layers-2"
+        },
+        {
+          "label": "Tensor shape and empty-input support",
+          "description": "Track feature shapes and preserve tensor operations across empty batches and tracing contexts.",
+          "id": "foundation-layers-3"
+        },
+        {
+          "label": "ROI alignment and suppression",
+          "description": "Pool axis-aligned regions and perform class-aware non-maximum suppression.",
+          "id": "foundation-layers-4"
+        },
+        {
+          "label": "Regression losses and native bridge",
+          "description": "Provide DIoU/CIoU helpers and the binding layer used by optional compiled operators.",
+          "id": "foundation-layers-5"
+        }
+      ]
+    },
+    {
+      "id": "graphify-model-runtime-b90d1e1976ad",
+      "parent": "graphify-group-models-b89a9b620bcf",
+      "label": "Model construction, matching and output geometry",
+      "description": "Provide the shared detector assembly interfaces and geometric operations used by multiple independent model families.",
+      "features": [
+        {
+          "label": "Registry-based construction",
+          "description": "Build meta-architectures and backbones through registered constructors.",
+          "id": "model-runtime-1"
+        },
+        {
+          "label": "Anchors and box transforms",
+          "description": "Generate axis-aligned or rotated anchors and convert between box coordinates and regression targets.",
+          "id": "model-runtime-2"
+        },
+        {
+          "label": "Target matching and sampling",
+          "description": "Assign ground truth with configurable thresholds and sample foreground/background examples.",
+          "id": "model-runtime-3"
+        },
+        {
+          "label": "Common dense-detector behavior",
+          "description": "Normalize images, arrange feature predictions and dispatch training or inference for dense detectors.",
+          "id": "model-runtime-4"
+        },
+        {
+          "label": "Output postprocessing",
+          "description": "Rescale boxes, masks and semantic outputs back to requested image coordinates.",
+          "id": "model-runtime-5"
+        }
+      ]
+    },
+    {
+      "id": "graphify-group-delivery-7232713cc2ca",
+      "parent": "graphify-root-ddcb2dfa42d8",
+      "label": "Packaging and developer workflows",
+      "description": "Install the library, build native extensions and documentation, and maintain the project with developer checks.",
+      "features": []
+    },
+    {
+      "id": "graphify-foundation-runtime-2dde3d14987a",
+      "parent": "graphify-group-foundation-ffb19d83fdc2",
+      "label": "Runtime services and interoperability",
+      "description": "Shared environment initialization, registries, distributed communication, logging, file access, serialization and tracing compatibility.",
+      "features": [
+        {
+          "label": "Environment and reproducibility",
+          "description": "Initialize supported libraries, apply optional environment setup, seed Python/NumPy/PyTorch, and describe the runtime environment.",
+          "id": "foundation.runtime.detail-1"
+        },
+        {
+          "label": "Registries and object lookup",
+          "description": "Register components and resolve configurable object paths used across the library.",
+          "id": "foundation.runtime.detail-2"
+        },
+        {
+          "label": "Multi-process communication",
+          "description": "Expose rank/world-size helpers, synchronization, object gathering, shared random seeds and reduction of metric dictionaries.",
+          "id": "foundation.runtime.detail-3"
+        },
+        {
+          "label": "Files, logs and serialization",
+          "description": "Resolve detectron2:// resources through PathManager, configure bounded logging helpers, and wrap callable objects for pickling.",
+          "id": "foundation.runtime.detail-4"
+        },
+        {
+          "label": "Memory and tracing compatibility",
+          "description": "Retry CUDA out-of-memory operations, expose version predicates, and use tracing-compatible assertions.",
+          "id": "foundation.runtime.detail-5"
+        }
+      ]
+    },
+    {
+      "id": "graphify-build-package-8317e92aba48",
+      "parent": "graphify-group-delivery-7232713cc2ca",
+      "label": "Python package and native-extension builds",
+      "description": "Build and install Detectron2, compile its CPU/CUDA operators and include model-zoo configuration resources.",
+      "features": [
+        {
+          "label": "Package metadata",
+          "description": "Resolve the distribution version and install requirements and package contents.",
+          "id": "build.package.detail-1"
+        },
+        {
+          "label": "Native extension build",
+          "description": "Compile registered C++/CUDA sources with the selected toolkit, architecture and build flags.",
+          "id": "build.package.detail-2"
+        },
+        {
+          "label": "Config resources",
+          "description": "Include or link model-zoo configuration files in the installed package.",
+          "id": "build.package.detail-3"
+        },
+        {
+          "label": "Wheel publishing helpers",
+          "description": "Build wheel matrices and generate installation tables and wheel indexes for supported environments.",
+          "id": "build.package.detail-4"
+        }
+      ]
+    }
+  ],
+  "removed": [
+    "Visual feature extraction",
+    "Proposals and prediction heads",
+    "End-to-end vision tasks",
+    "Specialized inference and interoperability",
+    "Deployment and model serialization",
+    "Reusable experiment recipes",
+    "Weights, checkpoints and pretrained compatibility",
+    "ResNet visual backbones",
+    "RegNet and AnyNet backbones",
+    "Vision Transformer and ViTDet feature pyramids",
+    "Multiscale Vision Transformer backbone",
+    "Swin Transformer backbone",
+    "Multi-scale feature pyramid networks",
+    "Region proposal generation",
+    "ROI pooling and box prediction",
+    "Cascade box refinement",
+    "Instance segmentation masks",
+    "Human keypoint prediction",
+    "Two-stage object detection",
+    "RetinaNet one-stage detection",
+    "FCOS anchor-free detection",
+    "Semantic segmentation",
+    "Panoptic instance-and-stuff segmentation",
+    "Oriented object detection and rotated geometry",
+    "Deformable visual convolutions",
+    "Multi-view inference and prediction fusion",
+    "MMDetection model interoperability",
+    "TorchScript scripting and tracing",
+    "Legacy Caffe2 and ONNX deployment",
+    "Pretrained model and recipe lookup",
+    "Detection, segmentation and training recipes",
+    "Accelerated COCO evaluation backend",
+    "Data and input pipelines",
+    "Dataset formats and preparation",
+    "Training and optimization",
+    "Evaluation and metrics",
+    "Inference and analysis tools",
+    "Dataset catalog and built-in metadata",
+    "Training and inference data loaders",
+    "Image and annotation preprocessing",
+    "Composable image augmentations",
+    "Distributed and class-aware sampling",
+    "COCO and panoptic dataset formats",
+    "LVIS long-tail dataset formats",
+    "Cityscapes dataset formats",
+    "Pascal VOC dataset format",
+    "Dataset conversion and preparation",
+    "Iteration-based training engine",
+    "Training metrics and event writers",
+    "Training hooks and scheduled actions",
+    "Distributed training launch",
+    "Optimizer construction and gradient clipping",
+    "Learning-rate and warmup schedules",
+    "Default training and setup workflow",
+    "Config-driven training and evaluation commands",
+    "PyTorch Lightning integration",
+    "Dataset inference and evaluation protocol",
+    "COCO detection, mask and keypoint metrics",
+    "Semantic segmentation metrics",
+    "COCO panoptic quality metrics",
+    "Cityscapes instance and semantic metrics",
+    "LVIS long-tail detection metrics",
+    "Pascal VOC detection metrics",
+    "Image and video prediction demos",
+    "Prediction and annotation visualization",
+    "Bounding-box object tracking",
+    "Model complexity and structure analysis",
+    "Data and model throughput benchmarks",
+    "Export commands and C++ inference example",
+    "API documentation build",
+    "Developer checks and test-support utilities",
+    "Research projects and extensions",
+    "Project import integration",
+    "DensePose: dense surface correspondence",
+    "DensePose data contracts and configuration",
+    "Surface prediction conversion",
+    "DensePose region processing and inference",
+    "Chart-based IUV estimation",
+    "Continuous surface embeddings",
+    "High-resolution DensePose backbone",
+    "DensePose test-time augmentation",
+    "DensePose datasets and mesh catalog",
+    "Pseudo-labeling and video bootstrapping",
+    "DensePose training workflows",
+    "Dense surface and mesh evaluation",
+    "DensePose visualization and command-line tools",
+    "DensePose package installation",
+    "DeepLab semantic segmentation",
+    "Bottom-up Panoptic-DeepLab",
+    "PointRend mask refinement",
+    "Point-supervised segmentation",
+    "TensorMask dense instance masks",
+    "TridentNet scale-aware detection",
+    "ViTDet experiment recipes",
+    "MViTv2 detector recipes",
+    "BatchNorm research experiments"
+  ],
+  "retired_checks": [
+    "CPU behavior: Weights, checkpoints and pretrained compatibility",
+    "CPU behavior: ResNet visual backbones",
+    "CPU behavior: RegNet and AnyNet backbones",
+    "CPU behavior: Vision Transformer and ViTDet feature pyramids",
+    "CPU behavior: Multiscale Vision Transformer backbone",
+    "CPU behavior: Swin Transformer backbone",
+    "CPU behavior: Multi-scale feature pyramid networks",
+    "CPU behavior: Region proposal generation",
+    "CPU behavior: ROI pooling and box prediction",
+    "CPU behavior: Cascade box refinement",
+    "CPU behavior: Instance segmentation masks",
+    "CPU behavior: Human keypoint prediction",
+    "CPU behavior: Two-stage object detection",
+    "CPU behavior: RetinaNet one-stage detection",
+    "CPU behavior: FCOS anchor-free detection",
+    "CPU behavior: Semantic segmentation",
+    "CPU behavior: Panoptic instance-and-stuff segmentation",
+    "CPU behavior: Oriented object detection and rotated geometry",
+    "CPU behavior: Deformable visual convolutions",
+    "CPU behavior: Multi-view inference and prediction fusion",
+    "CPU behavior: MMDetection model interoperability",
+    "CPU behavior: TorchScript scripting and tracing",
+    "CPU behavior: Accelerated COCO evaluation backend",
+    "runtime-data-catalog",
+    "runtime-data-loading",
+    "runtime-data-mapping",
+    "runtime-data-augmentation",
+    "runtime-data-sampling",
+    "runtime-data-coco",
+    "runtime-data-lvis",
+    "runtime-data-cityscapes",
+    "runtime-data-voc",
+    "runtime-data-preparation",
+    "runtime-train-engine",
+    "runtime-train-telemetry",
+    "runtime-train-hooks",
+    "runtime-train-distributed",
+    "runtime-train-optimization",
+    "runtime-train-scheduling",
+    "runtime-train-defaults",
+    "runtime-train-entrypoints",
+    "runtime-train-lightning",
+    "runtime-eval-runner",
+    "runtime-eval-coco",
+    "runtime-eval-semantic",
+    "runtime-eval-panoptic",
+    "runtime-eval-cityscapes",
+    "runtime-eval-lvis",
+    "runtime-eval-voc",
+    "runtime-tool-inference",
+    "runtime-tool-visualization",
+    "runtime-tool-tracking",
+    "runtime-tool-analysis",
+    "runtime-tool-benchmark",
+    "runtime-tool-deployment",
+    "runtime-build-documentation",
+    "runtime-build-development",
+    "runtime-model-zoo",
+    "runtime-configs-recipes",
+    "runtime-export-caffe2",
+    "characterize-extension-bridge",
+    "characterize-dp-foundation",
+    "characterize-dp-conversion",
+    "characterize-dp-model-runtime",
+    "characterize-dp-chart",
+    "characterize-dp-cse",
+    "characterize-dp-hrnet",
+    "characterize-dp-augmentation",
+    "characterize-dp-data",
+    "characterize-dp-bootstrap",
+    "characterize-dp-training",
+    "characterize-dp-evaluation",
+    "characterize-dp-visualization",
+    "characterize-dp-packaging",
+    "characterize-extension-deeplab",
+    "characterize-extension-panoptic-deeplab",
+    "characterize-extension-pointrend",
+    "characterize-extension-pointsup",
+    "characterize-extension-tensormask",
+    "characterize-extension-tridentnet",
+    "characterize-extension-vitdet",
+    "characterize-extension-mvitv2",
+    "characterize-extension-batchnorm",
+    "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+    "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+    "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py",
+    "upstream:projects/DensePose/tests/test_frame_selector.py",
+    "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+    "upstream:projects/DensePose/tests/test_image_resize_transform.py",
+    "upstream:projects/DensePose/tests/test_model_e2e.py",
+    "upstream:projects/DensePose/tests/test_setup.py",
+    "upstream:projects/DensePose/tests/test_structures.py",
+    "upstream:projects/DensePose/tests/test_tensor_storage.py",
+    "upstream:tests/data/test_coco.py",
+    "upstream:tests/data/test_coco_evaluation.py",
+    "upstream:tests/data/test_dataset.py",
+    "upstream:tests/data/test_detection_utils.py",
+    "upstream:tests/data/test_rotation_transform.py",
+    "upstream:tests/data/test_sampler.py",
+    "upstream:tests/data/test_transforms.py",
+    "upstream:tests/layers/test_deformable.py",
+    "upstream:tests/layers/test_mask_ops.py",
+    "upstream:tests/layers/test_nms_rotated.py",
+    "upstream:tests/layers/test_roi_align_rotated.py",
+    "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+    "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+    "upstream:tests/modeling/test_fast_rcnn.py",
+    "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest",
+    "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+    "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest",
+    "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest",
+    "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+    "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+    "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+    "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability",
+    "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+    "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+    "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+    "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+    "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+    "upstream:tests/modeling/test_rpn.py",
+    "upstream:tests/structures/test_rotated_boxes.py",
+    "upstream:tests/test_checkpoint.py",
+    "upstream:tests/test_engine.py",
+    "upstream:tests/test_events.py",
+    "upstream:tests/test_export_onnx.py",
+    "upstream:tests/test_model_analysis.py",
+    "upstream:tests/test_model_zoo.py",
+    "upstream:tests/test_packaging.py::TestProjects",
+    "upstream:tests/test_scheduler.py",
+    "upstream:tests/test_solver.py",
+    "upstream:tests/test_visualizer.py",
+    "upstream:tests/tracking/test_bbox_iou_tracker.py",
+    "upstream:tests/tracking/test_hungarian_tracker.py",
+    "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+    "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py",
+    "upstream:tests/utils/test_tensorboardx.py"
+  ],
+  "task": {
+    "name": "ImageList padding 开发任务",
+    "comparison": {
+      "candidate": {
+        "accepted": 1,
+        "runs": 1,
+        "tokens": {
+          "max": 431290,
+          "median": 431290,
+          "min": 431290
+        },
+        "usage_complete": true
+      },
+      "change_percent": -9.477,
+      "original": {
+        "accepted": 1,
+        "runs": 1,
+        "tokens": {
+          "max": 476442,
+          "median": 476442,
+          "min": 476442
+        },
+        "usage_complete": true
+      },
+      "ratio": 0.905231,
+      "status": "passed"
+    }
+  },
+  "usage": {
+    "examiner": 232763,
+    "judge": 2379423,
+    "rewrite": 16490203,
+    "solver_candidate": 431290,
+    "solver_original": 476442,
+    "total": 20010121
+  },
+  "calls": 25,
+  "cached_input_tokens": 18089728,
+  "usage_complete": true,
+  "started_at": "2026-11-06T15:29:33.323501+00:00",
+  "finished_at": "2026-11-06T17:57:15.020528+00:00",
+  "minutes": 147.69495045
+}
