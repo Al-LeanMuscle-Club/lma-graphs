@@ -1,0 +1,9 @@
+phase,time,message
+queued,2026-11-07T17:54:05.183625+00:00,Selection accepted; waiting for an execution slot.
+preparing,2026-11-07T17:54:47.531194+00:00,Creating an isolated branch and worktree.
+baseline,2026-11-07T17:54:59.783406+00:00,Freezing the original selected checks before editing.
+task_effort_design,2026-11-07T17:55:39.336629+00:00,Freezing selected real tasks and independent hidden acceptance criteria.
+task_effort_original,2026-11-07T18:04:12.647210+00:00,Measuring original task costs in independent fresh workspaces.
+task_effort,2026-11-07T18:08:22.898055+00:00,An independent task evaluation completed.
+refactoring,2026-11-07T18:08:34.319126+00:00,The configured agent is independently implementing the selected graph.
+failed,2026-11-07T18:26:55.167294+00:00,Execution stopped; private candidate and evidence are retained for owner review.
