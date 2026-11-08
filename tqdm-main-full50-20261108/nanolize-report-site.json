@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "nrs_918f685727954532eaa1d5980b43adeca5cf13ba125c2e085bd161e773c0dfc4",
+  "files": [
+    {
+      "path": "data.json",
+      "sha256": "b1ea6851ee1ce367eff4e61390d3cfc1cc2c5eb044dbad4fa47cb381551d50fc"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "27e36a0ca0b074db914e282271b2075935353dfcb0838234e2193f21530d0e5e"
+    },
+    {
+      "path": "experiment.json",
+      "sha256": "2d4bdc6d57d4da38ed66aaae63ab31d925ac6d1b54917b0e3ceefad8290c7e90"
+    },
+    {
+      "path": "index.html",
+      "sha256": "482ef1d480138a3a5bae3587fa5a7d347c73c3499b1d3baa4e161a54178d6a07"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "9d9e5242fb448093c426ee9ff1ea93d985be48967bcf66b206ca56cb5faa261f"
+    }
+  ],
+  "presentation_extension": "Safe experiment notes and code link; native graph and bound evidence unchanged."
+}

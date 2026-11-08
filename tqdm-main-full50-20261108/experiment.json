@@ -1,0 +1,223 @@
+{
+  "harness_branch": "main",
+  "harness_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+  "upstream_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+  "candidate_commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+  "code_publication": {
+    "verified_commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+    "published_commit": "f70cffc181645918d02fdf0e4ad56e08473e8803",
+    "tree": "8fec2cb8deca44a378418b33fcfe9e6adf98c338",
+    "identical_code_tree": true,
+    "metadata_only_publication_commit": true,
+    "branch": "examples/tqdm-main-full50-20261108",
+    "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-main-full50-20261108",
+    "ci_skipped_for_publication": true,
+    "status": "published",
+    "workflow_status": "failed",
+    "acceptance_gaps": [
+      "task_effort_not_passed"
+    ],
+    "publication_kind": "experimental_candidate; behavior and strict size gates passed; overall task-cost gate not accepted"
+  },
+  "scope": "All declared capabilities retained; no feature exclusions",
+  "original_tokens": 72148,
+  "candidate_tokens": 35870,
+  "retained_percent": 49.71724787935909,
+  "source_tokens": {
+    "original": 45979,
+    "candidate": 27281
+  },
+  "configuration_tokens": {
+    "original": 26169,
+    "candidate": 8589
+  },
+  "strict_size_gate_passed": true,
+  "workflow_status": "failed",
+  "acceptance_gaps": [
+    "task_effort_not_passed"
+  ],
+  "check_groups": {
+    "passed": 26
+  },
+  "iterations": [
+    {
+      "attempt": 1,
+      "commit": "60e68b7bd2a40e07b61415cff4ccf0ac306fb2af",
+      "status": "regressed",
+      "passed_check_groups": 25,
+      "recorded_check_groups": 26,
+      "tokens": 35866,
+      "owner_delivery_checks_passed": true,
+      "failed_behavior_groups": [
+        "upstream-tqdm"
+      ]
+    },
+    {
+      "attempt": 2,
+      "commit": "090ba5aaa903305a115ae679377cb66c316b384a",
+      "status": "checks_passed",
+      "passed_check_groups": 26,
+      "recorded_check_groups": 26,
+      "tokens": 35868,
+      "owner_delivery_checks_passed": false,
+      "failed_behavior_groups": []
+    },
+    {
+      "attempt": 3,
+      "commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+      "status": "checks_passed",
+      "passed_check_groups": 26,
+      "recorded_check_groups": 26,
+      "tokens": 35870,
+      "owner_delivery_checks_passed": true,
+      "failed_behavior_groups": []
+    }
+  ],
+  "postflight": {
+    "candidate_commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+    "unchanged_protected_files": 25,
+    "preserved_existing_function_type_comments": [
+      "logging_redirect_tqdm",
+      "tqdm_logging_redirect"
+    ],
+    "unchanged_logo": true,
+    "python38_syntax_files": 33,
+    "python38_import_iteration_and_cli_smoke": "passed",
+    "notebook_cells": "passed",
+    "stored_notebook_outputs_compared": false
+  },
+  "published_installation": "passed without a pretend SCM version",
+  "workflow_seconds": 4597.3262,
+  "usage_by_role": {
+    "author": {
+      "calls": 4,
+      "seconds": 1909.9,
+      "input_tokens": 4002745,
+      "cached_input_tokens": 3736192,
+      "output_tokens": 61707,
+      "unmetered_calls": 1,
+      "total_tokens": 4064452,
+      "usage_complete": false
+    },
+    "task_solver": {
+      "calls": 5,
+      "seconds": 1897.1,
+      "input_tokens": 3126647,
+      "cached_input_tokens": 2934528,
+      "output_tokens": 55181,
+      "unmetered_calls": 0,
+      "total_tokens": 3181828,
+      "usage_complete": true
+    }
+  },
+  "performance": {
+    "disabled": {
+      "original_median_cpu_seconds": 0.03914293999999996,
+      "candidate_median_cpu_seconds": 0.03844076000000002,
+      "candidate_original_ratio": 0.9820611328632969
+    },
+    "automatic": {
+      "original_median_cpu_seconds": 0.18581027999999988,
+      "candidate_median_cpu_seconds": 0.18320601999999986,
+      "candidate_original_ratio": 0.9859843061428032
+    },
+    "updates": {
+      "original_median_cpu_seconds": 0.006928119999999982,
+      "candidate_median_cpu_seconds": 0.0064953800000000506,
+      "candidate_original_ratio": 0.9375386107631027
+    },
+    "rendered": {
+      "original_median_cpu_seconds": 0.050234279999999965,
+      "candidate_median_cpu_seconds": 0.05049666000000008,
+      "candidate_original_ratio": 1.0052231265183877
+    }
+  },
+  "environment_setup_repair": {
+    "time": "2026-11-08T22:19:23.859566+00:00",
+    "kind": "author_environment_dependency_repair",
+    "reason": "Harness Python 3.13 package location differs from author Python 3.11; initial copying did not find the tokenizer package.",
+    "action": "Installed tiktoken 0.12.0 and regex in this job author .venv only.",
+    "original_target_package_installed": false,
+    "frozen_runtime_prompts_checks_modified": false
+  },
+  "runner_recovery": {
+    "time": "2026-11-08T22:40:58.404765+00:00",
+    "reason": "Clarify reuse of this job own generated candidate during incremental repair; add a reviewed public diagnostic requirement, without changing frozen checks or task inputs.",
+    "original_sha256": "4aa401b3c3e2628ae28cad40ea82f0941059126f9de54b1bfe6603d8d54e9449",
+    "revised_sha256": "6d51fadcdd576c9c5cf1ab378d567003082db908aaa9f36a0c1651954174bec0",
+    "feedback_sha256": "4c754f45746abfcfa258eff36061acbf89219519d6461abeea15ec62d646c5bc",
+    "archived_original": "runner-revisions/v1/model_runner.py",
+    "restored_source_files": 122,
+    "restoration": "Only this job generated candidate bytes, matched against frozen author hashes; report mapping reserialized from this job metadata. No original implementation copied.",
+    "harness_runtime_modified": false,
+    "behavior_checks_modified": false,
+    "task_contract_modified": false
+  },
+  "additional_delivery_validation": {
+    "kind": "strengthen_owner_delivery_check",
+    "reason": "Supplementary Python 3.8 smoke exposed a real successful-help/version output-stream regression, also reproduced on the unchanged original and candidate.",
+    "budget_original_sha256": "a4e97e5d392ba2cc7317abcedcd6eaff54176669c7067a4b6c445c6e8a6ecdb0",
+    "budget_revised_sha256": "52c6f20875d80c507d4364b48af9c183592d4e4bef4e687a278978af71a85b24",
+    "feedback_original_sha256": "4c754f45746abfcfa258eff36061acbf89219519d6461abeea15ec62d646c5bc",
+    "feedback_revised_sha256": "8dc8c5866e8245c0c87c9714fca21bb885d0c373df033b4daa0e9e00ed36fcbe",
+    "paired_observation_sha256": "43d9f2659d34429a3b3c296e8886defbc60c2d229d546a643996760ff35e50c5",
+    "size_rule_unchanged": true,
+    "existing_checks_removed_or_weakened": false,
+    "main_runtime_modified": false,
+    "task_contract_modified": false
+  },
+  "supplementary_heldout_behavior_replay": {
+    "status": "passed",
+    "kind": "supplementary_frozen_behavior_replay",
+    "candidate_base_commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+    "patch_sha256": "f53fbc8e685e50a6322f4abbce678a2e804dc66ff45ab748bf583a81a38bcd3a",
+    "changed_file_hashes_verified": 2,
+    "frozen_check_sha256": "c9857b57e10be075d62cffcdd6c84c3163f056547987e8b7e376307572925e91",
+    "fixture_hashes": {
+      "heldout_cases.json": "d6f417cd877193452f7fd693011d19b887be2089f025a487dd3ad3185cd77344"
+    },
+    "model_calls": 0,
+    "seconds": 7.89852237701416,
+    "returncode": 0,
+    "stdout": "{\"variant\": \"heldout\", \"cases\": 12, \"invocations\": 47, \"failures\": 0}\n",
+    "stderr": "",
+    "limitation": "Reconstructed code matches saved task-change hashes. This replays frozen behavior checks only; the deleted solver artifact is not revalidated, and the original harness budget-exhausted outcome is unchanged."
+  },
+  "task_usage_observations": {
+    "development": {
+      "original": 733507,
+      "candidate": 663628,
+      "change_percent": -9.526698450048876,
+      "harness_status": "passed"
+    },
+    "heldout": {
+      "original": 495637,
+      "candidate": 698999,
+      "raw_usage_change_percent": 41.0304315456675,
+      "harness_status": "unverified_budget_exhausted",
+      "supplementary_code_behavior_replay": "passed",
+      "full_solver_artifact_revalidated": false
+    }
+  },
+  "methodology": [
+    "Both versions use tiktoken 0.12.0 / cl100k_base, independently per file.",
+    "Unchanged original tests, documentation and binary assets are excluded under the frozen policy; modified text remains counted.",
+    "The frozen classifier counts the unchanged notebook fixture and its nbval configuration as 4,291 configuration tokens in both versions.",
+    "Reused static knowledge and check definitions refer to the identical upstream commit. No previous candidate implementation or passing results were reused.",
+    "The author used a fresh source-free workspace. This shared-host workflow boundary is not OS-enforced isolation.",
+    "Task inputs were corrected before this run to explain withheld independent checks; acceptance checks and fixtures were unchanged.",
+    "Task variants use one repetition. This is exploratory cost evidence, not a statistical estimate of general cognitive burden.",
+    "Real-task modifications run in disposable repository copies; their patches are not merged into the delivered implementation.",
+    "Logged CLI model usage excludes this coordinating conversation and preparation. Cached input is a subset of input, not added again. Interrupted sessions without final usage receipts are counted as unmetered calls; their reported role usage is a known subtotal, not a complete total. Their durations are bounded by confirmed cleanup.",
+    "Additional original-versus-candidate CLI checks exposed help/version output going to stderr instead of stdout. The owner delivery gate was strengthened and repair resumed, while main, the frozen 26 check groups and task contracts stayed unchanged.",
+    "The task assessment of the earlier candidate was stopped because that candidate failed the supplemental CLI behavior check. Its completed solver usage is included in experiment totals, but that candidate is not used as the final candidate comparison.",
+    "Workflow duration excludes preparation and publication. Role durations may overlap and should not be summed as wall time."
+  ],
+  "coverage_limits": [
+    "Finite checks do not establish complete semantic equivalence.",
+    "Tk desktop interaction lacks a display; matplotlib uses Agg and notebook checks exercise widget state.",
+    "Slack, Discord and Telegram transports are mocked; real service delivery is not exercised.",
+    "External download/archive demos are parsed, not executed end-to-end. Windows and macOS are not exercised.",
+    "Notebook cells run with nbval-lax; historical stored output prose is not compared."
+  ]
+}
