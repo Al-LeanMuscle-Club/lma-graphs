@@ -1,0 +1,11 @@
+role,label,calls,status,observed_tokens,completed_agent_seconds
+helper,独立辅助审查,9,complete,35486888,7065.6
+rewrite,首版重写与未完成修复,8,partial,23167475,6448.2
+original_env,环境与测试修正,5,complete,10764813,3145.1
+discover,功能发现,1,complete,10077627,1464.9
+verifier,候选最终评审,1,complete,4831840,871.4
+task_reviewer,任务验收评审,2,complete,4271585,1119.1
+solve_judge,原版任务评审,2,complete,2016504,756.8
+examiner,出题与修订,2,complete,1810095,781.6
+solver,原版解题,2,complete,1643119,620.0
+controller,控制器,1,unavailable,,
