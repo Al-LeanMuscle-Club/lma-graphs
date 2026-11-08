@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nanolize · Agent 自主重构设计报告</title>
+<meta name="description" content="保留 Discover、Select Scope 与 Deliver，将中间流程交给 Agent：结合 REA 的完整改造说明、工具目录、实施顺序与验收计划。">
+<meta name="theme-color" content="#163b36"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23163b36'/%3E%3Ctext x='14' y='47' font-size='48' font-family='sans-serif' fill='%23eaf1cc'%3En%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#overview">跳到报告正文</a>
+<div id="reading-progress" aria-hidden="true"></div>
+<header class="topbar"><a class="wordmark" href="#top"><b>n</b><span>nanolize<span class="wordmark-sub"> / DESIGN NOTES</span></span></a><div class="top-actions"><span class="proposal-label">设计提案 · 尚未实施</span><button id="print-button" type="button">打印 / PDF <span aria-hidden="true">↗</span></button></div></header>
+<main id="top">
+<section class="hero" aria-labelledby="hero-title">
+<div class="eyebrow"><span class="tiny-line"></span> ARCHITECTURE REPORT / 2026.11.08</div>
+<div class="hero-grid"><div><h1 id="hero-title">让 Agent 决定路径。<br><em>让工具记录事实。</em></h1><p class="lead">将固定中间流程改为自主调度，保留功能选择与最终交付。<br>一份结合 REA 设计借鉴、可直接用于实施讨论的完整改造报告。</p><div class="hero-links"><a class="primary" href="#changes">阅读修改清单 <span aria-hidden="true">↓</span></a><a href="report.md" download>下载 Markdown</a><a href="report.docx" download>下载 Word</a></div></div><aside class="edition"><span>REPORT 01</span><strong>保留输入与输出<br>开放中间路径</strong><dl><dt>分析基线</dt><dd>main <code>8c0745a1</code></dd><dt>参考项目</dt><dd>REA <code>72d5e72e</code></dd><dt>阅读方式</dt><dd>先看架构，再进入具体修改</dd></dl></aside></div>
+</section>
+<section class="architecture-board" aria-labelledby="board-title">
+<div class="board-heading"><div><div class="eyebrow">THE CHANGE</div><h2 id="board-title">同一目标，可以有不同的执行路径。</h2></div><div class="diagram-tabs" role="tablist" aria-label="架构示意切换"><button id="tab-proposed" role="tab" aria-selected="true" aria-controls="diagram-proposed" type="button">建议架构</button><button id="tab-current" role="tab" aria-selected="false" aria-controls="diagram-current" type="button" tabindex="-1">当前流程</button></div></div>
+<div id="diagram-proposed" role="tabpanel" aria-labelledby="tab-proposed">
+<div class="architecture-flow"><div class="diagram-input"><span class="diagram-number">01 / 02</span><h3>理解与选择</h3><p>Discover<br>Select Scope</p><span class="diagram-tag">保留原有形式</span></div><div class="connector" aria-hidden="true">→</div><div class="diagram-agent"><div class="diagram-number">03 — 07 / AGENT</div><h3>Controller 自主推进</h3><p>读取目标与证据，安排下一步</p><div class="agent-choices"><span>补充契约</span><span>分拆重构</span><span>验证修复</span><span>测量成本</span></div><div class="tool-bridge">↕ <span>调用工具 · 接收事实</span></div><div class="tool-band">工作区 / 检查 / 比较 / 测量 / 版本 / 作业</div></div><div class="connector" aria-hidden="true">→</div><div class="diagram-output"><span class="diagram-number">08</span><h3>交付与解释</h3><p>代码 · 功能图<br>指标 · 证据缺口</p><span class="diagram-tag">保留原有形式</span></div></div><p class="diagram-caption">调度示意，尚未实现。用户要求持续有效；工具保留失败与未知，Controller 决定如何处理。</p>
+</div>
+<div id="diagram-current" role="tabpanel" aria-labelledby="tab-current" hidden><ol class="current-flow"><li><b>01</b>Discover</li><li><b>02</b>Select Scope</li><li class="mutable"><b>03</b>Freeze Contract</li><li class="mutable"><b>04</b>Freeze Tasks</li><li class="mutable"><b>05</b>Rewrite</li><li class="mutable"><b>06</b>Verify &amp; Repair</li><li class="mutable"><b>07</b>Measure Effort</li><li><b>08</b>Deliver</li></ol><p class="diagram-caption">沿用用户的八步概括。main 的界面定义还单列“保留通过验收的版本”；详细代码依据见正文第 02 节。</p></div>
+</section>
+<div class="report-layout"><aside class="sidebar"><div class="sidebar-inner"><div class="sidebar-title">报告导览 <span>14 SECTIONS</span></div><nav aria-label="报告目录"><a href="#overview"><span>01</span>决策摘要</a><a href="#baseline"><span>02</span>当前 main 的具体限制</a><a href="#architecture"><span>03</span>目标架构与职责</a><a href="#changes"><span>04</span>相对 main 的完整修改清单</a><a href="#tools"><span>05</span>工具能力目录</a><a href="#rea"><span>06</span>合并 REA 的设计借鉴</a><a href="#evidence"><span>07</span>证据、契约与未解决问题</a><a href="#boundaries"><span>08</span>验收标准与决策边界</a><a href="#efficiency"><span>09</span>任务成本与运行效率</a><a href="#scenarios"><span>10</span>三个运行情景</a><a href="#rollout"><span>11</span>实施顺序与迁移</a><a href="#validation"><span>12</span>测试与成本对照计划</a><a href="#scope"><span>13</span>第一版范围与暂缓项</a><a href="#sources"><span>14</span>来源与交付说明</a></nav><div class="sidebar-note"><span class="note-dot"></span>正文、下载文件同源<br>案例是说明，不是运行结果</div></div></aside><article class="report" id="report-content">
+<p>设计版本：2026-11-08 /
+v1.0。本文合并中间流程自主化方案、工具拆分方案、运行成本讨论及 REA
+设计借鉴。<strong>本文是建议实施的设计，不是已完成的软件变更或性能实验报告。</strong></p>
+<p>分析基线：nanolize
+<code>main@8c0745a19c40aa7673b28ceeb1b49c7ae2850d78</code>；参考项目 REA
+<code>main@72d5e72e6d7b7997c4ecb11972fc405be8ec67d2</code>。后续实施应重新确认目标
+main 的差异。源码定位均绑定这些版本。</p>
+<section id="overview" class="level2">
+<h2>01 · 决策摘要</h2>
+<p>建议保留 Discover、Select Scope、Deliver 的产品形式，将原来第 3–7
+步的执行策略交给
+agent。系统继续提供稳定的工具、真实的测量结果、版本记录和资源管理。Agent
+根据目标仓库决定先做什么、怎么拆分、何时验证、如何修复，以及什么时候可以交付。</p>
+<p>核心目标是适应不同仓库，减少固定流程造成的阻塞与返工。自主化不自动等于更快、更便宜，也不降低“不删功能”等用户要求。是否改善成本，需要在相同条件下比较完整任务。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>保留</th>
+<th>改变</th>
+<th>继续由程序保证</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>功能图、UA knowledge、功能选择页面、Submit、报告网页</td>
+<td>契约补充、基线运行、任务设计、重构、验证、修复、测量的顺序和组合</td>
+<td>真实执行结果、数值计算、版本与证据关联、已授权的资源边界</td>
+</tr>
+<tr class="even">
+<td>用户明确选择的范围、要求、评测开关、预算</td>
+<td>模块拆分、并行程度、局部与全量验证、候选选择</td>
+<td>原版和用户工作区保护；只取消本任务拥有的进程</td>
+</tr>
+</tbody>
+</table></div>
+<p>建议通过标准：遇到新的仓库类型时，agent
+能通过组合已有工具推进任务，而无需为了每一个特殊情形修改 Python
+状态机。</p>
+<p>本次网页只交付设计报告及下载文件。它不会启动重构、恢复之前取消的作业、修改
+nanolize 主分支或运行新的模型评测。</p>
+</section>
+<section id="baseline" class="level2">
+<h2>02 · 当前 main 的具体限制</h2>
+<p>用户描述的八个步骤是产品层面的概括。当前
+<code>assets/workflow.json</code>
+实际还单列了“保留通过验收的版本”，因此包含九条阶段记录。以下沿用用户的八步分组讨论，避免把界面阶段数量与架构目标混为一谈。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>现有行为</th>
+<th>具体代码</th>
+<th>对不同仓库的影响</th>
+<th>拆分方向</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>准备、基线、任务测量、实现、验证按固定分支衔接</td>
+<td><code>execution.py::_pipeline()</code></td>
+<td>局部环境问题可能阻止无依赖模块继续推进</td>
+<td>保存机械操作，调度移交 Controller</td>
+</tr>
+<tr class="even">
+<td>保留的原版检查未全部通过就拒绝进入重写</td>
+<td><code>execution.py::_require_behavior_baseline()</code></td>
+<td>原版本身的缺陷、过期依赖与候选回归难以分别处理</td>
+<td>记录基线失败及比较限制，由 agent 调查与安排后续</td>
+</tr>
+<tr class="odd">
+<td>按固定条件选择修复、优化、恢复或结束</td>
+<td><code>execution.py::_repair_decision()</code></td>
+<td>难以针对失败性质和工作收益调整策略</td>
+<td>工具返回事实和分类；agent 选择动作</td>
+</tr>
+<tr class="even">
+<td>验证或报告入口可默认触发修复</td>
+<td><code>operations.py</code>、<code>standalone_repair.py</code>、<code>workflow.py::create_run_report()</code></td>
+<td>一次“查看结果”可能启动昂贵的代码修改与重测</td>
+<td>查询、验证、修复、报告分别调用</td>
+</tr>
+<tr class="odd">
+<td>出题及原版开发任务测量与重写前置阶段绑定</td>
+<td><code>effort.py::prepare_benchmark()</code></td>
+<td>即使已有原版快照，也难以灵活安排运行时机</td>
+<td>拆分任务保存、单次执行、验收与统计</td>
+</tr>
+<tr class="even">
+<td>保存较小的已验收候选，并按固定条件恢复</td>
+<td><code>rewrite_stages.py::remember()</code> 与调度逻辑</td>
+<td>体积之外的结构、性能、验证质量难以进入选择</td>
+<td>保存所有可追溯候选，agent 给出选择理由</td>
+</tr>
+<tr class="odd">
+<td>代码远端发布受综合成功状态限制</td>
+<td><code>execution.py::_pipeline()</code> 交付段</td>
+<td>阶段性结果与“完成目标”容易被绑定</td>
+<td>发布权限、制品生成和验收结论分开；缺口必须显式展示</td>
+</tr>
+</tbody>
+</table></div>
+<p>源码依据：<a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/execution.py">执行调度</a>、<a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/workflow.py">报告入口</a>、<a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/operations.py">工具副作用声明</a>、<a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/rewrite_stages.py">候选管理</a>、<a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/effort.py">任务测量</a>。</p>
+<p>现有实现已经具备大量可复用能力：隔离工作区、检查执行、失败分类、代码量统计、任务
+usage 采集、报告和 Local／Slurm
+后端。本次不需要重新实现这些基础能力。</p>
+</section>
+<section id="architecture" class="level2">
+<h2>03 · 目标架构与职责</h2>
+<p>前端输入仍然是“理解仓库 → 选择范围”。中间 Controller
+读取用户要求、完整可访问的 UA knowledge
+和已有运行状态，调用工具推进工作。最后 Deliver
+消费明确选定的候选和证据，生成原有形式的代码链接与报告。</p>
+<section id="三层职责" class="level3">
+<h3>三层职责</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>层</th>
+<th>负责</th>
+<th>不应承担</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agent 决策层</td>
+<td>调查问题、选择方法、安排并行、修复、选择候选、解释交付结论</td>
+<td>编造通过次数、修改实际测量值、擅自降低用户要求</td>
+</tr>
+<tr class="even">
+<td>共享工具层</td>
+<td>工作区、执行、比较、计量、保存、检索、组合操作</td>
+<td>在普通查询或报告中隐式启动重写；替用户改变功能范围</td>
+</tr>
+<tr class="odd">
+<td>执行适配层</td>
+<td>Local／Slurm 运行、进程与作业归属、状态、取消、结果收集</td>
+<td>用资源可用性替代功能是否保留的判断</td>
+</tr>
+</tbody>
+</table></div>
+<p>CLI、MCP 和网页后台复用同一套工具语义。交互模式下，已有 coding agent
+可以直接作为决策方；网页无人值守任务由后台启动
+Controller。两种入口应使用相同的工作指导与记录结构，避免无意义地嵌套两个承担相同判断的
+agent。</p>
+<p>源码访问方式沿用用户授权的实验策略：允许参考原版时可以查源码；明确要求知识隔离时仍需隔离。将流程自主化不应顺便改变这项实验条件。隐藏任务答案的访问隔离同理。</p>
+</section>
+<section id="必要前置条件与固定顺序的区别" class="level3">
+<h3>必要前置条件与固定顺序的区别</h3>
+<p>工具可以要求执行自身所需的输入。例如比较需要明确的两个版本，恢复需要确实存在的候选，Slurm
+查询需要有效的作业身份。这些是操作语义，不是要求整个项目必须按某条路线执行。</p>
+<p>允许一部分模块在基线调查时就开始实现；允许构建与无依赖的源码工作并行；允许先局部检查再扩大覆盖。涉及同一文件的写入应明确归属并串行合并，不能用“并行”掩盖冲突。</p>
+</section>
+</section>
+<section id="changes" class="level2">
+<h2>04 · 相对 main 的完整修改清单</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>编号</th>
+<th>修改内容</th>
+<th>保留与复用</th>
+<th>完成标志</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M01</td>
+<td>将 <code>_pipeline()</code> 的中间策略替换为 Controller
+调度入口</td>
+<td>Submit、工作区隔离、取消、后台执行</td>
+<td>能在同一工具集下采用不同有效顺序完成任务</td>
+</tr>
+<tr class="even">
+<td>M02</td>
+<td>提取契约、重构、验证、测量等独立能力</td>
+<td>现有领域实现和检查执行器</td>
+<td>CLI／MCP 入口调用相同语义实现</td>
+</tr>
+<tr class="odd">
+<td>M03</td>
+<td>移除验证、查询、报告中的默认自动修复</td>
+<td>显式组合操作可保留</td>
+<td>生成报告不会改代码或调用实现 agent</td>
+</tr>
+<tr class="even">
+<td>M04</td>
+<td>为契约、检查和环境调整增加版本关联</td>
+<td>原版快照、用户选定范围</td>
+<td>修改检查后保留旧结果，相关比较使用新版本</td>
+</tr>
+<tr class="odd">
+<td>M05</td>
+<td>将严格验收标准提取为明确的评估规则</td>
+<td>输出比较、范围检查、安装与成本判断</td>
+<td>规则返回理由与缺口，不强制安排下一轮实现</td>
+</tr>
+<tr class="even">
+<td>M06</td>
+<td>将修复、优化、恢复、停止选择交给 Controller</td>
+<td>失败分类、用户预算和取消机制</td>
+<td>不再由固定 retry 分支独占策略选择</td>
+</tr>
+<tr class="odd">
+<td>M07</td>
+<td>拆分任务设计、保存、单次执行、判卷和比较</td>
+<td>新鲜 solver、usage 采集、隐藏答案隔离</td>
+<td>运行时机可变；关闭评测时不出题、不偷跑</td>
+</tr>
+<tr class="even">
+<td>M08</td>
+<td>提供候选保存、合并、恢复和显式选择能力</td>
+<td>Git 与现有候选存档机制</td>
+<td>候选选择可综合功能、结构、大小和性能</td>
+</tr>
+<tr class="odd">
+<td>M09</td>
+<td>增加批量及异步调用方式</td>
+<td>Local／Slurm、进程状态与结果收集</td>
+<td>等待长任务时可推进其他无依赖工作</td>
+</tr>
+<tr class="even">
+<td>M10</td>
+<td>将运行状态改为制品、操作、证据与未解决问题索引</td>
+<td>日志、checkpoint、历史记录</td>
+<td>Controller 重启后能接续，不重复已完成工作</td>
+</tr>
+<tr class="odd">
+<td>M11</td>
+<td>中间进度显示真实活动，Deliver 只消费制品与证据</td>
+<td>Discover／Scope／报告的主要界面</td>
+<td>部分交付和目标完成状态清楚区分</td>
+</tr>
+<tr class="even">
+<td>M12</td>
+<td>更新提示词、操作说明、接口测试与对照实验</td>
+<td>现有测量及边界回归覆盖</td>
+<td>不同顺序、部分失败、恢复和调用成本均有检查</td>
+</tr>
+</tbody>
+</table></div>
+<section id="拟修改模块" class="level3">
+<h3>拟修改模块</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>模块</th>
+<th>具体处理</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>execution.py</code></td>
+<td>保留生命周期入口；拆出调度、机械执行与结果汇总；移除固定策略对流程的独占</td>
+</tr>
+<tr class="even">
+<td><code>verification.py</code> /
+<code>capability_verification.py</code> /
+<code>repair_policy.py</code></td>
+<td>提取检查、比较、分类、覆盖和验收规则，避免内嵌下一步动作</td>
+</tr>
+<tr class="odd">
+<td><code>standalone_repair.py</code> / <code>workflow.py</code></td>
+<td>让修复成为显式操作；报告渲染使用只读证据路径</td>
+</tr>
+<tr class="even">
+<td><code>rewrite.py</code> / <code>rewrite_stages.py</code></td>
+<td>暴露工作区、合并、保存、恢复；候选排序建议与实际选择分开</td>
+</tr>
+<tr class="odd">
+<td><code>effort.py</code> / <code>effort_runner.py</code> /
+<code>effort_grading.py</code></td>
+<td>分离任务设计、执行、评分、计量；不要因 Controller 需要分工而放开
+solver 的答案隔离</td>
+</tr>
+<tr class="even">
+<td><code>execution_backends.py</code></td>
+<td>复用运行后端，提供通用操作句柄及真实状态；不新增一套调度系统</td>
+</tr>
+<tr class="odd">
+<td><code>evidence_store.py</code> 与现有运行记录</td>
+<td>复用已有身份与记录结构，补齐跨阶段引用和问题索引</td>
+</tr>
+<tr class="even">
+<td><code>prompts/</code></td>
+<td>存放 Controller、可选工作指导和角色指导；Python
+仅负责动态数据与装配</td>
+</tr>
+<tr class="odd">
+<td><code>cli.py</code> / <code>cli_workflow.py</code> /
+<code>mcp_server.py</code> / <code>operations.py</code></td>
+<td>保持语义一致、准确声明副作用，提供新能力入口</td>
+</tr>
+<tr class="even">
+<td>前端进度与报告模块</td>
+<td>保留用户输入与最终功能图，适配活动列表及真实的部分结果</td>
+</tr>
+</tbody>
+</table></div>
+<p>新的文件划分在实施时按现有依赖确定，不预先为每个工具新建一层 wrapper
+或一个独立模块。</p>
+</section>
+</section>
+<section id="tools" class="level2">
+<h2>05 · 工具能力目录</h2>
+<p>以下是第一版的能力清单：16 项业务能力和 3
+项运行管理能力。名称是拟定接口，<strong>并非目前都已实现，也不要求与公开
+MCP 工具一一对应</strong>。公开工具应围绕 agent 实际需要的结果确定。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>类别</th>
+<th>建议接口</th>
+<th>主要输入</th>
+<th>返回结果及边界</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>契约</td>
+<td><code>create_workspace</code></td>
+<td>原版或候选版本、用途</td>
+<td>隔离工作区与来源；不改用户工作树</td>
+</tr>
+<tr class="even">
+<td>契约</td>
+<td><code>save_contract</code></td>
+<td>功能范围、要求、语义记录及前版</td>
+<td>契约版本与修改理由；不能降低用户明确要求</td>
+</tr>
+<tr class="odd">
+<td>契约</td>
+<td><code>capture_baseline</code></td>
+<td>原版快照、指定检查、环境</td>
+<td>实际通过／失败／阻塞结果；失败不抹去已完成项</td>
+</tr>
+<tr class="even">
+<td>重构</td>
+<td><code>run_agent</code></td>
+<td>职责、输入资料、工作区、允许的工具</td>
+<td>输出制品、修改、usage、终止状态；不把自述当验收</td>
+</tr>
+<tr class="odd">
+<td>重构</td>
+<td><code>merge_candidate_parts</code></td>
+<td>已完成的模块修改、目标候选</td>
+<td>合并结果、冲突与重叠；不静默覆盖竞争写入</td>
+</tr>
+<tr class="even">
+<td>重构</td>
+<td><code>save_candidate</code></td>
+<td>工作区、说明</td>
+<td>不可混淆的候选身份与来源</td>
+</tr>
+<tr class="odd">
+<td>重构</td>
+<td><code>restore_candidate</code></td>
+<td>本任务的指定候选</td>
+<td>恢复结果；历史尝试和证据保留</td>
+</tr>
+<tr class="even">
+<td>验证</td>
+<td><code>run_checks</code></td>
+<td>候选或原版、检查集合、环境</td>
+<td>退出状态、实际用例结果、日志与未运行项</td>
+</tr>
+<tr class="odd">
+<td>验证</td>
+<td><code>compare_behavior</code></td>
+<td>两侧结果、比较规则</td>
+<td>可比较范围、差异、基线失败及未知项</td>
+</tr>
+<tr class="even">
+<td>验证</td>
+<td><code>check_installation</code></td>
+<td>指定构建、安装、使用命令</td>
+<td>独立安装与使用证据，不以源码目录 import 替代</td>
+</tr>
+<tr class="odd">
+<td>验证</td>
+<td><code>audit_coverage</code></td>
+<td>功能图、检查映射、已有证据</td>
+<td>直接、间接、缺失或失效覆盖；不推断完整等价</td>
+</tr>
+<tr class="even">
+<td>测量</td>
+<td><code>measure_code</code></td>
+<td>两侧版本、统计范围</td>
+<td>行数、tokens、字节及支持的结构指标、排除项</td>
+</tr>
+<tr class="odd">
+<td>测量</td>
+<td><code>run_benchmark</code></td>
+<td>工作负载、环境、运行设置</td>
+<td>延迟、吞吐、内存等实际记录与比较条件</td>
+</tr>
+<tr class="even">
+<td>任务</td>
+<td><code>save_task_suite</code></td>
+<td>任务、变体、验收方式、范围</td>
+<td>可追溯任务版本；任务设计由 <code>run_agent</code> 等方式完成</td>
+</tr>
+<tr class="odd">
+<td>任务</td>
+<td><code>run_task_trial</code></td>
+<td>一侧版本、任务、solver 设置</td>
+<td>修改、实际执行、usage、耗时；验收与解题隔离</td>
+</tr>
+<tr class="even">
+<td>任务</td>
+<td><code>compare_task_effort</code></td>
+<td>有效验收结果、计量规则</td>
+<td>成功率、tokens、耗时及波动；缺失 usage 不记零</td>
+</tr>
+<tr class="odd">
+<td>管理</td>
+<td><code>get_operation_status</code></td>
+<td>操作 ID</td>
+<td>运行、等待、退出、结果与清理状态</td>
+</tr>
+<tr class="even">
+<td>管理</td>
+<td><code>cancel_operation</code></td>
+<td>本任务拥有的操作 ID</td>
+<td>取消结果、已收集证据和资源释放情况</td>
+</tr>
+<tr class="odd">
+<td>管理</td>
+<td><code>get_run_state</code></td>
+<td>本次运行 ID、查询范围</td>
+<td>候选、契约、证据、未解决问题及活跃操作索引</td>
+</tr>
+</tbody>
+</table></div>
+<section id="建议提供的组合调用" class="level3">
+<h3>建议提供的组合调用</h3>
+<p><code>verify_candidate</code> 可以执行调用方指定的“检查 → 比较 →
+覆盖汇总”，逐项返回结果，不默认修复。<code>measure_candidate</code>
+可以统一统计源码与配置，生成同口径的前后对比。通用批量调用适合同类、无依赖操作；有依赖的操作按明确顺序执行。</p>
+<p>这些组合使用普通函数与显式参数。第一版不发明通用工作流
+DSL，不建立为了计划而计划的执行语言。</p>
+<p>工具失败应区分：输入错误、缺依赖、资源等待、原版失败、候选回归、检查失效和取消。应携带能帮助下一步判断的信息；建议动作不会被自动执行。</p>
+</section>
+</section>
+<section id="rea" class="level2">
+<h2>06 · 合并 REA 的设计借鉴</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>REA 已有做法</th>
+<th>迁入 nanolize 的内容</th>
+<th>本次不照搬的部分</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>可列出、渲染的可选工作指导；渲染本身不执行工具</td>
+<td>将默认路线放进
+<code>prompts/</code>，按仓库类型按需阅读；允许直接调用工具</td>
+<td>将指导重新变成强制的步骤清单</td>
+</tr>
+<tr class="even">
+<td>基础操作与组合工作流并存</td>
+<td>保留细粒度能力，并围绕常见结果提供组合调用</td>
+<td>为每个内部函数增加一个公开工具</td>
+</tr>
+<tr class="odd">
+<td>Evidence 记录对象、来源、参数、结果、限制和关联</td>
+<td>每次验证和测量都有候选身份与来源，失败保留部分完成结果</td>
+<td>完整复制其跨二进制引擎的证据结构</td>
+</tr>
+<tr class="even">
+<td>residual unknown 具有状态、证据和建议调查动作</td>
+<td>维护可恢复的问题列表，明确哪些阻塞验收、哪些可并行调查</td>
+<td>第一版引入大型问题图与复杂规则引擎</td>
+</tr>
+<tr class="odd">
+<td>重构覆盖评估是显式工具</td>
+<td>严格标准返回状态、理由和缺口，Controller 选择后续</td>
+<td>用一次汇总通过替代实际运行证据</td>
+</tr>
+<tr class="even">
+<td>统计真实任务中的工具发现、回复、重试和 tokens</td>
+<td>比较完整工作成本；摘要与详细证据分离</td>
+<td>仅以 schema 字节数宣称节约模型成本</td>
+</tr>
+<tr class="odd">
+<td>领域规则、应用组合、provider、CLI／MCP 分层</td>
+<td>共享核心语义，Local／Slurm 只做执行适配，能力与环境可用性分开</td>
+<td>复制所有 provider 生命周期细节</td>
+</tr>
+</tbody>
+</table></div>
+<p>参考：<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/getting-started/mcp-prompts.md">工作指导</a>、<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/development/tool-design.md">工具设计</a>、<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/domain/evidence.ts">Evidence</a>、<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/application/WorkflowEvidence.ts">组合执行</a>、<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/domain/residualUnknown.ts">Unknown</a>、<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/reconstruction-coverage.md">覆盖评估</a>、<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/mcp-catalog-evaluation.md">调用成本评估</a>、<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/capability-composition.md">能力组合</a>。</p>
+<p>REA
+的严格记录与校验仍由代码实现。它带给本方案的启发是职责划分与组合方式，而不是要求取消所有确定性规则。动态工具发现可以作为后续选项；我们的工具规模较小时，简洁的稳定目录更容易维护。REA
+自身也保留完整目录作为默认，按需目录需要客户端支持。<a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/config/mcpToolCatalogProfile.ts">目录配置</a></p>
+</section>
+<section id="evidence" class="level2">
+<h2>07 · 证据、契约与未解决问题</h2>
+<section id="用已有记录承载最小必要信息" class="level3">
+<h3>用已有记录承载最小必要信息</h3>
+<p>建议在现有运行制品之上统一引用，不另建一套庞大的证据平台。每项结果至少能回答：对象是什么、在什么条件下执行、看到了什么、没有看到什么、完整记录在哪里。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>信息</th>
+<th>示例含义</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>对象身份</td>
+<td>原版快照、候选提交、实际源码及配置状态</td>
+<td>只有 Git 提交相同并不足以证明依赖、资源和运行输入相同</td>
+</tr>
+<tr class="even">
+<td>验证身份</td>
+<td>检查内容、参数、环境与数据集</td>
+<td>影响结果的输入发生变化时，旧证据不能自动转成新结果</td>
+</tr>
+<tr class="odd">
+<td>证据类型</td>
+<td>实际观察、程序推导、agent 推断</td>
+<td>源码阅读可以支持推断，不能替代 GPU 运行或安装成功</td>
+</tr>
+<tr class="even">
+<td>覆盖范围</td>
+<td>哪些功能、哪些用例、哪些条件</td>
+<td>多功能检查的映射要准确，父节点不能直接继承“完整通过”</td>
+</tr>
+<tr class="odd">
+<td>实际结果</td>
+<td>已通过、已失败、未运行、阻塞、无结论</td>
+<td>工具退出 0 不自动代表实际执行了非零测试</td>
+</tr>
+<tr class="even">
+<td>结果位置</td>
+<td>摘要、日志、报告或制品引用</td>
+<td>默认返回决策所需内容，详细记录按需读取</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="契约可以演进原记录不能被悄悄改写" class="level3">
+<h3>契约可以演进，原记录不能被悄悄改写</h3>
+<p>用户选定范围与硬要求保持有效。若知识描述不足、原测试不适用或环境有误，Controller
+可以调查并提出或实施授权范围内的修正。保存新版本及原因；受影响的原版与候选按相同的新方法重新比较。旧失败仍然存在于历史中。</p>
+<p>不要求每次编辑都把所有证据重新计算一遍。工具记录关联关系和变化；Controller
+判断需要重跑的范围，并说明复用依据。确切版本的观察、复用的历史证据、尚未验证的变化应分别展示。</p>
+</section>
+<section id="未解决问题的最小结构" class="level3">
+<h3>未解决问题的最小结构</h3>
+<p>问题记录包含：简短问题、影响的功能、当前状态、已知证据、阻塞原因、建议下一步、最近更新。状态可采用
+<code>open / investigating / blocked / contradicted / resolved</code>。这是实现建议，不是要求新建复杂状态机。</p>
+<p>例如“CUDA deform backward 是否保持数值与性能”：CPU
+数值测试通过只回答其中一部分，GPU 验证仍待运行。这个问题可以阻塞“CUDA
+已验收”的结论，但不应自动阻止其他独立模块的实现。</p>
+</section>
+</section>
+<section id="boundaries" class="level2">
+<h2>08 · 验收标准与决策边界</h2>
+<section id="用户要求评估规则执行策略分开" class="level3">
+<h3>用户要求、评估规则、执行策略分开</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>类别</th>
+<th>谁决定</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>用户要求</td>
+<td>用户设定，agent 遵守</td>
+<td>不删功能、不留空壳、保留防线和类型、不以慢实现换体积、不发明配置
+DSL</td>
+</tr>
+<tr class="even">
+<td>比较与评估规则</td>
+<td>工具按明确参数计算；用户指定的规则不可自行降低</td>
+<td>输出容差、通过检查范围、性能比较条件、任务成本阈值</td>
+</tr>
+<tr class="odd">
+<td>执行策略</td>
+<td>Controller 在授权内决定</td>
+<td>先测哪些模块、何时跑 GPU、如何拆分、局部修复还是整体调整</td>
+</tr>
+</tbody>
+</table></div>
+<p>现有与功能保持有关的要求继续沿用：参数校验、可理解的错误、日志和边界处理需要保留；不因功能名字仍在就接受占位实现；源码与配置采用原有可用形式。文档和注释可按既定要求精简，但运行时元数据、类别定义等真实功能数据不能当作文档删除。兼容或遗留内容仅在既定授权和测试依据下处理，不扩大解释为可删选中功能。</p>
+<p>代码行数、tokens 和逻辑量作为目标与报告指标，功能保持优先。更少的 AST
+节点、SCC
+或依赖指标是结构代理，不是行为完整性或认知成本的直接证明。现有分析器不支持的语言与指标保留为未知，不能为了报告完整而估计补齐。</p>
+</section>
+<section id="严格标准工具化" class="level3">
+<h3>严格标准工具化</h3>
+<p>例如，“指定保留检查全部通过”“独立安装后可用”“没有超过明确容差的性能退步”“任务成本符合选定规则”可以作为具名评估方案。Agent
+决定何时调用、如何补齐证据。工具保留失败事实；用户要求的验收未完成时，交付应标注阶段性或有缺口，不能宣称目标已全部完成。</p>
+<p>固定流程中技术上不适用的前置阻塞可以移除。用户设定的资源上限、取消请求、实验隔离和权限边界继续由现有机制执行，不因自主化被绕过。第一版不额外加入未经需求支持的停止机制或反作弊系统。</p>
+</section>
+</section>
+<section id="efficiency" class="level2">
+<h2>09 · 任务成本与运行效率</h2>
+<p>运行时间可能增加。尤其是把每个程序判断改成一次模型调用，或让多个
+agent
+反复评审已经清楚的问题。预期收益来自更少的无效工作和返工，不来自“有
+agent”本身。</p>
+<p>下面的拆分用于理解成本，不是可以直接相加的墙钟公式；并行执行和排队存在重叠。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>成本</th>
+<th>应记录</th>
+<th>改进方式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>决策</td>
+<td>模型调用、输入与输出 tokens、等待响应时间</td>
+<td>一次安排一组工作，按需读取上下文</td>
+</tr>
+<tr class="even">
+<td>工具执行</td>
+<td>构建、检查、测量的起止时间</td>
+<td>组合工具、批量操作、复用有效结果</td>
+</tr>
+<tr class="odd">
+<td>排队</td>
+<td>Slurm 提交与实际开始时间</td>
+<td>等待时推进独立模块，分别报告排队耗时</td>
+</tr>
+<tr class="even">
+<td>返工</td>
+<td>失败原因、重复执行及候选修复</td>
+<td>改善错误结果与恢复信息，减少盲目重试</td>
+</tr>
+</tbody>
+</table></div>
+<p>Controller
+的默认指导：优先处理能改变代码或解决关键不确定性的工作；新增评审与验证应有具体理由；没有新证据，不重新讨论已解决问题；不能把反复撰写计划当作完成重构。给出默认路线，同时允许根据仓库调整。</p>
+<p>第一版优先优化摘要质量、组合调用、结果复用和并行等待。动态工具目录、自动选择复杂策略和额外调度框架暂不引入。工具更少不保证总
+tokens 更少，应统计整个任务的调用和重试。</p>
+<section id="任务评测的自由与实验有效性" class="level3">
+<h3>任务评测的自由与实验有效性</h3>
+<p>保存不可变原版快照后，原版测量可以在合适的时候运行，不必全部先于实现完成。任务设计与答案隔离仍需与结论一致：看过候选后专门挑选的任务只能作为针对性分析，不能宣称是独立隐藏评测；重复向实现方反馈隐藏结果会改变实验性质。</p>
+<p>用户关闭评测时，不设计或执行这些任务，也不宣称任务成本改善。开启时，记录解题成功率、同口径
+usage、模型与环境设置、重复次数、失败和波动；Controller 本身的调度成本与
+solver 比较成本分别展示。缺失计量不是零成本。</p>
+</section>
+</section>
+<section id="scenarios" class="level2">
+<h2>10 · 三个运行情景</h2>
+<p>以下均为解释新调度方式的示例，不是已执行的实验结果，也不是强制路线。</p>
+<section id="a.-简单-python-库" class="level3">
+<h3>A. 简单 Python 库</h3>
+<p>读取范围与现有检查 → 一次建立可用基线 → 一次结构调整 → 组合验证 →
+记录指标并交付。没有充分理由时不启动多轮评审、不设计额外 GPU
+验证、不拆成大量 agent。目标是使普通路径的额外调度开销保持较小。</p>
+</section>
+<section id="b.-包含-cuda-与旧后端的大仓库" class="level3">
+<h3>B. 包含 CUDA 与旧后端的大仓库</h3>
+<p>原版 CUDA 编译与独立 Python
+模块实现并行；把旧后端缺依赖记录为单独问题；先验证可运行部分，安排 GPU
+作业后继续源码工作。需要交付对应功能时补齐相关证据。不能为了达到压缩目标删掉
+CUDA 实现或把未验证的旧后端标成通过。</p>
+</section>
+<section id="c.-原版检查本身失败" class="level3">
+<h3>C. 原版检查本身失败</h3>
+<p>保存原版失败 → 调查是环境、测试还是原版缺陷 → 对无依赖功能继续工作 →
+如需修订检查，记录版本与理由 →
+在原版和候选执行同一新检查。若无法获得可比较基线，报告该功能的证据缺口；不能将候选也失败直接解释为功能完整。</p>
+<p>三个情景应使用同一工具集。差异主要体现在 Controller
+的计划、工具参数及证据解释，不应通过三个新的硬编码执行模式实现。</p>
+</section>
+</section>
+<section id="rollout" class="level2">
+<h2>11 · 实施顺序与迁移</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>阶段</th>
+<th>交付内容</th>
+<th>验收重点</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P0 · 对齐接口与事实</td>
+<td>固定当前基线，列出被拆函数、默认副作用、输入输出与已授权边界</td>
+<td>每项变更可定位，不把设计当成已实现</td>
+</tr>
+<tr class="even">
+<td>P1 · 提取工具</td>
+<td>独立验证、测量、候选操作；报告只读；建立共享返回结构</td>
+<td>同样输入得到与原能力一致的真实结果，失败不抹去部分数据</td>
+</tr>
+<tr class="odd">
+<td>P2 · 接入 Controller</td>
+<td>共享工具调用入口、可选工作指导、问题列表、批量与异步使用</td>
+<td>可处理不同执行顺序，模型只负责策略而非计算统计值</td>
+</tr>
+<tr class="even">
+<td>P3 · 接续与交付</td>
+<td>网页后台接入、运行恢复、进度、既有功能图报告与发布</td>
+<td>新候选绑定新证据；历史运行可读；中断不重做无关工作</td>
+</tr>
+<tr class="odd">
+<td>P4 · 对照与收敛</td>
+<td>常规仓库、编译仓库、异常基线仓库的同条件比较</td>
+<td>功能结果、实际成本与失败原因均可审查，再决定默认切换</td>
+</tr>
+</tbody>
+</table></div>
+<p>迁移期间，不把正在运行的旧任务偷偷换成新
+Controller。历史记录继续可读；新运行使用明确的新执行方式。旧任务若要迁移，应显式记录运行版本和可复用制品，不能伪装为原流程无缝继续。</p>
+<p>最终目标是一套共享核心能力与新的默认自主路线。为迁移而保留的旧入口不应长期发展成第二套平行维护的策略系统。移除旧代码前检查
+CLI／MCP、后台恢复和历史报告消费者。</p>
+</section>
+<section id="validation" class="level2">
+<h2>12 · 测试与成本对照计划</h2>
+<section id="工具及集成验收" class="level3">
+<h3>工具及集成验收</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>检查</th>
+<th>需要证明什么</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>验证、报告无隐式实现调用</td>
+<td>查询和渲染不会修改候选，不触发修复 agent</td>
+</tr>
+<tr class="even">
+<td>部分检查失败或取消</td>
+<td>已完成的结果保留，未执行项不能成为通过</td>
+</tr>
+<tr class="odd">
+<td>契约、检查版本调整</td>
+<td>原版与候选比较引用一致，历史失败可追溯</td>
+</tr>
+<tr class="even">
+<td>候选、依赖或资源变化</td>
+<td>不能沿用旧通过结果冒充当前版本的新观察</td>
+</tr>
+<tr class="odd">
+<td>功能范围与 task-effort 开关</td>
+<td>Controller 无法自行删除范围或开启明确关闭的评测</td>
+</tr>
+<tr class="even">
+<td>工作区、恢复与并行合并</td>
+<td>不覆盖用户工作树，文件冲突有明确处理</td>
+</tr>
+<tr class="odd">
+<td>Local／Slurm 状态与取消</td>
+<td>只操作属于本任务的资源；作业退出与应用仍在运行可区分</td>
+</tr>
+<tr class="even">
+<td>CLI／MCP／网页后台</td>
+<td>相同能力语义一致，界面只映射事实</td>
+</tr>
+<tr class="odd">
+<td>报告和安装验证</td>
+<td>下载内容完整，功能图不扩大覆盖；安装检查确实在安装环境使用</td>
+</tr>
+</tbody>
+</table></div>
+<p>工具正确性测试使用假的 agent 或受控
+stub，避免单元测试调用真实模型。实际 Controller
+行为必须另行做真实任务实验；脚本化调用序列不能证明 agent
+会正确选工具。</p>
+</section>
+<section id="对照实验" class="level3">
+<h3>对照实验</h3>
+<p>选择三类代表仓库：小型纯 Python 库、具有原生扩展与 GPU
+的仓库、原版检查或依赖存在实际问题的仓库。固定源码版本、功能范围、模型及推理设置、任务评测开关和可比较资源条件。记录缓存状态，重复观察，不用单次结果得出普遍速度结论。</p>
+<p>对比旧 main 与新方案的：总墙钟时间、执行和排队时间、全部 agent
+tokens、缓存与非缓存输入、功能验收结果、未验证范围、返工次数、人工介入及代码指标。复杂仓库的收益可以体现为更少阻塞和人工处理，不必要求每个样本都更快。</p>
+<p>性能和压缩收益目前均为<strong>待测量</strong>。本设计不承诺固定加速比例、tokens
+降幅或达到某个压缩率。若新方案变慢，应先定位是模型往返、工具设计、重复验证还是资源等待，再调整，不通过省略必要功能验收制造速度优势。</p>
+</section>
+</section>
+<section id="scope" class="level2">
+<h2>13 · 第一版范围与暂缓项</h2>
+<p>第一版必须包括：中间调度交给
+agent；基础与组合工具；取消默认隐式修复；简明结果及证据引用；未解决问题列表；共享
+CLI／MCP 语义；保持输入输出体验；运行恢复与真实计量。</p>
+<p>暂缓：大型工作流
+DSL、通用插件市场、动态工具发现、复杂知识图数据库、自动策略训练、把 REA
+的整个资源管理系统搬入、为所有工具都强制安排独立评审。</p>
+<p>沿用已有配置，不增加用户必须逐个选择工具或审批中间步骤的负担。内部默认可以提供常规指导、检查组合和简短摘要；它们不能重新成为阻止
+agent 调整路径的固定状态机。</p>
+<p>最重要的实施检查：新增代码是否真正减少了固定策略与隐式副作用；新增提示词是否帮助判断而非重复规定死顺序；新工具是否一次提供足够信息；报告是否忠实表达尚未完成的目标。</p>
+</section>
+<section id="sources" class="level2">
+<h2>14 · 来源与交付说明</h2>
+<p>本文的“当前行为”来自固定版本源码阅读，“REA
+做法”来自其设计文档与对应实现，“迁移方案”是面向 nanolize
+的设计建议。未进行 REA 运行实验，也未进行新旧 nanolize 的性能对照。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>来源</th>
+<th>核对内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/execution.py">nanolize
+execution.py</a></td>
+<td>固定执行路线、原版基线门槛、修复决策、交付条件</td>
+</tr>
+<tr class="even">
+<td><a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/workflow.py">nanolize
+workflow.py</a> / <a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/operations.py">operations.py</a></td>
+<td>默认自动修复、报告与工具副作用</td>
+</tr>
+<tr class="odd">
+<td><a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/rewrite_stages.py">nanolize
+rewrite_stages.py</a> / <a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/effort.py">effort.py</a></td>
+<td>候选保存和任务测量顺序</td>
+</tr>
+<tr class="even">
+<td><a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/getting-started/mcp-prompts.md">REA
+工作指导</a> / <a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/application/GuidedWorkflowAccess.ts">GuidedWorkflowAccess</a></td>
+<td>可选提示词与只渲染、不执行的工具</td>
+</tr>
+<tr class="odd">
+<td><a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/development/tool-design.md">REA
+工具设计</a> / <a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/capability-composition.md">能力组合</a></td>
+<td>基础与组合操作、共享核心与适配层</td>
+</tr>
+<tr class="even">
+<td><a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/domain/evidence.ts">REA
+Evidence</a> / <a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/application/WorkflowEvidence.ts">WorkflowEvidence</a></td>
+<td>来源、限制与部分结果</td>
+</tr>
+<tr class="odd">
+<td><a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/domain/residualUnknown.ts">REA
+residualUnknown</a> / <a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/reconstruction-coverage.md">覆盖评估</a></td>
+<td>未解决问题与严格评估工具</td>
+</tr>
+<tr class="even">
+<td><a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/mcp-catalog-evaluation.md">REA
+目录成本评估</a> / <a
+href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/config/mcpToolCatalogProfile.ts">目录配置</a></td>
+<td>全任务计量与可选动态目录</td>
+</tr>
+</tbody>
+</table></div>
+<p>报告网页、Markdown 和 DOCX
+是同一份中文设计的不同载体。网页额外提供导航、示意图和工具搜索；示意图及示例均不表示已完成的软件实现。仓库链接可能要求相应的访问权限。</p>
+</section>
+</article></div>
+<section class="closing"><div><div class="eyebrow">READY FOR REVIEW</div><h2>用这份设计，开始一场具体的代码改造。</h2><p>12 项修改 · 工具能力目录 · REA 借鉴 · 迁移与验收计划</p></div><div class="closing-actions"><a href="report.md" download>Markdown <span aria-hidden="true">↗</span></a><a href="report.docx" download>Word 文档 <span aria-hidden="true">↗</span></a><a href="#top">返回顶部 ↑</a></div></section>
+</main><footer><span>nanolize / architecture notes</span><span>2026.11.08 · v1.0 · 设计提案</span></footer>
+</body></html>

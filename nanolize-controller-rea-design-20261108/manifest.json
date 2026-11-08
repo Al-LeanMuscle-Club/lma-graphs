@@ -1,0 +1,38 @@
+{
+  "title": "Nanolize Agent 自主重构改造报告",
+  "status": "design_proposal_not_implemented",
+  "date": "2026-11-08",
+  "sections": 14,
+  "main_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+  "rea_commit": "72d5e72e6d7b7997c4ecb11972fc405be8ec67d2",
+  "files": {
+    "app.js": {
+      "bytes": 2957,
+      "sha256": "daa33e8e8359ae3af430018e1d4a4ceac2b864afff5ca558ce5e7b08499d4360"
+    },
+    "report-font.woff2": {
+      "bytes": 249328,
+      "sha256": "a5fe04e4143fcafe7ae83726139f47a9d56535202fd7fab979f65e430d873068"
+    },
+    "font-license.txt": {
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    "report.docx": {
+      "bytes": 27255,
+      "sha256": "a617c52abfb73f2ef3372872447cc5cf8ebb6b6c8be487459aa9899a259062c4"
+    },
+    "style.css": {
+      "bytes": 12851,
+      "sha256": "a0de124457706863cbe98438d9489b65e8c135bd6fbba26a72ab83d4135e8ac7"
+    },
+    "report.md": {
+      "bytes": 31516,
+      "sha256": "0d0e5b5ac9c7696a669d39d4776e38ac96d57062b9543a7717437bccfe2a5f83"
+    },
+    "index.html": {
+      "bytes": 49634,
+      "sha256": "5f42365d597a67610ff77b9e43dc35cbf6249345efd8b2729c40669cb093cde9"
+    }
+  }
+}
