@@ -1,6 +1,6 @@
 # Nanolize：Agent 自主重构改造报告
 
-设计版本：2026-11-08 / v1.0。本文合并中间流程自主化方案、工具拆分方案、运行成本讨论及 REA 设计借鉴。**本文是建议实施的设计，不是已完成的软件变更或性能实验报告。**
+设计版本：2026-11-08 / v1.1（修正 Graphify 与知识包术语）。本文合并中间流程自主化方案、工具拆分方案、运行成本讨论及 REA 设计借鉴。**本文是建议实施的设计，不是已完成的软件变更或性能实验报告。**
 
 分析基线：nanolize `main@8c0745a19c40aa7673b28ceeb1b49c7ae2850d78`；参考项目 REA `main@72d5e72e6d7b7997c4ecb11972fc405be8ec67d2`。后续实施应重新确认目标 main 的差异。源码定位均绑定这些版本。
 
@@ -12,7 +12,7 @@
 
 | 保留 | 改变 | 继续由程序保证 |
 | --- | --- | --- |
-| 功能图、UA knowledge、功能选择页面、Submit、报告网页 | 契约补充、基线运行、任务设计、重构、验证、修复、测量的顺序和组合 | 真实执行结果、数值计算、版本与证据关联、已授权的资源边界 |
+| Graphify 功能图、nanolize 私有行为知识包、功能选择页面、Submit、报告网页 | 契约补充、基线运行、任务设计、重构、验证、修复、测量的顺序和组合 | 真实执行结果、数值计算、版本与证据关联、已授权的资源边界 |
 | 用户明确选择的范围、要求、评测开关、预算 | 模块拆分、并行程度、局部与全量验证、候选选择 | 原版和用户工作区保护；只取消本任务拥有的进程 |
 
 建议通过标准：遇到新的仓库类型时，agent 能通过组合已有工具推进任务，而无需为了每一个特殊情形修改 Python 状态机。
@@ -20,6 +20,10 @@
 本次网页只交付设计报告及下载文件。它不会启动重构、恢复之前取消的作业、修改 nanolize 主分支或运行新的模型评测。
 
 ## 02 · 当前 main 的具体限制 {#baseline}
+
+**技术栈确认：当前 main 使用 Graphify，已替换旧的 Understand-Anything 输入。** Graphify 的 `graph.json` 提供代码结构、关系和候选社区；nanolize 的 `import_understanding` 导入这些结构证据，agent 审查功能映射并补充语义，随后由 `knowledge-build` / `knowledge-export` 生成供实现 agent 使用的私有知识包。`understanding.py`、`import_understanding` 等名称不表示仍在调用 Understand-Anything。[Graphify 集成说明][main-graphify]、[私有知识包说明][main-knowledge]
+
+Graphify 图不会自动提供全部行为语义；未补充的默认值、异常、兼容和性能约束仍需明确标为未知。首版报告使用“UA knowledge”是术语错误，本版统一改为“nanolize 私有行为知识包”，这不改变本次拟议的调度改造范围。
 
 用户描述的八个步骤是产品层面的概括。当前 `assets/workflow.json` 实际还单列了“保留通过验收的版本”，因此包含九条阶段记录。以下沿用用户的八步分组讨论，避免把界面阶段数量与架构目标混为一谈。
 
@@ -39,7 +43,7 @@
 
 ## 03 · 目标架构与职责 {#architecture}
 
-前端输入仍然是“理解仓库 → 选择范围”。中间 Controller 读取用户要求、完整可访问的 UA knowledge 和已有运行状态，调用工具推进工作。最后 Deliver 消费明确选定的候选和证据，生成原有形式的代码链接与报告。
+前端输入仍然是“理解仓库 → 选择范围”。中间 Controller 读取用户要求、授权范围内完整可访问的 nanolize 私有行为知识包（agent knowledge） 和已有运行状态，调用工具推进工作。最后 Deliver 消费明确选定的候选和证据，生成原有形式的代码链接与报告。
 
 ### 三层职责
 
@@ -287,6 +291,7 @@ Controller 的默认指导：优先处理能改变代码或解决关键不确定
 
 | 来源 | 核对内容 |
 | --- | --- |
+| [nanolize Graphify 集成][main-graphify] / [私有知识包][main-knowledge] | 当前结构图来源、旧 UA 输入替换及内部语义知识生成 |
 | [nanolize execution.py][main-execution] | 固定执行路线、原版基线门槛、修复决策、交付条件 |
 | [nanolize workflow.py][main-workflow] / [operations.py][main-operations] | 默认自动修复、报告与工具副作用 |
 | [nanolize rewrite_stages.py][main-stages] / [effort.py][main-effort] | 候选保存和任务测量顺序 |
@@ -313,3 +318,6 @@ Controller 的默认指导：优先处理能改变代码或解决关键不确定
 [rea-cost]: https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/mcp-catalog-evaluation.md
 [rea-composition]: https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/capability-composition.md
 [rea-catalog]: https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/config/mcpToolCatalogProfile.ts
+
+[main-graphify]: https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/docs/graphify.md
+[main-knowledge]: https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/docs/agent-knowledge.md

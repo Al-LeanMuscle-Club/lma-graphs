@@ -24,8 +24,9 @@
 <div id="diagram-current" role="tabpanel" aria-labelledby="tab-current" hidden><ol class="current-flow"><li><b>01</b>Discover</li><li><b>02</b>Select Scope</li><li class="mutable"><b>03</b>Freeze Contract</li><li class="mutable"><b>04</b>Freeze Tasks</li><li class="mutable"><b>05</b>Rewrite</li><li class="mutable"><b>06</b>Verify &amp; Repair</li><li class="mutable"><b>07</b>Measure Effort</li><li><b>08</b>Deliver</li></ol><p class="diagram-caption">沿用用户的八步概括。main 的界面定义还单列“保留通过验收的版本”；详细代码依据见正文第 02 节。</p></div>
 </section>
 <div class="report-layout"><aside class="sidebar"><div class="sidebar-inner"><div class="sidebar-title">报告导览 <span>14 SECTIONS</span></div><nav aria-label="报告目录"><a href="#overview"><span>01</span>决策摘要</a><a href="#baseline"><span>02</span>当前 main 的具体限制</a><a href="#architecture"><span>03</span>目标架构与职责</a><a href="#changes"><span>04</span>相对 main 的完整修改清单</a><a href="#tools"><span>05</span>工具能力目录</a><a href="#rea"><span>06</span>合并 REA 的设计借鉴</a><a href="#evidence"><span>07</span>证据、契约与未解决问题</a><a href="#boundaries"><span>08</span>验收标准与决策边界</a><a href="#efficiency"><span>09</span>任务成本与运行效率</a><a href="#scenarios"><span>10</span>三个运行情景</a><a href="#rollout"><span>11</span>实施顺序与迁移</a><a href="#validation"><span>12</span>测试与成本对照计划</a><a href="#scope"><span>13</span>第一版范围与暂缓项</a><a href="#sources"><span>14</span>来源与交付说明</a></nav><div class="sidebar-note"><span class="note-dot"></span>正文、下载文件同源<br>案例是说明，不是运行结果</div></div></aside><article class="report" id="report-content">
-<p>设计版本：2026-11-08 /
-v1.0。本文合并中间流程自主化方案、工具拆分方案、运行成本讨论及 REA
+<p>设计版本：2026-11-08 / v1.1（修正 Graphify
+与知识包术语）。本文合并中间流程自主化方案、工具拆分方案、运行成本讨论及
+REA
 设计借鉴。<strong>本文是建议实施的设计，不是已完成的软件变更或性能实验报告。</strong></p>
 <p>分析基线：nanolize
 <code>main@8c0745a19c40aa7673b28ceeb1b49c7ae2850d78</code>；参考项目 REA
@@ -53,7 +54,8 @@ agent。系统继续提供稳定的工具、真实的测量结果、版本记录
 </thead>
 <tbody>
 <tr class="odd">
-<td>功能图、UA knowledge、功能选择页面、Submit、报告网页</td>
+<td>Graphify 功能图、nanolize
+私有行为知识包、功能选择页面、Submit、报告网页</td>
 <td>契约补充、基线运行、任务设计、重构、验证、修复、测量的顺序和组合</td>
 <td>真实执行结果、数值计算、版本与证据关联、已授权的资源边界</td>
 </tr>
@@ -72,6 +74,21 @@ nanolize 主分支或运行新的模型评测。</p>
 </section>
 <section id="baseline" class="level2">
 <h2>02 · 当前 main 的具体限制</h2>
+<p><strong>技术栈确认：当前 main 使用 Graphify，已替换旧的
+Understand-Anything 输入。</strong> Graphify 的 <code>graph.json</code>
+提供代码结构、关系和候选社区；nanolize 的
+<code>import_understanding</code> 导入这些结构证据，agent
+审查功能映射并补充语义，随后由 <code>knowledge-build</code> /
+<code>knowledge-export</code> 生成供实现 agent
+使用的私有知识包。<code>understanding.py</code>、<code>import_understanding</code>
+等名称不表示仍在调用 Understand-Anything。<a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/docs/graphify.md">Graphify
+集成说明</a>、<a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/docs/agent-knowledge.md">私有知识包说明</a></p>
+<p>Graphify
+图不会自动提供全部行为语义；未补充的默认值、异常、兼容和性能约束仍需明确标为未知。首版报告使用“UA
+knowledge”是术语错误，本版统一改为“nanolize
+私有行为知识包”，这不改变本次拟议的调度改造范围。</p>
 <p>用户描述的八个步骤是产品层面的概括。当前
 <code>assets/workflow.json</code>
 实际还单列了“保留通过验收的版本”，因此包含九条阶段记录。以下沿用用户的八步分组讨论，避免把界面阶段数量与架构目标混为一谈。</p>
@@ -148,8 +165,8 @@ usage 采集、报告和 Local／Slurm
 <section id="architecture" class="level2">
 <h2>03 · 目标架构与职责</h2>
 <p>前端输入仍然是“理解仓库 → 选择范围”。中间 Controller
-读取用户要求、完整可访问的 UA knowledge
-和已有运行状态，调用工具推进工作。最后 Deliver
+读取用户要求、授权范围内完整可访问的 nanolize 私有行为知识包（agent
+knowledge） 和已有运行状态，调用工具推进工作。最后 Deliver
 消费明确选定的候选和证据，生成原有形式的代码链接与报告。</p>
 <section id="三层职责" class="level3">
 <h3>三层职责</h3>
@@ -915,53 +932,60 @@ agent 调整路径的固定状态机。</p>
 <tbody>
 <tr class="odd">
 <td><a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/docs/graphify.md">nanolize
+Graphify 集成</a> / <a
+href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/docs/agent-knowledge.md">私有知识包</a></td>
+<td>当前结构图来源、旧 UA 输入替换及内部语义知识生成</td>
+</tr>
+<tr class="even">
+<td><a
 href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/execution.py">nanolize
 execution.py</a></td>
 <td>固定执行路线、原版基线门槛、修复决策、交付条件</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a
 href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/workflow.py">nanolize
 workflow.py</a> / <a
 href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/operations.py">operations.py</a></td>
 <td>默认自动修复、报告与工具副作用</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a
 href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/rewrite_stages.py">nanolize
 rewrite_stages.py</a> / <a
 href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/effort.py">effort.py</a></td>
 <td>候选保存和任务测量顺序</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/getting-started/mcp-prompts.md">REA
 工作指导</a> / <a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/application/GuidedWorkflowAccess.ts">GuidedWorkflowAccess</a></td>
 <td>可选提示词与只渲染、不执行的工具</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/development/tool-design.md">REA
 工具设计</a> / <a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/capability-composition.md">能力组合</a></td>
 <td>基础与组合操作、共享核心与适配层</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/domain/evidence.ts">REA
 Evidence</a> / <a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/application/WorkflowEvidence.ts">WorkflowEvidence</a></td>
 <td>来源、限制与部分结果</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/src/domain/residualUnknown.ts">REA
 residualUnknown</a> / <a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/reconstruction-coverage.md">覆盖评估</a></td>
 <td>未解决问题与严格评估工具</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a
 href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2/docs/mcp-catalog-evaluation.md">REA
 目录成本评估</a> / <a
@@ -975,5 +999,5 @@ href="https://github.com/morluto/rea/blob/72d5e72e6d7b7997c4ecb11972fc405be8ec67
 </section>
 </article></div>
 <section class="closing"><div><div class="eyebrow">READY FOR REVIEW</div><h2>用这份设计，开始一场具体的代码改造。</h2><p>12 项修改 · 工具能力目录 · REA 借鉴 · 迁移与验收计划</p></div><div class="closing-actions"><a href="report.md" download>Markdown <span aria-hidden="true">↗</span></a><a href="report.docx" download>Word 文档 <span aria-hidden="true">↗</span></a><a href="#top">返回顶部 ↑</a></div></section>
-</main><footer><span>nanolize / architecture notes</span><span>2026.11.08 · v1.0 · 设计提案</span></footer>
+</main><footer><span>nanolize / architecture notes</span><span>2026.11.08 · v1.1 · 设计提案</span></footer>
 </body></html>
