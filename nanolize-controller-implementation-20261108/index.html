@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>nanolize · Agent Controller 实施报告</title>
-  <meta name="description" content="基于 main 的 Agent Controller 改造实施对照：12 项要求、28 个操作、验证证据与尚未完成的工作。">
+  <meta name="description" content="基于 main 的 Agent Controller 改造实施对照：12 项要求、33 个操作、运行内修订、独立工作区并行与真实模型对照。">
   <meta name="theme-color" content="#f6f7f2">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%2323392e'/%3E%3Ctext x='10' y='28' font-size='28' font-family='sans-serif' fill='%23d8ef94'%3En%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">跳到正文</a>
-<header class="topbar"><a class="brand" href="#overview"><span class="brand-mark">n</span>nanolize<span class="brand-sub">ENGINEERING NOTES</span></a><div class="header-right"><span class="edition">IMPLEMENTATION / 01</span><a class="text-link" href="https://github.com/Al-LeanMuscle-Club/nanolize/tree/codex/agent-controlled-rewrite">查看分支 <span aria-hidden="true">↗</span></a></div></header>
+<header class="topbar"><a class="brand" href="#overview"><span class="brand-mark">n</span>nanolize<span class="brand-sub">ENGINEERING NOTES</span></a><div class="header-right"><span class="edition">IMPLEMENTATION / 02</span><a class="text-link" href="https://github.com/Al-LeanMuscle-Club/nanolize/tree/codex/agent-controlled-rewrite">查看分支 <span aria-hidden="true">↗</span></a></div></header>
 <div class="layout">
   <aside class="sidebar" aria-label="报告目录">
     <div class="side-title">本次改造</div>
-    <nav><a class="active" href="#overview"><span>01</span>实施概览</a><a href="#architecture"><span>02</span>流程变化</a><a href="#requirements"><span>03</span>逐项对照</a><a href="#evidence"><span>04</span>验证证据</a><a href="#next"><span>05</span>剩余工作</a><a href="#migration"><span>06</span>使用与迁移</a><a href="#resources"><span>07</span>报告与源码</a></nav>
-    <div class="side-bottom"><span class="live-dot"></span>已提交 · 5d86654a<p>2026.11.08<br>基于 main · 8c0745a</p><div class="completion-strip" aria-label="9 项完成，3 项部分完成"><i></i><i></i><i></i><i class="pending"></i><i></i><i></i><i></i><i></i><i class="pending"></i><i></i><i></i><i class="pending"></i></div><small>9 项完成 / 3 项部分完成</small></div>
+    <nav><a class="active" href="#overview"><span>01</span>实施概览</a><a href="#architecture"><span>02</span>流程变化</a><a href="#requirements"><span>03</span>逐项对照</a><a href="#evidence"><span>04</span>验证证据</a><a href="#next"><span>05</span>三项补齐</a><a href="#migration"><span>06</span>使用与迁移</a><a href="#resources"><span>07</span>报告与源码</a></nav>
+    <div class="side-bottom"><span class="live-dot"></span>已提交 · 19793f9e<p>2026.11.08<br>基于 main · 8c0745a</p><div class="completion-strip" aria-label="12 项完成，验证边界明确"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>12 项实施完成 / 保留实测失败</small></div>
   </aside>
   <main id="main">
     <section class="hero" id="overview">
@@ -23,8 +23,8 @@
       <h1>让 agent 决定<br><span>下一步。</span></h1>
       <p class="intro">中间流程由 agent 自主编排，工具负责执行与记录证据。<br class="desktop-break">输入、输出与授权边界，继续由系统负责。</p>
       <div class="hero-links"><a class="button dark" href="#requirements">查看 12 项实施对照 <span aria-hidden="true">↓</span></a><a class="subtle-link" href="https://al-leanmuscle-club.github.io/lma-graphs/nanolize-controller-rea-design-20261108/">原设计报告 <span aria-hidden="true">↗</span></a></div>
-      <div class="hero-note"><span class="note-label">当前状态</span>核心改造已落地。运行内授权修订、多工作区并行和真实模型对照仍待补齐。</div>
-      <div class="summary-stats"><div><b>09<span>/12</span></b><p>要求已完成</p></div><div><b>28</b><p>可组合操作</p></div><div><b>821</b><p>Python 用例通过</p></div><div><b>Graphify</b><p>图生成来源保持不变</p></div></div>
+      <div class="hero-note"><span class="note-label">当前状态</span>三项缺口已补齐。真实对照显示额外开销；功能完成与策略胜出分开报告。</div>
+      <div class="summary-stats"><div><b>12<span>/12</span></b><p>要求已完成</p></div><div><b>33</b><p>可组合操作</p></div><div><b>841</b><p>Python 用例通过</p></div><div><b>Graphify</b><p>图生成来源保持不变</p></div></div>
     </section>
 
     <section id="architecture" class="section">
@@ -32,17 +32,17 @@
       <p class="section-intro">保留 Discover、Select Scope 和 Deliver 的产品形式，将原第 3–7 步转为可调用能力。</p>
       <div id="diagram-after" class="diagram" role="tabpanel" aria-labelledby="tab-after" tabindex="0">
         <div class="flow-top"><div class="endpoint"><span>01 / INPUT</span><strong>Discover</strong><small>Graphify 发现结构</small></div><span class="flow-arrow" aria-hidden="true">→</span><div class="endpoint"><span>02 / SCOPE</span><strong>Select Scope</strong><small>用户确定范围与预算</small></div><span class="flow-route">经 Controller<span aria-hidden="true">↓ · ↑</span></span><div class="endpoint output"><span>08 / OUTPUT</span><strong>Deliver</strong><small>代码、报告与未验证项</small></div></div>
-        <div class="controller-zone"><div class="zone-title"><span class="zone-label">03–07 · AGENT CONTROLLED</span><span class="zone-status">默认入口已切换</span></div><div class="controller-loop"><div class="knowledge"><span class="mini-icon" aria-hidden="true">▤</span><strong>完整知识包</strong><p>Graphify 结构<br>＋ 审阅与语义补充</p></div><span class="loop-arrow" aria-hidden="true">→</span><div class="controller-core"><span>AGENT</span><strong>Controller</strong><p>观察 → 选择工具 → 决定下一步</p></div><span class="loop-arrow" aria-hidden="true">⇄</span><div class="toolbox-mini"><strong>28 个工具</strong><p>实现 · 验证 · 候选 · 度量<br>任务评测 · 状态 · 交付</p></div></div><div class="evidence-line"><span aria-hidden="true">↺</span> 操作返回事实与证据，agent 决定继续、修复、恢复或交付</div></div>
+        <div class="controller-zone"><div class="zone-title"><span class="zone-label">03–07 · AGENT CONTROLLED</span><span class="zone-status">默认入口已切换</span></div><div class="controller-loop"><div class="knowledge"><span class="mini-icon" aria-hidden="true">▤</span><strong>完整知识包</strong><p>Graphify 结构<br>＋ 审阅与语义补充</p></div><span class="loop-arrow" aria-hidden="true">→</span><div class="controller-core"><span>AGENT</span><strong>Controller</strong><p>观察 → 选择工具 → 决定下一步</p></div><span class="loop-arrow" aria-hidden="true">⇄</span><div class="toolbox-mini"><strong>33 个工具</strong><p>实现 · 验证 · 候选 · 度量<br>任务评测 · 状态 · 交付</p></div></div><div class="evidence-line"><span aria-hidden="true">↺</span> 操作返回事实与证据，agent 决定继续、修复、恢复或交付</div></div>
         <div class="guardrail"><span>系统持续约束</span><span>OWNER 授权</span><span>预算与期限</span><span>取消与恢复</span><span>诚实报告缺口</span></div>
       </div>
       <div id="diagram-before" class="diagram before-diagram" role="tabpanel" aria-labelledby="tab-before" tabindex="0" hidden><div class="old-flow"><span>01 <strong>Discover</strong></span><span>02 <strong>Select Scope</strong></span><span class="old-middle">03 <strong>Freeze Contract</strong></span><span class="old-middle">04 <strong>Freeze Tasks</strong></span><span class="old-middle">05 <strong>Rewrite</strong></span><span class="old-middle">06 <strong>Verify &amp; Repair</strong></span><span class="old-middle">07 <strong>Measure Effort</strong></span><span>08 <strong>Deliver</strong></span></div><p>中间步骤由固定流程调度，阶段门槛与重试、修复等策略耦合。此次将其中有价值的执行和验收能力保留为工具。</p></div>
       <div class="architecture-caption"><span class="badge neutral">术语确认</span>当前使用 <strong>Graphify</strong>，没有引入 Understanding Anything。保留的接口名称不代表底层 provider 发生变化。</div>
-      <details class="tools-panel"><summary><span><strong>打开工具箱</strong> <span class="muted">28 个操作 · CLI / MCP 共用核心</span></span><span aria-hidden="true">＋</span></summary><div class="tool-groups"><details class="tool-group"><summary><span>工作区与契约</span><span class="tool-count">04 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>create_workspace</code><code>save_contract</code><code>prepare_environment</code><code>capture_baseline</code></div></details><details class="tool-group"><summary><span>实现与候选</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>run_agent</code><code>save_candidate</code><code>restore_candidate</code><code>merge_candidate_parts</code><code>select_candidate</code></div></details><details class="tool-group"><summary><span>行为与交付证据</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>run_checks</code><code>compare_behavior</code><code>check_installation</code><code>audit_coverage</code><code>evaluate_acceptance</code></div></details><details class="tool-group"><summary><span>代码与性能</span><span class="tool-count">02 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>measure_code</code><code>run_benchmark</code></div></details><details class="tool-group"><summary><span>任务评测</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>design_tasks</code><code>save_task_suite</code><code>run_task_trial</code><code>grade_task_trial</code><code>compare_task_trials</code></div></details><details class="tool-group"><summary><span>显式组合</span><span class="tool-count">02 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>prepare_tasks</code><code>compare_task_effort</code></div></details><details class="tool-group"><summary><span>管理与交付</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>record_unknown</code><code>get_run_state</code><code>get_operation_status</code><code>cancel_operation</code><code>deliver</code></div></details></div><p class="tools-footnote">28 个 Controller 操作通过两个 MCP 入口调用；整个安装包共有 34 个 MCP 工具，两者计数范围不同。</p></details>
+      <details class="tools-panel"><summary><span><strong>打开工具箱</strong> <span class="muted">33 个操作 · CLI / MCP 共用核心</span></span><span aria-hidden="true">＋</span></summary><div class="tool-groups"><details class="tool-group"><summary><span>工作区与契约</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>create_workspace</code><code>save_contract</code><code>request_revision</code><code>prepare_environment</code><code>capture_baseline</code></div></details><details class="tool-group"><summary><span>实现与候选</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>run_agent</code><code>save_candidate</code><code>restore_candidate</code><code>merge_candidate_parts</code><code>select_candidate</code></div></details><details class="tool-group"><summary><span>独立实现工作区</span><span class="tool-count">04 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>create_implementation_workspace</code><code>run_workspace_agents</code><code>get_workspace_status</code><code>save_workspace_candidate</code></div></details><details class="tool-group"><summary><span>行为与交付证据</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>run_checks</code><code>compare_behavior</code><code>check_installation</code><code>audit_coverage</code><code>evaluate_acceptance</code></div></details><details class="tool-group"><summary><span>代码与性能</span><span class="tool-count">02 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>measure_code</code><code>run_benchmark</code></div></details><details class="tool-group"><summary><span>任务评测</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>design_tasks</code><code>save_task_suite</code><code>run_task_trial</code><code>grade_task_trial</code><code>compare_task_trials</code></div></details><details class="tool-group"><summary><span>显式组合</span><span class="tool-count">02 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>prepare_tasks</code><code>compare_task_effort</code></div></details><details class="tool-group"><summary><span>管理与交付</span><span class="tool-count">05 <span aria-hidden="true">＋</span></span></summary><div class="tool-names"><code>record_unknown</code><code>get_run_state</code><code>get_operation_status</code><code>cancel_operation</code><code>deliver</code></div></details></div><p class="tools-footnote">33 个 Controller 操作通过共用 MCP 入口调用；独立 owner 授权另有入口。整个安装包共 35 个 MCP 工具，两者计数范围不同。</p></details>
     </section>
 
     <section id="requirements" class="section">
       <div class="section-heading"><div><div class="eyebrow">03 / IMPLEMENTATION</div><h2>设计与实现，一项一项对照</h2></div><span class="section-count">M01 — M12</span></div>
-      <div class="filters"><div class="filter-buttons" role="group" aria-label="按完成状态筛选"><button class="selected" data-filter="all" aria-pressed="true">全部 <span>12</span></button><button data-filter="done" aria-pressed="false">已完成 <span>9</span></button><button data-filter="partial" aria-pressed="false">部分完成 <span>3</span></button></div><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="搜索要求、工具或边界" aria-label="搜索实施内容"></label></div>
+      <div class="filters"><div class="filter-buttons" role="group" aria-label="按完成状态筛选"><button class="selected" data-filter="all" aria-pressed="true">全部 <span>12</span></button><button data-filter="done" aria-pressed="false">已完成 <span>12</span></button><button data-filter="partial" aria-pressed="false">部分完成 <span>0</span></button></div><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="搜索要求、工具或边界" aria-label="搜索实施内容"></label></div>
       <p id="result-count" class="result-count" aria-live="polite">显示 12 项</p><div id="requirement-list"><article class="requirement" id="m01" data-status="done">
       <span class="item-id">M01</span><div class="item-body"><h3>Controller 替代中间固定策略</h3>
       <div class="item-description"><p>新提交默认记录 <code>engine=agent-controller-v1</code>，worker 进入 Controller。Agent 选择基线、重构、验证、修复、恢复、继续或交付。原有 Submit、worktree、Local/Slurm、取消和预算入口保留。</p>
@@ -51,7 +51,7 @@
     </article>
 <article class="requirement" id="m02" data-status="done">
       <span class="item-id">M02</span><div class="item-body"><h3>提取共用工具</h3>
-      <div class="item-description"><p>28 个可组合操作，通过 CLI <code>control</code> 与 MCP <code>controller_operation</code> / <code>controller_state</code> 共用核心。包含工作区、契约、环境准备、候选、检查、覆盖、代码度量、性能检查、任务评测和管理。行为比较保留“执行检查并比较”的显式组合语义，不隐式修复。</p>
+      <div class="item-description"><p>33 个可组合操作，通过 CLI <code>control</code> 与 MCP <code>controller_operation</code> / <code>controller_state</code> 共用核心。包含工作区、契约、环境准备、候选、检查、覆盖、代码度量、性能检查、任务评测和管理。行为比较保留“执行检查并比较”的显式组合语义，不隐式修复。</p>
 </div></div>
       <span class="badge done">✓ 已完成</span>
     </article>
@@ -61,11 +61,11 @@
 </div></div>
       <span class="badge done">✓ 已完成</span>
     </article>
-<article class="requirement" id="m04" data-status="partial">
+<article class="requirement" id="m04" data-status="done">
       <span class="item-id">M04</span><div class="item-body"><h3>契约、检查、环境可修订</h3>
-      <div class="item-description"><p>保存契约父版本、原因、语义/环境说明和历史证据；允许选择 owner 已授权检查的诊断子集。环境准备是独立工具，推进环境版本，旧基线、验证及任务证据不能自动沿用。原始功能和交付检查要求不随子集缩减。尚未提供在同一运行中新增授权 argv、替换完整知识包的授权修订接口；目前需要重新配置运行。</p>
+      <div class="item-description"><p>增加静态修订请求与独立 owner 授权入口，可在同一任务追加检查、替换完整知识。原配置、范围与预算不变；授权链、契约与环境版本绑定证据，历史验证不会复用。支持暂停/授权/恢复、知识更新的中断恢复以及旧候选接收当前知识。</p>
 </div></div>
-      <span class="badge partial">◐ 部分完成</span>
+      <span class="badge done">✓ 已完成</span>
     </article>
 <article class="requirement" id="m05" data-status="done">
       <span class="item-id">M05</span><div class="item-body"><h3>严格标准成为可调用工具</h3>
@@ -91,11 +91,11 @@
 </div></div>
       <span class="badge done">✓ 已完成</span>
     </article>
-<article class="requirement" id="m09" data-status="partial">
+<article class="requirement" id="m09" data-status="done">
       <span class="item-id">M09</span><div class="item-body"><h3>批量、异步与并发</h3>
-      <div class="item-description"><p>支持一轮多个调用、后台操作 ID、查询、取消及既有 Local/Slurm 作业管理；任务评测继续复用已有并发实现。同一候选工作区操作串行，尚未实现一个 job 内多个实现工作区的并行 agent 分工与调度。</p>
+      <div class="item-description"><p>增加独立实现工作区、受 owner 上限控制的并行会话、独立回执及草稿归档。一批请求共享 author/optimization 预算，失败保留成功分支；显式按文件合并后重新验证。实际子进程重叠与按身份取消已验证。同一验证候选仍串行，不包含自动跨节点分配。</p>
 </div></div>
-      <span class="badge partial">◐ 部分完成</span>
+      <span class="badge done">✓ 已完成</span>
     </article>
 <article class="requirement" id="m10" data-status="done">
       <span class="item-id">M10</span><div class="item-body"><h3>持久状态与恢复</h3>
@@ -109,24 +109,32 @@
 </div></div>
       <span class="badge done">✓ 已完成</span>
     </article>
-<article class="requirement" id="m12" data-status="partial">
+<article class="requirement" id="m12" data-status="done">
       <span class="item-id">M12</span><div class="item-body"><h3>提示词、文档、接口与验证</h3>
-      <div class="item-description"><p>新增独立 Controller prompt、操作指南、API/CLI、回归测试、更新离线端到端示例和打包验收。尚未执行真实模型在相同预算下的前后对照，也未做新的编译/GPU 大型仓库实测，因此不能宣称成功率、速度或成本优于旧流程。</p>
+      <div class="item-description"><p>完成冻结版本的同模型/预算真实对照：iniconfig、注入基线失败、Detectron2 NMS 模块与新编译 CUDA 支持。保留失败及额外开销；修复由实测发现的工具参数 schema、合法检查名及证据引用说明，并完成真实模型决策回放。测试完成不表示所有目标通过或新策略胜出。</p>
 </div></div>
-      <span class="badge partial">◐ 部分完成</span>
+      <span class="badge done">✓ 已完成</span>
     </article></div><p id="empty" class="empty" hidden>没有匹配的条目，请换一个关键词。</p>
     </section>
 
     <section id="evidence" class="section">
       <div class="section-heading"><div><div class="eyebrow">04 / EVIDENCE</div><h2>通过了什么，尚未证明什么</h2></div><a class="text-link" href="validation.json" download>下载验证记录 ↗</a></div>
-      <div class="evidence-grid"><article><div class="evidence-label">PYTHON</div><b>821<span> / 821</span></b><h3>当前用例通过</h3><p>覆盖 73 个测试模块；逐模块全量执行，并对修复项复测。新增 Controller / 延后评分测试 17 个。</p></article><article><div class="evidence-label">JAVASCRIPT</div><b>33<span> / 33</span></b><h3>前端测试通过</h3><p>验证受影响的进度与报告逻辑，包括 Controller 活动摘要及私有数据筛除。</p></article><article><div class="evidence-label">END-TO-END</div><b>3<span> / 3</span></b><h3>安装检查通过</h3><p>离线 runner 完成 2 次控制决策、1 次实现调用，经 wheel 构建、全新环境安装与行为检查。</p></article></div>
-      <div class="evidence-details"><div><span class="checkmark">✓</span><p><strong>隔离分发验收通过</strong><span>wheel 与插件包安装完成，新 prompt、操作文档及 34 个 MCP 工具齐全。</span></p></div><div><span class="checkmark">✓</span><p><strong>必需基础示例通过</strong><span>正确实现通过检查，刻意错误的实现被识别为回归。</span></p></div><div><span class="checkmark">✓</span><p><strong>验证过程有记录</strong><span>首轮失败暴露了旧协议、隐式修复和工具数量等假设，调整后复测，没有跳过失败项。</span></p></div></div>
-      <div class="evidence-limit"><span class="limit-mark">!</span><div><h3>这是一份实现验收，不是性能胜出证明。</h3><p>尚未运行真实模型 A/B 成本对照，也未开展新的大型编译 / GPU 仓库及实际 Slurm 硬件实验。不能据此声称速度更快、tokens 更少，或全部语义等价。</p></div></div>
+      <div class="evidence-grid"><article><div class="evidence-label">PYTHON</div><b>841<span> / 841</span></b><h3>当前用例通过</h3><p>覆盖 76 个测试模块，完整 discover 加变更项复测。新增参数协议、授权修订和并行边界回归。</p></article><article><div class="evidence-label">JAVASCRIPT</div><b>40<span> / 40</span></b><h3>前端测试通过</h3><p>验证受影响的进度与报告逻辑，包括 Controller 活动摘要及私有数据筛除。</p></article><article><div class="evidence-label">END-TO-END</div><b>3<span> / 3</span></b><h3>安装检查通过</h3><p>离线 runner 完成 2 次控制决策、1 次实现调用，经 wheel 构建、全新环境安装与行为检查。</p></article></div>
+      <div class="evidence-details"><div><span class="checkmark">✓</span><p><strong>隔离分发验收通过</strong><span>wheel 与插件包安装完成，新 prompt、操作文档及 35 个 MCP 工具齐全。</span></p></div><div><span class="checkmark">✓</span><p><strong>必需基础示例通过</strong><span>正确实现通过检查，刻意错误的实现被识别为回归。</span></p></div><div><span class="checkmark">✓</span><p><strong>验证过程有记录</strong><span>GPU 原版/候选各 9 项测试通过；真实模型并行联调通过行为检查与 3 项构建安装检查。</span></p></div></div>
+      <div class="evidence-limit"><span class="limit-mark">!</span><div><h3>这是一份实现验收，不是性能胜出证明。</h3><p>真实 A/B 已完成：首次 Controller 在 NMS 场景耗时约 2.41 倍、tokens 约 3.30 倍；iniconfig 两边均失败。此次 GPU 范围只是 NMS 适配模块及新编译支持，不能外推为完整 Detectron2 等价。</p></div></div>
     </section>
 
     <section id="next" class="section">
-      <div class="eyebrow">05 / OPEN WORK</div><h2>剩余的三块工作</h2><p class="section-intro">明确保留边界，让下一轮工作有可检验的目标。</p>
-      <div class="next-list"><article><span class="next-index">01</span><div><span class="badge partial">M04 · 部分完成</span><h3>运行内修订授权与知识包</h3><p>已支持契约历史、诊断子集和环境版本失效。新增执行命令或替换完整知识包，目前仍需重新配置任务。</p><p class="next-step"><strong>待补齐</strong> 同一运行内，经 owner 授权后修订的入口。</p></div></article><article><span class="next-index">02</span><div><span class="badge partial">M09 · 部分完成</span><h3>多个实现工作区的并行调度</h3><p>已有批量调用、后台操作、查询与取消。同一候选工作区仍串行，避免同时读写使证据失效。</p><p class="next-step"><strong>待补齐</strong> 独立实现工作区，以及多个 agent 的分工与调度。</p></div></article><article><span class="next-index">03</span><div><span class="badge partial">M12 · 部分完成</span><h3>真实模型与大型仓库对照</h3><p>离线协议和固定案例已验证。策略质量、成本收益和复杂环境表现，需要真实运行数据回答。</p><p class="next-step"><strong>待补齐</strong> 同模型、同预算、同任务下的时间、tokens、成功率和无效重试对比。</p></div></article></div>
+      <div class="eyebrow">05 / COMPLETED FOLLOW-UP</div><h2>按顺序，补齐三块工作</h2><p class="section-intro">先实测找问题，再补运行内修订，最后接入独立实现工作区。</p>
+      <div class="next-list">
+        <article><span class="next-index">01</span><div><span class="badge done">M12 · 已完成</span><h3>真实模型、编译与 GPU 对照</h3><p>冻结 main 与首次 Controller，覆盖小型 Python、基线故障和 GB200 NMS 模块。由失败记录修正参数 schema 与证据引用说明；真实模型决策回放通过。</p><p class="next-step"><strong>边界</strong> 单次实验不能估计通用成功率；修正后未重复整套 A/B。</p></div></article>
+        <article><span class="next-index">02</span><div><span class="badge done">M04 · 已完成</span><h3>在原任务中补充授权与完整知识</h3><p>Agent 提交静态请求，owner 明确授权；新增检查与知识形成新版本。旧证据保留并失效，支持暂停/恢复及输入更新中断恢复。</p><p class="next-step"><strong>边界</strong> 不扩大源码范围、预算或发布权限；等待不延长期限。</p></div></article>
+        <article><span class="next-index">03</span><div><span class="badge done">M09 · 已完成</span><h3>多个独立实现会话真正并行</h3><p>单独目录、日志、回执与草稿，共享总预算。失败保留其他成果；显式合并后重新验收。真实子进程与真实模型联调均已运行。</p><p class="next-step"><strong>边界</strong> 同一验证候选仍串行；没有自动跨节点分配或同文件冲突合并。</p></div></article>
+      </div>
+      <div class="experiment-heading"><h3>6 场冻结版本对照：保留真实结果</h3><a class="text-link" href="experiments.json" download>下载实验摘要 ↗</a></div>
+      <div class="experiment-table-wrap" tabindex="0" aria-label="实验结果表，可横向滚动"><table class="experiment-table"><thead><tr><th>场景</th><th>流程</th><th>结果</th><th>作业秒数</th><th>总 tokens</th></tr></thead><tbody><tr><td>iniconfig</td><td>main</td><td>失败，证据保留</td><td>442.75</td><td>296,455</td></tr><tr><td>iniconfig</td><td>controller</td><td>失败，证据保留</td><td>580.69</td><td>553,577</td></tr><tr><td>iniconfig + 注入故障</td><td>main</td><td>失败，证据保留</td><td>6.24</td><td>0</td></tr><tr><td>iniconfig + 注入故障</td><td>controller</td><td>失败，证据保留</td><td>589.58</td><td>510,324</td></tr><tr><td>Detectron2 NMS</td><td>main</td><td>检查通过，安装缺口</td><td>164.28</td><td>139,504</td></tr><tr><td>Detectron2 NMS</td><td>controller</td><td>检查通过，安装缺口</td><td>395.20</td><td>460,026</td></tr></tbody></table></div>
+      <p class="experiment-note">同 gpt-6.1-sol / xhigh、同预算；每场每流程仅一次。tokens 包含缓存输入，不等于金额。注入故障不是上游缺陷。NMS 两组各通过 9/9 原版测试；缺口为未配置安装。</p>
+      <div class="evidence-limit"><span class="limit-mark">i</span><div><h3>两类验证，分别解读</h3><p>冻结版本对照评估首次 Controller 的实际表现。后续真实模型联调用人工工具顺序测试新授权和并行接口：2 个会话重叠、2 项行为与 3 项安装检查通过；不作为新的自主策略 A/B。联调脚本多调用了一次实现，其开销完整保留在报告中。</p></div></div>
     </section>
 
     <section id="migration" class="section">
@@ -140,12 +148,12 @@ nanolize control /private/state/jobs/JOB_ID capture_baseline \
 
     <section id="resources" class="section resources">
       <div class="eyebrow">07 / SOURCE OF TRUTH</div><h2>把结论追溯到代码与报告</h2>
-      <div class="resource-links"><a href="https://github.com/Al-LeanMuscle-Club/nanolize/tree/codex/agent-controlled-rewrite"><span>代码分支<strong>codex/agent-controlled-rewrite</strong></span><span aria-hidden="true">↗</span></a><a href="https://github.com/Al-LeanMuscle-Club/nanolize/commit/5d86654a900b8f75255e365ee22b9fafff7c4cf4"><span>本次实现<strong>commit 5d86654a</strong></span><span aria-hidden="true">↗</span></a><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/docs/agent-controller.md"><span>操作与迁移<strong>Controller 使用指南</strong></span><span aria-hidden="true">↗</span></a><a href="report.md" download><span>原始文档<strong>下载完整 Markdown 报告</strong></span><span aria-hidden="true">↓</span></a></div>
+      <div class="resource-links"><a href="https://github.com/Al-LeanMuscle-Club/nanolize/tree/codex/agent-controlled-rewrite"><span>代码分支<strong>codex/agent-controlled-rewrite</strong></span><span aria-hidden="true">↗</span></a><a href="https://github.com/Al-LeanMuscle-Club/nanolize/commit/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc"><span>本次实现<strong>commit 19793f9e</strong></span><span aria-hidden="true">↗</span></a><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/docs/agent-controller.md"><span>操作与迁移<strong>Controller 使用指南</strong></span><span aria-hidden="true">↗</span></a><a href="report.docx" download><span>中文文档<strong>下载 DOCX 报告</strong></span><span aria-hidden="true">↓</span></a><a href="report.md" download><span>原始文档<strong>下载完整 Markdown 报告</strong></span><span aria-hidden="true">↓</span></a></div>
       <details class="full-report"><summary>阅读完整原始报告 <span aria-hidden="true">＋</span></summary><div class="prose"><h1>Agent Controller 改造：实施对照报告</h1>
-<p>日期：2026-11-08。基线：<code>main</code>，提交 <code>8c0745a19c40aa7673b28ceeb1b49c7ae2850d78</code>。结果分支：<code>codex/agent-controlled-rewrite</code>。</p>
+<p>日期：2026-11-08，补齐版。基线：<code>main</code>，提交 <code>8c0745a19c40aa7673b28ceeb1b49c7ae2850d78</code>。结果分支：<code>codex/agent-controlled-rewrite</code>。</p>
 <p>依据：<a href="https://al-leanmuscle-club.github.io/lma-graphs/nanolize-controller-rea-design-20261108/">改造设计报告 v1.1</a>。当前仓库名称是 <code>Al-LeanMuscle-Club/nanolize</code>。</p>
 <p>核心改造已经落地：新任务的中间策略由 agent 选择，工具负责执行、记录和事实验收。保留 Discover、Select Scope 和 Deliver 的产品形式。Graphify 仍是结构图来源，agent 使用 nanolize 的完整私有行为知识包；没有引入 Understanding Anything。</p>
-<p>本次没有把设计报告的全部建议都标为完成。M04、M09、M12 有明确边界，见下表。</p>
+<p>原先部分完成的 M12、M04、M09 已按顺序补齐。表中的“已完成”指所列实现与验证工作完成，不表示真实重构全部成功或策略成本优于 main；实验结果和适用边界单独列出。</p>
 <h2>M01–M12 逐项对照</h2>
 <table>
 <thead>
@@ -164,7 +172,7 @@ nanolize control /private/state/jobs/JOB_ID capture_baseline \
 <tr>
 <td>M02 提取共用工具</td>
 <td>已完成</td>
-<td>28 个可组合操作，通过 CLI <code>control</code> 与 MCP <code>controller_operation</code> / <code>controller_state</code> 共用核心。包含工作区、契约、环境准备、候选、检查、覆盖、代码度量、性能检查、任务评测和管理。行为比较保留“执行检查并比较”的显式组合语义，不隐式修复。</td>
+<td>33 个可组合操作，通过 CLI <code>control</code> 与 MCP <code>controller_operation</code> / <code>controller_state</code> 共用核心。包含工作区、契约、环境准备、候选、检查、覆盖、代码度量、性能检查、任务评测和管理。行为比较保留“执行检查并比较”的显式组合语义，不隐式修复。</td>
 </tr>
 <tr>
 <td>M03 去掉默认隐式修复</td>
@@ -173,8 +181,8 @@ nanolize control /private/state/jobs/JOB_ID capture_baseline \
 </tr>
 <tr>
 <td>M04 契约、检查、环境可修订</td>
-<td>部分完成</td>
-<td>保存契约父版本、原因、语义/环境说明和历史证据；允许选择 owner 已授权检查的诊断子集。环境准备是独立工具，推进环境版本，旧基线、验证及任务证据不能自动沿用。原始功能和交付检查要求不随子集缩减。尚未提供在同一运行中新增授权 argv、替换完整知识包的授权修订接口；目前需要重新配置运行。</td>
+<td>已完成</td>
+<td>增加静态修订请求与独立 owner 授权入口，可在同一任务追加检查、替换完整知识。原配置、范围与预算不变；授权链、契约与环境版本绑定证据，历史验证不会复用。支持暂停/授权/恢复、知识更新的中断恢复以及旧候选接收当前知识。</td>
 </tr>
 <tr>
 <td>M05 严格标准成为可调用工具</td>
@@ -198,8 +206,8 @@ nanolize control /private/state/jobs/JOB_ID capture_baseline \
 </tr>
 <tr>
 <td>M09 批量、异步与并发</td>
-<td>部分完成</td>
-<td>支持一轮多个调用、后台操作 ID、查询、取消及既有 Local/Slurm 作业管理；任务评测继续复用已有并发实现。同一候选工作区操作串行，尚未实现一个 job 内多个实现工作区的并行 agent 分工与调度。</td>
+<td>已完成</td>
+<td>增加独立实现工作区、受 owner 上限控制的并行会话、独立回执及草稿归档。一批请求共享 author/optimization 预算，失败保留成功分支；显式按文件合并后重新验证。实际子进程重叠与按身份取消已验证。同一验证候选仍串行，不包含自动跨节点分配。</td>
 </tr>
 <tr>
 <td>M10 持久状态与恢复</td>
@@ -213,22 +221,22 @@ nanolize control /private/state/jobs/JOB_ID capture_baseline \
 </tr>
 <tr>
 <td>M12 提示词、文档、接口与验证</td>
-<td>部分完成</td>
-<td>新增独立 Controller prompt、操作指南、API/CLI、回归测试、更新离线端到端示例和打包验收。尚未执行真实模型在相同预算下的前后对照，也未做新的编译/GPU 大型仓库实测，因此不能宣称成功率、速度或成本优于旧流程。</td>
+<td>已完成</td>
+<td>完成冻结版本的同模型/预算真实对照：iniconfig、注入基线失败、Detectron2 NMS 模块与新编译 CUDA 支持。保留失败及额外开销；修复由实测发现的工具参数 schema、合法检查名及证据引用说明，并完成真实模型决策回放。测试完成不表示所有目标通过或新策略胜出。</td>
 </tr>
 </tbody>
 </table>
 <h2>主要代码位置</h2>
 <ul>
-<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/controller.py">controller.py</a>：策略调用协议、28 个操作、产物/候选/环境版本、恢复和交付。</li>
-<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/execution.py">execution.py</a>：新默认入口以及现有作业生命周期。</li>
-<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/prompts/controller/guide.md">Controller 提示词</a>：可选策略指导，不规定固定阶段顺序。</li>
-<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/effort.py">effort.py</a>：solver 与延后评分的独立执行、原有完整评测组合。</li>
-<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/cli_workflow.py">CLI</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/mcp_server.py">MCP</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/operations.py">操作身份</a>：统一调用及权限/副作用声明。</li>
-<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/assets/execution.js">进度前端</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/assets/report.js">图报告</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/src/nanolize/report_site.py">报告投影</a>：实际活动与经过筛选的开销信息。</li>
-<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/5d86654a900b8f75255e365ee22b9fafff7c4cf4/docs/agent-controller.md">操作指南</a>：参数、示例、并发边界和迁移说明。</li>
+<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/controller.py">controller.py</a>：策略调用协议、33 个操作、产物/候选/环境版本、恢复和交付。</li>
+<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/execution.py">execution.py</a>：新默认入口以及现有作业生命周期。</li>
+<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/prompts/controller/guide.md">Controller 提示词</a>：可选策略指导，不规定固定阶段顺序。</li>
+<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/effort.py">effort.py</a>：solver 与延后评分的独立执行、原有完整评测组合。</li>
+<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/cli_workflow.py">CLI</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/mcp_server.py">MCP</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/operations.py">操作身份</a>：统一调用及权限/副作用声明。</li>
+<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/assets/execution.js">进度前端</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/assets/report.js">图报告</a>、<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/report_site.py">报告投影</a>：实际活动与经过筛选的开销信息。</li>
+<li><a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/docs/agent-controller.md">操作指南</a>：参数、示例、并发边界和迁移说明。</li>
 </ul>
-<h2>验证结果</h2>
+<h2>原版实施验收（历史记录）</h2>
 <ol>
 <li>Python：覆盖全部 <strong>73 个测试模块、821 个当前用例</strong>，以逐模块全量执行及变更项复测完成验收。新增 Controller/延后评分测试共 <strong>17 个</strong>。覆盖基线失败仍能继续、没有检查映射、关闭评测、owner 授权、幂等冲突、取消和恢复、契约/环境变化、候选恢复、资源篡改、预算累计和有缺口交付。</li>
 <li>JavaScript：受影响的进度与报告测试 <strong>33 项通过</strong>。</li>
@@ -252,7 +260,115 @@ nanolize scope-verify /path/to/candidate --baseline baseline.json \
 </code></pre>
 <p>默认 Codex runner 接收新的 Controller 指导。自定义 <code>--runner</code> 需要同时理解控制调用与实现调用：控制工作区有 <code>context.json</code>、<code>knowledge/</code>，应输出 <code>decision.json</code>；实现调用继续使用 <code>.nanolize-rewrite</code>。旧的纯代码写入脚本不能直接作为新 Controller runner，示例和 HTTP 测试已演示适配方式。</p>
 <p>保留 main 的 source-free 实现边界，不自动扩大源码访问权限。工具只执行 owner 提供的已授权 argv。目录隔离和摘要校验不等于对恶意代码的 OS 沙箱。</p>
-<p>下一步应优先完成运行内授权修订与独立实现工作区，再用同模型、同预算、同任务比较旧流程和 Controller，分别报告总 tokens、时间、成功率、无效重试和未验证项。没有这些实验前，不能把“更灵活”写成“已经更快”。</p>
+<p>本次按 M12 → M04 → M09 补齐原先的三项缺口。下面列出新增功能、实际实验和当前版本验收；上面的 821 项 / 34 工具数据属于前一提交的历史验收，不能当作新版本的测试数量。</p>
+<h2>补齐 1：M12 真实模型、编译与 GPU 对照</h2>
+<p>先冻结两套运行时，后续功能修改不影响对照：原 main <code>8c0745a19c40aa7673b28ceeb1b49c7ae2850d78</code>，首次 Controller <code>5d86654a900b8f75255e365ee22b9fafff7c4cf4</code>。每场同模型 <code>gpt-6.1-sol</code>、同 <code>xhigh</code> 推理设置、同语义输入与检查，job 1,200 秒、单次 runner 420 秒、最多 2 次实现调用、0 次优化，关闭任务评测。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>流程</th>
+<th>实际结果</th>
+<th style="text-align:right">作业时间（秒）</th>
+<th style="text-align:right">总模型 tokens</th>
+<th style="text-align:right">缓存输入 tokens</th>
+<th>模型调用（控制 / 实现）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iniconfig 全 Python 包</td>
+<td>main</td>
+<td>失败：原版测试收集错误；输出检查通过</td>
+<td style="text-align:right">442.75</td>
+<td style="text-align:right">296,455</td>
+<td style="text-align:right">247,040</td>
+<td>0 / 2</td>
+</tr>
+<tr>
+<td>iniconfig 全 Python 包</td>
+<td>Controller</td>
+<td>失败：同一收集错误；输出检查通过</td>
+<td style="text-align:right">580.69</td>
+<td style="text-align:right">553,577</td>
+<td style="text-align:right">450,688</td>
+<td>4 / 1</td>
+</tr>
+<tr>
+<td>iniconfig + 人为基线失败</td>
+<td>main</td>
+<td>失败：在基线阶段停止，未调用模型</td>
+<td style="text-align:right">6.24</td>
+<td style="text-align:right">0（确实没有模型调用）</td>
+<td style="text-align:right">0</td>
+<td>0 / 0</td>
+</tr>
+<tr>
+<td>iniconfig + 人为基线失败</td>
+<td>Controller</td>
+<td>失败：继续生成候选，保留基线与候选失败</td>
+<td style="text-align:right">589.58</td>
+<td style="text-align:right">510,324</td>
+<td style="text-align:right">420,864</td>
+<td>3 / 1</td>
+</tr>
+<tr>
+<td>Detectron2 NMS 适配模块</td>
+<td>main</td>
+<td>带缺口交付：功能检查通过，未配置安装</td>
+<td style="text-align:right">164.28</td>
+<td style="text-align:right">139,504</td>
+<td style="text-align:right">116,096</td>
+<td>0 / 1</td>
+</tr>
+<tr>
+<td>Detectron2 NMS 适配模块</td>
+<td>Controller</td>
+<td>带缺口交付：功能检查通过，未配置安装</td>
+<td style="text-align:right">395.20</td>
+<td style="text-align:right">460,026</td>
+<td style="text-align:right">378,496</td>
+<td>3 / 1</td>
+</tr>
+</tbody>
+</table>
+<p>时间从作业队列事件到终态，GPU 对照不计随后独立复查；不是整次 Slurm 分配时间。总 tokens 为模型事件的输入与输出之和，包含缓存输入，缓存并非额外相加；推理输出已经包含在输出内。没有按价格折算费用，未把无 usage 当成 0。每场每流程仅一次，执行顺序没有随机化，不能估计通用成功率或统计显著性。</p>
+<p><strong>结果不能支持“更快、更省”。</strong> NMS 场景首次 Controller 作业耗时约为 main 的 2.41 倍，tokens 约 3.30 倍；iniconfig 约为 1.31 倍和 1.87 倍。固定流程在注入的基线故障前立即停止，Controller 继续工作消耗更多，这只能说明控制方式不同，不能算成功提升。</p>
+<p>iniconfig 原版提交为 <code>a9e0ad14bcd0d9d3b68d2b699ce38399cbe64fdd</code>。原版测试可运行，重写候选都遗漏了 <code>__all__</code>，导致原版测试收集失败；交给模型的相同语义说明没有写清这个契约。此处没有把输入知识的缺口归咎于测试，也没有在同一对照中偷偷补充单边输入。安装检查只是全新环境复制包并 import，<strong>不是 wheel 构建验证</strong>。注入场景额外命令主动退出 17，明确是实验注入，不是上游缺陷。</p>
+<p>GPU 场景基于 Detectron2 <code>247691a1c292654867deb35cabb27f18d75a1363</code>，<strong>只重写完整的 NMS Python 适配模块，不是完整 Detectron2</strong>。Slurm 作业 <code>8733896</code> 在 GB200 上完成：实际分配 1 节点 / 4 GPU、64 GB，检查只暴露并使用 1 GPU；作业总分配时长 13 分 08 秒。PyTorch 2.8.0+cu129、CUDA 12.9；重新编译原版 native extension，没有复用旧二进制。未重写 native kernels。</p>
+<p>两个流程的原版和候选均通过未改动的 NMS 测试 <strong>9/9</strong>，CPU/CUDA 输出探针通过，30 次重复的单一 CUDA benchmark 完成。main 原版/候选中位时间约 0.715/0.638 ms，Controller 原版/候选约 0.687/0.650 ms；这些只是一个 workload 的观测，不构成全仓性能无回归结论。完整仓库功能、跨节点训练、其他 CUDA 算子不在此次范围。</p>
+<p>实测发现首次 Controller 工具说明只列参数名：模型误用 <code>implementer</code>、把 <code>check-1</code> 当检查名、把自然语言当证据 ID。已补真实签名、必填项/默认值/枚举、已授权检查名，以及同批调用不能猜测尚未返回 ID 的说明。相同初始决策输入的真实模型回放通过参数及引用检查：56.94 秒、127,567 tokens，其中缓存输入 109,056。<strong>这次是决策回放，没有再次执行目标实现或行为验收</strong>，不能把它当成修正后 A/B 成功结果。</p>
+<h2>补齐 2：M04 同一任务内授权修订</h2>
+<ul>
+<li>新增 <code>request_revision</code>：agent 提议追加检查或替换完整知识，仅作静态校验；<code>wait=True</code> 保存并暂停 worker，不消耗资源空转。</li>
+<li>新增独立 CLI <code>control-authorize</code> 和 MCP <code>authorize_controller_revision</code>：只有 owner 明确授予，且 <code>expected_revision</code> 匹配时生效。请求 ID 可用于精确核对；它不出现在自主 Controller 工具箱里。</li>
+<li>行为、准备、候选和安装检查只能追加。禁止用同名定义替换旧检查，诊断子集也不能减弱原始或新增验收。安装仍要求新环境的 <code>{python}</code>。</li>
+<li>原配置不改写，授权以不可覆盖产物串成链，校验 job、owner、来源与父版本；源码范围、预算、发布权限不借修订扩张。授权本身执行 0 条命令。</li>
+<li>新授权更新契约和环境版本，清除当前选定状态；旧基线、验证、任务试验/评分保留历史，不可成为当前通过凭证。</li>
+<li>完整知识通过原格式与来源绑定验证。已有生成代码保留，更新输入使用 staging/backup 与持久重命名日志；恢复旧候选时也装入当前知识。9 项专项测试覆盖授权拒绝、匹配冲突、旧证据失效、知识更新、中断恢复、暂停/恢复、实际 worker 退出、取消及 CLI/MCP。</li>
+<li>等待 owner 不自动增加总期限；已过期任务需要新的授权运行。公开进度不包含私有 argv、知识或路径。协议和目录约束仍不是 OS 沙箱。</li>
+</ul>
+<p>代码：<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/controller_revisions.py">controller_revisions.py</a>。调用说明见<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/docs/agent-controller.md">使用指南</a>。</p>
+<h2>补齐 3：M09 独立实现工作区与并行执行</h2>
+<p>新增 <code>create_implementation_workspace</code>、<code>run_workspace_agents</code>、<code>get_workspace_status</code>、<code>save_workspace_candidate</code>。可以从空目录开始，或仅以保存过的生成代码为种子；每份独立 Git 仓库只得到当前知识及自己的草稿。</p>
+<p>Owner 的 <code>max_parallel_agents</code> 默认 2、范围 1–8；旧配置缺项使用 1。单批最多 20 项，启动前预留全部 author/optimization 次数，评审也计数，中断不退回预算，不能利用并行绕过总限额。每个会话有独立日志与进程回执；成功、失败和中断都保留，不自动选最短实现，也不自动合并。</p>
+<p>真实子进程测试验证了时间区间重叠、后台查询、按身份取消、不杀无关进程、一个失败仍可保存其他草稿、评审写入不得报成功、授权并发上限、汇总预算、过期知识拒绝、显式合并和重新对照。8 项专项测试通过。损坏控制输入的目录不能归档，但不妨碍其他完整目录归档。</p>
+<p>合并仍按显式、互不重叠的文件进行，不自动解决同文件冲突；合并完成后需新验证。同一验证候选的修改/证据操作串行，而多个实现目录并发。继承既有 Local/Slurm 资源，<strong>不包含自动为每个子会话申请不同节点</strong>。更新知识后，可以把旧目录保存为草稿，再建立使用当前知识的新目录。</p>
+<p>代码：<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/src/nanolize/controller_workspaces.py">controller_workspaces.py</a>。Controller 共 <strong>33</strong> 个可组合操作，安装包共 <strong>35</strong> 个 MCP 工具；这两个数量的范围不同。</p>
+<h2>当前版本验证与范围</h2>
+<ol>
+<li>Python 当前 <strong>841 个唯一用例 / 76 个模块通过</strong>：执行要求的完整 <code>unittest discover</code>（840 项），最后对新增暂停 worker 检查与公开旧摘要清理修复复测运行内修订模块（9 项）；重复执行不重复计数。新增覆盖包括工具参数协议 3 项、运行内修订 9 项、并行工作区 8 项。</li>
+<li>JavaScript 受影响进度/报告 <strong>40 项通过</strong>，包括暂停状态、owner 授权后继续观察并显示可恢复，不自动创建或恢复任务。</li>
+<li><code>examples/run_demo.py</code> 通过，正确实现通过，刻意错误实现被识别；<code>examples/run_graph_rewrite_demo.py</code> 通过，2 次离线 Controller 决策、1 次实现、3/3 wheel/全新环境安装检查，原仓库与原测试不变。</li>
+<li>最终 wheel/插件包以独立环境安装验收，<strong>35 个 MCP 工具齐全</strong>，Controller 内部 33 个操作；源码不依赖 checkout 导入，prompt 与资源均在发行物中。工作流文档同步检查通过。</li>
+<li>报告网页已通过 320/390/900/1440 宽度的交互与布局检查：12 项要求、筛选与搜索、流程键盘切换、33 个工具展开、复制、原文和下载链接，无横向溢出或 JavaScript 错误。</li>
+</ol>
+<p>发现过的专项问题均保留修复记录：旧验收摘要可能在新授权后继续显示，已清空当前摘要并使旧选择失效；最终修订模块复测通过。没有将目标重构失败混为 harness 通过，也没有删除对照中的失败。全量测试结束时有 3 条子进程回收 ResourceWarning，随后核对相应 PID 均已不存在；未将警告隐藏为“零警告”。</p>
+<p>真实模型的新增接口联调已通过：人工选定工具顺序，在合成的双模块文本处理项目中完成静态请求、owner 授权、两个独立模型会话并行、显式合并、2 项行为检查及 3 项 wheel/安装检查，最终 <code>succeeded</code>。总计 217.18 秒、3 次实现调用、337,369 tokens。两个初始会话的执行区间实际重叠。</p>
+<p>联调脚本在显式 <code>select_candidate</code> 前调用 delivery 验收，把唯一的 <code>candidate_not_selected</code> 缺口误当成继续实现的理由，因此额外调用了一次实现；当时行为和安装已经通过。该调用的时间和 tokens 全部保留，不归因于自主 Controller 策略，也不把这次合成联调冒充新一轮 A/B。它验证的是新接口与真实模型能协同运行。</p>
+<p>实验数据的公开、去私有信息摘要：<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/docs/controller-experiments.json">controller-experiments.json</a>。完整验收摘要：<a href="https://github.com/Al-LeanMuscle-Club/nanolize/blob/19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc/docs/controller-validation.json">controller-validation.json</a>。原始模型消息、argv、路径、私有检查输出和目标代码副本不公开。</p>
+<h2>如何理解“补齐”</h2>
+<p>三项交付内容已经有实现和实际验证；这不表示真实重构实验全部成功，也不表示 Controller 的策略已经优于固定流程。此轮优先修补了实测暴露的可用性问题，并提供后续自主诊断、知识补充与并行实现的工具。大型仓库全量重写、多种模型、多次随机对照、自动跨节点会话分配仍不在本次完成声明内。</p>
 </div></details>
     </section>
     <footer><a class="brand" href="#overview"><span class="brand-mark">n</span>nanolize</a><p>实施快照 · 2026.11.08 · 基于 main 8c0745a<br>本页展示已提交版本的验收结果，不代表实时运行状态。</p><a href="#overview" aria-label="回到顶部">↑</a></footer>

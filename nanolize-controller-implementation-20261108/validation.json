@@ -1,548 +1,548 @@
 {
-  "date": "2026-11-08T10:34:23.970987+00:00",
+  "date": "2026-11-08T13:22:05.788497+00:00",
   "base_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
   "branch": "codex/agent-controlled-rewrite",
   "python": {
-    "strategy": "All test modules, with affected-module retests; four isolated test processes",
-    "modules": 73,
-    "tests": 821,
+    "strategy": "Full required unittest discover, followed by final owner-revision module retest; counts are unique current test IDs, not repeated executions.",
+    "modules": 76,
+    "tests": 841,
     "status": "passed",
+    "full_run_tests": 840,
+    "full_run_log_sha256": "e4b797007dbeb34a53dca06c0c692821528b931b73c0df1d07a58c06d2809100",
+    "final_revision_retest_tests": 9,
+    "final_revision_log_sha256": "88bf645c070a059d67631fdbd4609e96dddde57a1fd6744ea8ee4f1f70e23088",
     "results": [
       {
         "module": "test_agent_controller.py",
         "tests": 15,
         "status": "passed",
-        "log_sha256": "f4d1c8d18508fd6d0d2d284762620269badd2d7ba060d5e39408bc465f5cb972",
-        "retested": true
+        "retested": false
       },
       {
         "module": "test_analysis.py",
         "tests": 10,
         "status": "passed",
-        "log_sha256": "aafe05db94de8956ea8d79f428c2ad0c49fc06e92cefcd40e5e8e09b7bad5c62",
         "retested": false
       },
       {
         "module": "test_auto_repair.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "ca1d1e1210c87d3def4db703aed23af06d8bebcc29a46434a0e2b79acdb0cb4d",
         "retested": false
       },
       {
         "module": "test_automatic_sizing.py",
         "tests": 3,
         "status": "passed",
-        "log_sha256": "93d4ba0a3a860720c4ab43c880e92d75716756f7c62932c8117fb14034270b2a",
         "retested": false
       },
       {
         "module": "test_capabilities.py",
         "tests": 16,
         "status": "passed",
-        "log_sha256": "f655791e78030d81bfbdd8564b3f06e0504cf537698bafa1457d4043c8272619",
         "retested": false
       },
       {
         "module": "test_capability_cli.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "5551512e1ef6dfef349e371c43bad37cabd028368e54f531bf2c2e73707446f3",
         "retested": false
       },
       {
         "module": "test_capability_verification.py",
         "tests": 34,
         "status": "passed",
-        "log_sha256": "182633c796e4d4cc3d9b8c51c51d46f7019faed9e878651a87a9ed34a0ed9e70",
         "retested": false
       },
       {
         "module": "test_cli.py",
         "tests": 2,
         "status": "passed",
-        "log_sha256": "240062ad37f823b76878b117d82716ceacfe2168b175e0fa9c941aecc7147147",
         "retested": false
       },
       {
         "module": "test_code_size.py",
         "tests": 14,
         "status": "passed",
-        "log_sha256": "d96955fe7cefc1edd1dbf5128f0624593910c088296bde50279b93c70974a7c5",
         "retested": false
+      },
+      {
+        "module": "test_controller_catalog.py",
+        "tests": 3,
+        "status": "passed",
+        "retested": false
+      },
+      {
+        "module": "test_controller_revisions.py",
+        "tests": 9,
+        "status": "passed",
+        "retested": true
       },
       {
         "module": "test_controller_tasks.py",
         "tests": 2,
         "status": "passed",
-        "log_sha256": "496001972ed720ae2d859a6ac4536a09bb863ffb502afcd1deb45e7b6366b26d",
+        "retested": false
+      },
+      {
+        "module": "test_controller_workspaces.py",
+        "tests": 8,
+        "status": "passed",
         "retested": false
       },
       {
         "module": "test_core_scope.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "4e5fa1f5d5531f7fc9b1c628bae2a4ec23048c8a19db907ef2509cbc6019cb8f",
         "retested": false
       },
       {
         "module": "test_default_workflow_adapters.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "072faaee8b68a48dc43b100fb045270c5827fb51f393a3b863592bb9f4f6b276",
         "retested": false
       },
       {
         "module": "test_distribution.py",
         "tests": 5,
         "status": "passed",
-        "log_sha256": "8d34b6a0a778191b56b91eba1555cf7674ef7959ffdf0e099fdea5fae7c3cf1a",
-        "retested": true
+        "retested": false
       },
       {
         "module": "test_effort.py",
         "tests": 32,
         "status": "passed",
-        "log_sha256": "7a165d1a2764f6212e768a22c8664c0ffd796479aa388be11fd68d1217fbd2b3",
         "retested": false
       },
       {
         "module": "test_effort_adapters.py",
         "tests": 8,
         "status": "passed",
-        "log_sha256": "9d313e77bcca891c7e09ace5223bc4cd49c3141e97043f211ea2d02ca59d5921",
         "retested": false
       },
       {
         "module": "test_effort_execution.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "f78460284ebdc53c93c2ae12d3861be2435b7963e0160c7e89973b5e97791349",
         "retested": false
       },
       {
         "module": "test_effort_grading.py",
         "tests": 12,
         "status": "passed",
-        "log_sha256": "9efd17cc8b18bcf510d6c134ae2409c420cb6a83cfaa3eb65119c0caa6472fbd",
         "retested": false
       },
       {
         "module": "test_effort_report.py",
         "tests": 19,
         "status": "passed",
-        "log_sha256": "59af0c918d4668ec1c8501a3dcbb11b093a362ae2e91f0b4c5ad5dcef372ac9f",
         "retested": false
       },
       {
         "module": "test_effort_runner.py",
         "tests": 16,
         "status": "passed",
-        "log_sha256": "c600673f7a631775dc14c61413dd46bcfcbcd7ec8293e64ea85a7711089e616b",
         "retested": false
       },
       {
         "module": "test_effort_schema_profiles.py",
         "tests": 20,
         "status": "passed",
-        "log_sha256": "662cba07b70b378109e49cba2394300a1c3017d582b1c5bb2038738823dc0b67",
         "retested": false
       },
       {
         "module": "test_effort_staged.py",
         "tests": 23,
         "status": "passed",
-        "log_sha256": "2e6dce913b996eeca3f2c0328f046922f875ef63b78d75296b6fdabdac08c9a4",
         "retested": false
       },
       {
         "module": "test_evidence_store.py",
         "tests": 17,
         "status": "passed",
-        "log_sha256": "5538e295b8a4d66cc458e3d54275a65173ac71ad87f31e0463d01f75e98e280d",
         "retested": false
       },
       {
         "module": "test_execution.py",
         "tests": 19,
         "status": "passed",
-        "log_sha256": "1556f7ada1db1e0ae5c5b2d98ca69557acb232706a8a8a98e551225967dbe2ab",
         "retested": false
       },
       {
         "module": "test_execution_backends.py",
         "tests": 4,
         "status": "passed",
-        "log_sha256": "c31c244c1e0ee2624dfd838170a808a773db4eb8f47d0d1b2039840e8475d11c",
         "retested": false
       },
       {
         "module": "test_execution_cli.py",
         "tests": 9,
         "status": "passed",
-        "log_sha256": "248af81869f9e7e653ed4c81c494838601080d628334108e9a7fef40d12a2a15",
         "retested": false
       },
       {
         "module": "test_execution_control.py",
         "tests": 10,
         "status": "passed",
-        "log_sha256": "127a3ab4c6adad598a9b89efb9b8ce49e74d97a79325ecd826cecd26418cb9a4",
         "retested": false
       },
       {
         "module": "test_execution_installation.py",
         "tests": 12,
         "status": "passed",
-        "log_sha256": "c27770062a8b7693b8b11a7753ecfd02b215f4653f5e78a3e6db2943fa40d9ca",
         "retested": false
       },
       {
         "module": "test_execution_readiness.py",
         "tests": 17,
         "status": "passed",
-        "log_sha256": "e6370d7bcfa0a4f93687637f1eb6afc52b43323985c88a89654ed0bb0ca86c53",
         "retested": false
       },
       {
         "module": "test_execution_server.py",
         "tests": 12,
         "status": "passed",
-        "log_sha256": "91e71bb12011f36f62887082958c7404d5269fb208b9a954b22f6fbf12d0f680",
         "retested": false
       },
       {
         "module": "test_execution_token_budget.py",
         "tests": 3,
         "status": "passed",
-        "log_sha256": "ea32b5535f1e46dbe16deb49ac5969ed3cbcb556b916a0fca92aae8bd813fd88",
         "retested": false
       },
       {
         "module": "test_execution_view.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "9cd86260ba1c503f37fc5880e7d5c79693abaa5a95a7ecd618eecf094c30c10b",
         "retested": false
       },
       {
         "module": "test_function_tree.py",
         "tests": 10,
         "status": "passed",
-        "log_sha256": "d995ca7fdfc89ea6590d8433ca838aa850b41d6699656e650fd870823a32d353",
         "retested": false
       },
       {
         "module": "test_functionality_first.py",
         "tests": 8,
         "status": "passed",
-        "log_sha256": "70bb2389b498c886fe882de44fb88990a9429044cdac9a3ba2046ac3a30a705b",
         "retested": false
       },
       {
         "module": "test_internal_links.py",
         "tests": 3,
         "status": "passed",
-        "log_sha256": "fa0c393fff7558971bb6454f1ca310549ebf856ca3523d0676024c5288a7e33d",
         "retested": false
       },
       {
         "module": "test_knowledge.py",
         "tests": 28,
         "status": "passed",
-        "log_sha256": "e8a642da2372a7ea0266409a12b832d8d13a2849c82d2e2a38b4d8649b871e83",
         "retested": false
       },
       {
         "module": "test_knowledge_integration.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "e8ad3a0bbde472386ea13b400bdc931b4b5800524ac6a71507247f6effab6b45",
         "retested": false
       },
       {
         "module": "test_knowledge_interfaces.py",
         "tests": 9,
         "status": "passed",
-        "log_sha256": "455cc873b9eb5629a16ad9b4d5d0df6dcd737e41a599b181222a52ab4079878c",
         "retested": false
       },
       {
         "module": "test_mcp.py",
         "tests": 5,
         "status": "passed",
-        "log_sha256": "dc2c91226846bc243f3c1e0f9511457764e7860475153af07134ed37fc0eca53",
         "retested": false
       },
       {
         "module": "test_obligations.py",
         "tests": 7,
         "status": "passed",
-        "log_sha256": "c95afe2cebcdf0fadf3916c2727424e03d89b9388e549ef55df21996d22196d5",
         "retested": false
       },
       {
         "module": "test_operation_contracts.py",
         "tests": 8,
         "status": "passed",
-        "log_sha256": "9f1764c169e21e4a65e54efaaa7cb13442f0a280a5b92610e878eb8a8d17ff31",
         "retested": false
       },
       {
         "module": "test_planner_parity.py",
         "tests": 2,
         "status": "passed",
-        "log_sha256": "47769d89044d6ffda2b9d86db2e76aeda9a6c65164d60ce93f24f7d66dd51c08",
         "retested": false
       },
       {
         "module": "test_plugins.py",
         "tests": 3,
         "status": "passed",
-        "log_sha256": "caee564f9fff3249f28ad46be2f6a2821bce75ae3ae13f6624814ad3a95c0f9c",
         "retested": false
       },
       {
         "module": "test_prompts.py",
         "tests": 10,
         "status": "passed",
-        "log_sha256": "e2dfc1981d10c8ce6851521394d212720f3ff963e86dae236190efa89ac2a931",
         "retested": false
       },
       {
         "module": "test_public_preview.py",
         "tests": 9,
         "status": "passed",
-        "log_sha256": "50d934bdf8a3aab2ab66f93b4cbccc9e89b55885fa42cb8fa47e8875c187bcdc",
         "retested": false
       },
       {
         "module": "test_public_review.py",
         "tests": 15,
         "status": "passed",
-        "log_sha256": "ddebe82d80f7c814c9d257cc8b3440a81a71913ef788d2ce5ff22339b3c88ea3",
         "retested": false
       },
       {
         "module": "test_public_view.py",
         "tests": 10,
         "status": "passed",
-        "log_sha256": "d9014cf6538c82ef111402b0afd5249048c87a904908ba5bb56364fa725a3e89",
         "retested": false
       },
       {
         "module": "test_repair_policy.py",
         "tests": 10,
         "status": "passed",
-        "log_sha256": "bbdb5b6875d84d84a9273356015e0c995e74bb283d81211babe699e4791bfd75",
         "retested": false
       },
       {
         "module": "test_report_attribution.py",
         "tests": 10,
         "status": "passed",
-        "log_sha256": "6d736e6e8bb7ba5898651cf07e3d74b4c1f547194774bfe26a5a7b42f57cfb12",
         "retested": false
       },
       {
         "module": "test_report_integration.py",
         "tests": 5,
         "status": "passed",
-        "log_sha256": "95be16f6b7b5da5398fa86d740c395019a71031cbcd1083b3b3bf75286f8c275",
         "retested": false
       },
       {
         "module": "test_report_publication.py",
         "tests": 9,
         "status": "passed",
-        "log_sha256": "2538a5bf5ab16a893147b346843a9de4fe30e0bbac702143c76e30c6a6b5db5f",
         "retested": false
       },
       {
         "module": "test_report_site.py",
         "tests": 24,
         "status": "passed",
-        "log_sha256": "7d98352f41b9e4438cef58b91755cdcaf0c86762eb9d03e7b8b8c3eb37540e9e",
         "retested": false
       },
       {
         "module": "test_review_regressions.py",
         "tests": 8,
         "status": "passed",
-        "log_sha256": "06565dd4af8dcd67330751889848fc9b323e6967f72a6c84bf87980727f8c6e5",
         "retested": false
       },
       {
         "module": "test_rewrite_adapters.py",
         "tests": 11,
         "status": "passed",
-        "log_sha256": "77a17fe6955fe750bdd0f647a71a24f261658e8c7ffbe143eae86c8c0fec6311",
         "retested": false
       },
       {
         "module": "test_rewrite_execution.py",
         "tests": 18,
         "status": "passed",
-        "log_sha256": "faf9bf498542e5e6b3def07aad05476937a3c81095b0b61b9b6fa0717145bc86",
         "retested": false
       },
       {
         "module": "test_rewrite_planning.py",
         "tests": 8,
         "status": "passed",
-        "log_sha256": "b83a85a8e8b73c761cd225557507d36c94d861fc3fe2f0bdf2e72189c463c333",
         "retested": false
       },
       {
         "module": "test_runtime_verification.py",
         "tests": 20,
         "status": "passed",
-        "log_sha256": "9bade7555e1fc82dc10f6c19b82a22da191a9ddd36417e949b0e625991e8edcd",
         "retested": false
       },
       {
         "module": "test_scope_evidence.py",
         "tests": 26,
         "status": "passed",
-        "log_sha256": "32faa05aa5176891675fee5f6a8d51bb644e2d67b1b8192fbf1c6abd6777e7f6",
         "retested": false
       },
       {
         "module": "test_standalone_repair.py",
         "tests": 19,
         "status": "passed",
-        "log_sha256": "f6f186947c1be3ec0aed762bb709123d7e5730018de55635fcc75c5b3e99f953",
         "retested": false
       },
       {
         "module": "test_task_effort_opt_out.py",
         "tests": 7,
         "status": "passed",
-        "log_sha256": "6525195e4837c2156ebe3209b772817a9c951a2fff2346712c7b5752f8c010c2",
         "retested": false
       },
       {
         "module": "test_token_view.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "2f3a4920aa3c4aa2493e9bf0c4e56aae7e4f08d354092105de1c63e8e1bb26fe",
         "retested": false
       },
       {
         "module": "test_tunnel_probe.py",
         "tests": 24,
         "status": "passed",
-        "log_sha256": "795b4ad598a2441d2c62094f200d3d55586e6911668579016448f902cc93524d",
         "retested": false
       },
       {
         "module": "test_understanding.py",
         "tests": 25,
         "status": "passed",
-        "log_sha256": "2d95d924ce6fdf83b26db8e52dc80ffae5071acdcba098ae36c50ba2fc8275ac",
         "retested": false
       },
       {
         "module": "test_understanding_cli.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "62c8045dfbe5693155d21c1a08301d3724e26b06d9fdca2c8159ae2d371d15f9",
         "retested": false
       },
       {
         "module": "test_understanding_delivery.py",
         "tests": 3,
         "status": "passed",
-        "log_sha256": "7f5a6a5bb168e3045e0c85fdf71520911a70e7a2d99f45cd4dd7ef0ca814b2fe",
         "retested": false
       },
       {
         "module": "test_understanding_integration.py",
         "tests": 8,
         "status": "passed",
-        "log_sha256": "c400f91c9d8a113cf5da10d2e7b9386b39ee061faffee909379adeb910fe58d3",
         "retested": false
       },
       {
         "module": "test_understanding_mcp.py",
         "tests": 1,
         "status": "passed",
-        "log_sha256": "26f7b18bf644fc0fcf8f9b6ec8f754fe4434264019fd5d0b6c39b43b0dc07904",
         "retested": false
       },
       {
         "module": "test_understanding_planner_parity.py",
         "tests": 1,
         "status": "passed",
-        "log_sha256": "f2bd7feac0a665a966345cc11ba940d05a4410b79161faddd5a63065ee59911f",
         "retested": false
       },
       {
         "module": "test_verification.py",
         "tests": 34,
         "status": "passed",
-        "log_sha256": "18b5daf192868f729080045f1d861d3b3040103a8f7700aac4f6b9be1a3bf6dd",
         "retested": false
       },
       {
         "module": "test_verification_bundle.py",
         "tests": 12,
         "status": "passed",
-        "log_sha256": "ccca44b1aa44ea7d704c9efc243e6ec3ad1b1a152cfa00bf04815b2ac2004970",
         "retested": false
       },
       {
         "module": "test_viewer.py",
         "tests": 6,
         "status": "passed",
-        "log_sha256": "8faf755babb5f1f4598fe270c8b332fb653d952c0dfac285f2ae9827e58db07b",
         "retested": false
       },
       {
         "module": "test_workflow_cli.py",
         "tests": 2,
         "status": "passed",
-        "log_sha256": "7a659d49a8f38ccb51e3cbbc3d3581f0d897ec7f01e2301f08480018ee9f88fe",
         "retested": false
       },
       {
         "module": "test_workflow_installation.py",
         "tests": 8,
         "status": "passed",
-        "log_sha256": "602994cb851c922c6ccea827fd7aca9d35fbeb7f90728446ab8b05f449d6a307",
         "retested": false
       },
       {
         "module": "test_workflow_report.py",
         "tests": 7,
         "status": "passed",
-        "log_sha256": "7efbdcc46e38867893dcdda54095bc2f4cee0cb4e6d2224780aa5f6658df1c72",
         "retested": false
       }
-    ]
+    ],
+    "warnings": {
+      "subprocess_resource_warnings": 3,
+      "corresponding_processes_alive_after_suite": false,
+      "meaning": "Popen cleanup warnings at interpreter exit; referenced PIDs were confirmed absent after completion."
+    }
   },
   "javascript": {
-    "tests": 33,
-    "status": "passed"
+    "tests": 40,
+    "status": "passed",
+    "log_sha256": "457a8d1dcc5e8c452831feda6983a14b7e63da3356fa7d975f769c4c8795a041",
+    "files": [
+      "tests/execution.test.cjs",
+      "tests/effort-report.test.cjs",
+      "tests/report-view.test.cjs"
+    ]
   },
   "distribution": {
     "status": "accepted",
-    "receipt_sha256": "4c171b3ca3722901a41c462a550661ae51675b14e42c6ddd27024ce7d6f773f0"
+    "receipt_sha256": "018a20d2c746dddd0a9288b7942533cae7aab7c7b1e24f32fc24563b15bd4af4",
+    "mcp_tools": 35,
+    "isolation": "fresh venv, unrelated cwd, no PYTHONPATH, installed wheel imports",
+    "artifacts": {
+      "plugin": {
+        "bytes": 388905,
+        "sha256": "ab11834e134face4dae74caef1f2c073a35b86a6eafd5db761e725d15f11fa74"
+      },
+      "wheel": {
+        "bytes": 412870,
+        "sha256": "1f756b2abbb895ff53427c00de34658918c635e012caf04b7b9711a2a0b68aa1"
+      }
+    }
   },
   "demo": {
     "status": "succeeded",
     "controller_calls": 2,
     "author_calls": 1,
     "installation_checks_passed": 3,
-    "model_calls": 0
+    "model_calls": 0,
+    "original_tests_unchanged": true,
+    "original_checkout_unchanged": true,
+    "log_sha256": "c9e537fc1e0d9465e00bbf95e83a571593cdb29add335bd72aaa5bdf6ab37884"
+  },
+  "basic_demo": {
+    "status": "passed",
+    "expected_regression_detected": true,
+    "log_sha256": "6d1ec74a337b7688ede58421f5ef2b8b6656980f01297b2990fd6a417436615e"
+  },
+  "controller_tools": 33,
+  "operation_identity": {
+    "schema_version": 1,
+    "operation": "identity",
+    "version": "0.8.0",
+    "operation_contract_digest": "60adc1b8308ff857b9e7c51dc7d5045282c58fc4f0972a54ace1812832a1cc0b",
+    "operation_count": 35,
+    "compatibility": "unknown",
+    "limits": [
+      "Effect annotations do not authorize commands or isolate execution."
+    ]
+  },
+  "real_experiments": {
+    "status": "completed_with_recorded_failures",
+    "receipt": "controller-experiments.json",
+    "paired_cases": 3,
+    "arms": 2,
+    "all_target_checks_passed": false
   },
   "not_run": [
-    "Real-model strategy/cost comparison",
-    "New compiled/GPU target experiment",
-    "New real Slurm hardware experiment"
+    "Repeated or randomized multi-repository strategy benchmark",
+    "Full Detectron2 rewrite/validation or multi-node GPU training",
+    "Autonomous allocation of separate Slurm nodes to implementation sessions"
   ],
   "limits": [
     "Passing tests is not proof of semantic equivalence.",
-    "Offline scripted runners do not evaluate agent strategy quality."
+    "Frozen initial A/B and later schema replay/host-selected parallel smoke are distinct evidence.",
+    "The observed Controller runs did not establish a speed or token-cost advantage."
   ]
 }

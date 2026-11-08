@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "model": {
+    "name": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "source": "Owner configured Codex CLI; unchanged across arms"
+  },
+  "budgets": {
+    "job_seconds": 1200,
+    "runner_seconds": 420,
+    "author_calls": 2,
+    "optimization_calls": 0,
+    "task_evaluation_enabled": false
+  },
+  "trials": [
+    {
+      "case": "normal",
+      "arm": "main",
+      "runtime_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+      "target_commit": "a9e0ad14bcd0d9d3b68d2b699ce38399cbe64fdd",
+      "status": "failed",
+      "job_wall_seconds": 442.748,
+      "harness_wall_seconds_including_postchecks": 446.189,
+      "model_calls": {
+        "author": 2
+      },
+      "usage": {
+        "status": "complete",
+        "input_tokens": 280850,
+        "output_tokens": 15605,
+        "total_tokens": 296455,
+        "cached_input_tokens": 247040,
+        "reasoning_output_tokens": 11413
+      },
+      "failed_tools": {},
+      "checks": [
+        {
+          "name": "upstream-tests",
+          "status": "regressed"
+        },
+        {
+          "name": "public-output-contract",
+          "status": "passed"
+        }
+      ],
+      "installation_status": "passed",
+      "scope": "Entire upstream iniconfig Python package",
+      "receipt_sha256": "e8506771e55fd2718d15981d94d0a84270bedd6896a88a15a4d740dffa6e6566"
+    },
+    {
+      "case": "normal",
+      "arm": "controller",
+      "runtime_commit": "5d86654a900b8f75255e365ee22b9fafff7c4cf4",
+      "target_commit": "a9e0ad14bcd0d9d3b68d2b699ce38399cbe64fdd",
+      "status": "failed",
+      "job_wall_seconds": 580.692,
+      "harness_wall_seconds_including_postchecks": 581.716,
+      "model_calls": {
+        "controller": 4,
+        "author": 1
+      },
+      "usage": {
+        "status": "complete",
+        "input_tokens": 536946,
+        "output_tokens": 16631,
+        "total_tokens": 553577,
+        "cached_input_tokens": 450688,
+        "reasoning_output_tokens": 8437
+      },
+      "failed_tools": {
+        "compare_behavior": 3,
+        "run_agent": 1,
+        "record_unknown": 1,
+        "save_candidate": 1
+      },
+      "checks": [
+        {
+          "name": "upstream-tests",
+          "status": "regressed"
+        },
+        {
+          "name": "public-output-contract",
+          "status": "passed"
+        }
+      ],
+      "installation_status": "passed",
+      "scope": "Entire upstream iniconfig Python package",
+      "receipt_sha256": "93a3712f9327d3e8692d8ccda5f9965bd9587ad08096bfff8df34b81c5fee145"
+    },
+    {
+      "case": "failed-baseline",
+      "arm": "main",
+      "runtime_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+      "target_commit": "a9e0ad14bcd0d9d3b68d2b699ce38399cbe64fdd",
+      "status": "failed",
+      "job_wall_seconds": 6.242,
+      "harness_wall_seconds_including_postchecks": 10.579,
+      "model_calls": {},
+      "usage": {
+        "status": "complete",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "failed_tools": {},
+      "checks": [],
+      "installation_status": "not_run",
+      "scope": "Entire upstream iniconfig Python package",
+      "receipt_sha256": "eb8eb613b9b4f72b802cd747ec3d89549fae4adbd835fecc3e8b1ec8f0c819c5"
+    },
+    {
+      "case": "failed-baseline",
+      "arm": "controller",
+      "runtime_commit": "5d86654a900b8f75255e365ee22b9fafff7c4cf4",
+      "target_commit": "a9e0ad14bcd0d9d3b68d2b699ce38399cbe64fdd",
+      "status": "failed",
+      "job_wall_seconds": 589.582,
+      "harness_wall_seconds_including_postchecks": 591.519,
+      "model_calls": {
+        "controller": 3,
+        "author": 1
+      },
+      "usage": {
+        "status": "complete",
+        "input_tokens": 493479,
+        "output_tokens": 16845,
+        "total_tokens": 510324,
+        "cached_input_tokens": 420864,
+        "reasoning_output_tokens": 8627
+      },
+      "failed_tools": {
+        "save_candidate": 1,
+        "compare_behavior": 2,
+        "record_unknown": 1,
+        "run_agent": 1
+      },
+      "checks": [
+        {
+          "name": "upstream-tests",
+          "status": "regressed"
+        },
+        {
+          "name": "public-output-contract",
+          "status": "passed"
+        },
+        {
+          "name": "injected-environment-failure",
+          "status": "preexisting_failure"
+        }
+      ],
+      "installation_status": "passed",
+      "scope": "Entire upstream iniconfig Python package",
+      "receipt_sha256": "9a0f39ff07a0fab164194112ec3c90862faeb26799f7384fe7645ae02169cffb"
+    },
+    {
+      "case": "nms",
+      "arm": "main",
+      "runtime_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+      "target_commit": "247691a1c292654867deb35cabb27f18d75a1363",
+      "status": "completed_with_gaps",
+      "job_wall_seconds": 164.28,
+      "harness_wall_seconds_including_postchecks": 215.051,
+      "model_calls": {
+        "author": 1
+      },
+      "usage": {
+        "status": "complete",
+        "input_tokens": 136142,
+        "output_tokens": 3362,
+        "total_tokens": 139504,
+        "cached_input_tokens": 116096,
+        "reasoning_output_tokens": 1729
+      },
+      "failed_tools": {},
+      "checks": [
+        {
+          "name": "upstream-nms-tests",
+          "status": "passed"
+        },
+        {
+          "name": "cpu-cuda-output",
+          "status": "passed"
+        }
+      ],
+      "installation_status": "not_configured",
+      "scope": "Complete upstream NMS Python adapter; unchanged freshly compiled native support",
+      "receipt_sha256": "2c9069a68f5eb8b18f1fe4636cbb6decd70a89fba9dbf842a5913470008d52c7",
+      "postchecks": [
+        {
+          "variant": "original",
+          "check": "tests",
+          "exit_code": 0
+        },
+        {
+          "variant": "original",
+          "check": "probe",
+          "exit_code": 0
+        },
+        {
+          "variant": "original",
+          "check": "benchmark",
+          "exit_code": 0
+        },
+        {
+          "variant": "candidate",
+          "check": "tests",
+          "exit_code": 0
+        },
+        {
+          "variant": "candidate",
+          "check": "probe",
+          "exit_code": 0
+        },
+        {
+          "variant": "candidate",
+          "check": "benchmark",
+          "exit_code": 0
+        }
+      ],
+      "upstream_tests_per_variant": 9,
+      "benchmark": {
+        "original": {
+          "median_seconds": 0.0007152655016398057,
+          "repeats": 30,
+          "device": "NVIDIA GB200"
+        },
+        "candidate": {
+          "median_seconds": 0.0006382734864018857,
+          "repeats": 30,
+          "device": "NVIDIA GB200"
+        }
+      }
+    },
+    {
+      "case": "nms",
+      "arm": "controller",
+      "runtime_commit": "5d86654a900b8f75255e365ee22b9fafff7c4cf4",
+      "target_commit": "247691a1c292654867deb35cabb27f18d75a1363",
+      "status": "completed_with_gaps",
+      "job_wall_seconds": 395.201,
+      "harness_wall_seconds_including_postchecks": 445.733,
+      "model_calls": {
+        "controller": 3,
+        "author": 1
+      },
+      "usage": {
+        "status": "complete",
+        "input_tokens": 451839,
+        "output_tokens": 8187,
+        "total_tokens": 460026,
+        "cached_input_tokens": 378496,
+        "reasoning_output_tokens": 3785
+      },
+      "failed_tools": {
+        "save_candidate": 1,
+        "run_agent": 1,
+        "record_unknown": 1
+      },
+      "checks": [
+        {
+          "name": "upstream-nms-tests",
+          "status": "passed"
+        },
+        {
+          "name": "cpu-cuda-output",
+          "status": "passed"
+        }
+      ],
+      "installation_status": "not_configured",
+      "scope": "Complete upstream NMS Python adapter; unchanged freshly compiled native support",
+      "receipt_sha256": "159eafe9d99c93e0807c4ff35c1d8d40168699c608638039b9274a85ce27d99a",
+      "postchecks": [
+        {
+          "variant": "original",
+          "check": "tests",
+          "exit_code": 0
+        },
+        {
+          "variant": "original",
+          "check": "probe",
+          "exit_code": 0
+        },
+        {
+          "variant": "original",
+          "check": "benchmark",
+          "exit_code": 0
+        },
+        {
+          "variant": "candidate",
+          "check": "tests",
+          "exit_code": 0
+        },
+        {
+          "variant": "candidate",
+          "check": "probe",
+          "exit_code": 0
+        },
+        {
+          "variant": "candidate",
+          "check": "benchmark",
+          "exit_code": 0
+        }
+      ],
+      "upstream_tests_per_variant": 9,
+      "benchmark": {
+        "original": {
+          "median_seconds": 0.000686833998770453,
+          "repeats": 30,
+          "device": "NVIDIA GB200"
+        },
+        "candidate": {
+          "median_seconds": 0.00064993801061064,
+          "repeats": 30,
+          "device": "NVIDIA GB200"
+        }
+      }
+    }
+  ],
+  "replay": {
+    "status": "passed",
+    "type": "real-model decision replay; no target implementation or acceptance run",
+    "seconds": 56.93677669856697,
+    "tools": [
+      "record_unknown",
+      "capture_baseline",
+      "run_agent",
+      "save_candidate",
+      "compare_behavior",
+      "measure_code",
+      "audit_coverage",
+      "evaluate_acceptance"
+    ],
+    "usage": {
+      "status": "complete",
+      "input_tokens": 125661,
+      "output_tokens": 1906,
+      "cached_input_tokens": 109056,
+      "reasoning_output_tokens": 562,
+      "total_tokens": 127567,
+      "source": "codex_turn_events",
+      "observed_turns": 1,
+      "reason": null,
+      "synthetic": false
+    },
+    "source_sha256": {
+      "src/nanolize/prompts/controller/guide.md": "84f10a37c2d6ac38ccc9f03f0eecca86015b4fe0f3edf4300b4f97098c9bbd98",
+      "src/nanolize/controller.py": "3fcae2eaf8fc1f240a0025bede1e6254b7732ea9de8bdc98400f124622cee56c"
+    }
+  },
+  "parallel_smoke": {
+    "type": "Host-selected owner revision and parallel real-model authors on a synthetic two-module target; not a controller A/B or real-repository quality trial",
+    "status": "succeeded",
+    "wall_seconds": 217.18014203291386,
+    "owner_grant": {
+      "executed_commands": 0,
+      "environment_revision": 1
+    },
+    "behavior_checks": [
+      {
+        "name": "both-public-workflows",
+        "status": "passed"
+      },
+      {
+        "name": "owner-empty-input",
+        "status": "passed"
+      }
+    ],
+    "installation": {
+      "status": "passed",
+      "results": [
+        {
+          "name": "build",
+          "status": "passed"
+        },
+        {
+          "name": "install",
+          "status": "passed"
+        },
+        {
+          "name": "installed-behavior",
+          "status": "passed"
+        }
+      ]
+    },
+    "source_sha256": {
+      "src/nanolize/controller.py": "df7ec8d3d36347b832debf169816c10e71f9f05de8b1bf98124ee58bf58e2555",
+      "src/nanolize/controller_revisions.py": "98233a4549f74a6b8a6a690d62d69c8b922768473813b271612a24d684717fbb",
+      "src/nanolize/controller_workspaces.py": "158768141fd14f632b1479ae00422ee7e689af8891a35d1fe56f6cbc23596a35",
+      "src/nanolize/execution.py": "ab180e254f097acf754fd35ab26b6e122a43bcb4a90db290f6a9657ad3a24fab"
+    },
+    "model_calls": 3,
+    "usage": {
+      "total_tokens": 337369,
+      "input_tokens": 333951,
+      "output_tokens": 3418,
+      "cached_input_tokens": 289280
+    },
+    "parallel_sessions": 2,
+    "actual_overlap": true,
+    "limitation": "Host script evaluated before explicit candidate selection, unnecessarily invoking one additional implementer despite passed behavior/install checks. It is included in wall time/tokens, not attributed to autonomous Controller strategy.",
+    "limitations": [
+      "Source hashes identify the actual implementation used in this smoke. A later owner-revision change clears stale public summaries and selection; it is covered by the final revision regression suite.",
+      "Synthetic host-selected orchestration, not a new autonomous strategy comparison."
+    ]
+  },
+  "slurm": {
+    "job_id": "8733896",
+    "status": "COMPLETED",
+    "elapsed_seconds": 788,
+    "allocated_nodes": 1,
+    "allocated_gpus": 4,
+    "visible_used_gpus": 1,
+    "allocated_memory_gb": 64,
+    "device": "NVIDIA GB200"
+  },
+  "native_build": {
+    "exit_code": 0,
+    "reused_extension": false,
+    "torch": "2.8.0+cu129",
+    "cuda": "12.9",
+    "source_hashes": {
+      "detectron2/layers/csrc/cuda_version.cu": "987c697291f07794cddf441a0d7b5fed718654912917d5d26052be65bc8de813",
+      "detectron2/layers/csrc/vision.cpp": "b595d3ab87335520bed1f17b0a8fe777f49771b618ac87de799f334e0fdb8beb",
+      "detectron2/layers/csrc/box_iou_rotated/box_iou_rotated_cpu.cpp": "36fb1328a2e415bc9e56607f9d275ce12122890d5a38edd247ac73175b93ae21",
+      "detectron2/layers/csrc/box_iou_rotated/box_iou_rotated.h": "0f3166b53f5ae7df2f8e398f1b413853b4234f0fdf7b3df768e37fc81bc5a70e",
+      "detectron2/layers/csrc/box_iou_rotated/box_iou_rotated_cuda.cu": "896ea23f033cd45af459c45e8c6727be2edae3b9099a2f169bd6a2952f138d03",
+      "detectron2/layers/csrc/box_iou_rotated/box_iou_rotated_utils.h": "8540cf5a4652ce8c1b3e9f98aa277c0920c7778f4356545b73df70547b684a0b",
+      "detectron2/layers/csrc/ROIAlignRotated/ROIAlignRotated_cuda.cu": "477940208dce6e0aebc14a4035e8c9beb8c821217a9d75d8649c51201e9cccbd",
+      "detectron2/layers/csrc/ROIAlignRotated/ROIAlignRotated_cpu.cpp": "cb09bb25b3028110f2e3270e6bd5bbfee77c7c42094dd0bf10f7ebe38f7608c3",
+      "detectron2/layers/csrc/ROIAlignRotated/ROIAlignRotated.h": "c43fc58a1007c5a7a4b348645e6078f0cb0867200f7d42cbc6d1d7dbe079698a",
+      "detectron2/layers/csrc/cocoeval/cocoeval.cpp": "b0927765ab8418842a0dda996355a4ca55362714abcdac95463ca7e4ee2a34c5",
+      "detectron2/layers/csrc/cocoeval/cocoeval.h": "ee882afd529e9b13e659e67de10a3e35cb7cf627a56920f1df87bcf05aade258",
+      "detectron2/layers/csrc/deformable/deform_conv_cuda_kernel.cu": "22bffd1646514554fe7eb375e1687e40c1e8d652f544be57701cc7ee7364f147",
+      "detectron2/layers/csrc/deformable/deform_conv.h": "ee50ee4833335788c1c2ceff53be9eceb4b593e1244fe7a35a545d11e8be4dfc",
+      "detectron2/layers/csrc/deformable/deform_conv_cuda.cu": "a10f559b9664f83de2da3096a07994f104c4cea4e36b18cd8b00fed039b32ed1",
+      "detectron2/layers/csrc/nms_rotated/nms_rotated.h": "253559fbfe03330a5153eec44db866cb2b92ebe1eee764169ef6de9fc59287f6",
+      "detectron2/layers/csrc/nms_rotated/nms_rotated_cuda.cu": "1176f9223426e87efd32eab0a5517932be1b05ea5add318460bdeac15fdf79b2",
+      "detectron2/layers/csrc/nms_rotated/nms_rotated_cpu.cpp": "04c47952b30d58f0f1f8e8a17b13817ff8f730ce8cb062510eb8b74bc6791cb0"
+    },
+    "binary_sha256": "d6fd8c2c1d97151d8d66bf103e2da0308e4df2f5141376be5100e94098383851"
+  },
+  "limitations": [
+    "One trial per arm, not randomized; no general success-rate or speed advantage established.",
+    "Total tokens include cached input; reasoning output is already within output. These are usage counters, not dollar costs.",
+    "Frozen A/B precedes tool-schema correction; replay tests only one model decision, not target acceptance.",
+    "iniconfig semantic input omitted explicit __all__; both rewrites failed unchanged upstream collection.",
+    "iniconfig installation is fresh-environment import, not wheel packaging.",
+    "Baseline failure is deliberate exit 17, not an upstream defect.",
+    "NMS module scope only; native kernels unchanged; full Detectron2, other operators and distributed training untested.",
+    "Synthetic parallel smoke uses real model authors but host-selected tools; not another autonomous A/B.",
+    "No raw prompts, traces, private filesystem paths or commands are published."
+  ]
+}
