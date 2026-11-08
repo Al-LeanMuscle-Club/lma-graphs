@@ -1,0 +1,208 @@
+{
+  "upstream": "tqdm/tqdm",
+  "upstream_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+  "candidate_commit": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+  "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-full49-controller-20261108",
+  "publication": {
+    "verified_commit": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+    "published_commit": "9aee9d7dd9b71d41fb16360188f4e3cf4a6054a1",
+    "tree": "a2e3234ea3e5a231c84f2271d0856eff188df5d3",
+    "identical_code_tree": true,
+    "metadata_only_publication_commit": true,
+    "branch": "examples/tqdm-full49-controller-20261108",
+    "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-full49-controller-20261108",
+    "ci_skipped_for_publication": true,
+    "status": "published",
+    "workflow_status": "completed_with_gaps",
+    "acceptance_gaps": [
+      "task_effort_not_passed"
+    ]
+  },
+  "status": "completed_with_gaps",
+  "checks": {
+    "passed": 26
+  },
+  "check_groups": 26,
+  "original_size": {
+    "source_tokens": 45979,
+    "configuration_tokens": 26169,
+    "total_tokens": 72148
+  },
+  "candidate_size": {
+    "source_tokens": 27525,
+    "configuration_tokens": 8548,
+    "total_tokens": 36073,
+    "complete": true
+  },
+  "harness_elapsed_seconds": 10377.064535,
+  "controller_and_author_usage": {
+    "author": {
+      "calls": 7,
+      "seconds": 6394.932801376097,
+      "input_tokens": 18219505,
+      "cached_input_tokens": 17391872,
+      "output_tokens": 221179
+    },
+    "controller": {
+      "calls": 13,
+      "seconds": 1413.7836781674996,
+      "input_tokens": 3286324,
+      "cached_input_tokens": 2740864,
+      "output_tokens": 27503
+    }
+  },
+  "performance": {
+    "disabled": {
+      "original_median_cpu_seconds": 0.038501799999999975,
+      "candidate_median_cpu_seconds": 0.03846936000000001,
+      "candidate_original_ratio": 0.999157441989726
+    },
+    "automatic": {
+      "original_median_cpu_seconds": 0.18790864000000007,
+      "candidate_median_cpu_seconds": 0.18246708000000011,
+      "candidate_original_ratio": 0.9710414592963902
+    },
+    "updates": {
+      "original_median_cpu_seconds": 0.006790880000000055,
+      "candidate_median_cpu_seconds": 0.00655304000000001,
+      "candidate_original_ratio": 0.9649765567938113
+    },
+    "rendered": {
+      "original_median_cpu_seconds": 0.05083250000000006,
+      "candidate_median_cpu_seconds": 0.05078164000000007,
+      "candidate_original_ratio": 0.998999459007525
+    }
+  },
+  "upstream_pytest_executions_by_python": {
+    "3.14.7": {
+      "passed": 22
+    },
+    "3.11.16": {
+      "passed": 182,
+      "skipped": 4
+    }
+  },
+  "verification_iterations": [
+    {
+      "commit": "95ab1a30f22f4fb1b9b13a37337f9677f08d00fc",
+      "time": "2026-11-08T14:54:23.191258+00:00",
+      "status": "regressed",
+      "passed_groups": 22,
+      "total_groups": 26,
+      "observed_tokens": 37634,
+      "complete_measurement": false,
+      "retained_percent": 52.162222099018685
+    },
+    {
+      "commit": "38a7b8f36a07b44efa0b48942f1aedf54f58ad2f",
+      "time": "2026-11-08T15:13:05.652539+00:00",
+      "status": "regressed",
+      "passed_groups": 23,
+      "total_groups": 26,
+      "observed_tokens": 37840,
+      "complete_measurement": false,
+      "retained_percent": 52.44774629927372
+    },
+    {
+      "commit": "88367576d46a0d2a669e9ba518036cd13221cacb",
+      "time": "2026-11-08T15:31:19.406350+00:00",
+      "status": "checks_passed",
+      "passed_groups": 26,
+      "total_groups": 26,
+      "observed_tokens": 37952,
+      "complete_measurement": true,
+      "retained_percent": 52.6029827576648
+    },
+    {
+      "commit": "73808756ce4f5996ec488c7e5d6bbee1d39b47a3",
+      "time": "2026-11-08T15:48:29.100167+00:00",
+      "status": "checks_passed",
+      "passed_groups": 26,
+      "total_groups": 26,
+      "observed_tokens": 37014,
+      "complete_measurement": true,
+      "retained_percent": 51.30287741863946
+    },
+    {
+      "commit": "66b5365dc6f421ff904eacec77feca6fb1a852e5",
+      "time": "2026-11-08T16:08:54.472035+00:00",
+      "status": "checks_passed",
+      "passed_groups": 26,
+      "total_groups": 26,
+      "observed_tokens": 36792,
+      "complete_measurement": true,
+      "retained_percent": 50.99517658147142
+    },
+    {
+      "commit": "9f6b0446bdb5052377d55b519dd93dddf83af654",
+      "time": "2026-11-08T16:23:21.398012+00:00",
+      "status": "checks_passed",
+      "passed_groups": 26,
+      "total_groups": 26,
+      "observed_tokens": 36717,
+      "complete_measurement": true,
+      "retained_percent": 50.891223595941675
+    },
+    {
+      "commit": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+      "time": "2026-11-08T16:47:41.715028+00:00",
+      "status": "checks_passed",
+      "passed_groups": 26,
+      "total_groups": 26,
+      "observed_tokens": 36073,
+      "complete_measurement": true,
+      "retained_percent": 49.998613960192934
+    }
+  ],
+  "supplementary_postflight": {
+    "candidate_commit": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+    "unchanged_protected_files": 25,
+    "unchanged_logo": true,
+    "python38_syntax_files": 36,
+    "python38_import_iteration_and_cli_smoke": "passed",
+    "notebook_cells": "passed",
+    "stored_notebook_outputs_compared": false
+  },
+  "published_branch_installation": {
+    "status": "passed",
+    "published_commit": "9aee9d7dd9b71d41fb16360188f4e3cf4a6054a1",
+    "pretend_version_used": false,
+    "git_checkout": "fresh authenticated shallow clone of published private branch",
+    "smoke": {
+      "installed_module_origin": "fresh-environment",
+      "cli_and_imports": "passed",
+      "version": "4.70.2.dev1+g9aee9d7dd",
+      "resources": "passed"
+    },
+    "seconds": 13.41672158241272
+  },
+  "code_access": "Existing private repository permissions; report is public",
+  "task_assessment": {
+    "status": "unverified",
+    "candidate_cost_comparison_available": false,
+    "original_baseline_status": "blocked",
+    "reason": "Task referred to accept.py, which was withheld from the solver for independent grading.",
+    "observed_task_tokens": 1011919,
+    "configured_task_token_budget": 1000000,
+    "task_calls": [
+      {
+        "role": "solver",
+        "status": "completed",
+        "tokens": 538050
+      },
+      {
+        "role": "examiner",
+        "status": "completed",
+        "tokens": 473869
+      }
+    ],
+    "code_regression_inferred": false,
+    "token_improvement_claimed": false
+  },
+  "notebook_execution": {
+    "cells_passed": 19,
+    "original_cells_unchanged": true,
+    "stored_outputs_compared": false
+  },
+  "usage_scope": "Controller and rewrite CLI calls only; excludes supervising conversation, understanding, and task assessment. Cached input is a subset of input. Task assessment appears in the native graph report."
+}
