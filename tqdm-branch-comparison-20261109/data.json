@@ -1,0 +1,940 @@
+{
+  "schema_version": 1,
+  "title": "tqdm · 两条压缩路径的实验对比",
+  "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-branch-comparison-20261109/",
+  "snapshot_at": "2026-11-09T01:50:57.967569+00:00",
+  "run_date": "2026-11-08",
+  "original": {
+    "source_tokens": 45979,
+    "configuration_tokens": 26169,
+    "total_tokens": 72148,
+    "function_docstrings": 106,
+    "python_modules": 31
+  },
+  "tokenizer": {
+    "name": "tiktoken",
+    "version": "0.12.0",
+    "encoding": "cl100k_base"
+  },
+  "runs": {
+    "main": {
+      "label": "Main",
+      "branch": "examples/tqdm-main-full50-20261108",
+      "harness_branch": "main",
+      "harness_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+      "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+      "published_commit": "f70cffc181645918d02fdf0e4ad56e08473e8803",
+      "verified_commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+      "tree": "8fec2cb8deca44a378418b33fcfe9e6adf98c338",
+      "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-main-full50-20261108",
+      "file_base": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/f70cffc181645918d02fdf0e4ad56e08473e8803/",
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-main-full50-20261108/",
+      "summary_file": "experiment.json",
+      "workflow_status": "failed",
+      "acceptance_gaps": [
+        "task_effort_not_passed"
+      ],
+      "started_at": "2026-11-08T22:03:34.187028+00:00",
+      "ended_at": "2026-11-08T23:20:11.513228+00:00",
+      "wall_seconds": 4597.3262,
+      "size": {
+        "source_tokens": 27281,
+        "configuration_tokens": 8589,
+        "total_tokens": 35870,
+        "complete": true
+      },
+      "retained_percent": 49.71724787935909,
+      "initial_target_percent": 50,
+      "initial_semantic_contracts": 114,
+      "scope_nodes": 27,
+      "check_count": 26,
+      "checks": [
+        {
+          "name": "upstream-tqdm",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-utils",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-main",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-asyncio",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-notebook",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-pandas",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-synchronisation",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-rlock",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-contrib",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-concurrent",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-itertools",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-contrib_logging",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-version",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-gui",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-tk",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-rich",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-dask",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-keras",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-perf",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-behavior",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-notifications",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-graphics",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-tooling",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "python314-concurrent",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "python314-itertools",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "throughput-observation",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        }
+      ],
+      "performance": {
+        "disabled": {
+          "original_median_cpu_seconds": 0.03914293999999996,
+          "candidate_median_cpu_seconds": 0.03844076000000002,
+          "candidate_original_ratio": 0.9820611328632969
+        },
+        "automatic": {
+          "original_median_cpu_seconds": 0.18581027999999988,
+          "candidate_median_cpu_seconds": 0.18320601999999986,
+          "candidate_original_ratio": 0.9859843061428032
+        },
+        "updates": {
+          "original_median_cpu_seconds": 0.006928119999999982,
+          "candidate_median_cpu_seconds": 0.0064953800000000506,
+          "candidate_original_ratio": 0.9375386107631027
+        },
+        "rendered": {
+          "original_median_cpu_seconds": 0.050234279999999965,
+          "candidate_median_cpu_seconds": 0.05049666000000008,
+          "candidate_original_ratio": 1.0052231265183877
+        }
+      },
+      "trajectory": [
+        {
+          "iteration": 1,
+          "commit": "60e68b7bd2a40e07b61415cff4ccf0ac306fb2af",
+          "saved_at": "2026-11-08T22:34:44+00:00",
+          "elapsed_minutes": 31.16354953333333,
+          "tokens": 35866,
+          "source_tokens": 27277,
+          "configuration_tokens": 8589,
+          "measurement_complete": true,
+          "passed": 25,
+          "failed": [
+            "upstream-tqdm"
+          ],
+          "delivery_passed": true,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/60e68b7bd2a40e07b61415cff4ccf0ac306fb2af"
+        },
+        {
+          "iteration": 2,
+          "commit": "090ba5aaa903305a115ae679377cb66c316b384a",
+          "saved_at": "2026-11-08T22:44:51+00:00",
+          "elapsed_minutes": 41.280216200000005,
+          "tokens": 35868,
+          "source_tokens": 27279,
+          "configuration_tokens": 8589,
+          "measurement_complete": true,
+          "passed": 26,
+          "failed": [],
+          "delivery_passed": false,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/090ba5aaa903305a115ae679377cb66c316b384a"
+        },
+        {
+          "iteration": 3,
+          "commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+          "saved_at": "2026-11-08T22:58:15+00:00",
+          "elapsed_minutes": 54.680216200000004,
+          "tokens": 35870,
+          "source_tokens": 27281,
+          "configuration_tokens": 8589,
+          "measurement_complete": true,
+          "passed": 26,
+          "failed": [],
+          "delivery_passed": true,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/2b9a7b270906dba94fd65adc5c882784b463835c"
+        }
+      ],
+      "usage": {
+        "author": {
+          "calls": 4,
+          "seconds": 1909.851310968399,
+          "input_tokens": 4002745,
+          "output_tokens": 61707,
+          "cached_input_tokens": 3736192,
+          "unmetered_calls": 1,
+          "total_tokens": 4064452
+        },
+        "task_solver": {
+          "calls": 5,
+          "seconds": 1897.132183790207,
+          "input_tokens": 3126647,
+          "output_tokens": 55181,
+          "cached_input_tokens": 2934528,
+          "unmetered_calls": 0,
+          "total_tokens": 3181828
+        }
+      },
+      "calls": [
+        {
+          "role": "task_solver",
+          "started_at": "2026-11-08T22:05:10.060891+00:00",
+          "seconds": 458.9322531223297,
+          "tokens": 733507,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T22:13:05.029217+00:00",
+          "seconds": 1293.7308859825134,
+          "tokens": 2717738,
+          "status": "completed",
+          "purpose": "首次实现"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T22:36:29.168534+00:00",
+          "seconds": 206.57786226272583,
+          "tokens": null,
+          "status": "interrupted",
+          "purpose": "修复（中断）"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T22:41:35.780900+00:00",
+          "seconds": 192.61333990097046,
+          "tokens": 670677,
+          "status": "completed",
+          "purpose": "兼容性修复"
+        },
+        {
+          "role": "task_solver",
+          "started_at": "2026-11-08T22:46:36.807039+00:00",
+          "seconds": 289.3459689617157,
+          "tokens": 590057,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T22:54:34.705330+00:00",
+          "seconds": 216.92922282218933,
+          "tokens": 676037,
+          "status": "completed",
+          "purpose": "兼容性修复"
+        },
+        {
+          "role": "task_solver",
+          "started_at": "2026-11-08T23:00:02.668693+00:00",
+          "seconds": 373.8508472442627,
+          "tokens": 663628,
+          "status": "completed"
+        },
+        {
+          "role": "task_solver",
+          "started_at": "2026-11-08T23:06:27.163457+00:00",
+          "seconds": 357.2191960811615,
+          "tokens": 495637,
+          "status": "completed"
+        },
+        {
+          "role": "task_solver",
+          "started_at": "2026-11-08T23:12:36.969555+00:00",
+          "seconds": 417.7839183807373,
+          "tokens": 698999,
+          "status": "completed"
+        }
+      ],
+      "rewrite_tokens": 4064452,
+      "task_cost": {
+        "total_tokens": 3181828,
+        "calls": 5,
+        "complete": true,
+        "examiner_tokens": 0
+      },
+      "total_observed_tokens": 7246280,
+      "usage_complete": false,
+      "docs": {
+        "python_modules": 33,
+        "functions": 229,
+        "function_docstrings": 0,
+        "class_docstrings": 1
+      },
+      "protected_files": 25,
+      "python38_smoke": "passed",
+      "notebook_cells": 19,
+      "published_installation": "passed",
+      "task_status": "budget_exhausted",
+      "source_hashes": {
+        "verifier.py": "6e8a64ad40f8b442d94fa8a34ee3262d44d9cd3c9797895c1056247e1e5d50b7",
+        "performance_probe.py": "3636dde8631f13b28b61be59afbf94e75789a25c7fa861ccaffa5b0a83118643"
+      }
+    },
+    "controller": {
+      "label": "Controller",
+      "branch": "examples/tqdm-full49-controller-20261108",
+      "harness_branch": "codex/agent-controlled-rewrite",
+      "harness_commit": "19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc",
+      "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+      "published_commit": "9aee9d7dd9b71d41fb16360188f4e3cf4a6054a1",
+      "verified_commit": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+      "tree": "a2e3234ea3e5a231c84f2271d0856eff188df5d3",
+      "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-full49-controller-20261108",
+      "file_base": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/9aee9d7dd9b71d41fb16360188f4e3cf4a6054a1/",
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-full49-controller-20261108/",
+      "summary_file": "experiment-summary.json",
+      "workflow_status": "completed_with_gaps",
+      "acceptance_gaps": [
+        "task_effort_not_passed"
+      ],
+      "started_at": "2026-11-08T14:19:13.885413+00:00",
+      "ended_at": "2026-11-08T17:12:10.949948+00:00",
+      "wall_seconds": 10377.064535,
+      "size": {
+        "source_tokens": 27525,
+        "configuration_tokens": 8548,
+        "total_tokens": 36073,
+        "complete": true
+      },
+      "retained_percent": 49.998613960192934,
+      "initial_target_percent": 49,
+      "initial_semantic_contracts": 104,
+      "scope_nodes": 27,
+      "check_count": 26,
+      "checks": [
+        {
+          "name": "upstream-tqdm",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-utils",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-main",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-asyncio",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-notebook",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-pandas",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-synchronisation",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-rlock",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-contrib",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-concurrent",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-itertools",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-contrib_logging",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-version",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-gui",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-tk",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-rich",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-dask",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-keras",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "upstream-perf",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-behavior",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-notifications",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-graphics",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "contract-tooling",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "python314-concurrent",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "python314-itertools",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        },
+        {
+          "name": "throughput-observation",
+          "baseline": "passed",
+          "candidate": "passed",
+          "comparison": "passed"
+        }
+      ],
+      "performance": {
+        "disabled": {
+          "original_median_cpu_seconds": 0.038501799999999975,
+          "candidate_median_cpu_seconds": 0.03846936000000001,
+          "candidate_original_ratio": 0.999157441989726
+        },
+        "automatic": {
+          "original_median_cpu_seconds": 0.18790864000000007,
+          "candidate_median_cpu_seconds": 0.18246708000000011,
+          "candidate_original_ratio": 0.9710414592963902
+        },
+        "updates": {
+          "original_median_cpu_seconds": 0.006790880000000055,
+          "candidate_median_cpu_seconds": 0.00655304000000001,
+          "candidate_original_ratio": 0.9649765567938113
+        },
+        "rendered": {
+          "original_median_cpu_seconds": 0.05083250000000006,
+          "candidate_median_cpu_seconds": 0.05078164000000007,
+          "candidate_original_ratio": 0.998999459007525
+        }
+      },
+      "trajectory": [
+        {
+          "iteration": 1,
+          "commit": "95ab1a30f22f4fb1b9b13a37337f9677f08d00fc",
+          "saved_at": "2026-11-08T14:49:56+00:00",
+          "elapsed_minutes": 30.701909783333335,
+          "tokens": 37634,
+          "source_tokens": 28137,
+          "configuration_tokens": 9497,
+          "measurement_complete": false,
+          "passed": 22,
+          "failed": [
+            "upstream-tqdm",
+            "upstream-main",
+            "upstream-contrib_logging",
+            "python314-concurrent"
+          ],
+          "delivery_passed": null,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/95ab1a30f22f4fb1b9b13a37337f9677f08d00fc"
+        },
+        {
+          "iteration": 2,
+          "commit": "38a7b8f36a07b44efa0b48942f1aedf54f58ad2f",
+          "saved_at": "2026-11-08T15:08:22+00:00",
+          "elapsed_minutes": 49.135243116666665,
+          "tokens": 37840,
+          "source_tokens": 28227,
+          "configuration_tokens": 9613,
+          "measurement_complete": false,
+          "passed": 23,
+          "failed": [
+            "upstream-tqdm",
+            "upstream-contrib_logging",
+            "python314-concurrent"
+          ],
+          "delivery_passed": null,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/38a7b8f36a07b44efa0b48942f1aedf54f58ad2f"
+        },
+        {
+          "iteration": 3,
+          "commit": "88367576d46a0d2a669e9ba518036cd13221cacb",
+          "saved_at": "2026-11-08T15:29:45+00:00",
+          "elapsed_minutes": 70.51857645,
+          "tokens": 37952,
+          "source_tokens": 28351,
+          "configuration_tokens": 9601,
+          "measurement_complete": true,
+          "passed": 26,
+          "failed": [],
+          "delivery_passed": null,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/88367576d46a0d2a669e9ba518036cd13221cacb"
+        },
+        {
+          "iteration": 4,
+          "commit": "73808756ce4f5996ec488c7e5d6bbee1d39b47a3",
+          "saved_at": "2026-11-08T15:46:51+00:00",
+          "elapsed_minutes": 87.61857645,
+          "tokens": 37014,
+          "source_tokens": 28307,
+          "configuration_tokens": 8707,
+          "measurement_complete": true,
+          "passed": 26,
+          "failed": [],
+          "delivery_passed": null,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/73808756ce4f5996ec488c7e5d6bbee1d39b47a3"
+        },
+        {
+          "iteration": 5,
+          "commit": "66b5365dc6f421ff904eacec77feca6fb1a852e5",
+          "saved_at": "2026-11-08T16:07:10+00:00",
+          "elapsed_minutes": 107.93524311666667,
+          "tokens": 36792,
+          "source_tokens": 28085,
+          "configuration_tokens": 8707,
+          "measurement_complete": true,
+          "passed": 26,
+          "failed": [],
+          "delivery_passed": null,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/66b5365dc6f421ff904eacec77feca6fb1a852e5"
+        },
+        {
+          "iteration": 6,
+          "commit": "9f6b0446bdb5052377d55b519dd93dddf83af654",
+          "saved_at": "2026-11-08T16:21:59+00:00",
+          "elapsed_minutes": 122.75190978333333,
+          "tokens": 36717,
+          "source_tokens": 28010,
+          "configuration_tokens": 8707,
+          "measurement_complete": true,
+          "passed": 26,
+          "failed": [],
+          "delivery_passed": null,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/9f6b0446bdb5052377d55b519dd93dddf83af654"
+        },
+        {
+          "iteration": 7,
+          "commit": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+          "saved_at": "2026-11-08T16:46:16+00:00",
+          "elapsed_minutes": 147.03524311666666,
+          "tokens": 36073,
+          "source_tokens": 27525,
+          "configuration_tokens": 8548,
+          "measurement_complete": true,
+          "passed": 26,
+          "failed": [],
+          "delivery_passed": null,
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4"
+        }
+      ],
+      "usage": {
+        "author": {
+          "calls": 7,
+          "seconds": 6394.932801376097,
+          "input_tokens": 18219505,
+          "output_tokens": 221179,
+          "cached_input_tokens": 17391872,
+          "unmetered_calls": 0,
+          "total_tokens": 18440684
+        },
+        "controller": {
+          "calls": 13,
+          "seconds": 1413.7836781674996,
+          "input_tokens": 3286324,
+          "output_tokens": 27503,
+          "cached_input_tokens": 2740864,
+          "unmetered_calls": 0,
+          "total_tokens": 3313827
+        }
+      },
+      "calls": [
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T14:19:29.613496+00:00",
+          "seconds": 89.47161992732435,
+          "tokens": 180774,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T14:22:39.088949+00:00",
+          "seconds": 1620.8321480881423,
+          "tokens": 2668269,
+          "status": "completed",
+          "purpose": "首次实现"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T14:50:05.358105+00:00",
+          "seconds": 65.3171624718234,
+          "tokens": 169251,
+          "status": "completed"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T14:54:57.568120+00:00",
+          "seconds": 124.98299058806151,
+          "tokens": 310056,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T14:57:11.166973+00:00",
+          "seconds": 656.143309856765,
+          "tokens": 1590513,
+          "status": "completed",
+          "purpose": "功能修复"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T15:08:31.284335+00:00",
+          "seconds": 90.43338144570589,
+          "tokens": 228243,
+          "status": "completed"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T15:13:36.381471+00:00",
+          "seconds": 165.21455159317702,
+          "tokens": 510403,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T15:18:02.128765+00:00",
+          "seconds": 684.6441203095019,
+          "tokens": 3220014,
+          "status": "completed",
+          "purpose": "功能修复"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T15:31:57.303668+00:00",
+          "seconds": 122.04666534531862,
+          "tokens": 225441,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T15:34:17.501348+00:00",
+          "seconds": 741.0463234279305,
+          "tokens": 2403981,
+          "status": "completed",
+          "purpose": "体积优化"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T15:49:18.877242+00:00",
+          "seconds": 115.78955131210387,
+          "tokens": 235850,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T15:51:25.348374+00:00",
+          "seconds": 931.3366296542808,
+          "tokens": 2627989,
+          "status": "completed",
+          "purpose": "体积优化"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T16:09:48.946710+00:00",
+          "seconds": 108.70135433133692,
+          "tokens": 226890,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T16:11:48.498318+00:00",
+          "seconds": 601.6249224552885,
+          "tokens": 2162270,
+          "status": "completed",
+          "purpose": "体积优化"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T16:24:13.682320+00:00",
+          "seconds": 136.22257037088275,
+          "tokens": 252744,
+          "status": "completed"
+        },
+        {
+          "role": "author",
+          "started_at": "2026-11-08T16:26:44.501224+00:00",
+          "seconds": 1159.305347584188,
+          "tokens": 3767648,
+          "status": "completed",
+          "purpose": "体积优化"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T16:48:34.287401+00:00",
+          "seconds": 101.91365081071854,
+          "tokens": 261782,
+          "status": "completed"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T17:05:51.977011+00:00",
+          "seconds": 96.03228485304862,
+          "tokens": 288707,
+          "status": "completed"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T17:07:51.677321+00:00",
+          "seconds": 102.36634124070406,
+          "tokens": 229748,
+          "status": "completed"
+        },
+        {
+          "role": "controller",
+          "started_at": "2026-11-08T17:10:00.548529+00:00",
+          "seconds": 95.29155387729406,
+          "tokens": 193938,
+          "status": "completed"
+        }
+      ],
+      "rewrite_tokens": 21754511,
+      "task_cost": {
+        "total_tokens": 1011919,
+        "calls": 2,
+        "complete": true,
+        "examiner_tokens": 473869,
+        "solver_tokens": 538050
+      },
+      "total_observed_tokens": 22766430,
+      "usage_complete": true,
+      "docs": {
+        "python_modules": 36,
+        "functions": 233,
+        "function_docstrings": 0,
+        "class_docstrings": 0
+      },
+      "protected_files": 25,
+      "python38_smoke": "passed",
+      "notebook_cells": 19,
+      "published_installation": "passed",
+      "task_status": "unverified",
+      "source_hashes": {
+        "verifier.py": "6e8a64ad40f8b442d94fa8a34ee3262d44d9cd3c9797895c1056247e1e5d50b7",
+        "performance_probe.py": "3636dde8631f13b28b61be59afbf94e75789a25c7fa861ccaffa5b0a83118643"
+      }
+    }
+  },
+  "tail_optimization": {
+    "calls": 4,
+    "seconds": 3433.3132231216878,
+    "tokens": 10961888,
+    "saved_code_tokens": 1879
+  },
+  "tasks": {
+    "development": {
+      "original_tokens": 733507,
+      "candidate_tokens": 663628,
+      "change_percent": -9.526698450048876,
+      "status": "passed"
+    },
+    "heldout": {
+      "original_tokens": 495637,
+      "candidate_observed_tokens": 698999,
+      "observed_change_percent": 41.0304315456675,
+      "status": "unverified_budget_exhausted",
+      "supplemental_behavior_replay": "passed",
+      "solver_artifact_revalidated": false
+    }
+  },
+  "boundaries": [
+    "时间从各自流程提交算到结束，不包括此前建图、知识整理和后续报告发布；包括流程内恢复和评测。",
+    "模型用量来自登记调用的 turn.completed 事件。输入已含缓存输入，不重复相加；输出已含报告的推理输出。",
+    "Main 有一次中断 author 调用缺少完整用量收据，其 token 总量只可作为下限。两边均不含监督对话及前期准备的模型用量。",
+    "源码与配置逐文件计数；不变的原版测试、文档与二进制按原计数策略排除，新建或修改文本计入。两版均计入相同的 4,291 tokens notebook 及配置开销。",
+    "26 个检查组不等于 26 个测试用例，更不等于完整语义等价证明。Python 3.14 检查覆盖并发及 itertools 子集；Python 3.8 为补充语法、导入及 CLI smoke。",
+    "Linux ARM64 验证；Tk 缺少桌面显示，matplotlib 使用 Agg。通知服务使用模拟传输，Windows、macOS 和外部下载示例未完整端到端验证。",
+    "19 个原版 notebook 单元以 nbval-lax 执行；没有比较历史存储输出。",
+    "后续修改任务运行在一次性副本，任务补丁未合并进发布分支。每个任务仅一次重复，无法作统计推广。",
+    "本页整理既有验收证据、调用记录与静态代码审阅，没有重新运行压缩或将历史失败改判为通过。"
+  ]
+}

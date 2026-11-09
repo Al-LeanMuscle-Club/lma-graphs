@@ -1,0 +1,7 @@
+metric,main,controller,qualification
+source_tokens,27281,27525,complete code-size measurement
+configuration_tokens,8589,8548,complete code-size measurement
+total_tokens,35870,36073,complete code-size measurement
+wall_seconds,4597.3262,10377.064535,Main model tokens are a lower bound; time excludes preparation/publication
+rewrite_tokens,4064452,21754511,Main model tokens are a lower bound; time excludes preparation/publication
+total_observed_tokens,7246280,22766430,Main model tokens are a lower bound; time excludes preparation/publication
