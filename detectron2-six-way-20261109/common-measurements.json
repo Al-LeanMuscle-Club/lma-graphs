@@ -1,0 +1,456 @@
+{
+  "method": {
+    "name": "Uniform delivered-source inventory v1",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+    },
+    "source_suffixes": [
+      ".bash",
+      ".c",
+      ".cc",
+      ".cjs",
+      ".cpp",
+      ".css",
+      ".cu",
+      ".cuh",
+      ".cxx",
+      ".go",
+      ".h",
+      ".hpp",
+      ".hxx",
+      ".java",
+      ".js",
+      ".jsx",
+      ".kt",
+      ".mjs",
+      ".py",
+      ".pyi",
+      ".rb",
+      ".rs",
+      ".sh",
+      ".ts",
+      ".tsx"
+    ],
+    "evidence_root_exclusions": [
+      "evidence",
+      "validation",
+      "verification"
+    ],
+    "evidence_file_exclusions": [
+      "core-capabilities.json",
+      "implementation-gaps-projects.json",
+      "mapping-foundations.json",
+      "mapping-models.json",
+      "mapping-projects.json",
+      "nanolize-anything-report-mapping.json",
+      "nanolize-knowledge-gaps.json",
+      "nanolize-progress.json",
+      "project-capabilities.json",
+      "runtime-capabilities.json"
+    ],
+    "documentation_suffixes": [
+      ".adoc",
+      ".md",
+      ".rst",
+      ".rstx"
+    ],
+    "test_directories": [
+      "__tests__",
+      "fixtures",
+      "test",
+      "testdata",
+      "tests",
+      "tests-unit"
+    ],
+    "per_file_tokenization": true,
+    "formatting": "As delivered; no reformatting or target execution.",
+    "notes": [
+      "Production test_time_augmentation modules are included.",
+      "Runtime JSON/YAML/catalog tables are counted separately, never hidden as source reduction.",
+      "Source AST excludes docstrings; moving configuration or metadata into resources also reduces AST.",
+      "Static counts describe artifacts and are not a semantic, quality, or human-readability score.",
+      "This inventory is separate from historical harness size gates; evidence/report additions are excluded."
+    ]
+  },
+  "snapshots": [
+    {
+      "id": "original",
+      "inventory_sha256": "6c0269a10bdc3f80f88daf5bd9a779ad00098938e799690d140761513a23c310",
+      "categories": {
+        "configuration_and_resources": {
+          "files": 206,
+          "bytes": 152591,
+          "lines": 5031,
+          "tokens": 53484
+        },
+        "documentation": {
+          "files": 88,
+          "bytes": 378756,
+          "lines": 8429,
+          "tokens": 107670
+        },
+        "source": {
+          "files": 452,
+          "bytes": 3195073,
+          "lines": 72035,
+          "tokens": 808992
+        },
+        "binary_asset": {
+          "files": 1,
+          "bytes": 65682,
+          "lines": 429,
+          "tokens": 0,
+          "binary_files": 1
+        },
+        "tests": {
+          "files": 81,
+          "bytes": 357150,
+          "lines": 9163,
+          "tokens": 90398
+        }
+      },
+      "python": {
+        "python_files": 417,
+        "physical_lines": 65120,
+        "active_lines": 40324,
+        "docstring_lines": 12732,
+        "standalone_comment_lines": 4097,
+        "ast_nodes_excluding_docstrings": 342022,
+        "statements_excluding_docstrings": 26934,
+        "function_definitions": 2314,
+        "branch_nodes": 3724,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 1557,
+        "typed_returns": 441,
+        "lines_over_120_chars": 53,
+        "raise_statements": 198,
+        "assert_statements": 613,
+        "max_function_lines": 202,
+        "p95_function_lines": 64
+      },
+      "python_parse_failures": []
+    },
+    {
+      "id": "memory",
+      "inventory_sha256": "662f36055b8704627dad080eac18e1370ed0e33982d4500e3d7a288af508ff56",
+      "categories": {
+        "source": {
+          "files": 448,
+          "bytes": 2250950,
+          "lines": 61328,
+          "tokens": 595793
+        },
+        "configuration_and_resources": {
+          "files": 185,
+          "bytes": 104884,
+          "lines": 4550,
+          "tokens": 38608
+        },
+        "documentation": {
+          "files": 1,
+          "bytes": 10256,
+          "lines": 202,
+          "tokens": 2118
+        },
+        "experiment_evidence": {
+          "files": 2,
+          "bytes": 18831,
+          "lines": 217,
+          "tokens": 4099
+        },
+        "tests": {
+          "files": 81,
+          "bytes": 357150,
+          "lines": 9163,
+          "tokens": 90398
+        }
+      },
+      "python": {
+        "python_files": 420,
+        "physical_lines": 59699,
+        "active_lines": 55041,
+        "docstring_lines": 38,
+        "standalone_comment_lines": 17,
+        "ast_nodes_excluding_docstrings": 325253,
+        "statements_excluding_docstrings": 23509,
+        "function_definitions": 2280,
+        "branch_nodes": 3295,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 1528,
+        "typed_returns": 427,
+        "lines_over_120_chars": 253,
+        "raise_statements": 199,
+        "assert_statements": 534,
+        "max_function_lines": 141,
+        "p95_function_lines": 35
+      },
+      "python_parse_failures": []
+    },
+    {
+      "id": "dual",
+      "inventory_sha256": "7081f841aab82583c363521c5e5a1335aea66fe8f558c179fd5d4a2fa59edcf2",
+      "categories": {
+        "configuration_and_resources": {
+          "files": 206,
+          "bytes": 152731,
+          "lines": 5042,
+          "tokens": 53526
+        },
+        "documentation": {
+          "files": 88,
+          "bytes": 378756,
+          "lines": 8429,
+          "tokens": 107670
+        },
+        "source": {
+          "files": 459,
+          "bytes": 3140376,
+          "lines": 70830,
+          "tokens": 795769
+        },
+        "binary_asset": {
+          "files": 1,
+          "bytes": 65682,
+          "lines": 429,
+          "tokens": 0,
+          "binary_files": 1
+        },
+        "tests": {
+          "files": 81,
+          "bytes": 357150,
+          "lines": 9163,
+          "tokens": 90398
+        }
+      },
+      "python": {
+        "python_files": 424,
+        "physical_lines": 63915,
+        "active_lines": 39360,
+        "docstring_lines": 12614,
+        "standalone_comment_lines": 3978,
+        "ast_nodes_excluding_docstrings": 332501,
+        "statements_excluding_docstrings": 26261,
+        "function_definitions": 2338,
+        "branch_nodes": 3599,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 1555,
+        "typed_returns": 444,
+        "lines_over_120_chars": 54,
+        "raise_statements": 192,
+        "assert_statements": 602,
+        "max_function_lines": 202,
+        "p95_function_lines": 62
+      },
+      "python_parse_failures": []
+    },
+    {
+      "id": "efficient",
+      "inventory_sha256": "0e79b4f8cd9bf1fb64030e18d0b32fc86facdf1831c79da5623a16e3cba6d7e4",
+      "categories": {
+        "configuration_and_resources": {
+          "files": 304,
+          "bytes": 971298,
+          "lines": 8896,
+          "tokens": 365101
+        },
+        "documentation": {
+          "files": 4,
+          "bytes": 25894,
+          "lines": 462,
+          "tokens": 7020
+        },
+        "source": {
+          "files": 432,
+          "bytes": 1030446,
+          "lines": 28031,
+          "tokens": 240264
+        },
+        "tests": {
+          "files": 81,
+          "bytes": 357150,
+          "lines": 9163,
+          "tokens": 90398
+        }
+      },
+      "python": {
+        "python_files": 426,
+        "physical_lines": 27369,
+        "active_lines": 23577,
+        "docstring_lines": 137,
+        "standalone_comment_lines": 27,
+        "ast_nodes_excluding_docstrings": 188237,
+        "statements_excluding_docstrings": 16106,
+        "function_definitions": 1970,
+        "branch_nodes": 2617,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 223,
+        "typed_returns": 8,
+        "lines_over_120_chars": 161,
+        "raise_statements": 117,
+        "assert_statements": 180,
+        "max_function_lines": 155,
+        "p95_function_lines": 33
+      },
+      "python_parse_failures": []
+    },
+    {
+      "id": "effort",
+      "inventory_sha256": "d8d2f644b3e88410a319b5dd29604d49d307634212b7a18117f247fbf82117ec",
+      "categories": {
+        "configuration_and_resources": {
+          "files": 268,
+          "bytes": 468209,
+          "lines": 15922,
+          "tokens": 150304
+        },
+        "documentation": {
+          "files": 4,
+          "bytes": 24123,
+          "lines": 478,
+          "tokens": 5049
+        },
+        "source": {
+          "files": 460,
+          "bytes": 944995,
+          "lines": 20559,
+          "tokens": 228268
+        },
+        "tests": {
+          "files": 81,
+          "bytes": 357150,
+          "lines": 9163,
+          "tokens": 90398
+        }
+      },
+      "python": {
+        "python_files": 455,
+        "physical_lines": 20032,
+        "active_lines": 16677,
+        "docstring_lines": 160,
+        "standalone_comment_lines": 31,
+        "ast_nodes_excluding_docstrings": 187657,
+        "statements_excluding_docstrings": 15594,
+        "function_definitions": 1918,
+        "branch_nodes": 2622,
+        "multiple_statement_lines": 47,
+        "typed_parameters": 200,
+        "typed_returns": 19,
+        "lines_over_120_chars": 627,
+        "raise_statements": 119,
+        "assert_statements": 189,
+        "max_function_lines": 98,
+        "p95_function_lines": 22
+      },
+      "python_parse_failures": []
+    },
+    {
+      "id": "knowledge",
+      "inventory_sha256": "7a7ff691b17dfacef6419c0c50c28c78c5a5cf928436b54976b8a0e25816f82d",
+      "categories": {
+        "configuration_and_resources": {
+          "files": 278,
+          "bytes": 765577,
+          "lines": 17281,
+          "tokens": 243667
+        },
+        "documentation": {
+          "files": 9,
+          "bytes": 60814,
+          "lines": 625,
+          "tokens": 11852
+        },
+        "source": {
+          "files": 439,
+          "bytes": 935376,
+          "lines": 27425,
+          "tokens": 214920
+        },
+        "experiment_evidence": {
+          "files": 7,
+          "bytes": 421667,
+          "lines": 7312,
+          "tokens": 114842
+        },
+        "tests": {
+          "files": 81,
+          "bytes": 357150,
+          "lines": 9163,
+          "tokens": 90398
+        }
+      },
+      "python": {
+        "python_files": 437,
+        "physical_lines": 27390,
+        "active_lines": 23878,
+        "docstring_lines": 90,
+        "standalone_comment_lines": 12,
+        "ast_nodes_excluding_docstrings": 168863,
+        "statements_excluding_docstrings": 14230,
+        "function_definitions": 1827,
+        "branch_nodes": 2233,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 187,
+        "typed_returns": 16,
+        "lines_over_120_chars": 6,
+        "raise_statements": 131,
+        "assert_statements": 89,
+        "max_function_lines": 167,
+        "p95_function_lines": 36
+      },
+      "python_parse_failures": []
+    },
+    {
+      "id": "graphify",
+      "inventory_sha256": "bc924f5304a655f1bbab360f60a1542ca9de7b05a7724e9b9f377a9deaa5737c",
+      "categories": {
+        "configuration_and_resources": {
+          "files": 101,
+          "bytes": 1190356,
+          "lines": 65987,
+          "tokens": 334559
+        },
+        "source": {
+          "files": 446,
+          "bytes": 920907,
+          "lines": 26066,
+          "tokens": 216239
+        },
+        "documentation": {
+          "files": 4,
+          "bytes": 20885,
+          "lines": 325,
+          "tokens": 4024
+        },
+        "experiment_evidence": {
+          "files": 7,
+          "bytes": 733155,
+          "lines": 15224,
+          "tokens": 184482
+        }
+      },
+      "python": {
+        "python_files": 430,
+        "physical_lines": 25616,
+        "active_lines": 21997,
+        "docstring_lines": 82,
+        "standalone_comment_lines": 9,
+        "ast_nodes_excluding_docstrings": 169514,
+        "statements_excluding_docstrings": 14634,
+        "function_definitions": 1874,
+        "branch_nodes": 2376,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 191,
+        "typed_returns": 19,
+        "lines_over_120_chars": 1,
+        "raise_statements": 142,
+        "assert_statements": 50,
+        "max_function_lines": 163,
+        "p95_function_lines": 32
+      },
+      "python_parse_failures": []
+    }
+  ]
+}

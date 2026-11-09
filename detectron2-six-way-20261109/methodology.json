@@ -1,0 +1,93 @@
+{
+  "static": {
+    "name": "Uniform delivered-source inventory v1",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+    },
+    "source_suffixes": [
+      ".bash",
+      ".c",
+      ".cc",
+      ".cjs",
+      ".cpp",
+      ".css",
+      ".cu",
+      ".cuh",
+      ".cxx",
+      ".go",
+      ".h",
+      ".hpp",
+      ".hxx",
+      ".java",
+      ".js",
+      ".jsx",
+      ".kt",
+      ".mjs",
+      ".py",
+      ".pyi",
+      ".rb",
+      ".rs",
+      ".sh",
+      ".ts",
+      ".tsx"
+    ],
+    "evidence_root_exclusions": [
+      "evidence",
+      "validation",
+      "verification"
+    ],
+    "evidence_file_exclusions": [
+      "core-capabilities.json",
+      "implementation-gaps-projects.json",
+      "mapping-foundations.json",
+      "mapping-models.json",
+      "mapping-projects.json",
+      "nanolize-anything-report-mapping.json",
+      "nanolize-knowledge-gaps.json",
+      "nanolize-progress.json",
+      "project-capabilities.json",
+      "runtime-capabilities.json"
+    ],
+    "documentation_suffixes": [
+      ".adoc",
+      ".md",
+      ".rst",
+      ".rstx"
+    ],
+    "test_directories": [
+      "__tests__",
+      "fixtures",
+      "test",
+      "testdata",
+      "tests",
+      "tests-unit"
+    ],
+    "per_file_tokenization": true,
+    "formatting": "As delivered; no reformatting or target execution.",
+    "notes": [
+      "Production test_time_augmentation modules are included.",
+      "Runtime JSON/YAML/catalog tables are counted separately, never hidden as source reduction.",
+      "Source AST excludes docstrings; moving configuration or metadata into resources also reduces AST.",
+      "Static counts describe artifacts and are not a semantic, quality, or human-readability score.",
+      "This inventory is separate from historical harness size gates; evidence/report additions are excluded."
+    ]
+  },
+  "notes": [
+    "Read-only static measurement; target repository code was never imported or executed for this comparison.",
+    "All7 snapshots were verified against every tracked Git blob. Published heads and tested production commits are distinguished.",
+    "No universal pass rate: command groups, individual tests, probes and developer tasks have different denominators.",
+    "No single end-to-end runtime or total-cost ranking: accounting boundaries differ.",
+    "Unknown usage stays null. Cache and reasoning subsets are not double counted. Raw session transcripts, private paths and prompts are not published.",
+    "Current final-state comparison uses Nov3 repair evidence for Graphify/Knowledge, not their regressed Nov2 initial reports.",
+    "Observation-based comparison: selected goals, source-access policy, environment, model and stopping criteria differ."
+  ],
+  "memory_native_total": 638500,
+  "memory_common_total": 634401,
+  "memory_excluded_experiment_metadata_tokens": 4099,
+  "measurement_script": "\"\"\"Static, uniform measurement of pinned snapshots; no target imports/execution.\n\nUsage: python measure_snapshots.py SNAPSHOT_PARENT OUTPUT_DIRECTORY\nRequires tiktoken==0.12.0. Every file is counted independently with cl100k_base.\nThis comparison inventory excludes experiment evidence as well as tests/docs;\nit is explicitly distinct from each historical harness's acceptance policy.\n\"\"\"\nimport ast\nimport base64\nfrom collections import Counter\nimport hashlib\nimport io\nfrom importlib.metadata import version\nimport json\nfrom pathlib import Path\nimport sys\nimport tokenize\n\nSOURCE = set('.cu .cuh .cc .cxx .hxx .css .bash .py .pyi .js .jsx .ts .tsx .mjs .cjs .go .rs .c .h .cpp .hpp .java .kt .rb .sh'.split())\nTEST_DIRS = {'test', 'tests', 'tests-unit', 'fixtures', '__tests__', 'testdata'}\nSKIP = {'.git', '.venv', '__pycache__', 'build', 'dist', 'node_modules', '.lma', '.nanolize'}\nDOC_SUFFIXES = {'.md', '.rst', '.adoc', '.rstx'}\nDOC_NAMES = {'readme', 'license', 'licence', 'copying', 'notice', 'changelog', 'authors', 'contributors'}\n# Reviewed report/evidence locations, never imported by the product.\nEVIDENCE_ROOTS = {'validation', 'verification', 'evidence'}\nEVIDENCE_FILES = {\n    'core-capabilities.json', 'project-capabilities.json', 'runtime-capabilities.json',\n    'nanolize-anything-report-mapping.json', 'implementation-gaps-projects.json',\n    'mapping-foundations.json', 'mapping-models.json', 'mapping-projects.json',\n    'nanolize-knowledge-gaps.json', 'nanolize-progress.json',\n}\nTOKENIZER = {'library': 'tiktoken', 'version': '0.12.0', 'encoding': 'cl100k_base',\n             'ranks_sha256': '223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7'}\n\n\ndef encoder():\n    import tiktoken\n    assert version('tiktoken') == TOKENIZER['version']\n    value = tiktoken.get_encoding(TOKENIZER['encoding'])\n    ranks = b''.join(base64.b64encode(k) + b' ' + str(v).encode() + b'\\n'\n                     for k, v in sorted(value._mergeable_ranks.items(), key=lambda p: p[1]))\n    assert hashlib.sha256(ranks).hexdigest() == TOKENIZER['ranks_sha256']\n    return value\n\n\ndef decode(data, suffix):\n    encoding = tokenize.detect_encoding(io.BytesIO(data).readline)[0] if suffix in {'.py', '.pyi'} else 'utf-8'\n    text = data.decode(encoding)\n    if '\\0' in text:\n        raise UnicodeError('NUL byte in binary data')\n    return text\n\n\ndef category(path, text):\n    if any(p in SKIP for p in path.parts):\n        return 'private_or_generated'\n    if path.parts[0] in EVIDENCE_ROOTS or path.as_posix() in EVIDENCE_FILES:\n        return 'experiment_evidence'\n    if (any(p.lower() in TEST_DIRS for p in path.parts)\n            or path.name == 'conftest.py' or '.test.' in path.name\n            or '.spec.' in path.name or path.name.endswith('_test.py')):\n        return 'tests'\n    if path.name.startswith('test_'):\n        if len(path.parts) == 1:\n            return 'tests'\n        if path.suffix.lower() in {'.py', '.pyi'} and text is not None:\n            tree = ast.parse(text)\n            names = []\n            for node in ast.walk(tree):\n                if isinstance(node, ast.Import):\n                    names += [item.name.split('.')[0] for item in node.names]\n                elif isinstance(node, ast.ImportFrom) and node.module:\n                    names.append(node.module.split('.')[0])\n            if any(n in {'pytest', 'unittest'} for n in names):\n                return 'tests'\n    if path.suffix.lower() in SOURCE:\n        return 'source'\n    if path.suffix.lower() in DOC_SUFFIXES or (path.suffix.lower() in {'', '.txt'} and path.stem.lower() in DOC_NAMES):\n        return 'documentation'\n    if text is None:\n        return 'binary_asset'\n    return 'configuration_and_resources'\n\n\ndef python_metrics(text):\n    tree = ast.parse(text)\n    nodes = list(ast.walk(tree))\n    ignored = set()\n    doclines = set()\n    for node in nodes:\n        if isinstance(node, (ast.Module, ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef)) and node.body:\n            first = node.body[0]\n            if isinstance(first, ast.Expr) and isinstance(first.value, ast.Constant) and isinstance(first.value.value, str):\n                ignored.update((id(first), id(first.value)))\n                doclines.update(range(first.lineno, first.end_lineno + 1))\n    comments = set()\n    for token in tokenize.generate_tokens(io.StringIO(text).readline):\n        if token.type == tokenize.COMMENT and not token.line[:token.start[1]].strip():\n            comments.add(token.start[0])\n    statements = [n for n in nodes if isinstance(n, ast.stmt) and id(n) not in ignored]\n    perline = Counter(n.lineno for n in statements if not isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)))\n    functions = [n for n in nodes if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))]\n    args = [a for n in functions for a in [*n.args.posonlyargs, *n.args.args, *n.args.kwonlyargs,\n            *([n.args.vararg] if n.args.vararg else []), *([n.args.kwarg] if n.args.kwarg else [])]]\n    lengths = [n.end_lineno - n.lineno + 1 for n in functions]\n    fields = {\n        'python_files': 1, 'physical_lines': len(text.splitlines()),\n        'active_lines': sum(bool(s.strip()) and i not in doclines | comments for i, s in enumerate(text.splitlines(), 1)),\n        'docstring_lines': len(doclines), 'standalone_comment_lines': len(comments),\n        'ast_nodes_excluding_docstrings': sum(id(n) not in ignored for n in nodes),\n        'statements_excluding_docstrings': len(statements), 'function_definitions': len(functions),\n        'branch_nodes': sum(isinstance(n, (ast.If, ast.IfExp, ast.For, ast.AsyncFor, ast.While, ast.ExceptHandler, ast.Match)) for n in nodes),\n        'multiple_statement_lines': sum(v > 1 for v in perline.values()),\n        'typed_parameters': sum(a.annotation is not None for a in args),\n        'typed_returns': sum(n.returns is not None for n in functions),\n        'lines_over_120_chars': sum(len(line) > 120 for line in text.splitlines()),\n        'raise_statements': sum(isinstance(n, ast.Raise) for n in nodes),\n        'assert_statements': sum(isinstance(n, ast.Assert) for n in nodes),\n    }\n    return fields, lengths\n\n\ndef measure(root, enc):\n    files = []\n    categories = {}\n    stats = Counter()\n    function_lengths = []\n    failures = []\n    for path in sorted(root.rglob('*')):\n        if not path.is_file():\n            continue\n        relative = path.relative_to(root)\n        if any(part in SKIP for part in relative.parts):\n            continue\n        assert path.resolve().is_relative_to(root.resolve()), relative\n        data = path.read_bytes()\n        try:\n            text = decode(data, path.suffix.lower())\n        except (UnicodeError, SyntaxError):\n            text = None\n        kind = category(relative, text)\n        row = {'path': relative.as_posix(), 'sha256': hashlib.sha256(data).hexdigest(),\n               'category': kind, 'bytes': len(data), 'lines': len(data.splitlines()),\n               'tokens': len(enc.encode_ordinary(text)) if text is not None else None}\n        files.append(row)\n        count = categories.setdefault(kind, Counter())\n        count.update({'files': 1, 'bytes': len(data), 'lines': row['lines'], 'tokens': row['tokens'] or 0})\n        if row['tokens'] is None:\n            count['binary_files'] += 1\n        if kind == 'source' and path.suffix.lower() in {'.py', '.pyi'}:\n            try:\n                metrics, lengths = python_metrics(text)\n                row['python'] = metrics\n                stats.update(metrics)\n                function_lengths.extend(lengths)\n            except (SyntaxError, TypeError, tokenize.TokenError) as exc:\n                failures.append({'path': row['path'], 'error': type(exc).__name__})\n    function_lengths.sort()\n    stats['max_function_lines'] = max(function_lengths, default=0)\n    stats['p95_function_lines'] = function_lengths[int((len(function_lengths) - 1) * .95)] if function_lengths else 0\n    digest = hashlib.sha256(json.dumps([{k: v for k, v in f.items() if k != 'python'} for f in files],\n                                      sort_keys=True, separators=(',', ':')).encode()).hexdigest()\n    return {'id': root.name, 'inventory_sha256': digest, 'categories': categories,\n            'python': dict(stats), 'python_parse_failures': failures, 'files': files}\n\n\ndef main():\n    parent, output = map(Path, sys.argv[1:3])\n    output.mkdir(parents=True, exist_ok=True)\n    enc = encoder()\n    rows = []\n    for key in ['original', 'memory', 'dual', 'efficient', 'effort', 'knowledge', 'graphify']:\n        row = measure(parent / key, enc)\n        (output / (key + '-inventory.json')).write_text(json.dumps(row, indent=2) + '\\n')\n        brief = {k: v for k, v in row.items() if k != 'files'}\n        rows.append(brief)\n        print(json.dumps(brief), flush=True)\n    result = {'method': {'name': 'Uniform delivered-source inventory v1', 'tokenizer': TOKENIZER,\n              'source_suffixes': sorted(SOURCE), 'evidence_root_exclusions': sorted(EVIDENCE_ROOTS),\n              'evidence_file_exclusions': sorted(EVIDENCE_FILES), 'documentation_suffixes': sorted(DOC_SUFFIXES),\n              'test_directories': sorted(TEST_DIRS), 'per_file_tokenization': True,\n              'formatting': 'As delivered; no reformatting or target execution.',\n              'notes': ['Production test_time_augmentation modules are included.',\n                        'Runtime JSON/YAML/catalog tables are counted separately, never hidden as source reduction.',\n                        'Source AST excludes docstrings; moving configuration or metadata into resources also reduces AST.',\n                        'Static counts describe artifacts and are not a semantic, quality, or human-readability score.',\n                        'This inventory is separate from historical harness size gates; evidence/report additions are excluded.']},\n              'snapshots': rows}\n    (output / 'common-measurements.json').write_text(json.dumps(result, indent=2) + '\\n')\n\n\nif __name__ == '__main__':\n    main()\n",
+  "measurement_script_sha256": "91a0539e92e2b4c0ab9a4cf6681343f54526a27ecb3b02b59d89f38f3a6e08e7",
+  "reproduction": "Use pinned snapshots in directories original,memory,dual,efficient,effort,knowledge,graphify. Install tiktoken==0.12.0; run python measure_snapshots.py SNAPSHOT_ROOT OUTPUT_DIR. Match the recorded cl100k_base rank digest."
+}

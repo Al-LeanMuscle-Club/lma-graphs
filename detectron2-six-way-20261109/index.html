@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A source-bound comparison of six full-scope Detectron2 compression experiments: delivered code, validation, model usage, elapsed time, and repair trajectories.">
+  <meta name="theme-color" content="#5c43e8">
+  <title>Detectron2 · Six approaches to a smaller codebase</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to report</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Nanolize comparison home"><span class="brand-mark">N</span>nanolize<span class="brand-divider"></span><span class="brand-context">Experiment reports</span></a>
+    <nav aria-label="Report navigation"><a href="#size">Code</a><a href="#quality">Quality</a><a href="#cost">Cost</a><a href="#trajectory">Trajectory</a><a href="#sources">Evidence</a></nav>
+    <span class="read-only">PUBLIC · READ ONLY</span>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy"><p class="eyebrow">DETECTRON2 / SIX EXPERIMENTS / FULL FUNCTIONAL SCOPE</p>
+        <h1>What did compression<br><span>actually buy?</span></h1>
+        <p class="hero-deck">The latest Feedback Memory run, compared with five earlier experiments. Follow the delivered code, the evidence behind it, and the work required to get there.</p>
+        <div class="hero-actions"><a class="button primary" href="#size">Explore the comparison <span aria-hidden="true">↗</span></a><a class="button secondary" href="comparison.json" download>Download the data <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-provenance">One upstream commit <code>247691a1c292</code><span>·</span>Six pinned branch heads<span>·</span><span id="as-of">Evidence snapshot</span></p>
+      </div>
+      <aside class="hero-aside" aria-label="Latest experiment summary"><div class="hero-aside-top"><span class="status-dot"></span>LATEST RUN <span class="small-pill">09 NOV 2026</span></div><h2>Feedback Memory</h2><p class="hero-metric" id="hero-reduction">—<span>source tokens</span></p><p>No mandatory compression ratio.<br>Stop pure-size optimization after acceptance.</p><div class="hero-mini-grid"><div><strong>160/160</strong><span>CPU check groups</span></div><div><strong>360/360</strong><span>original GPU passes retained</span></div></div><a id="latest-report" href="#sources">Open the full run report ↗</a></aside>
+    </section>
+    <section class="takeaways" aria-label="Key findings" id="takeaways"></section>
+    <aside class="scope-note"><strong>Read this as an evidence comparison.</strong> All six experiments intended to preserve the complete selected functionality. Passing finite tests does not prove full equivalence. We remeasured the pinned source; we did not rerun historical tests or training. Goals, models, environments, accounting coverage, and verification work differ.</aside>
+
+    <section class="report-section" id="size">
+      <div class="section-heading"><div><p class="eyebrow">01 / DELIVERED CODE</p><h2>Compare the whole footprint.</h2><p>Count implementation and runtime resources separately. Moving code into JSON should remain visible.</p></div><label class="select-label">Measurement<select id="size-metric"><option value="combined">Source + runtime resource tokens</option><option value="source">Source tokens only</option><option value="lines">Physical source lines</option><option value="ast">Python AST, excluding docstrings</option></select></label></div>
+      <div class="panel chart-panel"><div class="chart-intro"><h3 id="size-chart-title">Delivered tokens</h3><span class="legend"><i class="source-key"></i>Implementation <i class="resource-key"></i>Runtime resources</span></div><div id="size-chart" class="size-chart" aria-live="polite"></div><p class="chart-caption" id="size-caption"></p></div>
+      <div class="table-panel"><table id="size-table"><caption>Uniform measurement of the exact published code</caption><thead><tr><th scope="col">Experiment</th><th scope="col">Source tokens</th><th scope="col">Resource tokens</th><th scope="col">Combined reduction</th><th scope="col">Source lines</th><th scope="col">Python AST reduction</th></tr></thead><tbody></tbody></table></div>
+      <details class="method-note"><summary>Measurement scope, original metrics, and why the Memory total differs from its run report</summary><div id="size-method"></div><div class="download-row"><a href="common-measurements.json" download>All static measurements ↓</a><a href="inventory.csv" download>Per-file inventory ↓</a><button class="text-button" id="download-measurement">Download measurement script ↓</button></div></details>
+    </section>
+
+    <section class="report-section" id="quality">
+      <div class="section-heading"><div><p class="eyebrow">02 / CODE QUALITY</p><h2>Smaller is one dimension.</h2><p>Documentation, type information, ordinary control flow, compatibility evidence, and runtime coverage all matter.</p></div></div>
+      <div class="quality-callout" id="quality-finding"></div>
+      <div class="table-panel"><table id="quality-table"><caption>Static observations, not a human readability score</caption><thead><tr><th scope="col">Experiment</th><th scope="col">Docstring lines</th><th scope="col">Comment lines</th><th scope="col">Annotated parameters</th><th scope="col">Standalone docs¹</th><th scope="col">Multi-statement lines²</th><th scope="col">P95 function length</th></tr></thead><tbody></tbody></table></div>
+      <p class="fine-print">¹ Includes license documents; experiment evidence is excluded. ² Includes inline suites, not just semicolon packing. Counts describe delivered Python, including configuration code. Fewer AST nodes or annotations do not independently prove simplification or a broken API.</p>
+      <div class="panel"><div class="chart-intro"><h3>Source review by experiment</h3><span class="muted">What is supported — and what remains uncertain</span></div><div class="run-tabs" id="quality-tabs" role="tablist" aria-label="Source quality experiment"></div><div id="quality-detail" class="quality-detail" role="tabpanel" tabindex="0"></div></div>
+      <details class="method-note"><summary>Compare three public signatures and their documentation</summary><p>The same signatures can exist while explanations disappear. These three samples are illustrative, not an exhaustive API compatibility check.</p><div class="table-panel nested"><table id="signature-table"><thead><tr><th scope="col">Experiment</th><th scope="col">Public callable</th><th scope="col">Signature</th><th scope="col">Docstring</th></tr></thead><tbody></tbody></table></div></details>
+    </section>
+
+    <section class="report-section" id="validation">
+      <div class="section-heading"><div><p class="eyebrow">03 / FUNCTIONAL EVIDENCE</p><h2>Keep the denominators intact.</h2><p>A CPU command group, an individual upstream test, and a pretrained model probe answer different questions.</p></div></div>
+      <div class="table-panel"><table id="validation-table"><caption>Historical results bound to each selected candidate</caption><thead><tr><th scope="col">Experiment</th><th scope="col">CPU evidence</th><th scope="col">GPU evidence</th><th scope="col">Fresh installation</th><th scope="col">Main coverage limits</th></tr></thead><tbody></tbody></table></div>
+      <div class="two-columns"><article class="panel prose"><p class="eyebrow">PERFORMANCE</p><h3>There is no six-way speed benchmark.</h3><div id="performance-note"></div></article><article class="panel prose"><p class="eyebrow">DOWNSTREAM WORK</p><h3>Smaller code did not establish cheaper tasks.</h3><div id="task-note"></div></article></div>
+    </section>
+
+    <section class="report-section" id="cost">
+      <div class="section-heading"><div><p class="eyebrow">04 / TIME & MODEL USAGE</p><h2>The cost of getting to a result.</h2><p>Model tokens are consumption. Source tokens measure code size. Cached input is already included in input tokens.</p></div></div>
+      <aside class="cost-warning"><strong>This is a ledger, not a cost leaderboard.</strong> Historical records cover different work. A lower bound is not a complete total; an unrecorded call is not free. Shared repair work is shown once below.</aside>
+      <div class="two-columns"><div class="panel cost-chart-panel"><div class="chart-intro"><h3>Recorded model tokens</h3><span class="small-pill">SCOPE SHOWN PER ROW</span></div><div id="cost-chart"></div><p class="fine-print">Total = input + output. The lighter section is the cached-input subset. “≥” marks an incomplete ledger. These values are not a monetary bill.</p></div><div class="panel cost-chart-panel"><div class="chart-intro"><h3>Recorded wall-clock windows</h3><span class="small-pill">DIFFERENT STOP POINTS</span></div><div id="time-chart"></div><p class="fine-print">Initial delivery, final acceptance, and later repair are distinguished. Parallel durations must not be added as elapsed time. No calendar gap is silently counted as computation.</p></div></div>
+      <div class="table-panel"><table id="cost-table"><caption>Accounting coverage and known omissions</caption><thead><tr><th scope="col">Experiment</th><th scope="col">Observed tokens</th><th scope="col">Cached input subset</th><th scope="col">Uncached input + output</th><th scope="col">Time window</th><th scope="col">Accounting boundary</th></tr></thead><tbody></tbody></table></div>
+      <div id="shared-cost" class="shared-cost"></div>
+      <div class="panel"><div class="chart-intro"><h3>Open a cost ledger</h3><a href="model-costs.csv" download>Download cost components ↓</a></div><div class="run-tabs" id="cost-tabs" role="tablist" aria-label="Cost ledger experiment"></div><div id="cost-detail" role="tabpanel" tabindex="0"></div></div>
+    </section>
+
+    <section class="report-section" id="trajectory">
+      <div class="section-heading"><div><p class="eyebrow">05 / REPAIR TRAJECTORY</p><h2>See how each result was reached.</h2><p>Start with the shared original, choose an experiment, then open its milestones. Failed and superseded candidates stay in the record.</p></div></div>
+      <div class="panel trajectory-panel"><div class="tree-origin"><span class="tree-root-label">ORIGINAL DETECTRON2</span><code>247691a1c292</code><span>808,992 source tokens</span></div><div class="tree-branches" id="trajectory-branches" aria-label="Choose an experiment trajectory"></div><div class="trajectory-content"><div id="trajectory-heading"></div><div id="trajectory-chart"></div><div class="timeline-layout"><ol id="trajectory-steps" class="trajectory-steps"></ol><article id="trajectory-detail" class="trajectory-detail" tabindex="0" aria-live="polite"></article></div></div></div>
+      <p class="fine-print">Milestones are reconstructed from saved execution records, exact commits, and validation receipts. “Unknown” is preserved when a duration or token counter was not recorded. An agent call that exited successfully is not the same as an accepted implementation.</p>
+      <a class="inline-link" href="trajectory.csv" download>Download the milestone ledger ↓</a>
+    </section>
+
+    <section class="report-section" id="interpretation">
+      <div class="section-heading"><div><p class="eyebrow">06 / INTERPRETATION</p><h2>Choose the trade-off, not one score.</h2><p>These are observational experiments with different objectives and procedures, not a controlled trial of six algorithms.</p></div></div>
+      <div class="interpretation-grid" id="interpretation-cards"></div>
+      <details class="method-note"><summary>What a controlled follow-up would need</summary><p>Use the same original commit, selected functionality, public API obligations, environment, test inventory, model/reasoning settings, source access policy, repair budget, and stopping rule. Capture parent and child model usage plus all cancelled calls. Run the same pretrained checkpoints, representative training/export/integration checks, and matched performance workloads on every final candidate. Evaluate documentation and developer tasks separately from code size.</p></details>
+    </section>
+
+    <section class="report-section" id="sources">
+      <div class="section-heading"><div><p class="eyebrow">07 / AUDIT TRAIL</p><h2>Every result has a version.</h2><p>Exact code heads, original reports, newer repair records, and downloadable measurement inventories.</p></div><a class="button secondary" href="comparison.json" download>Download complete report data ↓</a></div>
+      <div id="source-cards" class="source-grid"></div>
+      <details class="method-note"><summary>Provenance, inclusion rules, and limitations</summary><div id="provenance-detail"></div><div class="download-row"><a href="methodology.json" download>Methodology & reproducible script ↓</a><a href="source-provenance.json" download>Pinned source provenance ↓</a><a href="evidence-index.json" download>Evidence index ↓</a></div></details>
+    </section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-mark">N</span>nanolize</a><p>Detectron2 · Six full-scope experiments<br>Measured source. Recorded evidence. Explicit limits.</p><a href="#top">Back to top ↑</a></footer>
+  <div id="load-error" hidden role="alert">The report data could not be loaded. Please refresh, or <a href="comparison.json">open the data directly</a>.</div>
+</body>
+</html>

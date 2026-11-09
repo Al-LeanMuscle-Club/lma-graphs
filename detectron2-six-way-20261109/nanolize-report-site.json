@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "detectron2-six-way-20261109-2c0ff773255e",
+  "files": [
+    {
+      "path": "app.js",
+      "sha256": "3b7279a2d66a52febd0742e21bc1a1fe2389f0e074992f1fa99b349ddb49fb46"
+    },
+    {
+      "path": "common-measurements.json",
+      "sha256": "d3fca730e3d2e5cab987985b8829fb6f33aef9663add4a363c912b7b525ac979"
+    },
+    {
+      "path": "comparison.json",
+      "sha256": "202ddf3e178aec23b362b572bfcaf881a60ab6da9b95c590083ef35ee57cba7b"
+    },
+    {
+      "path": "evidence-index.json",
+      "sha256": "c4616241dce7da10a03c6e02479a083f9ea0df9ff18db57530e74d2c9f28f292"
+    },
+    {
+      "path": "historical-evidence.json",
+      "sha256": "288409228c62c850398088b24aeba27987f9fbc011edd22efe669d1384347eab"
+    },
+    {
+      "path": "index.html",
+      "sha256": "2e34c76a50a8362a8215ba91b79aaabb57486ff0a475ce0540c7e81e3e205c7c"
+    },
+    {
+      "path": "inventory.csv",
+      "sha256": "ec67021dfc51897e849e0a413b6104e0588f6095f7a9bbed7a86746042a277ce"
+    },
+    {
+      "path": "methodology.json",
+      "sha256": "c5b666e3fbcfe0b5ca34a2046bbadab4a73f90029928bebb11779b8d3876c160"
+    },
+    {
+      "path": "model-costs.csv",
+      "sha256": "6dc6947f4f63d39172d85b043389e3f77bf88f530460e3b452e9a854e331d17e"
+    },
+    {
+      "path": "source-provenance.json",
+      "sha256": "01114b807a8a145c15c1acc734b10fef09d5675e84e199a397e23990bd07bd74"
+    },
+    {
+      "path": "style.css",
+      "sha256": "dcdfeb3784ceca0cac00931b311b40ae37fa9261cc7535d6d62cb0f697a95b65"
+    },
+    {
+      "path": "trajectory.csv",
+      "sha256": "32919954e6a377c3ad814f74b812d067518ae3d0ffe3ace43e6e3a7f8b3699b3"
+    }
+  ]
+}

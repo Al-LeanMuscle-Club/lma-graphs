@@ -1,0 +1,60 @@
+{
+  "measured_at": "2026-11-09T20:54:30.126295+00:00",
+  "snapshots": [
+    {
+      "id": "original",
+      "commit": "247691a1c292654867deb35cabb27f18d75a1363",
+      "verified_git_blobs": 828,
+      "target_execution": false
+    },
+    {
+      "id": "memory",
+      "branch": "examples/detectron2-feedback-readable-20261109",
+      "commit": "f0175948b99d68266e93d770c45ddbeb2bc8b77d",
+      "tree": "14c7dbd3f8cb3bc2f592b3eed7f4e3fb0f462895",
+      "verified_git_blobs": 717,
+      "target_execution": false
+    },
+    {
+      "id": "dual",
+      "branch": "examples/detectron2-dual-objective-20261104",
+      "commit": "5d10fe00e91ed1a24fb164799b8f4e566ab5057e",
+      "tree": "ee5dc902b5acf6bf0ec5ea6d8fe9ebf92829b8ba",
+      "verified_git_blobs": 835,
+      "target_execution": false
+    },
+    {
+      "id": "efficient",
+      "branch": "examples/detectron2-efficient-full49-20261104",
+      "commit": "4a2bd1cb8226d2e5114eff43617c9f133aaa5b7c",
+      "tree": "54500f2e4c09e7c65be85f686a63b50ee13a1b77",
+      "verified_git_blobs": 821,
+      "target_execution": false
+    },
+    {
+      "id": "effort",
+      "branch": "examples/detectron2-full-scope-effort49-20261103",
+      "commit": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "tree": "2be8871a4ee78b6beaf3406eba45cafde46656f8",
+      "verified_git_blobs": 813,
+      "target_execution": false
+    },
+    {
+      "id": "knowledge",
+      "branch": "examples/detectron2-knowledge60-20261102",
+      "commit": "72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf",
+      "tree": "ed5a1d607e4f14a075be96facf92ca70c33e67b7",
+      "verified_git_blobs": 814,
+      "target_execution": false
+    },
+    {
+      "id": "graphify",
+      "branch": "examples/detectron2-graphify-rewrite-60",
+      "commit": "5a4c0246c5c39bd31f710ae41fd77bd71f1c613d",
+      "tree": "1919c645af228a54009e18434bb05369ec2e215b",
+      "verified_git_blobs": 558,
+      "target_execution": false
+    }
+  ],
+  "method": "Pinned Git archives; every blob verified against Git object SHA before analysis."
+}

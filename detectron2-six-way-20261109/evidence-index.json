@@ -1,0 +1,136 @@
+{
+  "sources": {
+    "memory": [
+      {
+        "label": "Pinned delivered code",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/f0175948b99d68266e93d770c45ddbeb2bc8b77d"
+      },
+      {
+        "label": "Branch",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-feedback-readable-20261109"
+      },
+      {
+        "label": "Full run report",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/"
+      },
+      {
+        "label": "Structured experiment evidence",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+      }
+    ],
+    "dual": [
+      {
+        "label": "Pinned delivered code",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/5d10fe00e91ed1a24fb164799b8f4e566ab5057e"
+      },
+      {
+        "label": "Branch",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-dual-objective-20261104"
+      },
+      {
+        "label": "Historical run report",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+      }
+    ],
+    "efficient": [
+      {
+        "label": "Pinned delivered code",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/4a2bd1cb8226d2e5114eff43617c9f133aaa5b7c"
+      },
+      {
+        "label": "Branch",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-efficient-full49-20261104"
+      },
+      {
+        "label": "Historical run report",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+      }
+    ],
+    "effort": [
+      {
+        "label": "Pinned delivered code",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/8080c703695dcfa2c8c8118305018e65e0112e8b"
+      },
+      {
+        "label": "Branch",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-full-scope-effort49-20261103"
+      },
+      {
+        "label": "Historical run report",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/"
+      },
+      {
+        "label": "Detailed repair and task process",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+      }
+    ],
+    "knowledge": [
+      {
+        "label": "Pinned delivered code",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf"
+      },
+      {
+        "label": "Branch",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-knowledge60-20261102"
+      },
+      {
+        "label": "Validation Readme",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/validation/self-iteration-20261103/README.md"
+      },
+      {
+        "label": "Validation Json",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/validation/self-iteration-20261103/validation.json"
+      },
+      {
+        "label": "Individual Cases",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/validation/self-iteration-20261103/case-results.json"
+      },
+      {
+        "label": "Source Readme",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/README.md"
+      },
+      {
+        "label": "Initial report — superseded validation",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-knowledge60-20261102/"
+      }
+    ],
+    "graphify": [
+      {
+        "label": "Pinned delivered code",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d"
+      },
+      {
+        "label": "Branch",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-graphify-rewrite-60"
+      },
+      {
+        "label": "Validation Readme",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/validation/self-iteration-20261103/README.md"
+      },
+      {
+        "label": "Validation Json",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/validation/self-iteration-20261103/validation.json"
+      },
+      {
+        "label": "Individual Cases",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/validation/self-iteration-20261103/case-results.json"
+      },
+      {
+        "label": "Source Readme",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/README.md"
+      },
+      {
+        "label": "Initial report — superseded validation",
+        "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-graphify-rewrite-20261102/"
+      }
+    ]
+  },
+  "private_research_artifact_sha256": {
+    "memory.json": "cb7ed59fb753120a2034c105d4ca89468cf38bc14e847a68bb9d0c1a4bb1f151",
+    "historical-harness-runs.json": "3e6c2f2c30e34fb2168775f2963b32f171c195bb4be91a1a1b6a7cacd6f38d7f",
+    "graph-knowledge-runs.json": "458dbe597a38596adfc33125dccd660dcc3a3f2a4cb8c495d3be9997e1df4dbd",
+    "graph-knowledge-usage-ledger.json": "eb92eb7524ab1050baeba309f074d94a7d7543b79e5eb73964471c4b114f0c36"
+  },
+  "public_reconstructed_summary": "historical-evidence.json",
+  "note": "Raw logs remain private. Aggregates and public receipt URLs are published; hash commitments identify the audited local research artifacts."
+}

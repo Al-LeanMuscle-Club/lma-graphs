@@ -1,0 +1,26 @@
+experiment,component,phase,tokens,input,output,cached_input_subset,uncached_input_plus_output,note
+memory,controller,current,5233496,5191523,41973,4445056,788440,14 calls; 2009.6 active call seconds
+memory,author,current,74336305,73657789,678516,71328256,3008049,13 calls; 18504.9 active call seconds
+dual,Observed author parent/controller,current,9455481,9416111,39370,9229568,225913,Parent usage only; helpers/coordination incomplete
+dual,first trial,prior,582556,,,,,Programmatic judges have recorded zero model calls; unknown author calls are not zero.
+dual,retry trial,prior,900789,,,,,Programmatic judges have recorded zero model calls; unknown author calls are not zero.
+dual,current side benchmark including cancelled candidate,current,3749593,,,,,Programmatic judges have recorded zero model calls; unknown author calls are not zero.
+efficient,Observed author parent/controller,current,11379235,11318874,60361,10880384,498851,Parent usage only; helpers/coordination incomplete
+efficient,earlier protocol trial,prior,674231,,,,,Programmatic judges have recorded zero model calls; unknown author calls are not zero.
+efficient,current run including final continuation once,current,1504995,,,,,Programmatic judges have recorded zero model calls; unknown author calls are not zero.
+effort,Observed author parent/controller,current,48351552,48119632,231920,47154688,1196864,Parent usage only; helpers/coordination incomplete
+effort,Current task evaluation ledger,current,46735781,,,,,102 calls; two unknown and one partial. Do not add inherited baselines again.
+effort,examiner design,prior,1315398,,,,,Earlier protocol work
+effort,readiness probes,prior,45671,,,,,Earlier protocol work
+effort,cancelled 8M trial completed solvers,prior,951077,,,,,Earlier protocol work
+effort,superseded v1 trial observed tasks,prior,1628806,,,,,Earlier protocol work
+knowledge,Initial parent,initial,69223469,68975774,247695,68120960,1102509,"Included in initial observed total, not an extra charge"
+knowledge,Initial dedicated authors,initial,82861721,82331258,530463,81177728,1683993,"Included in initial observed total, not an extra charge"
+knowledge,Initial other child support,initial,24097357,23963047,134310,23512832,584525,"Included in initial observed total, not an extra charge"
+knowledge,Dedicated later repair author,repair,33791122,33681635,109487,33090176,700946,Shared support is accounted separately below
+graphify,Initial parent,initial,49441166,49229778,211388,48412032,1029134,"Included in initial observed total, not an extra charge"
+graphify,Initial dedicated authors,initial,85225868,84734620,491248,83379456,1846412,"Included in initial observed total, not an extra charge"
+graphify,Initial other child support,initial,24513268,24381806,131462,23926656,586612,"Included in initial observed total, not an extra charge"
+graphify,Dedicated later repair author,repair,35792708,35687200,105508,34959872,832836,Shared support is accounted separately below
+shared_graphify_knowledge,parent,later_repair,61998662,61805297,193365,60737664,1260998,Excluded from both branch-attributable totals; count once
+shared_graphify_knowledge,other_child_support,later_repair,90637286,90315036,322250,89124864,1512422,Excluded from both branch-attributable totals; count once

@@ -1,0 +1,2399 @@
+{
+  "schema_version": 1,
+  "as_of": "9 November 2026 · UTC",
+  "baseline": {
+    "commit": "247691a1c292654867deb35cabb27f18d75a1363",
+    "metrics": {
+      "source_tokens": 808992,
+      "resource_tokens": 53484,
+      "combined_tokens": 862476,
+      "source_lines": 72035,
+      "documentation_files": 88,
+      "python_files": 417,
+      "physical_lines": 65120,
+      "active_lines": 40324,
+      "docstring_lines": 12732,
+      "standalone_comment_lines": 4097,
+      "ast_nodes_excluding_docstrings": 342022,
+      "statements_excluding_docstrings": 26934,
+      "function_definitions": 2314,
+      "branch_nodes": 3724,
+      "multiple_statement_lines": 0,
+      "typed_parameters": 1557,
+      "typed_returns": 441,
+      "lines_over_120_chars": 53,
+      "raise_statements": 198,
+      "assert_statements": 613,
+      "max_function_lines": 202,
+      "p95_function_lines": 64
+    }
+  },
+  "runs": [
+    {
+      "id": "memory",
+      "label": "Feedback Memory",
+      "short": "Memory",
+      "color": "#6548e8",
+      "date": "2026-11-09",
+      "branch": "examples/detectron2-feedback-readable-20261109",
+      "head": "f0175948b99d68266e93d770c45ddbeb2bc8b77d",
+      "tested_head": "dd282957537ab3d0da0a88429284b08cac2d00b0",
+      "metrics": {
+        "source_tokens": 595793,
+        "resource_tokens": 38608,
+        "combined_tokens": 634401,
+        "source_lines": 61328,
+        "documentation_files": 1,
+        "python_files": 420,
+        "physical_lines": 59699,
+        "active_lines": 55041,
+        "docstring_lines": 38,
+        "standalone_comment_lines": 17,
+        "ast_nodes_excluding_docstrings": 325253,
+        "statements_excluding_docstrings": 23509,
+        "function_definitions": 2280,
+        "branch_nodes": 3295,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 1528,
+        "typed_returns": 427,
+        "lines_over_120_chars": 253,
+        "raise_statements": 199,
+        "assert_statements": 534,
+        "max_function_lines": 141,
+        "p95_function_lines": 35
+      },
+      "sources": [
+        {
+          "label": "Pinned delivered code",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/f0175948b99d68266e93d770c45ddbeb2bc8b77d"
+        },
+        {
+          "label": "Branch",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-feedback-readable-20261109"
+        },
+        {
+          "label": "Full run report",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/"
+        },
+        {
+          "label": "Structured experiment evidence",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+        }
+      ],
+      "goal": "Preserve all selected functionality with a concise, readable implementation; no mandatory compression ratio.",
+      "harness": {
+        "branch": "codex/controller-feedback-memory",
+        "commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3"
+      },
+      "cost": {
+        "total_tokens": 79569801,
+        "cached_input_tokens": 75773312,
+        "uncached_input_plus_output": 3796489,
+        "coverage": "Complete for 27 metered harness calls",
+        "lower_bound": false,
+        "short_scope": "13 author + 14 controller calls",
+        "boundary": "Complete harness-call ledger only. Preparation, outer coordination, report authoring and GPU compute are excluded; not a full project bill.",
+        "components": [
+          {
+            "label": "controller",
+            "total_tokens": 5233496,
+            "input_tokens": 5191523,
+            "output_tokens": 41973,
+            "cached_input_tokens": 4445056,
+            "uncached_input_plus_output": 788440,
+            "phase": "current",
+            "note": "14 calls; 2009.6 active call seconds"
+          },
+          {
+            "label": "author",
+            "total_tokens": 74336305,
+            "input_tokens": 73657789,
+            "output_tokens": 678516,
+            "cached_input_tokens": 71328256,
+            "uncached_input_plus_output": 3008049,
+            "phase": "current",
+            "note": "13 calls; 18504.9 active call seconds"
+          }
+        ],
+        "limitations": [
+          "Cached input is part of input, not extra usage.",
+          "Reasoning output is a subset of output, not added again.",
+          "No examiner/solver/judge task assessment was scheduled."
+        ],
+        "model_note": "No per-call model override. Ephemeral CLI calls inherited configuration; the exact model/reasoning settings were not retained in these usage receipts."
+      },
+      "time": {
+        "elapsed_seconds": 48292.373516,
+        "short_scope": "Submit → first accepted delivery",
+        "description": "Job time ends at the first passed harness delivery record for the final candidate. Time through report preparation also includes subsequent owner verification, question reconciliation, any final delivery refresh, review and code publication. Website deployment latency is not included.",
+        "components": [
+          {
+            "label": "Main accepted delivery",
+            "start": "2026-11-09T04:22:56.962769+00:00",
+            "end": "2026-11-09T17:47:49.336285+00:00",
+            "seconds": 48292.373516
+          },
+          {
+            "label": "Through report preparation, excluding web deployment",
+            "seconds": 49540.480566
+          },
+          {
+            "label": "Active metered model calls (inside wall time)",
+            "seconds": 20514.52311417088
+          }
+        ]
+      },
+      "trajectory": {
+        "summary": "A small first candidate grew during compatibility repair. The CPU sequence regressed sharply once; GPU export/device repairs and a full retry followed. Readability was a stated goal, but documentation retention was not achieved.",
+        "tags": [
+          "13 author calls",
+          "12 saved candidates",
+          "14 controller calls",
+          "0 size-only calls"
+        ],
+        "events": [
+          {
+            "title": "Start with all 106 capabilities",
+            "detail": "No mandatory compression percentage. All 257 recipes selected; stop pure-size optimization after functional and installation acceptance.",
+            "status": "started",
+            "date": "2026-11-09T04:22:56.962769+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 1: 61/160",
+            "detail": "Initial complete comparison exposed 99 failed groups. The smaller candidate was not accepted.",
+            "status": "regressed",
+            "date": "2026-11-09T06:54:01.788322+00:00",
+            "head": "5ecd2e89ce276771cbb69ffab003fd2ac75085b7",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 320686
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 61
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 2: 81/160",
+            "detail": "Compatibility repairs expanded the candidate while reducing failures to 79.",
+            "status": "regressed",
+            "date": "2026-11-09T08:06:59.656278+00:00",
+            "head": "cd9ca71007412d251026d2675041f04a722766d6",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 425023
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 81
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 3: 114/160",
+            "detail": "Further API and runtime repairs reduced failures to 46.",
+            "status": "regressed",
+            "date": "2026-11-09T09:28:15.214244+00:00",
+            "head": "db0d8b79470395523a308f2e8f2e0eeb90838cda",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 478585
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 114
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 4: 127/160",
+            "detail": "Training, evaluation and extension contracts continued to be restored; 33 groups still failed.",
+            "status": "regressed",
+            "date": "2026-11-09T10:49:26.690663+00:00",
+            "head": "78b6f711ddfe4fd31bb14c538b4a6feda9b347ca",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 510743
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 127
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 5: 152/160",
+            "detail": "The candidate reached 152/160, but acceptance was not yet complete.",
+            "status": "regressed",
+            "date": "2026-11-09T12:42:40.279875+00:00",
+            "head": "370960f362326d683d22b351aa86e76c21c9c9f9",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 593647
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 152
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 6: 15/160",
+            "detail": "An import regression caused a sharp setback: only 15/160 groups passed. Preserve this failed observation rather than showing monotonic progress.",
+            "status": "regressed",
+            "date": "2026-11-09T13:44:38.890724+00:00",
+            "head": "9c6fd63cd1ee3e195beff4cbab1874272dc8554e",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 594900
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 15
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 7: 159/160",
+            "detail": "After repairing the regression, one group remained.",
+            "status": "regressed",
+            "date": "2026-11-09T14:49:43.113505+00:00",
+            "head": "bddf47df304a0c183bb4777b3703f39e783a5997",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 595649
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 159
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "CPU checkpoint 8: 160/160",
+            "detail": "All 160 CPU groups passed. This does not substitute for the later GPU and package checks.",
+            "status": "checks_passed",
+            "date": "2026-11-09T17:30:13.918888+00:00",
+            "head": "dd282957537ab3d0da0a88429284b08cac2d00b0",
+            "stats": [
+              {
+                "label": "Source tokens",
+                "value": 595793
+              },
+              {
+                "label": "Passed CPU groups",
+                "value": 160
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "GPU checkpoint 1: 188/360",
+            "detail": "The first GPU attempt retained 188/360 original passes; TensorMask build/import and optional timm import contracts needed repair.",
+            "status": "incomplete",
+            "date": null,
+            "head": "bddf47df304a0c183bb4777b3703f39e783a5997",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "GPU checkpoint 2: 338/360",
+            "detail": "338/360 retained. ROI pooler/device and Boxes export/device failures remained.",
+            "status": "incomplete",
+            "date": null,
+            "head": "23a33e4d7ab459ffdfbced3cb8b6695406edc36d",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "GPU checkpoint 3: 359/360",
+            "detail": "359/360 retained. A BitMasks trace captured a device value.",
+            "status": "incomplete",
+            "date": null,
+            "head": "94b26a9e1893d0c7974b40399eafc704b5ed080d",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "GPU checkpoint 4: 359/360",
+            "detail": "On the repaired final code, 359 passed and one storage command was not run to completion after its 600-second timeout. This run stays archived as incomplete.",
+            "status": "incomplete",
+            "date": null,
+            "head": "dd282957537ab3d0da0a88429284b08cac2d00b0",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "GPU checkpoint 5: 360/360",
+            "detail": "One fresh full retry on the identical final code retained all 360 original GPU passes. No splicing of earlier results, relaxed tolerances or changed timeout. An original focused follow-up also timed out; root cause was not proven.",
+            "status": "passed",
+            "date": null,
+            "head": "dd282957537ab3d0da0a88429284b08cac2d00b0",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "Fresh packages + final acceptance",
+            "detail": "Four core install checks and seven independent fresh-package checks passed. Detectron2, DensePose and TensorMask wheels were rebuilt; 225 imports resolved into fresh environments. Static API checks covered 810 declarations, 1,567 signatures, 1,675 annotations and 66 literal exports.",
+            "status": "passed",
+            "date": "2026-11-09T17:47:49.336285+00:00",
+            "head": "dd282957537ab3d0da0a88429284b08cac2d00b0",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          },
+          {
+            "title": "Stop size-only optimization",
+            "detail": "13 author calls, 12 saved candidates, 14 controller calls, zero pure-size optimization calls. 34 source/other questions were reconciled. Two partial CPU batches stopped after known GPU failures remain partial. Later owner environment-binding fixes changed no implementation.",
+            "status": "complete",
+            "date": null,
+            "head": "f0175948b99d68266e93d770c45ddbeb2bc8b77d",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-feedback-readable-20261109/experiment.json"
+          }
+        ],
+        "series": [
+          {
+            "label": "Source tokens at complete CPU checkpoints",
+            "unit": "tokens",
+            "caption": "Ordered complete CPU observations, not equal time intervals. 320,686 → 595,793 source tokens as compatibility was restored.",
+            "points": [
+              {
+                "label": "1",
+                "value": 320686
+              },
+              {
+                "label": "2",
+                "value": 425023
+              },
+              {
+                "label": "3",
+                "value": 478585
+              },
+              {
+                "label": "4",
+                "value": 510743
+              },
+              {
+                "label": "5",
+                "value": 593647
+              },
+              {
+                "label": "6",
+                "value": 594900
+              },
+              {
+                "label": "7",
+                "value": 595649
+              },
+              {
+                "label": "8",
+                "value": 595793
+              }
+            ]
+          },
+          {
+            "label": "Passed CPU groups / 160",
+            "unit": "groups",
+            "caption": "61 → 81 → 114 → 127 → 152 → 15 → 159 → 160. The setback is an observed import regression.",
+            "points": [
+              {
+                "label": "1",
+                "value": 61
+              },
+              {
+                "label": "2",
+                "value": 81
+              },
+              {
+                "label": "3",
+                "value": 114
+              },
+              {
+                "label": "4",
+                "value": 127
+              },
+              {
+                "label": "5",
+                "value": 152
+              },
+              {
+                "label": "6",
+                "value": 15
+              },
+              {
+                "label": "7",
+                "value": 159
+              },
+              {
+                "label": "8",
+                "value": 160
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "strengths": [
+          "1,528 annotated parameters remain, close to the original1,557. No detected multi-statement Python lines.",
+          "Fresh native packages, finite public API checks and full original GPU-pass retention provide broad compatibility evidence."
+        ],
+        "tradeoffs": [
+          "Only LICENSE remains as standalone documentation; docstrings fell12,732 →38 lines and comments4,097 →17.",
+          "Python AST excluding docstrings is only4.9% smaller. Active Python lines grew40,324 →55,041; expanded literals/layout mean line count alone is misleading.",
+          "Readability was an objective, not an achieved expert-review score."
+        ],
+        "note": "Static counts were recomputed uniformly on the delivered head. Historical validation was audited, not rerun. Three linked signature samples are illustrative only."
+      },
+      "validation": {
+        "cpu": "160/160 command groups; finite API declaration/signature/export checks.",
+        "gpu": "360/360 original passes retained on one fresh full final retry; same1 existing failure and5 skips.",
+        "installation": "4 core checks;7 independent fresh-package checks;3 rebuilt packages,225 imports.",
+        "limits": "Optional package/collection gaps; finite shapes, inputs and hardware. One archived timeout run remains incomplete."
+      }
+    },
+    {
+      "id": "dual",
+      "label": "Dual objective",
+      "short": "Dual",
+      "color": "#9372c6",
+      "date": "2026-11-04",
+      "branch": "examples/detectron2-dual-objective-20261104",
+      "head": "5d10fe00e91ed1a24fb164799b8f4e566ab5057e",
+      "tested_head": "5d10fe00e91ed1a24fb164799b8f4e566ab5057e",
+      "metrics": {
+        "source_tokens": 795769,
+        "resource_tokens": 53526,
+        "combined_tokens": 849295,
+        "source_lines": 70830,
+        "documentation_files": 88,
+        "python_files": 424,
+        "physical_lines": 63915,
+        "active_lines": 39360,
+        "docstring_lines": 12614,
+        "standalone_comment_lines": 3978,
+        "ast_nodes_excluding_docstrings": 332501,
+        "statements_excluding_docstrings": 26261,
+        "function_definitions": 2338,
+        "branch_nodes": 3599,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 1555,
+        "typed_returns": 444,
+        "lines_over_120_chars": 54,
+        "raise_statements": 192,
+        "assert_statements": 602,
+        "max_function_lines": 202,
+        "p95_function_lines": 62
+      },
+      "sources": [
+        {
+          "label": "Pinned delivered code",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/5d10fe00e91ed1a24fb164799b8f4e566ab5057e"
+        },
+        {
+          "label": "Branch",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-dual-objective-20261104"
+        },
+        {
+          "label": "Historical run report",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+        }
+      ],
+      "goal": "Source-available structural refactoring; preserve real implementation and behavior, with a soft 50% size target.",
+      "harness": {
+        "branch": "codex/logic-first-refactoring",
+        "commit": "b7ea3e5f341c45605435ca43a6543d1a5444abba"
+      },
+      "cost": {
+        "total_tokens": 14688419,
+        "cached_input_tokens": null,
+        "uncached_input_plus_output": null,
+        "coverage": "Incomplete experiment ledger; lower bound",
+        "lower_bound": true,
+        "short_scope": "Known current + prior trial usage",
+        "boundary": "partial lower bound. The three distinct ledger call-ID sets were checked disjoint. Main side benchmark includes its aborted first candidate and final candidate once.",
+        "current_run_known_tokens": 13205074,
+        "components": [
+          {
+            "label": "Observed author parent/controller",
+            "total_tokens": 9455481,
+            "input_tokens": 9416111,
+            "output_tokens": 39370,
+            "cached_input_tokens": 9229568,
+            "uncached_input_plus_output": 225913,
+            "phase": "current",
+            "note": "Parent usage only; helpers/coordination incomplete"
+          },
+          {
+            "label": "first trial",
+            "total_tokens": 582556,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "prior",
+            "note": "Programmatic judges have recorded zero model calls; unknown author calls are not zero."
+          },
+          {
+            "label": "retry trial",
+            "total_tokens": 900789,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "prior",
+            "note": "Programmatic judges have recorded zero model calls; unknown author calls are not zero."
+          },
+          {
+            "label": "current side benchmark including cancelled candidate",
+            "total_tokens": 3749593,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "current",
+            "note": "Programmatic judges have recorded zero model calls; unknown author calls are not zero."
+          }
+        ],
+        "limitations": [
+          "One cancelled side-benchmark solver usage unknown",
+          "Early unsuccessful author usage unknown",
+          "Unreconciled helper/nested author calls and owner repair/coordination",
+          "Cache breakdown exists for author parent calls only; overall cached/uncached totals remain unknown."
+        ],
+        "model_note": "Task roles used gpt-6-astra / xhigh. Full author/helper model settings are not independently established; do not infer them from examiner/solver settings."
+      },
+      "time": {
+        "elapsed_seconds": 7114.440869,
+        "short_scope": "Main run → exact-env acceptance",
+        "description": "Main run plus owner recovery and final exact-environment core verification; excludes prior trials and reporting.",
+        "components": [
+          {
+            "label": "first trial",
+            "start_utc": "2026-11-04T16:03:24.583329+00:00",
+            "end_utc": "2026-11-04T16:39:57.045310+00:00",
+            "seconds": 2192.461981,
+            "scope": "Initial trial failed with no implementation files."
+          },
+          {
+            "label": "retry trial",
+            "start_utc": "2026-11-04T16:48:34.747443+00:00",
+            "end_utc": "2026-11-04T17:28:15.183737+00:00",
+            "seconds": 2380.436294,
+            "scope": "Second trial failed with no implementation files."
+          },
+          {
+            "label": "native main",
+            "start_utc": "2026-11-04T17:37:01.047495+00:00",
+            "end_utc": "2026-11-04T18:21:23.891584+00:00",
+            "seconds": 2662.844089,
+            "scope": "Native job failed after a completed author when integration rejected generated symlinks."
+          },
+          {
+            "label": "current main through final verification",
+            "start_utc": "2026-11-04T17:37:01.047495+00:00",
+            "end_utc": "2026-11-04T19:35:35.488364+00:00",
+            "seconds": 7114.440869,
+            "scope": "Main run plus owner recovery and final exact-environment core verification; excludes prior trials and reporting."
+          },
+          {
+            "label": "trial inclusive through final verification",
+            "start_utc": "2026-11-04T16:03:24.583329+00:00",
+            "end_utc": "2026-11-04T19:35:35.488364+00:00",
+            "seconds": 12730.905035,
+            "scope": "Includes initial trials/recovery; all listed GPU validation completed before this final core endpoint; excludes report publication."
+          },
+          {
+            "label": "final core verification",
+            "start_utc": "2026-11-04T19:17:27.990497+00:00",
+            "end_utc": "2026-11-04T19:35:35.488364+00:00",
+            "seconds": 1087.497867,
+            "scope": "Exact frozen environment verified; same-source install receipts reused."
+          },
+          {
+            "label": "final gpu bundle",
+            "start_utc": "2026-11-04T18:51:37.025668+00:00",
+            "end_utc": "2026-11-04T19:08:32.808454+00:00",
+            "seconds": 1015.782786,
+            "scope": "Full GPU upstream tests, paired GPU performance, cross-implementation resume, two-GPU TorchScript and NCCL."
+          }
+        ]
+      },
+      "trajectory": {
+        "summary": "Two failed preliminary launches preceded one completed structural-refactor author. Integration rejected symlinks; owner recovery restored deleted documents and public entrypoint aliases before exact-environment acceptance.",
+        "tags": [
+          "2 failed preliminary launches",
+          "1 completed author generation",
+          "Soft size goal missed"
+        ],
+        "events": [
+          {
+            "title": "Initial launch failed, no implementation files",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T16:39:57.045310+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Retry launch failed, no implementation files",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T17:28:15.183737+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Real author completed; native integration rejected generated symlinks",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T18:21:23.891584+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Owner quarantines 7 generated artifacts and restores executable modes; same author output, no author rerun",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T18:27:00.172207+00:00",
+            "head": "d33b53c033e41f714e2dbe62d6cb0c42a5d14514",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Restore 90 accidental document/image/other deletions",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": null,
+            "head": "52ef0518eaa0f326f7b3e6ce48c8d5b987b84fa8",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Stop partial validation at 145/146 passed; training-entrypoint parser alias regression; side benchmark interrupted",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T18:47:10.098978+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Restore public default_argument_parser aliases in 9 entrypoints; keep shared launch implementation",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T18:48:36.314601+00:00",
+            "head": "5d10fe00e91ed1a24fb164799b8f4e566ab5057e",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Verification v2 retained as unverified because two Python settings differed from frozen environment",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": null,
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Final independent modify benchmark completed, correct 3/3 but cost inconclusive",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T19:07:59.603911+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "GPU bundle complete",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T19:08:32.808454+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          },
+          {
+            "title": "Final v3 verification 160/160, exact frozen environment, 4/4 install checks",
+            "detail": "Saved milestone from the historical execution ledger. A completed author process did not imply an accepted candidate.",
+            "status": "recorded",
+            "date": "2026-11-04T19:35:35.488364+00:00",
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-dual-objective-20261104/"
+          }
+        ],
+        "series": []
+      },
+      "quality": {
+        "strengths": [
+          "All88 original documentation files retained, with12,614 docstring lines and1,555 annotated parameters.",
+          "All828 original tracked paths retained;775 unchanged,53 changed,7 shared modules added. Original tests/native files remain unchanged.",
+          "Full CPU/GPU comparison plus distributed/resume and paired performance evidence."
+        ],
+        "tradeoffs": [
+          "Only1.64% source-token reduction; soft50% target missed.",
+          "Integration recovery was necessary: accidental deletions and entrypoint alias regressions existed before final repair."
+        ],
+        "note": "Static counts were recomputed uniformly on the delivered head. Historical validation was audited, not rerun. Three linked signature samples are illustrative only."
+      },
+      "validation": {
+        "cpu": "160/160 command groups. Separate full suite337 passed /1 existing failure /28 skipped.",
+        "gpu": "360 passed /1 existing failure /5 skipped.15 two-GPU scripting checks,25-step NCCL and checkpoint resume matched within tolerance.",
+        "installation": "4/4 checks; rebuilt native candidate extension.",
+        "limits": "DensePose collection constant and Caffe2 gaps. Full original behavior is not proved by finite tests."
+      }
+    },
+    {
+      "id": "efficient",
+      "label": "Efficient full49",
+      "short": "Efficient",
+      "color": "#528f9b",
+      "date": "2026-11-04",
+      "branch": "examples/detectron2-efficient-full49-20261104",
+      "head": "4a2bd1cb8226d2e5114eff43617c9f133aaa5b7c",
+      "tested_head": "4a2bd1cb8226d2e5114eff43617c9f133aaa5b7c",
+      "metrics": {
+        "source_tokens": 240264,
+        "resource_tokens": 365101,
+        "combined_tokens": 605365,
+        "source_lines": 28031,
+        "documentation_files": 4,
+        "python_files": 426,
+        "physical_lines": 27369,
+        "active_lines": 23577,
+        "docstring_lines": 137,
+        "standalone_comment_lines": 27,
+        "ast_nodes_excluding_docstrings": 188237,
+        "statements_excluding_docstrings": 16106,
+        "function_definitions": 1970,
+        "branch_nodes": 2617,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 223,
+        "typed_returns": 8,
+        "lines_over_120_chars": 161,
+        "raise_statements": 117,
+        "assert_statements": 180,
+        "max_function_lines": 155,
+        "p95_function_lines": 33
+      },
+      "sources": [
+        {
+          "label": "Pinned delivered code",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/4a2bd1cb8226d2e5114eff43617c9f133aaa5b7c"
+        },
+        {
+          "label": "Branch",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-efficient-full49-20261104"
+        },
+        {
+          "label": "Historical run report",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+        }
+      ],
+      "goal": "Independent full-scope rewrite with 49% operational source target and explicit recovery; lightweight one-task cognitive evaluation.",
+      "cost": {
+        "total_tokens": 13558461,
+        "cached_input_tokens": null,
+        "uncached_input_plus_output": null,
+        "coverage": "Incomplete experiment ledger; lower bound",
+        "lower_bound": true,
+        "short_scope": "Known current + prior trial usage",
+        "boundary": "partial lower bound. Current usage.json already includes continuation; do not add usage-after.json or inherited solver baseline again.",
+        "current_run_known_tokens": 12884230,
+        "components": [
+          {
+            "label": "Observed author parent/controller",
+            "total_tokens": 11379235,
+            "input_tokens": 11318874,
+            "output_tokens": 60361,
+            "cached_input_tokens": 10880384,
+            "uncached_input_plus_output": 498851,
+            "phase": "current",
+            "note": "Parent usage only; helpers/coordination incomplete"
+          },
+          {
+            "label": "earlier protocol trial",
+            "total_tokens": 674231,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "prior",
+            "note": "Programmatic judges have recorded zero model calls; unknown author calls are not zero."
+          },
+          {
+            "label": "current run including final continuation once",
+            "total_tokens": 1504995,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "current",
+            "note": "Programmatic judges have recorded zero model calls; unknown author calls are not zero."
+          }
+        ],
+        "limitations": [
+          "3 interrupted author invocations without completion usage",
+          "Unreconciled helper/nested author calls",
+          "Owner coordination and reporting",
+          "Cache breakdown exists for author parent calls only; overall cached/uncached totals remain unknown."
+        ],
+        "model_note": "Task roles used gpt-6-astra / xhigh. Full author/helper model settings are not independently established; do not infer them from examiner/solver settings."
+      },
+      "time": {
+        "elapsed_seconds": 15691.906735,
+        "short_scope": "Current run → core/task continuation",
+        "description": "Current run start through final core/task continuation; includes the gap, excludes earlier trial and supplemental/GPU/report activity.",
+        "components": [
+          {
+            "label": "native",
+            "start_utc": "2026-11-04T07:35:31.163599+00:00",
+            "end_utc": "2026-11-04T11:25:29.373160+00:00",
+            "seconds": 13798.209561,
+            "scope": "Native job includes interruption/recovery; stopped before final owner continuation.",
+            "reported_elapsed_seconds": 13798.186
+          },
+          {
+            "label": "continuation",
+            "start_utc": "2026-11-04T11:27:19.614083+00:00",
+            "end_utc": "2026-11-04T11:57:03.070334+00:00",
+            "seconds": 1783.456251,
+            "scope": "Separate final validation/task continuation, no new author calls.",
+            "reported_elapsed_seconds": 1783.456
+          },
+          {
+            "label": "current core window",
+            "start_utc": "2026-11-04T07:35:31.163599+00:00",
+            "end_utc": "2026-11-04T11:57:03.070334+00:00",
+            "seconds": 15691.906735,
+            "scope": "Current run start through final core/task continuation; includes the gap, excludes earlier trial and supplemental/GPU/report activity."
+          },
+          {
+            "label": "earlier trial",
+            "start_utc": "2026-11-04T06:55:25.354354+00:00",
+            "end_utc": "2026-11-04T07:28:08.171230+00:00",
+            "seconds": 1962.816876,
+            "scope": "Earlier protocol trial, no accepted generated candidate."
+          },
+          {
+            "label": "trial inclusive core window",
+            "start_utc": "2026-11-04T06:55:25.354354+00:00",
+            "end_utc": "2026-11-04T11:57:03.070334+00:00",
+            "seconds": 18097.71598,
+            "scope": "First trial through final core/task continuation; not full end-to-end wall time."
+          }
+        ]
+      },
+      "trajectory": {
+        "summary": "Eight author invocations produced five completed candidates; three interrupted calls have unknown usage. The final continuation accepted the same candidate without new authoring.",
+        "tags": [
+          "8 author invocations",
+          "5 candidates",
+          "3 interrupted calls"
+        ],
+        "events": [
+          {
+            "title": "Candidate 1: 124 CPU groups",
+            "detail": "Recorded CPU pass groups: 124/160. First environment differed from frozen baseline; diagnostic result, not qualified regression accounting.",
+            "status": "unverified",
+            "date": null,
+            "head": "43e8b455a4f24a40912de8832522305d5f5c4454",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 27752
+              },
+              {
+                "label": "Author call seconds",
+                "value": 451.5042
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+          },
+          {
+            "title": "Candidate 2: 144 CPU groups",
+            "detail": "Recorded CPU pass groups: 144/160. Candidate retained after compatibility repair; all failures must still be resolved.",
+            "status": "regressed",
+            "date": null,
+            "head": "bf7d4804f05ac0079a7a182d4eed7aed2837cfe2",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 27926
+              },
+              {
+                "label": "Author call seconds",
+                "value": 820.0245
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+          },
+          {
+            "title": "Candidate 3: 156 CPU groups",
+            "detail": "Recorded CPU pass groups: 156/160. Candidate retained after compatibility repair; all failures must still be resolved.",
+            "status": "regressed",
+            "date": null,
+            "head": "cd83a5cfb1634c5601517613bd15fc652c1d96d2",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 28004
+              },
+              {
+                "label": "Author call seconds",
+                "value": 547.7135
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+          },
+          {
+            "title": "Candidate 4: 156 CPU groups",
+            "detail": "Recorded CPU pass groups: 156/160. Candidate retained after compatibility repair; all failures must still be resolved.",
+            "status": "regressed",
+            "date": null,
+            "head": "5a0019b15a63236c354b90d9315fbec2192a856e",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 28004
+              },
+              {
+                "label": "Author call seconds",
+                "value": 165.2526
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+          },
+          {
+            "title": "Candidate 5: 160 CPU groups",
+            "detail": "Final source head accepted by separate owner continuation: 160/160 behavior groups and 4/4 install checks. Native verification had been interrupted; no extra author call in the continuation.",
+            "status": "native verification interrupted; separate owner continuation accepted this exact head",
+            "date": null,
+            "head": "4a2bd1cb8226d2e5114eff43617c9f133aaa5b7c",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 28031
+              },
+              {
+                "label": "Author call seconds",
+                "value": 357.6547
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+          },
+          {
+            "title": "One developer task: inconclusive",
+            "detail": "Three development repeats per side were correct. Median tokens rose 232,457 → 263,512 (+13.36%); ranges overlapped. Held-out testing was not run.",
+            "status": "inconclusive",
+            "date": null,
+            "head": null,
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-efficient-full49-20261104/"
+          }
+        ],
+        "series": [
+          {
+            "label": "Historical source lines by completed candidate",
+            "unit": "lines",
+            "caption": "Historical counting scope; final 28,031 matches our common source line count. Observations are ordinal, not elapsed time.",
+            "points": [
+              {
+                "label": "1",
+                "value": 27752
+              },
+              {
+                "label": "2",
+                "value": 27926
+              },
+              {
+                "label": "3",
+                "value": 28004
+              },
+              {
+                "label": "4",
+                "value": 28004
+              },
+              {
+                "label": "5",
+                "value": 28031
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "strengths": [
+          "Final160/160 behavior groups and4/4 install checks passed.",
+          "Conventional multi-line Python: no detected multi-statement lines; P95 function length33 lines."
+        ],
+        "tradeoffs": [
+          "Source tokens fell70.3%, but runtime resources rose53,484 →365,101 tokens. Combined reduction is29.8%.",
+          "Only223 annotated parameters and137 docstring lines remain. Documentation files fell88 →4.",
+          "23 selected GPU cases and one pretrained image are narrower evidence than the full upstream GPU comparison."
+        ],
+        "note": "Static counts were recomputed uniformly on the delivered head. Historical validation was audited, not rerun. Three linked signature samples are illustrative only."
+      },
+      "validation": {
+        "cpu": "160/160 command groups after continuation;38 supplemental scenarios.",
+        "gpu": "23 selected operator nodes plus one strict pretrained Mask R-CNN/COCO image.",
+        "installation": "4/4 installation checks.",
+        "limits": "Selected GPU scope; unresolved upstream IDs and optional dependencies. No full detector accuracy/convergence evaluation."
+      }
+    },
+    {
+      "id": "effort",
+      "label": "Full-scope effort49",
+      "short": "Effort",
+      "color": "#c08b55",
+      "date": "2026-11-03",
+      "branch": "examples/detectron2-full-scope-effort49-20261103",
+      "head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "tested_head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+      "metrics": {
+        "source_tokens": 228268,
+        "resource_tokens": 150304,
+        "combined_tokens": 378572,
+        "source_lines": 20559,
+        "documentation_files": 4,
+        "python_files": 455,
+        "physical_lines": 20032,
+        "active_lines": 16677,
+        "docstring_lines": 160,
+        "standalone_comment_lines": 31,
+        "ast_nodes_excluding_docstrings": 187657,
+        "statements_excluding_docstrings": 15594,
+        "function_definitions": 1918,
+        "branch_nodes": 2622,
+        "multiple_statement_lines": 47,
+        "typed_parameters": 200,
+        "typed_returns": 19,
+        "lines_over_120_chars": 627,
+        "raise_statements": 119,
+        "assert_statements": 189,
+        "max_function_lines": 98,
+        "p95_function_lines": 22
+      },
+      "sources": [
+        {
+          "label": "Pinned delivered code",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/8080c703695dcfa2c8c8118305018e65e0112e8b"
+        },
+        {
+          "label": "Branch",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-full-scope-effort49-20261103"
+        },
+        {
+          "label": "Historical run report",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103/"
+        },
+        {
+          "label": "Detailed repair and task process",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+        }
+      ],
+      "goal": "Independent full-scope rewrite; combined-footprint accounting counts runtime/config resources as well as source; four cognitive tasks drive additional repairs after behavior tests pass.",
+      "cost": {
+        "total_tokens": 99028285,
+        "cached_input_tokens": null,
+        "uncached_input_plus_output": null,
+        "coverage": "Incomplete experiment ledger; lower bound",
+        "lower_bound": true,
+        "short_scope": "Known current + prior trial usage",
+        "boundary": "partial lower bound. Only final shared ledger is counted. Predecessor ledgers and nine reused validated original samples are not added again; proof audit generated 0 new model calls.",
+        "current_run_known_tokens": 95087333,
+        "components": [
+          {
+            "label": "Observed author parent/controller",
+            "total_tokens": 48351552,
+            "input_tokens": 48119632,
+            "output_tokens": 231920,
+            "cached_input_tokens": 47154688,
+            "uncached_input_plus_output": 1196864,
+            "phase": "current",
+            "note": "Parent usage only; helpers/coordination incomplete"
+          },
+          {
+            "label": "Current task evaluation ledger",
+            "total_tokens": 46735781,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "current",
+            "note": "102 calls; two unknown and one partial. Do not add inherited baselines again."
+          },
+          {
+            "label": "examiner design",
+            "total_tokens": 1315398,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "prior",
+            "note": "Earlier protocol work"
+          },
+          {
+            "label": "readiness probes",
+            "total_tokens": 45671,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "prior",
+            "note": "Earlier protocol work"
+          },
+          {
+            "label": "cancelled 8M trial completed solvers",
+            "total_tokens": 951077,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "prior",
+            "note": "Earlier protocol work"
+          },
+          {
+            "label": "superseded v1 trial observed tasks",
+            "total_tokens": 1628806,
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "uncached_input_plus_output": null,
+            "phase": "prior",
+            "note": "Earlier protocol work"
+          }
+        ],
+        "limitations": [
+          "2 unknown calls and 1 partial call in shared current task ledger",
+          "Earlier cancelled 2 judges and 2 solvers plus early cancelled author",
+          "Nested author/helper and coordination usage",
+          "Cache breakdown exists for author parent calls only; overall cached/uncached totals remain unknown."
+        ],
+        "model_note": "Task roles used gpt-6-astra / xhigh. Full author/helper model settings are not independently established; do not infer them from examiner/solver settings."
+      },
+      "time": {
+        "elapsed_seconds": 27378.237235,
+        "short_scope": "Current V2 → final task verdict",
+        "description": "V2 plus sequential owner-author repairs and final task verdict, excludes prior trials and report publication",
+        "components": [
+          {
+            "label": "first trial",
+            "start_utc": "2026-11-03T17:30:38.075829+00:00",
+            "end_utc": "2026-11-03T18:14:25.095178+00:00",
+            "seconds": 2627.019349,
+            "scope": "Initial 8M-budget/protocol trial"
+          },
+          {
+            "label": "second trial",
+            "start_utc": "2026-11-03T18:24:55.683731+00:00",
+            "end_utc": "2026-11-03T18:52:07.187999+00:00",
+            "seconds": 1631.504268,
+            "scope": "Second protocol trial"
+          },
+          {
+            "label": "third trial",
+            "start_utc": "2026-11-03T18:52:16.478140+00:00",
+            "end_utc": "2026-11-03T19:24:39.943313+00:00",
+            "seconds": 1943.465173,
+            "scope": "Superseded v1-output protocol trial"
+          },
+          {
+            "label": "initial v2 controller",
+            "start_utc": "2026-11-03T19:37:34.826195+00:00",
+            "end_utc": "2026-11-03T20:39:00.654835+00:00",
+            "seconds": 3685.82864,
+            "scope": "Controller failed; this is not experiment completion"
+          },
+          {
+            "label": "current v2 through final task",
+            "start_utc": "2026-11-03T19:37:34.826195+00:00",
+            "end_utc": "2026-11-04T03:13:53.063430+00:00",
+            "seconds": 27378.237235,
+            "scope": "V2 plus sequential owner-author repairs and final task verdict, excludes prior trials and report publication"
+          },
+          {
+            "label": "trial inclusive through final task",
+            "start_utc": "2026-11-03T17:30:38.075829+00:00",
+            "end_utc": "2026-11-04T03:13:53.063430+00:00",
+            "seconds": 34994.987601,
+            "scope": "Includes protocol trials and recovery; original task solving overlaps author work, so not a pure model/runtime benchmark"
+          },
+          {
+            "label": "candidate task attempt 1",
+            "start_utc": "2026-11-04T00:39:34.302907+00:00",
+            "end_utc": "2026-11-04T01:45:20.173625+00:00",
+            "seconds": 3945.870718,
+            "scope": "12 development solver/judge pairs; 9/12 correct, semantic-segmentation modify task 0/3"
+          },
+          {
+            "label": "candidate task attempt 2",
+            "start_utc": "2026-11-04T02:14:27.293917+00:00",
+            "end_utc": "2026-11-04T03:13:53.063430+00:00",
+            "seconds": 3565.769513,
+            "scope": "Fresh final candidate development sample, 12/12 correct; held-out gated and unrun"
+          }
+        ]
+      },
+      "trajectory": {
+        "summary": "Seven author rounds. Repair feedback covered behavior, geometry and installation, then a developer task found an additional bug after the core suite passed.",
+        "tags": [
+          "7 author rounds",
+          "4 cognitive task types",
+          "Final cost verdict inconclusive"
+        ],
+        "events": [
+          {
+            "title": "Initial semantic reconstruction",
+            "detail": "Environment mismatch makes 101/160 diagnostic, not accepted. GPU 6/23; 14 cases blocked by one import failure and three by one NMS timeout. 18,948 source lines plus 71,570 configuration lines exposed resource relocation.",
+            "status": "repair",
+            "date": null,
+            "head": "31bbf7b64a425841485bccfdb7784d7e9fb4df10",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 18948
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+          },
+          {
+            "title": "Repair Panoptic and deduplicate recipes",
+            "detail": "Full CPU run was superseded before completion. Do not count the incomplete run as passed. Shared templates and explicit overrides reduced recipe duplication.",
+            "status": "repair",
+            "date": null,
+            "head": "461231891eac2aa03fdc25a038e84d2810c9847d",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 19009
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+          },
+          {
+            "title": "Restore interfaces and native operators",
+            "detail": "CPU119/160; GPU9/23 with14 blocked by one missing import. 39,155 reported lines included a duplicate installation-test tree, later removed. Strict pretrained probe now passed.",
+            "status": "repair",
+            "date": null,
+            "head": "75f6f569b317e0e1ae2f76156df9cfafa75c1fdf",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 39155
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+          },
+          {
+            "title": "Clean delivery tree and compatibility gaps",
+            "detail": "CPU149/160 and GPU23/23. Cleaned source to20,290 lines; subtle rotated IoU ties still changed RRPN sampling/loss.",
+            "status": "repair",
+            "date": null,
+            "head": "1ea1d22e13e35189fc03623176e59c4a0037fe94",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 20290
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+          },
+          {
+            "title": "Repair matching and ignore rules",
+            "detail": "CPU156/160; GPU fell back to22/23 after a near-coincident geometry regression. Passing progress was not monotonic.",
+            "status": "repair",
+            "date": null,
+            "head": "2709a98fd6f602d5060c50966f88095e64a6f9fd",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 20441
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+          },
+          {
+            "title": "Core acceptance, then real task failure",
+            "detail": "CPU160/160 and selected GPU23/23 passed. A real modification task then exposed SemSeg aggregation/key-name incompatibility in three repeats.",
+            "status": "repair",
+            "date": null,
+            "head": "29b1a2af225ed7c2e3d678865acd329a267c928e",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 20504
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+          },
+          {
+            "title": "Repair SemSeg; repeat task evaluation",
+            "detail": "SemSeg repaired on the final head. All12 development task results correct; only3/4 strict cost gates passed, overall inconclusive. Finite task success does not establish broadly cheaper development.",
+            "status": "passed",
+            "date": null,
+            "head": "8080c703695dcfa2c8c8118305018e65e0112e8b",
+            "stats": [
+              {
+                "label": "Historical source lines",
+                "value": 20559
+              }
+            ],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-full-scope-effort49-20261103-process/"
+          }
+        ],
+        "series": [
+          {
+            "label": "Historical source line observations",
+            "unit": "lines",
+            "caption": "Round3 includes a duplicated self-test installation tree; the spike is not clean production growth. Historical records remain unchanged.",
+            "points": [
+              {
+                "label": "1",
+                "value": 18948
+              },
+              {
+                "label": "2",
+                "value": 19009
+              },
+              {
+                "label": "3",
+                "value": 39155
+              },
+              {
+                "label": "4",
+                "value": 20290
+              },
+              {
+                "label": "5",
+                "value": 20441
+              },
+              {
+                "label": "6",
+                "value": 20504
+              },
+              {
+                "label": "7",
+                "value": 20559
+              }
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "strengths": [
+          "Lowest measured source-plus-resource footprint:378,572 tokens,56.1% below original.",
+          "Real developer-task feedback detected and repaired a SemSeg bug after core checks had passed."
+        ],
+        "tradeoffs": [
+          "47 multi-statement lines,160 docstring lines and200 annotated parameters remain; compactness does not establish maintainability.",
+          "Custom recipe overrides and shared configuration templates add concepts a maintainer must understand.",
+          "Final developer-task correctness passed, but total task-efficiency verdict stayed inconclusive."
+        ],
+        "note": "Static counts were recomputed uniformly on the delivered head. Historical validation was audited, not rerun. Three linked signature samples are illustrative only."
+      },
+      "validation": {
+        "cpu": "160/160 command groups; final12/12 developer-task results correct.",
+        "gpu": "23 selected operator nodes plus one strict pretrained Mask R-CNN/COCO image.",
+        "installation": "4/4 installation checks.",
+        "limits": "Task efficiency inconclusive; selected GPU scope; no full detector accuracy/convergence evaluation."
+      }
+    },
+    {
+      "id": "knowledge",
+      "label": "Knowledge 60",
+      "short": "Knowledge",
+      "color": "#7f8cb7",
+      "date": "2026-11-02",
+      "branch": "examples/detectron2-knowledge60-20261102",
+      "head": "72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf",
+      "tested_head": "b0d95f45b23ff6df22204ef326a3bc096fdc9892",
+      "metrics": {
+        "source_tokens": 214920,
+        "resource_tokens": 243667,
+        "combined_tokens": 458587,
+        "source_lines": 27425,
+        "documentation_files": 9,
+        "python_files": 437,
+        "physical_lines": 27390,
+        "active_lines": 23878,
+        "docstring_lines": 90,
+        "standalone_comment_lines": 12,
+        "ast_nodes_excluding_docstrings": 168863,
+        "statements_excluding_docstrings": 14230,
+        "function_definitions": 1827,
+        "branch_nodes": 2233,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 187,
+        "typed_returns": 16,
+        "lines_over_120_chars": 6,
+        "raise_statements": 131,
+        "assert_statements": 89,
+        "max_function_lines": 167,
+        "p95_function_lines": 36
+      },
+      "sources": [
+        {
+          "label": "Pinned delivered code",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf"
+        },
+        {
+          "label": "Branch",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-knowledge60-20261102"
+        },
+        {
+          "label": "Validation Readme",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/validation/self-iteration-20261103/README.md"
+        },
+        {
+          "label": "Validation Json",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/validation/self-iteration-20261103/validation.json"
+        },
+        {
+          "label": "Individual Cases",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/validation/self-iteration-20261103/case-results.json"
+        },
+        {
+          "label": "Source Readme",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/README.md"
+        },
+        {
+          "label": "Initial report — superseded validation",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-knowledge60-20261102/"
+        }
+      ],
+      "goal": "Frozen source-free semantic knowledge v1/v2/v3 -> parallel foundations, models and projects authors -> bounded observed catalogs/recipes/checkpoint/API supplements -> repair and declarative recipe deduplication -> frozen validation/report. Target: at least 60% source-line reduction with full requested scope.",
+      "cost": {
+        "total_tokens": 209973669,
+        "cached_input_tokens": 205901696,
+        "uncached_input_plus_output": 4071973,
+        "coverage": "Attributed observed lower bound",
+        "lower_bound": true,
+        "short_scope": "Initial parent + children + own repair",
+        "boundary": "Includes initial orchestration, authors and support, plus dedicated Nov3 repair author. Excludes the separately displayed shared repair support pool and any unrecovered history.",
+        "components": [
+          {
+            "label": "Initial parent",
+            "total_tokens": 69223469,
+            "input_tokens": 68975774,
+            "output_tokens": 247695,
+            "cached_input_tokens": 68120960,
+            "uncached_input_plus_output": 1102509,
+            "phase": "initial",
+            "note": "Included in initial observed total, not an extra charge"
+          },
+          {
+            "label": "Initial dedicated authors",
+            "total_tokens": 82861721,
+            "input_tokens": 82331258,
+            "output_tokens": 530463,
+            "cached_input_tokens": 81177728,
+            "uncached_input_plus_output": 1683993,
+            "phase": "initial",
+            "note": "Included in initial observed total, not an extra charge"
+          },
+          {
+            "label": "Initial other child support",
+            "total_tokens": 24097357,
+            "input_tokens": 23963047,
+            "output_tokens": 134310,
+            "cached_input_tokens": 23512832,
+            "uncached_input_plus_output": 584525,
+            "phase": "initial",
+            "note": "Included in initial observed total, not an extra charge"
+          },
+          {
+            "label": "Dedicated later repair author",
+            "total_tokens": 33791122,
+            "input_tokens": 33681635,
+            "output_tokens": 109487,
+            "cached_input_tokens": 33090176,
+            "uncached_input_plus_output": 700946,
+            "phase": "repair",
+            "note": "Shared support is accounted separately below"
+          }
+        ],
+        "limitations": [
+          "Reconstructed from response-level records, deduplicated by response ID. Legacy cumulative token_count values can be slightly lower; the cause was not established; the response ledger is used consistently.",
+          "Different scope from native harness receipts; no total-cost ranking.",
+          "Do not add initial author-only usage to the initial total a second time."
+        ],
+        "model_note": "All identified author sessions used gpt-6-astra / ultra. Accounting includes parent/support sessions too; this is not a controlled comparison with the other runs."
+      },
+      "time": {
+        "elapsed_seconds": 13682.674,
+        "short_scope": "Initial delivery only; later repair separate",
+        "description": "Parent task duration from request through initial delivery, including authoring, validation, waits and reporting. Nov3 shared repair lasted another3h05m, shown once for both branches. Initial delivery still had regressions.",
+        "components": [
+          {
+            "label": "Initial delivery window",
+            "start": "2026-11-02T16:06:18.603Z",
+            "end": "2026-11-02T19:54:21.258Z",
+            "seconds": 13682.674
+          },
+          {
+            "label": "Initial authors, active wall union (not inference-only)",
+            "seconds": 9624.045
+          },
+          {
+            "label": "Own later repair author, active wall union",
+            "seconds": 6267.761
+          }
+        ]
+      },
+      "trajectory": {
+        "summary": "Frozen source-free semantic knowledge v1/v2/v3 -> parallel foundations, models and projects authors -> bounded observed catalogs/recipes/checkpoint/API supplements -> repair and declarative recipe deduplication -> frozen validation/report.",
+        "tags": [
+          "4 initial production commits",
+          "7 later repair commits",
+          "Shared repair phase"
+        ],
+        "events": [
+          {
+            "title": "Rewrite Detectron2 from frozen semantic knowledge with full requested scope",
+            "detail": "Recorded production change. Initial implementation; not yet the final accepted result.",
+            "status": "initial_implementation",
+            "date": "2026-11-02T18:08:08+00:00",
+            "head": "66b5acde48a1e20dae07cf32f19303f417676350",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/66b5acde48a1e20dae07cf32f19303f417676350"
+          },
+          {
+            "title": "Repair observed configuration, scripting, and DensePose compatibility gaps",
+            "detail": "Recorded production change. Initial implementation; not yet the final accepted result.",
+            "status": "initial_implementation",
+            "date": "2026-11-02T18:37:14+00:00",
+            "head": "db319e90ca7fad1dbae1f2f59792d6dca539f1e4",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/db319e90ca7fad1dbae1f2f59792d6dca539f1e4"
+          },
+          {
+            "title": "Complete observed lazy configuration and annotation interface repairs",
+            "detail": "Recorded production change. Initial implementation; not yet the final accepted result.",
+            "status": "initial_implementation",
+            "date": "2026-11-02T18:53:17+00:00",
+            "head": "b74aa190ad05ef30689321a1dfba0243d3f76a57",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/b74aa190ad05ef30689321a1dfba0243d3f76a57"
+          },
+          {
+            "title": "Deduplicate declarative recipes while preserving configuration semantics",
+            "detail": "Recorded production change. Initial implementation; not yet the final accepted result.",
+            "status": "initial_implementation",
+            "date": "2026-11-02T19:33:23+00:00",
+            "head": "dfffebd3dbdf9b040715826d96d386f1b603086c",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/dfffebd3dbdf9b040715826d96d386f1b603086c"
+          },
+          {
+            "title": "Initial delivery still regressed",
+            "detail": "CPU retained 315/319; GPU evidence: 23/23 matched selected cases, no full initial GPU suite. The initial report is historical only. Use the later validation for final quality.",
+            "status": "regressed",
+            "date": null,
+            "head": "dfffebd3dbdf9b040715826d96d386f1b603086c",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-knowledge60-20261102/"
+          },
+          {
+            "title": "Repair model initialization, tracing, and video contracts",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T02:59:50+00:00",
+            "head": "d4ec9727dd37170886fd0a8f1f9ad764bd5c936f",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/d4ec9727dd37170886fd0a8f1f9ad764bd5c936f"
+          },
+          {
+            "title": "Keep dense detector top-k limits dynamic in traces",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:12:17+00:00",
+            "head": "dd781fa6ada17c63fbb7ccff7bd7d1e58e7e715e",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/dd781fa6ada17c63fbb7ccff7bd7d1e58e7e715e"
+          },
+          {
+            "title": "Preserve dynamic instance counts in traced mask inference",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:24:30+00:00",
+            "head": "a7d34ee6d9d31d813e6f67a30e3874df2e6a68f7",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/a7d34ee6d9d31d813e6f67a30e3874df2e6a68f7"
+          },
+          {
+            "title": "Preserve canvas pixel dimensions across renderer versions",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:47:18+00:00",
+            "head": "0fd34634ca0c415d7c6d3967a28ab50b384337a7",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/0fd34634ca0c415d7c6d3967a28ab50b384337a7"
+          },
+          {
+            "title": "Normalize nested MMDetection configuration mappings",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:55:04+00:00",
+            "head": "4e6e6c42950000c64b562d97cdd313869b7b5ae3",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/4e6e6c42950000c64b562d97cdd313869b7b5ae3"
+          },
+          {
+            "title": "Preserve MMDetection full-image masks and output geometry",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T04:06:01+00:00",
+            "head": "684747736f4b2ea89107f4544b2e99706fd1ed68",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/684747736f4b2ea89107f4544b2e99706fd1ed68"
+          },
+          {
+            "title": "Preserve tensor ranks in legacy keypoint ONNX export",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T04:20:42+00:00",
+            "head": "b0d95f45b23ff6df22204ef326a3bc096fdc9892",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/b0d95f45b23ff6df22204ef326a3bc096fdc9892"
+          },
+          {
+            "title": "Record independently reviewed repair validation and remaining limits",
+            "detail": "Documentation/evidence publication. Publication commit adds validation evidence; tested production head is pinned separately.",
+            "status": "publication_evidence",
+            "date": "2026-11-03T04:55:13+00:00",
+            "head": "72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf"
+          },
+          {
+            "title": "Final repaired validation",
+            "detail": "Retains all338 original CPU passes and360 original GPU passes in the final comparison profiles. Additional fixed-state inference, short training, distributed and100-image COCO probes provide bounded evidence, not full convergence or all-dataset equivalence.",
+            "status": "passed",
+            "date": null,
+            "head": "b0d95f45b23ff6df22204ef326a3bc096fdc9892",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/72397c932b3b3e7201df5f0a4e1fb17e3dbed5bf/validation/self-iteration-20261103/README.md"
+          }
+        ],
+        "series": []
+      },
+      "quality": {
+        "strengths": [
+          "Final repaired branch retains338/338 original CPU and360/360 original GPU passes.",
+          "Frozen semantic knowledge and observed catalog/recipe/API supplements produced an independent implementation."
+        ],
+        "tradeoffs": [
+          "90 docstring lines and187 annotated parameters remain;9 standalone documents do not replace removed inline explanations.",
+          "Runtime resources243,667 tokens; combined reduction46.8% versus73.4% source-only.",
+          "Initial delivery was regressed; later repair work and cost must be included."
+        ],
+        "note": "Static counts were recomputed uniformly on the delivered head. Historical validation was audited, not rerun. Three linked signature samples are illustrative only."
+      },
+      "validation": {
+        "cpu": "Retains338/338 original passes. Final CPU339 passed /0 failed /28 skipped.",
+        "gpu": "Retains360/360 original passes. Final GPU361 passed /1 existing failure /5 skipped.",
+        "installation": "Installed-wheel GPU inference and NMS smoke passed; candidate uses portable Python/tensor paths.",
+        "limits": "Cityscapes real gtFine absent; DensePose annotation constant and Caffe2 gaps; differing ONNX opset probes."
+      }
+    },
+    {
+      "id": "graphify",
+      "label": "Graphify rewrite 60",
+      "short": "Graphify",
+      "color": "#ad78a2",
+      "date": "2026-11-02",
+      "branch": "examples/detectron2-graphify-rewrite-60",
+      "head": "5a4c0246c5c39bd31f710ae41fd77bd71f1c613d",
+      "tested_head": "e0440a157cfd26ef385788ee11f45a7f4ce1655d",
+      "metrics": {
+        "source_tokens": 216239,
+        "resource_tokens": 334559,
+        "combined_tokens": 550798,
+        "source_lines": 26066,
+        "documentation_files": 4,
+        "python_files": 430,
+        "physical_lines": 25616,
+        "active_lines": 21997,
+        "docstring_lines": 82,
+        "standalone_comment_lines": 9,
+        "ast_nodes_excluding_docstrings": 169514,
+        "statements_excluding_docstrings": 14634,
+        "function_definitions": 1874,
+        "branch_nodes": 2376,
+        "multiple_statement_lines": 0,
+        "typed_parameters": 191,
+        "typed_returns": 19,
+        "lines_over_120_chars": 1,
+        "raise_statements": 142,
+        "assert_statements": 50,
+        "max_function_lines": 163,
+        "p95_function_lines": 32
+      },
+      "sources": [
+        {
+          "label": "Pinned delivered code",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d"
+        },
+        {
+          "label": "Branch",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/detectron2-graphify-rewrite-60"
+        },
+        {
+          "label": "Validation Readme",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/validation/self-iteration-20261103/README.md"
+        },
+        {
+          "label": "Validation Json",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/validation/self-iteration-20261103/validation.json"
+        },
+        {
+          "label": "Individual Cases",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/validation/self-iteration-20261103/case-results.json"
+        },
+        {
+          "label": "Source Readme",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/README.md"
+        },
+        {
+          "label": "Initial report — superseded validation",
+          "url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-graphify-rewrite-20261102/"
+        }
+      ],
+      "goal": "Graphify descriptions/symbols/relationships -> empty authoring workspace -> parallel core, runtime/data and project authors -> independent verifier observations -> compatibility repairs -> frozen validation/report. Target: at least 60% source-line reduction with full requested scope.",
+      "cost": {
+        "total_tokens": 194973010,
+        "cached_input_tokens": 190678016,
+        "uncached_input_plus_output": 4294994,
+        "coverage": "Attributed observed lower bound",
+        "lower_bound": true,
+        "short_scope": "Initial parent + children + own repair",
+        "boundary": "Includes initial orchestration, authors and support, plus dedicated Nov3 repair author. Excludes the separately displayed shared repair support pool and any unrecovered history.",
+        "components": [
+          {
+            "label": "Initial parent",
+            "total_tokens": 49441166,
+            "input_tokens": 49229778,
+            "output_tokens": 211388,
+            "cached_input_tokens": 48412032,
+            "uncached_input_plus_output": 1029134,
+            "phase": "initial",
+            "note": "Included in initial observed total, not an extra charge"
+          },
+          {
+            "label": "Initial dedicated authors",
+            "total_tokens": 85225868,
+            "input_tokens": 84734620,
+            "output_tokens": 491248,
+            "cached_input_tokens": 83379456,
+            "uncached_input_plus_output": 1846412,
+            "phase": "initial",
+            "note": "Included in initial observed total, not an extra charge"
+          },
+          {
+            "label": "Initial other child support",
+            "total_tokens": 24513268,
+            "input_tokens": 24381806,
+            "output_tokens": 131462,
+            "cached_input_tokens": 23926656,
+            "uncached_input_plus_output": 586612,
+            "phase": "initial",
+            "note": "Included in initial observed total, not an extra charge"
+          },
+          {
+            "label": "Dedicated later repair author",
+            "total_tokens": 35792708,
+            "input_tokens": 35687200,
+            "output_tokens": 105508,
+            "cached_input_tokens": 34959872,
+            "uncached_input_plus_output": 832836,
+            "phase": "repair",
+            "note": "Shared support is accounted separately below"
+          }
+        ],
+        "limitations": [
+          "Reconstructed from response-level records, deduplicated by response ID. Legacy cumulative token_count values can be slightly lower; the cause was not established; the response ledger is used consistently.",
+          "Different scope from native harness receipts; no total-cost ranking.",
+          "Do not add initial author-only usage to the initial total a second time."
+        ],
+        "model_note": "All identified author sessions used gpt-6-astra / ultra. Accounting includes parent/support sessions too; this is not a controlled comparison with the other runs."
+      },
+      "time": {
+        "elapsed_seconds": 10403.357,
+        "short_scope": "Initial delivery only; later repair separate",
+        "description": "Parent task duration from request through initial delivery, including authoring, validation, waits and reporting. Nov3 shared repair lasted another3h05m, shown once for both branches. Initial delivery still had regressions.",
+        "components": [
+          {
+            "label": "Initial delivery window",
+            "start": "2026-11-02T15:42:27.493Z",
+            "end": "2026-11-02T18:35:50.833Z",
+            "seconds": 10403.357
+          },
+          {
+            "label": "Initial authors, active wall union (not inference-only)",
+            "seconds": 7248.26
+          },
+          {
+            "label": "Own later repair author, active wall union",
+            "seconds": 5785.996
+          }
+        ]
+      },
+      "trajectory": {
+        "summary": "Graphify descriptions/symbols/relationships -> empty authoring workspace -> parallel core, runtime/data and project authors -> independent verifier observations -> compatibility repairs -> frozen validation/report.",
+        "tags": [
+          "3 initial production commits",
+          "7 later repair commits",
+          "Shared repair phase"
+        ],
+        "events": [
+          {
+            "title": "Reconstruct Detectron2 from Graphify capability contracts",
+            "detail": "Recorded production change. Initial implementation; not yet the final accepted result.",
+            "status": "initial_implementation",
+            "date": "2026-11-02T17:23:30+00:00",
+            "head": "e4200caa5d9a04d6c731eb43f83b15bb48cca099",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/e4200caa5d9a04d6c731eb43f83b15bb48cca099"
+          },
+          {
+            "title": "Fix CUDA build object names and FCOS lazy construction",
+            "detail": "Recorded production change. Initial implementation; not yet the final accepted result.",
+            "status": "initial_implementation",
+            "date": "2026-11-02T17:31:43+00:00",
+            "head": "81b84cf098feb2994adfcb5679bc756068da00c4",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/81b84cf098feb2994adfcb5679bc756068da00c4"
+          },
+          {
+            "title": "Repair configuration, dynamic export and runtime contracts",
+            "detail": "Recorded production change. Initial implementation; not yet the final accepted result.",
+            "status": "initial_implementation",
+            "date": "2026-11-02T18:08:51+00:00",
+            "head": "c6638216976b219960c352688c135ec31da0df70",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/c6638216976b219960c352688c135ec31da0df70"
+          },
+          {
+            "title": "Initial delivery still regressed",
+            "detail": "CPU retained 310/319; GPU evidence: 348/360 original passes retained. The initial report is historical only. Use the later validation for final quality.",
+            "status": "regressed",
+            "date": null,
+            "head": "c6638216976b219960c352688c135ec31da0df70",
+            "stats": [],
+            "source_url": "https://al-leanmuscle-club.github.io/lma-graphs/detectron2-graphify-rewrite-20261102/"
+          },
+          {
+            "title": "Restore constructor lifecycle, export contracts, and rotated geometry precision",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:00:57+00:00",
+            "head": "f5776554fe8d9387481c5a11277b3d56abab61fc",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/f5776554fe8d9387481c5a11277b3d56abab61fc"
+          },
+          {
+            "title": "Preserve symbolic instance lengths and restore default tracing scopes",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:09:05+00:00",
+            "head": "65305914d6337015edfc1e5bee9a0b917c2e67db",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/65305914d6337015edfc1e5bee9a0b917c2e67db"
+          },
+          {
+            "title": "Restore canonical FPN checkpoints and configured PointRend resolution",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:26:13+00:00",
+            "head": "21643013699d5002729d81f0fb3761908751cee4",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/21643013699d5002729d81f0fb3761908751cee4"
+          },
+          {
+            "title": "Preserve topk tie ordering with dynamic traced candidate counts",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T03:32:56+00:00",
+            "head": "8838584624a5675c1012fac36517e32be3ec39f3",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/8838584624a5675c1012fac36517e32be3ec39f3"
+          },
+          {
+            "title": "Restore MMDetection module and configuration constructor contracts",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T04:00:10+00:00",
+            "head": "f61a8094ce21d4416f945fa03a8fe3887af1c42f",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/f61a8094ce21d4416f945fa03a8fe3887af1c42f"
+          },
+          {
+            "title": "Preserve MMDetection training masks metrics and output geometry",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T04:06:52+00:00",
+            "head": "dcbb04cef2c3ba3037020f60e52b2cc0b9d3ffb4",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/dcbb04cef2c3ba3037020f60e52b2cc0b9d3ffb4"
+          },
+          {
+            "title": "Preserve keypoint tensor ranks and resize shapes during ONNX export",
+            "detail": "Recorded production change. Later repair phase following the initial regressed delivery.",
+            "status": "later_repair",
+            "date": "2026-11-03T04:19:09+00:00",
+            "head": "e0440a157cfd26ef385788ee11f45a7f4ce1655d",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/e0440a157cfd26ef385788ee11f45a7f4ce1655d"
+          },
+          {
+            "title": "Record independently reviewed repair validation and remaining limits",
+            "detail": "Documentation/evidence publication. Publication commit adds validation evidence; tested production head is pinned separately.",
+            "status": "publication_evidence",
+            "date": "2026-11-03T04:55:21+00:00",
+            "head": "5a4c0246c5c39bd31f710ae41fd77bd71f1c613d",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/commit/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d"
+          },
+          {
+            "title": "Final repaired validation",
+            "detail": "Retains all338 original CPU passes and360 original GPU passes in the final comparison profiles. Additional fixed-state inference, short training, distributed and100-image COCO probes provide bounded evidence, not full convergence or all-dataset equivalence.",
+            "status": "passed",
+            "date": null,
+            "head": "e0440a157cfd26ef385788ee11f45a7f4ce1655d",
+            "stats": [],
+            "source_url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/5a4c0246c5c39bd31f710ae41fd77bd71f1c613d/validation/self-iteration-20261103/README.md"
+          }
+        ],
+        "series": []
+      },
+      "quality": {
+        "strengths": [
+          "Final repaired branch retains338/338 original CPU and360/360 original GPU passes.",
+          "Graph descriptions/symbol relationships supported a full-scope reconstruction plus compatibility repair."
+        ],
+        "tradeoffs": [
+          "82 docstring lines and191 annotated parameters remain, with4 standalone documents.",
+          "Runtime resources334,559 tokens; combined reduction36.1% versus73.3% source-only.",
+          "This is a workflow observation, not a controlled Graphify-vs-knowledge causal test."
+        ],
+        "note": "Static counts were recomputed uniformly on the delivered head. Historical validation was audited, not rerun. Three linked signature samples are illustrative only."
+      },
+      "validation": {
+        "cpu": "Retains338/338 original passes. Final CPU340 passed /0 failed /27 skipped.",
+        "gpu": "Retains360/360 original passes. Final GPU362 passed /1 existing failure /4 skipped.",
+        "installation": "Isolated wheel-install GPU smoke; native extensions rebuilt.",
+        "limits": "Cityscapes real gtFine absent; DensePose annotation constant and Caffe2 gaps; differing ONNX opset probes."
+      }
+    }
+  ],
+  "shared_costs": {
+    "comparison_level_pool": true,
+    "started_utc": "2026-11-03T01:51:54.768Z",
+    "completed_utc": "2026-11-03T04:57:08.878Z",
+    "phase_wall_seconds": 11114.11,
+    "parent_active_task_seconds_sum": 9594.911,
+    "all_observed_repair_tokens": {
+      "input_tokens": 221489168,
+      "cached_input_tokens": 217912576,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 730610,
+      "reasoning_output_tokens": 325547,
+      "total_tokens": 222219778,
+      "uncached_input_tokens": 3576592,
+      "response_records": 1599
+    },
+    "unallocated_support_only_tokens": {
+      "input_tokens": 152120333,
+      "cached_input_tokens": 149862528,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 515615,
+      "reasoning_output_tokens": 240275,
+      "total_tokens": 152635948,
+      "uncached_input_tokens": 2257805,
+      "response_records": 1045
+    },
+    "allocation_rule": "Dedicated branch repair-author response tokens are attributed to their branch. All other repair root/orchestration, verification and auditing response usage is kept in one shared pool. Do not split 50/50 and do not charge the whole pool to each branch.",
+    "time_note": "Children continued working after first parent completion and before the second parent turn; the gap between parent turns is not necessarily idle experiment time. Wall phase includes all observed repairs and joint validation/reporting, not just author compute.",
+    "evidence": {
+      "json_path": "$.phases.shared_repair_start, $.phases.shared_repair_finish, $.shared_repair_support_pool",
+      "public_url": null
+    },
+    "support_disjoint_partitions": {
+      "parent": {
+        "input_tokens": 61805297,
+        "cached_input_tokens": 60737664,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 193365,
+        "reasoning_output_tokens": 99481,
+        "total_tokens": 61998662,
+        "uncached_input_tokens": 1067633,
+        "response_records": 435
+      },
+      "other_child_support": {
+        "input_tokens": 90315036,
+        "cached_input_tokens": 89124864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 322250,
+        "reasoning_output_tokens": 140794,
+        "total_tokens": 90637286,
+        "uncached_input_tokens": 1190172,
+        "response_records": 610
+      }
+    },
+    "all_repair_arithmetic": "all_observed_repair_tokens = graphify later_dedicated_repair_author + knowledge later_dedicated_repair_author + unallocated_support_only_tokens. The shared support pool excludes both dedicated repair authors.",
+    "total_tokens": 152635948,
+    "cached_input_tokens": 149862528,
+    "uncached_input_plus_output": 2773420
+  },
+  "signature_examples": [
+    {
+      "run": "dual",
+      "path": "detectron2/structures/boxes.py",
+      "callable": "Boxes.__init__",
+      "status": "declared",
+      "line": 142,
+      "signature": "def __init__(self, tensor: torch.Tensor)",
+      "docstring_present": true
+    },
+    {
+      "run": "dual",
+      "path": "detectron2/engine/train_loop.py",
+      "callable": "SimpleTrainer.__init__",
+      "status": "declared",
+      "line": 243,
+      "signature": "def __init__(self, model, data_loader, optimizer, gather_metric_period=1, zero_grad_before_forward=False, async_write_metrics=False)",
+      "docstring_present": true
+    },
+    {
+      "run": "dual",
+      "path": "detectron2/utils/events.py",
+      "callable": "EventStorage.put_scalar",
+      "status": "declared",
+      "line": 356,
+      "signature": "def put_scalar(self, name, value, smoothing_hint=True, cur_iter=None)",
+      "docstring_present": true
+    },
+    {
+      "run": "efficient",
+      "path": "detectron2/structures/boxes.py",
+      "callable": "Boxes.__init__",
+      "status": "declared",
+      "line": 62,
+      "signature": "def __init__(self, tensor: torch.Tensor)",
+      "docstring_present": false
+    },
+    {
+      "run": "efficient",
+      "path": "detectron2/engine/train_loop.py",
+      "callable": "SimpleTrainer.__init__",
+      "status": "declared",
+      "line": 108,
+      "signature": "def __init__(self, model, data_loader, optimizer, gather_metric_period=1, zero_grad_before_forward=False, async_write_metrics=False)",
+      "docstring_present": false
+    },
+    {
+      "run": "efficient",
+      "path": "detectron2/utils/events.py",
+      "callable": "EventStorage.put_scalar",
+      "status": "declared",
+      "line": 62,
+      "signature": "def put_scalar(self, name, value, smoothing_hint=True, cur_iter=None)",
+      "docstring_present": false
+    },
+    {
+      "run": "effort",
+      "path": "detectron2/structures/boxes.py",
+      "callable": "Boxes.__init__",
+      "status": "declared",
+      "line": 49,
+      "signature": "def __init__(self, tensor: torch.Tensor)",
+      "docstring_present": false
+    },
+    {
+      "run": "effort",
+      "path": "detectron2/engine/train_loop.py",
+      "callable": "SimpleTrainer.__init__",
+      "status": "declared",
+      "line": 92,
+      "signature": "def __init__(self, model, data_loader, optimizer, gather_metric_period=1, zero_grad_before_forward=False, async_write_metrics=False)",
+      "docstring_present": false
+    },
+    {
+      "run": "effort",
+      "path": "detectron2/utils/events.py",
+      "callable": "EventStorage.put_scalar",
+      "status": "declared",
+      "line": 62,
+      "signature": "def put_scalar(self, name, value, smoothing_hint=True, cur_iter=None)",
+      "docstring_present": false
+    },
+    {
+      "run": "graphify",
+      "path": "detectron2/structures/boxes.py",
+      "callable": "Boxes.__init__",
+      "status": "declared",
+      "line": 64,
+      "signature": "def __init__(self, tensor: torch.Tensor)",
+      "docstring_present": false
+    },
+    {
+      "run": "graphify",
+      "path": "detectron2/engine/train_loop.py",
+      "callable": "SimpleTrainer.__init__",
+      "status": "declared",
+      "line": 106,
+      "signature": "def __init__(self, model, data_loader, optimizer, gather_metric_period=1, zero_grad_before_forward=False, async_write_metrics=False)",
+      "docstring_present": false
+    },
+    {
+      "run": "graphify",
+      "path": "detectron2/utils/events.py",
+      "callable": "EventStorage.put_scalar",
+      "status": "declared",
+      "line": 61,
+      "signature": "def put_scalar(self, name, value, smoothing_hint=True, cur_iter=None)",
+      "docstring_present": false
+    },
+    {
+      "run": "knowledge",
+      "path": "detectron2/structures/boxes.py",
+      "callable": "Boxes.__init__",
+      "status": "declared",
+      "line": 74,
+      "signature": "def __init__(self, tensor: torch.Tensor)",
+      "docstring_present": false
+    },
+    {
+      "run": "knowledge",
+      "path": "detectron2/engine/train_loop.py",
+      "callable": "SimpleTrainer.__init__",
+      "status": "declared",
+      "line": 103,
+      "signature": "def __init__(self, model, data_loader, optimizer, gather_metric_period=1, zero_grad_before_forward=False, async_write_metrics=False)",
+      "docstring_present": false
+    },
+    {
+      "run": "knowledge",
+      "path": "detectron2/utils/events.py",
+      "callable": "EventStorage.put_scalar",
+      "status": "declared",
+      "line": 34,
+      "signature": "def put_scalar(self, name, value, smoothing_hint=True, cur_iter=None)",
+      "docstring_present": false
+    },
+    {
+      "run": "memory",
+      "path": "detectron2/structures/boxes.py",
+      "callable": "Boxes.__init__",
+      "status": "declared",
+      "line": 67,
+      "signature": "def __init__(self, tensor: torch.Tensor)",
+      "docstring_present": false
+    },
+    {
+      "run": "memory",
+      "path": "detectron2/engine/train_loop.py",
+      "callable": "SimpleTrainer.__init__",
+      "status": "declared",
+      "line": 118,
+      "signature": "def __init__(self, model, data_loader, optimizer, gather_metric_period=1, zero_grad_before_forward=False, async_write_metrics=False)",
+      "docstring_present": false
+    },
+    {
+      "run": "memory",
+      "path": "detectron2/utils/events.py",
+      "callable": "EventStorage.put_scalar",
+      "status": "declared",
+      "line": 188,
+      "signature": "def put_scalar(self, name, value, smoothing_hint=True, cur_iter=None)",
+      "docstring_present": false
+    },
+    {
+      "run": "original",
+      "path": "detectron2/structures/boxes.py",
+      "callable": "Boxes.__init__",
+      "status": "declared",
+      "line": 142,
+      "signature": "def __init__(self, tensor: torch.Tensor)",
+      "docstring_present": true
+    },
+    {
+      "run": "original",
+      "path": "detectron2/engine/train_loop.py",
+      "callable": "SimpleTrainer.__init__",
+      "status": "declared",
+      "line": 242,
+      "signature": "def __init__(self, model, data_loader, optimizer, gather_metric_period=1, zero_grad_before_forward=False, async_write_metrics=False)",
+      "docstring_present": true
+    },
+    {
+      "run": "original",
+      "path": "detectron2/utils/events.py",
+      "callable": "EventStorage.put_scalar",
+      "status": "declared",
+      "line": 356,
+      "signature": "def put_scalar(self, name, value, smoothing_hint=True, cur_iter=None)",
+      "docstring_present": true
+    }
+  ],
+  "takeaways": [
+    {
+      "title": "26.4% less delivered code + data",
+      "text": "Memory has no mandatory size ratio. It finishes with595,793 source tokens and38,608 resource tokens under the common policy."
+    },
+    {
+      "title": "Documentation is a major trade-off",
+      "text": "Dual preserves the original documentation with a small size reduction. The five reconstruction runs remove most inline documentation."
+    },
+    {
+      "title": "Repair dominates the story",
+      "text": "Initial small candidates were not final accepted products. Regressions, interrupted work and later repair remain visible in the trajectory and usage ledgers."
+    }
+  ],
+  "interpretation": [
+    {
+      "tag": "Latest run",
+      "title": "Memory: broad evidence, larger footprint",
+      "text": "Choose it for its recorded stopping rule and broad final acceptance evidence. Its delivered source is larger than the independent rewrites, but it retains much more type information. Restore API/user documentation before claiming readability as a clear win."
+    },
+    {
+      "tag": "Conservative change",
+      "title": "Dual: preservation with modest compression",
+      "text": "It retains almost all source, documentation and annotation structure, with strong bounded runtime evidence. Its1.64% source-token reduction is far from the intended50% target; judge it as a conservative refactor."
+    },
+    {
+      "tag": "Minimum measured footprint",
+      "title": "Effort: compact, with a task-driven repair",
+      "text": "Its source-plus-resource total is the smallest here. Its seven-round process also shows why passing a core suite is insufficient: a modification task exposed a remaining SemSeg bug. Readability and task cost are not established wins."
+    },
+    {
+      "tag": "Workflow comparison",
+      "title": "Avoid a single winner on cost",
+      "text": "Graphify and Knowledge include broader orchestration ledgers and later shared repair. Efficient, Dual and Effort still have missing usage. Different model settings, coverage and endpoints prevent a fair ranking of runtime, tokens or algorithm quality."
+    }
+  ],
+  "performance_note": [
+    "Memory and Dual each have10 GPU workloads ×4 paired rounds against their own original baseline. Different run dates/allocations mean these are not a controlled six-way speed comparison.",
+    "Memory:124 output/gradient observations stayed within predeclared tolerance;16 checkpoint loads checked130 tensors. Deform-convolution peak PyTorch allocator usage increased292,352 bytes (about286 KiB,1.61%); the other9 workload peaks matched. Some individual timing rounds were slower.",
+    "Dual also has paired performance, two-GPU TorchScript,25-step NCCL and cross-implementation resume evidence (234 array comparisons). Neither suite proves general speedup or training convergence.",
+    "Knowledge and Graphify have fixed-state inference and short training, BF16/distributed probes and a100-image COCO sample. The two candidates have matching recorded bbox AP, mask AP and detection counts on that sample, but both have nonzero metric deltas versus original; original binding is indirect. This is not full COCO accuracy equivalence."
+  ],
+  "task_note": [
+    "Memory disabled task assessment and stopped pure-size optimization after acceptance. No downstream task-efficiency result is available.",
+    "Effort: four cognitive task types; final12/12 development results correct,3/4 strict cost gates passed, overall inconclusive. Task evaluation alone accounts for at least50.68M tokens including earlier protocol work.",
+    "Efficient: one modify task, three repeats; median token use rose232,457 →263,512 (+13.36%), with overlapping ranges. Dual:402,117 →336,229 median tokens and302.8 →291.0 seconds, also overlapping ranges. Both verdicts are inconclusive; held-out runs were not performed."
+  ],
+  "methodology": {
+    "static": {
+      "name": "Uniform delivered-source inventory v1",
+      "tokenizer": {
+        "library": "tiktoken",
+        "version": "0.12.0",
+        "encoding": "cl100k_base",
+        "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+      },
+      "source_suffixes": [
+        ".bash",
+        ".c",
+        ".cc",
+        ".cjs",
+        ".cpp",
+        ".css",
+        ".cu",
+        ".cuh",
+        ".cxx",
+        ".go",
+        ".h",
+        ".hpp",
+        ".hxx",
+        ".java",
+        ".js",
+        ".jsx",
+        ".kt",
+        ".mjs",
+        ".py",
+        ".pyi",
+        ".rb",
+        ".rs",
+        ".sh",
+        ".ts",
+        ".tsx"
+      ],
+      "evidence_root_exclusions": [
+        "evidence",
+        "validation",
+        "verification"
+      ],
+      "evidence_file_exclusions": [
+        "core-capabilities.json",
+        "implementation-gaps-projects.json",
+        "mapping-foundations.json",
+        "mapping-models.json",
+        "mapping-projects.json",
+        "nanolize-anything-report-mapping.json",
+        "nanolize-knowledge-gaps.json",
+        "nanolize-progress.json",
+        "project-capabilities.json",
+        "runtime-capabilities.json"
+      ],
+      "documentation_suffixes": [
+        ".adoc",
+        ".md",
+        ".rst",
+        ".rstx"
+      ],
+      "test_directories": [
+        "__tests__",
+        "fixtures",
+        "test",
+        "testdata",
+        "tests",
+        "tests-unit"
+      ],
+      "per_file_tokenization": true,
+      "formatting": "As delivered; no reformatting or target execution.",
+      "notes": [
+        "Production test_time_augmentation modules are included.",
+        "Runtime JSON/YAML/catalog tables are counted separately, never hidden as source reduction.",
+        "Source AST excludes docstrings; moving configuration or metadata into resources also reduces AST.",
+        "Static counts describe artifacts and are not a semantic, quality, or human-readability score.",
+        "This inventory is separate from historical harness size gates; evidence/report additions are excluded."
+      ]
+    },
+    "notes": [
+      "Read-only static measurement; target repository code was never imported or executed for this comparison.",
+      "All7 snapshots were verified against every tracked Git blob. Published heads and tested production commits are distinguished.",
+      "No universal pass rate: command groups, individual tests, probes and developer tasks have different denominators.",
+      "No single end-to-end runtime or total-cost ranking: accounting boundaries differ.",
+      "Unknown usage stays null. Cache and reasoning subsets are not double counted. Raw session transcripts, private paths and prompts are not published.",
+      "Current final-state comparison uses Nov3 repair evidence for Graphify/Knowledge, not their regressed Nov2 initial reports.",
+      "Observation-based comparison: selected goals, source-access policy, environment, model and stopping criteria differ."
+    ],
+    "memory_native_total": 638500,
+    "memory_common_total": 634401,
+    "memory_excluded_experiment_metadata_tokens": 4099
+  }
+}
