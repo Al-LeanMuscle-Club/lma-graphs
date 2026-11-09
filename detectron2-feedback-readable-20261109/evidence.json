@@ -1,0 +1,4564 @@
+{
+  "limitations": [
+    "Only summary results are published; captured command output is omitted."
+  ],
+  "status": "checks_passed",
+  "tests": {
+    "original_total": 160,
+    "retained": 160,
+    "retired": 0,
+    "needs_adaptation": 0,
+    "adapted": 0,
+    "contract": 0,
+    "passed": 160,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 0
+  },
+  "capability_results": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-foundation-ffb19d83fdc2",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-models-b89a9b620bcf",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-models-backbones-0d4d35b6618b",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-models-heads-27f1d5d5e692",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-models-detectors-dbe8fa4d4583",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-models-inference-5f7d008b0b00",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-export-ebd4c7b30474",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-configurations-5bd4905b5d73",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-foundation-config-d9928761e096",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Configuration and object construction",
+        "upstream:tests/config/test_instantiate_config.py",
+        "upstream:tests/config/test_lazy_config.py",
+        "upstream:tests/config/test_yacs_config.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-foundation-structures-585ecc6f966f",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Image and prediction data structures",
+        "upstream:tests/layers/test_mask_ops.py",
+        "upstream:tests/structures/test_boxes.py",
+        "upstream:tests/structures/test_imagelist.py",
+        "upstream:tests/structures/test_instances.py",
+        "upstream:tests/structures/test_keypoints.py",
+        "upstream:tests/structures/test_masks.py",
+        "upstream:tests/structures/test_rotated_boxes.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-foundation-layers-00c1d3b4535b",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Shared neural-network and tensor operations",
+        "upstream:tests/layers/test_blocks.py",
+        "upstream:tests/layers/test_losses.py",
+        "upstream:tests/layers/test_nms.py",
+        "upstream:tests/layers/test_roi_align.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-foundation-checkpoint-0b90fe7c6d42",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Weights, checkpoints and pretrained compatibility",
+        "upstream:tests/test_checkpoint.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-runtime-b90d1e1976ad",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Model construction, matching and output geometry",
+        "upstream:tests/modeling/test_anchor_generator.py",
+        "upstream:tests/modeling/test_box2box_transform.py",
+        "upstream:tests/modeling/test_matcher.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-resnet-4461614c3a2b",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: ResNet visual backbones",
+        "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+        "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-regnet-0ba36c2b4c85",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: RegNet and AnyNet backbones"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-vit-e03812b273a4",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Vision Transformer and ViTDet feature pyramids"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-mvit-82124c91dbdf",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Multiscale Vision Transformer backbone"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-swin-13bcdc145006",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Swin Transformer backbone"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-feature-pyramid-f12dadde8427",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Multi-scale feature pyramid networks",
+        "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-rpn-0ca332bc5509",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Region proposal generation",
+        "upstream:tests/modeling/test_rpn.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-roi-box-74b7ff0ac572",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: ROI pooling and box prediction",
+        "upstream:tests/modeling/test_fast_rcnn.py",
+        "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+        "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+        "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+        "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+        "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-cascade-ad593b4827bf",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Cascade box refinement"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-mask-head-b1330c760b1a",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Instance segmentation masks",
+        "upstream:tests/layers/test_mask_ops.py",
+        "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+        "upstream:tests/modeling/test_roi_heads.py::test_roi_heads"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-keypoint-head-3e0a27a18177",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Human keypoint prediction",
+        "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-generalized-rcnn-b92273d43fa6",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Two-stage object detection",
+        "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-retinanet-b003c5b2fc90",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: RetinaNet one-stage detection",
+        "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-fcos-2f75f9b458d8",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: FCOS anchor-free detection",
+        "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-semantic-segmentation-9d1deb223810",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Semantic segmentation",
+        "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-panoptic-fpn-60089489c75d",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Panoptic instance-and-stuff segmentation"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-rotated-detection-7a246d01a50b",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Oriented object detection and rotated geometry",
+        "upstream:tests/layers/test_nms_rotated.py",
+        "upstream:tests/layers/test_roi_align_rotated.py",
+        "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+        "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+        "upstream:tests/structures/test_rotated_boxes.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-deformable-convolution-f3ee69da92d3",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Deformable visual convolutions",
+        "upstream:tests/layers/test_deformable.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-test-time-augmentation-9c6120b2688f",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Multi-view inference and prediction fusion"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-mmdetection-5c58bbf72c9d",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: MMDetection model interoperability"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-export-torchscript-e238ccd25f26",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: TorchScript scripting and tracing",
+        "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+        "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+        "upstream:tests/test_export_onnx.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-export-caffe2-4cd7e5f760b9",
+      "status": "passed",
+      "checks": [
+        "runtime-export-caffe2"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-model-zoo-e39fd191c368",
+      "status": "passed",
+      "checks": [
+        "runtime-model-zoo",
+        "upstream:tests/test_model_zoo.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-configs-recipes-d7c50142927c",
+      "status": "passed",
+      "checks": [
+        "runtime-configs-recipes"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-coco-native-3ab465ff764e",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Accelerated COCO evaluation backend"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-data-2ea2dff7a5ab",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-datasets-6f6e86d3c14b",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-training-cc903b1e9ceb",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-evaluation-a271feaa2ef3",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-tools-20ac5ffd93e6",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-delivery-7232713cc2ca",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-foundation-runtime-2dde3d14987a",
+      "status": "passed",
+      "checks": [
+        "CPU behavior: Runtime services and interoperability",
+        "upstream:tests/test_packaging.py::TestCollectEnv",
+        "upstream:tests/test_registry.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-catalog-f8276da19cca",
+      "status": "passed",
+      "checks": [
+        "runtime-data-catalog"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-loading-044ab0ed7436",
+      "status": "passed",
+      "checks": [
+        "runtime-data-loading",
+        "upstream:tests/data/test_dataset.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-mapping-6348cdbbf33f",
+      "status": "passed",
+      "checks": [
+        "runtime-data-mapping",
+        "upstream:tests/data/test_detection_utils.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-augmentation-e9460ecffbe6",
+      "status": "passed",
+      "checks": [
+        "runtime-data-augmentation",
+        "upstream:tests/data/test_rotation_transform.py",
+        "upstream:tests/data/test_transforms.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-sampling-967bea808cd7",
+      "status": "passed",
+      "checks": [
+        "runtime-data-sampling",
+        "upstream:tests/data/test_sampler.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-coco-fe37cefe1051",
+      "status": "passed",
+      "checks": [
+        "runtime-data-coco",
+        "upstream:tests/data/test_coco.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-lvis-130a73732ce2",
+      "status": "passed",
+      "checks": [
+        "runtime-data-lvis"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-cityscapes-ca90cea53faa",
+      "status": "passed",
+      "checks": [
+        "runtime-data-cityscapes"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-voc-5ed18399156b",
+      "status": "passed",
+      "checks": [
+        "runtime-data-voc"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-data-preparation-c157e9b195fd",
+      "status": "passed",
+      "checks": [
+        "runtime-data-preparation"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-engine-698165daf2a6",
+      "status": "passed",
+      "checks": [
+        "runtime-train-engine",
+        "upstream:tests/test_engine.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-telemetry-c3fe0dc767da",
+      "status": "passed",
+      "checks": [
+        "runtime-train-telemetry",
+        "upstream:tests/test_events.py",
+        "upstream:tests/utils/test_tensorboardx.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-hooks-902b2af7421a",
+      "status": "passed",
+      "checks": [
+        "runtime-train-hooks"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-distributed-18f816492152",
+      "status": "passed",
+      "checks": [
+        "runtime-train-distributed"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-optimization-ce1475246040",
+      "status": "passed",
+      "checks": [
+        "runtime-train-optimization",
+        "upstream:tests/test_solver.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-scheduling-703f41336d19",
+      "status": "passed",
+      "checks": [
+        "runtime-train-scheduling",
+        "upstream:tests/test_scheduler.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-defaults-cf7eb0ea604e",
+      "status": "passed",
+      "checks": [
+        "runtime-train-defaults"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-entrypoints-e5ba0eadeacd",
+      "status": "passed",
+      "checks": [
+        "runtime-train-entrypoints"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-train-lightning-f15cf581fdfb",
+      "status": "passed",
+      "checks": [
+        "runtime-train-lightning"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-runner-aa0f83d4a7f8",
+      "status": "passed",
+      "checks": [
+        "runtime-eval-runner"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-coco-10a5f2f9f672",
+      "status": "passed",
+      "checks": [
+        "runtime-eval-coco",
+        "upstream:tests/data/test_coco_evaluation.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-semantic-eb8bf0b46d40",
+      "status": "passed",
+      "checks": [
+        "runtime-eval-semantic"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-panoptic-cc1324e45951",
+      "status": "passed",
+      "checks": [
+        "runtime-eval-panoptic"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-cityscapes-c6661271d45f",
+      "status": "passed",
+      "checks": [
+        "runtime-eval-cityscapes"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-lvis-958c09e23304",
+      "status": "passed",
+      "checks": [
+        "runtime-eval-lvis"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-eval-voc-ae12c35fa070",
+      "status": "passed",
+      "checks": [
+        "runtime-eval-voc"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tool-inference-f30d91360045",
+      "status": "passed",
+      "checks": [
+        "runtime-tool-inference"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tool-visualization-4be34ca6337b",
+      "status": "passed",
+      "checks": [
+        "runtime-tool-visualization",
+        "upstream:tests/test_visualizer.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tool-tracking-11ffc3f3e65c",
+      "status": "passed",
+      "checks": [
+        "runtime-tool-tracking",
+        "upstream:tests/tracking/test_bbox_iou_tracker.py",
+        "upstream:tests/tracking/test_hungarian_tracker.py",
+        "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+        "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tool-analysis-3b2af0e6d99f",
+      "status": "passed",
+      "checks": [
+        "runtime-tool-analysis",
+        "upstream:tests/test_model_analysis.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tool-benchmark-a1609e306237",
+      "status": "passed",
+      "checks": [
+        "runtime-tool-benchmark"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tool-deployment-f18e01fda453",
+      "status": "passed",
+      "checks": [
+        "runtime-tool-deployment"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-build-package-8317e92aba48",
+      "status": "passed",
+      "checks": [
+        "runtime-build-package"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-build-documentation-a024028466ca",
+      "status": "passed",
+      "checks": [
+        "runtime-build-documentation"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-build-development-93f202daed5c",
+      "status": "passed",
+      "checks": [
+        "runtime-build-development"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-extensions-4bd2a07a5d73",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-extension-bridge-db3224bba915",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-bridge",
+        "upstream:tests/test_packaging.py::TestProjects"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-densepose-4388117cd3be",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-dp-foundation-255d9e9edcf4",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-foundation",
+        "upstream:projects/DensePose/tests/test_structures.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-conversion-23af1487ef92",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-conversion"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-model-runtime-c162f4cd216b",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-model-runtime",
+        "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+        "upstream:projects/DensePose/tests/test_model_e2e.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-chart-02fc2726dd6c",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-chart",
+        "upstream:projects/DensePose/tests/test_model_e2e.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-cse-288797dbb0e8",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-cse",
+        "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-hrnet-513ae06a19fb",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-hrnet"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-augmentation-76f71696db75",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-augmentation"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-data-c2f5ca8392ca",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-data",
+        "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+        "upstream:projects/DensePose/tests/test_image_resize_transform.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-bootstrap-fcd6ec15e6d3",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-bootstrap",
+        "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+        "upstream:projects/DensePose/tests/test_frame_selector.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-training-102bc4a39533",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-training",
+        "upstream:projects/DensePose/tests/test_setup.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-evaluation-8067d11cc998",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-evaluation",
+        "upstream:projects/DensePose/tests/test_tensor_storage.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-visualization-2477a7aca5fe",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-visualization"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dp-packaging-dbb36f9b3f06",
+      "status": "passed",
+      "checks": [
+        "characterize-dp-packaging"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-deeplab-f1458dac25ed",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-deeplab"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-panoptic-deeplab-04870bfd0722",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-panoptic-deeplab"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-pointrend-225583431997",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-pointrend",
+        "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-pointsup-d9d2bb2a21e1",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-pointsup"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-tensormask-a41083dbfbfb",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-tensormask"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-tridentnet-53993fa96360",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-tridentnet"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-vitdet-2363882b8065",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-vitdet"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-mvitv2-60eed55e8a9c",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-mvitv2"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-extension-batchnorm-246f3bab91ae",
+      "status": "passed",
+      "checks": [
+        "characterize-extension-batchnorm"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    }
+  ],
+  "checks": [
+    {
+      "name": "CPU behavior: Configuration and object construction",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-config-d9928761e096"
+      ]
+    },
+    {
+      "name": "CPU behavior: Image and prediction data structures",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-structures-585ecc6f966f"
+      ]
+    },
+    {
+      "name": "CPU behavior: Shared neural-network and tensor operations",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-layers-00c1d3b4535b"
+      ]
+    },
+    {
+      "name": "CPU behavior: Weights, checkpoints and pretrained compatibility",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-checkpoint-0b90fe7c6d42"
+      ]
+    },
+    {
+      "name": "CPU behavior: Model construction, matching and output geometry",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-runtime-b90d1e1976ad"
+      ]
+    },
+    {
+      "name": "CPU behavior: ResNet visual backbones",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-resnet-4461614c3a2b"
+      ]
+    },
+    {
+      "name": "CPU behavior: RegNet and AnyNet backbones",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-regnet-0ba36c2b4c85"
+      ]
+    },
+    {
+      "name": "CPU behavior: Vision Transformer and ViTDet feature pyramids",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-vit-e03812b273a4"
+      ]
+    },
+    {
+      "name": "CPU behavior: Multiscale Vision Transformer backbone",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-mvit-82124c91dbdf"
+      ]
+    },
+    {
+      "name": "CPU behavior: Swin Transformer backbone",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-swin-13bcdc145006"
+      ]
+    },
+    {
+      "name": "CPU behavior: Multi-scale feature pyramid networks",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-feature-pyramid-f12dadde8427"
+      ]
+    },
+    {
+      "name": "CPU behavior: Region proposal generation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-rpn-0ca332bc5509"
+      ]
+    },
+    {
+      "name": "CPU behavior: ROI pooling and box prediction",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-roi-box-74b7ff0ac572"
+      ]
+    },
+    {
+      "name": "CPU behavior: Cascade box refinement",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-cascade-ad593b4827bf"
+      ]
+    },
+    {
+      "name": "CPU behavior: Instance segmentation masks",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-mask-head-b1330c760b1a"
+      ]
+    },
+    {
+      "name": "CPU behavior: Human keypoint prediction",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-keypoint-head-3e0a27a18177"
+      ]
+    },
+    {
+      "name": "CPU behavior: Two-stage object detection",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-generalized-rcnn-b92273d43fa6"
+      ]
+    },
+    {
+      "name": "CPU behavior: RetinaNet one-stage detection",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-retinanet-b003c5b2fc90"
+      ]
+    },
+    {
+      "name": "CPU behavior: FCOS anchor-free detection",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-fcos-2f75f9b458d8"
+      ]
+    },
+    {
+      "name": "CPU behavior: Semantic segmentation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-semantic-segmentation-9d1deb223810"
+      ]
+    },
+    {
+      "name": "CPU behavior: Panoptic instance-and-stuff segmentation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-panoptic-fpn-60089489c75d"
+      ]
+    },
+    {
+      "name": "CPU behavior: Oriented object detection and rotated geometry",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-rotated-detection-7a246d01a50b"
+      ]
+    },
+    {
+      "name": "CPU behavior: Deformable visual convolutions",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-deformable-convolution-f3ee69da92d3"
+      ]
+    },
+    {
+      "name": "CPU behavior: Multi-view inference and prediction fusion",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-test-time-augmentation-9c6120b2688f"
+      ]
+    },
+    {
+      "name": "CPU behavior: MMDetection model interoperability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-mmdetection-5c58bbf72c9d"
+      ]
+    },
+    {
+      "name": "CPU behavior: TorchScript scripting and tracing",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-export-torchscript-e238ccd25f26"
+      ]
+    },
+    {
+      "name": "CPU behavior: Accelerated COCO evaluation backend",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-coco-native-3ab465ff764e"
+      ]
+    },
+    {
+      "name": "CPU behavior: Runtime services and interoperability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-runtime-2dde3d14987a"
+      ]
+    },
+    {
+      "name": "runtime-data-catalog",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-catalog-f8276da19cca"
+      ]
+    },
+    {
+      "name": "runtime-data-loading",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-loading-044ab0ed7436"
+      ]
+    },
+    {
+      "name": "runtime-data-mapping",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-mapping-6348cdbbf33f"
+      ]
+    },
+    {
+      "name": "runtime-data-augmentation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-augmentation-e9460ecffbe6"
+      ]
+    },
+    {
+      "name": "runtime-data-sampling",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-sampling-967bea808cd7"
+      ]
+    },
+    {
+      "name": "runtime-data-coco",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-coco-fe37cefe1051"
+      ]
+    },
+    {
+      "name": "runtime-data-lvis",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-lvis-130a73732ce2"
+      ]
+    },
+    {
+      "name": "runtime-data-cityscapes",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-cityscapes-ca90cea53faa"
+      ]
+    },
+    {
+      "name": "runtime-data-voc",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-voc-5ed18399156b"
+      ]
+    },
+    {
+      "name": "runtime-data-preparation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-preparation-c157e9b195fd"
+      ]
+    },
+    {
+      "name": "runtime-train-engine",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-engine-698165daf2a6"
+      ]
+    },
+    {
+      "name": "runtime-train-telemetry",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-telemetry-c3fe0dc767da"
+      ]
+    },
+    {
+      "name": "runtime-train-hooks",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-hooks-902b2af7421a"
+      ]
+    },
+    {
+      "name": "runtime-train-distributed",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-distributed-18f816492152"
+      ]
+    },
+    {
+      "name": "runtime-train-optimization",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-optimization-ce1475246040"
+      ]
+    },
+    {
+      "name": "runtime-train-scheduling",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-scheduling-703f41336d19"
+      ]
+    },
+    {
+      "name": "runtime-train-defaults",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-defaults-cf7eb0ea604e"
+      ]
+    },
+    {
+      "name": "runtime-train-entrypoints",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-entrypoints-e5ba0eadeacd"
+      ]
+    },
+    {
+      "name": "runtime-train-lightning",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-lightning-f15cf581fdfb"
+      ]
+    },
+    {
+      "name": "runtime-eval-runner",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-runner-aa0f83d4a7f8"
+      ]
+    },
+    {
+      "name": "runtime-eval-coco",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-coco-10a5f2f9f672"
+      ]
+    },
+    {
+      "name": "runtime-eval-semantic",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-semantic-eb8bf0b46d40"
+      ]
+    },
+    {
+      "name": "runtime-eval-panoptic",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-panoptic-cc1324e45951"
+      ]
+    },
+    {
+      "name": "runtime-eval-cityscapes",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-cityscapes-c6661271d45f"
+      ]
+    },
+    {
+      "name": "runtime-eval-lvis",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-lvis-958c09e23304"
+      ]
+    },
+    {
+      "name": "runtime-eval-voc",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-voc-ae12c35fa070"
+      ]
+    },
+    {
+      "name": "runtime-tool-inference",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-inference-f30d91360045"
+      ]
+    },
+    {
+      "name": "runtime-tool-visualization",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-visualization-4be34ca6337b"
+      ]
+    },
+    {
+      "name": "runtime-tool-tracking",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-tracking-11ffc3f3e65c"
+      ]
+    },
+    {
+      "name": "runtime-tool-analysis",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-analysis-3b2af0e6d99f"
+      ]
+    },
+    {
+      "name": "runtime-tool-benchmark",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-benchmark-a1609e306237"
+      ]
+    },
+    {
+      "name": "runtime-tool-deployment",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-deployment-f18e01fda453"
+      ]
+    },
+    {
+      "name": "runtime-build-package",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-build-package-8317e92aba48"
+      ]
+    },
+    {
+      "name": "runtime-build-documentation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-build-documentation-a024028466ca"
+      ]
+    },
+    {
+      "name": "runtime-build-development",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-build-development-93f202daed5c"
+      ]
+    },
+    {
+      "name": "runtime-model-zoo",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-zoo-e39fd191c368"
+      ]
+    },
+    {
+      "name": "runtime-configs-recipes",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-configs-recipes-d7c50142927c"
+      ]
+    },
+    {
+      "name": "runtime-export-caffe2",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-export-caffe2-4cd7e5f760b9"
+      ]
+    },
+    {
+      "name": "characterize-extension-bridge",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-bridge-db3224bba915"
+      ]
+    },
+    {
+      "name": "characterize-dp-foundation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-foundation-255d9e9edcf4"
+      ]
+    },
+    {
+      "name": "characterize-dp-conversion",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-conversion-23af1487ef92"
+      ]
+    },
+    {
+      "name": "characterize-dp-model-runtime",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-model-runtime-c162f4cd216b"
+      ]
+    },
+    {
+      "name": "characterize-dp-chart",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-chart-02fc2726dd6c"
+      ]
+    },
+    {
+      "name": "characterize-dp-cse",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-cse-288797dbb0e8"
+      ]
+    },
+    {
+      "name": "characterize-dp-hrnet",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-hrnet-513ae06a19fb"
+      ]
+    },
+    {
+      "name": "characterize-dp-augmentation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-augmentation-76f71696db75"
+      ]
+    },
+    {
+      "name": "characterize-dp-data",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-data-c2f5ca8392ca"
+      ]
+    },
+    {
+      "name": "characterize-dp-bootstrap",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-bootstrap-fcd6ec15e6d3"
+      ]
+    },
+    {
+      "name": "characterize-dp-training",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-training-102bc4a39533"
+      ]
+    },
+    {
+      "name": "characterize-dp-evaluation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-evaluation-8067d11cc998"
+      ]
+    },
+    {
+      "name": "characterize-dp-visualization",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-visualization-2477a7aca5fe"
+      ]
+    },
+    {
+      "name": "characterize-dp-packaging",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-packaging-dbb36f9b3f06"
+      ]
+    },
+    {
+      "name": "characterize-extension-deeplab",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-deeplab-f1458dac25ed"
+      ]
+    },
+    {
+      "name": "characterize-extension-panoptic-deeplab",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-panoptic-deeplab-04870bfd0722"
+      ]
+    },
+    {
+      "name": "characterize-extension-pointrend",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-pointrend-225583431997"
+      ]
+    },
+    {
+      "name": "characterize-extension-pointsup",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-pointsup-d9d2bb2a21e1"
+      ]
+    },
+    {
+      "name": "characterize-extension-tensormask",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-tensormask-a41083dbfbfb"
+      ]
+    },
+    {
+      "name": "characterize-extension-tridentnet",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-tridentnet-53993fa96360"
+      ]
+    },
+    {
+      "name": "characterize-extension-vitdet",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-vitdet-2363882b8065"
+      ]
+    },
+    {
+      "name": "characterize-extension-mvitv2",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-mvitv2-60eed55e8a9c"
+      ]
+    },
+    {
+      "name": "characterize-extension-batchnorm",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-batchnorm-246f3bab91ae"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-model-runtime-c162f4cd216b"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-bootstrap-fcd6ec15e6d3"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-cse-288797dbb0e8"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_frame_selector.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-bootstrap-fcd6ec15e6d3"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-data-c2f5ca8392ca"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_image_resize_transform.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-data-c2f5ca8392ca"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_model_e2e.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-model-runtime-c162f4cd216b",
+        "graphify-dp-chart-02fc2726dd6c"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_setup.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-training-102bc4a39533"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_structures.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-foundation-255d9e9edcf4"
+      ]
+    },
+    {
+      "name": "upstream:projects/DensePose/tests/test_tensor_storage.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dp-evaluation-8067d11cc998"
+      ]
+    },
+    {
+      "name": "upstream:tests/config/test_instantiate_config.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-config-d9928761e096"
+      ]
+    },
+    {
+      "name": "upstream:tests/config/test_lazy_config.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-config-d9928761e096"
+      ]
+    },
+    {
+      "name": "upstream:tests/config/test_yacs_config.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-config-d9928761e096"
+      ]
+    },
+    {
+      "name": "upstream:tests/data/test_coco.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-coco-fe37cefe1051"
+      ]
+    },
+    {
+      "name": "upstream:tests/data/test_coco_evaluation.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-eval-coco-10a5f2f9f672"
+      ]
+    },
+    {
+      "name": "upstream:tests/data/test_dataset.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-loading-044ab0ed7436"
+      ]
+    },
+    {
+      "name": "upstream:tests/data/test_detection_utils.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-mapping-6348cdbbf33f"
+      ]
+    },
+    {
+      "name": "upstream:tests/data/test_rotation_transform.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-augmentation-e9460ecffbe6"
+      ]
+    },
+    {
+      "name": "upstream:tests/data/test_sampler.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-sampling-967bea808cd7"
+      ]
+    },
+    {
+      "name": "upstream:tests/data/test_transforms.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-data-augmentation-e9460ecffbe6"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_blocks.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-layers-00c1d3b4535b"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_deformable.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-deformable-convolution-f3ee69da92d3"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_losses.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-layers-00c1d3b4535b"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_mask_ops.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-mask-head-b1330c760b1a",
+        "graphify-foundation-structures-585ecc6f966f"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_nms.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-layers-00c1d3b4535b"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_nms_rotated.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-rotated-detection-7a246d01a50b"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_roi_align.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-layers-00c1d3b4535b"
+      ]
+    },
+    {
+      "name": "upstream:tests/layers/test_roi_align_rotated.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-rotated-detection-7a246d01a50b"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_anchor_generator.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-runtime-b90d1e1976ad"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-feature-pyramid-f12dadde8427",
+        "graphify-model-resnet-4461614c3a2b"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-resnet-4461614c3a2b"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_box2box_transform.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-runtime-b90d1e1976ad"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_fast_rcnn.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-roi-box-74b7ff0ac572"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_matcher.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-runtime-b90d1e1976ad"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-fcos-2f75f9b458d8"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-generalized-rcnn-b92273d43fa6"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-retinanet-b003c5b2fc90"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-semantic-segmentation-9d1deb223810"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-pointrend-225583431997",
+        "graphify-export-torchscript-e238ccd25f26"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-roi-box-74b7ff0ac572",
+        "graphify-export-torchscript-e238ccd25f26"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-roi-box-74b7ff0ac572"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-keypoint-head-3e0a27a18177"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-mask-head-b1330c760b1a"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-roi-box-74b7ff0ac572",
+        "graphify-model-mask-head-b1330c760b1a"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-rotated-detection-7a246d01a50b"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-roi-box-74b7ff0ac572"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-roi-box-74b7ff0ac572",
+        "graphify-model-rotated-detection-7a246d01a50b"
+      ]
+    },
+    {
+      "name": "upstream:tests/modeling/test_rpn.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-rpn-0ca332bc5509"
+      ]
+    },
+    {
+      "name": "upstream:tests/structures/test_boxes.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-structures-585ecc6f966f"
+      ]
+    },
+    {
+      "name": "upstream:tests/structures/test_imagelist.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-structures-585ecc6f966f"
+      ]
+    },
+    {
+      "name": "upstream:tests/structures/test_instances.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-structures-585ecc6f966f"
+      ]
+    },
+    {
+      "name": "upstream:tests/structures/test_keypoints.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-structures-585ecc6f966f"
+      ]
+    },
+    {
+      "name": "upstream:tests/structures/test_masks.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-structures-585ecc6f966f"
+      ]
+    },
+    {
+      "name": "upstream:tests/structures/test_rotated_boxes.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-structures-585ecc6f966f",
+        "graphify-model-rotated-detection-7a246d01a50b"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_checkpoint.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-checkpoint-0b90fe7c6d42"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_engine.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-engine-698165daf2a6"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_events.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-telemetry-c3fe0dc767da"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_export_onnx.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-export-torchscript-e238ccd25f26"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_model_analysis.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-analysis-3b2af0e6d99f"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_model_zoo.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-model-zoo-e39fd191c368"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_packaging.py::TestCollectEnv",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-runtime-2dde3d14987a"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_packaging.py::TestProjects",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-extension-bridge-db3224bba915"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_registry.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-foundation-runtime-2dde3d14987a"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_scheduler.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-scheduling-703f41336d19"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_solver.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-optimization-ce1475246040"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_visualizer.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-visualization-4be34ca6337b"
+      ]
+    },
+    {
+      "name": "upstream:tests/tracking/test_bbox_iou_tracker.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-tracking-11ffc3f3e65c"
+      ]
+    },
+    {
+      "name": "upstream:tests/tracking/test_hungarian_tracker.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-tracking-11ffc3f3e65c"
+      ]
+    },
+    {
+      "name": "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-tracking-11ffc3f3e65c"
+      ]
+    },
+    {
+      "name": "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tool-tracking-11ffc3f3e65c"
+      ]
+    },
+    {
+      "name": "upstream:tests/utils/test_tensorboardx.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-train-telemetry-c3fe0dc767da"
+      ]
+    }
+  ],
+  "actual_size": {
+    "baseline_source_lines": 72035,
+    "source_lines": 61328,
+    "source_files": 448,
+    "retained_percent": 74.03104550155598,
+    "target_percent": 50.0,
+    "target_source_lines": 36017.5,
+    "estimated_source_lines": null,
+    "metric": "tokens",
+    "tokenizer": {
+      "classification": "source_and_configuration_v1",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "encoding": "cl100k_base",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+      "file_boundaries": "independent_sum",
+      "library": "tiktoken",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "special_tokens": "ordinary_text",
+      "text_policy": "raw_decoded_text_per_file",
+      "version": "0.12.0"
+    },
+    "measurement_sha256": "6cd2fcd15a4509be1656f9a0d053577f6eda55ba45c1142c57309561dbd88fbd",
+    "source_tokens": 595793,
+    "configuration_tokens": 42707,
+    "total_tokens": 638500,
+    "baseline_tokens": 862476,
+    "target_tokens": 431238,
+    "source_retained_percent": 85.13639203165128,
+    "complete": true,
+    "target_met": false
+  },
+  "budget_status": "unmet",
+  "verification_scope": "full",
+  "installation_evidence": {
+    "status": "passed",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "environment_metadata_complete": true
+  },
+  "obligation_ledger": {
+    "records": [
+      {
+        "capability": "graphify-root-ddcb2dfa42d8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-foundation-ffb19d83fdc2",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-models-b89a9b620bcf",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-models-backbones-0d4d35b6618b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-models-heads-27f1d5d5e692",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-models-detectors-dbe8fa4d4583",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-models-inference-5f7d008b0b00",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-export-ebd4c7b30474",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-configurations-5bd4905b5d73",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-foundation-config-d9928761e096",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Configuration and object construction",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/config/test_instantiate_config.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/config/test_lazy_config.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/config/test_yacs_config.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-foundation-structures-585ecc6f966f",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Image and prediction data structures",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_mask_ops.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/structures/test_boxes.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/structures/test_imagelist.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/structures/test_instances.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/structures/test_keypoints.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/structures/test_masks.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/structures/test_rotated_boxes.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-foundation-layers-00c1d3b4535b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Shared neural-network and tensor operations",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_blocks.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_losses.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_nms.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_roi_align.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-foundation-checkpoint-0b90fe7c6d42",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Weights, checkpoints and pretrained compatibility",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_checkpoint.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-runtime-b90d1e1976ad",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Model construction, matching and output geometry",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_anchor_generator.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_box2box_transform.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_matcher.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-resnet-4461614c3a2b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: ResNet visual backbones",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-regnet-0ba36c2b4c85",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: RegNet and AnyNet backbones",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-vit-e03812b273a4",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Vision Transformer and ViTDet feature pyramids",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-mvit-82124c91dbdf",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Multiscale Vision Transformer backbone",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-swin-13bcdc145006",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Swin Transformer backbone",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-feature-pyramid-f12dadde8427",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Multi-scale feature pyramid networks",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-rpn-0ca332bc5509",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Region proposal generation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_rpn.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-roi-box-74b7ff0ac572",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: ROI pooling and box prediction",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_fast_rcnn.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-cascade-ad593b4827bf",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Cascade box refinement",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-mask-head-b1330c760b1a",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Instance segmentation masks",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_mask_ops.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-keypoint-head-3e0a27a18177",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Human keypoint prediction",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-generalized-rcnn-b92273d43fa6",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Two-stage object detection",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-retinanet-b003c5b2fc90",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: RetinaNet one-stage detection",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-fcos-2f75f9b458d8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: FCOS anchor-free detection",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-semantic-segmentation-9d1deb223810",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Semantic segmentation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-panoptic-fpn-60089489c75d",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Panoptic instance-and-stuff segmentation",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-rotated-detection-7a246d01a50b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Oriented object detection and rotated geometry",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_nms_rotated.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_roi_align_rotated.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/structures/test_rotated_boxes.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-deformable-convolution-f3ee69da92d3",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Deformable visual convolutions",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/layers/test_deformable.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-test-time-augmentation-9c6120b2688f",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Multi-view inference and prediction fusion",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-mmdetection-5c58bbf72c9d",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: MMDetection model interoperability",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-export-torchscript-e238ccd25f26",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: TorchScript scripting and tracing",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_export_onnx.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-export-caffe2-4cd7e5f760b9",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-export-caffe2",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-model-zoo-e39fd191c368",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-model-zoo",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_model_zoo.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-configs-recipes-d7c50142927c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-configs-recipes",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-coco-native-3ab465ff764e",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Accelerated COCO evaluation backend",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-data-2ea2dff7a5ab",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-datasets-6f6e86d3c14b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-training-cc903b1e9ceb",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-evaluation-a271feaa2ef3",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-tools-20ac5ffd93e6",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-delivery-7232713cc2ca",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-foundation-runtime-2dde3d14987a",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "CPU behavior: Runtime services and interoperability",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_packaging.py::TestCollectEnv",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_registry.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-catalog-f8276da19cca",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-catalog",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-loading-044ab0ed7436",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-loading",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/data/test_dataset.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-mapping-6348cdbbf33f",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-mapping",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/data/test_detection_utils.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-augmentation-e9460ecffbe6",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-augmentation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/data/test_rotation_transform.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/data/test_transforms.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-sampling-967bea808cd7",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-sampling",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/data/test_sampler.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-coco-fe37cefe1051",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-coco",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/data/test_coco.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-lvis-130a73732ce2",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-lvis",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-cityscapes-ca90cea53faa",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-cityscapes",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-voc-5ed18399156b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-voc",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-data-preparation-c157e9b195fd",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-data-preparation",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-engine-698165daf2a6",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-engine",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_engine.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-telemetry-c3fe0dc767da",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-telemetry",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_events.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/utils/test_tensorboardx.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-hooks-902b2af7421a",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-hooks",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-distributed-18f816492152",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-distributed",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-optimization-ce1475246040",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-optimization",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_solver.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-scheduling-703f41336d19",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-scheduling",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_scheduler.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-defaults-cf7eb0ea604e",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-defaults",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-entrypoints-e5ba0eadeacd",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-entrypoints",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-train-lightning-f15cf581fdfb",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-train-lightning",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-runner-aa0f83d4a7f8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-eval-runner",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-coco-10a5f2f9f672",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-eval-coco",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/data/test_coco_evaluation.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-semantic-eb8bf0b46d40",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-eval-semantic",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-panoptic-cc1324e45951",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-eval-panoptic",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-cityscapes-c6661271d45f",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-eval-cityscapes",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-lvis-958c09e23304",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-eval-lvis",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-eval-voc-ae12c35fa070",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-eval-voc",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tool-inference-f30d91360045",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-tool-inference",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tool-visualization-4be34ca6337b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-tool-visualization",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_visualizer.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tool-tracking-11ffc3f3e65c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-tool-tracking",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/tracking/test_bbox_iou_tracker.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/tracking/test_hungarian_tracker.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tool-analysis-3b2af0e6d99f",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-tool-analysis",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_model_analysis.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tool-benchmark-a1609e306237",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-tool-benchmark",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tool-deployment-f18e01fda453",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-tool-deployment",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-build-package-8317e92aba48",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-build-package",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-build-documentation-a024028466ca",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-build-documentation",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-build-development-93f202daed5c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "runtime-build-development",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-extensions-4bd2a07a5d73",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-bridge-db3224bba915",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-bridge",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_packaging.py::TestProjects",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-densepose-4388117cd3be",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-foundation-255d9e9edcf4",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-foundation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_structures.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-conversion-23af1487ef92",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-conversion",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-model-runtime-c162f4cd216b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-model-runtime",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_model_e2e.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-chart-02fc2726dd6c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-chart",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_model_e2e.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-cse-288797dbb0e8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-cse",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-hrnet-513ae06a19fb",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-hrnet",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-augmentation-76f71696db75",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-augmentation",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-data-c2f5ca8392ca",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-data",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_image_resize_transform.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-bootstrap-fcd6ec15e6d3",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-bootstrap",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_frame_selector.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-training-102bc4a39533",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-training",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_setup.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-evaluation-8067d11cc998",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-evaluation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:projects/DensePose/tests/test_tensor_storage.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-visualization-2477a7aca5fe",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-visualization",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dp-packaging-dbb36f9b3f06",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-dp-packaging",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-deeplab-f1458dac25ed",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-deeplab",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-panoptic-deeplab-04870bfd0722",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-panoptic-deeplab",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-pointrend-225583431997",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-pointrend",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-pointsup-d9d2bb2a21e1",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-pointsup",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-tensormask-a41083dbfbfb",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-tensormask",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-tridentnet-53993fa96360",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-tridentnet",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-vitdet-2363882b8065",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-vitdet",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-mvitv2-60eed55e8a9c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-mvitv2",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-extension-batchnorm-246f3bab91ae",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "characterize-extension-batchnorm",
+            "kind": "declared_check"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "unknown": 0,
+      "failed": 0,
+      "partial": 0,
+      "retired": 0,
+      "verified": 106,
+      "total": 106,
+      "retained": 106,
+      "complete": true
+    },
+    "limitations": [
+      "Public summaries omit private evidence bindings and raw output."
+    ]
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "disabled",
+    "binding": {},
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true
+    },
+    "tasks": [],
+    "overhead": {
+      "examiner_tokens": null,
+      "judge_tokens": null,
+      "solver_tokens": null,
+      "total_tokens": null,
+      "usage_complete": false,
+      "observed_total_tokens": null,
+      "role_usage_complete": {
+        "examiner": false,
+        "solver": false,
+        "judge": false
+      }
+    },
+    "resources": {
+      "completed_runs": 0,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0
+    },
+    "iterations": [],
+    "limitations": [
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ]
+  }
+}
