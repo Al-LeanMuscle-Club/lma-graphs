@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Needle · 四次压缩实验对比</title>
+  <meta name="description" content="四个 Needle 压缩分支的中文对比：统一复测、源码 tokens、运行耗时、模型用量、修复轨迹与可维护性。">
+  <meta name="theme-color" content="#5546d9">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到报告正文</a>
+<aside class="sidebar">
+  <a href="#overview" class="brand"><span class="brand-mark">n.</span><span>nanolize<small>实验研究报告</small></span></a>
+  <div class="nav-label">NEEDLE / CORE</div>
+  <nav aria-label="报告目录">
+    <a href="#overview" class="active"><span>01</span> 结论与总览</a>
+    <a href="#quality"><span>02</span> 最终代码质量</a>
+    <a href="#cost"><span>03</span> 时间与 tokens</a>
+    <a href="#size"><span>04</span> 压缩率与范围</a>
+    <a href="#trajectory"><span>05</span> 实验轨迹</a>
+    <a href="#structure"><span>06</span> 结构与可读性</a>
+    <a href="#tasks"><span>07</span> 后续任务成本</a>
+    <a href="#interpretation"><span>08</span> 如何解读差异</a>
+    <a href="#evidence"><span>09</span> 证据与版本</a>
+  </nav>
+  <div class="sidebar-foot"><span class="live-dot"></span>公开报告 · 无需登录<br><span>2026.11.09 · UTC</span><a href="comparison.json" download>下载对比数据 ↗</a></div>
+</aside>
+<div class="page-shell">
+<header class="topbar"><span>实验室 / 代码压缩 / 对照分析</span><div><span class="pill">中文 · 可交互</span><button id="print-button" class="button small">打印 / 存为 PDF</button></div></header>
+<main id="main">
+<section id="overview" class="section hero">
+  <div class="eyebrow"><span></span> 4 个交付版本 · 同一原始仓库 · 一次统一复测</div>
+  <h1>更小之外，<br>四次压缩的得与失</h1>
+  <p class="hero-intro">把本次 <strong>Feedback Memory</strong> 与三个历史 Needle core 分支放在一起，比较最终行为、源码规模、交付耗时和模型用量。<strong>这次更快、已观测 tokens 更少；兼容性仍有一处新发现的缺口。</strong></p>
+  <div class="hero-meta"><span>原始版本 <code>278eea197d6a</code></span><span>11 月 5 日—9 日</span><span>核心文本运行时</span></div>
+  <div class="metric-grid" id="hero-metrics"></div>
+  <div class="insight-grid">
+    <article class="insight"><span class="number">01</span><h3>交付成本下降，有条件成立</h3><p>本次耗时比三次历史实验少 <b>38%～55%</b>，含缓存的已观测 tokens 少 <b>33%～58%</b>。任务评测开关、知识包、修复要求不同，不能把改善全部归因于 Controller。</p><a href="#cost">展开成本口径 <span>↗</span></a></article>
+    <article class="insight"><span class="number">02</span><h3>原有测试全过，边界仍不同</h3><p>四个分支均重新通过 <b>105 个 pytest 用例、11 个基础检查组、3 项安装检查</b>。补充探针发现：Feedback 的嵌套 schema 存在语义偏移，旧分支则漏下 generation 3 平台权重下载。</p><a href="#quality">查看差异证据 <span>↗</span></a></article>
+    <article class="insight"><span class="number">03</span><h3>多留一点代码，换来更明确的行为</h3><p>本次源代码为 <b>13,551 tokens</b>，比另外三个分支多 <b>2.7%～6.4%</b>。它保留了更完整的 CLI 行为，模块拆分也较清楚；并非四者中体积最小的版本。</p><a href="#structure">查看代码结构 <span>↗</span></a></article>
+  </div>
+  <div class="section-heading compact"><div><p class="eyebrow">一眼对比</p><h2>四个最终分支</h2></div><span class="muted">点击版本名查看固定提交</span></div>
+  <div class="table-wrap card" id="overview-table"></div>
+  <p class="footnote">¹ 源码减少以完整原仓库 101,061 tokens 为分母，包含功能范围缩减。² 模型 tokens 为实验中已记录的作者、Controller、出题与解题调用，不含外层协调对话。时间从首次提交至最终功能 / 安装验收或流水线终态，包含队列、失败恢复与交付前补修；不含前期知识整理和报告发布。<a href="#methods">完整计量说明 ↓</a></p>
+</section>
+
+<section id="quality" class="section">
+  <div class="section-heading"><div><p class="eyebrow">02 / 最终代码质量</p><h2>同一套检查，揭开“全绿”背后的差异</h2></div><span class="pill verified">统一复测已完成</span></div>
+  <p class="section-lead">2026-11-09 对四个 GitHub 分支头和原始仓库重新执行相同检查。共 13 个组：原有 11 个 core 组、1 个 CLI / 数值边界组、1 个含两项 schema 比较的组。候选版本各自创建全新环境、构建 wheel，并从源码目录外导入验证。</p>
+  <div class="audit-strip"><div><b>16 核 CPU</b><span>同一 Slurm 分配</span></div><div><b>Python 3.11.16</b><span>Linux ARM64</span></div><div><b>105 / 105</b><span>每个版本均通过，0 跳过</span></div><div><b>3 / 3</b><span>每个候选的安装检查</span></div><div><b>23 份原始文件</b><span>22 个测试文件 + LICENSE 未改</span></div></div>
+  <div class="table-wrap card" id="quality-table"></div>
+  <p class="footnote">“一致”表示此探针结果与原版相同，并不表示所有输入上的等价。新增两组来自不同历史实验的验收补充，属于回归检查集合，<b>不是全新盲测</b>。别名存在性的差异属于额外 API 表面变化；CLI 文本不同也不等同于功能不可用，表中与实际缺文件分开标注。<a href="audit-evidence.json">复测证据 JSON ↗</a></p>
+  <div class="two-col">
+    <article class="card detail-card warning-card"><div class="card-kicker">本次新发现 · Feedback Memory</div><h3>嵌套 schema 多了原版没有的限制</h3><p>对 <code>list[Annotated[int, Field(ge=1)]]</code>，原版生成的元素 schema 只有 <code>type: integer</code>；Feedback 增加了 <code>minimum: 1</code>。默认 <code>Field</code> 的优先级已经一致，但嵌套项仍不同。</p><div class="code-compare"><div><span>原始仓库 / Auto50 Review</span><pre>{"items": {"type": "integer"}}</pre></div><div><span>Feedback / 两个 Core49</span><pre>{"items": {"type": "integer", "minimum": 1}}</pre></div></div><p class="small-note">对功能保留任务，这个“增强约束”会改变模型接收的 schema，不能直接算作兼容性改进。它不在本次原有 12 组验收中，因此此前的通过记录仍成立，但不能扩展为全面等价。</p><a href="schema-probe.py" download>下载最小复现脚本 ↗</a></article>
+    <article class="card detail-card"><div class="card-kicker">历史版本的共同缺口</div><h3>generation 3 平台下载缺少权重</h3><p>执行 <code>download linux-arm64 --generation 3</code> 时，原版会下载平台资源，并放入 <code>needle3.cact</code>。三个旧分支只调用了平台资源下载；本次 Feedback 保留了补充权重的步骤。</p><div class="mini-flow"><span>平台引擎 / 头文件</span><b>＋</b><span class="accent">generation 3 权重</span><b>→</b><span>完整部署目录</span></div><p>此处使用相同的下载替身检查调用顺序和产物，不触发真实网络下载。真实引擎的 generation 2 / 3 推理、工具调用与 embedding 另有共同验收，四个版本均通过。</p><p class="small-note">数值提取探针也显示旧分支在 8 个输入中有 5 个与原版不同，例如 <code>12,34</code>、<code>5.25x</code>。这是内部 grounding 辅助函数的边界观察，不应泛化为所有公开提取调用都会失败。</p></article>
+  </div>
+  <details class="card disclosure"><summary>展开全部检查组及本次结果<span>＋</span></summary><div class="table-wrap" id="group-table"></div></details>
+  <div class="note violet"><b>质量结论</b><p>本次 Feedback 在 CLI 与数值边界上保留得更完整；Auto50 Review 在两项补充 schema 语义上更接近原版。四者均有通过证据，也都仍有兼容性差异。本报告不把通过组数合成为“质量分”，也不声称某个分支全面胜出。</p></div>
+</section>
+
+<section id="cost" class="section">
+  <div class="section-heading"><div><p class="eyebrow">03 / 时间与模型用量</p><h2>成本降在哪里，又有哪些不能混算？</h2></div></div>
+  <p class="section-lead">切换下面的口径。默认展示含恢复与补修的交付时间；“重写作者耗时”只统计作者 CLI 调用持续时间，不代表整个实验。模型 tokens 包含缓存输入，缓存不能重复相加。</p>
+  <div class="two-col chart-grid">
+    <article class="card chart-card"><div class="chart-head"><h3>实验时间</h3><label class="select-label">计量口径<select id="time-metric"><option value="wall_seconds">提交 → 最终验收 / 终态</option><option value="pipeline_seconds">最后一段流水线</option><option value="author_seconds">重写作者调用耗时</option></select></label></div><div id="time-chart" class="bar-chart" aria-live="polite"></div><p class="chart-note" id="time-note"></p></article>
+    <article class="card chart-card"><div class="chart-head"><h3>模型 tokens</h3><label class="select-label">计量口径<select id="token-metric"><option value="total_tokens">已观测总量（含缓存输入）</option><option value="uncached_plus_output">非缓存输入 + 输出</option><option value="author">仅重写作者（含缓存）</option><option value="output_tokens">仅输出 tokens</option></select></label></div><div id="token-chart" class="bar-chart" aria-live="polite"></div><p class="chart-note" id="token-note"></p></article>
+  </div>
+  <div class="note amber"><b>一个会改变解读的事实</b><p>对比 Core49 + Tasks，本次含缓存总 tokens 下降 <strong>33.4%</strong>，但“非缓存输入 + 输出”只下降 <strong>0.5%</strong>：<strong>586,473 → 583,550</strong>。总量差异很大一部分来自缓存上下文的读取。没有计费单价与账单，不能把总 tokens 的降幅等同于费用降幅；非缓存输入与输出的价格通常也不相同。</p></div>
+  <div class="section-heading compact"><div><h3>按角色拆开看</h3><p class="muted">色块宽度表示用量；这里的 tokens 是模型使用量，不是源码规模。</p></div><div class="legend"><span><i class="author"></i>重写作者</span><span><i class="controller"></i>Controller</span><span><i class="solver"></i>有效任务解题</span><span><i class="recovery"></i>出题 / 作废解题</span></div></div>
+  <div class="card breakdown" id="role-breakdown"></div>
+  <div class="table-wrap card" id="cost-table"></div>
+  <div class="two-col">
+    <article class="card detail-card"><div class="card-kicker">CONTROLLER 的真实开销</div><h3>148.1 万 tokens，约 11.0 分钟</h3><p>本次 6 次 Controller 调用消耗 <b>1,480,585 tokens</b>，占实验已观测总量 <b>34.14%</b>；累计调用持续时间 <b>661.1 秒</b>。4 次作者调用合计 <b>2,856,053 tokens / 20.7 分钟</b>。</p><p>Controller 不是免费的。此次总成本较低，是在这些决策开销已经计入之后的观察结果；不能直接推导出关闭 Controller 就能少用同样的时间与 tokens。</p><p class="small-note">这里按模型调用日志计算持续时间；原控制器状态中的约 682.7 秒还含执行器开销，两个计时边界不同。</p></article>
+    <article class="card detail-card"><div class="card-kicker">最后一段日志会漏掉什么</div><h3>重启和交付前补修必须留在账里</h3><p><b>Core49 + Tasks：</b>最后流水线 45.8 分钟，连同第一次提交后的失败恢复，实际记录跨度为 69.0 分钟。</p><p><b>Auto50 Review：</b>最后流水线 56.5 分钟；加上此前作废解题、恢复、额外 schema 修复和验收，记录跨度为 95.7 分钟。</p><p><b>Core49 / Feedback：</b>没有对应的跨流水线恢复，因此两个口径相同。各项 CLI 持续时间与墙钟时间不同，不把可能重叠的时间重复相加。</p></article>
+  </div>
+  <details class="card disclosure"><summary>逐次调用的 tokens 与耗时<span>＋</span></summary><label class="inline-control">选择实验 <select id="ledger-run"></select></label><div class="table-wrap" id="ledger-table"></div><p class="footnote">确定性评审未调用模型，用量为 0。Tasks 的一次启动失败没有 usage，保留“缺失”记录；其 stdout 为空，日志显示失败发生在 Codex 启动前。<a href="usage-ledger.json">下载逐调用账本 ↗</a></p></details>
+</section>
+
+<section id="size" class="section">
+  <div class="section-heading"><div><p class="eyebrow">04 / 压缩率与功能范围</p><h2>先统一分母，再比较“压缩了多少”</h2></div></div>
+  <p class="section-lead">四个版本都以同一原始提交为起点，保留相同的 7 个核心功能叶节点，连同 3 个组节点共 10/31 个节点。相对完整原仓库的降幅包含移除训练、语音、托管服务等范围，不能全部归因于对保留功能的实现精简。</p>
+  <div class="two-col">
+    <article class="card chart-card"><div class="chart-head"><h3>最终源码规模</h3><label class="select-label">计量口径<select id="size-metric"><option value="source_tokens">仅源代码 tokens</option><option value="total_tokens">源代码 + 配置 tokens</option></select></label></div><div class="bar-chart" id="size-chart" aria-live="polite"></div><p class="chart-note">源码计量统一使用 tiktoken 0.12.0 / cl100k_base，按文件独立分词求和。未经修改的原始测试、文档和二进制资产遵循同一冻结排除规则。改写的 README 等文本仍计入。</p></article>
+    <article class="card detail-card denominator"><div class="card-kicker">三个分母，三个不同问题</div><div class="den-row"><b>101,061</b><p>完整原仓库的<b>源代码</b> tokens<br>本次 13,551，减少 <strong>86.59%</strong></p></div><div class="den-row"><b>106,460</b><p>去除已识别参考文档后的<b>源码 + 配置</b><br>本次 14,262，减少 <strong>86.60%</strong></p></div><div class="den-row"><b>175,966</b><p>原生计量中的<b>源码 + 配置</b><br>本次 14,262，减少 <strong>91.90%</strong></p></div><p class="small-note">最后一个分母额外包含 69,506 tokens 的 7 份 SVG 图和 llms.txt。它适合复核原生报告，却会放大读者直觉中的“代码压缩率”。选中源文件的 19,045 tokens 还混有共享文件里的未选功能，仅能作估计，不当作纯 core 基线。</p></article>
+  </div>
+  <div class="table-wrap card" id="size-table"></div>
+  <p class="footnote">分母分别为：¹ 源代码 101,061 tokens；² 校正后的源码 + 配置 106,460 tokens；³ 原生源码 + 配置 175,966 tokens。压缩后的计数保持不变，仅原始分母不同。</p>
+  <article class="card scope-card"><div class="chart-head"><div><h3>共同保留的功能树</h3><p class="muted">点击分组展开；四次实验的范围相同，细节契约不同。</p></div><button class="button small" id="expand-scope">展开全部</button></div>
+    <div class="scope-tree"><div class="tree-root"><span class="root-icon">N</span><b>Needle · Core 文本运行时</b><span class="pill">10 / 31 个节点</span></div>
+      <details class="tree-group"><summary><span class="tree-toggle">＋</span><strong>推理与类型语义</strong><span>3 个核心叶节点</span></summary><div class="tree-leaves"><div><b>原生文本推理与 grounded extraction</b><p>generation 2 / 3、工具调用、embedding、日期与数值校验。数值边界见复测表。</p></div><div><b>工具 / 提取 schema</b><p>Field、Annotated、Pydantic、函数签名与文档解析。四个版本的嵌套约束并不一致。</p></div><div><b>独立模型 worker</b><p>进程隔离、协议、权重加载与关闭；共同原始用例通过。</p></div></div></details>
+      <details class="tree-group"><summary><span class="tree-toggle">＋</span><strong>资源与运行集成</strong><span>4 个核心叶节点</span></summary><div class="tree-leaves"><div><b>原生引擎与权重</b><p>下载、缓存、平台识别与 libc 回退。</p></div><div><b>运行时 CLI</b><p>fetch / download、generation 3 平台资源与诊断信息；本次补充保留权重步骤。</p></div><div><b>遥测与诊断</b><p>关闭遥测的环境变量语义与诊断行为。</p></div><div><b>可安装的核心运行时</b><p>wheel、导入、命令行入口、setup 与 setup.bat。</p></div></div></details>
+      <details class="tree-group omitted"><summary><span class="tree-toggle">＋</span><strong>未选择的范围</strong><span>21 个图节点</span></summary><div class="tree-leaves"><p>训练与微调、独立 JAX / MLX 模型实现、量化与导出、语音模型与 CLI、托管平台、浏览器 playground、设备示例环境、额外训练 / 语音依赖和上游发布自动化。这里包括组节点；不能将 21 个图节点理解成 21 份独立功能测试。</p><p>相关测试文件保留，但未执行的范围不算通过。跨越保留 / 移除边界的原始检查使用独立 core 适配。</p></div></details>
+    </div>
+  </article>
+  <div class="note violet"><b>49% / 50% 并没有成为这些实验的主要瓶颈</b><p>三个旧实验的第一版就已经明显低于目标上限，记录中的纯体积优化次数都是 0。后续时间主要用于修复行为、任务评测或交付前契约补充。因此这组历史数据不能证明“取消体积目标”本身带来了多少提速。</p></div>
+</section>
+
+<section id="trajectory" class="section">
+  <div class="section-heading"><div><p class="eyebrow">05 / 实验轨迹</p><h2>每次重写，究竟花在了哪里</h2></div></div>
+  <p class="section-lead">以下是实验运行时记录，不是今天复测的结果。“暂缓”指修复筛查没有运行某组，不等同于新增失败。Feedback 中途增加了一个已在原版验证的边界检查组，因此验收组数从 11 变为 12。</p>
+  <div class="tabs" id="trajectory-tabs" role="tablist" aria-label="选择实验轨迹"></div>
+  <div class="card trajectory-panel" id="trajectory-panel" role="tabpanel"></div>
+  <div class="note"><b>重复修复会消耗 tokens，但轨迹长度本身不代表质量</b><p>Core49 的第 5 次调用没有产生新代码；Tasks 的开发评测虽然完成，仍没有取得成本改善证据；Auto50 在任务评测后修改了交付代码；Feedback 的后 3 次作者调用主要服务于补充契约。把这些调用都称为“体积优化”，会误判时间花在了哪里。</p></div>
+</section>
+
+<section id="structure" class="section">
+  <div class="section-heading"><div><p class="eyebrow">06 / 结构与可读性</p><h2>更短的代码，不自动等于更好维护</h2></div></div>
+  <p class="section-lead">对固定提交重新做 Python AST 与词法扫描，并人工阅读运行入口、工具 schema、worker、native 与 CLI。下面是结构事实，不是主观评分。</p>
+  <div class="table-wrap card" id="structure-table"></div>
+  <p class="footnote">¹ 行数按原始文件文本行统计，包含空行和注释，仅用于理解结构与排版；本报告的压缩规模指标仍为 tokens。函数跨度含函数体中的空行、注释与嵌套定义。</p>
+  <div class="two-col">
+    <article class="card detail-card"><div class="card-kicker">两个 CORE49</div><h3>文件少，入口模块承担更多职责</h3><p>均为 9 个 Python 文件，<code>needle/__init__.py</code> 分别为 <b>542 / 565 行</b>，混合原生运行与 grounding 逻辑。共享的 <code>_native.py</code> 与 <code>_worker.py</code> 已经拆出；并非将全部逻辑堆成一个文件。</p><p>两者没有分号拼接语句，也未发现直接调用 <code>eval / exec / compile</code>。Core49 在四者中源码 tokens 最少，但历史修复成本最高，新增兼容性检查仍有缺口。</p></article>
+    <article class="card detail-card"><div class="card-kicker">AUTO50 / FEEDBACK</div><h3>grounding 独立，模块边界更清晰</h3><p>分别将 <code>_grounding.py</code> 拆出为 <b>190 / 218 行</b>；入口缩为 <b>376 / 395 行</b>。Auto50 另有一个 4 行的 worker 启动模块，11 个文件不意味着逻辑更多。</p><p>Feedback 的 CLI 为 123 行，较旧版本 80～96 行更长，覆盖了额外的下载和诊断行为。其工具 schema 实现仍有前文发现的差异，清晰结构不能替代行为验收。</p></article>
+  </div>
+  <details class="card disclosure"><summary>逐文件规模与固定源码链接<span>＋</span></summary><label class="inline-control">选择分支 <select id="files-run"></select></label><div class="table-wrap" id="file-table"></div></details>
+  <p class="footnote">四个版本均调用真实外部引擎 / 权重；它们是共同运行依赖，不计入 Python 源码压缩量。静态扫描没有发现直接动态执行调用，但这不是安全审计，也不代表穷尽所有间接执行方式。长行数量只描述排版，不单独判断可维护性。</p>
+</section>
+
+<section id="tasks" class="section">
+  <div class="section-heading"><div><p class="eyebrow">07 / 后续任务成本</p><h2>压缩后，Agent 做修改任务更容易了吗？</h2></div></div>
+  <p class="section-lead">只有两次历史实验开启了独立任务评测，每个阶段每个版本只有一次观测。任务是工具 schema 的修改工作流；不能推广为所有理解、诊断、执行、修改任务的平均表现。</p>
+  <div class="table-wrap card" id="task-table"></div>
+  <div class="two-col">
+    <article class="card detail-card"><h3>Core49 + Tasks：未建立改善证据</h3><p>原版 / 候选各完成一次开发任务，tokens 为 <b>273,083 / 273,551</b>，候选高 <b>0.17%</b>；耗时 <b>282.3 / 322.5 秒</b>。结论为“不确定”，隐藏任务没有运行。这个任务结果绑定最终提交 <code>4b35478c</code>。</p><p class="small-note">此前一次任务检查因执行器继承 future annotations 改变语义而作废。执行器修复后重测双方，原任务定义保持不变；作废部分不参与收益比较，但其时间与用量保留。</p></article>
+    <article class="card detail-card warning-card"><h3>Auto50：旧版本隐藏任务成本回归</h3><p>开发任务 tokens 下降 <b>18.14%</b>，隐藏任务却增加 <b>36.34%</b>。四次有效解题的可执行验收都通过，失败的是成本门槛，不是这些任务的功能验收。</p><p>这些记录只属于 <code>cd684596</code>。交付的 <code>d266be7e</code> 此后修复了 schema，<b>没有再次运行任务评测</b>。因此最终分支的任务成本应标记“未验证”，而不是沿用旧版本的回归或改善结论。</p></article>
+  </div>
+  <div class="note violet"><b>本次的回答是“尚未测量”</b><p>Feedback 按本次指令优先简洁可读的 core 实现，在功能 / 安装验收后停止，未开启任务成本评测。代码更小、生成更快，都不能单独证明后续 Agent 维护会更省 tokens。Core49 同样没有这方面数据。</p></div>
+</section>
+
+<section id="interpretation" class="section">
+  <div class="section-heading"><div><p class="eyebrow">08 / 差异解读与下一步</p><h2>看见改进，也保留因果判断的边界</h2></div></div>
+  <div class="table-wrap card" id="fairness-table"></div>
+  <div class="two-col">
+    <article class="card detail-card"><div class="card-kicker">有证据支持的判断</div><h3>这次交付更高效，但并非严格 A/B</h3><p>本次作者调用合计 <b>20.7 分钟 / 285.6 万 tokens</b>，低于三个旧实验的 <b>31.8～73.1 分钟 / 527.0～1,032.5 万 tokens</b>。第一版就通过共同的 11 组检查，也减少了早期基础行为返工。</p><p>与此同时，输入知识契约从早期的 774 条演进到本次初始 999 条，且吸收了先前原仓库语义澄清；本次还关闭了任务评测。这些变化与 Controller 同时发生，现有记录无法分离各自贡献。</p></article>
+    <article class="card detail-card"><div class="card-kicker">接下来最值得做的三件事</div><h3>先补齐回归，再验证收益</h3><ol class="action-list"><li><b>把兼容性补丁沉淀成共同验收。</b>补齐 Feedback 的嵌套 schema 语义；保留 CLI 权重、Field 优先级与数值边界用例。当前分支在本次对比中没有被修改。</li><li><b>做真正的开关对照。</b>固定同一知识包、模型 / effort、目标、执行资源和验收；仅切换 Controller / feedback memory，每组多次重复，报告完成率与时间分布。</li><li><b>分开衡量生成与维护。</b>记录含缓存用量、非缓存输入、输出及实付成本；另设独立任务评测，绑定最终代码提交，不把补修前的成绩沿用到补修后。</li></ol></article>
+  </div>
+  <details id="methods" class="card disclosure"><summary>计量范围、证据边界与尚未覆盖的内容<span>＋</span></summary><div class="method-grid"><div><h4>时间</h4><p>优先使用第一次提交到最终功能 / 安装验收或流水线终态的记录跨度。Core49 与 Feedback 没有跨运行恢复；Tasks 与 Auto50 包含此前失败和恢复。时间包括调度和宿主等待，不含提交前环境、知识包准备，也不含报告发布。报告制作与这次 1 分 48 秒的复测不混入历史实验耗时。</p></div><div><h4>模型用量</h4><p>累计实验实际 spawned CLI 的 usage，失败 / 作废调用只要有用量也计入。输入 tokens 已含缓存；输出已含推理输出，均不重复相加。外层协调 Agent、人工式源代码审查、知识补充及报告制作没有完整用量账本，故标记“已观测”而非全链路总成本。</p></div><div><h4>验收</h4><p>同一套已冻结检查，原始仓库先通过所有 13 组，再比较候选。共同 pytest 用例数 105；安装独立为 3 项。CLI 下载替身隔离网络，真实推理使用共同 native 资产。所有被测代码与原始检查输入哈希在运行前后保持不变。</p></div><div><h4>局限</h4><p>单次历史实验、知识输入不同、早期作者模型未冻结；无法作统计性优劣判断。没有覆盖全部原始功能、全部边界输入、所有操作系统 / 设备或长时间并发。source-free 作者输入是一种工作流约束，原始 source 没被提供给作者，但共享文件系统不是 OS 级隔离。</p></div></div></details>
+</section>
+
+<section id="evidence" class="section">
+  <div class="section-heading"><div><p class="eyebrow">09 / 可追溯证据</p><h2>结论绑定代码，数字回到记录</h2></div></div>
+  <p class="section-lead">对比对象为 2026-11-09 从 GitHub 获取的四个分支头。下面的源码链接固定到提交，便于未来分支移动后仍然复核。历史报告可与本页的独立复测交叉阅读。</p>
+  <div class="evidence-grid" id="evidence-cards"></div>
+  <div class="downloads card"><div><b>公开数据附件</b><p>只包含汇总、提交标识、逐调用用量与公开 API 观察；不发布原始模型对话、隐藏任务答案或本地绝对路径。</p></div><div><a href="comparison.json" download>对比数据 JSON ↗</a><a href="usage-ledger.json" download>调用用量账本 ↗</a><a href="audit-evidence.json" download>统一复测证据 ↗</a><a href="code-size-inventory.json" download>源码 token 明细 ↗</a><a href="schema-probe.py" download>schema 最小复现 ↗</a></div></div>
+  <p class="footnote">共同原始提交：<a href="https://github.com/cactus-compute/needle/tree/278eea197d6a89a274d5505de757f5a3acb7ecfa"><code>278eea197d6a89a274d5505de757f5a3acb7ecfa</code></a>。本次复测 Slurm 作业 <code>8766255</code>，完成状态 <code>COMPLETED / 0:0</code>；此处代表审计程序完整运行，程序记录的候选差异不会被改写为通过。</p>
+</section>
+<footer><span class="brand-word">nanolize <b>/</b> Needle 实验对照</span><span>2026.11.09 · 证据驱动的工程记录</span><a href="#overview">回到顶部 ↑</a></footer>
+</main></div>
+<noscript><p class="noscript">动态表格需要 JavaScript。仍可阅读本页文字，或下载 <a href="comparison.json">完整对比数据</a>。</p></noscript>
+<script src="app.js" defer></script>
+</body></html>

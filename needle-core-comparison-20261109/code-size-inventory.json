@@ -1,0 +1,1528 @@
+{
+  "core49": {
+    "commit": "0bf120f038749d93166006035641ce2ec39b8145",
+    "schema_version": 1,
+    "metric": "tokens",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "inventory": {
+      ".gitignore": {
+        "category": "configuration",
+        "tokens": 22,
+        "lines": 6,
+        "sha256": "025a0e027dc34716c5c2338b023307f0ad26a062d608f045327122218cd4227e",
+        "bytes": 55
+      },
+      "MANIFEST.in": {
+        "category": "configuration",
+        "tokens": 73,
+        "lines": 9,
+        "sha256": "72f8cfbe94d2ed21daaab79c41901c1d3a892a742ebd38ff1cb56fcecf492f81",
+        "bytes": 220
+      },
+      "README.md": {
+        "category": "configuration",
+        "tokens": 427,
+        "lines": 32,
+        "sha256": "50bddd0399ae5bcae8a6eb9f458873c41db2354f074c71d5ce0e5988d857fc2e",
+        "bytes": 1879
+      },
+      "needle/__init__.py": {
+        "category": "source",
+        "tokens": 5070,
+        "lines": 542,
+        "sha256": "d104932066a217695274fc1e89928d4569a15ecf2d98cf1debef948527cc663e",
+        "bytes": 21448
+      },
+      "needle/__main__.py": {
+        "category": "source",
+        "tokens": 17,
+        "lines": 4,
+        "sha256": "f38fd2f2c920c29c828645e87ed64743d567aaaef7fba7a15d2c7d7f8094f91f",
+        "bytes": 61
+      },
+      "needle/_native.py": {
+        "category": "source",
+        "tokens": 588,
+        "lines": 65,
+        "sha256": "9f1b65ca084f4c9b7daec48ee4b96719543f45370efdde97518d1aed4c69aaaf",
+        "bytes": 2403
+      },
+      "needle/_telemetry.py": {
+        "category": "source",
+        "tokens": 516,
+        "lines": 64,
+        "sha256": "2f69d0e9780e55916aa93ad0abb32ea5c6a869a988500aac5ef87305fd4b5f7c",
+        "bytes": 2237
+      },
+      "needle/_worker.py": {
+        "category": "source",
+        "tokens": 1528,
+        "lines": 200,
+        "sha256": "676b6e9276ab291e69a0289000f76b485ee03e2c8d6d23bbd4ac4d6cddc73f42",
+        "bytes": 7394
+      },
+      "needle/agent/__init__.py": {
+        "category": "source",
+        "tokens": 36,
+        "lines": 3,
+        "sha256": "3545a5967518cef798f37aa3a4bc58b5a8ee2061dd30852442b8086acb2233d8",
+        "bytes": 126
+      },
+      "needle/agent/fetch.py": {
+        "category": "source",
+        "tokens": 2289,
+        "lines": 248,
+        "sha256": "a073ea8c0f94e48235b307f934c310ecdd6948862a6b61fb81c8338ea2076e03",
+        "bytes": 8770
+      },
+      "needle/agent/tools.py": {
+        "category": "source",
+        "tokens": 1718,
+        "lines": 191,
+        "sha256": "e2f5711b23fc6d4cbd8dbe6702406836b7119e19093b06331442cc190d0b49d7",
+        "bytes": 7608
+      },
+      "needle/cli.py": {
+        "category": "source",
+        "tokens": 971,
+        "lines": 96,
+        "sha256": "49c9daa59bffc113b9f2b74e01114a46a9c5d9b082f232f5d10d43f5ba1f6561",
+        "bytes": 4260
+      },
+      "pyproject.toml": {
+        "category": "configuration",
+        "tokens": 128,
+        "lines": 21,
+        "sha256": "6669cfe5a40425808496db36bb3614ba17c2fecdc9c8b1f0cdbb3f770211f264",
+        "bytes": 466
+      },
+      "requirements.txt": {
+        "category": "configuration",
+        "tokens": 5,
+        "lines": 1,
+        "sha256": "f0ace5409018e26894be302cb0e009a1da8a3b0de16ab373ba2c0643da8b4929",
+        "bytes": 16
+      },
+      "setup": {
+        "category": "configuration",
+        "tokens": 46,
+        "lines": 6,
+        "sha256": "e8b0fb3af19019192d912142c4e985d7922a3e306579d4286e9e7ceb0ffb140b",
+        "bytes": 127
+      },
+      "setup.bat": {
+        "category": "configuration",
+        "tokens": 67,
+        "lines": 7,
+        "sha256": "2b69b95244b9255cabae7cff6b16b2348fc24fb48cbc2a623a68a2a2cb7305d1",
+        "bytes": 171
+      }
+    },
+    "excluded_files": {
+      "LICENSE": {
+        "category": "documentation",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      "tests/conftest.py": {
+        "category": "test",
+        "sha256": "d439784be0a2dec8b26b9e46a79b5ae00f1b5e548339001c7d01f4386d01f75f",
+        "bytes": 6587
+      },
+      "tests/test_build.py": {
+        "category": "test",
+        "sha256": "72251541107e9fe0865ae221cccd78df89e51e7a1794008e03e4bdea66c056b1",
+        "bytes": 4467
+      },
+      "tests/test_environments.py": {
+        "category": "test",
+        "sha256": "d66b5248f85340787ec1de76c31ceccade1757b28fd79ed95e5a7fc489513aa3",
+        "bytes": 6562
+      },
+      "tests/test_fetch.py": {
+        "category": "test",
+        "sha256": "8b98fb37b60da808c056359bd24902aed9dacf50e37913aa87925e0e8fc21d27",
+        "bytes": 15305
+      },
+      "tests/test_finetune.py": {
+        "category": "test",
+        "sha256": "93bd7417bce5e5aadef71c1597cd813b7ee129c943b9c9282d57e7fe58e83925",
+        "bytes": 5711
+      },
+      "tests/test_generate.py": {
+        "category": "test",
+        "sha256": "c19cc24ce34f755d17c2198cde066990bfd68521374306b0f97c1fe480609318",
+        "bytes": 3755
+      },
+      "tests/test_grounding.py": {
+        "category": "test",
+        "sha256": "0146987d1285b455d2d36903c0c157c9909789d1cc52b36a93ae48c3e4867b7e",
+        "bytes": 15382
+      },
+      "tests/test_inference.py": {
+        "category": "test",
+        "sha256": "ecede1d26c1bc26725248e64ae0a80d9ef97e0c050a6372cd7df9c3e060b5a40",
+        "bytes": 2531
+      },
+      "tests/test_lora.py": {
+        "category": "test",
+        "sha256": "5f09c114639eb9e6864aa8307989ebed602cb8999f9f43060f71548394cd7644",
+        "bytes": 2145
+      },
+      "tests/test_mlx.py": {
+        "category": "test",
+        "sha256": "14032087b280a1fabd6abc8de8d3d0584eb266829a2f07d213fc48959cf184df",
+        "bytes": 4144
+      },
+      "tests/test_packaging.py": {
+        "category": "test",
+        "sha256": "28f7bee194a7e611490fef5e2f5ce8b18025887da84f5ba160891419f4cb38aa",
+        "bytes": 1555
+      },
+      "tests/test_platform.py": {
+        "category": "test",
+        "sha256": "f7dab57bf70384e5d3652de2dc46e0076b2fddc8c4b3f79953e907e2dddde889",
+        "bytes": 14962
+      },
+      "tests/test_playground.py": {
+        "category": "test",
+        "sha256": "50a2997cd1f5032493f26c42798513bcac038f03e50d3ff468ffa03a30abe899",
+        "bytes": 2190
+      },
+      "tests/test_quantize_mlx.py": {
+        "category": "test",
+        "sha256": "7f6442aa8defb62b33b327eeebbccf5d6207d32bccad3df7340413b2f255fc63",
+        "bytes": 3260
+      },
+      "tests/test_release.py": {
+        "category": "test",
+        "sha256": "45942a03fcb9b135d925e8c80a60c59fab470874aaea539ed22d9592b1aaa63b",
+        "bytes": 4687
+      },
+      "tests/test_render.py": {
+        "category": "test",
+        "sha256": "0bd14779bf6832bc5f69ff946c60922b7359376514b07914065d2010bc7ed134",
+        "bytes": 4540
+      },
+      "tests/test_run.py": {
+        "category": "test",
+        "sha256": "88c03c63579a5377ef7ebee9e9717d33c83da19c7bb60ece9a5fb0a5a991a4d2",
+        "bytes": 6909
+      },
+      "tests/test_tools.py": {
+        "category": "test",
+        "sha256": "f30f53511a930033580d03f97235cba0256398deaa10ca9baf1b237ee9822f5f",
+        "bytes": 8310
+      },
+      "tests/test_weights.py": {
+        "category": "test",
+        "sha256": "ad672344f2a6ba332bac3bd3849cbf9512bc56437e6d1495f357ce98fb2b7547",
+        "bytes": 13604
+      },
+      "tests/test_whistle.py": {
+        "category": "test",
+        "sha256": "4493d1925a6f111f99e86172eaefb648ce6477a0277603d9aa5a973a323f38b8",
+        "bytes": 27138
+      },
+      "tests/test_whistle_finetune.py": {
+        "category": "test",
+        "sha256": "a08117e462b1aaf0541e57c0e62bfc326997c9795de776a99e35670028a33688",
+        "bytes": 15571
+      },
+      "tests/test_worker.py": {
+        "category": "test",
+        "sha256": "93bae65b52f41fd82542d82bb3ed34fa05f4e98683ae90786a0a6c42d1b59bb9",
+        "bytes": 5271
+      }
+    },
+    "source_tokens": 12733,
+    "configuration_tokens": 768,
+    "total_tokens": 13501,
+    "complete": true,
+    "warnings": [],
+    "incomplete_counts_are_observed_subtotals": true
+  },
+  "tasks49": {
+    "commit": "4b35478c962f26126a9ea1569537a3954a9e6a0f",
+    "schema_version": 1,
+    "metric": "tokens",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "inventory": {
+      ".gitignore": {
+        "category": "configuration",
+        "tokens": 28,
+        "lines": 7,
+        "sha256": "d93f3533bc2f4400ac7ecd00232803e397b29d35ba7d4b21a8e64e3cdf95598e",
+        "bytes": 75
+      },
+      "README.md": {
+        "category": "configuration",
+        "tokens": 350,
+        "lines": 34,
+        "sha256": "b9ec6059ec163c35c906a4d6d80592fe3cdec7a9f8ed4ec80b537f5547bb7dcd",
+        "bytes": 1488
+      },
+      "needle/__init__.py": {
+        "category": "source",
+        "tokens": 5312,
+        "lines": 565,
+        "sha256": "24e1da90c21e3aee0bb13234de9a92fb4d211e1f94c0fd56572299de49c9dcb1",
+        "bytes": 22446
+      },
+      "needle/__main__.py": {
+        "category": "source",
+        "tokens": 8,
+        "lines": 3,
+        "sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+        "bytes": 30
+      },
+      "needle/_native.py": {
+        "category": "source",
+        "tokens": 547,
+        "lines": 66,
+        "sha256": "a2ec723888b29f3550bd0c2cc68076f719e206e6cd316d7e321d33913d2142db",
+        "bytes": 2256
+      },
+      "needle/_telemetry.py": {
+        "category": "source",
+        "tokens": 530,
+        "lines": 67,
+        "sha256": "201d52e091bccfa18aa2cde4a2bfb9b4672963765dc475947c89ee2df633dc3d",
+        "bytes": 2330
+      },
+      "needle/_worker.py": {
+        "category": "source",
+        "tokens": 1610,
+        "lines": 218,
+        "sha256": "b48f068558edbc52b6126885a9a07e3ab1fceca2b21f25b4a7f567e12e4b7d62",
+        "bytes": 8017
+      },
+      "needle/agent/__init__.py": {
+        "category": "source",
+        "tokens": 36,
+        "lines": 3,
+        "sha256": "af1c2e40e8c413e3bf1f1330ada0f9288eb20165390e6655bf0e3d6702e47577",
+        "bytes": 126
+      },
+      "needle/agent/fetch.py": {
+        "category": "source",
+        "tokens": 2345,
+        "lines": 241,
+        "sha256": "8ac4d797ad8c256c89fa5a4f7dec37fe6bff6a6d7134e4d23990cb50a38802ce",
+        "bytes": 9011
+      },
+      "needle/agent/tools.py": {
+        "category": "source",
+        "tokens": 1885,
+        "lines": 214,
+        "sha256": "c60a31916350d801ef6aa7c06d6f960a0ac5ee1bb7b597000a8aae241df1110f",
+        "bytes": 8167
+      },
+      "needle/cli.py": {
+        "category": "source",
+        "tokens": 916,
+        "lines": 85,
+        "sha256": "53062e7099d951c89b9fbca158df09050a012ca42af0c80f1cdcf3d0cecb2acf",
+        "bytes": 4007
+      },
+      "pyproject.toml": {
+        "category": "configuration",
+        "tokens": 139,
+        "lines": 21,
+        "sha256": "cb8a19c8dee4c3edd4eff943392d1fd9599882ac6a043114d52faadb7e7ebbc6",
+        "bytes": 500
+      },
+      "requirements.txt": {
+        "category": "configuration",
+        "tokens": 5,
+        "lines": 1,
+        "sha256": "f0ace5409018e26894be302cb0e009a1da8a3b0de16ab373ba2c0643da8b4929",
+        "bytes": 16
+      },
+      "setup": {
+        "category": "configuration",
+        "tokens": 44,
+        "lines": 6,
+        "sha256": "614be77c35d57fb085df53f99d909052bdfaa05a9c243f37067249d0b251f968",
+        "bytes": 119
+      },
+      "setup.bat": {
+        "category": "configuration",
+        "tokens": 65,
+        "lines": 7,
+        "sha256": "4f927bdcf4b20596678d127547d76a707e56e59001bbc5fd72be2bc4a9b45c70",
+        "bytes": 163
+      }
+    },
+    "excluded_files": {
+      "LICENSE": {
+        "category": "documentation",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      "tests/conftest.py": {
+        "category": "test",
+        "sha256": "d439784be0a2dec8b26b9e46a79b5ae00f1b5e548339001c7d01f4386d01f75f",
+        "bytes": 6587
+      },
+      "tests/test_build.py": {
+        "category": "test",
+        "sha256": "72251541107e9fe0865ae221cccd78df89e51e7a1794008e03e4bdea66c056b1",
+        "bytes": 4467
+      },
+      "tests/test_environments.py": {
+        "category": "test",
+        "sha256": "d66b5248f85340787ec1de76c31ceccade1757b28fd79ed95e5a7fc489513aa3",
+        "bytes": 6562
+      },
+      "tests/test_fetch.py": {
+        "category": "test",
+        "sha256": "8b98fb37b60da808c056359bd24902aed9dacf50e37913aa87925e0e8fc21d27",
+        "bytes": 15305
+      },
+      "tests/test_finetune.py": {
+        "category": "test",
+        "sha256": "93bd7417bce5e5aadef71c1597cd813b7ee129c943b9c9282d57e7fe58e83925",
+        "bytes": 5711
+      },
+      "tests/test_generate.py": {
+        "category": "test",
+        "sha256": "c19cc24ce34f755d17c2198cde066990bfd68521374306b0f97c1fe480609318",
+        "bytes": 3755
+      },
+      "tests/test_grounding.py": {
+        "category": "test",
+        "sha256": "0146987d1285b455d2d36903c0c157c9909789d1cc52b36a93ae48c3e4867b7e",
+        "bytes": 15382
+      },
+      "tests/test_inference.py": {
+        "category": "test",
+        "sha256": "ecede1d26c1bc26725248e64ae0a80d9ef97e0c050a6372cd7df9c3e060b5a40",
+        "bytes": 2531
+      },
+      "tests/test_lora.py": {
+        "category": "test",
+        "sha256": "5f09c114639eb9e6864aa8307989ebed602cb8999f9f43060f71548394cd7644",
+        "bytes": 2145
+      },
+      "tests/test_mlx.py": {
+        "category": "test",
+        "sha256": "14032087b280a1fabd6abc8de8d3d0584eb266829a2f07d213fc48959cf184df",
+        "bytes": 4144
+      },
+      "tests/test_packaging.py": {
+        "category": "test",
+        "sha256": "28f7bee194a7e611490fef5e2f5ce8b18025887da84f5ba160891419f4cb38aa",
+        "bytes": 1555
+      },
+      "tests/test_platform.py": {
+        "category": "test",
+        "sha256": "f7dab57bf70384e5d3652de2dc46e0076b2fddc8c4b3f79953e907e2dddde889",
+        "bytes": 14962
+      },
+      "tests/test_playground.py": {
+        "category": "test",
+        "sha256": "50a2997cd1f5032493f26c42798513bcac038f03e50d3ff468ffa03a30abe899",
+        "bytes": 2190
+      },
+      "tests/test_quantize_mlx.py": {
+        "category": "test",
+        "sha256": "7f6442aa8defb62b33b327eeebbccf5d6207d32bccad3df7340413b2f255fc63",
+        "bytes": 3260
+      },
+      "tests/test_release.py": {
+        "category": "test",
+        "sha256": "45942a03fcb9b135d925e8c80a60c59fab470874aaea539ed22d9592b1aaa63b",
+        "bytes": 4687
+      },
+      "tests/test_render.py": {
+        "category": "test",
+        "sha256": "0bd14779bf6832bc5f69ff946c60922b7359376514b07914065d2010bc7ed134",
+        "bytes": 4540
+      },
+      "tests/test_run.py": {
+        "category": "test",
+        "sha256": "88c03c63579a5377ef7ebee9e9717d33c83da19c7bb60ece9a5fb0a5a991a4d2",
+        "bytes": 6909
+      },
+      "tests/test_tools.py": {
+        "category": "test",
+        "sha256": "f30f53511a930033580d03f97235cba0256398deaa10ca9baf1b237ee9822f5f",
+        "bytes": 8310
+      },
+      "tests/test_weights.py": {
+        "category": "test",
+        "sha256": "ad672344f2a6ba332bac3bd3849cbf9512bc56437e6d1495f357ce98fb2b7547",
+        "bytes": 13604
+      },
+      "tests/test_whistle.py": {
+        "category": "test",
+        "sha256": "4493d1925a6f111f99e86172eaefb648ce6477a0277603d9aa5a973a323f38b8",
+        "bytes": 27138
+      },
+      "tests/test_whistle_finetune.py": {
+        "category": "test",
+        "sha256": "a08117e462b1aaf0541e57c0e62bfc326997c9795de776a99e35670028a33688",
+        "bytes": 15571
+      },
+      "tests/test_worker.py": {
+        "category": "test",
+        "sha256": "93bae65b52f41fd82542d82bb3ed34fa05f4e98683ae90786a0a6c42d1b59bb9",
+        "bytes": 5271
+      }
+    },
+    "source_tokens": 13189,
+    "configuration_tokens": 631,
+    "total_tokens": 13820,
+    "complete": true,
+    "warnings": [],
+    "incomplete_counts_are_observed_subtotals": true
+  },
+  "auto50": {
+    "commit": "d266be7eb2718112a2acc18dd1a1438347d81fae",
+    "schema_version": 1,
+    "metric": "tokens",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "inventory": {
+      ".gitignore": {
+        "category": "configuration",
+        "tokens": 28,
+        "lines": 7,
+        "sha256": "d93f3533bc2f4400ac7ecd00232803e397b29d35ba7d4b21a8e64e3cdf95598e",
+        "bytes": 75
+      },
+      "MANIFEST.in": {
+        "category": "configuration",
+        "tokens": 7,
+        "lines": 1,
+        "sha256": "ca4e54e0620fa3cc3a3b8aa07a9a5930e9aa540947348a8db1ce9435cd637abe",
+        "bytes": 41
+      },
+      "README.md": {
+        "category": "configuration",
+        "tokens": 430,
+        "lines": 27,
+        "sha256": "a5a9fe4a7ef0a6d2b647ed0c434fa134cfd17aa58a6d24643cc32820f98bfa8b",
+        "bytes": 1888
+      },
+      "needle/__init__.py": {
+        "category": "source",
+        "tokens": 3453,
+        "lines": 376,
+        "sha256": "7a97ac9e372ccd4a79b257c8c1236113bfc52d6d45a717440cb2d26af0ccb1fe",
+        "bytes": 15713
+      },
+      "needle/__main__.py": {
+        "category": "source",
+        "tokens": 8,
+        "lines": 3,
+        "sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+        "bytes": 30
+      },
+      "needle/_grounding.py": {
+        "category": "source",
+        "tokens": 1896,
+        "lines": 190,
+        "sha256": "f437e3685190107fdf62b3fe009da382805ebdac5e4abf9e1190503156b194a3",
+        "bytes": 7157
+      },
+      "needle/_native.py": {
+        "category": "source",
+        "tokens": 544,
+        "lines": 57,
+        "sha256": "90106cf6381813cf98f22c014c04f1849fc189d84a281ecea8d64438d28d2ece",
+        "bytes": 2102
+      },
+      "needle/_telemetry.py": {
+        "category": "source",
+        "tokens": 526,
+        "lines": 66,
+        "sha256": "c147c5e6270e389c0961f81df1a6519f6048b48c262256977b9299792ee36ec9",
+        "bytes": 2325
+      },
+      "needle/_worker.py": {
+        "category": "source",
+        "tokens": 1586,
+        "lines": 206,
+        "sha256": "540282ef8e2feee7c140981d52edd8424b2aa46e9d0078db00ed03524163b81d",
+        "bytes": 7718
+      },
+      "needle/_worker_main.py": {
+        "category": "source",
+        "tokens": 19,
+        "lines": 4,
+        "sha256": "23b7c90b1fd343dcbc2f1d3e7b7b16f8b9a8a2f5ad15d91f172520931d756b87",
+        "bytes": 69
+      },
+      "needle/agent/__init__.py": {
+        "category": "source",
+        "tokens": 16,
+        "lines": 1,
+        "sha256": "f79c7a0da47f603ab2fa19cbb4241799d41cdad48f7d8cb21aea1510f899abba",
+        "bytes": 62
+      },
+      "needle/agent/fetch.py": {
+        "category": "source",
+        "tokens": 2343,
+        "lines": 244,
+        "sha256": "827178a87472924472cf1a88991dca776ba2ab69a533602d7022fdb20cd1faa7",
+        "bytes": 9054
+      },
+      "needle/agent/tools.py": {
+        "category": "source",
+        "tokens": 1533,
+        "lines": 174,
+        "sha256": "c8837bf4be801454128307a55f6d49725c7cfa7f22d4665c5a376dfeef159ee9",
+        "bytes": 6786
+      },
+      "needle/cli.py": {
+        "category": "source",
+        "tokens": 877,
+        "lines": 80,
+        "sha256": "dc981a6a4b4e6e024ea055055f28301c488804ea8dc7b0d19b1479d68282f514",
+        "bytes": 3989
+      },
+      "pyproject.toml": {
+        "category": "configuration",
+        "tokens": 118,
+        "lines": 18,
+        "sha256": "6dcf4d22528911b28d5ec09251b2cf5608a40a0fcd358ea5d34ad7da27391711",
+        "bytes": 438
+      },
+      "requirements.txt": {
+        "category": "configuration",
+        "tokens": 5,
+        "lines": 1,
+        "sha256": "f0ace5409018e26894be302cb0e009a1da8a3b0de16ab373ba2c0643da8b4929",
+        "bytes": 16
+      },
+      "setup": {
+        "category": "configuration",
+        "tokens": 279,
+        "lines": 26,
+        "sha256": "948d0f980b55d8ee9e4322b71948863643e89afe2f4cf16e7efa5dae34e56a70",
+        "bytes": 873
+      },
+      "setup.bat": {
+        "category": "configuration",
+        "tokens": 260,
+        "lines": 28,
+        "sha256": "77eb6da73fac33330c9f5193d55f9ed6f21cb8e3f4499e35b8cba747e7a4a68b",
+        "bytes": 726
+      }
+    },
+    "excluded_files": {
+      "LICENSE": {
+        "category": "documentation",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      "tests/conftest.py": {
+        "category": "test",
+        "sha256": "d439784be0a2dec8b26b9e46a79b5ae00f1b5e548339001c7d01f4386d01f75f",
+        "bytes": 6587
+      },
+      "tests/test_build.py": {
+        "category": "test",
+        "sha256": "72251541107e9fe0865ae221cccd78df89e51e7a1794008e03e4bdea66c056b1",
+        "bytes": 4467
+      },
+      "tests/test_environments.py": {
+        "category": "test",
+        "sha256": "d66b5248f85340787ec1de76c31ceccade1757b28fd79ed95e5a7fc489513aa3",
+        "bytes": 6562
+      },
+      "tests/test_fetch.py": {
+        "category": "test",
+        "sha256": "8b98fb37b60da808c056359bd24902aed9dacf50e37913aa87925e0e8fc21d27",
+        "bytes": 15305
+      },
+      "tests/test_finetune.py": {
+        "category": "test",
+        "sha256": "93bd7417bce5e5aadef71c1597cd813b7ee129c943b9c9282d57e7fe58e83925",
+        "bytes": 5711
+      },
+      "tests/test_generate.py": {
+        "category": "test",
+        "sha256": "c19cc24ce34f755d17c2198cde066990bfd68521374306b0f97c1fe480609318",
+        "bytes": 3755
+      },
+      "tests/test_grounding.py": {
+        "category": "test",
+        "sha256": "0146987d1285b455d2d36903c0c157c9909789d1cc52b36a93ae48c3e4867b7e",
+        "bytes": 15382
+      },
+      "tests/test_inference.py": {
+        "category": "test",
+        "sha256": "ecede1d26c1bc26725248e64ae0a80d9ef97e0c050a6372cd7df9c3e060b5a40",
+        "bytes": 2531
+      },
+      "tests/test_lora.py": {
+        "category": "test",
+        "sha256": "5f09c114639eb9e6864aa8307989ebed602cb8999f9f43060f71548394cd7644",
+        "bytes": 2145
+      },
+      "tests/test_mlx.py": {
+        "category": "test",
+        "sha256": "14032087b280a1fabd6abc8de8d3d0584eb266829a2f07d213fc48959cf184df",
+        "bytes": 4144
+      },
+      "tests/test_packaging.py": {
+        "category": "test",
+        "sha256": "28f7bee194a7e611490fef5e2f5ce8b18025887da84f5ba160891419f4cb38aa",
+        "bytes": 1555
+      },
+      "tests/test_platform.py": {
+        "category": "test",
+        "sha256": "f7dab57bf70384e5d3652de2dc46e0076b2fddc8c4b3f79953e907e2dddde889",
+        "bytes": 14962
+      },
+      "tests/test_playground.py": {
+        "category": "test",
+        "sha256": "50a2997cd1f5032493f26c42798513bcac038f03e50d3ff468ffa03a30abe899",
+        "bytes": 2190
+      },
+      "tests/test_quantize_mlx.py": {
+        "category": "test",
+        "sha256": "7f6442aa8defb62b33b327eeebbccf5d6207d32bccad3df7340413b2f255fc63",
+        "bytes": 3260
+      },
+      "tests/test_release.py": {
+        "category": "test",
+        "sha256": "45942a03fcb9b135d925e8c80a60c59fab470874aaea539ed22d9592b1aaa63b",
+        "bytes": 4687
+      },
+      "tests/test_render.py": {
+        "category": "test",
+        "sha256": "0bd14779bf6832bc5f69ff946c60922b7359376514b07914065d2010bc7ed134",
+        "bytes": 4540
+      },
+      "tests/test_run.py": {
+        "category": "test",
+        "sha256": "88c03c63579a5377ef7ebee9e9717d33c83da19c7bb60ece9a5fb0a5a991a4d2",
+        "bytes": 6909
+      },
+      "tests/test_tools.py": {
+        "category": "test",
+        "sha256": "f30f53511a930033580d03f97235cba0256398deaa10ca9baf1b237ee9822f5f",
+        "bytes": 8310
+      },
+      "tests/test_weights.py": {
+        "category": "test",
+        "sha256": "ad672344f2a6ba332bac3bd3849cbf9512bc56437e6d1495f357ce98fb2b7547",
+        "bytes": 13604
+      },
+      "tests/test_whistle.py": {
+        "category": "test",
+        "sha256": "4493d1925a6f111f99e86172eaefb648ce6477a0277603d9aa5a973a323f38b8",
+        "bytes": 27138
+      },
+      "tests/test_whistle_finetune.py": {
+        "category": "test",
+        "sha256": "a08117e462b1aaf0541e57c0e62bfc326997c9795de776a99e35670028a33688",
+        "bytes": 15571
+      },
+      "tests/test_worker.py": {
+        "category": "test",
+        "sha256": "93bae65b52f41fd82542d82bb3ed34fa05f4e98683ae90786a0a6c42d1b59bb9",
+        "bytes": 5271
+      }
+    },
+    "source_tokens": 12801,
+    "configuration_tokens": 1127,
+    "total_tokens": 13928,
+    "complete": true,
+    "warnings": [],
+    "incomplete_counts_are_observed_subtotals": true
+  },
+  "feedback": {
+    "commit": "88671a74c716eb095aba879139aeafc83b3170ca",
+    "schema_version": 1,
+    "metric": "tokens",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "inventory": {
+      "MANIFEST.in": {
+        "category": "configuration",
+        "tokens": 10,
+        "lines": 2,
+        "sha256": "915a8b0c91585878a7bb55a5ee616fb42c9340b32155d48e6e834217cf26e923",
+        "bytes": 57
+      },
+      "needle/__init__.py": {
+        "category": "source",
+        "tokens": 3343,
+        "lines": 395,
+        "sha256": "c7ef8d7d325ee667b52b6fa38b9f1e519e2e75ab6d3b1c90e7c555e57b16c5be",
+        "bytes": 15022
+      },
+      "needle/__main__.py": {
+        "category": "source",
+        "tokens": 8,
+        "lines": 3,
+        "sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+        "bytes": 30
+      },
+      "needle/_grounding.py": {
+        "category": "source",
+        "tokens": 2077,
+        "lines": 218,
+        "sha256": "728cee4f1d9ce7b75bbef40a35928f2a1fdea27efc1759de364071906ee5de4c",
+        "bytes": 8087
+      },
+      "needle/_native.py": {
+        "category": "source",
+        "tokens": 562,
+        "lines": 61,
+        "sha256": "a1c82e5eb8362f14b758feb045174db47b4fbbc8401ee8c419f5111326c141d8",
+        "bytes": 2384
+      },
+      "needle/_telemetry.py": {
+        "category": "source",
+        "tokens": 541,
+        "lines": 74,
+        "sha256": "bab47adef393ee2370f208ddd75ba2c1f1f81f438bbba937fa39558fcba19347",
+        "bytes": 2307
+      },
+      "needle/_worker.py": {
+        "category": "source",
+        "tokens": 1629,
+        "lines": 218,
+        "sha256": "70d39735bbfe01a6a7350404bed2afbb6e856e99d1c2f41accc856510b401e67",
+        "bytes": 8266
+      },
+      "needle/agent/__init__.py": {
+        "category": "source",
+        "tokens": 36,
+        "lines": 3,
+        "sha256": "af1c2e40e8c413e3bf1f1330ada0f9288eb20165390e6655bf0e3d6702e47577",
+        "bytes": 126
+      },
+      "needle/agent/fetch.py": {
+        "category": "source",
+        "tokens": 2294,
+        "lines": 260,
+        "sha256": "d99c558adb76f4fb41126bdbd6a1cc1e92a7067b264f874d00ea99584a7f5215",
+        "bytes": 9032
+      },
+      "needle/agent/tools.py": {
+        "category": "source",
+        "tokens": 1843,
+        "lines": 228,
+        "sha256": "80ad5a549efe5a4a452dabf664b0169152502bbdabd1441872111c52a870bcd4",
+        "bytes": 8354
+      },
+      "needle/cli.py": {
+        "category": "source",
+        "tokens": 1218,
+        "lines": 123,
+        "sha256": "d58067f8a98f2b1d72f5acd16b67826ede1daf57d67473b21dcd3cf28eb74edc",
+        "bytes": 5073
+      },
+      "pyproject.toml": {
+        "category": "configuration",
+        "tokens": 139,
+        "lines": 21,
+        "sha256": "1d745602fd5dde42a3f3e2d3c956c70a4184f3e5c083780cd2822fbfe68fb5f8",
+        "bytes": 515
+      },
+      "requirements.txt": {
+        "category": "configuration",
+        "tokens": 5,
+        "lines": 1,
+        "sha256": "f0ace5409018e26894be302cb0e009a1da8a3b0de16ab373ba2c0643da8b4929",
+        "bytes": 16
+      },
+      "setup": {
+        "category": "configuration",
+        "tokens": 288,
+        "lines": 32,
+        "sha256": "a2b899a90c53fa0acb5be7e1620382476286dbc0b501095d0b465586502e901f",
+        "bytes": 933
+      },
+      "setup.bat": {
+        "category": "configuration",
+        "tokens": 269,
+        "lines": 29,
+        "sha256": "38730fbec1bdbffdb2db23dd91b9c391354c22f7c98c63ddd2f7e88347f35866",
+        "bytes": 759
+      }
+    },
+    "excluded_files": {
+      "LICENSE": {
+        "category": "documentation",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      "tests/conftest.py": {
+        "category": "test",
+        "sha256": "d439784be0a2dec8b26b9e46a79b5ae00f1b5e548339001c7d01f4386d01f75f",
+        "bytes": 6587
+      },
+      "tests/test_build.py": {
+        "category": "test",
+        "sha256": "72251541107e9fe0865ae221cccd78df89e51e7a1794008e03e4bdea66c056b1",
+        "bytes": 4467
+      },
+      "tests/test_environments.py": {
+        "category": "test",
+        "sha256": "d66b5248f85340787ec1de76c31ceccade1757b28fd79ed95e5a7fc489513aa3",
+        "bytes": 6562
+      },
+      "tests/test_fetch.py": {
+        "category": "test",
+        "sha256": "8b98fb37b60da808c056359bd24902aed9dacf50e37913aa87925e0e8fc21d27",
+        "bytes": 15305
+      },
+      "tests/test_finetune.py": {
+        "category": "test",
+        "sha256": "93bd7417bce5e5aadef71c1597cd813b7ee129c943b9c9282d57e7fe58e83925",
+        "bytes": 5711
+      },
+      "tests/test_generate.py": {
+        "category": "test",
+        "sha256": "c19cc24ce34f755d17c2198cde066990bfd68521374306b0f97c1fe480609318",
+        "bytes": 3755
+      },
+      "tests/test_grounding.py": {
+        "category": "test",
+        "sha256": "0146987d1285b455d2d36903c0c157c9909789d1cc52b36a93ae48c3e4867b7e",
+        "bytes": 15382
+      },
+      "tests/test_inference.py": {
+        "category": "test",
+        "sha256": "ecede1d26c1bc26725248e64ae0a80d9ef97e0c050a6372cd7df9c3e060b5a40",
+        "bytes": 2531
+      },
+      "tests/test_lora.py": {
+        "category": "test",
+        "sha256": "5f09c114639eb9e6864aa8307989ebed602cb8999f9f43060f71548394cd7644",
+        "bytes": 2145
+      },
+      "tests/test_mlx.py": {
+        "category": "test",
+        "sha256": "14032087b280a1fabd6abc8de8d3d0584eb266829a2f07d213fc48959cf184df",
+        "bytes": 4144
+      },
+      "tests/test_packaging.py": {
+        "category": "test",
+        "sha256": "28f7bee194a7e611490fef5e2f5ce8b18025887da84f5ba160891419f4cb38aa",
+        "bytes": 1555
+      },
+      "tests/test_platform.py": {
+        "category": "test",
+        "sha256": "f7dab57bf70384e5d3652de2dc46e0076b2fddc8c4b3f79953e907e2dddde889",
+        "bytes": 14962
+      },
+      "tests/test_playground.py": {
+        "category": "test",
+        "sha256": "50a2997cd1f5032493f26c42798513bcac038f03e50d3ff468ffa03a30abe899",
+        "bytes": 2190
+      },
+      "tests/test_quantize_mlx.py": {
+        "category": "test",
+        "sha256": "7f6442aa8defb62b33b327eeebbccf5d6207d32bccad3df7340413b2f255fc63",
+        "bytes": 3260
+      },
+      "tests/test_release.py": {
+        "category": "test",
+        "sha256": "45942a03fcb9b135d925e8c80a60c59fab470874aaea539ed22d9592b1aaa63b",
+        "bytes": 4687
+      },
+      "tests/test_render.py": {
+        "category": "test",
+        "sha256": "0bd14779bf6832bc5f69ff946c60922b7359376514b07914065d2010bc7ed134",
+        "bytes": 4540
+      },
+      "tests/test_run.py": {
+        "category": "test",
+        "sha256": "88c03c63579a5377ef7ebee9e9717d33c83da19c7bb60ece9a5fb0a5a991a4d2",
+        "bytes": 6909
+      },
+      "tests/test_tools.py": {
+        "category": "test",
+        "sha256": "f30f53511a930033580d03f97235cba0256398deaa10ca9baf1b237ee9822f5f",
+        "bytes": 8310
+      },
+      "tests/test_weights.py": {
+        "category": "test",
+        "sha256": "ad672344f2a6ba332bac3bd3849cbf9512bc56437e6d1495f357ce98fb2b7547",
+        "bytes": 13604
+      },
+      "tests/test_whistle.py": {
+        "category": "test",
+        "sha256": "4493d1925a6f111f99e86172eaefb648ce6477a0277603d9aa5a973a323f38b8",
+        "bytes": 27138
+      },
+      "tests/test_whistle_finetune.py": {
+        "category": "test",
+        "sha256": "a08117e462b1aaf0541e57c0e62bfc326997c9795de776a99e35670028a33688",
+        "bytes": 15571
+      },
+      "tests/test_worker.py": {
+        "category": "test",
+        "sha256": "93bae65b52f41fd82542d82bb3ed34fa05f4e98683ae90786a0a6c42d1b59bb9",
+        "bytes": 5271
+      }
+    },
+    "source_tokens": 13551,
+    "configuration_tokens": 711,
+    "total_tokens": 14262,
+    "complete": true,
+    "warnings": [],
+    "incomplete_counts_are_observed_subtotals": true
+  },
+  "original": {
+    "schema_version": 1,
+    "metric": "tokens",
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "inventory": {
+      ".github/workflows/publish-component.yaml": {
+        "category": "configuration",
+        "tokens": 613,
+        "lines": 63,
+        "sha256": "0d96b0d592d8c4afc26b6e36d98976ac5967fff01e7af38e8b2e3a07873eba01",
+        "bytes": 2702
+      },
+      ".github/workflows/release.yaml": {
+        "category": "configuration",
+        "tokens": 1537,
+        "lines": 142,
+        "sha256": "9c90a6ddc1602ffd1e5fc1e7da02687a26e641ad3c7e5b1569e24f654ceeb8c7",
+        "bytes": 5853
+      },
+      ".gitignore": {
+        "category": "configuration",
+        "tokens": 342,
+        "lines": 97,
+        "sha256": "b0873914f00e18ca13dd8a5581c26147fb131c1efc035d228737bfff5ec463bf",
+        "bytes": 1042
+      },
+      "MANIFEST.in": {
+        "category": "configuration",
+        "tokens": 35,
+        "lines": 3,
+        "sha256": "df93b43563d9b270cb980b3d440defbaef7848bd69a208a1b096274e5f317d9d",
+        "bytes": 172
+      },
+      "assets/banner.svg": {
+        "category": "configuration",
+        "tokens": 1166,
+        "lines": 12,
+        "sha256": "91769858be6b5b4dd5d25acad5924fec36afcbd731cd4014594a9c2280fda57f",
+        "bytes": 3070
+      },
+      "assets/benchmarks.svg": {
+        "category": "configuration",
+        "tokens": 29353,
+        "lines": 336,
+        "sha256": "94567dad9ea460cb309a893f43a5ab04ae834675543d89edcb4c7cf9c1c786af",
+        "bytes": 75530
+      },
+      "assets/deploy.svg": {
+        "category": "configuration",
+        "tokens": 7414,
+        "lines": 73,
+        "sha256": "e3a92fbdfd9009829efa4a20cf2a9659f69ade5274975b93d7c93fd04015897e",
+        "bytes": 18851
+      },
+      "assets/finetune.svg": {
+        "category": "configuration",
+        "tokens": 5536,
+        "lines": 85,
+        "sha256": "9a89aa06d28399f63bc4d268446c4f532050ad0bfeb6332880e4b65954aa3fcd",
+        "bytes": 14808
+      },
+      "assets/model.svg": {
+        "category": "configuration",
+        "tokens": 2720,
+        "lines": 37,
+        "sha256": "1fa28ee93050c7d54ed7fa7db94f62555378c8b2afcbf1e7444dbbe57f9b0bca",
+        "bytes": 7535
+      },
+      "assets/whistle-benchmarks.svg": {
+        "category": "configuration",
+        "tokens": 7472,
+        "lines": 99,
+        "sha256": "5c1637003a743011a7fd73b7d71e19dabcec24a82cabd7d458827e5fbec0af34",
+        "bytes": 19674
+      },
+      "assets/whistle.svg": {
+        "category": "configuration",
+        "tokens": 9433,
+        "lines": 189,
+        "sha256": "9ffb19e1bc801da7065adc46e2092f26d54626243b5d92219c30d2352c76b058",
+        "bytes": 21892
+      },
+      "llms.txt": {
+        "category": "configuration",
+        "tokens": 6412,
+        "lines": 281,
+        "sha256": "2b3912de734753b3d67830ad9cf4c32baecb4fdcf97ba05d3ce8eef405b62a60",
+        "bytes": 25681
+      },
+      "needle/__init__.py": {
+        "category": "source",
+        "tokens": 6131,
+        "lines": 656,
+        "sha256": "541d316cb214f50ffd4d62a4269bf0e5408433b042b1b5152c0ddfe6a24b35f4",
+        "bytes": 25742
+      },
+      "needle/_telemetry.py": {
+        "category": "source",
+        "tokens": 619,
+        "lines": 86,
+        "sha256": "28cc691445c91700b4b894ecc797085e9985d0bd7c113da2539fce74fd0612cc",
+        "bytes": 2608
+      },
+      "needle/_worker.py": {
+        "category": "source",
+        "tokens": 2126,
+        "lines": 291,
+        "sha256": "514e6f42974d841728c71af320af0156860b12c4b7b9308b25a1ea1d30a59780",
+        "bytes": 10567
+      },
+      "needle/agent/__init__.py": {
+        "category": "source",
+        "tokens": 0,
+        "lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "needle/agent/fetch.py": {
+        "category": "source",
+        "tokens": 3049,
+        "lines": 333,
+        "sha256": "0e84a1c69378d202a0aeabf98721753befd3a36bc887c046f8b947c97ffea9cc",
+        "bytes": 12080
+      },
+      "needle/agent/tools.py": {
+        "category": "source",
+        "tokens": 1927,
+        "lines": 205,
+        "sha256": "84f105f7c91627231e1aa215af3ae964e5a33fd307660454e4096c2da8748f86",
+        "bytes": 8175
+      },
+      "needle/agent/whistle.py": {
+        "category": "source",
+        "tokens": 5696,
+        "lines": 550,
+        "sha256": "88935e847203c2fa2fe66efac331457c4dc5342c21a34f0e68d85c766bcc7769",
+        "bytes": 22908
+      },
+      "needle/cli.py": {
+        "category": "source",
+        "tokens": 5193,
+        "lines": 424,
+        "sha256": "a95b716089a709125eed6b239d6bdfc1a2eef6fd26867b0a19b897f81c7c0967",
+        "bytes": 21900
+      },
+      "needle/environments/__init__.py": {
+        "category": "source",
+        "tokens": 347,
+        "lines": 45,
+        "sha256": "616378a01661b8cf844f7a9ba56ef07e1e6206edb451a5fb1e3012d2644800dc",
+        "bytes": 1417
+      },
+      "needle/environments/_harness.py": {
+        "category": "source",
+        "tokens": 512,
+        "lines": 60,
+        "sha256": "71c807abf22f069b80fef405708ee0007ed7a5082e863efac09ce8b44263ce89",
+        "bytes": 2162
+      },
+      "needle/environments/data_capture.py": {
+        "category": "source",
+        "tokens": 2254,
+        "lines": 132,
+        "sha256": "c4346cb61f492e0b9ff0054bbc685770be174bfcaa87371ca3484c2716fffd52",
+        "bytes": 8314
+      },
+      "needle/environments/kitchen_appliance.py": {
+        "category": "source",
+        "tokens": 1895,
+        "lines": 121,
+        "sha256": "8f9771883bacdd1352c626b0219fc473eee7b6f871ea9d0d0321bb3a6860d479",
+        "bytes": 7196
+      },
+      "needle/environments/media_player.py": {
+        "category": "source",
+        "tokens": 1637,
+        "lines": 104,
+        "sha256": "362e0d89d61775069129092dc62ed2806849e35fb153ba6c05ad95dd94704732",
+        "bytes": 6123
+      },
+      "needle/environments/productivity.py": {
+        "category": "source",
+        "tokens": 2329,
+        "lines": 133,
+        "sha256": "22a51c557b0794865a5c528a6853444175c91933f7601cf4b1718977e7ef0191",
+        "bytes": 9027
+      },
+      "needle/environments/smart_home.py": {
+        "category": "source",
+        "tokens": 2244,
+        "lines": 139,
+        "sha256": "6d4d2d459b9e134802c0c70143ec1a5594f3e4c7d304b84b36579effef144708",
+        "bytes": 8479
+      },
+      "needle/environments/wearable.py": {
+        "category": "source",
+        "tokens": 1820,
+        "lines": 111,
+        "sha256": "71f91b0c189d6664e96c5cb8a2c7e6b4302d11935d64d73b4e9ac25d12d9ef5c",
+        "bytes": 7304
+      },
+      "needle/model/__init__.py": {
+        "category": "source",
+        "tokens": 0,
+        "lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "needle/model/architecture.py": {
+        "category": "source",
+        "tokens": 11920,
+        "lines": 1136,
+        "sha256": "9f69668218b339ad46ff90867979b23104e9dff317417b2c4768c2adbafecb3a",
+        "bytes": 43907
+      },
+      "needle/model/architecture_mlx.py": {
+        "category": "source",
+        "tokens": 3727,
+        "lines": 308,
+        "sha256": "18bf11b795e583d1d3b481c663e4be7a722d60ecce3c1cc37fcc0b9dc7c60bda",
+        "bytes": 11928
+      },
+      "needle/model/build.py": {
+        "category": "source",
+        "tokens": 1002,
+        "lines": 78,
+        "sha256": "8957ce23efedfb6eca788a2eb51b09348c418a883efa4a04dbe3ddc24a94784d",
+        "bytes": 3924
+      },
+      "needle/model/checkpoints.py": {
+        "category": "source",
+        "tokens": 1027,
+        "lines": 126,
+        "sha256": "5e9583c648e9c444805989506ccd24a3e5a2b937baca7f3bcbd913aea82e6631",
+        "bytes": 4147
+      },
+      "needle/model/export.py": {
+        "category": "source",
+        "tokens": 8780,
+        "lines": 680,
+        "sha256": "c4463b2b362cb55743c8036546f23ada7d6ca583a4703e3bd811acf879adcf36",
+        "bytes": 29513
+      },
+      "needle/model/finetune.py": {
+        "category": "source",
+        "tokens": 5286,
+        "lines": 509,
+        "sha256": "049ed4e050b104e4a7572425ee54d3f8d18a68adb860af11d1c81d6fc181f6a5",
+        "bytes": 20959
+      },
+      "needle/model/quantize.py": {
+        "category": "source",
+        "tokens": 2062,
+        "lines": 235,
+        "sha256": "27d77491f41af60f75fd43bf7b003695ac05173b30e91dff69cafc30c7737d61",
+        "bytes": 6877
+      },
+      "needle/model/quantize_mlx.py": {
+        "category": "source",
+        "tokens": 1042,
+        "lines": 91,
+        "sha256": "7dbd6dbe0126374477bfc02c3f9778a0a9d151a6fd59266dca268fac78915538",
+        "bytes": 3368
+      },
+      "needle/model/run.py": {
+        "category": "source",
+        "tokens": 1102,
+        "lines": 125,
+        "sha256": "38a602d70e2021e686073c9d27386b44efb5d337391e667d3a6db4a408d47349",
+        "bytes": 4484
+      },
+      "needle/model/tokenizer.py": {
+        "category": "source",
+        "tokens": 1005,
+        "lines": 130,
+        "sha256": "ad348fce5d93c99ce310eca41f60ac80c83cb958cca31363e515767d2ae91bce",
+        "bytes": 3988
+      },
+      "needle/model/whistle.py": {
+        "category": "source",
+        "tokens": 5285,
+        "lines": 375,
+        "sha256": "33f5e34ebcdd6b891f3d61660d7b3524234ad9e74eb0082b2533e8901badb20e",
+        "bytes": 16908
+      },
+      "needle/model/whistle_finetune.py": {
+        "category": "source",
+        "tokens": 5281,
+        "lines": 449,
+        "sha256": "7e49e287adfbde5f6be24313590cc143279dccb0f33029670b4c56f1905f029b",
+        "bytes": 20482
+      },
+      "needle/platform.py": {
+        "category": "source",
+        "tokens": 4722,
+        "lines": 456,
+        "sha256": "aac35ca0bdb61cf362ab4cc208bc789186497023b32115db38f02ddefce04b8d",
+        "bytes": 19320
+      },
+      "needle/playground/__init__.py": {
+        "category": "source",
+        "tokens": 0,
+        "lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "needle/playground/app.js": {
+        "category": "source",
+        "tokens": 5240,
+        "lines": 331,
+        "sha256": "86a20f091b30a2853abf2089e0eece785fec263bbf14a271e823e5ac16f9c701",
+        "bytes": 20802
+      },
+      "needle/playground/index.html": {
+        "category": "configuration",
+        "tokens": 1861,
+        "lines": 111,
+        "sha256": "f8274fb5781f3f7407dfbac1588ae732423b199c47c9a5a7fe1a9b7de02eec2f",
+        "bytes": 5857
+      },
+      "needle/playground/server.py": {
+        "category": "source",
+        "tokens": 1658,
+        "lines": 186,
+        "sha256": "4362307f25184b62d601e5d16cd82505bd5328ae3bb481f45817aedf80637507",
+        "bytes": 7334
+      },
+      "needle/playground/style.css": {
+        "category": "source",
+        "tokens": 4143,
+        "lines": 513,
+        "sha256": "6959248a0cb3a8fd0860117daf50a5adfa0acd1081a6846a197f854e9bd7fcd7",
+        "bytes": 13162
+      },
+      "pyproject.toml": {
+        "category": "configuration",
+        "tokens": 382,
+        "lines": 52,
+        "sha256": "ecb648b2c1de390f73d3e74e8e9de8324ae474ebd8ccc5f56cd8cef7f8b4f7a0",
+        "bytes": 1229
+      },
+      "requirements-train.txt": {
+        "category": "configuration",
+        "tokens": 46,
+        "lines": 12,
+        "sha256": "8bea8cfe9799f38094f801ef3e403376406c7e8a7252a76598a6695ebf1c71e9",
+        "bytes": 153
+      },
+      "requirements.txt": {
+        "category": "configuration",
+        "tokens": 9,
+        "lines": 2,
+        "sha256": "1e3262fd9a636a32e24d6bd3a716d931692d03877e2f2003fe8d646a2d0d6565",
+        "bytes": 39
+      },
+      "setup": {
+        "category": "configuration",
+        "tokens": 349,
+        "lines": 41,
+        "sha256": "dab5c105c195b9f685dfcf990f6ee53eecd51c8aaceb0de1106294c75bbf2f96",
+        "bytes": 1058
+      },
+      "setup.bat": {
+        "category": "configuration",
+        "tokens": 225,
+        "lines": 24,
+        "sha256": "08ad7befda0703a270aa6bb8645235f6f25dc454e6bc4c65ec305ec769a2485d",
+        "bytes": 650
+      }
+    },
+    "excluded_files": {
+      "LICENSE": {
+        "category": "documentation",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      "README.md": {
+        "category": "documentation",
+        "sha256": "ab0bb22eae3f778940d932b9852f66aeafdbe9da1ce06610f9b794ea5bf2fa34",
+        "bytes": 13260
+      },
+      "tests/conftest.py": {
+        "category": "test",
+        "sha256": "d439784be0a2dec8b26b9e46a79b5ae00f1b5e548339001c7d01f4386d01f75f",
+        "bytes": 6587
+      },
+      "tests/test_build.py": {
+        "category": "test",
+        "sha256": "72251541107e9fe0865ae221cccd78df89e51e7a1794008e03e4bdea66c056b1",
+        "bytes": 4467
+      },
+      "tests/test_environments.py": {
+        "category": "test",
+        "sha256": "d66b5248f85340787ec1de76c31ceccade1757b28fd79ed95e5a7fc489513aa3",
+        "bytes": 6562
+      },
+      "tests/test_fetch.py": {
+        "category": "test",
+        "sha256": "8b98fb37b60da808c056359bd24902aed9dacf50e37913aa87925e0e8fc21d27",
+        "bytes": 15305
+      },
+      "tests/test_finetune.py": {
+        "category": "test",
+        "sha256": "93bd7417bce5e5aadef71c1597cd813b7ee129c943b9c9282d57e7fe58e83925",
+        "bytes": 5711
+      },
+      "tests/test_generate.py": {
+        "category": "test",
+        "sha256": "c19cc24ce34f755d17c2198cde066990bfd68521374306b0f97c1fe480609318",
+        "bytes": 3755
+      },
+      "tests/test_grounding.py": {
+        "category": "test",
+        "sha256": "0146987d1285b455d2d36903c0c157c9909789d1cc52b36a93ae48c3e4867b7e",
+        "bytes": 15382
+      },
+      "tests/test_inference.py": {
+        "category": "test",
+        "sha256": "ecede1d26c1bc26725248e64ae0a80d9ef97e0c050a6372cd7df9c3e060b5a40",
+        "bytes": 2531
+      },
+      "tests/test_lora.py": {
+        "category": "test",
+        "sha256": "5f09c114639eb9e6864aa8307989ebed602cb8999f9f43060f71548394cd7644",
+        "bytes": 2145
+      },
+      "tests/test_mlx.py": {
+        "category": "test",
+        "sha256": "14032087b280a1fabd6abc8de8d3d0584eb266829a2f07d213fc48959cf184df",
+        "bytes": 4144
+      },
+      "tests/test_packaging.py": {
+        "category": "test",
+        "sha256": "28f7bee194a7e611490fef5e2f5ce8b18025887da84f5ba160891419f4cb38aa",
+        "bytes": 1555
+      },
+      "tests/test_platform.py": {
+        "category": "test",
+        "sha256": "f7dab57bf70384e5d3652de2dc46e0076b2fddc8c4b3f79953e907e2dddde889",
+        "bytes": 14962
+      },
+      "tests/test_playground.py": {
+        "category": "test",
+        "sha256": "50a2997cd1f5032493f26c42798513bcac038f03e50d3ff468ffa03a30abe899",
+        "bytes": 2190
+      },
+      "tests/test_quantize_mlx.py": {
+        "category": "test",
+        "sha256": "7f6442aa8defb62b33b327eeebbccf5d6207d32bccad3df7340413b2f255fc63",
+        "bytes": 3260
+      },
+      "tests/test_release.py": {
+        "category": "test",
+        "sha256": "45942a03fcb9b135d925e8c80a60c59fab470874aaea539ed22d9592b1aaa63b",
+        "bytes": 4687
+      },
+      "tests/test_render.py": {
+        "category": "test",
+        "sha256": "0bd14779bf6832bc5f69ff946c60922b7359376514b07914065d2010bc7ed134",
+        "bytes": 4540
+      },
+      "tests/test_run.py": {
+        "category": "test",
+        "sha256": "88c03c63579a5377ef7ebee9e9717d33c83da19c7bb60ece9a5fb0a5a991a4d2",
+        "bytes": 6909
+      },
+      "tests/test_tools.py": {
+        "category": "test",
+        "sha256": "f30f53511a930033580d03f97235cba0256398deaa10ca9baf1b237ee9822f5f",
+        "bytes": 8310
+      },
+      "tests/test_weights.py": {
+        "category": "test",
+        "sha256": "ad672344f2a6ba332bac3bd3849cbf9512bc56437e6d1495f357ce98fb2b7547",
+        "bytes": 13604
+      },
+      "tests/test_whistle.py": {
+        "category": "test",
+        "sha256": "4493d1925a6f111f99e86172eaefb648ce6477a0277603d9aa5a973a323f38b8",
+        "bytes": 27138
+      },
+      "tests/test_whistle_finetune.py": {
+        "category": "test",
+        "sha256": "a08117e462b1aaf0541e57c0e62bfc326997c9795de776a99e35670028a33688",
+        "bytes": 15571
+      },
+      "tests/test_worker.py": {
+        "category": "test",
+        "sha256": "93bae65b52f41fd82542d82bb3ed34fa05f4e98683ae90786a0a6c42d1b59bb9",
+        "bytes": 5271
+      }
+    },
+    "source_tokens": 101061,
+    "configuration_tokens": 74905,
+    "total_tokens": 175966,
+    "complete": true,
+    "warnings": [],
+    "incomplete_counts_are_observed_subtotals": true
+  }
+}

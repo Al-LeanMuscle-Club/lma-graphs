@@ -1,0 +1,1560 @@
+{
+  "generated_at": "2026-11-09T09:49:35.248545+00:00",
+  "title": "Needle 四次压缩实验对比",
+  "original_commit": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+  "original": {
+    "source_tokens": 101061,
+    "configuration_tokens": 74905,
+    "total_tokens": 175966,
+    "tokenizer": {
+      "library": "tiktoken",
+      "version": "0.12.0",
+      "encoding": "cl100k_base",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "text_policy": "raw_decoded_text_per_file",
+      "classification": "source_and_configuration_v1",
+      "special_tokens": "ordinary_text",
+      "file_boundaries": "independent_sum",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+    },
+    "adjusted_total_tokens": 106460,
+    "excluded_reference_docs_tokens": 69506,
+    "selected_shared_source_estimate": 19045
+  },
+  "audit": {
+    "date": "2026-11-09T09:36:32.939745+00:00",
+    "completed_at": "2026-11-09T09:38:16.234068+00:00",
+    "job_id": "8766255",
+    "cpu_count": 16,
+    "platform": "Linux ARM64",
+    "python": "3.11.16",
+    "job_seconds": 108,
+    "inputs_unchanged": true,
+    "original_groups_passed": 13
+  },
+  "runs": [
+    {
+      "id": "core49",
+      "name": "Core49",
+      "branch": "examples/needle-core49-20261105",
+      "commit": "0bf120f038749d93166006035641ce2ec39b8145",
+      "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/0bf120f038749d93166006035641ce2ec39b8145",
+      "branch_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/needle-core49-20261105",
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/needle-core49-20261105/",
+      "size": {
+        "source_tokens": 12733,
+        "configuration_tokens": 768,
+        "total_tokens": 13501,
+        "complete": true
+      },
+      "static": {
+        "files": [
+          {
+            "name": "needle/__init__.py",
+            "tokens": 5070,
+            "lines": 542,
+            "functions": 41,
+            "semicolons": 0,
+            "max_function_lines": 37
+          },
+          {
+            "name": "needle/__main__.py",
+            "tokens": 17,
+            "lines": 4,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/_native.py",
+            "tokens": 588,
+            "lines": 65,
+            "functions": 5,
+            "semicolons": 0,
+            "max_function_lines": 15
+          },
+          {
+            "name": "needle/_telemetry.py",
+            "tokens": 516,
+            "lines": 64,
+            "functions": 4,
+            "semicolons": 0,
+            "max_function_lines": 20
+          },
+          {
+            "name": "needle/_worker.py",
+            "tokens": 1528,
+            "lines": 200,
+            "functions": 15,
+            "semicolons": 0,
+            "max_function_lines": 38
+          },
+          {
+            "name": "needle/agent/__init__.py",
+            "tokens": 36,
+            "lines": 3,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/agent/fetch.py",
+            "tokens": 2289,
+            "lines": 248,
+            "functions": 22,
+            "semicolons": 0,
+            "max_function_lines": 22
+          },
+          {
+            "name": "needle/agent/tools.py",
+            "tokens": 1718,
+            "lines": 191,
+            "functions": 15,
+            "semicolons": 0,
+            "max_function_lines": 29
+          },
+          {
+            "name": "needle/cli.py",
+            "tokens": 971,
+            "lines": 96,
+            "functions": 4,
+            "semicolons": 0,
+            "max_function_lines": 40
+          }
+        ],
+        "python_files": 9,
+        "python_lines": 1413,
+        "semicolon_statements": 0,
+        "long_lines_over140": 1,
+        "dynamic_calls": [],
+        "largest_functions": [
+          {
+            "name": "main",
+            "line": 57,
+            "lines": 40,
+            "file": "needle/cli.py"
+          },
+          {
+            "name": "_child",
+            "line": 159,
+            "lines": 38,
+            "file": "needle/_worker.py"
+          },
+          {
+            "name": "__init__",
+            "line": 339,
+            "lines": 37,
+            "file": "needle/__init__.py"
+          },
+          {
+            "name": "close",
+            "line": 126,
+            "lines": 31,
+            "file": "needle/_worker.py"
+          },
+          {
+            "name": "_confidence_head_present",
+            "line": 105,
+            "lines": 30,
+            "file": "needle/__init__.py"
+          }
+        ],
+        "median_function_lines": 8.5,
+        "function_count": 106,
+        "long_lines": [
+          {
+            "file": "needle/__init__.py",
+            "line": 137,
+            "length": 164
+          }
+        ]
+      },
+      "usage": {
+        "input_tokens": 10193585,
+        "cached_input_tokens": 9667328,
+        "output_tokens": 131125,
+        "total_tokens": 10324710,
+        "uncached_plus_output": 657382
+      },
+      "roles": {
+        "author": {
+          "calls": 6,
+          "tokens": 10324710,
+          "seconds": 4386.9082000255585
+        }
+      },
+      "audit": {
+        "base_groups": 11,
+        "total_groups": 13,
+        "passed_groups": 11,
+        "pytest": {
+          "passed": 105,
+          "failed": 0,
+          "skipped": 0
+        },
+        "installation_passed": 3,
+        "original_tests_and_license_preserved": 23
+      },
+      "contracts_initial": 774,
+      "author_model_record": "继承当时 Codex 配置，未单独冻结模型快照",
+      "task_enabled": false,
+      "optimization_calls": 0,
+      "source_reduction_pct": 87.40067879795372,
+      "total_reduction_pct": 87.31824159308661,
+      "native_total_reduction_pct": 92.32749508427764,
+      "pipeline_seconds": 4834.404899597168,
+      "wall_seconds": 4834.404899597168,
+      "harness_branch": "codex/core-first-scope",
+      "harness_commit": "a88ae0c02508c8fb14c217c9de21f7520d5c85e4",
+      "trajectory": [
+        {
+          "attempt": 1,
+          "tokens": 13675,
+          "passed": 3,
+          "groups": 11,
+          "pytest": {
+            "passed": 29,
+            "failed": 71,
+            "skipped": 5
+          },
+          "failed_groups": [
+            "upstream-tools",
+            "upstream-grounding",
+            "upstream-worker",
+            "upstream-weights",
+            "upstream-inference",
+            "core-fetch",
+            "core-packaging",
+            "core-api-contract"
+          ],
+          "deferred_groups": [],
+          "commit": "507961d0756409c309f462125486e66886e11fc4",
+          "note": "首版只有 3/11 组通过，71 个 pytest 用例失败、5 个跳过。接口与语义缺口较多。"
+        },
+        {
+          "attempt": 2,
+          "tokens": 13024,
+          "passed": 4,
+          "groups": 11,
+          "pytest": {
+            "passed": 73,
+            "failed": 27,
+            "skipped": 5
+          },
+          "failed_groups": [
+            "upstream-grounding",
+            "upstream-worker",
+            "upstream-weights",
+            "upstream-inference",
+            "core-fetch",
+            "core-api-contract",
+            "core-native-output"
+          ],
+          "deferred_groups": [],
+          "commit": "c1616a2802978a119ae6a29194700590e45c988f",
+          "note": "第二轮恢复工具 schema、安装配置等行为，但 worker、权重、grounding 等仍未通过。"
+        },
+        {
+          "attempt": 3,
+          "tokens": 13327,
+          "passed": 5,
+          "groups": 11,
+          "pytest": {
+            "passed": 81,
+            "failed": 24,
+            "skipped": 0
+          },
+          "failed_groups": [
+            "upstream-grounding",
+            "upstream-worker",
+            "upstream-weights",
+            "core-api-contract",
+            "core-native-output"
+          ],
+          "deferred_groups": [
+            "core-packaging"
+          ],
+          "commit": "58655642ec102124739b0d82c71ef584265824c8",
+          "note": "第三轮修复资源元数据、CLI、日期等；仍有 worker/权重等失败。"
+        },
+        {
+          "attempt": 4,
+          "tokens": 13496,
+          "passed": 9,
+          "groups": 11,
+          "pytest": {
+            "passed": 95,
+            "failed": 10,
+            "skipped": 0
+          },
+          "failed_groups": [
+            "upstream-weights"
+          ],
+          "deferred_groups": [
+            "core-packaging"
+          ],
+          "commit": "1d2690d7178950c160327f45eab554e1a554e53b",
+          "note": "第四轮只剩权重组的 10 个用例失败；非相关安装组在筛查中暂缓。"
+        },
+        {
+          "attempt": 5,
+          "tokens": 13496,
+          "passed": 9,
+          "groups": 11,
+          "pytest": {
+            "passed": 95,
+            "failed": 10,
+            "skipped": 0
+          },
+          "failed_groups": [
+            "upstream-weights"
+          ],
+          "deferred_groups": [
+            "core-packaging"
+          ],
+          "commit": "1d2690d7178950c160327f45eab554e1a554e53b",
+          "note": "第五次作者调用未产生新提交，权重失败仍然存在，消耗约 70.4 万 tokens。"
+        },
+        {
+          "attempt": 6,
+          "tokens": 13501,
+          "passed": 11,
+          "groups": 11,
+          "pytest": {
+            "passed": 105,
+            "failed": 0,
+            "skipped": 0
+          },
+          "failed_groups": [],
+          "deferred_groups": [],
+          "commit": "0bf120f038749d93166006035641ce2ec39b8145",
+          "note": "第六轮修复注入 worker 缺少可选 prefix_tokens 属性的兼容性；最终 11 组与安装通过。"
+        }
+      ],
+      "target": "49% 硬门槛（额外按校正文档口径设 52,165 tokens 上限）",
+      "cost_note": "6 次作者调用的已观测用量；未启用出题、解题或模型 Controller。",
+      "author_calls": 6,
+      "model_calls_with_usage": 6,
+      "author_seconds": 4386.9082000255585,
+      "quality": {
+        "aliases": true,
+        "numeric_cases_matched": 3,
+        "numeric_cases_total": 8,
+        "cli_generation3_weights": false,
+        "cli_outputs_matched": 0,
+        "cli_cases_total": 6,
+        "schema_priority": false,
+        "schema_nested": false
+      }
+    },
+    {
+      "id": "tasks49",
+      "name": "Core49 + Tasks",
+      "branch": "examples/needle-core49-tasks-20261105",
+      "commit": "4b35478c962f26126a9ea1569537a3954a9e6a0f",
+      "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/4b35478c962f26126a9ea1569537a3954a9e6a0f",
+      "branch_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/needle-core49-tasks-20261105",
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/needle-core49-tasks-20261105/",
+      "size": {
+        "source_tokens": 13189,
+        "configuration_tokens": 631,
+        "total_tokens": 13820,
+        "complete": true
+      },
+      "static": {
+        "files": [
+          {
+            "name": "needle/__init__.py",
+            "tokens": 5312,
+            "lines": 565,
+            "functions": 45,
+            "semicolons": 0,
+            "max_function_lines": 35
+          },
+          {
+            "name": "needle/__main__.py",
+            "tokens": 8,
+            "lines": 3,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/_native.py",
+            "tokens": 547,
+            "lines": 66,
+            "functions": 6,
+            "semicolons": 0,
+            "max_function_lines": 18
+          },
+          {
+            "name": "needle/_telemetry.py",
+            "tokens": 530,
+            "lines": 67,
+            "functions": 4,
+            "semicolons": 0,
+            "max_function_lines": 22
+          },
+          {
+            "name": "needle/_worker.py",
+            "tokens": 1610,
+            "lines": 218,
+            "functions": 15,
+            "semicolons": 0,
+            "max_function_lines": 41
+          },
+          {
+            "name": "needle/agent/__init__.py",
+            "tokens": 36,
+            "lines": 3,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/agent/fetch.py",
+            "tokens": 2345,
+            "lines": 241,
+            "functions": 22,
+            "semicolons": 0,
+            "max_function_lines": 20
+          },
+          {
+            "name": "needle/agent/tools.py",
+            "tokens": 1885,
+            "lines": 214,
+            "functions": 15,
+            "semicolons": 0,
+            "max_function_lines": 39
+          },
+          {
+            "name": "needle/cli.py",
+            "tokens": 916,
+            "lines": 85,
+            "functions": 4,
+            "semicolons": 0,
+            "max_function_lines": 34
+          }
+        ],
+        "python_files": 9,
+        "python_lines": 1462,
+        "semicolon_statements": 0,
+        "long_lines_over140": 10,
+        "dynamic_calls": [],
+        "largest_functions": [
+          {
+            "name": "_child",
+            "line": 174,
+            "lines": 41,
+            "file": "needle/_worker.py"
+          },
+          {
+            "name": "_json_type",
+            "line": 97,
+            "lines": 39,
+            "file": "needle/agent/tools.py"
+          },
+          {
+            "name": "close",
+            "line": 136,
+            "lines": 36,
+            "file": "needle/_worker.py"
+          },
+          {
+            "name": "__init__",
+            "line": 339,
+            "lines": 35,
+            "file": "needle/__init__.py"
+          },
+          {
+            "name": "main",
+            "line": 48,
+            "lines": 34,
+            "file": "needle/cli.py"
+          }
+        ],
+        "median_function_lines": 8,
+        "function_count": 111,
+        "long_lines": [
+          {
+            "file": "needle/__init__.py",
+            "line": 145,
+            "length": 164
+          },
+          {
+            "file": "needle/__init__.py",
+            "line": 163,
+            "length": 214
+          },
+          {
+            "file": "needle/__init__.py",
+            "line": 417,
+            "length": 225
+          },
+          {
+            "file": "needle/__init__.py",
+            "line": 565,
+            "length": 152
+          },
+          {
+            "file": "needle/_telemetry.py",
+            "line": 39,
+            "length": 157
+          },
+          {
+            "file": "needle/agent/fetch.py",
+            "line": 109,
+            "length": 256
+          },
+          {
+            "file": "needle/agent/fetch.py",
+            "line": 112,
+            "length": 154
+          },
+          {
+            "file": "needle/agent/fetch.py",
+            "line": 120,
+            "length": 149
+          },
+          {
+            "file": "needle/agent/fetch.py",
+            "line": 228,
+            "length": 148
+          },
+          {
+            "file": "needle/cli.py",
+            "line": 71,
+            "length": 148
+          }
+        ]
+      },
+      "usage": {
+        "input_tokens": 6390720,
+        "cached_input_tokens": 5920512,
+        "output_tokens": 116265,
+        "total_tokens": 6506985,
+        "uncached_plus_output": 586473
+      },
+      "roles": {
+        "author": {
+          "calls": 3,
+          "tokens": 5270211,
+          "seconds": 1910.9403507709503
+        },
+        "examiner": {
+          "calls": 2,
+          "tokens": 313877,
+          "seconds": 534.3857
+        },
+        "solver": {
+          "calls": 3,
+          "tokens": 922897,
+          "seconds": 860.5138000000001
+        }
+      },
+      "audit": {
+        "base_groups": 11,
+        "total_groups": 13,
+        "passed_groups": 11,
+        "pytest": {
+          "passed": 105,
+          "failed": 0,
+          "skipped": 0
+        },
+        "installation_passed": 3,
+        "original_tests_and_license_preserved": 23
+      },
+      "contracts_initial": 793,
+      "author_model_record": "继承当时 Codex 配置，未单独冻结模型快照",
+      "task_enabled": true,
+      "optimization_calls": 0,
+      "source_reduction_pct": 86.94946616399997,
+      "total_reduction_pct": 87.01859853466091,
+      "native_total_reduction_pct": 92.14621006330769,
+      "pipeline_seconds": 2746.499561071396,
+      "wall_seconds": 4142.178196430206,
+      "harness_branch": "codex/task-check-annotation-isolation-20261105",
+      "harness_commit": "8fb43d5b1a4bb70098fd04952402bb327bc13bfd",
+      "trajectory": [
+        {
+          "attempt": 1,
+          "tokens": 13662,
+          "passed": 8,
+          "groups": 11,
+          "pytest": {
+            "passed": 51,
+            "failed": 54,
+            "skipped": 0
+          },
+          "failed_groups": [
+            "upstream-grounding",
+            "upstream-weights",
+            "core-fetch"
+          ],
+          "deferred_groups": [],
+          "commit": "0683d478745eb68f83c92913b13a9e23cacf5231",
+          "note": "首版 8/11 组通过，grounding、权重与 fetch 三组失败。"
+        },
+        {
+          "attempt": 2,
+          "tokens": 13794,
+          "passed": 7,
+          "groups": 11,
+          "pytest": {
+            "passed": 51,
+            "failed": 54,
+            "skipped": 0
+          },
+          "failed_groups": [
+            "upstream-grounding",
+            "upstream-weights",
+            "core-fetch"
+          ],
+          "deferred_groups": [
+            "core-packaging"
+          ],
+          "commit": "408c6a49921637d4427835ebb61053246aae00ac",
+          "note": "第二轮修复未清除这三组失败；筛查暂缓其他组，并非新增功能回归。"
+        },
+        {
+          "attempt": 3,
+          "tokens": 13820,
+          "passed": 11,
+          "groups": 11,
+          "pytest": {
+            "passed": 105,
+            "failed": 0,
+            "skipped": 0
+          },
+          "failed_groups": [],
+          "deferred_groups": [],
+          "commit": "4b35478c962f26126a9ea1569537a3954a9e6a0f",
+          "note": "第三轮全部核心功能与安装通过；后续开发任务 tokens 比原版高 0.17%，结论不确定，隐藏任务未运行。"
+        }
+      ],
+      "target": "49% 硬门槛（额外按校正文档口径设 52,165 tokens 上限）",
+      "task_assessment": {
+        "schema_version": 1,
+        "operation": "task_effort_evaluation",
+        "status": "inconclusive",
+        "binding": {
+          "plan_sha256": "a105e755159392c5639fcd5e2a685fbe4b9856d720ceaf9df4772c31ad3b155e",
+          "original_git_head": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+          "original_snapshot_sha256": "35ef1701933b3edf7f4146e1a597bd4778f48a5b3ad13d9e287d1a5c9f19ec76",
+          "candidate_git_head": "4b35478c962f26126a9ea1569537a3954a9e6a0f",
+          "candidate_snapshot_sha256": "17bd3b7c4b5fbf47b580b8936289c315f322733b64274d1d864c37d62e9d455c",
+          "candidate_source_sha256": "1cc6c987bdc13b7cba56ca0acbc7ebd9f77059be1a4d81fee78a6651d5dd5812",
+          "candidate_contract_sha256": "90d3c5fcd882068c74b1d43abbbaf95e50089738c4765b3f50125fa05b972598",
+          "suite_sha256": "3a5f3fab4ef5224cbd9dd317048d6b8b734383575a8cc9bab5373eb8bfc4a923",
+          "settings_sha256": "6031b473d6116474979f08b643e762b8fecee0cb1b72411c2a7236a7f49c9236"
+        },
+        "policy": {
+          "comparison": "empirical_range",
+          "strict_all_tasks": true,
+          "task_types": [
+            "modify"
+          ],
+          "grading": "lightweight",
+          "staged": true,
+          "heldout_deferred": true,
+          "repetitions": 1,
+          "min_improvement_percent": 5.0,
+          "regression_tolerance_percent": 5.0,
+          "model": "gpt-6-astra",
+          "reasoning_effort": "xhigh"
+        },
+        "tasks": [
+          {
+            "id": "modify",
+            "type": "modify",
+            "title": "Preserve Field constraints inside annotated list elements",
+            "capabilities": [
+              "graphify-tools-schema-e8dbe1b08297"
+            ],
+            "status": "inconclusive",
+            "development": {
+              "status": "inconclusive",
+              "original": {
+                "runs": 1,
+                "successes": 1,
+                "tokens": {
+                  "median": 273083,
+                  "min": 273083,
+                  "max": 273083
+                },
+                "duration_seconds": {
+                  "median": 282.3095,
+                  "min": 282.3095,
+                  "max": 282.3095
+                },
+                "blocked": 0
+              },
+              "candidate": {
+                "runs": 1,
+                "successes": 1,
+                "tokens": {
+                  "median": 273551,
+                  "min": 273551,
+                  "max": 273551
+                },
+                "duration_seconds": {
+                  "median": 322.4692,
+                  "min": 322.4692,
+                  "max": 322.4692
+                },
+                "blocked": 0
+              },
+              "ratio": 1.001714,
+              "change_percent": 0.171,
+              "evidence_sha256": "8bda71ff44e951eda675b4ad1afa0fb7166fda487925f993fdd633515e260238"
+            },
+            "heldout": {
+              "status": "not_run",
+              "original": {
+                "runs": 0,
+                "successes": 0,
+                "tokens": {
+                  "median": null,
+                  "min": null,
+                  "max": null
+                },
+                "duration_seconds": {
+                  "median": null,
+                  "min": null,
+                  "max": null
+                },
+                "blocked": 0
+              },
+              "candidate": {
+                "runs": 0,
+                "successes": 0,
+                "tokens": {
+                  "median": null,
+                  "min": null,
+                  "max": null
+                },
+                "duration_seconds": {
+                  "median": null,
+                  "min": null,
+                  "max": null
+                },
+                "blocked": 0
+              },
+              "ratio": null,
+              "change_percent": null
+            }
+          }
+        ],
+        "overhead": {
+          "examiner_tokens": 0,
+          "judge_tokens": 0,
+          "solver_tokens": 546634,
+          "total_tokens": 546634,
+          "usage_complete": true,
+          "observed_total_tokens": 546634,
+          "role_usage_complete": {
+            "examiner": true,
+            "solver": true,
+            "judge": true
+          }
+        },
+        "resources": {
+          "completed_runs": 4,
+          "cleanup_pending": false,
+          "cleanup_pending_runs": 0,
+          "roles": {
+            "examiner": {
+              "completed": 0,
+              "failed": 0
+            },
+            "solver": {
+              "completed": 2,
+              "failed": 0
+            },
+            "judge": {
+              "completed": 2,
+              "failed": 0
+            }
+          }
+        },
+        "iterations": [
+          {
+            "attempt": 3,
+            "status": "inconclusive",
+            "changed_tasks": [],
+            "total_candidate_tokens": 273551,
+            "retry": false
+          }
+        ],
+        "limitations": [
+          "This assessment covers one representative modification workflow, including executing the change. It does not measure understanding, diagnosis or execution as separate task types.",
+          "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+          "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+          "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+          "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+          "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+        ],
+        "staging": {
+          "phase": "development",
+          "targeted_task_ids": [],
+          "screened_task_ids": [
+            "modify"
+          ],
+          "completed_development_runs": 1,
+          "expected_development_runs": 1
+        },
+        "stop_reason": "no_actionable_regression"
+      },
+      "cost_note": "包含出题 313,877 tokens、无效原版解题 376,263 tokens、有效双臂解题 546,634 tokens。另有一次 0.78 秒启动失败，无 usage；日志证明在调用 Codex 前触发依赖完整性检查，不填成 0 用量。确定性评审不调用模型。",
+      "author_calls": 3,
+      "model_calls_with_usage": 7,
+      "author_seconds": 1910.9403507709503,
+      "quality": {
+        "aliases": false,
+        "numeric_cases_matched": 3,
+        "numeric_cases_total": 8,
+        "cli_generation3_weights": false,
+        "cli_outputs_matched": 0,
+        "cli_cases_total": 6,
+        "schema_priority": false,
+        "schema_nested": false
+      }
+    },
+    {
+      "id": "auto50",
+      "name": "Auto50 Review",
+      "branch": "examples/needle-core-auto50-review-20261106",
+      "commit": "d266be7eb2718112a2acc18dd1a1438347d81fae",
+      "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/d266be7eb2718112a2acc18dd1a1438347d81fae",
+      "branch_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/needle-core-auto50-review-20261106",
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/needle-core-auto50-purple-20261106/",
+      "size": {
+        "source_tokens": 12801,
+        "configuration_tokens": 1127,
+        "total_tokens": 13928,
+        "complete": true
+      },
+      "static": {
+        "files": [
+          {
+            "name": "needle/__init__.py",
+            "tokens": 3453,
+            "lines": 376,
+            "functions": 27,
+            "semicolons": 0,
+            "max_function_lines": 36
+          },
+          {
+            "name": "needle/__main__.py",
+            "tokens": 8,
+            "lines": 3,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/_grounding.py",
+            "tokens": 1896,
+            "lines": 190,
+            "functions": 16,
+            "semicolons": 0,
+            "max_function_lines": 21
+          },
+          {
+            "name": "needle/_native.py",
+            "tokens": 544,
+            "lines": 57,
+            "functions": 5,
+            "semicolons": 0,
+            "max_function_lines": 15
+          },
+          {
+            "name": "needle/_telemetry.py",
+            "tokens": 526,
+            "lines": 66,
+            "functions": 4,
+            "semicolons": 0,
+            "max_function_lines": 22
+          },
+          {
+            "name": "needle/_worker.py",
+            "tokens": 1586,
+            "lines": 206,
+            "functions": 17,
+            "semicolons": 0,
+            "max_function_lines": 43
+          },
+          {
+            "name": "needle/_worker_main.py",
+            "tokens": 19,
+            "lines": 4,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/agent/__init__.py",
+            "tokens": 16,
+            "lines": 1,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/agent/fetch.py",
+            "tokens": 2343,
+            "lines": 244,
+            "functions": 23,
+            "semicolons": 0,
+            "max_function_lines": 19
+          },
+          {
+            "name": "needle/agent/tools.py",
+            "tokens": 1533,
+            "lines": 174,
+            "functions": 15,
+            "semicolons": 0,
+            "max_function_lines": 29
+          },
+          {
+            "name": "needle/cli.py",
+            "tokens": 877,
+            "lines": 80,
+            "functions": 3,
+            "semicolons": 0,
+            "max_function_lines": 52
+          }
+        ],
+        "python_files": 11,
+        "python_lines": 1401,
+        "semicolon_statements": 0,
+        "long_lines_over140": 8,
+        "dynamic_calls": [],
+        "largest_functions": [
+          {
+            "name": "main",
+            "line": 29,
+            "lines": 52,
+            "file": "needle/cli.py"
+          },
+          {
+            "name": "_child",
+            "line": 160,
+            "lines": 43,
+            "file": "needle/_worker.py"
+          },
+          {
+            "name": "__init__",
+            "line": 155,
+            "lines": 36,
+            "file": "needle/__init__.py"
+          },
+          {
+            "name": "run",
+            "line": 259,
+            "lines": 36,
+            "file": "needle/__init__.py"
+          },
+          {
+            "name": "_confidence_head_present",
+            "line": 106,
+            "lines": 32,
+            "file": "needle/__init__.py"
+          }
+        ],
+        "median_function_lines": 7.0,
+        "function_count": 110,
+        "long_lines": [
+          {
+            "file": "needle/__init__.py",
+            "line": 231,
+            "length": 230
+          },
+          {
+            "file": "needle/__init__.py",
+            "line": 244,
+            "length": 167
+          },
+          {
+            "file": "needle/_grounding.py",
+            "line": 13,
+            "length": 164
+          },
+          {
+            "file": "needle/_grounding.py",
+            "line": 23,
+            "length": 194
+          },
+          {
+            "file": "needle/_grounding.py",
+            "line": 24,
+            "length": 179
+          },
+          {
+            "file": "needle/_telemetry.py",
+            "line": 37,
+            "length": 192
+          },
+          {
+            "file": "needle/agent/fetch.py",
+            "line": 114,
+            "length": 150
+          },
+          {
+            "file": "needle/agent/fetch.py",
+            "line": 116,
+            "length": 142
+          }
+        ]
+      },
+      "usage": {
+        "input_tokens": 7671234,
+        "cached_input_tokens": 7040128,
+        "output_tokens": 141075,
+        "total_tokens": 7812309,
+        "uncached_plus_output": 772181
+      },
+      "roles": {
+        "author": {
+          "calls": 4,
+          "tokens": 5432321,
+          "seconds": 2120.443414926529
+        },
+        "examiner": {
+          "calls": 1,
+          "tokens": 477777,
+          "seconds": 579.7938
+        },
+        "solver": {
+          "calls": 5,
+          "tokens": 1902211,
+          "seconds": 1448.105
+        }
+      },
+      "audit": {
+        "base_groups": 11,
+        "total_groups": 13,
+        "passed_groups": 12,
+        "pytest": {
+          "passed": 105,
+          "failed": 0,
+          "skipped": 0
+        },
+        "installation_passed": 3,
+        "original_tests_and_license_preserved": 23
+      },
+      "contracts_initial": 799,
+      "author_model_record": "继承当时 Codex 配置，未单独冻结模型快照",
+      "task_enabled": true,
+      "optimization_calls": 0,
+      "source_reduction_pct": 87.33339270341675,
+      "total_reduction_pct": 86.91715198196506,
+      "native_total_reduction_pct": 92.08483457031473,
+      "pipeline_seconds": 3390.738129377365,
+      "wall_seconds": 5740.917068481445,
+      "harness_branch": "自动体积流程（按冻结提交标识）",
+      "harness_commit": "387be730494d962bc1638828b2b66ef9b0f5d0f6",
+      "target": "自动 50% 建议目标（advisory）",
+      "cost_note": "包含 4 次作者调用、任务设计、一次作废的原版解题、4 次有效解题，以及交付前 schema 补修。作废结果不进入质量比较，但成本保留。确定性评审不调用模型。",
+      "trajectory": [
+        {
+          "attempt": 1,
+          "tokens": 13795,
+          "passed": 8,
+          "groups": 11,
+          "failed_groups": [
+            "upstream-grounding",
+            "upstream-weights",
+            "core-fetch"
+          ],
+          "deferred_groups": [],
+          "commit": "3b866d9a8c5febcdc79260ba31bd5b6591843ae9",
+          "note": "首版 8/11 组通过；grounding、权重与 fetch 失败。"
+        },
+        {
+          "attempt": 2,
+          "tokens": 13910,
+          "passed": 7,
+          "groups": 11,
+          "failed_groups": [
+            "upstream-grounding",
+            "upstream-weights",
+            "core-fetch"
+          ],
+          "deferred_groups": [
+            "core-packaging"
+          ],
+          "commit": "277f28f4e60c3f8b91e91b1acb4979f6fa2714ab",
+          "note": "第二轮保留三组失败，非相关组部分暂缓。"
+        },
+        {
+          "attempt": 3,
+          "tokens": 13943,
+          "passed": 11,
+          "groups": 11,
+          "failed_groups": [],
+          "deferred_groups": [],
+          "commit": "cd6845960d5b04d8a4477e8138311d05598a6de7",
+          "note": "第三轮修正缓存重置、离线权重引用与资源目录等行为，11 组和安装通过。随后任务评测触发成本回归。"
+        },
+        {
+          "attempt": 4,
+          "tokens": 13928,
+          "passed": 11,
+          "groups": 11,
+          "extra_schema_cases": 2,
+          "commit": "d266be7eb2718112a2acc18dd1a1438347d81fae",
+          "note": "额外 schema 审查发现默认 Field 优先级与嵌套 Annotated 语义偏移；第四次作者调用专门补修，并重新通过功能与安装验收。最终代码未重跑任务成本评测。"
+        }
+      ],
+      "task_assessment": {
+        "schema_version": 1,
+        "operation": "task_effort_evaluation",
+        "status": "regressed",
+        "binding": {
+          "plan_sha256": "0d4658cda8d1b73d2304e750e5da0aefe56ee72ac65873a768589f5c1b5154e8",
+          "original_git_head": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+          "original_snapshot_sha256": "35ef1701933b3edf7f4146e1a597bd4778f48a5b3ad13d9e287d1a5c9f19ec76",
+          "candidate_git_head": "cd6845960d5b04d8a4477e8138311d05598a6de7",
+          "candidate_snapshot_sha256": "ab365ae78e77c83f951276786672ddcc34966eb4a111679cb33419ec2c0c0e4a",
+          "candidate_source_sha256": "c147cf1045aaa10638bb940919f2ac2f3f900fe6d162712dc98db38352a0917b",
+          "candidate_contract_sha256": "78f1f7e0d51ee36eb842056d68a8d4634105fdaccc58b644618279badcecaffe",
+          "suite_sha256": "e2c3c6ea601d1277441f388d89c448c7c82439cccf4a6d3b945c540cf90b569e",
+          "settings_sha256": "4dbcde69eea56f2ed9f9a69c16bfe65fc77875898da5c79b1c2697a4ccc27003",
+          "original_heldout_sha256": "a31bbbaeb7211a4534cd5d2b341e6c64a2338db56aa6417035449db4d659dcaf"
+        },
+        "policy": {
+          "comparison": "empirical_range",
+          "strict_all_tasks": true,
+          "task_types": [
+            "modify"
+          ],
+          "grading": "lightweight",
+          "staged": true,
+          "heldout_deferred": true,
+          "repetitions": 1,
+          "min_improvement_percent": 5.0,
+          "regression_tolerance_percent": 5.0,
+          "model": "gpt-6-astra",
+          "reasoning_effort": "xhigh"
+        },
+        "tasks": [
+          {
+            "id": "modify",
+            "type": "modify",
+            "title": "Preserve Field constraints inside nested typed-list tool schemas",
+            "capabilities": [
+              "graphify-tools-schema-e8dbe1b08297"
+            ],
+            "status": "regressed",
+            "development": {
+              "status": "passed",
+              "original": {
+                "runs": 1,
+                "successes": 1,
+                "tokens": {
+                  "median": 420651,
+                  "min": 420651,
+                  "max": 420651
+                },
+                "duration_seconds": {
+                  "median": 277.1828,
+                  "min": 277.1828,
+                  "max": 277.1828
+                },
+                "blocked": 0
+              },
+              "candidate": {
+                "runs": 1,
+                "successes": 1,
+                "tokens": {
+                  "median": 344330,
+                  "min": 344330,
+                  "max": 344330
+                },
+                "duration_seconds": {
+                  "median": 300.0087,
+                  "min": 300.0087,
+                  "max": 300.0087
+                },
+                "blocked": 0
+              },
+              "ratio": 0.818565,
+              "change_percent": -18.144,
+              "evidence_sha256": "6797adc2f9366eca129e5b54561b5758141c50446e17335c7ef956fa578f2239"
+            },
+            "heldout": {
+              "status": "regressed",
+              "original": {
+                "runs": 1,
+                "successes": 1,
+                "tokens": {
+                  "median": 273731,
+                  "min": 273731,
+                  "max": 273731
+                },
+                "duration_seconds": {
+                  "median": 263.0054,
+                  "min": 263.0054,
+                  "max": 263.0054
+                },
+                "blocked": 0
+              },
+              "candidate": {
+                "runs": 1,
+                "successes": 1,
+                "tokens": {
+                  "median": 373199,
+                  "min": 373199,
+                  "max": 373199
+                },
+                "duration_seconds": {
+                  "median": 282.7392,
+                  "min": 282.7392,
+                  "max": 282.7392
+                },
+                "blocked": 0
+              },
+              "ratio": 1.363379,
+              "change_percent": 36.338,
+              "evidence_sha256": "79dda49bd4a71fc4eaaa9c71253b82f1978286c2e6ef85afdb53aef072b6432e"
+            }
+          }
+        ],
+        "overhead": {
+          "examiner_tokens": 0,
+          "judge_tokens": 0,
+          "solver_tokens": 1411911,
+          "total_tokens": 1411911,
+          "usage_complete": true,
+          "observed_total_tokens": 1411911,
+          "role_usage_complete": {
+            "examiner": true,
+            "solver": true,
+            "judge": true
+          }
+        },
+        "resources": {
+          "completed_runs": 8,
+          "cleanup_pending": false,
+          "cleanup_pending_runs": 0,
+          "roles": {
+            "examiner": {
+              "completed": 0,
+              "failed": 0
+            },
+            "solver": {
+              "completed": 4,
+              "failed": 0
+            },
+            "judge": {
+              "completed": 4,
+              "failed": 0
+            }
+          }
+        },
+        "iterations": [
+          {
+            "attempt": 3,
+            "status": "regressed",
+            "changed_tasks": [],
+            "total_candidate_tokens": 717529,
+            "retry": false
+          }
+        ],
+        "limitations": [
+          "This assessment covers one representative modification workflow, including executing the change. It does not measure understanding, diagnosis or execution as separate task types.",
+          "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+          "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+          "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+          "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+          "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+        ],
+        "staging": {
+          "phase": "heldout",
+          "targeted_task_ids": [],
+          "screened_task_ids": [
+            "modify"
+          ],
+          "completed_development_runs": 1,
+          "expected_development_runs": 1
+        },
+        "stop_reason": "heldout_acceptance_failed"
+      },
+      "task_assessment_final_status": "最终修订未复测；旧任务结果属于 cd6845960d5b04d8a4477e8138311d05598a6de7",
+      "author_calls": 4,
+      "model_calls_with_usage": 10,
+      "author_seconds": 2120.443414926529,
+      "quality": {
+        "aliases": false,
+        "numeric_cases_matched": 3,
+        "numeric_cases_total": 8,
+        "cli_generation3_weights": false,
+        "cli_outputs_matched": 0,
+        "cli_cases_total": 6,
+        "schema_priority": true,
+        "schema_nested": true
+      }
+    },
+    {
+      "id": "feedback",
+      "name": "Feedback Memory",
+      "branch": "examples/needle-feedback-core-readable-20261109",
+      "commit": "88671a74c716eb095aba879139aeafc83b3170ca",
+      "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/88671a74c716eb095aba879139aeafc83b3170ca",
+      "branch_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/needle-feedback-core-readable-20261109",
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/needle-feedback-core-readable-20261109/",
+      "size": {
+        "source_tokens": 13551,
+        "configuration_tokens": 711,
+        "total_tokens": 14262,
+        "complete": true
+      },
+      "static": {
+        "files": [
+          {
+            "name": "needle/__init__.py",
+            "tokens": 3343,
+            "lines": 395,
+            "functions": 26,
+            "semicolons": 0,
+            "max_function_lines": 47
+          },
+          {
+            "name": "needle/__main__.py",
+            "tokens": 8,
+            "lines": 3,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/_grounding.py",
+            "tokens": 2077,
+            "lines": 218,
+            "functions": 17,
+            "semicolons": 0,
+            "max_function_lines": 25
+          },
+          {
+            "name": "needle/_native.py",
+            "tokens": 562,
+            "lines": 61,
+            "functions": 5,
+            "semicolons": 0,
+            "max_function_lines": 17
+          },
+          {
+            "name": "needle/_telemetry.py",
+            "tokens": 541,
+            "lines": 74,
+            "functions": 4,
+            "semicolons": 0,
+            "max_function_lines": 22
+          },
+          {
+            "name": "needle/_worker.py",
+            "tokens": 1629,
+            "lines": 218,
+            "functions": 15,
+            "semicolons": 0,
+            "max_function_lines": 43
+          },
+          {
+            "name": "needle/agent/__init__.py",
+            "tokens": 36,
+            "lines": 3,
+            "functions": 0,
+            "semicolons": 0,
+            "max_function_lines": 0
+          },
+          {
+            "name": "needle/agent/fetch.py",
+            "tokens": 2294,
+            "lines": 260,
+            "functions": 22,
+            "semicolons": 0,
+            "max_function_lines": 22
+          },
+          {
+            "name": "needle/agent/tools.py",
+            "tokens": 1843,
+            "lines": 228,
+            "functions": 14,
+            "semicolons": 0,
+            "max_function_lines": 40
+          },
+          {
+            "name": "needle/cli.py",
+            "tokens": 1218,
+            "lines": 123,
+            "functions": 6,
+            "semicolons": 0,
+            "max_function_lines": 54
+          }
+        ],
+        "python_files": 10,
+        "python_lines": 1583,
+        "semicolon_statements": 0,
+        "long_lines_over140": 2,
+        "dynamic_calls": [],
+        "largest_functions": [
+          {
+            "name": "main",
+            "line": 66,
+            "lines": 54,
+            "file": "needle/cli.py"
+          },
+          {
+            "name": "__init__",
+            "line": 155,
+            "lines": 47,
+            "file": "needle/__init__.py"
+          },
+          {
+            "name": "_child",
+            "line": 172,
+            "lines": 43,
+            "file": "needle/_worker.py"
+          },
+          {
+            "name": "build_schema",
+            "line": 178,
+            "lines": 40,
+            "file": "needle/agent/tools.py"
+          },
+          {
+            "name": "run",
+            "line": 284,
+            "lines": 37,
+            "file": "needle/__init__.py"
+          }
+        ],
+        "median_function_lines": 8,
+        "function_count": 109,
+        "long_lines": [
+          {
+            "file": "needle/_grounding.py",
+            "line": 14,
+            "length": 164
+          },
+          {
+            "file": "needle/agent/fetch.py",
+            "line": 248,
+            "length": 141
+          }
+        ]
+      },
+      "usage": {
+        "input_tokens": 4282028,
+        "cached_input_tokens": 3753088,
+        "output_tokens": 54610,
+        "total_tokens": 4336638,
+        "uncached_plus_output": 583550
+      },
+      "roles": {
+        "author": {
+          "calls": 4,
+          "tokens": 2856053,
+          "seconds": 1243.911315699108
+        },
+        "controller": {
+          "calls": 6,
+          "tokens": 1480585,
+          "seconds": 661.0900026196614
+        }
+      },
+      "audit": {
+        "base_groups": 11,
+        "total_groups": 13,
+        "passed_groups": 12,
+        "pytest": {
+          "passed": 105,
+          "failed": 0,
+          "skipped": 0
+        },
+        "installation_passed": 3,
+        "original_tests_and_license_preserved": 23
+      },
+      "contracts_initial": 999,
+      "author_model_record": "GPT-6-Astra / xhigh（运行前记录配置）",
+      "task_enabled": false,
+      "optimization_calls": 0,
+      "source_reduction_pct": 86.59126666072966,
+      "total_reduction_pct": 86.60341912455382,
+      "native_total_reduction_pct": 91.89502517531795,
+      "pipeline_seconds": 2556.779012,
+      "wall_seconds": 2556.779012,
+      "harness_branch": "codex/controller-feedback-memory",
+      "harness_commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+      "target": "无强制比例；功能与安装通过即停止",
+      "cost_note": "4 次作者调用 + 6 次 Controller 调用；未开启任务成本评测。Controller 用量占本次已观测总 tokens 的 34.14%。",
+      "trajectory": [
+        {
+          "attempt": 1,
+          "tokens": 14048,
+          "source_tokens": 13337,
+          "passed": 11,
+          "groups": 11,
+          "failed_groups": [],
+          "deferred_groups": [],
+          "time": "2026-11-09T08:31:25.149381+00:00",
+          "note": "首版已通过原有 11 组与安装。随后宿主审查补充 CLI、数值边界和别名等原仓库契约。"
+        },
+        {
+          "attempt": 2,
+          "tokens": 14253,
+          "source_tokens": 13542,
+          "passed": 11,
+          "groups": 12,
+          "failed_groups": [
+            "core-clarified-runtime-boundaries"
+          ],
+          "deferred_groups": [],
+          "time": "2026-11-09T08:40:46.759510+00:00",
+          "note": "第二轮实现补充行为；原有 11 组仍通过，新增边界组暴露数值提取和 CLI 输出差异。"
+        },
+        {
+          "attempt": 3,
+          "tokens": 14262,
+          "source_tokens": 13551,
+          "passed": 11,
+          "groups": 12,
+          "failed_groups": [
+            "core-clarified-runtime-boundaries"
+          ],
+          "deferred_groups": [],
+          "time": "2026-11-09T08:47:32.079335+00:00",
+          "note": "第三轮修复构造参数、数值语义与遥测行为；剩余 CLI 诊断用词不一致。"
+        },
+        {
+          "attempt": 4,
+          "tokens": 14262,
+          "source_tokens": 13551,
+          "passed": 12,
+          "groups": 12,
+          "failed_groups": [],
+          "deferred_groups": [],
+          "time": "2026-11-09T08:52:54.729343+00:00",
+          "note": "第四轮修正诊断文本，12 组与安装全部通过。验收后停止，纯体积优化为 0 次。"
+        }
+      ],
+      "submitted_at": "2026-11-09T08:14:12.129515+00:00",
+      "finished_at": "2026-11-09T08:56:48.908527+00:00",
+      "author_calls": 4,
+      "model_calls_with_usage": 10,
+      "author_seconds": 1243.911315699108,
+      "quality": {
+        "aliases": true,
+        "numeric_cases_matched": 8,
+        "numeric_cases_total": 8,
+        "cli_generation3_weights": true,
+        "cli_outputs_matched": 6,
+        "cli_cases_total": 6,
+        "schema_priority": true,
+        "schema_nested": false
+      }
+    }
+  ]
+}
