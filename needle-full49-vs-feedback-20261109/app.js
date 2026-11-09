@@ -10,8 +10,8 @@ function press(selector, attribute, value) {
 function size(metric) {
   press('[data-size]', 'size', metric);
   const values = metric === 'combined' ? [175966,76443,89044] : metric === 'adjusted' ? [106460,76443,88976] : [101061,67087,74176];
-  $('size-chart').innerHTML = values.map((v,i) => `<div class="bar-row"><span class="bar-label">${['Original','Nov 5','Nov 9'][i]}</span><div class="bar-track"><div class="bar-fill ${['original','old','new'][i]}" style="width:${100*v/values[0]}%"></div></div><span class="bar-value">${number(v)}<small>${(100*v/values[0]).toFixed(2)}% retained</small></span></div>`).join('');
-  $('size-caption').textContent = metric === 'combined' ? 'Frozen source + configuration inventory. Headline reductions: old 56.56%; new 49.40%. SVGs and llms.txt materially affect the denominator.' : metric === 'adjusted' ? 'Exact same eight documentation paths excluded in both arms. Reduction: old 28.20%; new 16.42%. Required runtime JSON remains counted.' : 'Production source category: old 33.62% reduction; new 26.60%. Relocating environment literals to JSON also reduces this source-only figure.';
+  $('size-chart').innerHTML = values.map((v,i) => `<div class="bar-row"><span class="bar-label">${['原版','11月5日','11月9日'][i]}</span><div class="bar-track"><div class="bar-fill ${['original','old','new'][i]}" style="width:${100*v/values[0]}%"></div></div><span class="bar-value">${number(v)}<small>${(100*v/values[0]).toFixed(2)}% 保留</small></span></div>`).join('');
+  $('size-caption').textContent = metric === 'combined' ? '冻结的源码与配置清单。总体减少比例：旧版 56.56%，本次 49.40%。SVG 和 llms.txt 明显影响了统计分母。' : metric === 'adjusted' ? '在两侧排除完全相同的八个文档路径。减少比例：旧版 28.20%，本次 16.42%。必需的运行时 JSON 数据仍计入统计。' : '生产源码口径：旧版减少 33.62%，本次减少 26.60%。将环境数据字面量迁移到 JSON 也会降低这个仅源码指标。';
 }
 function costs(metric) {
   press('[data-cost]', 'cost', metric);
@@ -19,14 +19,14 @@ function costs(metric) {
   const amounts=rows.map(r=>metric==='total'?r.total:r.uncached_input+r.output), max=Math.max(...amounts);
   $('cost-chart').innerHTML=rows.map((r,i)=>{
     const amount=amounts[i], cache=metric==='total'?r.cached:0;
-    return `<div class="bar-row"><span class="bar-label">${i?'Nov 9':'Nov 5'}</span><div class="bar-track"><div class="bar-fill" style="width:${100*amount/max}%"><div class="segment cache-${arms[i]}" style="width:${100*cache/amount}%" title="Cached input: ${number(cache)}"></div><div class="segment uncached-${arms[i]}" style="width:${100*(amount-cache)/amount}%" title="Uncached input + output: ${number(amount-cache)}"></div></div></div><span class="bar-value">${(amount/1e6).toFixed(3)}M<small>${i?'15 complete receipts':'9 completed streams; incomplete'}</small></span></div>`;
+    return `<div class="bar-row"><span class="bar-label">${i?'11月9日':'11月5日'}</span><div class="bar-track"><div class="bar-fill" style="width:${100*amount/max}%"><div class="segment cache-${arms[i]}" style="width:${100*cache/amount}%" title="缓存输入： ${number(cache)}"></div><div class="segment uncached-${arms[i]}" style="width:${100*(amount-cache)/amount}%" title="非缓存输入＋输出： ${number(amount-cache)}"></div></div></div><span class="bar-value">${(amount/1e4).toFixed(1)}万<small>${i?'15 次完整调用记录':'9 次已完成调用；统计不完整'}</small></span></div>`;
   }).join('');
-  $('cost-caption').textContent=metric==='total'?'Pale = cached input; dark = uncached input + output. Recorded subtotal decreased 60.31%. The old interrupted call, potentially helper usage and host work are missing; the old task ledger is separate.':'Uncached input + output increased 5.39% in these recorded scopes. This is not a billing comparison; model tokens have different billing weights and old coverage is incomplete.';
+  $('cost-caption').textContent=metric==='total'?'浅色表示缓存输入，深色表示非缓存输入＋输出。已记录小计下降 60.31%。旧版中断调用、可能存在的辅助 agent 用量及宿主侧工作未完整记录；旧版任务评估账本单独统计。':'在已记录的统计范围中，非缓存输入＋输出增加了 5.39%。这不是账单比较：不同模型 Token 的计费权重不同，旧版记录也不完整。';
 }
 function cases(query='') {
   const rows=data.case_comparison.filter(r=>r.old_classification==='regressed' && r.case.toLowerCase().includes(query.toLowerCase()));
-  $('regression-list').innerHTML=rows.map(r=>`<details class="case"><summary><code>${escapeText(r.case)}</code><span class="case-state"><span class="badge bad">Old failed</span>→<span class="badge good">New passed</span></span></summary><p>Original baseline: passed. New checks: ${r.new_checks.map(escapeText).join(', ')}.<br>Evidence: ${r.new_evidence_resolution==='derived_from_frozen_selector_and_all_pass_group'?'Membership derived from the unchanged original test set and frozen selector; selected count equals the all-pass receipt.':'Individual case result recorded in stdout or a commit-bound heavy-check receipt.'}</p></details>`).join('') || '<p class="small">No matching regression cases.</p>';
-  $('case-count').textContent=`Showing ${rows.length} of 23 recorded regressions. All 23 map to passing results on the final new candidate.`;
+  $('regression-list').innerHTML=rows.map(r=>`<details class="case"><summary><code>${escapeText(r.case)}</code><span class="case-state"><span class="badge bad">旧版失败</span>→<span class="badge good">本次通过</span></span></summary><p>原版基线：通过。本次对应检查： ${r.new_checks.map(escapeText).join(', ')}.<br>证据粒度：${r.new_evidence_resolution==='derived_from_frozen_selector_and_all_pass_group'?'根据未变的原始测试集合与冻结的选择条件推导用例范围；选中数量与整组全部通过的执行记录一致。':'标准输出或绑定到最终提交的高负载检查记录，包含该用例的独立结果。'}</p></details>`).join('') || '<p class="small">没有匹配的回归用例。</p>';
+  $('case-count').textContent=`显示已记录的 23 项回归中的 ${rows.length} 项。全部 23 项均对应到本次最终候选版本的通过结果。`;
 }
 function wallTime() {
   const old=data.timing.old,newer=data.timing.new,roles=data.new_role_usage,ops=data.new_operation_totals;
@@ -34,23 +34,23 @@ function wallTime() {
   const oldValues=[old.completed_author_seconds,old.phase_seconds.baseline,old.phase_seconds.verifying,old.phase_seconds.installing,old.phase_seconds.task_effort_original];
   const newValues=[modelNew,ops.capture_baseline.seconds,ops.compare_behavior.seconds,ops.check_installation.seconds,0];
   oldValues.push(old.job_seconds-oldValues.reduce((a,b)=>a+b,0));newValues.push(newer.job_seconds-newValues.reduce((a,b)=>a+b,0));
-  const labels=['Recorded model calls','Original baseline','Candidate verification','Installation','Task baseline','Other / recovery'];
+  const labels=['已记录的模型调用','原版基线','候选版验证','安装','任务基线','其他／恢复'];
   const shades=['#7650ae','#b99bd5','#d8c7e7','#96b7aa','#c29e8c','#e9e3ed'];
   const scale=240*60;
-  $('time-chart').innerHTML=[oldValues,newValues].map((v,i)=>`<div class="wall-row"><div><span>${i?'Nov 9':'Nov 5'}</span><span>${(v.reduce((a,b)=>a+b,0)/60).toFixed(1)} min <small> / 240-minute scale</small></span></div><div class="wall-track">${v.map((x,j)=>`<div class="wall-part" style="width:${100*x/scale}%;background:${shades[j]}" title="${labels[j]}: ${(x/60).toFixed(1)} min"></div>`).join('')}</div></div>`).join('')+`<div class="wall-legend">${labels.map((l,i)=>`<span><i style="background:${shades[i]}"></i>${l}</span>`).join('')}</div>`;
+  $('time-chart').innerHTML=[oldValues,newValues].map((v,i)=>`<div class="wall-row"><div><span>${i?'11月9日':'11月5日'}</span><span>${(v.reduce((a,b)=>a+b,0)/60).toFixed(1)} 分钟 <small> / 240 分钟刻度</small></span></div><div class="wall-track">${v.map((x,j)=>`<div class="wall-part" style="width:${100*x/scale}%;background:${shades[j]}" title="${labels[j]}: ${(x/60).toFixed(1)} 分钟"></div>`).join('')}</div></div>`).join('')+`<div class="wall-legend">${labels.map((l,i)=>`<span><i style="background:${shades[i]}"></i>${l}</span>`).join('')}</div>`;
 }
 function trajectory() {
   const W=900,H=300,L=42,R=20,T=25,B=45, xmax=220;
   const x=v=>L+v/xmax*(W-L-R), y=v=>H-B-v/21*(H-T-B);
   const points=[];
-  const lines=['<svg viewBox="0 0 900 300" role="group" aria-label="Passing common check groups by elapsed job minutes">'];
+  const lines=['<svg viewBox="0 0 900 300" role="group" aria-label="共同检查组通过数量与任务经过时间的关系">'];
   [0,5,10,15,21].forEach(v=>lines.push(`<line x1="${L}" y1="${y(v)}" x2="${W-R}" y2="${y(v)}" stroke="#eee6f6"/><text x="${L-12}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#a08bae">${v}</text>`));
-  [0,60,120,180,220].forEach(v=>lines.push(`<text x="${x(v)}" y="${H-B+23}" text-anchor="middle" font-size="11" fill="#a08bae">${v}m</text>`));
+  [0,60,120,180,220].forEach(v=>lines.push(`<text x="${x(v)}" y="${H-B+23}" text-anchor="middle" font-size="11" fill="#a08bae">${v}分</text>`));
   ['old','new'].forEach(arm=>{
     const start=Date.parse(data.timing[arm].start), rows=arm==='old'?data.old_attempts.filter(r=>r.counts):data.new_attempts;
     const coords=rows.map((r,i)=>{
       const mins=(Date.parse(r.at)-start)/60000, passed=arm==='old'?r.counts.passed:r.common_passed;
-      const text=`${arm==='old'?'Nov 5 attempt '+r.attempt:'Nov 9 candidate '+(i+1)}: ${passed}/21 common groups; ${mins.toFixed(1)} min after submission; ${number(arm==='old'?r.size.total_tokens:r.total_tokens)} tokens.${arm==='old'&&r.attempt===3?' Required runtime data absent.':''}`;
+      const text=`${arm==='old'?'11月5日第 '+r.attempt+' 次尝试':'11月9日候选版本 '+(i+1)}: 共同检查 ${passed}/21 组通过；提交后 ${mins.toFixed(1)} 分钟； ${number(arm==='old'?r.size.total_tokens:r.total_tokens)} 个 Token。${arm==='old'&&r.attempt===3?'缺少必需的运行数据。':''}`;
       points.push({arm,px:x(mins),py:y(passed),text});return `${x(mins)},${y(passed)}`;
     });
     lines.push(`<polyline points="${coords.join(' ')}" fill="none" stroke="${colors[arm]}" stroke-width="2.5"/>`);
@@ -63,7 +63,7 @@ function trajectory() {
   });
 }
 async function main() {
-  const response=await fetch('comparison.json');if(!response.ok)throw Error('Report data unavailable');data=await response.json();
+  const response=await fetch('comparison.json');if(!response.ok)throw Error('无法加载报告数据');data=await response.json();
   size('combined');costs('total');cases();wallTime();trajectory();
   document.querySelectorAll('[data-size]').forEach(b=>b.addEventListener('click',()=>size(b.dataset.size)));
   document.querySelectorAll('[data-cost]').forEach(b=>b.addEventListener('click',()=>costs(b.dataset.cost)));
@@ -78,4 +78,4 @@ async function main() {
   document.querySelectorAll('main section').forEach(section=>observer.observe(section));
   document.documentElement.dataset.ready='true';
 }
-main().catch(error=>{console.error(error);$('size-caption').textContent='Interactive data did not load. The evidence tables and download links remain available.';});
+main().catch(error=>{console.error(error);$('size-caption').textContent='交互数据未能加载，静态证据表格和下载链接仍可使用。';});

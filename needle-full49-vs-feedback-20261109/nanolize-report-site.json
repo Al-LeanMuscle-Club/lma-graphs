@@ -2,11 +2,12 @@
   "schema_version": 1,
   "operation": "report_site",
   "public_safe": true,
-  "report_id": "nrs_c5b00a81a9e8d9fad216dbe7647d7ca87d4bdb7c77e7dbfdb65d63047f1f438b",
+  "language": "zh-CN",
+  "report_id": "nrs_8e957a023c9a9f480237a20f4759b204dcf20cd41f8ccb66b155880ae1cef0a5",
   "files": [
     {
       "path": "app.js",
-      "sha256": "4a63f24b978800f37f56fb74aef56ea6a9e073d17fb91ca04cc94df495f28645"
+      "sha256": "9a60d1770a29274c861b6738859a871d38ab20b330c3f8235ec27fbc59cbf0a4"
     },
     {
       "path": "cases.csv",
@@ -18,11 +19,11 @@
     },
     {
       "path": "index.html",
-      "sha256": "5aa0fb3cc659a6cd859a2350ac83104f96edf4dba7e20124e951400ff4b66037"
+      "sha256": "2b875e277e2b4bcdf7ee10798442f18e5a6b9218e91866ff45346a46d08a6ade"
     },
     {
       "path": "style.css",
-      "sha256": "f166373c72d41ff7ee9c9b460487b7bfd800eb466cf4390c274ac00cec027fbc"
+      "sha256": "b440c40c21638c82147a5c2cc56b43e068c5459c5badc3e35ed1d5c68b9a7bd7"
     }
   ]
 }
