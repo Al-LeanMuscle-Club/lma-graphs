@@ -1,0 +1,1127 @@
+{
+  "title": "tqdm · adaptive Controller, full functionality",
+  "goal": "concise readable full functionality; stop after functional and installation acceptance",
+  "stopping_rule": "Stop after functional and fresh-installation acceptance; no pure-size or task-cost optimization.",
+  "mandatory_compression_ratio": null,
+  "internal_advisory_percent": 100,
+  "advisory_note": "Planner compatibility metadata only; no required compression ratio or size retry gate.",
+  "harness_branch": "codex/main-adaptive-controller-20261109",
+  "harness_commit": "a996d385c52b73b10ec78934b791e6874fcb6963",
+  "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+  "verified_commit": "4f3782e5331029c580f04691be4a093695eb129d",
+  "published_commit": "722ae02d31e34476c5b9e482e596a260a8533e02",
+  "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-adaptive-readable-20261109",
+  "identical_verified_code_tree": true,
+  "workflow_status": "succeeded",
+  "selected_capabilities": 27,
+  "excluded_capabilities": 0,
+  "source_tokens": {
+    "before": 45979,
+    "after": 28919,
+    "reduction_percent": 37.10389525653015
+  },
+  "total_tokens": {
+    "before": 72148,
+    "after": 38635,
+    "reduction_percent": 46.450352054111
+  },
+  "configuration_tokens": {
+    "before": 26169,
+    "after": 9716
+  },
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "controller": {
+    "calls": 0,
+    "events": [],
+    "max_calls": 2,
+    "mode": "auto",
+    "performance_verified": false,
+    "schema_version": 1
+  },
+  "usage": {
+    "schema_version": 1,
+    "roles": {
+      "author": {
+        "calls": 4,
+        "usage_complete": true,
+        "incomplete_calls": 0,
+        "observed_tokens": {
+          "input_tokens": 5178408,
+          "cached_input_tokens": 4886016,
+          "output_tokens": 94108,
+          "total_tokens": 5272516
+        },
+        "total_tokens": 5272516,
+        "duration_seconds": 2390.7476,
+        "observed_duration_seconds": 2390.7476
+      },
+      "controller": {
+        "calls": 0,
+        "usage_complete": true,
+        "incomplete_calls": 0,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0,
+        "duration_seconds": 0,
+        "observed_duration_seconds": 0
+      },
+      "task_evaluation": {
+        "calls": 0,
+        "usage_complete": true,
+        "incomplete_calls": 0,
+        "observed_tokens": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        },
+        "total_tokens": 0,
+        "duration_seconds": 0,
+        "observed_duration_seconds": 0
+      }
+    },
+    "wall_seconds": 3735.728399,
+    "usage_complete": true,
+    "observed_total_tokens": 5272516,
+    "total_tokens": 5272516
+  },
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "optimization_attempts": 0,
+  "task_assessment_enabled": false,
+  "checks": [
+    {
+      "name": "upstream-tqdm",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 86
+          },
+          "duration_seconds": 4.8123
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 86
+          },
+          "duration_seconds": 1.9086
+        }
+      }
+    },
+    {
+      "name": "upstream-utils",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "duration_seconds": 1.533
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "duration_seconds": 1.5152
+        }
+      }
+    },
+    {
+      "name": "upstream-main",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 1.7801
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 1.6813
+        }
+      }
+    },
+    {
+      "name": "upstream-asyncio",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 2.4792
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 2.448
+        }
+      }
+    },
+    {
+      "name": "upstream-notebook",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.073
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.8167
+        }
+      }
+    },
+    {
+      "name": "upstream-pandas",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "duration_seconds": 4.9805
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "duration_seconds": 3.3076
+        }
+      }
+    },
+    {
+      "name": "upstream-synchronisation",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.7619
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.7406
+        }
+      }
+    },
+    {
+      "name": "upstream-rlock",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.0684
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.0268
+        }
+      }
+    },
+    {
+      "name": "upstream-contrib",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 1.7015
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 1.6315
+        }
+      }
+    },
+    {
+      "name": "upstream-concurrent",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 13,
+            "skipped": 3
+          },
+          "duration_seconds": 1.9186
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 13,
+            "skipped": 3
+          },
+          "duration_seconds": 1.908
+        }
+      }
+    },
+    {
+      "name": "upstream-itertools",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5,
+            "skipped": 1
+          },
+          "duration_seconds": 1.579
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5,
+            "skipped": 1
+          },
+          "duration_seconds": 1.5704
+        }
+      }
+    },
+    {
+      "name": "upstream-contrib_logging",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 19
+          },
+          "duration_seconds": 1.5793
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 19
+          },
+          "duration_seconds": 1.5541
+        }
+      }
+    },
+    {
+      "name": "upstream-version",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.6006
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.6193
+        }
+      }
+    },
+    {
+      "name": "upstream-gui",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.5855
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.5795
+        }
+      }
+    },
+    {
+      "name": "upstream-tk",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.569
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.5657
+        }
+      }
+    },
+    {
+      "name": "upstream-rich",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "duration_seconds": 3.132
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "duration_seconds": 1.731
+        }
+      }
+    },
+    {
+      "name": "upstream-dask",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.5823
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.3312
+        }
+      }
+    },
+    {
+      "name": "upstream-keras",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 15.5238
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 9.6146
+        }
+      }
+    },
+    {
+      "name": "upstream-perf",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 18.3407
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 17.9103
+        }
+      }
+    },
+    {
+      "name": "contract-behavior",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.6088
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.7204
+        }
+      }
+    },
+    {
+      "name": "contract-notifications",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.6324
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.5755
+        }
+      }
+    },
+    {
+      "name": "contract-graphics",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.3072
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.2696
+        }
+      }
+    },
+    {
+      "name": "contract-tooling",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2203
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.4238
+        }
+      }
+    },
+    {
+      "name": "python314-concurrent",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 16
+          },
+          "duration_seconds": 5.8885
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 16
+          },
+          "duration_seconds": 5.6424
+        }
+      }
+    },
+    {
+      "name": "python314-itertools",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.3207
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.3167
+        }
+      }
+    },
+    {
+      "name": "throughput-observation",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.9486
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.9258
+        }
+      }
+    },
+    {
+      "name": "contract-maintainer-helpers",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2592
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.222
+        }
+      }
+    },
+    {
+      "name": "contract-public-surface",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2323
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2266
+        }
+      }
+    },
+    {
+      "name": "contract-range-helpers",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.1094
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.111
+        }
+      }
+    },
+    {
+      "name": "contract-archive-parser",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.4607
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.4155
+        }
+      }
+    },
+    {
+      "name": "contract-cli-streams",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.6304
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.5957
+        }
+      }
+    },
+    {
+      "name": "contract-executor-options",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2022
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.305
+        }
+      }
+    },
+    {
+      "name": "contract-cli-multitoken-values",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.5431
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2148
+        }
+      }
+    }
+  ],
+  "installation_checks_passed": 2,
+  "published_branch_installation": {
+    "passed": true,
+    "pretend_scm_version_used": false
+  },
+  "python38_smoke": {
+    "passed": true,
+    "full_suite": false,
+    "checks": [
+      {
+        "name": "imports-iteration-helpers",
+        "passed": true,
+        "result": {
+          "python": "3.8.20",
+          "candidate_origin": true,
+          "iteration": true,
+          "version": "4.70.1"
+        }
+      },
+      {
+        "name": "--help",
+        "passed": true,
+        "stdout_bytes": 2750,
+        "stderr_bytes": 0
+      },
+      {
+        "name": "--version",
+        "passed": true,
+        "stdout_bytes": 7,
+        "stderr_bytes": 0
+      }
+    ]
+  },
+  "preserved_context_manager_return_types": [
+    "logging_redirect_tqdm",
+    "tqdm_logging_redirect"
+  ],
+  "supplementary_tee_stream_identity": {
+    "passed": true,
+    "observations": [
+      {
+        "arm": "original",
+        "context_calls": 2,
+        "original_progress_stream_preserved": true,
+        "progress_matches": true,
+        "stdout_matches": true
+      },
+      {
+        "arm": "candidate",
+        "context_calls": 2,
+        "original_progress_stream_preserved": true,
+        "progress_matches": true,
+        "stdout_matches": true
+      }
+    ]
+  },
+  "supplementary_cli_multitoken_values": {
+    "passed": true,
+    "cases": 3,
+    "observations": {
+      "original": [
+        {
+          "argv": [
+            "--desc",
+            "hello",
+            "world",
+            "--disable"
+          ],
+          "kwargs": [
+            {
+              "desc": "hello world",
+              "disable": true
+            }
+          ],
+          "payload": "one\n",
+          "status": "accepted"
+        },
+        {
+          "argv": [
+            "--unit",
+            "processed",
+            "items",
+            "--disable"
+          ],
+          "kwargs": [
+            {
+              "disable": true,
+              "unit": "processed items"
+            }
+          ],
+          "payload": "one\n",
+          "status": "accepted"
+        },
+        {
+          "argv": [
+            "--desc=hello",
+            "world",
+            "--disable"
+          ],
+          "kwargs": [
+            {
+              "desc": "hello world",
+              "disable": true
+            }
+          ],
+          "payload": "one\n",
+          "status": "accepted"
+        }
+      ],
+      "candidate": [
+        {
+          "argv": [
+            "--desc",
+            "hello",
+            "world",
+            "--disable"
+          ],
+          "kwargs": [
+            {
+              "desc": "hello world",
+              "disable": true
+            }
+          ],
+          "payload": "one\n",
+          "status": "accepted"
+        },
+        {
+          "argv": [
+            "--unit",
+            "processed",
+            "items",
+            "--disable"
+          ],
+          "kwargs": [
+            {
+              "disable": true,
+              "unit": "processed items"
+            }
+          ],
+          "payload": "one\n",
+          "status": "accepted"
+        },
+        {
+          "argv": [
+            "--desc=hello",
+            "world",
+            "--disable"
+          ],
+          "kwargs": [
+            {
+              "desc": "hello world",
+              "disable": true
+            }
+          ],
+          "payload": "one\n",
+          "status": "accepted"
+        }
+      ]
+    }
+  },
+  "verification_history": [
+    {
+      "attempt": 1,
+      "phase": "initial",
+      "phase_attempt": 1,
+      "commit": "8fcf70f4efe0cbfe7d988ac8728a76f961ca844b",
+      "status": "regressed",
+      "scope": "full",
+      "source_tokens": 28842,
+      "total_tokens": 38558,
+      "checks": {
+        "passed": 31,
+        "regressed": 1
+      },
+      "nonpassing": [
+        "upstream-main"
+      ]
+    },
+    {
+      "attempt": 2,
+      "phase": "initial",
+      "phase_attempt": 2,
+      "commit": "fb775f0f26991f4401df9c9fdd48555fdd37192f",
+      "status": "regressed",
+      "scope": "full",
+      "source_tokens": 28862,
+      "total_tokens": 38578,
+      "checks": {
+        "passed": 31,
+        "regressed": 1
+      },
+      "nonpassing": [
+        "upstream-main"
+      ]
+    },
+    {
+      "attempt": 3,
+      "phase": "initial",
+      "phase_attempt": 3,
+      "commit": "92faa212705d2969360447ac2318443ea574e6db",
+      "status": "checks_passed",
+      "scope": "full",
+      "source_tokens": 28915,
+      "total_tokens": 38631,
+      "checks": {
+        "passed": 32
+      },
+      "nonpassing": []
+    },
+    {
+      "attempt": 4,
+      "phase": "functional-continuation",
+      "phase_attempt": 1,
+      "commit": "4f3782e5331029c580f04691be4a093695eb129d",
+      "status": "checks_passed",
+      "scope": "full",
+      "source_tokens": 28919,
+      "total_tokens": 38635,
+      "checks": {
+        "passed": 33
+      },
+      "nonpassing": []
+    }
+  ],
+  "performance": [
+    {
+      "workload": "disabled",
+      "original_cpu_seconds": 0.03851697999999998,
+      "candidate_cpu_seconds": 0.03846150000000001,
+      "ratio": 0.9985595963131074
+    },
+    {
+      "workload": "automatic",
+      "original_cpu_seconds": 0.18553421999999997,
+      "candidate_cpu_seconds": 0.18529343999999992,
+      "ratio": 0.9987022340137574
+    },
+    {
+      "workload": "updates",
+      "original_cpu_seconds": 0.0068086400000000324,
+      "candidate_cpu_seconds": 0.006395100000000209,
+      "ratio": 0.9392624665131625
+    },
+    {
+      "workload": "rendered",
+      "original_cpu_seconds": 0.04902384000000004,
+      "candidate_cpu_seconds": 0.048799480000000006,
+      "ratio": 0.9954234511209233
+    }
+  ],
+  "submitted_at": "2026-11-09T05:17:55.693403+00:00",
+  "completed_at": "2026-11-09T06:20:11.421802+00:00",
+  "elapsed_job_seconds_including_queue": 3735.728399,
+  "prior_candidates_used": false,
+  "prior_passes_reused": false,
+  "same_experiment_generated_candidate_reused_in_functional_continuation": true,
+  "knowledge_reused_for_identical_original_commit": true,
+  "limitations": [
+    "Finite checks do not establish complete semantic equivalence.",
+    "Check groups are not individual test cases or functional coverage percentages; skipped cases remain visible.",
+    "Notifications use mocked transports; no live Slack, Discord or Telegram service was contacted.",
+    "Graphics run headlessly. Interactive Tk desktop behavior is not verified.",
+    "Archive help and arguments use the real parser; external downloads and extraction are not tested end to end.",
+    "CPU observations cover four workloads with five repetitions per version on this machine.",
+    "Task modification benchmarks are disabled. This run does not measure downstream task-cost improvement or prove Controller efficiency against main.",
+    "Model usage includes recorded harness calls, excluding this coordinating conversation, preparation and manual reporting. Cached input is a subset of input, not added twice. Missing usage remains unknown.",
+    "Source-free authoring is a shared-filesystem workflow boundary, not a separate operating-system isolation guarantee."
+  ],
+  "readability_review": {
+    "status": "reviewed",
+    "findings": [
+      "Sampled the progress loop, lifecycle, CLI parser, pandas integration, concurrent helpers, logging and shared notification adapter. They use named Python functions and classes with conventional control flow.",
+      "Shared behavior is factored into helpers such as the pandas registration and remote progress adapter; the CLI compatibility continuation changes only tqdm/cli.py.",
+      "The requested stopping rule is respected: compatibility repairs are retained even when they add code, with no size-only optimization attempts."
+    ],
+    "limitations": [
+      "This is a sampled maintainability review, not a complete manual audit or a numerical proof of readability.",
+      "Static scans and finite tests do not prove full semantic equivalence."
+    ]
+  },
+  "coordinating_review": {
+    "tee_issue": {
+      "paired_observation_confirmed": true,
+      "semantic_clarification_consumed_by_author_calls": [],
+      "note": "An adapter note was prepared after call 3 had already started. No call consumed that note. Call 3 independently fixed the tee stream identity."
+    },
+    "functional_continuation": {
+      "reason": "Original accepts multi-token CLI option values and Python 3.8 imports; the third candidate failed both supplementary probes.",
+      "initial_check_groups": 32,
+      "final_check_groups": 33,
+      "added_check": "contract-cli-multitoken-values",
+      "baseline_reexecuted": true,
+      "initial_terminal_evidence_unchanged": true,
+      "seed": "Only this experiment's own independently generated third candidate; no prior experiment implementation.",
+      "source_or_test_bodies_provided": false,
+      "original_check_definitions_unchanged": true,
+      "python38_semantic_clarification_consumed": true
+    },
+    "harness_runtime_changed": false,
+    "was_adaptive_controller_call": false
+  },
+  "phase_times": [
+    {
+      "phase": "initial",
+      "started_at": "2026-11-09T05:17:55.693403+00:00",
+      "finished_at": "2026-11-09T06:04:14.385303+00:00"
+    },
+    {
+      "phase": "functional-continuation",
+      "started_at": "2026-11-09T06:10:09.393170+00:00",
+      "finished_at": "2026-11-09T06:20:11.421802+00:00"
+    }
+  ],
+  "native_publication": [
+    {
+      "phase": "initial",
+      "status": "failed"
+    },
+    {
+      "phase": "functional-continuation",
+      "status": "failed"
+    }
+  ],
+  "final_publication_method": "Owner publication of final verified code tree and public-safe report through GitHub Pages",
+  "model_calls": [
+    {
+      "role": "author",
+      "status": "completed",
+      "started_epoch": 1794201690.3362424,
+      "ended_epoch": 1794203238.2521336,
+      "duration_seconds": 1547.8784,
+      "usage": {
+        "cached_input_tokens": 2928768,
+        "input_tokens": 3056109,
+        "observed_turns": 1,
+        "output_tokens": 65475,
+        "reason": null,
+        "reasoning_output_tokens": 15512,
+        "source": "codex_turn_events",
+        "status": "complete",
+        "synthetic": false,
+        "total_tokens": 3121584
+      }
+    },
+    {
+      "role": "author",
+      "status": "completed",
+      "started_epoch": 1794203385.4284608,
+      "ended_epoch": 1794203666.211556,
+      "duration_seconds": 280.7667,
+      "usage": {
+        "cached_input_tokens": 684800,
+        "input_tokens": 738762,
+        "observed_turns": 1,
+        "output_tokens": 9420,
+        "reason": null,
+        "reasoning_output_tokens": 2993,
+        "source": "codex_turn_events",
+        "status": "complete",
+        "synthetic": false,
+        "total_tokens": 748182
+      }
+    },
+    {
+      "role": "author",
+      "status": "completed",
+      "started_epoch": 1794203794.1608953,
+      "ended_epoch": 1794204115.3434715,
+      "duration_seconds": 321.1648,
+      "usage": {
+        "cached_input_tokens": 751232,
+        "input_tokens": 810174,
+        "observed_turns": 1,
+        "output_tokens": 11052,
+        "reason": null,
+        "reasoning_output_tokens": 4960,
+        "source": "codex_turn_events",
+        "status": "complete",
+        "synthetic": false,
+        "total_tokens": 821226
+      }
+    },
+    {
+      "role": "author",
+      "status": "completed",
+      "started_epoch": 1794204839.7838082,
+      "ended_epoch": 1794205080.7447126,
+      "duration_seconds": 240.9377,
+      "usage": {
+        "cached_input_tokens": 521216,
+        "input_tokens": 573363,
+        "observed_turns": 1,
+        "output_tokens": 8161,
+        "reason": null,
+        "reasoning_output_tokens": 2533,
+        "source": "codex_turn_events",
+        "status": "complete",
+        "synthetic": false,
+        "total_tokens": 581524
+      }
+    }
+  ]
+}
