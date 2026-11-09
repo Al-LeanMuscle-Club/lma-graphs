@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "title": "nanolize · 基于 main 的 Controller 改造方案",
+  "status": "proposal_not_implemented",
+  "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/nanolize-main-controller-plan-20261109/",
+  "generated_at": "2026-11-09T03:57:08.455639+00:00",
+  "baseline": {
+    "branch": "main",
+    "commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+    "repository": "Al-LeanMuscle-Club/nanolize",
+    "verified": true
+  },
+  "comparison_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-branch-comparison-20261109/",
+  "boundaries": [
+    "本网站展示设计方案；未修改 nanolize 的实现、分支或已有实验。",
+    "交互演示在浏览器本地进行，不调用模型、不提交任务、不改变实际运行配置。",
+    "拟新增文件、参数名、预算数值及触发阈值均待实现和实测校准。",
+    "性能目标是同等验收质量下减少流程成本，不保证每一次随机运行都更快。"
+  ],
+  "budgets": {
+    "status": "proposed_experiment_values",
+    "max_calls": 2,
+    "per_call_seconds": 60,
+    "total_seconds": 120,
+    "total_tokens": 200000,
+    "token_limit_caveat": "只在调用结束提供 usage 的 runner 可能单次超额；用量未知时不继续开启 Controller 调用。"
+  },
+  "changes": [
+    {
+      "id": "pipeline",
+      "group": "运行主线",
+      "paths": [
+        "src/nanolize/execution.py"
+      ],
+      "kind": "modify",
+      "phase": "P1",
+      "title": "保留 main 主循环，插入受限决策入口",
+      "current": "当前 _pipeline 与 _repair_decision 决定实现、修复、恢复、验证和收尾；Author 收据的 usage 仍可能 unavailable。",
+      "proposed": [
+        "先生成 main 原本的下一步，再判断是否需要介入；不在正常任务开局调用 Controller。",
+        "合格建议只影响下一次操作，仍由原调度器执行。建议超时、非法或不可用时保留候选，按原规则及剩余预算处理。",
+        "统一登记 Author 调用收据，并将 Controller 状态纳入检查点和取消流程。"
+      ],
+      "tests": [
+        "正常通过和一次普通修复均不调用 Controller。",
+        "controller_mode=off 与原调度轨迹等价。",
+        "取消释放本任务的决策与执行进程；其他任务不受影响。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/execution.py#L1355"
+    },
+    {
+      "id": "failures",
+      "group": "运行主线",
+      "paths": [
+        "src/nanolize/repair_policy.py"
+      ],
+      "kind": "modify",
+      "phase": "P1",
+      "title": "从已确认的失败中识别停滞",
+      "current": "已有回归／未验证分类，以及相关能力、依赖和常驻检查的筛查选择。",
+      "proposed": [
+        "沿用现有分类；缺少环境、超时和未运行结果继续保留为未验证。",
+        "新增稳定的失败标识与变化比较，排除时间戳等噪声。",
+        "连续两轮同类回归且失败范围未缩小，才进入停滞候选；不把单个粗粒度检查组未消失直接当成没有进展。"
+      ],
+      "tests": [
+        "普通首次失败不触发。",
+        "已确认回归与未验证状态不能混淆。",
+        "错误细节改善时不得仅按组数误触发。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/repair_policy.py#L138"
+    },
+    {
+      "id": "progress",
+      "group": "运行主线",
+      "paths": [
+        "src/nanolize/rewrite_stages.py"
+      ],
+      "kind": "modify",
+      "phase": "P1",
+      "title": "在已有候选恢复能力上增加决策历史",
+      "current": "已有 author/repair/optimization 计数、通过验收候选的保存，以及恢复后的重新验证。",
+      "proposed": [
+        "记录最近失败变化、已咨询的候选／契约／环境版本和建议结果。",
+        "同一状态不重复咨询；版本变化后重新校验建议适用性。",
+        "恢复只使用本任务生成的候选；不会把历史通过结果直接当作当前验收。"
+      ],
+      "tests": [
+        "恢复后完整验收仍执行。",
+        "重复状态不会重复花费一次决策。",
+        "重启后历史与用量计数不清零。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/rewrite_stages.py#L24"
+    },
+    {
+      "id": "policy",
+      "group": "受限决策",
+      "paths": [
+        "src/nanolize/controller_policy.py"
+      ],
+      "kind": "new",
+      "phase": "P1",
+      "title": "介入条件与建议校验",
+      "current": "拟新增文件；当前 main 没有这个按需决策模块。",
+      "proposed": [
+        "以确定性规则检查停滞、反复回归和有证据支持的知识缺口。",
+        "仅接受 use_default、repair_targeted、restore_candidate、report_blocker 四类建议。",
+        "核验当前候选绑定、证据引用、允许修改范围和预算；禁止建议直接降低验收标准或扩大权限。"
+      ],
+      "tests": [
+        "伪造证据、过期候选和未知 action 被拒绝。",
+        "冻结输入完整性异常直接按原规则停止，不能被模型覆盖。",
+        "请求新知识只形成具体缺口，不自动授权新命令。"
+      ],
+      "source": null
+    },
+    {
+      "id": "runner",
+      "group": "受限决策",
+      "paths": [
+        "src/nanolize/controller_runner.py"
+      ],
+      "kind": "new",
+      "phase": "P2",
+      "title": "一次简短、有边界的策略调用",
+      "current": "拟新增文件；旧实验 Controller 的自由工具循环不作为新版本主调度器。",
+      "proposed": [
+        "输入本轮变化、失败摘要、必要规格、候选引用和剩余预算；按需读取完整知识。",
+        "输出一个结构化建议，控制工作区不直接修改实现或执行目标项目。",
+        "设定单次时间上限，保存原始收据；无法解析的建议不触发无限重试。"
+      ],
+      "tests": [
+        "正常任务不启动该 runner。",
+        "输出格式错误、超时和中断均有可追踪结果。",
+        "建议只作用于当前一次决策边界，不形成自主轮询循环。"
+      ],
+      "source": null
+    },
+    {
+      "id": "prompt",
+      "group": "受限决策",
+      "paths": [
+        "src/nanolize/prompts/controller/guide.md",
+        "src/nanolize/prompts/README.md"
+      ],
+      "kind": "mixed",
+      "phase": "P2",
+      "title": "把职责写成可验证的建议协议",
+      "current": "Controller 指导文件拟新增；现有 prompt 导航需要补充。",
+      "proposed": [
+        "明确任务是判断是否调整下一次修复，不是重新安排整个流水线。",
+        "说明四类输出、证据要求、预算和停止规则；不提供修改验收或自行发布的权限。",
+        "保留 source-free 边界；原版实现、测试答案和隐藏任务输入不进入决策或实现上下文。"
+      ],
+      "tests": [
+        "提示词资源进入安装包。",
+        "示例遵循实际建议 schema。",
+        "私有验证载荷不会进入公开报告。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/prompts/README.md"
+    },
+    {
+      "id": "usage",
+      "group": "成本与恢复",
+      "paths": [
+        "src/nanolize/model_usage.py",
+        "src/nanolize/effort_runner.py"
+      ],
+      "kind": "mixed",
+      "phase": "P0",
+      "title": "统一用量收据与独立决策预算",
+      "current": "effort_runner 已有用量解析；main Author 收据尚不能稳定提供完整计量。",
+      "proposed": [
+        "拟提取共用解析与账本，按调用 ID 区分 Author、Controller 和任务评测。",
+        "记录输入、缓存输入、输出、时间和完整性；缓存输入是输入子集，不重复累计。",
+        "次数和时间为硬限制；仅调用结束才返回 usage 的 runner 在结算边界控制 tokens，明确单次可能超额。",
+        "用量缺失不记为零；停止继续开启 Controller 调用，保留原流程及其剩余预算规则。"
+      ],
+      "tests": [
+        "完整、中断、缺失、重复与多层调用收据正确归并。",
+        "预算耗尽后不再启动 Controller。",
+        "恢复后不重复结算，所有角色消耗留在总量中。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/effort_runner.py#L117"
+    },
+    {
+      "id": "config",
+      "group": "配置与呈现",
+      "paths": [
+        "src/nanolize/cli.py",
+        "src/nanolize/mcp_server.py",
+        "src/nanolize/execution_server.py"
+      ],
+      "kind": "modify",
+      "phase": "P2",
+      "title": "增加 auto / off 和 owner 预算配置",
+      "current": "已有总期限、单次 runner 期限、Author 次数和优化次数等配置入口。",
+      "proposed": [
+        "新增 controller_mode=auto/off，以及决策次数、单次／累计时间和 tokens 预算。",
+        "auto 在满足条件时介入；off 完全关闭决策调用。最终默认是否启用 auto 由性能验收决定。",
+        "已有作业缺少新字段时保持原行为；恢复不覆盖原有预算。",
+        "网页用户仍选择功能范围；技术预算由 owner 配置，不增加体积比例滑块。"
+      ],
+      "tests": [
+        "CLI、MCP、服务端配置含义一致。",
+        "旧配置和旧检查点可读，不能静默切换策略。",
+        "公开提交不能修改 owner 的执行预算或权限。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/cli.py#L125"
+    },
+    {
+      "id": "report",
+      "group": "配置与呈现",
+      "paths": [
+        "src/nanolize/report_site.py",
+        "src/nanolize/assets/viewer.html"
+      ],
+      "kind": "modify",
+      "phase": "P3",
+      "title": "把介入原因、结果和成本写进报告",
+      "current": "已有功能树、代码规模、验证和任务评测展示。",
+      "proposed": [
+        "展示是否介入、触发原因、建议、程序实际采取的操作及后续进展。",
+        "分别列出 Author、Controller、任务评测的 tokens 与时间，并标记 incomplete / unknown。",
+        "没有对照实验时不声称“节省了多少”；流程墙钟和分角色计时保持不同口径。"
+      ],
+      "tests": [
+        "未调用 Controller 时明确为 0 次，而非 unknown。",
+        "缺失用量仍显示为不完整。",
+        "公开载荷不含私有路径、命令、原始日志和隐藏答案。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/report_site.py#L272"
+    },
+    {
+      "id": "tests",
+      "group": "验证与合并",
+      "paths": [
+        "tests/test_controller_policy.py",
+        "tests/test_controller_runner.py",
+        "tests/test_model_usage.py",
+        "tests/test_execution_control.py",
+        "tests/test_rewrite_execution.py"
+      ],
+      "kind": "mixed",
+      "phase": "P1–P3",
+      "title": "验证真实分支行为与兼容性",
+      "current": "前三个测试模块拟新增；现有执行、恢复、取消与重写测试扩展。",
+      "proposed": [
+        "用离线 runner 验证确定性行为，不为机械回归测试支付模型费用。",
+        "覆盖正常、一次修复、停滞、预算不足、非法建议、恢复和取消。",
+        "保留现有功能验收、完整性、source-free 和旧任务兼容测试。"
+      ],
+      "tests": [
+        "所有必需回归检查通过。",
+        "正常路径调用序列与原 main 一致。",
+        "Controller 建议不能跳过最终完整验收。"
+      ],
+      "source": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/tests/test_execution_control.py"
+    },
+    {
+      "id": "benchmark",
+      "group": "验证与合并",
+      "paths": [
+        "benchmarks/controller_comparison.py",
+        "benchmarks/controller_cases.json",
+        "docs/controller-comparison.md"
+      ],
+      "kind": "new",
+      "phase": "P4",
+      "title": "建立可重复的运行成本对照",
+      "current": "拟新增固定实验入口、用例清单和比较说明。",
+      "proposed": [
+        "比较冻结的 main、新版本 off、新版本 auto 三组；前两组区分基础改造开销。",
+        "固定原始提交、知识包、模型配置、功能范围、验收、预算和环境；不复用另一组候选。",
+        "交错运行、多次重复；报告失败／未完成运行的成本，不只统计成功的廉价样本。",
+        "阈值、样本量和计量边界在实验前确定；证据不足不能宣传性能提升。"
+      ],
+      "tests": [
+        "普通场景 Controller 调用 0 次。",
+        "质量标准不下降；无稳定效率退化。",
+        "触发场景在公平对照中证明收益，才考虑默认启用。"
+      ],
+      "source": null
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "normal",
+      "title": "正常完成",
+      "fact": "首个候选通过配置的完整功能与安装验收。",
+      "route": [
+        "observe",
+        "default",
+        "gate",
+        "execute",
+        "finish"
+      ],
+      "calls": 0,
+      "outcome": "按 main 继续配置的任务评测或收尾；不因建议体积目标未达而继续纯压缩。",
+      "caveat": "功能通过不等于已完成独立任务成本验收；任务评测仍服从原配置。"
+    },
+    {
+      "id": "repair",
+      "title": "一次普通回归",
+      "fact": "出现一个可修复的候选回归，还没有连续停滞。",
+      "route": [
+        "observe",
+        "default",
+        "gate",
+        "execute",
+        "finish"
+      ],
+      "calls": 0,
+      "outcome": "执行原有定向修复与相关检查，最终仍做完整验收。",
+      "caveat": "一次失败不触发 Controller；main 已具备相关能力筛查。"
+    },
+    {
+      "id": "stalled",
+      "title": "连续修复停滞",
+      "fact": "连续两轮同类回归，细节与失败范围都没有可见改善；预算充足。",
+      "route": [
+        "observe",
+        "default",
+        "gate",
+        "budget",
+        "decision",
+        "validate",
+        "execute",
+        "finish"
+      ],
+      "calls": 1,
+      "outcome": "咨询一次策略建议，经程序校验后调整下一次修复；Author 仍消耗原预算。",
+      "caveat": "这只是拟议触发规则的示例，不代表已实测减少修复轮次。"
+    },
+    {
+      "id": "exhausted",
+      "title": "决策预算不足",
+      "fact": "满足停滞条件，但调用次数、时间或 token 准入预算已耗尽。",
+      "route": [
+        "observe",
+        "default",
+        "gate",
+        "budget",
+        "execute",
+        "finish"
+      ],
+      "calls": 0,
+      "outcome": "不再启动 Controller；保留候选，按 main 规则和剩余作业预算继续或结束。",
+      "caveat": "决策预算用尽不自动等于整个任务成功或失败，也不能重置 Author 预算。"
+    },
+    {
+      "id": "blocked",
+      "title": "缺证据或输入异常",
+      "fact": "原版基线未通过、环境缺失或冻结输入完整性异常。",
+      "route": [
+        "observe",
+        "default",
+        "gate",
+        "finish"
+      ],
+      "calls": 0,
+      "outcome": "按原规则保留未验证／阻塞；完整性异常直接停止。只有有证据的规格缺口才可能进入受限诊断。",
+      "caveat": "未验证不是候选回归，Controller 无权降低标准或放行冻结输入异常。"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G1",
+      "name": "结果质量",
+      "rule": "功能范围、完整验证、安装和配置的任务评测要求一致；状态和缺口忠实保留。",
+      "evidence": "冻结输入清单、最终候选绑定、原版／候选检查、任务结果。",
+      "fail": "少测功能、放宽目标、复用过期通过记录或把未验证当通过。"
+    },
+    {
+      "id": "G2",
+      "name": "普通路径",
+      "rule": "正常完成与一次普通修复的场景，Controller 模型调用必须为 0。",
+      "evidence": "离线操作轨迹、独立调用收据，以及真实模型重复对照。",
+      "fail": "常规开局、计数、状态确认或收尾额外调用 Controller。"
+    },
+    {
+      "id": "G3",
+      "name": "总成本",
+      "rule": "计入全部已登记角色、失败重试和中断；不靠早停未完成来冒充更省。",
+      "evidence": "总墙钟、分角色时间、输入／缓存／输出、用量完整性。",
+      "fail": "漏算决策、重复累计缓存或将未知用量视作零。"
+    },
+    {
+      "id": "G4",
+      "name": "触发场景收益",
+      "rule": "同条件下减少无效工作，或提高预算内完成率；速度与成功率的取舍需明确。",
+      "evidence": "匹配场景多次交错运行，完整公布每次成本、结果与介入轨迹。",
+      "fail": "只有单次有利结果，或用了更成熟知识包却称为公平胜出。"
+    },
+    {
+      "id": "G5",
+      "name": "默认启用",
+      "rule": "先验证实现和数据；默认是否启用 auto 取决于预先约定的性能验收。",
+      "evidence": "实验前登记容差和样本量；建议首轮每场景至少 5 次，临界结果增加重复。",
+      "fail": "没有效率证据即把自主调度等同于性能提升。"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "P0",
+      "title": "建立可比的成本记录",
+      "deliverable": "共用用量收据、调用 ID、完整性状态和三组实验协议。",
+      "exit": "main 的 Author 用量可核对；中断缺口可见。"
+    },
+    {
+      "id": "P1",
+      "title": "保留主线，完成介入规则",
+      "deliverable": "失败变化识别、去重、建议 schema 和 main 接入点。",
+      "exit": "离线正常场景 0 次决策；旧配置与调度保持兼容。"
+    },
+    {
+      "id": "P2",
+      "title": "接入受限模型决策",
+      "deliverable": "简短上下文、超时／预算、auto/off 和恢复账本。",
+      "exit": "建议不可越权；中断、超时、非法输出均可收敛。"
+    },
+    {
+      "id": "P3",
+      "title": "补齐报告和回归验证",
+      "deliverable": "介入轨迹、分角色成本、未验证状态和公共数据过滤。",
+      "exit": "必需回归检查通过，报告数据与调用记录一致。"
+    },
+    {
+      "id": "P4",
+      "title": "完成同条件性能验收",
+      "deliverable": "main / off / auto 重复对照与收益说明。",
+      "exit": "有证据支持效率要求后，才决定是否合并并默认启用。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "默认体积策略",
+      "path": "README.md",
+      "line": 12,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/README.md#L12",
+      "sha256": "c32e036370cd00dab8361d169b0d4acb90f9a837a46c868068f294003675d64e"
+    },
+    {
+      "title": "现有调度与重试",
+      "path": "src/nanolize/execution.py",
+      "line": 1112,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/execution.py#L1112",
+      "sha256": "99d725fef6601804eeec0a6ba90857d86d5dd699a86c748179fc7878daadee9d"
+    },
+    {
+      "title": "原主流程入口",
+      "path": "src/nanolize/execution.py",
+      "line": 1355,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/execution.py#L1355",
+      "sha256": "99d725fef6601804eeec0a6ba90857d86d5dd699a86c748179fc7878daadee9d"
+    },
+    {
+      "title": "候选保存与恢复",
+      "path": "src/nanolize/rewrite_stages.py",
+      "line": 24,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/rewrite_stages.py#L24",
+      "sha256": "834dba99f33e40443fb3764e001a4cb28837fa831eae6312d1b6d424e90cdde3"
+    },
+    {
+      "title": "相关检查筛查",
+      "path": "src/nanolize/repair_policy.py",
+      "line": 138,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/repair_policy.py#L138",
+      "sha256": "7b71ab8a3427a1c7251bc1c10f6a3a503edbe7cd535753e24f945cb8cc80187a"
+    },
+    {
+      "title": "当前 Author 用量缺口",
+      "path": "src/nanolize/execution.py",
+      "line": 1530,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/execution.py#L1530",
+      "sha256": "99d725fef6601804eeec0a6ba90857d86d5dd699a86c748179fc7878daadee9d"
+    },
+    {
+      "title": "已有用量解析",
+      "path": "src/nanolize/effort_runner.py",
+      "line": 117,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/effort_runner.py#L117",
+      "sha256": "bad35c45143f9f4841a4396ceeacd0547d84419f771cfdfc75a13f0d0449cc19"
+    },
+    {
+      "title": "CLI 配置入口",
+      "path": "src/nanolize/cli.py",
+      "line": 125,
+      "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78/src/nanolize/cli.py#L125",
+      "sha256": "e9f59585c073542e303ef3eacd7b54476d5e474915a3f6469a14cb1eebfd808c"
+    }
+  ]
+}
