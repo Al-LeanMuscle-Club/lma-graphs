@@ -1,0 +1,816 @@
+{
+  "title": "tqdm: readable full-feature rewrite",
+  "goal": "Preserve all selected functionality with a concise, readable implementation; no mandatory compression ratio.",
+  "stopping_rule": "Stop pure-size optimization after functional and fresh-installation acceptance.",
+  "mandatory_compression_ratio": null,
+  "generic_harness_advisory_percent": 50,
+  "generic_advisory_note": "Inherited planner metadata only; superseded by the owner goal, never a retry or delivery gate.",
+  "harness_branch": "codex/controller-feedback-memory",
+  "harness_commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+  "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+  "verified_commit": "1b04cd38d7f5d52f213a973e6336e2285d8de345",
+  "published_commit": "b5a6808feb6feacc416823c14e50cb4de7102854",
+  "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-feedback-readable-20261109",
+  "identical_verified_code_tree": true,
+  "workflow_status": "succeeded",
+  "selected_capabilities": 27,
+  "excluded_capabilities": 0,
+  "source_tokens": {
+    "before": 45979,
+    "after": 30256,
+    "reduction_percent": 34.19604602100959
+  },
+  "total_tokens": {
+    "before": 72148,
+    "after": 40019,
+    "reduction_percent": 44.53207296113545
+  },
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "author_calls": 2,
+  "optimization_calls": 0,
+  "task_assessment": {
+    "enabled": false,
+    "reason": "owner requested stopping after functional and installation acceptance",
+    "cost_savings_claimed": false
+  },
+  "checks": [
+    {
+      "name": "upstream-tqdm",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 86
+          },
+          "duration_seconds": 4.8664
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 86
+          },
+          "duration_seconds": 1.9479
+        }
+      }
+    },
+    {
+      "name": "upstream-utils",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "duration_seconds": 1.6178
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "duration_seconds": 1.4942
+        }
+      }
+    },
+    {
+      "name": "upstream-main",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 1.815
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 1.7023
+        }
+      }
+    },
+    {
+      "name": "upstream-asyncio",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 2.5184
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 9
+          },
+          "duration_seconds": 2.4388
+        }
+      }
+    },
+    {
+      "name": "upstream-notebook",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.0875
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.9063
+        }
+      }
+    },
+    {
+      "name": "upstream-pandas",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "duration_seconds": 4.9973
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "duration_seconds": 3.2992
+        }
+      }
+    },
+    {
+      "name": "upstream-synchronisation",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.7086
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.6925
+        }
+      }
+    },
+    {
+      "name": "upstream-rlock",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.0264
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.07
+        }
+      }
+    },
+    {
+      "name": "upstream-contrib",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 1.6331
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 1.6641
+        }
+      }
+    },
+    {
+      "name": "upstream-concurrent",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 13,
+            "skipped": 3
+          },
+          "duration_seconds": 1.8761
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 13,
+            "skipped": 3
+          },
+          "duration_seconds": 1.8513
+        }
+      }
+    },
+    {
+      "name": "upstream-itertools",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5,
+            "skipped": 1
+          },
+          "duration_seconds": 1.5813
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5,
+            "skipped": 1
+          },
+          "duration_seconds": 1.5386
+        }
+      }
+    },
+    {
+      "name": "upstream-contrib_logging",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 19
+          },
+          "duration_seconds": 1.5509
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 19
+          },
+          "duration_seconds": 1.5357
+        }
+      }
+    },
+    {
+      "name": "upstream-version",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.4847
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.5438
+        }
+      }
+    },
+    {
+      "name": "upstream-gui",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.4784
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.5329
+        }
+      }
+    },
+    {
+      "name": "upstream-tk",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.516
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 1.544
+        }
+      }
+    },
+    {
+      "name": "upstream-rich",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "duration_seconds": 1.8142
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "duration_seconds": 1.6649
+        }
+      }
+    },
+    {
+      "name": "upstream-dask",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.4267
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 2.334
+        }
+      }
+    },
+    {
+      "name": "upstream-keras",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 16.2005
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "duration_seconds": 9.7937
+        }
+      }
+    },
+    {
+      "name": "upstream-perf",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 18.4175
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "duration_seconds": 17.8654
+        }
+      }
+    },
+    {
+      "name": "contract-behavior",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.6879
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.689
+        }
+      }
+    },
+    {
+      "name": "contract-notifications",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.6163
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.5755
+        }
+      }
+    },
+    {
+      "name": "contract-graphics",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.3038
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.2544
+        }
+      }
+    },
+    {
+      "name": "contract-tooling",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2219
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2361
+        }
+      }
+    },
+    {
+      "name": "python314-concurrent",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 16
+          },
+          "duration_seconds": 5.4527
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 16
+          },
+          "duration_seconds": 5.4388
+        }
+      }
+    },
+    {
+      "name": "python314-itertools",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.3946
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "duration_seconds": 1.3513
+        }
+      }
+    },
+    {
+      "name": "throughput-observation",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.9654
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.9011
+        }
+      }
+    },
+    {
+      "name": "contract-maintainer-helpers",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2405
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2197
+        }
+      }
+    },
+    {
+      "name": "contract-public-surface",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2487
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.2271
+        }
+      }
+    },
+    {
+      "name": "contract-range-helpers",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.1542
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 1.0904
+        }
+      }
+    },
+    {
+      "name": "contract-archive-parser",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.4727
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.4486
+        }
+      }
+    },
+    {
+      "name": "contract-cli-streams",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.7051
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "duration_seconds": 0.6298
+        }
+      }
+    }
+  ],
+  "installation_checks_passed": 2,
+  "additional_executor_compatibility": {
+    "passed": true,
+    "original_and_candidate_checked": true,
+    "constructor_arguments_forwarded": true,
+    "invalid_worker_count_errors_preserved": true
+  },
+  "performance": [
+    {
+      "workload": "disabled",
+      "original_cpu_seconds": 0.03842499999999999,
+      "candidate_cpu_seconds": 0.03855624000000002,
+      "ratio": 1.0034154847104757
+    },
+    {
+      "workload": "automatic",
+      "original_cpu_seconds": 0.18526665999999992,
+      "candidate_cpu_seconds": 0.18174685999999995,
+      "ratio": 0.9810014386830315
+    },
+    {
+      "workload": "updates",
+      "original_cpu_seconds": 0.006767619999999974,
+      "candidate_cpu_seconds": 0.006613159999999896,
+      "ratio": 0.9771766145262176
+    },
+    {
+      "workload": "rendered",
+      "original_cpu_seconds": 0.048882840000000094,
+      "candidate_cpu_seconds": 0.04783739999999992,
+      "ratio": 0.9786133538886003
+    }
+  ],
+  "verification_history": [
+    {
+      "at": "2026-11-09T03:20:48.032377+00:00",
+      "commit": "db2c3722635d20eca44ef1d2154f3c38af4e5360",
+      "status": "regressed",
+      "scope": "full",
+      "source_tokens": 30226,
+      "total_tokens": 39989,
+      "counts": {
+        "regressed": 2,
+        "passed": 29
+      }
+    },
+    {
+      "at": "2026-11-09T03:28:05.190812+00:00",
+      "commit": "1b04cd38d7f5d52f213a973e6336e2285d8de345",
+      "status": "checks_passed",
+      "scope": "full",
+      "source_tokens": 30256,
+      "total_tokens": 40019,
+      "counts": {
+        "passed": 31
+      }
+    }
+  ],
+  "repair_context": "The first candidate passed 29 of 31 check groups. The two failures concerned exact deprecation diagnostic wording and newlines in core and legacy pandas interfaces; owner-reviewed public message values were supplied for a focused compatibility repair.",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "role": "controller",
+      "duration_seconds": 100.2583393699606,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 239463,
+      "cached_input_tokens": 195072,
+      "output_tokens": 2329,
+      "total_tokens": 241792,
+      "feedback_handoff_present": false
+    },
+    {
+      "sequence": 2,
+      "role": "author",
+      "duration_seconds": 1752.7443972479668,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 3253573,
+      "cached_input_tokens": 3113088,
+      "output_tokens": 69619,
+      "total_tokens": 3323192,
+      "feedback_handoff_present": true
+    },
+    {
+      "sequence": 3,
+      "role": "controller",
+      "duration_seconds": 94.49108383600833,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 234876,
+      "cached_input_tokens": 193408,
+      "output_tokens": 2073,
+      "total_tokens": 236949,
+      "feedback_handoff_present": false
+    },
+    {
+      "sequence": 4,
+      "role": "author",
+      "duration_seconds": 197.94372640398797,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 591104,
+      "cached_input_tokens": 526848,
+      "output_tokens": 5779,
+      "total_tokens": 596883,
+      "feedback_handoff_present": true
+    },
+    {
+      "sequence": 5,
+      "role": "controller",
+      "duration_seconds": 97.11258648504736,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 234915,
+      "cached_input_tokens": 194304,
+      "output_tokens": 2467,
+      "total_tokens": 237382,
+      "feedback_handoff_present": false
+    }
+  ],
+  "observed_usage_by_role": {
+    "controller": {
+      "calls": 3,
+      "duration_seconds": 291.8620096910163,
+      "input_tokens": 709254,
+      "cached_input_tokens": 582784,
+      "output_tokens": 6869,
+      "total_tokens": 716123,
+      "usage_complete": true
+    },
+    "author": {
+      "calls": 2,
+      "duration_seconds": 1950.6881236519548,
+      "input_tokens": 3844677,
+      "cached_input_tokens": 3639936,
+      "output_tokens": 75398,
+      "total_tokens": 3920075,
+      "usage_complete": true
+    }
+  },
+  "usage_complete": true,
+  "usage_scope": "Recorded harness controller/author calls; host preparation, supervision and reporting excluded. Cached input is part of input, never added twice. Missing usage is unknown.",
+  "submitted_at": "2026-11-09T02:45:41.540606+00:00",
+  "completed_at": "2026-11-09T03:31:13.752521+00:00",
+  "elapsed_job_seconds_including_queue": 2732.211915,
+  "prior_candidates_used": false,
+  "prior_passes_reused": false,
+  "reviewed_semantic_knowledge_reused_for_identical_source_commit": true,
+  "limitations": [
+    "Passing declared checks does not prove complete semantic equivalence.",
+    "Check-group counts are not individual test-case counts or functional coverage percentages.",
+    "Notification transports are mocked; no live Slack, Discord or Telegram service is contacted.",
+    "Graphics checks are headless; an interactive Tk window is not verified.",
+    "Archive help, version and arguments use the real parser. External extraction/downloads are not tested end to end.",
+    "Performance observations cover four CPU workloads, with five repetitions per version on this machine.",
+    "Task modification benchmarks are disabled; no downstream task-time or task-token saving is claimed.",
+    "Source-free authoring is a workflow boundary on a shared filesystem, not a separate security sandbox."
+  ],
+  "python38_smoke": {
+    "passed": true,
+    "python": "3.8.20",
+    "scope": [
+      "candidate import provenance",
+      "iteration",
+      "range and product helpers",
+      "CLI help/version stdout"
+    ],
+    "full_python38_suite": false
+  },
+  "readability_review": {
+    "status": "reviewed_with_limits",
+    "findings": [
+      "Static inspection covered 53 authored Python files: no semicolon statement packing or direct exec/eval/compile calls were found.",
+      "Sampled counter support, monitoring, CLI, pandas registration and concurrent mapping use ordinary named functions/classes and structured control flow. Shared formatting, warnings and pandas integration are separated into explicit helpers.",
+      "A normal table of pandas method registrations shares wrapper logic; it is not a custom language or an interpreter for encoded implementation.",
+      "The accepted compatibility repair changes only four public diagnostic message values in two files; it does not undertake volume optimization."
+    ],
+    "limitations": [
+      "This is a static style review and selected manual source inspection, not a measured human-comprehension result.",
+      "No downstream agent task-cost benchmark was run. Passing behavioral checks does not prove full semantic equivalence."
+    ]
+  }
+}

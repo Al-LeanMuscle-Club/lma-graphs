@@ -1,0 +1,1265 @@
+{
+  "limitations": [
+    "Only summary results are published; captured command output is omitted."
+  ],
+  "status": "checks_passed",
+  "tests": {
+    "original_total": 21,
+    "retained": 31,
+    "retired": 0,
+    "needs_adaptation": 0,
+    "adapted": 0,
+    "contract": 10,
+    "passed": 31,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 0
+  },
+  "capability_results": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-progress-b5f90a96e680",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-interfaces-0274021b904c",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-integrations-7955c8192dc2",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-convenience-d7ae368c1499",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-development-875b9380866e",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-core-0d45f5fd462b",
+      "status": "passed",
+      "checks": [
+        "upstream-tqdm",
+        "upstream-perf",
+        "contract-behavior",
+        "throughput-observation",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-formatting-6c7aa935c55c",
+      "status": "passed",
+      "checks": [
+        "upstream-tqdm",
+        "upstream-perf",
+        "contract-behavior",
+        "throughput-observation"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-utils-6fd8973412ca",
+      "status": "passed",
+      "checks": [
+        "upstream-tqdm",
+        "upstream-utils",
+        "contract-public-surface"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-monitor-7de97367c9cd",
+      "status": "passed",
+      "checks": [
+        "upstream-tqdm",
+        "upstream-synchronisation",
+        "upstream-rlock"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-cli-99bb88401742",
+      "status": "passed",
+      "checks": [
+        "upstream-main",
+        "contract-behavior",
+        "contract-cli-streams"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-notebook-b53bcf919f24",
+      "status": "passed",
+      "checks": [
+        "upstream-notebook",
+        "contract-graphics",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-asyncio-8eb9b54d5397",
+      "status": "passed",
+      "checks": [
+        "upstream-asyncio",
+        "contract-behavior",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-auto-929260ad9b9e",
+      "status": "passed",
+      "checks": [
+        "upstream-notebook",
+        "contract-behavior",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-pandas-ae4863bdae02",
+      "status": "passed",
+      "checks": [
+        "upstream-pandas",
+        "contract-behavior"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-gui-047007876c10",
+      "status": "passed",
+      "checks": [
+        "upstream-gui",
+        "contract-graphics",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tk-1ec22d56dbbc",
+      "status": "passed",
+      "checks": [
+        "upstream-tk",
+        "contract-graphics",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-rich-7baa68f2418b",
+      "status": "passed",
+      "checks": [
+        "upstream-rich",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-keras-f6cc6ef87745",
+      "status": "passed",
+      "checks": [
+        "upstream-keras"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-dask-bb384ab2177d",
+      "status": "passed",
+      "checks": [
+        "upstream-dask"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-contrib-fc1e87ada6cf",
+      "status": "passed",
+      "checks": [
+        "upstream-contrib",
+        "contract-behavior"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-concurrent-a35178ecc646",
+      "status": "passed",
+      "checks": [
+        "upstream-concurrent",
+        "python314-concurrent"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-itertools-4a4c4d6beee2",
+      "status": "passed",
+      "checks": [
+        "upstream-itertools",
+        "contract-behavior",
+        "python314-itertools"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-logging-0a149844a7c9",
+      "status": "passed",
+      "checks": [
+        "upstream-contrib_logging"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-notifications-8bb6922758ad",
+      "status": "passed",
+      "checks": [
+        "contract-notifications",
+        "contract-range-helpers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-compatibility-fa528d3adef6",
+      "status": "passed",
+      "checks": [
+        "upstream-tqdm",
+        "upstream-version",
+        "contract-behavior"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-packaging-71669691cb0b",
+      "status": "passed",
+      "checks": [
+        "upstream-version",
+        "contract-tooling",
+        "contract-maintainer-helpers",
+        "contract-public-surface",
+        "contract-archive-parser"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    }
+  ],
+  "checks": [
+    {
+      "name": "upstream-tqdm",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-core-0d45f5fd462b",
+        "graphify-formatting-6c7aa935c55c",
+        "graphify-monitor-7de97367c9cd",
+        "graphify-utils-6fd8973412ca",
+        "graphify-compatibility-fa528d3adef6"
+      ]
+    },
+    {
+      "name": "upstream-utils",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-utils-6fd8973412ca"
+      ]
+    },
+    {
+      "name": "upstream-main",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-cli-99bb88401742"
+      ]
+    },
+    {
+      "name": "upstream-asyncio",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-asyncio-8eb9b54d5397"
+      ]
+    },
+    {
+      "name": "upstream-notebook",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-notebook-b53bcf919f24",
+        "graphify-auto-929260ad9b9e"
+      ]
+    },
+    {
+      "name": "upstream-pandas",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-pandas-ae4863bdae02"
+      ]
+    },
+    {
+      "name": "upstream-synchronisation",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-monitor-7de97367c9cd"
+      ]
+    },
+    {
+      "name": "upstream-rlock",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-monitor-7de97367c9cd"
+      ]
+    },
+    {
+      "name": "upstream-contrib",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-contrib-fc1e87ada6cf"
+      ]
+    },
+    {
+      "name": "upstream-concurrent",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-concurrent-a35178ecc646"
+      ]
+    },
+    {
+      "name": "upstream-itertools",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-itertools-4a4c4d6beee2"
+      ]
+    },
+    {
+      "name": "upstream-contrib_logging",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-logging-0a149844a7c9"
+      ]
+    },
+    {
+      "name": "upstream-version",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-compatibility-fa528d3adef6",
+        "graphify-packaging-71669691cb0b"
+      ]
+    },
+    {
+      "name": "upstream-gui",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-gui-047007876c10"
+      ]
+    },
+    {
+      "name": "upstream-tk",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tk-1ec22d56dbbc"
+      ]
+    },
+    {
+      "name": "upstream-rich",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-rich-7baa68f2418b"
+      ]
+    },
+    {
+      "name": "upstream-dask",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-dask-bb384ab2177d"
+      ]
+    },
+    {
+      "name": "upstream-keras",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-keras-f6cc6ef87745"
+      ]
+    },
+    {
+      "name": "upstream-perf",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-core-0d45f5fd462b",
+        "graphify-formatting-6c7aa935c55c"
+      ]
+    },
+    {
+      "name": "contract-behavior",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-core-0d45f5fd462b",
+        "graphify-formatting-6c7aa935c55c",
+        "graphify-cli-99bb88401742",
+        "graphify-asyncio-8eb9b54d5397",
+        "graphify-contrib-fc1e87ada6cf",
+        "graphify-itertools-4a4c4d6beee2",
+        "graphify-auto-929260ad9b9e",
+        "graphify-pandas-ae4863bdae02",
+        "graphify-compatibility-fa528d3adef6"
+      ]
+    },
+    {
+      "name": "contract-notifications",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-notifications-8bb6922758ad"
+      ]
+    },
+    {
+      "name": "contract-graphics",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-gui-047007876c10",
+        "graphify-notebook-b53bcf919f24",
+        "graphify-tk-1ec22d56dbbc"
+      ]
+    },
+    {
+      "name": "contract-tooling",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-packaging-71669691cb0b"
+      ]
+    },
+    {
+      "name": "python314-concurrent",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-concurrent-a35178ecc646"
+      ]
+    },
+    {
+      "name": "python314-itertools",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-itertools-4a4c4d6beee2"
+      ]
+    },
+    {
+      "name": "throughput-observation",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-core-0d45f5fd462b",
+        "graphify-formatting-6c7aa935c55c"
+      ]
+    },
+    {
+      "name": "contract-maintainer-helpers",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-packaging-71669691cb0b"
+      ]
+    },
+    {
+      "name": "contract-public-surface",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-utils-6fd8973412ca",
+        "graphify-packaging-71669691cb0b"
+      ]
+    },
+    {
+      "name": "contract-range-helpers",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-core-0d45f5fd462b",
+        "graphify-auto-929260ad9b9e",
+        "graphify-asyncio-8eb9b54d5397",
+        "graphify-notebook-b53bcf919f24",
+        "graphify-gui-047007876c10",
+        "graphify-tk-1ec22d56dbbc",
+        "graphify-rich-7baa68f2418b",
+        "graphify-notifications-8bb6922758ad"
+      ]
+    },
+    {
+      "name": "contract-archive-parser",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-packaging-71669691cb0b"
+      ]
+    },
+    {
+      "name": "contract-cli-streams",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-cli-99bb88401742"
+      ]
+    }
+  ],
+  "actual_size": {
+    "baseline_source_lines": 5608,
+    "source_lines": 3602,
+    "source_files": 54,
+    "retained_percent": 55.46792703886456,
+    "target_percent": 50.0,
+    "target_source_lines": 2804.0,
+    "estimated_source_lines": null,
+    "metric": "tokens",
+    "tokenizer": {
+      "classification": "source_and_configuration_v1",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "encoding": "cl100k_base",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+      "file_boundaries": "independent_sum",
+      "library": "tiktoken",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "special_tokens": "ordinary_text",
+      "text_policy": "raw_decoded_text_per_file",
+      "version": "0.12.0"
+    },
+    "measurement_sha256": "9679fca7afe5a2b55da1b340346a8f4a524a21bb17ae41b17b85bfc5998a709e",
+    "source_tokens": 30256,
+    "configuration_tokens": 9763,
+    "total_tokens": 40019,
+    "baseline_tokens": 72148,
+    "target_tokens": 36074,
+    "source_retained_percent": 64.22967189728959,
+    "complete": true,
+    "target_met": false
+  },
+  "budget_status": "unmet",
+  "verification_scope": "full",
+  "installation_evidence": {
+    "status": "passed",
+    "checks_passed": 2,
+    "checks_total": 2,
+    "environment_metadata_complete": true
+  },
+  "obligation_ledger": {
+    "records": [
+      {
+        "capability": "graphify-root-ddcb2dfa42d8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-progress-b5f90a96e680",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-interfaces-0274021b904c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-integrations-7955c8192dc2",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-convenience-d7ae368c1499",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-development-875b9380866e",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-core-0d45f5fd462b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-tqdm",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-perf",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "throughput-observation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-formatting-6c7aa935c55c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-tqdm",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-perf",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "throughput-observation",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-utils-6fd8973412ca",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-tqdm",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-utils",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-public-surface",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-monitor-7de97367c9cd",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-tqdm",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-synchronisation",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-rlock",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-cli-99bb88401742",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-main",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-cli-streams",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-notebook-b53bcf919f24",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-notebook",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-graphics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-asyncio-8eb9b54d5397",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-asyncio",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-auto-929260ad9b9e",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-notebook",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-pandas-ae4863bdae02",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-pandas",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-gui-047007876c10",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-gui",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-graphics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tk-1ec22d56dbbc",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-tk",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-graphics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-rich-7baa68f2418b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-rich",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-keras-f6cc6ef87745",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-keras",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dask-bb384ab2177d",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-dask",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-contrib-fc1e87ada6cf",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-contrib",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-concurrent-a35178ecc646",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-concurrent",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python314-concurrent",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-itertools-4a4c4d6beee2",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-itertools",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python314-itertools",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-logging-0a149844a7c9",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-contrib_logging",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-notifications-8bb6922758ad",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "contract-notifications",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-range-helpers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-compatibility-fa528d3adef6",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-tqdm",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-version",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-behavior",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-packaging-71669691cb0b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-version",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-tooling",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-maintainer-helpers",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-public-surface",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "contract-archive-parser",
+            "kind": "declared_check"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "verified": 27,
+      "retired": 0,
+      "partial": 0,
+      "unknown": 0,
+      "failed": 0,
+      "total": 27,
+      "retained": 27,
+      "complete": true
+    },
+    "limitations": [
+      "Public summaries omit private evidence bindings and raw output."
+    ]
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "disabled",
+    "binding": {},
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true
+    },
+    "tasks": [],
+    "overhead": {
+      "examiner_tokens": null,
+      "judge_tokens": null,
+      "solver_tokens": null,
+      "total_tokens": null,
+      "usage_complete": false,
+      "observed_total_tokens": null,
+      "role_usage_complete": {
+        "examiner": false,
+        "solver": false,
+        "judge": false
+      }
+    },
+    "resources": {
+      "completed_runs": 0,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0
+    },
+    "iterations": [],
+    "limitations": [
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ]
+  }
+}
