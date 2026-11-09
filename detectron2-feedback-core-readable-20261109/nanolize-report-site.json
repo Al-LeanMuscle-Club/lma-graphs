@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "language": "zh-CN",
+  "report_id": "nrs_641e5057071ca892356d9755acf0d182acbe3afa919d8bf5eddb53a77259",
+  "files": [
+    {
+      "path": "embed.js",
+      "sha256": "a15a0202a47c0742abc0f4a5da3a136851d7e9f6ba42df91c3436b2d5fa1f20a"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "48b325a63bd0ca997e7ba01193f656a1266d0918407bd322080803f994109e06"
+    },
+    {
+      "path": "graph/data.json",
+      "sha256": "3f0cdc206f443b8183fd0f43619d49d73f7e6853785da76800d1fb80e5cc2afd"
+    },
+    {
+      "path": "graph/evidence.json",
+      "sha256": "ebef00f130ddb5947abbbac177fb4a8515798dba5effdaeaef641156d250bcc8"
+    },
+    {
+      "path": "graph/index.html",
+      "sha256": "7cb238c2c2ea2a2668266a18bbe0a07a4256ac6fcb19d17900ce6c11d875755d"
+    },
+    {
+      "path": "graph/metrics.csv",
+      "sha256": "933f4dbdb23c02de82629edba0f42ccc7b6698d9ac1c8d194f0fae9049600c6a"
+    },
+    {
+      "path": "graph/nanolize-report-site.json",
+      "sha256": "cf5cb99030f849f3fc633c7586a434b7d073c5e204cbcef008686f5df6ac4ab4"
+    },
+    {
+      "path": "index.html",
+      "sha256": "ab0c6c629f80607cdbbca21f4844cbac6395228dd8dffa72a0a1aefe2e83ead8"
+    },
+    {
+      "path": "style.css",
+      "sha256": "515910eb8e16e1708a0da7d80ce94ea333c0ec4ecdea4d3888f959d70074bef1"
+    }
+  ]
+}

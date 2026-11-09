@@ -1,0 +1,5228 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-09T12:11:49.557835+00:00",
+  "status": "succeeded",
+  "phase": "completed",
+  "source": {
+    "repository": "facebookresearch/detectron2",
+    "commit": "247691a1c292654867deb35cabb27f18d75a1363",
+    "test_fixture_commit": "8f6ea9d4a702131dcfe5d990340d6afec6968f0c"
+  },
+  "harness": {
+    "repository": "Al-LeanMuscle-Club/nanolize",
+    "branch": "codex/controller-feedback-memory",
+    "commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3"
+  },
+  "knowledge_provenance": "Reused owner-reviewed semantic knowledge for the identical upstream production commit, projected into this core scope. No prior candidate implementation or verification pass was reused; original and candidate acceptance are executed in this run.",
+  "first_candidate_diagnostics": [
+    {
+      "category": "缺少掩码贴回接口与导出",
+      "failed_groups": 2,
+      "detail": "保留的 ROIMasks 几何与共享层接口需要 paste_masks_in_image。"
+    },
+    {
+      "category": "ROIAlign 检查所需的小型采样依赖",
+      "failed_groups": 1,
+      "detail": "需要三个点坐标／插值兼容函数，不需要恢复 PointRend 模型。"
+    },
+    {
+      "category": "锚框生成器 TorchScript 容器",
+      "failed_groups": 1,
+      "detail": "普通运行通过；编译路径不接受候选使用的自定义模块迭代方式。"
+    },
+    {
+      "category": "ImageList 类型解析",
+      "failed_groups": 1,
+      "detail": "动态 padding 追踪通过；从外部脚本函数使用时无法解析 device 属性的类型。"
+    },
+    {
+      "category": "配置版本接口未导出",
+      "failed_groups": 1,
+      "detail": "版本转换实现存在，但包入口未导出 upgrade_config／downgrade_config，导致测试收集失败。"
+    },
+    {
+      "category": "FastRCNN 空图像批次",
+      "failed_groups": 1,
+      "detail": "普通输入通过；零图像／空 proposals 列表触发空列表拼接异常。"
+    }
+  ],
+  "scope": {
+    "name": "usable Faster R-CNN core",
+    "kept": [
+      "graphify-build-package-8317e92aba48",
+      "graphify-data-augmentation-e9460ecffbe6",
+      "graphify-foundation-checkpoint-0b90fe7c6d42",
+      "graphify-foundation-config-d9928761e096",
+      "graphify-foundation-layers-00c1d3b4535b",
+      "graphify-foundation-runtime-2dde3d14987a",
+      "graphify-foundation-structures-585ecc6f966f",
+      "graphify-group-data-2ea2dff7a5ab",
+      "graphify-group-delivery-7232713cc2ca",
+      "graphify-group-foundation-ffb19d83fdc2",
+      "graphify-group-models-b89a9b620bcf",
+      "graphify-group-models-backbones-0d4d35b6618b",
+      "graphify-group-models-detectors-dbe8fa4d4583",
+      "graphify-group-models-heads-27f1d5d5e692",
+      "graphify-group-training-cc903b1e9ceb",
+      "graphify-model-feature-pyramid-f12dadde8427",
+      "graphify-model-generalized-rcnn-b92273d43fa6",
+      "graphify-model-resnet-4461614c3a2b",
+      "graphify-model-roi-box-74b7ff0ac572",
+      "graphify-model-rpn-0ca332bc5509",
+      "graphify-model-runtime-b90d1e1976ad",
+      "graphify-root-ddcb2dfa42d8",
+      "graphify-train-telemetry-c3fe0dc767da"
+    ],
+    "removed": [
+      "graphify-build-development-93f202daed5c",
+      "graphify-build-documentation-a024028466ca",
+      "graphify-configs-recipes-d7c50142927c",
+      "graphify-data-catalog-f8276da19cca",
+      "graphify-data-cityscapes-ca90cea53faa",
+      "graphify-data-coco-fe37cefe1051",
+      "graphify-data-loading-044ab0ed7436",
+      "graphify-data-lvis-130a73732ce2",
+      "graphify-data-mapping-6348cdbbf33f",
+      "graphify-data-preparation-c157e9b195fd",
+      "graphify-data-sampling-967bea808cd7",
+      "graphify-data-voc-5ed18399156b",
+      "graphify-dp-augmentation-76f71696db75",
+      "graphify-dp-bootstrap-fcd6ec15e6d3",
+      "graphify-dp-chart-02fc2726dd6c",
+      "graphify-dp-conversion-23af1487ef92",
+      "graphify-dp-cse-288797dbb0e8",
+      "graphify-dp-data-c2f5ca8392ca",
+      "graphify-dp-evaluation-8067d11cc998",
+      "graphify-dp-foundation-255d9e9edcf4",
+      "graphify-dp-hrnet-513ae06a19fb",
+      "graphify-dp-model-runtime-c162f4cd216b",
+      "graphify-dp-packaging-dbb36f9b3f06",
+      "graphify-dp-training-102bc4a39533",
+      "graphify-dp-visualization-2477a7aca5fe",
+      "graphify-eval-cityscapes-c6661271d45f",
+      "graphify-eval-coco-10a5f2f9f672",
+      "graphify-eval-coco-native-3ab465ff764e",
+      "graphify-eval-lvis-958c09e23304",
+      "graphify-eval-panoptic-cc1324e45951",
+      "graphify-eval-runner-aa0f83d4a7f8",
+      "graphify-eval-semantic-eb8bf0b46d40",
+      "graphify-eval-voc-ae12c35fa070",
+      "graphify-export-caffe2-4cd7e5f760b9",
+      "graphify-export-torchscript-e238ccd25f26",
+      "graphify-extension-batchnorm-246f3bab91ae",
+      "graphify-extension-bridge-db3224bba915",
+      "graphify-extension-deeplab-f1458dac25ed",
+      "graphify-extension-mvitv2-60eed55e8a9c",
+      "graphify-extension-panoptic-deeplab-04870bfd0722",
+      "graphify-extension-pointrend-225583431997",
+      "graphify-extension-pointsup-d9d2bb2a21e1",
+      "graphify-extension-tensormask-a41083dbfbfb",
+      "graphify-extension-tridentnet-53993fa96360",
+      "graphify-extension-vitdet-2363882b8065",
+      "graphify-group-configurations-5bd4905b5d73",
+      "graphify-group-datasets-6f6e86d3c14b",
+      "graphify-group-densepose-4388117cd3be",
+      "graphify-group-evaluation-a271feaa2ef3",
+      "graphify-group-export-ebd4c7b30474",
+      "graphify-group-extensions-4bd2a07a5d73",
+      "graphify-group-models-inference-5f7d008b0b00",
+      "graphify-group-tools-20ac5ffd93e6",
+      "graphify-model-cascade-ad593b4827bf",
+      "graphify-model-deformable-convolution-f3ee69da92d3",
+      "graphify-model-fcos-2f75f9b458d8",
+      "graphify-model-keypoint-head-3e0a27a18177",
+      "graphify-model-mask-head-b1330c760b1a",
+      "graphify-model-mmdetection-5c58bbf72c9d",
+      "graphify-model-mvit-82124c91dbdf",
+      "graphify-model-panoptic-fpn-60089489c75d",
+      "graphify-model-regnet-0ba36c2b4c85",
+      "graphify-model-retinanet-b003c5b2fc90",
+      "graphify-model-rotated-detection-7a246d01a50b",
+      "graphify-model-semantic-segmentation-9d1deb223810",
+      "graphify-model-swin-13bcdc145006",
+      "graphify-model-test-time-augmentation-9c6120b2688f",
+      "graphify-model-vit-e03812b273a4",
+      "graphify-model-zoo-e39fd191c368",
+      "graphify-tool-analysis-3b2af0e6d99f",
+      "graphify-tool-benchmark-a1609e306237",
+      "graphify-tool-deployment-f18e01fda453",
+      "graphify-tool-inference-f30d91360045",
+      "graphify-tool-tracking-11ffc3f3e65c",
+      "graphify-tool-visualization-4be34ca6337b",
+      "graphify-train-defaults-cf7eb0ea604e",
+      "graphify-train-distributed-18f816492152",
+      "graphify-train-engine-698165daf2a6",
+      "graphify-train-entrypoints-e5ba0eadeacd",
+      "graphify-train-hooks-902b2af7421a",
+      "graphify-train-lightning-f15cf581fdfb",
+      "graphify-train-optimization-ce1475246040",
+      "graphify-train-scheduling-703f41336d19"
+    ],
+    "functional_leaves": 14,
+    "selected_source_file_tokens_reference": 140553,
+    "selected_source_lines_reference": 15441,
+    "reference_limit": "File-level reference can include shared implementation of omitted behavior; it is not an exact core-only baseline."
+  },
+  "check_partition": {
+    "needs_adaptation": 19,
+    "retained": 49,
+    "retired": 112
+  },
+  "policy": {
+    "mandatory_retention_ratio": null,
+    "size_only_optimization_limit": 0,
+    "agent_task_evaluation": false,
+    "source_free_authoring": true,
+    "stop": "After retained functional, GPU and fresh installation acceptance."
+  },
+  "preparation": {
+    "first_workspace_observation": "2026-11-09T09:01:00+00:00",
+    "first_observation_basis": "Original checkout directory mtime; not the user-message timestamp. Earlier conversation/preparation is excluded.",
+    "native_submission": "2026-11-09T09:45:44+00:00",
+    "native_slurm_start": "2026-11-09T09:47:03+00:00",
+    "slurm_job_id": "8766428",
+    "dependency_staging_seconds": 150.5199,
+    "preparation_issues": [
+      {
+        "issue": "Mixed-scope test fixture readiness",
+        "resolution": "Created frozen core-only test fixtures while retaining original production and tests unchanged; all 14 unique adapted fixtures freshly passed on original.",
+        "test_oracle_changed_during_repair": false
+      },
+      {
+        "issue": "Dependency symlinks targeted a login-node temporary directory",
+        "resolution": "Materialized unchanged third-party packages into owned shared cache, then copied them into compute-node local storage."
+      },
+      {
+        "issue": "GPU QoS requires at least four GPUs per job",
+        "resolution": "Owner final gate requests four GPUs and runs selected probes on one; test-only request accepted before active run."
+      }
+    ],
+    "preparation_slurm_jobs": [
+      {
+        "id": "8766043",
+        "state": "cancelled_before_start",
+        "elapsed_seconds": 0
+      },
+      {
+        "id": "8766079",
+        "state": "failed_missing_dependency",
+        "elapsed_seconds": 17
+      },
+      {
+        "id": "8766162",
+        "state": "passed_fixture_preflight",
+        "elapsed_seconds": 371
+      },
+      {
+        "id": "8766371",
+        "state": "cancelled_before_authoring",
+        "elapsed_seconds": 114
+      }
+    ]
+  },
+  "checkpoint_fixture": {
+    "sha256": "f68acd672fe1fc67ecdd662823c9234c8610a8948b7428e462ad1c767e005aac",
+    "bytes": 167480750,
+    "source_commit": "247691a1c292654867deb35cabb27f18d75a1363",
+    "kind": "original public state_dict plus fixed input and expected output",
+    "previous_candidate_code": false,
+    "reuse_prior_pass_result": false,
+    "note": "Run the current original again before accepting this reference; not pretrained accuracy evidence."
+  },
+  "cpu_dependency_versions": {
+    "numpy": "1.26.4",
+    "yacs": "0.1.8",
+    "hydra-core": "1.3.2",
+    "pycocotools": "2.0.11",
+    "Pillow": "9.5.0",
+    "fvcore": "0.1.5.post20221221",
+    "torchvision": "0.20.1",
+    "omegaconf": "2.3.0",
+    "torch": "2.5.1",
+    "pytest": "8.3.5",
+    "iopath": "0.1.9"
+  },
+  "gpu_submissions": [
+    {
+      "job_id": "8768726",
+      "submitted": 1794225609.5859342,
+      "candidate_digest": "be68f8d3a543d6cb46c9ef5707e0f239fb8886be8a821245692572031519ac0b"
+    },
+    {
+      "job_id": "8768758",
+      "submitted": 1794225729.1220036,
+      "candidate_digest": "be68f8d3a543d6cb46c9ef5707e0f239fb8886be8a821245692572031519ac0b",
+      "retries_job": "8768726",
+      "reason": "CPU affinity inherited from CPU parent job was outside GPU allocation; original job failed before executing the verifier. Retried unchanged frozen GPU scripts and request with clean Slurm submission context and SLURM_CPU_BIND=none."
+    }
+  ],
+  "gpu_observations": [
+    {
+      "status": "passed",
+      "results": {
+        "original": {
+          "exit_code": 0,
+          "seconds": 40.47849726676941,
+          "observations": {
+            "device": "cuda",
+            "finite_gradients": true,
+            "losses": [
+              "loss_box_reg",
+              "loss_cls",
+              "loss_rpn_cls",
+              "loss_rpn_loc"
+            ],
+            "nms_keep": [
+              0,
+              2
+            ],
+            "output_size": [
+              [
+                128,
+                160
+              ],
+              [
+                128,
+                160
+              ]
+            ],
+            "outputs": 2,
+            "roi_grad_sum": 9.0,
+            "roi_values": [
+              [
+                [
+                  [
+                    13.5,
+                    15.5,
+                    17.5
+                  ],
+                  [
+                    29.5,
+                    31.5,
+                    33.5
+                  ],
+                  [
+                    45.5,
+                    47.5,
+                    49.5
+                  ]
+                ]
+              ]
+            ],
+            "target_imports_from_current_tree": true
+          }
+        },
+        "candidate": {
+          "exit_code": 0,
+          "seconds": 7.530536890029907,
+          "observations": {
+            "device": "cuda",
+            "finite_gradients": true,
+            "losses": [
+              "loss_box_reg",
+              "loss_cls",
+              "loss_rpn_cls",
+              "loss_rpn_loc"
+            ],
+            "nms_keep": [
+              0,
+              2
+            ],
+            "output_size": [
+              [
+                128,
+                160
+              ],
+              [
+                128,
+                160
+              ]
+            ],
+            "outputs": 2,
+            "roi_grad_sum": 9.0,
+            "roi_values": [
+              [
+                [
+                  [
+                    13.5,
+                    15.5,
+                    17.5
+                  ],
+                  [
+                    29.5,
+                    31.5,
+                    33.5
+                  ],
+                  [
+                    45.5,
+                    47.5,
+                    49.5
+                  ]
+                ]
+              ]
+            ],
+            "target_imports_from_current_tree": true
+          }
+        }
+      },
+      "candidate_digest": "be68f8d3a543d6cb46c9ef5707e0f239fb8886be8a821245692572031519ac0b",
+      "finished": 1794225803.0517476
+    }
+  ],
+  "report_mapping_adjustment": {
+    "reason": "Native per-capability mapping accepts source files only; pyproject.toml is configuration. Removed only these configuration entries from source ownership mappings. Configuration remains included in overall token measurement; candidate and verification artifacts unchanged.",
+    "excluded_mapping_entries": [
+      {
+        "capability": "graphify-build-package-8317e92aba48",
+        "path": "pyproject.toml"
+      },
+      {
+        "capability": "graphify-group-delivery-7232713cc2ca",
+        "path": "pyproject.toml"
+      },
+      {
+        "capability": "graphify-root-ddcb2dfa42d8",
+        "path": "pyproject.toml"
+      }
+    ],
+    "all_candidate_source_files_mapped": true
+  },
+  "installation_environment": "A fresh virtual environment installs only this candidate, with pre-staged third-party dependencies reused. Target module origins are checked. This is not an end-to-end internet dependency-resolution test on a blank machine.",
+  "original_code": {
+    "complete": true,
+    "configuration_tokens": 53484,
+    "incomplete_counts_are_observed_subtotals": true,
+    "metric": "tokens",
+    "schema_version": 1,
+    "source_tokens": 808992,
+    "total_tokens": 862476
+  },
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "selected_candidate": {
+    "id": "candidate-56aa1e22665a",
+    "reason": "Select the current unchanged draft: complete CPU comparison verification-683e3190d15c reports checks_passed, all seven historical regressions are verified_resolved, and all four fresh-install checks passed in installation-5b438e58fc5d. Measurement-c178baa1c231 records 63,378 source/configuration tokens. Selection is based on retained behavior and installation evidence; no size-only work is needed. Final GPU and delivery acceptance remain outstanding."
+  },
+  "author_calls": 3,
+  "size_optimization_calls": 0,
+  "artifacts": [
+    {
+      "id": "baseline-e03d40db254c",
+      "kind": "baseline",
+      "created_at": "2026-11-09T10:02:36.570508+00:00",
+      "evidence_sha256": "7d7aaca3b7105ec3a4574e947f13dea981fe7509b4fe92f9fe9ac39064a5b652",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "status": "baseline_captured",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "CPU behavior: Configuration and object construction",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.6312,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.1669,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: Shared neural-network and tensor operations",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.4609,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: Weights, checkpoints and pretrained compatibility",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.5027,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: Model construction, matching and output geometry",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.4077,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: ResNet visual backbones",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.0116,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: RegNet and AnyNet backbones",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Vision Transformer and ViTDet feature pyramids",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Multiscale Vision Transformer backbone",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Swin Transformer backbone",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Multi-scale feature pyramid networks",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.2188,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: Region proposal generation",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.6752,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: ROI pooling and box prediction",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.5677,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: Cascade box refinement",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Instance segmentation masks",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Human keypoint prediction",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Two-stage object detection",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.6177,
+          "output_truncated": false
+        },
+        {
+          "name": "CPU behavior: RetinaNet one-stage detection",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: FCOS anchor-free detection",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Semantic segmentation",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Panoptic instance-and-stuff segmentation",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Oriented object detection and rotated geometry",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Deformable visual convolutions",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Multi-view inference and prediction fusion",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: MMDetection model interoperability",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: TorchScript scripting and tracing",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Accelerated COCO evaluation backend",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "CPU behavior: Runtime services and interoperability",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.6053,
+          "output_truncated": false
+        },
+        {
+          "name": "runtime-data-catalog",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-loading",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-mapping",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-augmentation",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.6931,
+          "output_truncated": false
+        },
+        {
+          "name": "runtime-data-sampling",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-coco",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-lvis",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-cityscapes",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-voc",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-data-preparation",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-engine",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-telemetry",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 3.6122,
+          "output_truncated": false
+        },
+        {
+          "name": "runtime-train-hooks",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-distributed",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-optimization",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-scheduling",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-defaults",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-entrypoints",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-train-lightning",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-eval-runner",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-eval-coco",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-eval-semantic",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-eval-panoptic",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-eval-cityscapes",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-eval-lvis",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-eval-voc",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-tool-inference",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-tool-visualization",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-tool-tracking",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-tool-analysis",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-tool-benchmark",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-tool-deployment",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-build-package",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 3.5718,
+          "output_truncated": false
+        },
+        {
+          "name": "runtime-build-documentation",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-build-development",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-model-zoo",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-configs-recipes",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "runtime-export-caffe2",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-bridge",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-foundation",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-conversion",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-model-runtime",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-chart",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-cse",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-hrnet",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-augmentation",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-data",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-bootstrap",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-training",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-evaluation",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-visualization",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-dp-packaging",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-deeplab",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-panoptic-deeplab",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-pointrend",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-pointsup",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-tensormask",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-tridentnet",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-vitdet",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-mvitv2",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "characterize-extension-batchnorm",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_frame_selector.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_resize_transform.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_model_e2e.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_setup.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_structures.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_tensor_storage.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 5.8931,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/data/test_coco.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/data/test_coco_evaluation.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/data/test_dataset.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/data/test_detection_utils.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/data/test_rotation_transform.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.1401,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/data/test_sampler.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/data/test_transforms.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.8762,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/layers/test_deformable.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/layers/test_losses.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.6827,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/layers/test_mask_ops.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms_rotated.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.4373,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align_rotated.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/modeling/test_anchor_generator.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.405,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_matcher.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.2519,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/modeling/test_rpn.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_imagelist.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.8149,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_keypoints.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.6559,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/structures/test_masks.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.9879,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/structures/test_rotated_boxes.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/test_checkpoint.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 4.7551,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_engine.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/test_events.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 4.4273,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_export_onnx.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/test_model_analysis.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/test_model_zoo.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestCollectEnv",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.1277,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestProjects",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.3861,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_scheduler.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/test_solver.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "check_scope_needs_review"
+        },
+        {
+          "name": "upstream:tests/test_visualizer.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/tracking/test_bbox_iou_tracker.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/tracking/test_hungarian_tracker.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py",
+          "status": "not_run",
+          "exit_code": null,
+          "reason": "retired_capability"
+        },
+        {
+          "name": "upstream:tests/utils/test_tensorboardx.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 4.7019,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/layers/test_mask_ops.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.6866,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/structures/test_rotated_boxes.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.4735,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.9671,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.8266,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.7615,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.6472,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.9197,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.6693,
+          "output_truncated": false
+        },
+        {
+          "name": "core original-checkpoint numerical inference",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 10.4332,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_instantiate_config.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.6144,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_yacs_config.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 10.7317,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/data/test_transforms.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.5325,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/layers/test_nms.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.5897,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_box2box_transform.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 10.0508,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 10.0028,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 10.3512,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_rpn.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 12.5043,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_boxes.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.8259,
+          "output_truncated": false
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_instances.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.8934,
+          "output_truncated": false
+        },
+        {
+          "name": "core adaptation: ROI pooler axis-aligned half",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.1813,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 49,
+        "not_run": 131
+      },
+      "obligations": null
+    },
+    {
+      "id": "agent-2894243c4801",
+      "kind": "agent",
+      "created_at": "2026-11-09T10:49:24.624981+00:00",
+      "evidence_sha256": "7df9cba2e122f07cc8f5736c2cabbea4d2c9d08d90f273158fae55401cae32c1",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "implement",
+      "status": "passed",
+      "duration_seconds": 2699.646920245141
+    },
+    {
+      "id": "candidate-4cc53f2c05a3",
+      "kind": "candidate",
+      "created_at": "2026-11-09T10:54:28.466839+00:00",
+      "evidence_sha256": "8fc0f678db074999ccce7e6782ddd82fa4c05857dc81bc82a8aee56b46e0c625",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-221e87cf5885",
+      "commit": "790f0f285a0547639423ab7236ad13adf437c8b3",
+      "reason": "Archive the fresh independent implementation of all selected core capabilities for complete CPU comparison and subsequent diagnosis; selection will use observed behavior and installation evidence, not token count."
+    },
+    {
+      "id": "verification-d43cee36124d",
+      "kind": "verification",
+      "created_at": "2026-11-09T11:01:23.515548+00:00",
+      "evidence_sha256": "f1f36607c86f5a3688ff03c765c742aed74077d75f110dc9f78446958d568352",
+      "binding": {
+        "candidate": "candidate-221e87cf5885",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "790f0f285a0547639423ab7236ad13adf437c8b3"
+      },
+      "status": "regressed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "CPU behavior: Configuration and object construction",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Shared neural-network and tensor operations",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Weights, checkpoints and pretrained compatibility",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Model construction, matching and output geometry",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: ResNet visual backbones",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: RegNet and AnyNet backbones",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Vision Transformer and ViTDet feature pyramids",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multiscale Vision Transformer backbone",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Swin Transformer backbone",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multi-scale feature pyramid networks",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Region proposal generation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: ROI pooling and box prediction",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Cascade box refinement",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Instance segmentation masks",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Human keypoint prediction",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Two-stage object detection",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: RetinaNet one-stage detection",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: FCOS anchor-free detection",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Semantic segmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Panoptic instance-and-stuff segmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Oriented object detection and rotated geometry",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Deformable visual convolutions",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multi-view inference and prediction fusion",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: MMDetection model interoperability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: TorchScript scripting and tracing",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Accelerated COCO evaluation backend",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Runtime services and interoperability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-data-catalog",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-loading",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-mapping",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-augmentation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-data-sampling",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-coco",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-lvis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-cityscapes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-voc",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-preparation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-engine",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-telemetry",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-train-hooks",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-distributed",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-optimization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-scheduling",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-defaults",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-entrypoints",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-lightning",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-runner",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-coco",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-semantic",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-panoptic",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-cityscapes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-lvis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-voc",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-inference",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-visualization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-tracking",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-analysis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-benchmark",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-deployment",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-build-package",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-build-documentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-build-development",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-model-zoo",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-configs-recipes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-export-caffe2",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-bridge",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-foundation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-conversion",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-model-runtime",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-chart",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-cse",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-hrnet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-augmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-data",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-bootstrap",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-training",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-evaluation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-visualization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-packaging",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-deeplab",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-panoptic-deeplab",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-pointrend",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-pointsup",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-tensormask",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-tridentnet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-vitdet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-mvitv2",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-batchnorm",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_frame_selector.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_resize_transform.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_model_e2e.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_setup.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_structures.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_tensor_storage.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/data/test_coco.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_coco_evaluation.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_dataset.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_detection_utils.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_rotation_transform.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/data/test_sampler.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_transforms.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_deformable.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/layers/test_losses.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_mask_ops.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms_rotated.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align_rotated.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_anchor_generator.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_matcher.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_rpn.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_imagelist.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_keypoints.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_masks.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_rotated_boxes.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/test_checkpoint.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_engine.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_events.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_export_onnx.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_model_analysis.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_model_zoo.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestCollectEnv",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestProjects",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_scheduler.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_solver.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_visualizer.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_hungarian_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/utils/test_tensorboardx.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/layers/test_mask_ops.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/structures/test_rotated_boxes.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core original-checkpoint numerical inference",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_instantiate_config.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_yacs_config.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/data/test_transforms.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/layers/test_nms.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_box2box_transform.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_rpn.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_boxes.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_instances.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: ROI pooler axis-aligned half",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 42,
+        "regressed": 7,
+        "out_of_scope": 112,
+        "unverified": 19
+      },
+      "obligations": {
+        "complete": false,
+        "failed": 9,
+        "partial": 0,
+        "retained": 23,
+        "retired": 83,
+        "total": 106,
+        "unknown": 0,
+        "verified": 14
+      },
+      "actual_size": {
+        "baseline_source_lines": 72035,
+        "baseline_tokens": 862476,
+        "complete": true,
+        "configuration_files": 3,
+        "configuration_tokens": 509,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "264314167b5ac6a8b5b269a3f8e6d2b984ebd05ad1824c66d1d8811006e4ac2b",
+        "metric": "tokens",
+        "retained_percent": 6.9058153502242385,
+        "source_files": 71,
+        "source_lines": 5271,
+        "source_retained_percent": 7.317276324009162,
+        "source_tokens": 59052,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 72035.0,
+        "target_tokens": 862476,
+        "total_tokens": 59561
+      },
+      "verified_commit": "790f0f285a0547639423ab7236ad13adf437c8b3"
+    },
+    {
+      "id": "measurement-2c2b046be9f3",
+      "kind": "measurement",
+      "created_at": "2026-11-09T11:02:06.695180+00:00",
+      "evidence_sha256": "169bf0082333d728dbb3321c44982dcb5a6c467997e1172c4d60ade2af599a31",
+      "binding": {
+        "candidate": "candidate-221e87cf5885",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "790f0f285a0547639423ab7236ad13adf437c8b3"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 57,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 59052,
+        "total_tokens": 59109
+      }
+    },
+    {
+      "id": "agent-e0633696e98d",
+      "kind": "agent",
+      "created_at": "2026-11-09T11:19:59.651632+00:00",
+      "evidence_sha256": "2f51bc25656708e2ec842487f0e532a763e5507358c37eb42d9bb64d9e646982",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "repair",
+      "status": "passed",
+      "duration_seconds": 722.3804136822
+    },
+    {
+      "id": "candidate-e12a4ef5d20d",
+      "kind": "candidate",
+      "created_at": "2026-11-09T11:22:08.324465+00:00",
+      "evidence_sha256": "412eb1b80de1c8d67054523c849f40ed67d7d2671427b871dbbb277b50fa51b5",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-d7c6f780ffe4",
+      "commit": "8e0d47fa72b9fe336e266794d855e62292942318",
+      "reason": "Preserve the grouped functional repair and owner-clarified selected dependencies, retaining the first candidate as an alternative."
+    },
+    {
+      "id": "verification-2933ffb13784",
+      "kind": "verification",
+      "created_at": "2026-11-09T11:29:02.616818+00:00",
+      "evidence_sha256": "d4dcaf343c99181307217641d3f63277c6125407ecb961eed4d5caea9088cf40",
+      "binding": {
+        "candidate": "candidate-d7c6f780ffe4",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "8e0d47fa72b9fe336e266794d855e62292942318"
+      },
+      "status": "regressed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "CPU behavior: Configuration and object construction",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Shared neural-network and tensor operations",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Weights, checkpoints and pretrained compatibility",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Model construction, matching and output geometry",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: ResNet visual backbones",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: RegNet and AnyNet backbones",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Vision Transformer and ViTDet feature pyramids",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multiscale Vision Transformer backbone",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Swin Transformer backbone",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multi-scale feature pyramid networks",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Region proposal generation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: ROI pooling and box prediction",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Cascade box refinement",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Instance segmentation masks",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Human keypoint prediction",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Two-stage object detection",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: RetinaNet one-stage detection",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: FCOS anchor-free detection",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Semantic segmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Panoptic instance-and-stuff segmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Oriented object detection and rotated geometry",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Deformable visual convolutions",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multi-view inference and prediction fusion",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: MMDetection model interoperability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: TorchScript scripting and tracing",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Accelerated COCO evaluation backend",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Runtime services and interoperability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-data-catalog",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-loading",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-mapping",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-augmentation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-data-sampling",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-coco",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-lvis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-cityscapes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-voc",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-preparation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-engine",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-telemetry",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-train-hooks",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-distributed",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-optimization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-scheduling",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-defaults",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-entrypoints",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-lightning",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-runner",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-coco",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-semantic",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-panoptic",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-cityscapes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-lvis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-voc",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-inference",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-visualization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-tracking",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-analysis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-benchmark",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-deployment",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-build-package",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-build-documentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-build-development",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-model-zoo",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-configs-recipes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-export-caffe2",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-bridge",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-foundation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-conversion",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-model-runtime",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-chart",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-cse",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-hrnet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-augmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-data",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-bootstrap",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-training",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-evaluation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-visualization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-packaging",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-deeplab",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-panoptic-deeplab",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-pointrend",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-pointsup",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-tensormask",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-tridentnet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-vitdet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-mvitv2",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-batchnorm",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_frame_selector.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_resize_transform.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_model_e2e.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_setup.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_structures.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_tensor_storage.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/data/test_coco.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_coco_evaluation.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_dataset.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_detection_utils.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_rotation_transform.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/data/test_sampler.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_transforms.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_deformable.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/layers/test_losses.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_mask_ops.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms_rotated.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align_rotated.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_anchor_generator.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_matcher.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_rpn.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_imagelist.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_keypoints.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_masks.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_rotated_boxes.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/test_checkpoint.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_engine.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_events.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_export_onnx.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_model_analysis.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_model_zoo.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestCollectEnv",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestProjects",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_scheduler.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_solver.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_visualizer.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_hungarian_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/utils/test_tensorboardx.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/layers/test_mask_ops.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/structures/test_rotated_boxes.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core original-checkpoint numerical inference",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_instantiate_config.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_yacs_config.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/data/test_transforms.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/layers/test_nms.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_box2box_transform.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_rpn.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_boxes.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_instances.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: ROI pooler axis-aligned half",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 44,
+        "out_of_scope": 112,
+        "unverified": 19,
+        "regressed": 5
+      },
+      "obligations": {
+        "complete": false,
+        "failed": 9,
+        "partial": 0,
+        "retained": 23,
+        "retired": 83,
+        "total": 106,
+        "unknown": 0,
+        "verified": 14
+      },
+      "actual_size": {
+        "baseline_source_lines": 72035,
+        "baseline_tokens": 862476,
+        "complete": true,
+        "configuration_files": 4,
+        "configuration_tokens": 1215,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "58ecfb97782a16cdb4934499a179da4e23352781193b81510766b9b5c6ac6f48",
+        "metric": "tokens",
+        "retained_percent": 7.30350757586298,
+        "source_files": 74,
+        "source_lines": 5535,
+        "source_retained_percent": 7.683764836537794,
+        "source_tokens": 61776,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 72035.0,
+        "target_tokens": 862476,
+        "total_tokens": 62991
+      },
+      "verified_commit": "8e0d47fa72b9fe336e266794d855e62292942318"
+    },
+    {
+      "id": "installation-f8512ccdb087",
+      "kind": "installation",
+      "created_at": "2026-11-09T11:31:03.590598+00:00",
+      "evidence_sha256": "15ed11a74a8d36806af0a9b46a86dd76b9bdd5df73f56bc8784e3e630babd846",
+      "binding": {
+        "candidate": "candidate-d7c6f780ffe4",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "8e0d47fa72b9fe336e266794d855e62292942318"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "installed-build-dependency-readiness",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 19.283,
+          "output_truncated": false
+        },
+        {
+          "name": "install-staged-candidate-only",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 15.7075,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-selected-apis-and-packaged-resources",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 22.0131,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-core-preprocess-inference-checkpoint-roundtrip",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 12.0465,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 4
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-52a602943a5f",
+      "kind": "measurement",
+      "created_at": "2026-11-09T11:32:14.325676+00:00",
+      "evidence_sha256": "8c0de531c4a9586b2fdd2ac08d57fa709815e9ae2746c447c683c5efe996bc1c",
+      "binding": {
+        "candidate": "candidate-d7c6f780ffe4",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "8e0d47fa72b9fe336e266794d855e62292942318"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 57,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 61776,
+        "total_tokens": 61833
+      }
+    },
+    {
+      "id": "agent-41008189dfff",
+      "kind": "agent",
+      "created_at": "2026-11-09T11:45:10.777972+00:00",
+      "evidence_sha256": "b1a5bbff97acf1e3b52087c04196097515d2982ed6bcdb15160eba6804792b5b",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "repair",
+      "status": "passed",
+      "duration_seconds": 535.7220576219261
+    },
+    {
+      "id": "candidate-4d8d1303b4f3",
+      "kind": "candidate",
+      "created_at": "2026-11-09T11:46:13.146907+00:00",
+      "evidence_sha256": "f488957075a650a852bc4d73495f08c73426e770d50fed32c5e1a6f406a3c21a",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-56aa1e22665a",
+      "commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde",
+      "reason": "Preserve the grouped repair of five diagnosed retained CPU failures and the latest checkpoint diagnostic clarification, retaining existing passing core behavior."
+    },
+    {
+      "id": "verification-683e3190d15c",
+      "kind": "verification",
+      "created_at": "2026-11-09T11:52:50.789000+00:00",
+      "evidence_sha256": "c8a53e1cf0418a230bc2bfbdee9c40578baa41f7d1a71ab4b84917ef411f0226",
+      "binding": {
+        "candidate": "candidate-56aa1e22665a",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde"
+      },
+      "status": "checks_passed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "CPU behavior: Configuration and object construction",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Image and prediction data structures",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Shared neural-network and tensor operations",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Weights, checkpoints and pretrained compatibility",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Model construction, matching and output geometry",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: ResNet visual backbones",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: RegNet and AnyNet backbones",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Vision Transformer and ViTDet feature pyramids",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multiscale Vision Transformer backbone",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Swin Transformer backbone",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multi-scale feature pyramid networks",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Region proposal generation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: ROI pooling and box prediction",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: Cascade box refinement",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Instance segmentation masks",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Human keypoint prediction",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Two-stage object detection",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "CPU behavior: RetinaNet one-stage detection",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: FCOS anchor-free detection",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Semantic segmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Panoptic instance-and-stuff segmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Oriented object detection and rotated geometry",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Deformable visual convolutions",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Multi-view inference and prediction fusion",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: MMDetection model interoperability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: TorchScript scripting and tracing",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Accelerated COCO evaluation backend",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "CPU behavior: Runtime services and interoperability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-data-catalog",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-loading",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-mapping",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-augmentation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-data-sampling",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-coco",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-lvis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-cityscapes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-voc",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-data-preparation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-engine",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-telemetry",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-train-hooks",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-distributed",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-optimization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-scheduling",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-defaults",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-entrypoints",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-train-lightning",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-runner",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-coco",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-semantic",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-panoptic",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-cityscapes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-lvis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-eval-voc",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-inference",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-visualization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-tracking",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-analysis",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-benchmark",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-tool-deployment",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-build-package",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "runtime-build-documentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-build-development",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-model-zoo",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-configs-recipes",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "runtime-export-caffe2",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-bridge",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-foundation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-conversion",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-model-runtime",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-chart",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-cse",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-hrnet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-augmentation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-data",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-bootstrap",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-training",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-evaluation",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-visualization",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-dp-packaging",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-deeplab",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-panoptic-deeplab",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-pointrend",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-pointsup",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-tensormask",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-tridentnet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-vitdet",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-mvitv2",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "characterize-extension-batchnorm",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_chart_based_annotations_accumulator.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_combine_data_loader.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_cse_annotations_accumulator.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_frame_selector.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_list_dataset.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_image_resize_transform.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_model_e2e.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_setup.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_structures.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:projects/DensePose/tests/test_tensor_storage.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/config/test_instantiate_config.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/config/test_lazy_config.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/config/test_yacs_config.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/data/test_coco.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_coco_evaluation.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_dataset.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_detection_utils.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_rotation_transform.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/data/test_sampler.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/data/test_transforms.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_blocks.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_deformable.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/layers/test_losses.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_mask_ops.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/layers/test_nms_rotated.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/layers/test_roi_align_rotated.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_anchor_generator.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_box2box_transform.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_matcher.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::FCOSE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::RetinaNetE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_model_e2e.py::SemSegE2ETest",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_PointRend_mask_head_tracing",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_keypoint_head_scriptability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_mask_head_scriptability",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_heads.py::test_rroi_heads",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_roi_pooler.py::rotated-comparison",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/modeling/test_rpn.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_boxes.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_imagelist.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_instances.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/structures/test_keypoints.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_masks.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/structures/test_rotated_boxes.py",
+          "status": "unverified",
+          "scope": "needs_adaptation"
+        },
+        {
+          "name": "upstream:tests/test_checkpoint.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_engine.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_events.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_export_onnx.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_model_analysis.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_model_zoo.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestCollectEnv",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_packaging.py::TestProjects",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_registry.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_scheduler.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_solver.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/test_visualizer.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_hungarian_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_iou_weighted_hungarian_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/tracking/test_vanilla_hungarian_bbox_iou_tracker.py",
+          "status": "out_of_scope",
+          "scope": "retired"
+        },
+        {
+          "name": "upstream:tests/utils/test_tensorboardx.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/layers/test_mask_ops.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/structures/test_rotated_boxes.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_model_e2e.py::MaskRCNNE2ETest",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_roi_heads",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_StandardROIHeads_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_roi_heads.py::test_box_head_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_fpn_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: upstream:tests/modeling/test_backbone.py::test_resnet_scriptability",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core original-checkpoint numerical inference",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_instantiate_config.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/config/test_yacs_config.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/data/test_transforms.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/layers/test_nms.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_box2box_transform.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_fast_rcnn.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_roi_pooler.py::axis-aligned",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/modeling/test_rpn.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_boxes.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core fixture: upstream:tests/structures/test_instances.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "core adaptation: ROI pooler axis-aligned half",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 49,
+        "out_of_scope": 112,
+        "unverified": 19
+      },
+      "obligations": {
+        "complete": true,
+        "failed": 0,
+        "partial": 0,
+        "retained": 23,
+        "retired": 83,
+        "total": 106,
+        "unknown": 0,
+        "verified": 23
+      },
+      "actual_size": {
+        "baseline_source_lines": 72035,
+        "baseline_tokens": 862476,
+        "complete": true,
+        "configuration_files": 4,
+        "configuration_tokens": 1217,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "aaaf72bdae39d89711ff76cd7674dc2da30a174ffdb9a6b202c00aba564b10eb",
+        "metric": "tokens",
+        "retained_percent": 7.348378389659539,
+        "source_files": 77,
+        "source_lines": 5579,
+        "source_retained_percent": 7.7448462552925665,
+        "source_tokens": 62161,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 72035.0,
+        "target_tokens": 862476,
+        "total_tokens": 63378
+      },
+      "verified_commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde"
+    },
+    {
+      "id": "installation-5b438e58fc5d",
+      "kind": "installation",
+      "created_at": "2026-11-09T11:54:58.935939+00:00",
+      "evidence_sha256": "caa9f8f4379360912ea95752cedcee3209530bcb870e081102144761bce10532",
+      "binding": {
+        "candidate": "candidate-56aa1e22665a",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "installed-build-dependency-readiness",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 12.1103,
+          "output_truncated": false
+        },
+        {
+          "name": "install-staged-candidate-only",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 17.7747,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-selected-apis-and-packaged-resources",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 31.2748,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-core-preprocess-inference-checkpoint-roundtrip",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 11.4993,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 4
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-c178baa1c231",
+      "kind": "measurement",
+      "created_at": "2026-11-09T11:55:37.695736+00:00",
+      "evidence_sha256": "edfc1dffc08e1add26d187fb08db49c0dfa947eb0c9b4b0ad991acfc59884aac",
+      "binding": {
+        "candidate": "candidate-56aa1e22665a",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 57,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 62161,
+        "total_tokens": 62218
+      }
+    },
+    {
+      "id": "checks-c4b0a87a7b96",
+      "kind": "checks",
+      "created_at": "2026-11-09T12:03:27.203101+00:00",
+      "evidence_sha256": "e8f774915802857bd3455903b766022ce527296914b0eabc5880f58349a2488d",
+      "binding": {
+        "candidate": "candidate-56aa1e22665a",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "core-original-candidate-gpu-behavior",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 196.5948,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 1
+      },
+      "obligations": null
+    },
+    {
+      "id": "delivery-cdba6034b0a0",
+      "kind": "delivery",
+      "created_at": "2026-11-09T12:07:58.661548+00:00",
+      "evidence_sha256": "ebe9feafcde8171f814c12b3b85c4ffaa8e1b6f6176a9d313694febff26fc144",
+      "binding": {
+        "candidate": "candidate-56aa1e22665a",
+        "contract": "contract-69e48c04b1f7",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde"
+      },
+      "acceptance": {
+        "status": "passed",
+        "gaps": [],
+        "failed": false,
+        "limitations": [
+          "Passing checks is not proof of semantic equivalence.",
+          "Criteria do not prescribe a next action."
+        ]
+      }
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "workspace",
+      "name": "create_workspace",
+      "status": "completed",
+      "created_at": "2026-11-09T09:49:39.849615+00:00",
+      "started_at": "2026-11-09T09:49:39.882813+00:00",
+      "finished_at": "2026-11-09T09:50:45.279193+00:00",
+      "duration_seconds": 65.38167291041464
+    },
+    {
+      "operation_id": "decision-1-0",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T09:53:58.115012+00:00",
+      "started_at": "2026-11-09T09:53:58.184969+00:00",
+      "finished_at": "2026-11-09T09:54:29.935047+00:00",
+      "duration_seconds": 31.71807220671326
+    },
+    {
+      "operation_id": "decision-1-1",
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T09:54:31.017676+00:00",
+      "started_at": "2026-11-09T09:54:31.538400+00:00",
+      "finished_at": "2026-11-09T10:02:36.629649+00:00",
+      "duration_seconds": 485.07000173069537
+    },
+    {
+      "operation_id": "owner-gpu-tool-clarification-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T09:58:10.270218+00:00",
+      "started_at": "2026-11-09T10:02:36.687410+00:00",
+      "finished_at": "2026-11-09T10:03:14.765526+00:00",
+      "duration_seconds": 38.057772018015385
+    },
+    {
+      "operation_id": "decision-1-2",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T10:02:37.634819+00:00",
+      "started_at": "2026-11-09T10:03:14.802000+00:00",
+      "finished_at": "2026-11-09T10:49:24.674541+00:00",
+      "duration_seconds": 2769.8581693321466
+    },
+    {
+      "operation_id": "owner-mask-paste-semantics-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T10:11:51.805053+00:00",
+      "started_at": "2026-11-09T10:49:24.720656+00:00",
+      "finished_at": "2026-11-09T10:50:02.977601+00:00",
+      "duration_seconds": 38.24288466013968
+    },
+    {
+      "operation_id": "owner-token-measurement-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T10:32:18.744944+00:00",
+      "started_at": "2026-11-09T10:50:03.003464+00:00",
+      "finished_at": "2026-11-09T10:50:35.489358+00:00",
+      "duration_seconds": 32.47379307541996
+    },
+    {
+      "operation_id": "owner-training-environment-semantics-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T10:35:19.192301+00:00",
+      "started_at": "2026-11-09T10:50:35.514523+00:00",
+      "finished_at": "2026-11-09T10:51:07.921304+00:00",
+      "duration_seconds": 32.39064999297261
+    },
+    {
+      "operation_id": "owner-frozenbn-migration-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T10:38:58.125199+00:00",
+      "started_at": "2026-11-09T10:51:07.941763+00:00",
+      "finished_at": "2026-11-09T10:51:40.569579+00:00",
+      "duration_seconds": 32.604655402712524
+    },
+    {
+      "operation_id": "owner-fed-loss-metadata-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T10:40:35.858047+00:00",
+      "started_at": "2026-11-09T10:51:40.608088+00:00",
+      "finished_at": "2026-11-09T10:52:12.951201+00:00",
+      "duration_seconds": 32.32719081547111
+    },
+    {
+      "operation_id": "owner-delivery-readme-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T10:42:55.655665+00:00",
+      "started_at": "2026-11-09T10:52:12.979930+00:00",
+      "finished_at": "2026-11-09T10:52:45.849553+00:00",
+      "duration_seconds": 32.800479566678405
+    },
+    {
+      "operation_id": "owner-checkpoint-log-semantics-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T10:47:41.115524+00:00",
+      "started_at": "2026-11-09T10:52:45.880963+00:00",
+      "finished_at": "2026-11-09T10:53:17.344996+00:00",
+      "duration_seconds": 31.45154505968094
+    },
+    {
+      "operation_id": "decision-1-3",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T10:49:25.927673+00:00",
+      "started_at": "2026-11-09T10:53:17.368209+00:00",
+      "finished_at": "2026-11-09T10:54:28.780837+00:00",
+      "duration_seconds": 71.38878907542676
+    },
+    {
+      "operation_id": "decision-1-4",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T10:54:29.929115+00:00",
+      "started_at": "2026-11-09T10:54:29.959000+00:00",
+      "finished_at": "2026-11-09T11:01:24.144998+00:00",
+      "duration_seconds": 414.17080946080387
+    },
+    {
+      "operation_id": "decision-1-5",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-09T11:01:25.329130+00:00",
+      "started_at": "2026-11-09T11:01:25.354501+00:00",
+      "finished_at": "2026-11-09T11:02:06.739626+00:00",
+      "duration_seconds": 41.37209232430905
+    },
+    {
+      "operation_id": "owner-first-regression-dependencies-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T11:04:50.680465+00:00",
+      "started_at": "2026-11-09T11:05:59.183627+00:00",
+      "finished_at": "2026-11-09T11:06:33.217294+00:00",
+      "duration_seconds": 33.984709416516125
+    },
+    {
+      "operation_id": "decision-2-0",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T11:06:00.163576+00:00",
+      "started_at": "2026-11-09T11:06:33.239826+00:00",
+      "finished_at": "2026-11-09T11:07:06.867750+00:00",
+      "duration_seconds": 33.61479673720896
+    },
+    {
+      "operation_id": "decision-2-1",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T11:07:07.953159+00:00",
+      "started_at": "2026-11-09T11:07:07.976325+00:00",
+      "finished_at": "2026-11-09T11:19:59.708882+00:00",
+      "duration_seconds": 771.717323419638
+    },
+    {
+      "operation_id": "owner-safe-first-regression-diagnostics-v1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T11:08:48.308043+00:00",
+      "started_at": "2026-11-09T11:19:59.744060+00:00",
+      "finished_at": "2026-11-09T11:20:33.524069+00:00",
+      "duration_seconds": 33.75746409315616
+    },
+    {
+      "operation_id": "owner-checkpoint-log-prefix-clarification-v2",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T11:18:17.196672+00:00",
+      "started_at": "2026-11-09T11:20:33.557443+00:00",
+      "finished_at": "2026-11-09T11:21:03.546934+00:00",
+      "duration_seconds": 29.976844842545688
+    },
+    {
+      "operation_id": "decision-2-2",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T11:20:00.895693+00:00",
+      "started_at": "2026-11-09T11:21:03.591285+00:00",
+      "finished_at": "2026-11-09T11:22:08.622654+00:00",
+      "duration_seconds": 65.01648947503418
+    },
+    {
+      "operation_id": "decision-2-3",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T11:22:09.939651+00:00",
+      "started_at": "2026-11-09T11:22:09.963293+00:00",
+      "finished_at": "2026-11-09T11:29:03.252262+00:00",
+      "duration_seconds": 413.2776077128947
+    },
+    {
+      "operation_id": "decision-2-4",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T11:29:04.466571+00:00",
+      "started_at": "2026-11-09T11:29:04.494263+00:00",
+      "finished_at": "2026-11-09T11:31:03.654957+00:00",
+      "duration_seconds": 119.14259053673595
+    },
+    {
+      "operation_id": "owner-second-regression-diagnostics-v2",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T11:29:54.201386+00:00",
+      "started_at": "2026-11-09T11:31:03.709837+00:00",
+      "finished_at": "2026-11-09T11:31:38.636228+00:00",
+      "duration_seconds": 34.91065331362188
+    },
+    {
+      "operation_id": "decision-2-5",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-09T11:31:04.750062+00:00",
+      "started_at": "2026-11-09T11:31:38.661462+00:00",
+      "finished_at": "2026-11-09T11:32:14.392777+00:00",
+      "duration_seconds": 35.7167201237753
+    },
+    {
+      "operation_id": "decision-3-0",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T11:35:29.063129+00:00",
+      "started_at": "2026-11-09T11:35:29.088473+00:00",
+      "finished_at": "2026-11-09T11:45:10.848263+00:00",
+      "duration_seconds": 581.739426148124
+    },
+    {
+      "operation_id": "decision-3-1",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T11:45:12.025039+00:00",
+      "started_at": "2026-11-09T11:45:12.073197+00:00",
+      "finished_at": "2026-11-09T11:46:13.563633+00:00",
+      "duration_seconds": 61.47475995775312
+    },
+    {
+      "operation_id": "decision-3-2",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T11:46:14.676194+00:00",
+      "started_at": "2026-11-09T11:46:14.720596+00:00",
+      "finished_at": "2026-11-09T11:52:57.211870+00:00",
+      "duration_seconds": 402.46996228955686
+    },
+    {
+      "operation_id": "decision-3-3",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T11:52:58.383202+00:00",
+      "started_at": "2026-11-09T11:52:58.789734+00:00",
+      "finished_at": "2026-11-09T11:54:59.017286+00:00",
+      "duration_seconds": 119.29388691857457
+    },
+    {
+      "operation_id": "decision-3-4",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-09T11:55:00.197200+00:00",
+      "started_at": "2026-11-09T11:55:00.230287+00:00",
+      "finished_at": "2026-11-09T11:55:37.793686+00:00",
+      "duration_seconds": 37.544128944166005
+    },
+    {
+      "operation_id": "decision-4-0",
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T11:59:00.977187+00:00",
+      "started_at": "2026-11-09T11:59:01.004211+00:00",
+      "finished_at": "2026-11-09T11:59:33.209716+00:00",
+      "duration_seconds": 32.1873325984925
+    },
+    {
+      "operation_id": "decision-4-1",
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-09T11:59:34.443618+00:00",
+      "started_at": "2026-11-09T11:59:34.466974+00:00",
+      "finished_at": "2026-11-09T12:03:27.302022+00:00",
+      "duration_seconds": 232.8084423393011
+    },
+    {
+      "operation_id": "decision-4-2",
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "created_at": "2026-11-09T12:03:28.502053+00:00",
+      "started_at": "2026-11-09T12:03:28.528143+00:00",
+      "finished_at": "2026-11-09T12:04:16.770054+00:00",
+      "duration_seconds": 48.21744840685278
+    },
+    {
+      "operation_id": "decision-5-0",
+      "name": "deliver",
+      "status": "completed",
+      "created_at": "2026-11-09T12:06:56.168195+00:00",
+      "started_at": "2026-11-09T12:06:56.227778+00:00",
+      "finished_at": "2026-11-09T12:07:58.899923+00:00",
+      "duration_seconds": 62.633091245777905
+    }
+  ],
+  "model_calls": [
+    {
+      "id": "9428c6c2adeb4bcaa3e7a7be51398199",
+      "role": "controller",
+      "started_at": "2026-11-09T09:51:50.121563+00:00",
+      "duration_seconds": 109.65726644173265,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 241400,
+        "cached_input_tokens": 194304,
+        "output_tokens": 2777,
+        "reasoning_output_tokens": 547,
+        "total_tokens": 244177
+      }
+    },
+    {
+      "id": "0cf9036f3e5d46749a141c906f3d326a",
+      "role": "author",
+      "started_at": "2026-11-09T10:04:25.282676+00:00",
+      "duration_seconds": 2698.8765533622354,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 11253431,
+        "cached_input_tokens": 10929152,
+        "output_tokens": 100097,
+        "reasoning_output_tokens": 17784,
+        "total_tokens": 11353528
+      }
+    },
+    {
+      "id": "9c5f57868f3f4fc18c25fe6d1bc60d61",
+      "role": "controller",
+      "started_at": "2026-11-09T11:03:12.832990+00:00",
+      "duration_seconds": 146.7974430313334,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 386540,
+        "cached_input_tokens": 339072,
+        "output_tokens": 3645,
+        "reasoning_output_tokens": 1049,
+        "total_tokens": 390185
+      }
+    },
+    {
+      "id": "c258c88c06d648578c58af5f76fb0a40",
+      "role": "author",
+      "started_at": "2026-11-09T11:07:57.461046+00:00",
+      "duration_seconds": 721.824106818065,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 2481907,
+        "cached_input_tokens": 2357120,
+        "output_tokens": 21773,
+        "reasoning_output_tokens": 6779,
+        "total_tokens": 2503680
+      }
+    },
+    {
+      "id": "135a07ceded941e88bf28b415f239016",
+      "role": "controller",
+      "started_at": "2026-11-09T11:33:20.135221+00:00",
+      "duration_seconds": 111.53471566177905,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 357431,
+        "cached_input_tokens": 306176,
+        "output_tokens": 3299,
+        "reasoning_output_tokens": 482,
+        "total_tokens": 360730
+      }
+    },
+    {
+      "id": "91c1ce020a1f4ac39423592cbd315991",
+      "role": "author",
+      "started_at": "2026-11-09T11:36:15.274838+00:00",
+      "duration_seconds": 534.9098193785176,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 2030958,
+        "cached_input_tokens": 1933056,
+        "output_tokens": 19175,
+        "reasoning_output_tokens": 6774,
+        "total_tokens": 2050133
+      }
+    },
+    {
+      "id": "c9ffd824f9e84c9f9da3cda8fc2f690a",
+      "role": "controller",
+      "started_at": "2026-11-09T11:57:14.009552+00:00",
+      "duration_seconds": 87.81001835037023,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 351144,
+        "cached_input_tokens": 303616,
+        "output_tokens": 2034,
+        "reasoning_output_tokens": 426,
+        "total_tokens": 353178
+      }
+    },
+    {
+      "id": "8ee91d5064fa452c92192f3dd393b53a",
+      "role": "controller",
+      "started_at": "2026-11-09T12:05:25.799370+00:00",
+      "duration_seconds": 71.9156048335135,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 182553,
+        "cached_input_tokens": 143616,
+        "output_tokens": 1493,
+        "reasoning_output_tokens": 246,
+        "total_tokens": 184046
+      }
+    }
+  ],
+  "model_usage": {
+    "complete": true,
+    "counts": {
+      "controller": 5,
+      "author": 3
+    },
+    "input_tokens": 17285364,
+    "cached_input_tokens": 16506112,
+    "output_tokens": 154293,
+    "total_tokens": 17439657,
+    "scope": "Native controller and author model calls only; excludes the coordinating chat. Cached input is a subset of input, not an additional charge."
+  },
+  "limitations": [
+    "Evidence applies to the selected core and observed checks, not all Detectron2 or universal semantic equivalence.",
+    "The frozen numerical checkpoint has original random weights; this is compatibility evidence, not a pretrained accuracy benchmark.",
+    "Model execution tokens are not a measured comparison of developer task effort.",
+    "Test groups can reuse a fixture; group counts are not unique unit-test counts."
+  ],
+  "code_publication": {
+    "repository": "nanolize/nanolize",
+    "branch": "examples/detectron2-feedback-core-readable-20261109",
+    "commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde",
+    "verified_commit": "051a94259f31f2ab66b61f0449a26f6d4459bbde",
+    "url": "https://github.com/nanolize/nanolize/tree/examples/detectron2-feedback-core-readable-20261109",
+    "cpu_groups": 49,
+    "installation_groups": 4,
+    "gpu": "passed",
+    "requested_repository": "Al-LeanMuscle-Club/nanolize",
+    "repository_id": 1438107669
+  },
+  "delivery_metrics": {
+    "retained_percent": 7.348378389659539,
+    "compression_percent": 92.65162161034046,
+    "automatic_operations_wall_seconds": 8299.050308,
+    "observed_workspace_window_seconds": 11218.899923,
+    "model_call_seconds_sum": 4483.325527877547,
+    "original_tokens": 862476,
+    "candidate_tokens": 63378,
+    "candidate_source_configuration_only_tokens": 62218,
+    "additional_changed_text_tokens": 1160,
+    "cpu_groups_passed": 49,
+    "cpu_groups_total": 49,
+    "installation_status": "passed",
+    "gpu_status": "passed"
+  }
+}
