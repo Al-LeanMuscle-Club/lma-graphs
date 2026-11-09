@@ -1,0 +1,12 @@
+id,title,status,implementation,paths
+pipeline,保留 main 主循环，插入受限决策入口,已实现,保留 _pipeline 和默认下一步；只在验收后的修复边界咨询。正常与一次普通修复的路径均为 0 次 Controller。,src/nanolize/execution.py
+failures,从已确认的失败中识别停滞,已实现,比较已确认失败的检查身份与输出摘要。初始失败不计为修复停滞；两次修复观察不变后才可能介入。粗粒度组名不变、细节变化会重置停滞。,src/nanolize/repair_policy.py; src/nanolize/controller_policy.py
+progress,在已有候选恢复能力上增加决策历史,已实现,将历史与后续结果放在原有 rewrite-progress 记录中。按代码、契约与失败状态去重；复用现有候选归档与恢复，不修改 rewrite_stages.py 的恢复算法。,src/nanolize/controller_policy.py; src/nanolize/execution.py
+policy,介入条件与建议校验,已实现,四类白名单建议；校验当前候选绑定、证据引用、能力范围和已保存候选。冻结输入错误不能被建议覆盖。,src/nanolize/controller_policy.py
+runner,一次简短、有边界的策略调用,已实现,一次受限调用，使用已有进程托管与清理；提供简短上下文和按需检索的语义知识。非法、超时、不可用结果回到默认路径。,src/nanolize/controller_runner.py
+prompt,把职责写成可验证的建议协议,已实现,新增独立指导文件并接入资源发布检查；不把原实现、测试答案和隐藏任务输入交给 Controller。,src/nanolize/prompts/controller/guide.md; src/nanolize/prompts/README.md; scripts/distribution_probe.py
+usage,统一用量收据与独立决策预算,已实现,共用 transport usage 解析；启动前预留调用记录，结束后单次结算。缺失用量保持未知，缓存输入不重复相加；恢复保留旧账。,src/nanolize/model_usage.py; src/nanolize/effort_runner.py
+config,增加 auto / off 和 owner 预算配置,已实现,CLI、MCP、服务端统一接受 owner 的 auto/off 与预算配置。默认 off；网页提交仍只选择功能与评测选项。,src/nanolize/cli.py; src/nanolize/mcp_server.py; src/nanolize/execution_server.py
+report,把介入原因、结果和成本写进报告,已实现,在现有紫色报告和执行状态中增加分角色用量、触发原因、执行动作及下一轮观察。沿用原功能树；通过现有 JS 组件展示，无需改写 viewer.html。,src/nanolize/public_view.py; src/nanolize/report_site.py; src/nanolize/assets/report.js; src/nanolize/assets/execution.js
+tests,验证真实分支行为与兼容性,已实现,新增政策、计量与真实工作区执行测试；覆盖取消、恢复、相同状态去重、非法输出、超时、预算与公开数据过滤。,tests/test_controller_policy.py; tests/test_controller_runner.py; tests/test_model_usage.py; tests/test_report_site.py; tests/browser_report_smoke.cjs
+benchmark,建立可重复的运行成本对照,部分完成,已交付冻结输入、轮换顺序、保留所有运行的三组比较工具，以及 45 次离线脚本对照。真实模型重复实验、性能容差验收和默认 auto 启用仍待完成。,benchmarks/controller_comparison.py; benchmarks/offline_controller_case.py; benchmarks/controller_cases.json; docs/controller-comparison.md

@@ -1,0 +1,1115 @@
+{
+  "schema_version": 1,
+  "title": "nanolize · 基于 main 的 Controller 改造完成报告",
+  "url": "https://al-leanmuscle-club.github.io/lma-graphs/nanolize-main-controller-completion-20261109/",
+  "generated_at": "2026-11-09T05:05:26.948509+00:00",
+  "draft": false,
+  "baseline_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+  "implementation_commit": "a996d385c52b73b10ec78934b791e6874fcb6963",
+  "branch": "codex/main-adaptive-controller-20261109",
+  "branch_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/codex/main-adaptive-controller-20261109",
+  "compare_url": "https://github.com/Al-LeanMuscle-Club/nanolize/compare/8c0745a19c40aa7673b28ceeb1b49c7ae2850d78...codex/main-adaptive-controller-20261109",
+  "default_mode": "off",
+  "performance_verified": false,
+  "proposal_url": "https://al-leanmuscle-club.github.io/lma-graphs/nanolize-main-controller-plan-20261109/",
+  "checks": [
+    {
+      "label": "Python 全量回归",
+      "passed": true,
+      "count": 828,
+      "command": "python -m unittest discover -s tests -v",
+      "receipt_sha256": "ed8f5a439412e15088b0c481e0081fcae4d2a01c69c36c8b21d4189797dcf73f"
+    },
+    {
+      "label": "JavaScript 与浏览器检查",
+      "passed": true,
+      "count": 120,
+      "command": "node --test --test-concurrency=1 tests/*.cjs",
+      "receipt_sha256": "d01223d8b553a81babd8b703e2fadf7a7e9db5f257183afd333a2d26d7c06053"
+    },
+    {
+      "label": "安装包与插件验证",
+      "passed": true,
+      "count": 16,
+      "command": "python scripts/build_distribution.py --output-dir NEW_DIRECTORY",
+      "receipt_sha256": "f797ab30656b350a3e8119f02f26c385f1942dee6665901d8a351da7678b9735"
+    },
+    {
+      "label": "项目演示",
+      "passed": true,
+      "count": null,
+      "command": "python examples/run_demo.py",
+      "receipt_sha256": "6d1ec74a337b7688ede58421f5ef2b8b6656980f01297b2990fd6a417436615e"
+    },
+    {
+      "label": "原 main 任务恢复",
+      "passed": true,
+      "count": 1,
+      "command": "原 main 创建任务 → 新版本恢复已验证检查点；确认未重复执行 Author",
+      "receipt_sha256": "ae730406a0be3905f3fa5dfb1629e86687ffab7af38869ef6a7f7c2bf5fa8997"
+    },
+    {
+      "label": "三组离线路由对照",
+      "passed": true,
+      "count": 45,
+      "command": "冻结输入；main / off / auto × 3 情景 × 5 次，交错顺序运行",
+      "receipt_sha256": "43c8dd04972704d91ffe1e1187017e6e0c2850c43f81c61b5e1cfdcc97c8c8c2"
+    }
+  ],
+  "changes": [
+    {
+      "id": "pipeline",
+      "title": "保留 main 主循环，插入受限决策入口",
+      "group": "运行主线",
+      "phase": "P1",
+      "status": "已实现",
+      "implementation": "保留 _pipeline 和默认下一步；只在验收后的修复边界咨询。正常与一次普通修复的路径均为 0 次 Controller。",
+      "paths": [
+        "src/nanolize/execution.py"
+      ],
+      "acceptance": [
+        "正常通过和一次普通修复均不调用 Controller。",
+        "controller_mode=off 与原调度轨迹等价。",
+        "取消释放本任务的决策与执行进程；其他任务不受影响。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/execution.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/execution.py"
+        }
+      ]
+    },
+    {
+      "id": "failures",
+      "title": "从已确认的失败中识别停滞",
+      "group": "运行主线",
+      "phase": "P1",
+      "status": "已实现",
+      "implementation": "比较已确认失败的检查身份与输出摘要。初始失败不计为修复停滞；两次修复观察不变后才可能介入。粗粒度组名不变、细节变化会重置停滞。",
+      "paths": [
+        "src/nanolize/repair_policy.py",
+        "src/nanolize/controller_policy.py"
+      ],
+      "acceptance": [
+        "普通首次失败不触发。",
+        "已确认回归与未验证状态不能混淆。",
+        "错误细节改善时不得仅按组数误触发。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/repair_policy.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/repair_policy.py"
+        },
+        {
+          "path": "src/nanolize/controller_policy.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/controller_policy.py"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "title": "在已有候选恢复能力上增加决策历史",
+      "group": "运行主线",
+      "phase": "P1",
+      "status": "已实现",
+      "implementation": "将历史与后续结果放在原有 rewrite-progress 记录中。按代码、契约与失败状态去重；复用现有候选归档与恢复，不修改 rewrite_stages.py 的恢复算法。",
+      "paths": [
+        "src/nanolize/controller_policy.py",
+        "src/nanolize/execution.py"
+      ],
+      "acceptance": [
+        "恢复后完整验收仍执行。",
+        "重复状态不会重复花费一次决策。",
+        "重启后历史与用量计数不清零。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/controller_policy.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/controller_policy.py"
+        },
+        {
+          "path": "src/nanolize/execution.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/execution.py"
+        }
+      ]
+    },
+    {
+      "id": "policy",
+      "title": "介入条件与建议校验",
+      "group": "受限决策",
+      "phase": "P1",
+      "status": "已实现",
+      "implementation": "四类白名单建议；校验当前候选绑定、证据引用、能力范围和已保存候选。冻结输入错误不能被建议覆盖。",
+      "paths": [
+        "src/nanolize/controller_policy.py"
+      ],
+      "acceptance": [
+        "伪造证据、过期候选和未知 action 被拒绝。",
+        "冻结输入完整性异常直接按原规则停止，不能被模型覆盖。",
+        "请求新知识只形成具体缺口，不自动授权新命令。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/controller_policy.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/controller_policy.py"
+        }
+      ]
+    },
+    {
+      "id": "runner",
+      "title": "一次简短、有边界的策略调用",
+      "group": "受限决策",
+      "phase": "P2",
+      "status": "已实现",
+      "implementation": "一次受限调用，使用已有进程托管与清理；提供简短上下文和按需检索的语义知识。非法、超时、不可用结果回到默认路径。",
+      "paths": [
+        "src/nanolize/controller_runner.py"
+      ],
+      "acceptance": [
+        "正常任务不启动该 runner。",
+        "输出格式错误、超时和中断均有可追踪结果。",
+        "建议只作用于当前一次决策边界，不形成自主轮询循环。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/controller_runner.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/controller_runner.py"
+        }
+      ]
+    },
+    {
+      "id": "prompt",
+      "title": "把职责写成可验证的建议协议",
+      "group": "受限决策",
+      "phase": "P2",
+      "status": "已实现",
+      "implementation": "新增独立指导文件并接入资源发布检查；不把原实现、测试答案和隐藏任务输入交给 Controller。",
+      "paths": [
+        "src/nanolize/prompts/controller/guide.md",
+        "src/nanolize/prompts/README.md",
+        "scripts/distribution_probe.py"
+      ],
+      "acceptance": [
+        "提示词资源进入安装包。",
+        "示例遵循实际建议 schema。",
+        "私有验证载荷不会进入公开报告。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/prompts/controller/guide.md",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/prompts/controller/guide.md"
+        },
+        {
+          "path": "src/nanolize/prompts/README.md",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/prompts/README.md"
+        },
+        {
+          "path": "scripts/distribution_probe.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/scripts/distribution_probe.py"
+        }
+      ]
+    },
+    {
+      "id": "usage",
+      "title": "统一用量收据与独立决策预算",
+      "group": "成本与恢复",
+      "phase": "P0",
+      "status": "已实现",
+      "implementation": "共用 transport usage 解析；启动前预留调用记录，结束后单次结算。缺失用量保持未知，缓存输入不重复相加；恢复保留旧账。",
+      "paths": [
+        "src/nanolize/model_usage.py",
+        "src/nanolize/effort_runner.py"
+      ],
+      "acceptance": [
+        "完整、中断、缺失、重复与多层调用收据正确归并。",
+        "预算耗尽后不再启动 Controller。",
+        "恢复后不重复结算，所有角色消耗留在总量中。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/model_usage.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/model_usage.py"
+        },
+        {
+          "path": "src/nanolize/effort_runner.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/effort_runner.py"
+        }
+      ]
+    },
+    {
+      "id": "config",
+      "title": "增加 auto / off 和 owner 预算配置",
+      "group": "配置与呈现",
+      "phase": "P2",
+      "status": "已实现",
+      "implementation": "CLI、MCP、服务端统一接受 owner 的 auto/off 与预算配置。默认 off；网页提交仍只选择功能与评测选项。",
+      "paths": [
+        "src/nanolize/cli.py",
+        "src/nanolize/mcp_server.py",
+        "src/nanolize/execution_server.py"
+      ],
+      "acceptance": [
+        "CLI、MCP、服务端配置含义一致。",
+        "旧配置和旧检查点可读，不能静默切换策略。",
+        "公开提交不能修改 owner 的执行预算或权限。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/cli.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/cli.py"
+        },
+        {
+          "path": "src/nanolize/mcp_server.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/mcp_server.py"
+        },
+        {
+          "path": "src/nanolize/execution_server.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/execution_server.py"
+        }
+      ]
+    },
+    {
+      "id": "report",
+      "title": "把介入原因、结果和成本写进报告",
+      "group": "配置与呈现",
+      "phase": "P3",
+      "status": "已实现",
+      "implementation": "在现有紫色报告和执行状态中增加分角色用量、触发原因、执行动作及下一轮观察。沿用原功能树；通过现有 JS 组件展示，无需改写 viewer.html。",
+      "paths": [
+        "src/nanolize/public_view.py",
+        "src/nanolize/report_site.py",
+        "src/nanolize/assets/report.js",
+        "src/nanolize/assets/execution.js"
+      ],
+      "acceptance": [
+        "未调用 Controller 时明确为 0 次，而非 unknown。",
+        "缺失用量仍显示为不完整。",
+        "公开载荷不含私有路径、命令、原始日志和隐藏答案。"
+      ],
+      "links": [
+        {
+          "path": "src/nanolize/public_view.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/public_view.py"
+        },
+        {
+          "path": "src/nanolize/report_site.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/report_site.py"
+        },
+        {
+          "path": "src/nanolize/assets/report.js",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/assets/report.js"
+        },
+        {
+          "path": "src/nanolize/assets/execution.js",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/src/nanolize/assets/execution.js"
+        }
+      ]
+    },
+    {
+      "id": "tests",
+      "title": "验证真实分支行为与兼容性",
+      "group": "验证与合并",
+      "phase": "P1–P3",
+      "status": "已实现",
+      "implementation": "新增政策、计量与真实工作区执行测试；覆盖取消、恢复、相同状态去重、非法输出、超时、预算与公开数据过滤。",
+      "paths": [
+        "tests/test_controller_policy.py",
+        "tests/test_controller_runner.py",
+        "tests/test_model_usage.py",
+        "tests/test_report_site.py",
+        "tests/browser_report_smoke.cjs"
+      ],
+      "acceptance": [
+        "所有必需回归检查通过。",
+        "正常路径调用序列与原 main 一致。",
+        "Controller 建议不能跳过最终完整验收。"
+      ],
+      "links": [
+        {
+          "path": "tests/test_controller_policy.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/tests/test_controller_policy.py"
+        },
+        {
+          "path": "tests/test_controller_runner.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/tests/test_controller_runner.py"
+        },
+        {
+          "path": "tests/test_model_usage.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/tests/test_model_usage.py"
+        },
+        {
+          "path": "tests/test_report_site.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/tests/test_report_site.py"
+        },
+        {
+          "path": "tests/browser_report_smoke.cjs",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/tests/browser_report_smoke.cjs"
+        }
+      ]
+    },
+    {
+      "id": "benchmark",
+      "title": "建立可重复的运行成本对照",
+      "group": "验证与合并",
+      "phase": "P4",
+      "status": "部分完成",
+      "implementation": "已交付冻结输入、轮换顺序、保留所有运行的三组比较工具，以及 45 次离线脚本对照。真实模型重复实验、性能容差验收和默认 auto 启用仍待完成。",
+      "paths": [
+        "benchmarks/controller_comparison.py",
+        "benchmarks/offline_controller_case.py",
+        "benchmarks/controller_cases.json",
+        "docs/controller-comparison.md"
+      ],
+      "acceptance": [
+        "普通场景 Controller 调用 0 次。",
+        "质量标准不下降；无稳定效率退化。",
+        "触发场景在公平对照中证明收益，才考虑默认启用。"
+      ],
+      "links": [
+        {
+          "path": "benchmarks/controller_comparison.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/benchmarks/controller_comparison.py"
+        },
+        {
+          "path": "benchmarks/offline_controller_case.py",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/benchmarks/offline_controller_case.py"
+        },
+        {
+          "path": "benchmarks/controller_cases.json",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/benchmarks/controller_cases.json"
+        },
+        {
+          "path": "docs/controller-comparison.md",
+          "url": "https://github.com/Al-LeanMuscle-Club/nanolize/blob/a996d385c52b73b10ec78934b791e6874fcb6963/docs/controller-comparison.md"
+        }
+      ]
+    }
+  ],
+  "changed_files": [
+    "AGENTS.md",
+    "README.md",
+    "README.zh-CN.md",
+    "benchmarks/controller_cases.json",
+    "benchmarks/controller_comparison.py",
+    "benchmarks/offline_controller_case.py",
+    "docs/controller-comparison.md",
+    "scripts/build_distribution.py",
+    "scripts/distribution_probe.py",
+    "src/nanolize/assets/execution.js",
+    "src/nanolize/assets/report.css",
+    "src/nanolize/assets/report.js",
+    "src/nanolize/cli.py",
+    "src/nanolize/controller_policy.py",
+    "src/nanolize/controller_runner.py",
+    "src/nanolize/effort_runner.py",
+    "src/nanolize/execution.py",
+    "src/nanolize/execution_server.py",
+    "src/nanolize/mcp_server.py",
+    "src/nanolize/model_usage.py",
+    "src/nanolize/prompts/README.md",
+    "src/nanolize/prompts/controller/guide.md",
+    "src/nanolize/public_view.py",
+    "src/nanolize/repair_policy.py",
+    "src/nanolize/report_site.py",
+    "tests/browser_report_smoke.cjs",
+    "tests/test_controller_policy.py",
+    "tests/test_controller_runner.py",
+    "tests/test_execution_cli.py",
+    "tests/test_model_usage.py",
+    "tests/test_prompts.py",
+    "tests/test_report_site.py"
+  ],
+  "benchmark": {
+    "synthetic": true,
+    "real_model_calls": 0,
+    "contract_matched": true,
+    "repetitions": 5,
+    "runs": [
+      {
+        "id": "001-normal-main",
+        "case": "normal",
+        "arm": "main",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 9.0402,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-normal-off",
+        "case": "normal",
+        "arm": "off",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 10.2081,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-normal-auto",
+        "case": "normal",
+        "arm": "auto",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 10.29,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-ordinary_repair-main",
+        "case": "ordinary_repair",
+        "arm": "main",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 13.5255,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-ordinary_repair-off",
+        "case": "ordinary_repair",
+        "arm": "off",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 10.2499,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-ordinary_repair-auto",
+        "case": "ordinary_repair",
+        "arm": "auto",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 8.6883,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-stalled-main",
+        "case": "stalled",
+        "arm": "main",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 12.0416,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-stalled-off",
+        "case": "stalled",
+        "arm": "off",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 12.5433,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "001-stalled-auto",
+        "case": "stalled",
+        "arm": "auto",
+        "repeat": 1,
+        "status": "completed",
+        "wall_seconds": 11.4901,
+        "quality": "passed",
+        "scripted_tokens": 4625,
+        "author_calls": 4,
+        "controller_calls": 1,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-normal-off",
+        "case": "normal",
+        "arm": "off",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 6.5287,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-normal-auto",
+        "case": "normal",
+        "arm": "auto",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 6.6299,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-normal-main",
+        "case": "normal",
+        "arm": "main",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 6.4786,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-ordinary_repair-off",
+        "case": "ordinary_repair",
+        "arm": "off",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 7.8815,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-ordinary_repair-auto",
+        "case": "ordinary_repair",
+        "arm": "auto",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 7.7312,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-ordinary_repair-main",
+        "case": "ordinary_repair",
+        "arm": "main",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 7.5313,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-stalled-off",
+        "case": "stalled",
+        "arm": "off",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 12.2425,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-stalled-auto",
+        "case": "stalled",
+        "arm": "auto",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 11.0896,
+        "quality": "passed",
+        "scripted_tokens": 4625,
+        "author_calls": 4,
+        "controller_calls": 1,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "002-stalled-main",
+        "case": "stalled",
+        "arm": "main",
+        "repeat": 2,
+        "status": "completed",
+        "wall_seconds": 12.7939,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-normal-auto",
+        "case": "normal",
+        "arm": "auto",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 6.6283,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-normal-main",
+        "case": "normal",
+        "arm": "main",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 6.3788,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-normal-off",
+        "case": "normal",
+        "arm": "off",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 6.8324,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-ordinary_repair-auto",
+        "case": "ordinary_repair",
+        "arm": "auto",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 8.5846,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-ordinary_repair-main",
+        "case": "ordinary_repair",
+        "arm": "main",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 7.8812,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-ordinary_repair-off",
+        "case": "ordinary_repair",
+        "arm": "off",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 7.9817,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-stalled-auto",
+        "case": "stalled",
+        "arm": "auto",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 11.6397,
+        "quality": "passed",
+        "scripted_tokens": 4625,
+        "author_calls": 4,
+        "controller_calls": 1,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-stalled-main",
+        "case": "stalled",
+        "arm": "main",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 12.4424,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "003-stalled-off",
+        "case": "stalled",
+        "arm": "off",
+        "repeat": 3,
+        "status": "completed",
+        "wall_seconds": 13.1441,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-normal-main",
+        "case": "normal",
+        "arm": "main",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 6.7301,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-normal-off",
+        "case": "normal",
+        "arm": "off",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 6.8804,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-normal-auto",
+        "case": "normal",
+        "arm": "auto",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 6.7293,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-ordinary_repair-main",
+        "case": "ordinary_repair",
+        "arm": "main",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 8.2846,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-ordinary_repair-off",
+        "case": "ordinary_repair",
+        "arm": "off",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 8.5838,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-ordinary_repair-auto",
+        "case": "ordinary_repair",
+        "arm": "auto",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 8.5339,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-stalled-main",
+        "case": "stalled",
+        "arm": "main",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 12.5436,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-stalled-off",
+        "case": "stalled",
+        "arm": "off",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 13.6451,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "004-stalled-auto",
+        "case": "stalled",
+        "arm": "auto",
+        "repeat": 4,
+        "status": "completed",
+        "wall_seconds": 12.243,
+        "quality": "passed",
+        "scripted_tokens": 4625,
+        "author_calls": 4,
+        "controller_calls": 1,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-normal-off",
+        "case": "normal",
+        "arm": "off",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 8.0167,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-normal-auto",
+        "case": "normal",
+        "arm": "auto",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 7.3527,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-normal-main",
+        "case": "normal",
+        "arm": "main",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 6.7805,
+        "quality": "passed",
+        "scripted_tokens": 1100,
+        "author_calls": 1,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-ordinary_repair-off",
+        "case": "ordinary_repair",
+        "arm": "off",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 9.2861,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-ordinary_repair-auto",
+        "case": "ordinary_repair",
+        "arm": "auto",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 9.4864,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-ordinary_repair-main",
+        "case": "ordinary_repair",
+        "arm": "main",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 8.0325,
+        "quality": "passed",
+        "scripted_tokens": 2200,
+        "author_calls": 2,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-stalled-off",
+        "case": "stalled",
+        "arm": "off",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 13.2949,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-stalled-auto",
+        "case": "stalled",
+        "arm": "auto",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 11.8422,
+        "quality": "passed",
+        "scripted_tokens": 4625,
+        "author_calls": 4,
+        "controller_calls": 1,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      },
+      {
+        "id": "005-stalled-main",
+        "case": "stalled",
+        "arm": "main",
+        "repeat": 5,
+        "status": "completed",
+        "wall_seconds": 12.8951,
+        "quality": "passed",
+        "scripted_tokens": 5500,
+        "author_calls": 5,
+        "controller_calls": 0,
+        "contract_sha256": "f41da4ad1322179c6a1d16b228263d758e20cd2f9eef8131d5ec0d960b3122f7"
+      }
+    ],
+    "summary": [
+      {
+        "case": "normal",
+        "arm": "main",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 6.7301,
+        "observed_tokens_total": 5500,
+        "token_median": 1100,
+        "usage_complete": true
+      },
+      {
+        "case": "normal",
+        "arm": "off",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 6.8804,
+        "observed_tokens_total": 5500,
+        "token_median": 1100,
+        "usage_complete": true
+      },
+      {
+        "case": "normal",
+        "arm": "auto",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 6.7293,
+        "observed_tokens_total": 5500,
+        "token_median": 1100,
+        "usage_complete": true
+      },
+      {
+        "case": "ordinary_repair",
+        "arm": "main",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 8.0325,
+        "observed_tokens_total": 11000,
+        "token_median": 2200,
+        "usage_complete": true
+      },
+      {
+        "case": "ordinary_repair",
+        "arm": "off",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 8.5838,
+        "observed_tokens_total": 11000,
+        "token_median": 2200,
+        "usage_complete": true
+      },
+      {
+        "case": "ordinary_repair",
+        "arm": "auto",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 8.5846,
+        "observed_tokens_total": 11000,
+        "token_median": 2200,
+        "usage_complete": true
+      },
+      {
+        "case": "stalled",
+        "arm": "main",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 12.5436,
+        "observed_tokens_total": 27500,
+        "token_median": 5500,
+        "usage_complete": true
+      },
+      {
+        "case": "stalled",
+        "arm": "off",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 13.1441,
+        "observed_tokens_total": 27500,
+        "token_median": 5500,
+        "usage_complete": true
+      },
+      {
+        "case": "stalled",
+        "arm": "auto",
+        "runs": 5,
+        "passed": 5,
+        "wall_median_seconds": 11.6397,
+        "observed_tokens_total": 23125,
+        "token_median": 4625,
+        "usage_complete": true
+      }
+    ],
+    "performance_gate": "not_established"
+  },
+  "limitations": [
+    "真实模型同条件、多次重复的性能验收尚未完成，不能宣称比 main 更快或更省 tokens。",
+    "离线样例使用脚本和注入的 usage 数值；它验证调度及计量，不能推算真实收益。",
+    "仅结束后回传 usage 的 runner 可能单次超过 token 余额；清理进程也可能增加墙钟时间。",
+    "source-free 是共享文件系统上的工作流程约束，不是任意自定义 runner 的操作系统隔离保证。",
+    "只有当前 main 的已核对旧工具契约获得恢复兼容；其他不匹配契约仍拒绝恢复。"
+  ]
+}
