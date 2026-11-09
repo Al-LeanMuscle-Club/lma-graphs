@@ -1,0 +1,12 @@
+capability_id,before_lines,after_lines,reduction_percent,mapping_status,validation_status,executed,evidence_category,direct_checks,related_checks,direct_checks_passed,direct_checks_failed,direct_checks_inconclusive,related_checks_passed,related_checks_failed,related_checks_inconclusive,evidence_coverage,before_source_tokens,after_source_tokens,source_token_reduction_percent
+graphify-root-ddcb2dfa42d8,1173,768,34.527,mapped,unknown,False,related_passed,0,15,0,0,0,15,0,0,limited,8162,5754,29.503
+graphify-read-3316348dbadf,809,546,32.509,mapped,unknown,False,related_passed,0,11,0,0,0,11,0,0,limited,5780,4010,30.623
+graphify-use-a3b142af6e97,364,554,-52.198,mapped,unknown,False,related_passed,0,4,0,0,0,4,0,0,limited,2382,4203,-76.448
+graphify-parser-b17d45121150,191,147,23.037,mapped,verified,True,direct_passed,2,0,2,0,0,0,0,0,declared_checks_only,1391,1091,21.567
+graphify-variables-7af0b3e47c35,86,399,-363.953,mapped,verified,True,direct_passed,2,0,2,0,0,0,0,0,declared_checks_only,560,2919,-421.25
+graphify-load-0cf67fc72b3c,532,546,-2.632,mapped,verified,True,direct_passed,1,2,1,0,0,2,0,0,declared_checks_only,3829,4010,-4.727
+graphify-find-e6640de835ad,532,332,37.594,mapped,verified,True,direct_passed,3,2,3,0,0,2,0,0,declared_checks_only,3829,2459,35.78
+graphify-edit-262121c5372b,532,479,9.962,mapped,verified,True,direct_passed,1,1,1,0,0,1,0,0,declared_checks_only,3829,3550,7.286
+graphify-cli-99bb88401742,262,489,-86.641,mapped,verified,True,direct_passed,1,1,1,0,0,1,0,0,declared_checks_only,1769,3717,-110.119
+graphify-ipython-0a13e4ced879,50,396,-692.0,mapped,verified,True,direct_passed,1,0,1,0,0,0,0,0,declared_checks_only,306,2934,-858.824
+graphify-package-bc4a71180870,58,40,31.034,mapped,verified,True,direct_passed,1,1,1,0,0,1,0,0,declared_checks_only,340,266,21.765

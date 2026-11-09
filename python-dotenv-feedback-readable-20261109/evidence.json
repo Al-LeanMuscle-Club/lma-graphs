@@ -1,0 +1,570 @@
+{
+  "limitations": [
+    "Only summary results are published; captured command output is omitted."
+  ],
+  "status": "checks_passed",
+  "tests": {
+    "original_total": 9,
+    "retained": 15,
+    "retired": 0,
+    "needs_adaptation": 0,
+    "adapted": 0,
+    "contract": 6,
+    "passed": 15,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 0
+  },
+  "capability_results": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-read-3316348dbadf",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-use-a3b142af6e97",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-parser-b17d45121150",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_parser.py",
+        "behavior:parser"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-variables-7af0b3e47c35",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_variables.py",
+        "behavior:variables"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-load-0cf67fc72b3c",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_main.py",
+        "upstream:tests/test_fifo_dotenv.py",
+        "behavior:load"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-find-e6640de835ad",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_main.py",
+        "upstream:tests/test_is_interactive.py",
+        "upstream:tests/test_fifo_dotenv.py",
+        "upstream:tests/test_zip_imports.py",
+        "behavior:find"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-edit-262121c5372b",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_main.py",
+        "behavior:edit"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-cli-99bb88401742",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_cli.py",
+        "behavior:cli"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-ipython-0a13e4ced879",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_ipython.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-package-bc4a71180870",
+      "status": "passed",
+      "checks": [
+        "upstream:tests/test_cli.py",
+        "upstream:tests/test_utils.py"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    }
+  ],
+  "checks": [
+    {
+      "name": "upstream:tests/test_parser.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-parser-b17d45121150"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_variables.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-variables-7af0b3e47c35"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_main.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-load-0cf67fc72b3c",
+        "graphify-find-e6640de835ad",
+        "graphify-edit-262121c5372b"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_cli.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-cli-99bb88401742",
+        "graphify-package-bc4a71180870"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_is_interactive.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-find-e6640de835ad"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_fifo_dotenv.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-load-0cf67fc72b3c",
+        "graphify-find-e6640de835ad"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_zip_imports.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-find-e6640de835ad"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_ipython.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-ipython-0a13e4ced879"
+      ]
+    },
+    {
+      "name": "upstream:tests/test_utils.py",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-package-bc4a71180870"
+      ]
+    },
+    {
+      "name": "behavior:parser",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-parser-b17d45121150"
+      ]
+    },
+    {
+      "name": "behavior:variables",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-variables-7af0b3e47c35"
+      ]
+    },
+    {
+      "name": "behavior:load",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-load-0cf67fc72b3c"
+      ]
+    },
+    {
+      "name": "behavior:find",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-find-e6640de835ad"
+      ]
+    },
+    {
+      "name": "behavior:edit",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-edit-262121c5372b"
+      ]
+    },
+    {
+      "name": "behavior:cli",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-cli-99bb88401742"
+      ]
+    }
+  ],
+  "actual_size": {
+    "baseline_source_lines": 1173,
+    "source_lines": 768,
+    "source_files": 8,
+    "retained_percent": 56.35714907318771,
+    "target_percent": 100.0,
+    "target_source_lines": 1173.0,
+    "estimated_source_lines": null,
+    "metric": "tokens",
+    "tokenizer": {
+      "classification": "source_and_configuration_v1",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "encoding": "cl100k_base",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+      "file_boundaries": "independent_sum",
+      "library": "tiktoken",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "special_tokens": "ordinary_text",
+      "text_policy": "raw_decoded_text_per_file",
+      "version": "0.12.0"
+    },
+    "measurement_sha256": "d56380730d7380cf28c7bd75fa72a13cb89ff743e76986f64c814dd3c093ade0",
+    "source_tokens": 5754,
+    "configuration_tokens": 722,
+    "total_tokens": 6476,
+    "baseline_tokens": 11491,
+    "target_tokens": 11491,
+    "source_retained_percent": 65.47314578005115,
+    "complete": true,
+    "target_met": true
+  },
+  "budget_status": "met",
+  "verification_scope": "full",
+  "installation_evidence": {
+    "status": "passed",
+    "checks_passed": 3,
+    "checks_total": 3,
+    "environment_metadata_complete": true
+  },
+  "obligation_ledger": {
+    "records": [
+      {
+        "capability": "graphify-root-ddcb2dfa42d8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-read-3316348dbadf",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-use-a3b142af6e97",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-parser-b17d45121150",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_parser.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:parser",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-variables-7af0b3e47c35",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_variables.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:variables",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-load-0cf67fc72b3c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_main.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_fifo_dotenv.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:load",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-find-e6640de835ad",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_main.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_is_interactive.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_fifo_dotenv.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_zip_imports.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:find",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-edit-262121c5372b",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_main.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:edit",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-cli-99bb88401742",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_cli.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:cli",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-ipython-0a13e4ced879",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_ipython.py",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-package-bc4a71180870",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_cli.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_utils.py",
+            "kind": "declared_check"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "unknown": 0,
+      "failed": 0,
+      "partial": 0,
+      "verified": 11,
+      "retired": 0,
+      "total": 11,
+      "retained": 11,
+      "complete": true
+    },
+    "limitations": [
+      "Public summaries omit private evidence bindings and raw output."
+    ]
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "disabled",
+    "binding": {},
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true
+    },
+    "tasks": [],
+    "overhead": {
+      "examiner_tokens": null,
+      "judge_tokens": null,
+      "solver_tokens": null,
+      "total_tokens": null,
+      "usage_complete": false,
+      "observed_total_tokens": null,
+      "role_usage_complete": {
+        "examiner": false,
+        "solver": false,
+        "judge": false
+      }
+    },
+    "resources": {
+      "completed_runs": 0,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0
+    },
+    "iterations": [],
+    "limitations": [
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ]
+  }
+}

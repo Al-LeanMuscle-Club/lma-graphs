@@ -1,0 +1,3314 @@
+{
+  "schema_version": 1,
+  "operation": "nanolize_report",
+  "binding": {
+    "original_git_head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+    "candidate_git_head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+    "candidate_source_sha256": "470744e41a0d6106856389cdbd10329e595e40856d672b5b2840873e81782dec",
+    "candidate_contract_sha256": "02de82a28bdf8191738e13714efc2c90817ca42b374656e07e53f90376df4b87",
+    "plan_sha256": "f41b1033c07fecec5d92950525857f5111149f99eeb8f3692533aa4982d191b2",
+    "verification_sha256": "e754c8fc9002dc5f4427458a1a1f867cb8bcd03cd69040c2520dae2ed1aabfc8",
+    "candidate_code_size_sha256": "d56380730d7380cf28c7bd75fa72a13cb89ff743e76986f64c814dd3c093ade0"
+  },
+  "summary": {
+    "before": 1173,
+    "after": 768,
+    "reduction_percent": 34.527,
+    "capabilities": 11,
+    "count_unit": "capabilities",
+    "status_counts": {
+      "verified": 8,
+      "failed": 0,
+      "partial": 0,
+      "unknown": 3,
+      "retired": 0
+    },
+    "evidence_counts": {
+      "failed": 0,
+      "direct_passed": 8,
+      "direct_partial": 0,
+      "related_passed": 3,
+      "related_only": 0,
+      "unverified": 0,
+      "retired": 0
+    },
+    "aggregate_status_counts": {
+      "verified": 11,
+      "failed": 0,
+      "partial": 0,
+      "unknown": 0,
+      "retired": 0
+    },
+    "verification_status": "checks_passed",
+    "verification_tests": {
+      "original_total": 9,
+      "retained": 15,
+      "retired": 0,
+      "needs_adaptation": 0,
+      "adapted": 0,
+      "contract": 6,
+      "passed": 15,
+      "failed": 0,
+      "fixed_baseline_failure": 0,
+      "not_run": 0
+    },
+    "unattributed_checks": [
+      {
+        "name": "upstream:tests/test_main.py",
+        "status": "passed",
+        "role": "original",
+        "scope": "retained",
+        "capabilities": [
+          "graphify-load-0cf67fc72b3c",
+          "graphify-find-e6640de835ad",
+          "graphify-edit-262121c5372b"
+        ],
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "target_capabilities": [],
+        "attribution": "unattributed"
+      },
+      {
+        "name": "upstream:tests/test_cli.py",
+        "status": "passed",
+        "role": "original",
+        "scope": "retained",
+        "capabilities": [
+          "graphify-cli-99bb88401742",
+          "graphify-package-bc4a71180870"
+        ],
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "target_capabilities": [],
+        "attribution": "unattributed"
+      },
+      {
+        "name": "upstream:tests/test_fifo_dotenv.py",
+        "status": "passed",
+        "role": "original",
+        "scope": "retained",
+        "capabilities": [
+          "graphify-load-0cf67fc72b3c",
+          "graphify-find-e6640de835ad"
+        ],
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "target_capabilities": [],
+        "attribution": "unattributed"
+      }
+    ],
+    "unmapped_candidate_files": [],
+    "code_size": {
+      "metric": "tokens",
+      "tokenizer": {
+        "library": "tiktoken",
+        "version": "0.12.0",
+        "encoding": "cl100k_base",
+        "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+        "text_policy": "raw_decoded_text_per_file",
+        "classification": "source_and_configuration_v1",
+        "special_tokens": "ordinary_text",
+        "file_boundaries": "independent_sum",
+        "decoding": "python_encoding_cookie_else_utf8_strict",
+        "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+      },
+      "before": 11491,
+      "after": 6476,
+      "reduction_percent": 43.643,
+      "source_before": 8162,
+      "source_after": 5754,
+      "configuration_before": 3329,
+      "configuration_after": 722,
+      "observed_before": 11491,
+      "observed_after": 6476,
+      "complete": true,
+      "target_tokens": 11491,
+      "budget_status": "met",
+      "target_policy": "advisory"
+    },
+    "size_attribution": {
+      "metric": "tokens",
+      "tokenizer": {
+        "classification": "source_and_configuration_v1",
+        "decoding": "python_encoding_cookie_else_utf8_strict",
+        "encoding": "cl100k_base",
+        "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+        "file_boundaries": "independent_sum",
+        "library": "tiktoken",
+        "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+        "special_tokens": "ordinary_text",
+        "text_policy": "raw_decoded_text_per_file",
+        "version": "0.12.0"
+      },
+      "complete": true,
+      "original_total": 11491,
+      "selected_original_estimate": 11491,
+      "candidate_total": 6476,
+      "overall_reduction": {
+        "tokens": 5015,
+        "percent": 43.643
+      },
+      "scope_reduction_estimate": {
+        "tokens": 0,
+        "percent": 0.0
+      },
+      "rewrite_reduction_estimate": {
+        "tokens": 5015,
+        "percent": 43.643
+      },
+      "shared_scope_files": [],
+      "method": "unique_mapped_source_plus_all_original_configuration",
+      "estimate_only": false,
+      "limitations": [
+        "Scope and rewrite attribution are mapped-file estimates, not exact semantic savings. Shared files count once and retained/removed code within them cannot be separated.",
+        "All original configuration is charged to the retained footprint. Configuration changes appear in the rewrite estimate and may include scope-related savings.",
+        "Overall reduction uses the full original as denominator; rewrite reduction uses the selected original estimate. Their percentages must not be added.",
+        "Negative reductions indicate growth; incomplete measurements do not establish savings."
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "parent": null,
+      "name": "original",
+      "kind": "capability",
+      "selection_reason": "foundation",
+      "loc": {
+        "before": 1173,
+        "after": 768,
+        "reduction_percent": 34.527,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "lines": 51
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 6
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "lines": 256
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "lines": 50
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 532
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 191
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "lines": 86
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "lines": 1
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "lines": 35
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 4
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "lines": 153
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "lines": 29
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 147
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "lines": 67
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "lines": 1
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "unknown",
+        "executed": false,
+        "baseline_status": "not_run",
+        "candidate_status": "not_run",
+        "checks": [],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "kind": "coverage",
+            "status": "unknown",
+            "reason": "no_direct_checks"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "behavior:cli",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-cli-99bb88401742"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-cli-99bb88401742"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:edit",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-edit-262121c5372b"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:find",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:load",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-load-0cf67fc72b3c"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:parser",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:variables",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_cli.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-cli-99bb88401742",
+              "graphify-package-bc4a71180870"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_fifo_dotenv.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_ipython.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-ipython-0a13e4ced879"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-ipython-0a13e4ced879"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_is_interactive.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_main.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad",
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_parser.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_utils.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-package-bc4a71180870"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-package-bc4a71180870"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_variables.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_zip_imports.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "not_run",
+          "candidate_status": "not_run",
+          "checks": [
+            {
+              "name": "behavior:cli",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-cli-99bb88401742"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-cli-99bb88401742"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:edit",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-edit-262121c5372b"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:find",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:load",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-load-0cf67fc72b3c"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:parser",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:variables",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_cli.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-cli-99bb88401742",
+                "graphify-package-bc4a71180870"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_fifo_dotenv.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_ipython.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-ipython-0a13e4ced879"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-ipython-0a13e4ced879"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_is_interactive.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_main.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad",
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_parser.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_utils.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-package-bc4a71180870"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-package-bc4a71180870"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_variables.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_zip_imports.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            },
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "related_passed",
+          "direct": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 15,
+            "passed": 15,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "limited",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 8162,
+        "after": 5754,
+        "reduction_percent": 29.503,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "tokens": 296
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 33
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "tokens": 1736
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "tokens": 306
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 3829
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1391
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "tokens": 560
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "tokens": 11
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "tokens": 238
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 17
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "tokens": 1241
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "tokens": 237
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1091
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "tokens": 460
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "tokens": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-read-3316348dbadf",
+      "parent": "graphify-root-ddcb2dfa42d8",
+      "name": "读取、解析与安全编辑",
+      "kind": "capability",
+      "selection_reason": "core_dependency",
+      "loc": {
+        "before": 809,
+        "after": 546,
+        "reduction_percent": 32.509,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 532
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 191
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "lines": 86
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 147
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "lines": 67
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "unknown",
+        "executed": false,
+        "baseline_status": "not_run",
+        "candidate_status": "not_run",
+        "checks": [],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "kind": "coverage",
+            "status": "unknown",
+            "reason": "no_direct_checks"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "behavior:edit",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-edit-262121c5372b"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:find",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:load",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-load-0cf67fc72b3c"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:parser",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:variables",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_fifo_dotenv.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_is_interactive.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_main.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad",
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_parser.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_variables.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_zip_imports.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "not_run",
+          "candidate_status": "not_run",
+          "checks": [
+            {
+              "name": "behavior:edit",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-edit-262121c5372b"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:find",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:load",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-load-0cf67fc72b3c"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:parser",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "behavior:variables",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_fifo_dotenv.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_is_interactive.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_main.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad",
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_parser.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_variables.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_zip_imports.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            },
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            },
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            },
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            },
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "related_passed",
+          "direct": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 11,
+            "passed": 11,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "limited",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 5780,
+        "after": 4010,
+        "reduction_percent": 30.623,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 3829
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1391
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "tokens": 560
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1091
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "tokens": 460
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-use-a3b142af6e97",
+      "parent": "graphify-root-ddcb2dfa42d8",
+      "name": "使用入口与分发",
+      "kind": "capability",
+      "selection_reason": "core_dependency",
+      "loc": {
+        "before": 364,
+        "after": 554,
+        "reduction_percent": -52.198,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "lines": 51
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 6
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "lines": 256
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "lines": 50
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "lines": 1
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "lines": 35
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 4
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "lines": 153
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "lines": 29
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "lines": 1
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "unknown",
+        "executed": false,
+        "baseline_status": "not_run",
+        "candidate_status": "not_run",
+        "checks": [],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "kind": "coverage",
+            "status": "unknown",
+            "reason": "no_direct_checks"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "behavior:cli",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-cli-99bb88401742"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-cli-99bb88401742"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_cli.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-cli-99bb88401742",
+              "graphify-package-bc4a71180870"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_ipython.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-ipython-0a13e4ced879"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-ipython-0a13e4ced879"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_utils.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-package-bc4a71180870"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-package-bc4a71180870"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "not_run",
+          "candidate_status": "not_run",
+          "checks": [
+            {
+              "name": "behavior:cli",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-cli-99bb88401742"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-cli-99bb88401742"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_cli.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-cli-99bb88401742",
+                "graphify-package-bc4a71180870"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_ipython.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-ipython-0a13e4ced879"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-ipython-0a13e4ced879"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_utils.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-package-bc4a71180870"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-package-bc4a71180870"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            },
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            },
+            {
+              "status": "verified",
+              "kind": "retained_child"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "related_passed",
+          "direct": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 4,
+            "passed": 4,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "limited",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 2382,
+        "after": 4203,
+        "reduction_percent": -76.448,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "tokens": 296
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 33
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "tokens": 1736
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "tokens": 306
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "tokens": 11
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "tokens": 238
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 17
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "tokens": 1241
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "tokens": 237
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "tokens": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-parser-b17d45121150",
+      "parent": "graphify-read-3316348dbadf",
+      "name": "环境文件语法解析",
+      "kind": "capability",
+      "selection_reason": "foundation",
+      "loc": {
+        "before": 191,
+        "after": 147,
+        "reduction_percent": 23.037,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 191
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 147
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "upstream:tests/test_parser.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:parser",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-parser-b17d45121150"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_parser.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:parser",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "behavior:parser",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_parser.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-parser-b17d45121150"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_parser.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "behavior:parser",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 2,
+            "passed": 2,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 1391,
+        "after": 1091,
+        "reduction_percent": 21.567,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1391
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1091
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-variables-7af0b3e47c35",
+      "parent": "graphify-read-3316348dbadf",
+      "name": "变量展开与默认值",
+      "kind": "capability",
+      "selection_reason": "foundation",
+      "loc": {
+        "before": 86,
+        "after": 399,
+        "reduction_percent": -363.953,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/variables.py",
+            "lines": 86
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "lines": 67
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "upstream:tests/test_variables.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:variables",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-variables-7af0b3e47c35"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_variables.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:variables",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "behavior:variables",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_variables.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-variables-7af0b3e47c35"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_variables.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "behavior:variables",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 2,
+            "passed": 2,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 560,
+        "after": 2919,
+        "reduction_percent": -421.25,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/variables.py",
+            "tokens": 560
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "tokens": 460
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-load-0cf67fc72b3c",
+      "parent": "graphify-read-3316348dbadf",
+      "name": "读取配置与加载环境",
+      "kind": "capability",
+      "selection_reason": "foundation",
+      "loc": {
+        "before": 532,
+        "after": 546,
+        "reduction_percent": -2.632,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 532
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 147
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "lines": 67
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "behavior:load",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-load-0cf67fc72b3c"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "behavior:load",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "upstream:tests/test_fifo_dotenv.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_main.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad",
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "behavior:load",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-load-0cf67fc72b3c"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_fifo_dotenv.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_main.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad",
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_main.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_fifo_dotenv.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "behavior:load",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 2,
+            "passed": 2,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 3829,
+        "after": 4010,
+        "reduction_percent": -4.727,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 3829
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1091
+          },
+          {
+            "path": "src/dotenv/variables.py",
+            "tokens": 460
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-find-e6640de835ad",
+      "parent": "graphify-read-3316348dbadf",
+      "name": "环境文件自动查找",
+      "kind": "capability",
+      "selection_reason": "core_dependency",
+      "loc": {
+        "before": 532,
+        "after": 332,
+        "reduction_percent": 37.594,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 532
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "upstream:tests/test_is_interactive.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "upstream:tests/test_zip_imports.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          },
+          {
+            "name": "behavior:find",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-find-e6640de835ad"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_is_interactive.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_zip_imports.py",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior:find",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "upstream:tests/test_fifo_dotenv.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          },
+          {
+            "name": "upstream:tests/test_main.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad",
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "behavior:find",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_fifo_dotenv.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_is_interactive.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_main.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad",
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_zip_imports.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-find-e6640de835ad"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_main.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_is_interactive.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_fifo_dotenv.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_zip_imports.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "behavior:find",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 3,
+            "passed": 3,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 2,
+            "passed": 2,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 3829,
+        "after": 2459,
+        "reduction_percent": 35.78,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 3829
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-edit-262121c5372b",
+      "parent": "graphify-read-3316348dbadf",
+      "name": "安全写入与删除",
+      "kind": "capability",
+      "selection_reason": "selected_dependency",
+      "loc": {
+        "before": 532,
+        "after": 479,
+        "reduction_percent": 9.962,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 532
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "lines": 147
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "behavior:edit",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-edit-262121c5372b"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "behavior:edit",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "upstream:tests/test_main.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-load-0cf67fc72b3c",
+              "graphify-find-e6640de835ad",
+              "graphify-edit-262121c5372b"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "behavior:edit",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-edit-262121c5372b"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_main.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-load-0cf67fc72b3c",
+                "graphify-find-e6640de835ad",
+                "graphify-edit-262121c5372b"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_main.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "behavior:edit",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 3829,
+        "after": 3550,
+        "reduction_percent": 7.286,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 3829
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          },
+          {
+            "path": "src/dotenv/parser.py",
+            "tokens": 1091
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-cli-99bb88401742",
+      "parent": "graphify-use-a3b142af6e97",
+      "name": "命令行操作与进程启动",
+      "kind": "capability",
+      "selection_reason": "selected",
+      "loc": {
+        "before": 262,
+        "after": 489,
+        "reduction_percent": -86.641,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 6
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "lines": 256
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 4
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "lines": 153
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "behavior:cli",
+            "status": "passed",
+            "role": "contract",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-cli-99bb88401742"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-cli-99bb88401742"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "behavior:cli",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "upstream:tests/test_cli.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-cli-99bb88401742",
+              "graphify-package-bc4a71180870"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "behavior:cli",
+              "status": "passed",
+              "role": "contract",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-cli-99bb88401742"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-cli-99bb88401742"
+              ],
+              "attribution": "single_capability"
+            },
+            {
+              "name": "upstream:tests/test_cli.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-cli-99bb88401742",
+                "graphify-package-bc4a71180870"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_cli.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "behavior:cli",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 1769,
+        "after": 3717,
+        "reduction_percent": -110.119,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 33
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "tokens": 1736
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 17
+          },
+          {
+            "path": "src/dotenv/cli.py",
+            "tokens": 1241
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-ipython-0a13e4ced879",
+      "parent": "graphify-use-a3b142af6e97",
+      "name": "IPython / Notebook 扩展",
+      "kind": "capability",
+      "selection_reason": "selected",
+      "loc": {
+        "before": 50,
+        "after": 396,
+        "reduction_percent": -692.0,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/ipython.py",
+            "lines": 50
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "lines": 35
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "lines": 29
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "lines": 332
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "upstream:tests/test_ipython.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-ipython-0a13e4ced879"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-ipython-0a13e4ced879"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_ipython.py",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "upstream:tests/test_ipython.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-ipython-0a13e4ced879"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-ipython-0a13e4ced879"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_ipython.py",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 306,
+        "after": 2934,
+        "reduction_percent": -858.824,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/ipython.py",
+            "tokens": 306
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "tokens": 238
+          },
+          {
+            "path": "src/dotenv/ipython.py",
+            "tokens": 237
+          },
+          {
+            "path": "src/dotenv/main.py",
+            "tokens": 2459
+          }
+        ]
+      }
+    },
+    {
+      "id": "graphify-package-bc4a71180870",
+      "parent": "graphify-use-a3b142af6e97",
+      "name": "公共 API 与安装分发",
+      "kind": "capability",
+      "selection_reason": "foundation",
+      "loc": {
+        "before": 58,
+        "after": 40,
+        "reduction_percent": 31.034,
+        "method": "mapped_file_union",
+        "shared": true,
+        "before_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "lines": 51
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 6
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "lines": 1
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "lines": 35
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "lines": 4
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "lines": 1
+          }
+        ],
+        "mapping_status": "mapped"
+      },
+      "validation": {
+        "status": "verified",
+        "executed": true,
+        "baseline_status": "passed",
+        "candidate_status": "passed",
+        "checks": [
+          {
+            "name": "upstream:tests/test_utils.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-package-bc4a71180870"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [
+              "graphify-package-bc4a71180870"
+            ],
+            "attribution": "single_capability"
+          }
+        ],
+        "coverage": "direct_checks",
+        "scope": "capability_only",
+        "independently_tested": false,
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream:tests/test_utils.py",
+            "kind": "declared_check"
+          }
+        ],
+        "related_checks": [
+          {
+            "name": "upstream:tests/test_cli.py",
+            "status": "passed",
+            "role": "original",
+            "scope": "retained",
+            "capabilities": [
+              "graphify-cli-99bb88401742",
+              "graphify-package-bc4a71180870"
+            ],
+            "baseline_status": "passed",
+            "candidate_status": "passed",
+            "target_capabilities": [],
+            "attribution": "unattributed"
+          }
+        ],
+        "context": {
+          "status": "verified",
+          "executed": true,
+          "baseline_status": "passed",
+          "candidate_status": "passed",
+          "checks": [
+            {
+              "name": "upstream:tests/test_cli.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-cli-99bb88401742",
+                "graphify-package-bc4a71180870"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [],
+              "attribution": "unattributed"
+            },
+            {
+              "name": "upstream:tests/test_utils.py",
+              "status": "passed",
+              "role": "original",
+              "scope": "retained",
+              "capabilities": [
+                "graphify-package-bc4a71180870"
+              ],
+              "baseline_status": "passed",
+              "candidate_status": "passed",
+              "target_capabilities": [
+                "graphify-package-bc4a71180870"
+              ],
+              "attribution": "single_capability"
+            }
+          ],
+          "coverage": "mapped_checks",
+          "scope": "capability_and_descendants",
+          "independently_tested": false,
+          "blockers": [],
+          "obligations": [
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_cli.py",
+              "kind": "declared_check"
+            },
+            {
+              "status": "verified",
+              "check": "upstream:tests/test_utils.py",
+              "kind": "declared_check"
+            }
+          ],
+          "evidence_href": "evidence.json"
+        },
+        "evidence_href": "evidence.json",
+        "evidence": {
+          "category": "direct_passed",
+          "direct": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "related": {
+            "total": 1,
+            "passed": 1,
+            "failed": 0,
+            "inconclusive": 0
+          },
+          "coverage": "declared_checks_only",
+          "count_unit": "check_records"
+        }
+      },
+      "tokens": {
+        "metric": "source_tokens",
+        "before": 340,
+        "after": 266,
+        "reduction_percent": 21.765,
+        "mapping_status": "mapped",
+        "scope": "Mapped source only; configuration tokens are measured globally, not allocated to modules.",
+        "before_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "tokens": 296
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 33
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "tokens": 11
+          }
+        ],
+        "after_files": [
+          {
+            "path": "src/dotenv/__init__.py",
+            "tokens": 238
+          },
+          {
+            "path": "src/dotenv/__main__.py",
+            "tokens": 17
+          },
+          {
+            "path": "src/dotenv/version.py",
+            "tokens": 11
+          }
+        ]
+      }
+    }
+  ],
+  "scope": {
+    "preset": "all",
+    "foundations": [
+      "graphify-load-0cf67fc72b3c",
+      "graphify-package-bc4a71180870",
+      "graphify-parser-b17d45121150",
+      "graphify-root-ddcb2dfa42d8",
+      "graphify-variables-7af0b3e47c35"
+    ],
+    "core": [
+      "graphify-find-e6640de835ad",
+      "graphify-load-0cf67fc72b3c",
+      "graphify-package-bc4a71180870",
+      "graphify-parser-b17d45121150",
+      "graphify-read-3316348dbadf",
+      "graphify-root-ddcb2dfa42d8",
+      "graphify-use-a3b142af6e97",
+      "graphify-variables-7af0b3e47c35"
+    ],
+    "kept": [
+      "graphify-cli-99bb88401742",
+      "graphify-edit-262121c5372b",
+      "graphify-find-e6640de835ad",
+      "graphify-ipython-0a13e4ced879",
+      "graphify-load-0cf67fc72b3c",
+      "graphify-package-bc4a71180870",
+      "graphify-parser-b17d45121150",
+      "graphify-read-3316348dbadf",
+      "graphify-root-ddcb2dfa42d8",
+      "graphify-use-a3b142af6e97",
+      "graphify-variables-7af0b3e47c35"
+    ],
+    "removed": [],
+    "reasons": {
+      "graphify-root-ddcb2dfa42d8": "foundation",
+      "graphify-read-3316348dbadf": "core_dependency",
+      "graphify-use-a3b142af6e97": "core_dependency",
+      "graphify-parser-b17d45121150": "foundation",
+      "graphify-variables-7af0b3e47c35": "foundation",
+      "graphify-load-0cf67fc72b3c": "foundation",
+      "graphify-find-e6640de835ad": "core_dependency",
+      "graphify-edit-262121c5372b": "selected_dependency",
+      "graphify-cli-99bb88401742": "selected",
+      "graphify-ipython-0a13e4ced879": "selected",
+      "graphify-package-bc4a71180870": "foundation"
+    }
+  },
+  "methodology": [
+    "Scope and rewrite attribution are mapped-file estimates, not exact semantic savings. Shared files count once and retained/removed code within them cannot be separated.",
+    "All original configuration is charged to the retained footprint. Configuration changes appear in the rewrite estimate and may include scope-related savings.",
+    "Overall reduction uses the full original as denominator; rewrite reduction uses the selected original estimate. Their percentages must not be added.",
+    "Negative reductions indicate growth; incomplete measurements do not establish savings.",
+    "The primary size metric counts frozen-tokenizer tokens in source and configuration, summed independently per file. These are code-size tokens, not model usage or task effort.",
+    "Module token figures cover mapped source only; global configuration cost is not assigned to modules. Informational LOC remains separate.",
+    "Incomplete token measurements show observed subtotals, never a verified reduction or successful budget.",
+    "Informational LOC counts are physical source lines from the frozen original and bound candidate inventories, excluding tests and local state.",
+    "Original capability counts include all original descendants; candidate counts include explicitly mapped own files and retained descendants. Excluded descendants do not require candidate mapping. Shared files count once within a node; node counts cannot be added together.",
+    "Candidate ownership is explicitly supplied metadata, not proof of semantic ownership. Missing mappings remain unknown, never zero or a claimed reduction.",
+    "Function steps inherit their owning capability's code scope, but validation remains unknown without direct step evidence; they are not independently measured or tested.",
+    "Local validation statuses use directly targeted checks only. Evidence badges separately describe direct checks and related context. Parent, descendant, import-related and shared evidence never implies a local pass or failure.",
+    "Checks naming one capability target that capability by default. Broad or unscoped checks need explicit report check_targets; unattributed results remain in the verification summary and evidence.",
+    "Evidence labels distinguish directly passed check records, mixed direct evidence, related passing evidence and missing evidence. Related passes do not verify this module; check-record counts are not a functional coverage percentage.",
+    "Verification describes declared check groups and their observed configurations, not individual unit-test counts or full semantic equivalence.",
+    "Failed original baselines, unrun checks, retired scope and incomplete coverage remain distinct. Installation is reported separately.",
+    "Only public labels, relative file mappings, hashes and summary observations are included. Source contents, command argv, environment values and captured output are omitted."
+  ],
+  "installation": {
+    "status": "passed",
+    "checks_passed": 3,
+    "checks_total": 3,
+    "environment_metadata_complete": true
+  },
+  "controller": {
+    "decisions": 5,
+    "author_calls": 3,
+    "unresolved_questions": 0,
+    "duration_seconds": 624.716717831092,
+    "total_tokens": 1268704,
+    "observed_tokens": 1268704,
+    "usage_complete": true
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "disabled",
+    "binding": {},
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true
+    },
+    "tasks": [],
+    "overhead": {
+      "examiner_tokens": null,
+      "judge_tokens": null,
+      "solver_tokens": null,
+      "total_tokens": null,
+      "usage_complete": false,
+      "observed_total_tokens": null,
+      "role_usage_complete": {
+        "examiner": false,
+        "solver": false,
+        "judge": false
+      }
+    },
+    "resources": {
+      "completed_runs": 0,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0
+    },
+    "iterations": [],
+    "limitations": [
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ]
+  },
+  "report_id": "nrs_f6e934744f901b81cbf3339bbdd11d19c18799a9e42d8264f82e80b072539bb3"
+}

@@ -1,0 +1,6017 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-09T13:52:50.683364+00:00",
+  "status": "succeeded",
+  "phase": "completed",
+  "source": {
+    "repository": "theskumar/python-dotenv",
+    "commit": "bad5771ce54fd643538f177aab1465e4375e2039",
+    "verification_snapshot": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+    "version": "1.2.4"
+  },
+  "harness": {
+    "repository": "nanolize/nanolize",
+    "branch": "codex/controller-feedback-memory",
+    "commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3"
+  },
+  "scope": {
+    "name": "all",
+    "kept": [
+      "graphify-cli-99bb88401742",
+      "graphify-edit-262121c5372b",
+      "graphify-find-e6640de835ad",
+      "graphify-ipython-0a13e4ced879",
+      "graphify-load-0cf67fc72b3c",
+      "graphify-package-bc4a71180870",
+      "graphify-parser-b17d45121150",
+      "graphify-read-3316348dbadf",
+      "graphify-root-ddcb2dfa42d8",
+      "graphify-use-a3b142af6e97",
+      "graphify-variables-7af0b3e47c35"
+    ],
+    "removed": [],
+    "functional_leaves": 8
+  },
+  "policy": {
+    "mandatory_retention_ratio": null,
+    "size_only_optimization_limit": 0,
+    "agent_task_evaluation": false,
+    "source_free_authoring": true,
+    "stop": "After functional, installation and representative performance acceptance."
+  },
+  "knowledge_provenance": "Fresh Graphify 0.9.100 extraction: 434 structural nodes, 768 relations, reviewed into 8 functional leaves. Source-free author receives semantic contracts and interfaces, never original function bodies or tests. No earlier candidate implementation or pass reused.",
+  "source_preparation": "Four documentation symlinks were materialized into identical target contents for graph import. Production source, configuration and upstream tests are unchanged.",
+  "installation_environment": "Fresh venv installs candidate wheel built from sdist; pre-staged third-party dependencies reused. Target module origins audited. Not blank-machine internet dependency resolution.",
+  "coverage_limits": [
+    "Linux aarch64 / Python 3.11 only; other interpreters and native Windows not executed",
+    "Observed contract coverage is not a proof of complete semantic equivalence",
+    "Agent-designed task assessment disabled; no claims about task-token savings"
+  ],
+  "original_code": {
+    "complete": true,
+    "configuration_tokens": 3329,
+    "incomplete_counts_are_observed_subtotals": true,
+    "metric": "tokens",
+    "schema_version": 1,
+    "source_tokens": 8162,
+    "total_tokens": 11491
+  },
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "selected_candidate": {
+    "id": "candidate-1e0e73451cc8",
+    "reason": "Select the latest successfully integrated full-scope draft, preserving prior diagnostic and annotation repairs and the restored packaging README. Earlier passes on the unchanged original are not candidate evidence; collect current verification before delivery."
+  },
+  "author_calls": 3,
+  "size_optimization_calls": 0,
+  "artifacts": [
+    {
+      "id": "baseline-8ffd52d39297",
+      "kind": "baseline",
+      "created_at": "2026-11-09T13:19:57.950807+00:00",
+      "evidence_sha256": "c761bbfc566a70acf47e13cb8948a3a1a03045ed1287466057969744521316ac",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "status": "baseline_captured",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "upstream:tests/test_parser.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.414,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_variables.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.9015,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_main.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 2.8211,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_cli.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 5.1493,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_is_interactive.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.0079,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_fifo_dotenv.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.8988,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_zip_imports.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.0706,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_ipython.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 3.5035,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream:tests/test_utils.py",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.9307,
+          "output_truncated": false
+        },
+        {
+          "name": "behavior:parser",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.1788,
+          "output_truncated": false
+        },
+        {
+          "name": "behavior:variables",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.1647,
+          "output_truncated": false
+        },
+        {
+          "name": "behavior:load",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.1821,
+          "output_truncated": false
+        },
+        {
+          "name": "behavior:find",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.1774,
+          "output_truncated": false
+        },
+        {
+          "name": "behavior:edit",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.2133,
+          "output_truncated": false
+        },
+        {
+          "name": "behavior:cli",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.2747,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 15
+      },
+      "obligations": null
+    },
+    {
+      "id": "agent-e85646559f66",
+      "kind": "agent",
+      "created_at": "2026-11-09T13:33:22.458159+00:00",
+      "evidence_sha256": "cdf866770a0f45c05646535f9cd5e795aa87a3804867fde399c73cdfd83e80e8",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "implement",
+      "status": "passed",
+      "duration_seconds": 801.1677673491649
+    },
+    {
+      "id": "verification-99c9fe55fa18",
+      "kind": "verification",
+      "created_at": "2026-11-09T13:33:55.636796+00:00",
+      "evidence_sha256": "c02cdc6538444ee5e56626c9796af01018e1d422b8b7631fa5e68f4d186c63c4",
+      "binding": {
+        "candidate": null,
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d"
+      },
+      "status": "checks_passed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "upstream:tests/test_parser.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_variables.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_main.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_cli.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_is_interactive.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_fifo_dotenv.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_zip_imports.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_ipython.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_utils.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:parser",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:variables",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:load",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:find",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:edit",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:cli",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 15
+      },
+      "obligations": {
+        "complete": true,
+        "failed": 0,
+        "partial": 0,
+        "retained": 11,
+        "retired": 0,
+        "total": 11,
+        "unknown": 0,
+        "verified": 11
+      },
+      "actual_size": {
+        "baseline_source_lines": 1173,
+        "baseline_tokens": 11491,
+        "complete": true,
+        "configuration_files": 16,
+        "configuration_tokens": 3329,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "b5b4d0ac78ca34a2edcfdf62f8271d7a24cd5a2264dca9e390752c419351751e",
+        "metric": "tokens",
+        "retained_percent": 100.0,
+        "source_files": 8,
+        "source_lines": 1173,
+        "source_retained_percent": 100.0,
+        "source_tokens": 8162,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 1173.0,
+        "target_tokens": 11491,
+        "total_tokens": 11491
+      },
+      "verified_commit": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d"
+    },
+    {
+      "id": "installation-3b31ec6232c7",
+      "kind": "installation",
+      "created_at": "2026-11-09T13:34:08.901725+00:00",
+      "evidence_sha256": "01ace0b16ce1f807ae7b42e23da80488c1f37589ae64912389c2a6a73f166742",
+      "binding": {
+        "candidate": null,
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "fresh-install-dependencies",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.0875,
+          "output_truncated": false
+        },
+        {
+          "name": "fresh-install-build",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 2.9158,
+          "output_truncated": false
+        },
+        {
+          "name": "fresh-install-installed",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.6739,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 3
+      },
+      "obligations": null
+    },
+    {
+      "id": "checks-83421d8f4ac0",
+      "kind": "checks",
+      "created_at": "2026-11-09T13:34:14.549631+00:00",
+      "evidence_sha256": "1f1881f0a19dfc08e5302310859711cbdb42261983a5f71a96812fb40dc627fb",
+      "binding": {
+        "candidate": null,
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "representative-parser-performance",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 3.0737,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 1
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-f738eebde703",
+      "kind": "measurement",
+      "created_at": "2026-11-09T13:34:17.333164+00:00",
+      "evidence_sha256": "b06833cc12c79e24a55744f784afd6f7cc18064472510f746cc5e0d304e9dbcc",
+      "binding": {
+        "candidate": null,
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 3329,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 8162,
+        "total_tokens": 11491
+      }
+    },
+    {
+      "id": "agent-3d2cd44678d2",
+      "kind": "agent",
+      "created_at": "2026-11-09T13:41:09.317137+00:00",
+      "evidence_sha256": "a46cb33caf8f240c0eac5efdc85677a02bcba267a2105588705062e34ba416a8",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "repair",
+      "status": "passed",
+      "duration_seconds": 217.9729607559275
+    },
+    {
+      "id": "candidate-42b25a99881f",
+      "kind": "candidate",
+      "created_at": "2026-11-09T13:41:15.025811+00:00",
+      "evidence_sha256": "5bccd1ffdd951564e355f2d2a97e3f0a3ec9233cde536992e56d00d1f0267989",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-ff32683da216",
+      "commit": "3aa3773c96e3495f531fcfa5f532f1290d766cb3",
+      "reason": "Preserve the existing full-scope independent rewrite with owner-clarified annotations and diagnostics and cleaned generated packaging artifacts. This is an integration attempt, not acceptance; select the returned candidate explicitly and collect full current evidence afterward."
+    },
+    {
+      "id": "agent-cff62cd8278e",
+      "kind": "agent",
+      "created_at": "2026-11-09T13:47:24.244041+00:00",
+      "evidence_sha256": "e30e78307d6bd241096e05068bee97e0e4eedb9ecce6cef52ebf2a5f6f271fe7",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "repair",
+      "status": "passed",
+      "duration_seconds": 210.18917558388785
+    },
+    {
+      "id": "candidate-d583284986f1",
+      "kind": "candidate",
+      "created_at": "2026-11-09T13:47:33.754232+00:00",
+      "evidence_sha256": "cc0f10950933bf5f983f18ac0b99a4908f775ddb6be6fe6d0df4fd920a9702ea",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-1e0e73451cc8",
+      "commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "reason": "Preserve the independent full-scope implementation and prior interface/diagnostic fixes, with the owner-required authored README restored and source-only report mappings. Observe the returned candidate ID before explicit selection and current full behavior, installation, and performance verification."
+    },
+    {
+      "id": "verification-01672ebe38a7",
+      "kind": "verification",
+      "created_at": "2026-11-09T13:49:53.836950+00:00",
+      "evidence_sha256": "ca111986902bd428460661938bac64cfdc7fccbd2c3113f4b6f58b92fbe3b8b4",
+      "binding": {
+        "candidate": "candidate-1e0e73451cc8",
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f"
+      },
+      "status": "checks_passed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "upstream:tests/test_parser.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_variables.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_main.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_cli.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_is_interactive.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_fifo_dotenv.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_zip_imports.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_ipython.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream:tests/test_utils.py",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:parser",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:variables",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:load",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:find",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:edit",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior:cli",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 15
+      },
+      "obligations": {
+        "complete": true,
+        "failed": 0,
+        "partial": 0,
+        "retained": 11,
+        "retired": 0,
+        "total": 11,
+        "unknown": 0,
+        "verified": 11
+      },
+      "actual_size": {
+        "baseline_source_lines": 1173,
+        "baseline_tokens": 11491,
+        "complete": true,
+        "configuration_files": 5,
+        "configuration_tokens": 722,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "d56380730d7380cf28c7bd75fa72a13cb89ff743e76986f64c814dd3c093ade0",
+        "metric": "tokens",
+        "retained_percent": 56.35714907318771,
+        "source_files": 8,
+        "source_lines": 768,
+        "source_retained_percent": 65.47314578005115,
+        "source_tokens": 5754,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 1173.0,
+        "target_tokens": 11491,
+        "total_tokens": 6476
+      },
+      "verified_commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f"
+    },
+    {
+      "id": "installation-aea043866b68",
+      "kind": "installation",
+      "created_at": "2026-11-09T13:50:05.910915+00:00",
+      "evidence_sha256": "53441941e8a897369b95df365e83f87c79da71066384349285e2cc608a7b5ced",
+      "binding": {
+        "candidate": "candidate-1e0e73451cc8",
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "fresh-install-dependencies",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.2275,
+          "output_truncated": false
+        },
+        {
+          "name": "fresh-install-build",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 2.6422,
+          "output_truncated": false
+        },
+        {
+          "name": "fresh-install-installed",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.4812,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 3
+      },
+      "obligations": null
+    },
+    {
+      "id": "checks-f7bbb9a1f28b",
+      "kind": "checks",
+      "created_at": "2026-11-09T13:50:10.848077+00:00",
+      "evidence_sha256": "307dd27aceb4b551e2fde18b2c847778cc3a60d552694ce5878ac11c68d774a3",
+      "binding": {
+        "candidate": "candidate-1e0e73451cc8",
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "representative-parser-performance",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 2.5778,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 1
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-f6b94ac39016",
+      "kind": "measurement",
+      "created_at": "2026-11-09T13:50:13.377492+00:00",
+      "evidence_sha256": "448e89c41d431470e1ae325d2fc4fe5eec7a40e289f8352cfe8161e661ce3d54",
+      "binding": {
+        "candidate": "candidate-1e0e73451cc8",
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 187,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 5754,
+        "total_tokens": 5941
+      }
+    },
+    {
+      "id": "delivery-a65a869897ab",
+      "kind": "delivery",
+      "created_at": "2026-11-09T13:51:49.429191+00:00",
+      "evidence_sha256": "e15dabd787049c26fc634af8b82f41ca3b83ebd82d4d09dc3eee746637ad50a7",
+      "binding": {
+        "candidate": "candidate-1e0e73451cc8",
+        "contract": "contract-9192714c3b40",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f"
+      },
+      "acceptance": {
+        "status": "passed",
+        "gaps": [],
+        "failed": false,
+        "limitations": [
+          "Passing checks is not proof of semantic equivalence.",
+          "Criteria do not prescribe a next action."
+        ]
+      }
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "workspace",
+      "name": "create_workspace",
+      "status": "completed",
+      "created_at": "2026-11-09T13:17:12.445441+00:00",
+      "started_at": "2026-11-09T13:17:12.482964+00:00",
+      "finished_at": "2026-11-09T13:17:22.308742+00:00",
+      "duration_seconds": 9.81126805418171
+    },
+    {
+      "operation_id": "decision-1-0",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:19:26.198725+00:00",
+      "started_at": "2026-11-09T13:19:26.220626+00:00",
+      "finished_at": "2026-11-09T13:19:27.990561+00:00",
+      "duration_seconds": 1.7555699420627207
+    },
+    {
+      "operation_id": "decision-1-1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:19:28.038662+00:00",
+      "started_at": "2026-11-09T13:19:28.060077+00:00",
+      "finished_at": "2026-11-09T13:19:29.888145+00:00",
+      "duration_seconds": 1.8146438200492412
+    },
+    {
+      "operation_id": "decision-1-2",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:19:29.933564+00:00",
+      "started_at": "2026-11-09T13:19:29.968986+00:00",
+      "finished_at": "2026-11-09T13:19:31.567877+00:00",
+      "duration_seconds": 1.5851812630426139
+    },
+    {
+      "operation_id": "decision-1-3",
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T13:19:31.614675+00:00",
+      "started_at": "2026-11-09T13:19:31.636379+00:00",
+      "finished_at": "2026-11-09T13:19:57.967738+00:00",
+      "duration_seconds": 26.31981384404935
+    },
+    {
+      "operation_id": "decision-1-4",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T13:19:58.015707+00:00",
+      "started_at": "2026-11-09T13:19:58.036230+00:00",
+      "finished_at": "2026-11-09T13:33:22.476480+00:00",
+      "duration_seconds": 804.4242877839133
+    },
+    {
+      "operation_id": "owner-initial-unknown-938a140b2011",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:20:06.217811+00:00",
+      "started_at": "2026-11-09T13:33:22.503259+00:00",
+      "finished_at": "2026-11-09T13:33:25.051335+00:00",
+      "duration_seconds": 2.5326488381251693
+    },
+    {
+      "operation_id": "owner-initial-unknown-5a09a6583600",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:20:07.420714+00:00",
+      "started_at": "2026-11-09T13:33:25.070836+00:00",
+      "finished_at": "2026-11-09T13:33:27.022536+00:00",
+      "duration_seconds": 1.937812146730721
+    },
+    {
+      "operation_id": "owner-initial-unknown-c2422c1d7963",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:20:07.472849+00:00",
+      "started_at": "2026-11-09T13:33:27.045926+00:00",
+      "finished_at": "2026-11-09T13:33:29.096643+00:00",
+      "duration_seconds": 2.0383320543915033
+    },
+    {
+      "operation_id": "decision-1-5",
+      "name": "save_candidate",
+      "status": "failed",
+      "created_at": "2026-11-09T13:33:22.533042+00:00",
+      "started_at": "2026-11-09T13:33:29.123685+00:00",
+      "finished_at": "2026-11-09T13:33:32.380936+00:00",
+      "duration_seconds": 3.235925838816911
+    },
+    {
+      "operation_id": "decision-1-6",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T13:33:32.446583+00:00",
+      "started_at": "2026-11-09T13:33:32.473906+00:00",
+      "finished_at": "2026-11-09T13:33:55.716304+00:00",
+      "duration_seconds": 23.22803143900819
+    },
+    {
+      "operation_id": "decision-1-7",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T13:33:55.771497+00:00",
+      "started_at": "2026-11-09T13:33:55.791702+00:00",
+      "finished_at": "2026-11-09T13:34:08.932105+00:00",
+      "duration_seconds": 13.127630399074405
+    },
+    {
+      "operation_id": "decision-1-8",
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-09T13:34:08.997055+00:00",
+      "started_at": "2026-11-09T13:34:09.018014+00:00",
+      "finished_at": "2026-11-09T13:34:14.571620+00:00",
+      "duration_seconds": 5.517078645993024
+    },
+    {
+      "operation_id": "decision-1-9",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-09T13:34:14.627572+00:00",
+      "started_at": "2026-11-09T13:34:14.650108+00:00",
+      "finished_at": "2026-11-09T13:34:17.356935+00:00",
+      "duration_seconds": 2.686816358938813
+    },
+    {
+      "operation_id": "owner-integration-diagnostic",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:34:43.035975+00:00",
+      "started_at": "2026-11-09T13:37:20.823419+00:00",
+      "finished_at": "2026-11-09T13:37:23.309780+00:00",
+      "duration_seconds": 2.4568699868395925
+    },
+    {
+      "operation_id": "decision-2-0",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:37:20.853465+00:00",
+      "started_at": "2026-11-09T13:37:23.560922+00:00",
+      "finished_at": "2026-11-09T13:37:27.926408+00:00",
+      "duration_seconds": 4.349667204078287
+    },
+    {
+      "operation_id": "decision-2-1",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T13:37:28.647940+00:00",
+      "started_at": "2026-11-09T13:37:28.668674+00:00",
+      "finished_at": "2026-11-09T13:41:09.339087+00:00",
+      "duration_seconds": 220.65788878919557
+    },
+    {
+      "operation_id": "owner-resolve-unknown-94159dcb0447",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T13:38:16.732707+00:00",
+      "started_at": "2026-11-09T13:41:09.533785+00:00",
+      "finished_at": "2026-11-09T13:41:11.584057+00:00",
+      "duration_seconds": 2.0357370413839817
+    },
+    {
+      "operation_id": "decision-2-2",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T13:41:09.507295+00:00",
+      "started_at": "2026-11-09T13:41:11.609066+00:00",
+      "finished_at": "2026-11-09T13:41:15.120858+00:00",
+      "duration_seconds": 3.4963410689961165
+    },
+    {
+      "operation_id": "decision-3-0",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T13:43:44.751950+00:00",
+      "started_at": "2026-11-09T13:43:44.790546+00:00",
+      "finished_at": "2026-11-09T13:47:24.273985+00:00",
+      "duration_seconds": 219.45752845401876
+    },
+    {
+      "operation_id": "decision-3-1",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T13:47:24.355955+00:00",
+      "started_at": "2026-11-09T13:47:24.379883+00:00",
+      "finished_at": "2026-11-09T13:47:34.345883+00:00",
+      "duration_seconds": 9.85941417189315
+    },
+    {
+      "operation_id": "decision-4-0",
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T13:49:17.037219+00:00",
+      "started_at": "2026-11-09T13:49:17.064059+00:00",
+      "finished_at": "2026-11-09T13:49:19.268521+00:00",
+      "duration_seconds": 2.192529080901295
+    },
+    {
+      "operation_id": "decision-4-1",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T13:49:20.038695+00:00",
+      "started_at": "2026-11-09T13:49:20.064048+00:00",
+      "finished_at": "2026-11-09T13:49:53.903009+00:00",
+      "duration_seconds": 33.82647014898248
+    },
+    {
+      "operation_id": "decision-4-2",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T13:49:53.967514+00:00",
+      "started_at": "2026-11-09T13:49:53.985942+00:00",
+      "finished_at": "2026-11-09T13:50:05.936038+00:00",
+      "duration_seconds": 11.938368427101523
+    },
+    {
+      "operation_id": "decision-4-3",
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-09T13:50:06.001553+00:00",
+      "started_at": "2026-11-09T13:50:06.018835+00:00",
+      "finished_at": "2026-11-09T13:50:10.884253+00:00",
+      "duration_seconds": 4.854167432989925
+    },
+    {
+      "operation_id": "decision-4-4",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-09T13:50:10.939748+00:00",
+      "started_at": "2026-11-09T13:50:10.960845+00:00",
+      "finished_at": "2026-11-09T13:50:13.411250+00:00",
+      "duration_seconds": 2.4361264870967716
+    },
+    {
+      "operation_id": "decision-4-5",
+      "name": "audit_coverage",
+      "status": "completed",
+      "created_at": "2026-11-09T13:50:13.470827+00:00",
+      "started_at": "2026-11-09T13:50:13.492276+00:00",
+      "finished_at": "2026-11-09T13:50:15.540699+00:00",
+      "duration_seconds": 2.0324314271565527
+    },
+    {
+      "operation_id": "decision-4-6",
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "created_at": "2026-11-09T13:50:15.784418+00:00",
+      "started_at": "2026-11-09T13:50:15.808201+00:00",
+      "finished_at": "2026-11-09T13:50:18.817822+00:00",
+      "duration_seconds": 2.991386250127107
+    },
+    {
+      "operation_id": "decision-5-0",
+      "name": "deliver",
+      "status": "completed",
+      "created_at": "2026-11-09T13:51:43.647942+00:00",
+      "started_at": "2026-11-09T13:51:43.671811+00:00",
+      "finished_at": "2026-11-09T13:51:49.508545+00:00",
+      "duration_seconds": 5.817329209996387
+    }
+  ],
+  "model_calls": [
+    {
+      "id": "9aa0141ccac742fea506da976a49d18b",
+      "role": "controller",
+      "started_at": "2026-11-09T13:17:25.846056+00:00",
+      "duration_seconds": 119.23547065188177,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 246070,
+        "cached_input_tokens": 197632,
+        "output_tokens": 3451,
+        "reasoning_output_tokens": 1369,
+        "total_tokens": 249521
+      }
+    },
+    {
+      "id": "410322149ce54ef8a09639222b3d5d4b",
+      "role": "author",
+      "started_at": "2026-11-09T13:20:01.511644+00:00",
+      "duration_seconds": 800.7269143359736,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 1117043,
+        "cached_input_tokens": 1042944,
+        "output_tokens": 23575,
+        "reasoning_output_tokens": 8634,
+        "total_tokens": 1140618
+      }
+    },
+    {
+      "id": "4fdc5ef7c9ba47e3a576f9ea92700203",
+      "role": "controller",
+      "started_at": "2026-11-09T13:34:21.026232+00:00",
+      "duration_seconds": 177.4527620500885,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 302551,
+        "cached_input_tokens": 252032,
+        "output_tokens": 3100,
+        "reasoning_output_tokens": 1055,
+        "total_tokens": 305651
+      }
+    },
+    {
+      "id": "86cca00b24de4e0f8cb0859eb8d6c984",
+      "role": "author",
+      "started_at": "2026-11-09T13:37:31.430017+00:00",
+      "duration_seconds": 205.9304943389725,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 633720,
+        "cached_input_tokens": 574464,
+        "output_tokens": 6369,
+        "reasoning_output_tokens": 1789,
+        "total_tokens": 640089
+      }
+    },
+    {
+      "id": "bd6ae5b3255e4cb584f817bc1b146226",
+      "role": "controller",
+      "started_at": "2026-11-09T13:41:18.611553+00:00",
+      "duration_seconds": 144.42597876605578,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 321418,
+        "cached_input_tokens": 275968,
+        "output_tokens": 2200,
+        "reasoning_output_tokens": 614,
+        "total_tokens": 323618
+      }
+    },
+    {
+      "id": "204424b0c5bc4f0b81d24027e916f1c0",
+      "role": "author",
+      "started_at": "2026-11-09T13:43:54.145795+00:00",
+      "duration_seconds": 202.21296409214847,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 357053,
+        "cached_input_tokens": 312960,
+        "output_tokens": 4657,
+        "reasoning_output_tokens": 1212,
+        "total_tokens": 361710
+      }
+    },
+    {
+      "id": "a4f9664e50194c74b878c906459f8a06",
+      "role": "controller",
+      "started_at": "2026-11-09T13:47:37.843373+00:00",
+      "duration_seconds": 98.06166895688511,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 198147,
+        "cached_input_tokens": 159616,
+        "output_tokens": 1720,
+        "reasoning_output_tokens": 308,
+        "total_tokens": 199867
+      }
+    },
+    {
+      "id": "cb1e10429a2748aa8e617e034de5bbac",
+      "role": "controller",
+      "started_at": "2026-11-09T13:50:23.288221+00:00",
+      "duration_seconds": 79.33565738005564,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 188543,
+        "cached_input_tokens": 152960,
+        "output_tokens": 1504,
+        "reasoning_output_tokens": 358,
+        "total_tokens": 190047
+      }
+    }
+  ],
+  "dependencies": {
+    "ipython": "9.18.1",
+    "wcwidth": "0.9.4",
+    "pyproject_hooks": "1.3.3",
+    "Pygments": "2.21.0",
+    "wheel": "0.48.0",
+    "traitlets": "5.16.1",
+    "packaging": "26.3",
+    "stack-data": "0.6.3",
+    "iniconfig": "2.3.1",
+    "pytest": "9.2.0",
+    "build": "1.6.1",
+    "matplotlib-inline": "0.2.2",
+    "setuptools": "84.2.1",
+    "psutil": "7.2.2",
+    "asttokens": "3.0.2",
+    "parso": "0.8.7",
+    "pexpect": "4.9.0",
+    "coverage": "7.17.2",
+    "pluggy": "1.7.0",
+    "ptyprocess": "0.7.0",
+    "ipython_pygments_lexers": "1.1.1",
+    "jedi": "0.20.1",
+    "click": "8.5.1",
+    "pure_eval": "0.2.4",
+    "pytest-cov": "7.1.0",
+    "prompt_toolkit": "3.0.53",
+    "pip": "26.3",
+    "executing": "2.3.0",
+    "typing_extensions": "4.16.0"
+  },
+  "model_usage": {
+    "complete": true,
+    "roles": {
+      "author": {
+        "input_tokens": 2107816,
+        "cached_input_tokens": 1930368,
+        "output_tokens": 34601,
+        "total_tokens": 2142417
+      },
+      "controller": {
+        "input_tokens": 1256729,
+        "cached_input_tokens": 1038208,
+        "output_tokens": 11975,
+        "total_tokens": 1268704
+      }
+    }
+  },
+  "upstream_test_receipts": [
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_parser.py",
+      "exit_code": 0,
+      "seconds": 0.31350384815596044,
+      "cases": [
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream['a'=b-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[[=b-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[ a = b -expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export a=b-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[ export 'a'=b-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# a=b-expected7]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b#c-expected8]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b #c-expected9]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\t#c-expected10]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a= #b-expected11]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=  # b-expected12]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=#b-expected13]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=# # comment-expected14]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\t#c-expected15]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a= #c\\nd=e-expected16]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b c-expected17]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\tc-expected18]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b  c-expected19]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\xa0 c-expected20]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b c -expected21]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b c '-expected22]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b c \"-expected23]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export export_a=1-expected24]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export port=8000-expected25]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\nc\"-expected26]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\nc'-expected27]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\nc\"-expected28]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\nc\"-expected29]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\nc'-expected30]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\"c\"-expected31]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\'c'-expected32]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\c'-expected33]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\\\\c\"-expected34]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\'\\nc='d'-expected35]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\\\\\"\\nc=\"d\"-expected36]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\\\\\'c'-expected37]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\xe0-expected38]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"\\xe0\"-expected39]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[no_value_var-expected40]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b-expected41]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b\\r\\nc=d-expected42]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b\\r\\nc=d\\r\\ne: f-expected43]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\nc=d-expected44]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\rc=d-expected45]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\r\\nc=d-expected46]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\nb=c-expected47]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\n\\n-expected48]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n\\n-expected49]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n\\nc=d-expected50]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"\\nb=c-expected51]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# comment\\na=\"b\\nc\"\\nd=e\\n-expected52]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n# comment 1-expected53]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# comment 1\\n# comment 2-expected54]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[uglyKey[%$=\"S3cr3t_P4ssw#rD\" #\\na=b-expected55]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\ufeffa=b-expected56]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\ufeffa=b\\nc=d-expected57]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_parser.py",
+      "exit_code": 0,
+      "seconds": 0.35840702103450894,
+      "cases": [
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream['a'=b-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[[=b-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[ a = b -expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export a=b-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[ export 'a'=b-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# a=b-expected7]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b#c-expected8]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b #c-expected9]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\t#c-expected10]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a= #b-expected11]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=  # b-expected12]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=#b-expected13]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=# # comment-expected14]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\t#c-expected15]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a= #c\\nd=e-expected16]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b c-expected17]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\tc-expected18]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b  c-expected19]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\xa0 c-expected20]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b c -expected21]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b c '-expected22]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b c \"-expected23]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export export_a=1-expected24]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export port=8000-expected25]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\nc\"-expected26]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\nc'-expected27]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\nc\"-expected28]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\nc\"-expected29]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\nc'-expected30]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\"c\"-expected31]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\'c'-expected32]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\c'-expected33]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\\\\c\"-expected34]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\'\\nc='d'-expected35]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\\\\\"\\nc=\"d\"-expected36]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\\\\\'c'-expected37]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\xe0-expected38]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"\\xe0\"-expected39]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[no_value_var-expected40]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b-expected41]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b\\r\\nc=d-expected42]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b\\r\\nc=d\\r\\ne: f-expected43]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\nc=d-expected44]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\rc=d-expected45]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\r\\nc=d-expected46]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\nb=c-expected47]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\n\\n-expected48]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n\\n-expected49]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n\\nc=d-expected50]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"\\nb=c-expected51]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# comment\\na=\"b\\nc\"\\nd=e\\n-expected52]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n# comment 1-expected53]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# comment 1\\n# comment 2-expected54]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[uglyKey[%$=\"S3cr3t_P4ssw#rD\" #\\na=b-expected55]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\ufeffa=b-expected56]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\ufeffa=b\\nc=d-expected57]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_ipython.py",
+      "exit_code": 0,
+      "seconds": 2.4984682160429657,
+      "cases": [
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_existing_variable_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_existing_variable_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_new_variable",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_path_expands_user",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_is_interactive.py",
+      "exit_code": 0,
+      "seconds": 0.34568919404409826,
+      "cases": [
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_ps1",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_ps2",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_module_not_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_without_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_with_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_precedence_ps1_over_main",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_ps1_and_ps2_both_exist",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_module_with_file_attribute_none",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_no_ps_attributes_and_normal_execution",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_usecwd_override",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_zip_imports.py",
+      "exit_code": 0,
+      "seconds": 0.42018635501153767,
+      "cases": [
+        {
+          "class": "tests.test_zip_imports",
+          "name": "test_load_dotenv_gracefully_handles_zip_imports_when_no_env_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_zip_imports",
+          "name": "test_load_dotenv_outside_zip_file_when_called_in_zipfile",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_fifo_dotenv.py",
+      "exit_code": 0,
+      "seconds": 0.18678710609674454,
+      "cases": [
+        {
+          "class": "tests.test_fifo_dotenv",
+          "name": "test_load_dotenv_from_fifo",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "variables",
+      "observations": 40,
+      "sha256": "ccba94515139262b1cbf9fe05df03e8e34b0be61a8bc5fd33267bed600f3b970",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "parser",
+      "observations": 256,
+      "sha256": "19b589cdbbc6badf7d52e6b9f0b13733fb577504b929299f608bb183e503c37c",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_utils.py",
+      "exit_code": 0,
+      "seconds": 0.2505541150458157,
+      "cases": [
+        {
+          "class": "tests.test_utils",
+          "name": "test_to_cli_string",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_parser.py",
+      "exit_code": 0,
+      "seconds": 0.28877800004556775,
+      "cases": [
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream['a'=b-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[[=b-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[ a = b -expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export a=b-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[ export 'a'=b-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# a=b-expected7]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b#c-expected8]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b #c-expected9]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\t#c-expected10]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a= #b-expected11]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=  # b-expected12]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=#b-expected13]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=# # comment-expected14]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\t#c-expected15]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a= #c\\nd=e-expected16]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b c-expected17]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\tc-expected18]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b  c-expected19]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\xa0 c-expected20]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b c -expected21]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b c '-expected22]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b c \"-expected23]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export export_a=1-expected24]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[export port=8000-expected25]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\nc\"-expected26]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\nc'-expected27]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\nc\"-expected28]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\nc\"-expected29]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\nc'-expected30]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\"c\"-expected31]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\'c'-expected32]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\c'-expected33]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\\\\c\"-expected34]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\'\\nc='d'-expected35]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"b\\\\\\\\\"\\nc=\"d\"-expected36]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a='b\\\\\\\\\\\\'c'-expected37]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\xe0-expected38]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"\\xe0\"-expected39]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[no_value_var-expected40]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b-expected41]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b\\r\\nc=d-expected42]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a: b\\r\\nc=d\\r\\ne: f-expected43]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\nc=d-expected44]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\rc=d-expected45]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\r\\nc=d-expected46]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\\nb=c-expected47]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\n\\n-expected48]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n\\n-expected49]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n\\nc=d-expected50]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=\"\\nb=c-expected51]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# comment\\na=\"b\\nc\"\\nd=e\\n-expected52]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[a=b\\n# comment 1-expected53]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[# comment 1\\n# comment 2-expected54]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[uglyKey[%$=\"S3cr3t_P4ssw#rD\" #\\na=b-expected55]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\ufeffa=b-expected56]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_parser",
+          "name": "test_parse_stream[\\ufeffa=b\\nc=d-expected57]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_variables.py",
+      "exit_code": 0,
+      "seconds": 0.17130840197205544,
+      "cases": [
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[a-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a}-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a:-b}-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a}${b}-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[a${b}c${d}e-expected5]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_cli.py",
+      "exit_code": 0,
+      "seconds": 3.2336477180942893,
+      "cases": [
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[None-x='a b c'-x=a b c\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x='a b c'-x=a b c\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x='\"a b c\"'-x=\"a b c\"\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x=\"'a b c'\"-x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[json-x='a b c'-{\\n  \"x\": \"a b c\"\\n}\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='a b c'-x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='\"a b c\"'-x='\"a b c\"'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x=\"'a b c'\"-x=''\"'\"'a b c'\"'\"''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='a\\nb\\nc'-x='a\\nb\\nc'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[export-x='a b c'-export x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_not_a_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_existing_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_empty_string_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_value_without_equals",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_non_existent_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_not_a_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_existing_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_non_existent_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[always-a-x-a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[never-a-x-a=x\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-x-a=x\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-x y-a='x y'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-$-a='$'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_export[dotenv_path0-true-a-x-export a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_export[dotenv_path1-false-a-x-a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_missing_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_read_only_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_default_path",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_existing_variable",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_existing_variable_not_overridden",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--override-environment-file\\nfile/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--no-override-environment-environment\\nenvironment/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--no-override--\\n/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_none_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_other_env",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[list]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[get]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[set]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[unset]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[run]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_without_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_invalid_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_env_missing_and_invalid_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_version",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_command_flags",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_dotenv_and_command_flags",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "load",
+      "observations": 13,
+      "sha256": "e0279c5b25c7dc8fbe9d7cc226d4b58764219a7cf6406426dc4e6f264484e967",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_ipython.py",
+      "exit_code": 0,
+      "seconds": 2.1394397157710046,
+      "cases": [
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_existing_variable_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_existing_variable_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_new_variable",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_path_expands_user",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "cli",
+      "observations": 11,
+      "sha256": "8f39e41614d44155d33b90d5bd4c474ee9d7cf5980aca6133d96ec04c111ff01",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_variables.py",
+      "exit_code": 0,
+      "seconds": 0.24339752201922238,
+      "cases": [
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[a-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a}-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a:-b}-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a}${b}-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[a${b}c${d}e-expected5]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_fifo_dotenv.py",
+      "exit_code": 0,
+      "seconds": 0.2665031380020082,
+      "cases": [
+        {
+          "class": "tests.test_fifo_dotenv",
+          "name": "test_load_dotenv_from_fifo",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "variables",
+      "observations": 40,
+      "sha256": "ccba94515139262b1cbf9fe05df03e8e34b0be61a8bc5fd33267bed600f3b970",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "load",
+      "observations": 13,
+      "sha256": "e0279c5b25c7dc8fbe9d7cc226d4b58764219a7cf6406426dc4e6f264484e967",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_is_interactive.py",
+      "exit_code": 0,
+      "seconds": 0.2844104040414095,
+      "cases": [
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_ps1",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_ps2",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_module_not_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_without_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_with_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_precedence_ps1_over_main",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_ps1_and_ps2_both_exist",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_module_with_file_attribute_none",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_no_ps_attributes_and_normal_execution",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_usecwd_override",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "parser",
+      "observations": 256,
+      "sha256": "19b589cdbbc6badf7d52e6b9f0b13733fb577504b929299f608bb183e503c37c",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_fifo_dotenv.py",
+      "exit_code": 0,
+      "seconds": 0.2547667510807514,
+      "cases": [
+        {
+          "class": "tests.test_fifo_dotenv",
+          "name": "test_load_dotenv_from_fifo",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_utils.py",
+      "exit_code": 0,
+      "seconds": 0.24983615498058498,
+      "cases": [
+        {
+          "class": "tests.test_utils",
+          "name": "test_to_cli_string",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "cli",
+      "observations": 11,
+      "sha256": "8f39e41614d44155d33b90d5bd4c474ee9d7cf5980aca6133d96ec04c111ff01",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "cli",
+      "observations": 11,
+      "sha256": "8f39e41614d44155d33b90d5bd4c474ee9d7cf5980aca6133d96ec04c111ff01",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_variables.py",
+      "exit_code": 0,
+      "seconds": 0.2479257381055504,
+      "cases": [
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[a-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a}-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a:-b}-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[${a}${b}-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_variables",
+          "name": "test_parse_variables[a${b}c${d}e-expected5]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_utils.py",
+      "exit_code": 0,
+      "seconds": 0.17175632109865546,
+      "cases": [
+        {
+          "class": "tests.test_utils",
+          "name": "test_to_cli_string",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "find",
+      "observations": 6,
+      "sha256": "2bf6383f607b092ca10b4601dc230c49607d9b5bfe62c093b156e3bb16e04fa7",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "parser",
+      "observations": 256,
+      "sha256": "19b589cdbbc6badf7d52e6b9f0b13733fb577504b929299f608bb183e503c37c",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_ipython.py",
+      "exit_code": 0,
+      "seconds": 2.1480992280412465,
+      "cases": [
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_existing_variable_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_existing_variable_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_new_variable",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_ipython",
+          "name": "test_ipython_path_expands_user",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_is_interactive.py",
+      "exit_code": 0,
+      "seconds": 0.35400158492848277,
+      "cases": [
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_ps1",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_ps2",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_module_not_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_without_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_with_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_precedence_ps1_over_main",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_ps1_and_ps2_both_exist",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_main_module_with_file_attribute_none",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_no_ps_attributes_and_normal_execution",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_is_interactive.TestIsInteractive",
+          "name": "test_is_interactive_with_usecwd_override",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "edit",
+      "observations": 50,
+      "sha256": "3ea2aefb5319a62417fcbac146c485f51e102a88fd4a423642ea2d530aafc4f6",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_main.py",
+      "exit_code": 0,
+      "seconds": 2.120701235020533,
+      "cases": [
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a--expected0-a=''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b-expected1-a='b'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-'b'-expected2-a='\\\\'b\\\\''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-\"b\"-expected3-a='\"b\"'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b'c-expected4-a='b\\\\'c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\"c-expected5-a='b\"c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b-a-c-expected6-a='c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n-a-c-expected7-a='c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n\\n-a-c-expected8-a='c'\\n\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\nc=d-a-e-expected9-a='e'\\nc=d]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\nc=d\\ne=f-c-g-expected10-a=b\\nc='g'\\ne=f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n-c-d-expected11-a=b\\nc='d'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b-c-d-expected12-a=b\\nc='d'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\c-expected13-a='b\\\\\\\\c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\-expected14-a='b\\\\\\\\'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\'c-expected15-a='b\\\\\\\\\\\\'c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[C:\\\\Users]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[C:\\\\Users\\\\]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[\\\\d+]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[back\\\\]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[a\\\\'b]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[it's]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[say \"hi\"]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[a\\\\nb]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[plain]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_preserves_file_mode",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_closes_file_handle_on_lstat_failure",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_symlink_to_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_symlink_to_missing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_follow_symlinks",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_permission_error",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_permission_error_leaves_no_temp_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_reports_original_error_when_cleanup_fails",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_missing_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_read_only_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_read_only_file_leaves_no_temp_file[set_key]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_read_only_file_leaves_no_temp_file[unset_key]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[dotenv_values-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[dotenv_values-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[get_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[get_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[set_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[set_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[unset_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[unset_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_expands_user",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[~/.env-{home}/.env]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[path1-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[.env-.env]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[None-None]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_not_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_ok",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_none",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_empty_dotenv_dict_is_cached",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_with_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_no_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_symlink_to_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_symlink_to_missing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_follow_symlinks",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_no_file_raise",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_no_file_no_raise",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_expands_user",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[true]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[t]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[True]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[Yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[TRUE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[YES]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[T]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[Y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[true]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[t]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[True]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[Yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[TRUE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[YES]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[T]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[Y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[false]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[no]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[False]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[No]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[FALSE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[NO]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[F]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[N]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[false]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[no]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[False]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[No]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[FALSE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[NO]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[F]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[N]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_doesnt_disable_itself",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_no_file_verbose",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_variable_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_variable_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_redefine_var_used_in_file_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_redefine_var_used_in_file_with_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_string_io_utf_8",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_file_stream",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_in_current_dir",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env0-a=$b-False-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env1-a=$b-True-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env2-a=${b}-False-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env3-a=${b}-True-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env4-a=${b:-d}-False-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env5-a=${b:-d}-True-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env6-b=c\\na=${b}-True-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env7-a=${b}-True-expected7]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env8-a=${b:-d}-True-expected8]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env9-a=\"${b}\"-True-expected9]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env10-a='${b}'-True-expected10]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env11-a=x${b}y-True-expected11]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env12-a=${a}-True-expected12]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env13-a=${a}-True-expected13]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env14-a=${a:-c}-True-expected14]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env15-a=${a:-c}-True-expected15]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env16-a=${b}${b}-True-expected16]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env17-b=d\\na=${b}-True-expected17]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env18-a=b\\na=c\\nd=${a}-True-expected18]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env19-a=b\\nc=${a}\\nd=e\\nc=${d}-True-expected19]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_file_stream",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY= # comment-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=  # comment-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=val # comment-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=a#b-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=#novalue-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=# # comment-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=\\t# comment-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY= # comment\\nOTHER=val-expected7]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "find",
+      "observations": 6,
+      "sha256": "2bf6383f607b092ca10b4601dc230c49607d9b5bfe62c093b156e3bb16e04fa7",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_cli.py",
+      "exit_code": 0,
+      "seconds": 4.592774503864348,
+      "cases": [
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[None-x='a b c'-x=a b c\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x='a b c'-x=a b c\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x='\"a b c\"'-x=\"a b c\"\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x=\"'a b c'\"-x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[json-x='a b c'-{\\n  \"x\": \"a b c\"\\n}\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='a b c'-x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='\"a b c\"'-x='\"a b c\"'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x=\"'a b c'\"-x=''\"'\"'a b c'\"'\"''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='a\\nb\\nc'-x='a\\nb\\nc'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[export-x='a b c'-export x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_not_a_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_existing_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_empty_string_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_value_without_equals",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_non_existent_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_not_a_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_existing_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_non_existent_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[always-a-x-a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[never-a-x-a=x\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-x-a=x\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-x y-a='x y'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-$-a='$'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_export[dotenv_path0-true-a-x-export a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_export[dotenv_path1-false-a-x-a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_missing_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_read_only_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_default_path",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_existing_variable",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_existing_variable_not_overridden",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--override-environment-file\\nfile/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--no-override-environment-environment\\nenvironment/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--no-override--\\n/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_none_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_other_env",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[list]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[get]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[set]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[unset]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[run]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_without_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_invalid_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_env_missing_and_invalid_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_version",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_command_flags",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_dotenv_and_command_flags",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_cli.py",
+      "exit_code": 0,
+      "seconds": 4.461373778060079,
+      "cases": [
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[None-x='a b c'-x=a b c\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x='a b c'-x=a b c\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x='\"a b c\"'-x=\"a b c\"\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[simple-x=\"'a b c'\"-x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[json-x='a b c'-{\\n  \"x\": \"a b c\"\\n}\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='a b c'-x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='\"a b c\"'-x='\"a b c\"'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x=\"'a b c'\"-x=''\"'\"'a b c'\"'\"''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[shell-x='a\\nb\\nc'-x='a\\nb\\nc'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list[export-x='a b c'-export x='a b c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_not_a_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_list_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_existing_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_empty_string_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_value_without_equals",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_non_existent_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_not_a_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_existing_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_non_existent_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[always-a-x-a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[never-a-x-a=x\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-x-a=x\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-x y-a='x y'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_quote_options[auto-a-$-a='$'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_export[dotenv_path0-true-a-x-export a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_export[dotenv_path1-false-a-x-a='x'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_set_missing_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_unset_read_only_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_get_default_path",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_existing_variable",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_existing_variable_not_overridden",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--override-environment-file\\nfile/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--no-override-environment-environment\\nenvironment/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_interpolation_respects_override[--no-override--\\n/suffix\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_none_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_other_env",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[list]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[get]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[set]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[unset]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_file_option_expands_user[run]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_without_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_invalid_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_env_missing_and_invalid_cmd",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_version",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_command_flags",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_cli",
+          "name": "test_run_with_dotenv_and_command_flags",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_zip_imports.py",
+      "exit_code": 0,
+      "seconds": 0.3223323249258101,
+      "cases": [
+        {
+          "class": "tests.test_zip_imports",
+          "name": "test_load_dotenv_gracefully_handles_zip_imports_when_no_env_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_zip_imports",
+          "name": "test_load_dotenv_outside_zip_file_when_called_in_zipfile",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "variables",
+      "observations": 40,
+      "sha256": "ccba94515139262b1cbf9fe05df03e8e34b0be61a8bc5fd33267bed600f3b970",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "edit",
+      "observations": 50,
+      "sha256": "3ea2aefb5319a62417fcbac146c485f51e102a88fd4a423642ea2d530aafc4f6",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_zip_imports.py",
+      "exit_code": 0,
+      "seconds": 0.4094749270007014,
+      "cases": [
+        {
+          "class": "tests.test_zip_imports",
+          "name": "test_load_dotenv_gracefully_handles_zip_imports_when_no_env_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_zip_imports",
+          "name": "test_load_dotenv_outside_zip_file_when_called_in_zipfile",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "pytest",
+      "head": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "file": "tests/test_main.py",
+      "exit_code": 0,
+      "seconds": 2.9326128310058266,
+      "cases": [
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a--expected0-a=''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b-expected1-a='b'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-'b'-expected2-a='\\\\'b\\\\''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-\"b\"-expected3-a='\"b\"'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b'c-expected4-a='b\\\\'c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\"c-expected5-a='b\"c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b-a-c-expected6-a='c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n-a-c-expected7-a='c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n\\n-a-c-expected8-a='c'\\n\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\nc=d-a-e-expected9-a='e'\\nc=d]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\nc=d\\ne=f-c-g-expected10-a=b\\nc='g'\\ne=f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n-c-d-expected11-a=b\\nc='d'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b-c-d-expected12-a=b\\nc='d'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\c-expected13-a='b\\\\\\\\c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\-expected14-a='b\\\\\\\\'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\'c-expected15-a='b\\\\\\\\\\\\'c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[C:\\\\Users]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[C:\\\\Users\\\\]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[\\\\d+]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[back\\\\]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[a\\\\'b]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[it's]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[say \"hi\"]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[a\\\\nb]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[plain]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_preserves_file_mode",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_closes_file_handle_on_lstat_failure",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_symlink_to_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_symlink_to_missing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_follow_symlinks",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_permission_error",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_permission_error_leaves_no_temp_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_reports_original_error_when_cleanup_fails",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_missing_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_read_only_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_read_only_file_leaves_no_temp_file[set_key]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_read_only_file_leaves_no_temp_file[unset_key]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[dotenv_values-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[dotenv_values-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[get_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[get_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[set_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[set_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[unset_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[unset_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_expands_user",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[~/.env-{home}/.env]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[path1-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[.env-.env]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[None-None]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_not_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_ok",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_none",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_empty_dotenv_dict_is_cached",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_with_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_no_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_symlink_to_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_symlink_to_missing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_follow_symlinks",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_no_file_raise",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_no_file_no_raise",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_expands_user",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[true]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[t]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[True]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[Yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[TRUE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[YES]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[T]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[Y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[true]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[t]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[True]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[Yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[TRUE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[YES]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[T]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[Y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[false]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[no]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[False]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[No]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[FALSE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[NO]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[F]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[N]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[false]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[no]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[False]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[No]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[FALSE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[NO]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[F]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[N]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_doesnt_disable_itself",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_no_file_verbose",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_variable_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_variable_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_redefine_var_used_in_file_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_redefine_var_used_in_file_with_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_string_io_utf_8",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_file_stream",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_in_current_dir",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env0-a=$b-False-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env1-a=$b-True-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env2-a=${b}-False-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env3-a=${b}-True-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env4-a=${b:-d}-False-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env5-a=${b:-d}-True-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env6-b=c\\na=${b}-True-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env7-a=${b}-True-expected7]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env8-a=${b:-d}-True-expected8]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env9-a=\"${b}\"-True-expected9]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env10-a='${b}'-True-expected10]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env11-a=x${b}y-True-expected11]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env12-a=${a}-True-expected12]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env13-a=${a}-True-expected13]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env14-a=${a:-c}-True-expected14]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env15-a=${a:-c}-True-expected15]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env16-a=${b}${b}-True-expected16]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env17-b=d\\na=${b}-True-expected17]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env18-a=b\\na=c\\nd=${a}-True-expected18]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env19-a=b\\nc=${a}\\nd=e\\nc=${d}-True-expected19]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_file_stream",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY= # comment-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=  # comment-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=val # comment-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=a#b-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=#novalue-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=# # comment-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=\\t# comment-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY= # comment\\nOTHER=val-expected7]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "edit",
+      "observations": 50,
+      "sha256": "3ea2aefb5319a62417fcbac146c485f51e102a88fd4a423642ea2d530aafc4f6",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "pytest",
+      "head": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "file": "tests/test_main.py",
+      "exit_code": 0,
+      "seconds": 2.4513519078027457,
+      "cases": [
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a--expected0-a=''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b-expected1-a='b'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-'b'-expected2-a='\\\\'b\\\\''\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-\"b\"-expected3-a='\"b\"'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b'c-expected4-a='b\\\\'c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\"c-expected5-a='b\"c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b-a-c-expected6-a='c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n-a-c-expected7-a='c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n\\n-a-c-expected8-a='c'\\n\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\nc=d-a-e-expected9-a='e'\\nc=d]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\nc=d\\ne=f-c-g-expected10-a=b\\nc='g'\\ne=f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b\\n-c-d-expected11-a=b\\nc='d'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[a=b-c-d-expected12-a=b\\nc='d'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\c-expected13-a='b\\\\\\\\c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\-expected14-a='b\\\\\\\\'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key[-a-b\\\\'c-expected15-a='b\\\\\\\\\\\\'c'\\n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[C:\\\\Users]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[C:\\\\Users\\\\]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[\\\\d+]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[back\\\\]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[a\\\\'b]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[it's]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[say \"hi\"]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[a\\\\nb]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[plain]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_round_trips[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_preserves_file_mode",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_closes_file_handle_on_lstat_failure",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_symlink_to_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_symlink_to_missing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_follow_symlinks",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_permission_error",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_permission_error_leaves_no_temp_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_reports_original_error_when_cleanup_fails",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_missing_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_set_key_read_only_directory",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_read_only_file_leaves_no_temp_file[set_key]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_rewrite_read_only_file_leaves_no_temp_file[unset_key]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[dotenv_values-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[dotenv_values-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[get_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[get_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[set_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[set_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[unset_key-str]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_expands_user[unset_key-Path]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_expands_user",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[~/.env-{home}/.env]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[path1-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[.env-.env]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_path_keeps_type[None-None]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_no_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_not_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_ok",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_get_key_none",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_empty_dotenv_dict_is_cached",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_with_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_no_value",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_encoding",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_non_existent_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_symlink_to_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_symlink_to_missing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_unset_key_follow_symlinks",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_no_file_raise",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_no_file_no_raise",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_found",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_find_dotenv_expands_user",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[true]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[t]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[True]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[Yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[TRUE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[YES]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[T]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled[Y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[true]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[t]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[True]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[Yes]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[TRUE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[YES]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[T]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_disabled_notification[Y]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[false]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[no]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[False]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[No]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[FALSE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[NO]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[F]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled[N]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[false]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[no]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[f]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[n]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[False]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[No]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[FALSE]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[NO]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[F]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_enabled_no_notification[N]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_doesnt_disable_itself",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_no_file_verbose",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_variable_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_existing_variable_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_redefine_var_used_in_file_no_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_redefine_var_used_in_file_with_override",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_string_io_utf_8",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_file_stream",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_load_dotenv_in_current_dir",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_file",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env0-a=$b-False-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env1-a=$b-True-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env2-a=${b}-False-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env3-a=${b}-True-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env4-a=${b:-d}-False-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env5-a=${b:-d}-True-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env6-b=c\\na=${b}-True-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env7-a=${b}-True-expected7]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env8-a=${b:-d}-True-expected8]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env9-a=\"${b}\"-True-expected9]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env10-a='${b}'-True-expected10]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env11-a=x${b}y-True-expected11]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env12-a=${a}-True-expected12]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env13-a=${a}-True-expected13]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env14-a=${a:-c}-True-expected14]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env15-a=${a:-c}-True-expected15]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env16-a=${b}${b}-True-expected16]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env17-b=d\\na=${b}-True-expected17]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env18-a=b\\na=c\\nd=${a}-True-expected18]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_string_io[env19-a=b\\nc=${a}\\nd=e\\nc=${d}-True-expected19]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_file_stream",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY= # comment-expected0]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=  # comment-expected1]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=val # comment-expected2]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=a#b-expected3]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=#novalue-expected4]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=# # comment-expected5]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY=\\t# comment-expected6]",
+          "status": "passed"
+        },
+        {
+          "class": "tests.test_main",
+          "name": "test_dotenv_values_empty_value_with_inline_comment[KEY= # comment\\nOTHER=val-expected7]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "kind": "load",
+      "observations": 13,
+      "sha256": "e0279c5b25c7dc8fbe9d7cc226d4b58764219a7cf6406426dc4e6f264484e967",
+      "target_origins_verified": true
+    },
+    {
+      "kind": "find",
+      "observations": 6,
+      "sha256": "2bf6383f607b092ca10b4601dc230c49607d9b5bfe62c093b156e3bb16e04fa7",
+      "target_origins_verified": true
+    }
+  ],
+  "performance": [
+    {
+      "results": {
+        "original": {
+          "parser": {
+            "median_seconds": 0.08542709005996585,
+            "items": 5000
+          },
+          "values": {
+            "median_seconds": 0.08597682905383408,
+            "items": 5000
+          }
+        },
+        "candidate": {
+          "parser": {
+            "median_seconds": 0.08698640787042677,
+            "items": 5000
+          },
+          "values": {
+            "median_seconds": 0.08658686792477965,
+            "items": 5000
+          }
+        }
+      },
+      "comparisons": {
+        "parser": {
+          "ratio": 1.0182532005873823,
+          "passed": true
+        },
+        "values": {
+          "ratio": 1.0070953869508679,
+          "passed": true
+        }
+      },
+      "status": "passed",
+      "candidate_commit": "f2116ce8bb7434c9d0e5eb9b251c5907f5f22d8d",
+      "threshold": "Median of seven warm runs: <= max(2x original, 15 ms) on each 5000-binding workload.",
+      "time": 1794231254.2836816
+    },
+    {
+      "results": {
+        "original": {
+          "parser": {
+            "median_seconds": 0.08502741204574704,
+            "items": 5000
+          },
+          "values": {
+            "median_seconds": 0.08546731085516512,
+            "items": 5000
+          }
+        },
+        "candidate": {
+          "parser": {
+            "median_seconds": 0.05957609787583351,
+            "items": 5000
+          },
+          "values": {
+            "median_seconds": 0.05945067806169391,
+            "items": 5000
+          }
+        }
+      },
+      "comparisons": {
+        "parser": {
+          "ratio": 0.7006693070204226,
+          "passed": true
+        },
+        "values": {
+          "ratio": 0.6955955144352254,
+          "passed": true
+        }
+      },
+      "status": "passed",
+      "candidate_commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "threshold": "Median of seven warm runs: <= max(2x original, 15 ms) on each 5000-binding workload.",
+      "time": 1794232210.544937
+    }
+  ],
+  "delivery_metrics": {
+    "before_tokens": 11491,
+    "after_tokens": 5941,
+    "reduction_percent": 48.29866852319207,
+    "upstream_passed": 290,
+    "upstream_total": 290,
+    "behavior_groups": 15,
+    "observation_cases": 376,
+    "installation_groups": 3,
+    "performance": "passed",
+    "native_run_wall_seconds": 2161.956111,
+    "code": {
+      "repository": "nanolize/nanolize",
+      "branch": "examples/python-dotenv-feedback-readable-20261109",
+      "commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "verified_commit": "bc077bbd019f9f4720ef68493d693b18faa90b9f",
+      "url": "https://github.com/nanolize/nanolize/tree/examples/python-dotenv-feedback-readable-20261109",
+      "behavior_groups": 15,
+      "installation_groups": 3,
+      "performance": "passed"
+    },
+    "conservative_actual_size": {
+      "baseline_source_lines": 1173,
+      "baseline_tokens": 11491,
+      "complete": true,
+      "configuration_files": 5,
+      "configuration_tokens": 722,
+      "estimated_source_lines": null,
+      "incomplete_counts_are_observed_subtotals": true,
+      "measurement_sha256": "d56380730d7380cf28c7bd75fa72a13cb89ff743e76986f64c814dd3c093ade0",
+      "metric": "tokens",
+      "retained_percent": 56.35714907318771,
+      "source_files": 8,
+      "source_lines": 768,
+      "source_retained_percent": 65.47314578005115,
+      "source_tokens": 5754,
+      "target_met": true,
+      "target_percent": 100.0,
+      "target_source_lines": 1173.0,
+      "target_tokens": 11491,
+      "total_tokens": 6476
+    },
+    "annotation_audit": {
+      "source": "original public callable type declarations only",
+      "missing": [],
+      "limits": "Only same-path, same-qualified-name callables are matched. Review inherited/relocated declarations and equivalent parameter spellings before treating a row as a defect."
+    }
+  },
+  "elapsed_definition": "Native job accepted through delivery acceptance, includes CPU queue, baseline capture, author/controller calls, checks and native report generation. Excludes host-side discovery/preparation and final Chinese report/publication.",
+  "usage_definition": "Native controller/author model usage only. Input includes cached input; cache is not added again. Host conversation, Graphify static extraction and website-writing tokens are not included. These are not task-effort measurements."
+}
