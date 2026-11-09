@@ -1,0 +1,6242 @@
+{
+  "schema_version": 1,
+  "kind": "retrospective_experiment_comparison",
+  "public_safe": true,
+  "original_commit": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+  "old_commit": "874499d11896a0b0a975d1b01012cae72e9727c0",
+  "new_verified_commit": "7e1e7b3f4f0ef92fca60d0871528748d095b3049",
+  "new_published_commit": "98ee125e73358754eec5fc176255123c26250c3c",
+  "old_harness_commit": "a57387916c6b3cea49fd9a51f5d628c01aa118fe",
+  "new_harness_commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+  "size": {
+    "original": {
+      "source_tokens": 101061,
+      "configuration_tokens": 74905,
+      "total_tokens": 175966,
+      "complete": true,
+      "tokenizer": {
+        "library": "tiktoken",
+        "version": "0.12.0",
+        "encoding": "cl100k_base",
+        "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+        "text_policy": "raw_decoded_text_per_file",
+        "classification": "source_and_configuration_v1",
+        "special_tokens": "ordinary_text",
+        "file_boundaries": "independent_sum",
+        "decoding": "python_encoding_cookie_else_utf8_strict",
+        "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+      }
+    },
+    "old": {
+      "source_tokens": 67087,
+      "configuration_tokens": 9356,
+      "total_tokens": 76443,
+      "complete": true,
+      "tokenizer": {
+        "library": "tiktoken",
+        "version": "0.12.0",
+        "encoding": "cl100k_base",
+        "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+        "text_policy": "raw_decoded_text_per_file",
+        "classification": "source_and_configuration_v1",
+        "special_tokens": "ordinary_text",
+        "file_boundaries": "independent_sum",
+        "decoding": "python_encoding_cookie_else_utf8_strict",
+        "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+      }
+    },
+    "new": {
+      "source_tokens": 74176,
+      "configuration_tokens": 14868,
+      "total_tokens": 89044,
+      "complete": true,
+      "tokenizer": {
+        "library": "tiktoken",
+        "version": "0.12.0",
+        "encoding": "cl100k_base",
+        "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+        "text_policy": "raw_decoded_text_per_file",
+        "classification": "source_and_configuration_v1",
+        "special_tokens": "ordinary_text",
+        "file_boundaries": "independent_sum",
+        "decoding": "python_encoding_cookie_else_utf8_strict",
+        "exclusion_policy": "unchanged_original_tests_documentation_binary_assets"
+      }
+    }
+  },
+  "static": {
+    "original": {
+      "python_files": 32,
+      "files": [
+        {
+          "file": "needle/__init__.py",
+          "lines": 656,
+          "tokens": 6131,
+          "functions": 40,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 13,
+          "annotated_arguments": 22,
+          "annotated_returns": 8,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_telemetry.py",
+          "lines": 86,
+          "tokens": 619,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 4,
+          "annotated_arguments": 4,
+          "annotated_returns": 4,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_worker.py",
+          "lines": 291,
+          "tokens": 2126,
+          "functions": 15,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/cli.py",
+          "lines": 424,
+          "tokens": 5193,
+          "functions": 5,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 1,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/platform.py",
+          "lines": 456,
+          "tokens": 4722,
+          "functions": 48,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 4,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/fetch.py",
+          "lines": 333,
+          "tokens": 3049,
+          "functions": 22,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 8,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/tools.py",
+          "lines": 205,
+          "tokens": 1927,
+          "functions": 13,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 5,
+          "annotated_arguments": 5,
+          "annotated_returns": 4,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/whistle.py",
+          "lines": 550,
+          "tokens": 5696,
+          "functions": 35,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 2,
+          "annotated_arguments": 0,
+          "annotated_returns": 3,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/__init__.py",
+          "lines": 45,
+          "tokens": 347,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/_harness.py",
+          "lines": 60,
+          "tokens": 512,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/data_capture.py",
+          "lines": 132,
+          "tokens": 2254,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 14,
+          "comments": 0,
+          "annotated_arguments": 10,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/kitchen_appliance.py",
+          "lines": 121,
+          "tokens": 1895,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 7,
+          "comments": 0,
+          "annotated_arguments": 6,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/media_player.py",
+          "lines": 104,
+          "tokens": 1637,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 6,
+          "comments": 0,
+          "annotated_arguments": 2,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/productivity.py",
+          "lines": 133,
+          "tokens": 2329,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 16,
+          "comments": 0,
+          "annotated_arguments": 10,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/smart_home.py",
+          "lines": 139,
+          "tokens": 2244,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 12,
+          "comments": 0,
+          "annotated_arguments": 12,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/wearable.py",
+          "lines": 111,
+          "tokens": 1820,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 13,
+          "comments": 0,
+          "annotated_arguments": 4,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/architecture.py",
+          "lines": 1136,
+          "tokens": 11920,
+          "functions": 66,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/architecture_mlx.py",
+          "lines": 308,
+          "tokens": 3727,
+          "functions": 25,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/build.py",
+          "lines": 78,
+          "tokens": 1002,
+          "functions": 2,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/checkpoints.py",
+          "lines": 126,
+          "tokens": 1027,
+          "functions": 11,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/export.py",
+          "lines": 680,
+          "tokens": 8780,
+          "functions": 31,
+          "one_line_functions": 0,
+          "semicolons": 4,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/finetune.py",
+          "lines": 509,
+          "tokens": 5286,
+          "functions": 26,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 3,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/quantize.py",
+          "lines": 235,
+          "tokens": 2062,
+          "functions": 27,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 2,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/quantize_mlx.py",
+          "lines": 91,
+          "tokens": 1042,
+          "functions": 11,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 2,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/run.py",
+          "lines": 125,
+          "tokens": 1102,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/tokenizer.py",
+          "lines": 130,
+          "tokens": 1005,
+          "functions": 12,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/whistle.py",
+          "lines": 375,
+          "tokens": 5285,
+          "functions": 26,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/whistle_finetune.py",
+          "lines": 449,
+          "tokens": 5281,
+          "functions": 24,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/playground/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/playground/server.py",
+          "lines": 186,
+          "tokens": 1658,
+          "functions": 13,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        }
+      ],
+      "lines": 8274,
+      "tokens": 91678,
+      "functions": 513,
+      "one_line_functions": 0,
+      "semicolons": 4,
+      "lines_over_160": 68,
+      "comments": 44,
+      "annotated_arguments": 75,
+      "annotated_returns": 19,
+      "dynamic_code_calls": 0
+    },
+    "old": {
+      "python_files": 35,
+      "files": [
+        {
+          "file": "needle/__init__.py",
+          "lines": 503,
+          "tokens": 5505,
+          "functions": 49,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 12,
+          "comments": 0,
+          "annotated_arguments": 22,
+          "annotated_returns": 8,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/__main__.py",
+          "lines": 3,
+          "tokens": 8,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_runtime.py",
+          "lines": 3,
+          "tokens": 15,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_telemetry.py",
+          "lines": 73,
+          "tokens": 673,
+          "functions": 4,
+          "one_line_functions": 1,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 4,
+          "annotated_returns": 4,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_worker.py",
+          "lines": 240,
+          "tokens": 2139,
+          "functions": 19,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/cli.py",
+          "lines": 276,
+          "tokens": 2600,
+          "functions": 10,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/platform.py",
+          "lines": 365,
+          "tokens": 3645,
+          "functions": 50,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 3,
+          "annotated_returns": 1,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/fetch.py",
+          "lines": 243,
+          "tokens": 2458,
+          "functions": 25,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/tools.py",
+          "lines": 146,
+          "tokens": 1585,
+          "functions": 15,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 4,
+          "comments": 0,
+          "annotated_arguments": 5,
+          "annotated_returns": 4,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/whistle.py",
+          "lines": 491,
+          "tokens": 4900,
+          "functions": 40,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 3,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/__init__.py",
+          "lines": 26,
+          "tokens": 187,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/_harness.py",
+          "lines": 70,
+          "tokens": 607,
+          "functions": 6,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/data_capture.py",
+          "lines": 66,
+          "tokens": 679,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 4,
+          "comments": 0,
+          "annotated_arguments": 10,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/kitchen_appliance.py",
+          "lines": 62,
+          "tokens": 501,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 6,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/media_player.py",
+          "lines": 52,
+          "tokens": 382,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 2,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/productivity.py",
+          "lines": 67,
+          "tokens": 681,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 10,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/smart_home.py",
+          "lines": 69,
+          "tokens": 712,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 3,
+          "comments": 0,
+          "annotated_arguments": 12,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/wearable.py",
+          "lines": 57,
+          "tokens": 477,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 3,
+          "comments": 0,
+          "annotated_arguments": 4,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/architecture.py",
+          "lines": 812,
+          "tokens": 10632,
+          "functions": 87,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 13,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/architecture_mlx.py",
+          "lines": 152,
+          "tokens": 2153,
+          "functions": 14,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/archive.py",
+          "lines": 43,
+          "tokens": 376,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/build.py",
+          "lines": 86,
+          "tokens": 949,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 3,
+          "annotated_returns": 1,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/checkpoints.py",
+          "lines": 100,
+          "tokens": 833,
+          "functions": 14,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/export.py",
+          "lines": 358,
+          "tokens": 4847,
+          "functions": 29,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 6,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/finetune.py",
+          "lines": 423,
+          "tokens": 4460,
+          "functions": 37,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 23,
+          "annotated_returns": 6,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/quantize.py",
+          "lines": 181,
+          "tokens": 1853,
+          "functions": 28,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/quantize_mlx.py",
+          "lines": 56,
+          "tokens": 494,
+          "functions": 11,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/run.py",
+          "lines": 108,
+          "tokens": 1021,
+          "functions": 8,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/tokenizer.py",
+          "lines": 89,
+          "tokens": 776,
+          "functions": 12,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/whistle.py",
+          "lines": 298,
+          "tokens": 3869,
+          "functions": 29,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/whistle_finetune.py",
+          "lines": 344,
+          "tokens": 3783,
+          "functions": 28,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/playground/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/playground/server.py",
+          "lines": 187,
+          "tokens": 1841,
+          "functions": 13,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        }
+      ],
+      "lines": 6049,
+      "tokens": 65641,
+      "functions": 582,
+      "one_line_functions": 1,
+      "semicolons": 0,
+      "lines_over_160": 66,
+      "comments": 0,
+      "annotated_arguments": 104,
+      "annotated_returns": 27,
+      "dynamic_code_calls": 0
+    },
+    "new": {
+      "python_files": 35,
+      "files": [
+        {
+          "file": "needle/__init__.py",
+          "lines": 309,
+          "tokens": 2871,
+          "functions": 24,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 3,
+          "comments": 0,
+          "annotated_arguments": 21,
+          "annotated_returns": 6,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/__main__.py",
+          "lines": 3,
+          "tokens": 8,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_grounding.py",
+          "lines": 189,
+          "tokens": 1816,
+          "functions": 16,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 1,
+          "annotated_returns": 2,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_native.py",
+          "lines": 43,
+          "tokens": 434,
+          "functions": 3,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_telemetry.py",
+          "lines": 59,
+          "tokens": 482,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 4,
+          "annotated_returns": 4,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/_worker.py",
+          "lines": 195,
+          "tokens": 1453,
+          "functions": 15,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/cli.py",
+          "lines": 268,
+          "tokens": 2551,
+          "functions": 9,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/platform.py",
+          "lines": 428,
+          "tokens": 4244,
+          "functions": 50,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/fetch.py",
+          "lines": 250,
+          "tokens": 2344,
+          "functions": 22,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/tools.py",
+          "lines": 176,
+          "tokens": 1489,
+          "functions": 14,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 5,
+          "annotated_returns": 4,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/agent/whistle.py",
+          "lines": 496,
+          "tokens": 4714,
+          "functions": 37,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 3,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/__init__.py",
+          "lines": 29,
+          "tokens": 192,
+          "functions": 4,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/_harness.py",
+          "lines": 71,
+          "tokens": 569,
+          "functions": 5,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/data_capture.py",
+          "lines": 46,
+          "tokens": 765,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 7,
+          "comments": 0,
+          "annotated_arguments": 10,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/kitchen_appliance.py",
+          "lines": 46,
+          "tokens": 566,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 3,
+          "comments": 0,
+          "annotated_arguments": 6,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/media_player.py",
+          "lines": 46,
+          "tokens": 437,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 2,
+          "comments": 0,
+          "annotated_arguments": 2,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/productivity.py",
+          "lines": 47,
+          "tokens": 768,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 7,
+          "comments": 0,
+          "annotated_arguments": 10,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/smart_home.py",
+          "lines": 47,
+          "tokens": 810,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 7,
+          "comments": 0,
+          "annotated_arguments": 12,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/environments/wearable.py",
+          "lines": 47,
+          "tokens": 540,
+          "functions": 7,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 3,
+          "comments": 0,
+          "annotated_arguments": 4,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/architecture.py",
+          "lines": 783,
+          "tokens": 9449,
+          "functions": 68,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/architecture_mlx.py",
+          "lines": 246,
+          "tokens": 3207,
+          "functions": 26,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/build.py",
+          "lines": 79,
+          "tokens": 910,
+          "functions": 3,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/checkpoints.py",
+          "lines": 108,
+          "tokens": 844,
+          "functions": 13,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/export.py",
+          "lines": 446,
+          "tokens": 5659,
+          "functions": 35,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/finetune.py",
+          "lines": 411,
+          "tokens": 4484,
+          "functions": 30,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/quantize.py",
+          "lines": 187,
+          "tokens": 1790,
+          "functions": 26,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/quantize_mlx.py",
+          "lines": 82,
+          "tokens": 858,
+          "functions": 12,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/run.py",
+          "lines": 97,
+          "tokens": 946,
+          "functions": 6,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/tokenizer.py",
+          "lines": 93,
+          "tokens": 824,
+          "functions": 12,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/whistle.py",
+          "lines": 353,
+          "tokens": 4989,
+          "functions": 28,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/model/whistle_finetune.py",
+          "lines": 419,
+          "tokens": 4904,
+          "functions": 25,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 1,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/playground/__init__.py",
+          "lines": 0,
+          "tokens": 0,
+          "functions": 0,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        },
+        {
+          "file": "needle/playground/server.py",
+          "lines": 162,
+          "tokens": 1529,
+          "functions": 13,
+          "one_line_functions": 0,
+          "semicolons": 0,
+          "lines_over_160": 0,
+          "comments": 0,
+          "annotated_arguments": 0,
+          "annotated_returns": 0,
+          "dynamic_code_calls": 0
+        }
+      ],
+      "lines": 6261,
+      "tokens": 67446,
+      "functions": 542,
+      "one_line_functions": 0,
+      "semicolons": 0,
+      "lines_over_160": 41,
+      "comments": 0,
+      "annotated_arguments": 75,
+      "annotated_returns": 19,
+      "dynamic_code_calls": 0
+    }
+  },
+  "common_checks": [
+    {
+      "name": "upstream-tools",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 4.8595,
+      "new_seconds": 1.4358
+    },
+    {
+      "name": "upstream-grounding",
+      "old": "regressed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 3.8994,
+      "new_seconds": 1.2503
+    },
+    {
+      "name": "upstream-fetch",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 3.9026,
+      "new_seconds": 3.3336
+    },
+    {
+      "name": "upstream-platform",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 5.9548,
+      "new_seconds": 5.5613
+    },
+    {
+      "name": "upstream-playground",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 3.3337,
+      "new_seconds": 2.1475
+    },
+    {
+      "name": "upstream-packaging",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 2.8313,
+      "new_seconds": 2.1673
+    },
+    {
+      "name": "upstream-release",
+      "old": "regressed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 4.0155,
+      "new_seconds": 3.0891
+    },
+    {
+      "name": "upstream-worker",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 4.8967,
+      "new_seconds": 1.7808
+    },
+    {
+      "name": "upstream-generate",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 2.9006,
+      "new_seconds": 2.2836
+    },
+    {
+      "name": "upstream-weights",
+      "old": "regressed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 3.5248,
+      "new_seconds": 1.2207
+    },
+    {
+      "name": "api-contract",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 1.7512,
+      "new_seconds": 1.297
+    },
+    {
+      "name": "schema-performance",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 1.6267,
+      "new_seconds": 0.3844
+    },
+    {
+      "name": "telemetry-policy",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 1.4405,
+      "new_seconds": 0.4058
+    },
+    {
+      "name": "upstream-environments",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 3.115,
+      "new_seconds": 2.3716
+    },
+    {
+      "name": "upstream-speech",
+      "old": "regressed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 6.9211,
+      "new_seconds": 4.9556
+    },
+    {
+      "name": "upstream-render",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 3.4051,
+      "new_seconds": 2.2826
+    },
+    {
+      "name": "upstream-lora",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 8.545,
+      "new_seconds": 4.7549
+    },
+    {
+      "name": "upstream-quantization",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 8.9624,
+      "new_seconds": 5.1556
+    },
+    {
+      "name": "upstream-generation",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 6.6464,
+      "new_seconds": 4.0187
+    },
+    {
+      "name": "upstream-speech-training-interfaces",
+      "old": "passed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 7.6228,
+      "new_seconds": 4.8319
+    },
+    {
+      "name": "tiny-numerical-checkpoint-forward-export-generation",
+      "old": "regressed",
+      "new": "passed",
+      "original_test_directory_hash_same": true,
+      "old_seconds": 17.8226,
+      "new_seconds": 12.7612
+    }
+  ],
+  "case_comparison": [
+    {
+      "case": "tests/test_build.py::test_build_exports_loadable_cact",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-build"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_build.py::test_build_from_safetensors_checkpoint",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-build"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_build.py::test_build_layers_exports_the_rung",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-build"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_build.py::test_build_platform_places_the_engine_and_the_archive_together",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-build"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_build.py::test_export_round_trips_a_projection",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-build"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_build.py::test_load_checkpoint_drops_the_mtp_block",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-build"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_environments.py::test_aggregate_reports_failure_when_any_environment_fails",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_cover_all_categories[data_capture]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_cover_all_categories[kitchen_appliance]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_cover_all_categories[media_player]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_cover_all_categories[productivity]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_cover_all_categories[smart_home]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_cover_all_categories[wearable]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_match_declared_tools[data_capture]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_match_declared_tools[kitchen_appliance]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_match_declared_tools[media_player]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_match_declared_tools[productivity]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_match_declared_tools[smart_home]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_cases_match_declared_tools[wearable]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_min_confidence_keeps_a_call_at_the_threshold",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_min_confidence_treats_a_low_confidence_call_as_a_refusal",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_one_critical_failure_fails_a_suite_that_clears_the_rate",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_registry_matches_modules",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_smart_home_smoke",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-environments"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_environments.py::test_suite_fails_at_28_of_32",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_suite_passes_at_29_of_32",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tool_surface[data_capture]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tool_surface[kitchen_appliance]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tool_surface[media_player]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tool_surface[productivity]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tool_surface[smart_home]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tool_surface[wearable]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tools_execute[data_capture]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tools_execute[kitchen_appliance]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tools_execute[media_player]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tools_execute[productivity]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tools_execute[smart_home]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_environments.py::test_tools_execute[wearable]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-environments"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_fetch.py::test_a_repo_that_cannot_be_listed_holds_none_of_its_wheels",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_android_is_detected_from_the_api_level_or_the_runtime_env",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_android_is_refused_instead_of_being_handed_a_glibc_wheel",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_android_markers_inside_a_glibc_or_musl_userspace_are_linux",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_building_the_published_archive_needs_no_training_stack",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_fetch.py::test_component_platform_is_downloadable",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_download_target_kinds",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_fetch.py::test_engine_gate_finds_the_cache_the_runtime_loads_from",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_engine_gate_honours_the_library_override",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_engine_load_falls_back_to_the_other_libc",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_fetch_checkpoint_prefers_the_checkpoints_folder",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_fetch.py::test_fetch_library_creates_destination",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_fetch_weights_copies_the_base_archive_and_reuses_it",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_glibc_detected_from_maps",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_legacy_lib_override_cannot_capture_v3",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_lib_name_for_tags",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_lib_path_env_override",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_musl_detected_when_libc_ver_claims_glibc",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_other_libc_tag_swaps_families",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_platform_tag_names_only_the_architectures_the_engine_is_built_for",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_release_gate_runs_before_the_publish_step",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_fetch.py::test_unpublished_engine_wheels_lists_every_missing_tag",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_fetch.py::test_weights_spec_parsing",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "core-fetch",
+        "upstream-fetch"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_finetune.py::test_build_without_a_checkpoint_uses_the_adapter_base",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_finetune.py::test_finetune_adapter_defaults_to_safetensors_and_builds",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_finetune.py::test_finetune_adapter_records_realized_seed",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_finetune.py::test_finetune_rng_is_controlled_by_seed",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_finetune.py::test_finetune_then_build_merges",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_finetune.py::test_finetune_writes_adapter",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_generate.py::test_augment_jsonl_appends_generated",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_generate.py::test_collect_tools_dedups_by_name",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_generate.py::test_generate_dataset_dedups_and_terminates",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_generate.py::test_generate_dataset_hits_target_concurrently",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_generate.py::test_generate_examples_attaches_tools",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_generate.py::test_generate_examples_requires_api_key",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_generate.py::test_openrouter_url_can_be_overridden_from_environment",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_generate.py::test_parse_array_variants",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generate"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_grounding.py::test_a_key_ending_in_date_does_not_suppress_the_date_fact",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_a_slash_date_does_not_mint_a_year_from_its_day_or_month",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_a_time_after_a_day_and_month_is_not_read_as_a_year",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_an_abbreviated_month_with_a_period_still_gives_its_year[due 12 Sept. 2025-expected3]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_an_abbreviated_month_with_a_period_still_gives_its_year[due 25 Dec. 2026-expected1]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_an_abbreviated_month_with_a_period_still_gives_its_year[due Dec. 25, 2026-expected0]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_an_abbreviated_month_with_a_period_still_gives_its_year[due Sep. 2025-expected4]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_an_abbreviated_month_with_a_period_still_gives_its_year[due Sept. 12, 2025-expected2]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_complete_checks_dates_inside_a_nested_model_argument",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_complete_flags_call_dates_that_contradict_the_input",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_complete_leaves_grounded_dates_alone",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_engine_reported_fabrications_are_kept_and_block_execution",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_accepts_a_date_followed_by_a_time",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_accepts_a_date_written_with_slashes",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_accepts_dates_written_with_abbreviated_months_and_periods",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_clears_a_nested_separated_number",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_clears_a_thousands_separated_integer",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_clears_a_thousands_separated_number",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_clears_a_written_negative",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_clears_a_zero_against_its_source",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_does_not_clear_a_digit_run_inside_a_longer_number",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_does_not_clear_a_number_absent_from_the_source",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_does_not_read_a_date_hyphen_as_a_minus_sign",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_does_not_read_a_range_hyphen_as_a_minus_sign",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_leaves_an_unseparated_number_working",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_licenses_a_relative_date_against_its_date_fact",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_still_rejects_a_fabricated_number",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_extract_still_rejects_a_non_numeric_engine_flag",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_input_without_a_year_is_not_checked",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_run_executes_a_grounded_number_and_refuses_an_ungrounded_sibling",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_run_executes_a_separated_number_grounded_in_the_query",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_run_refuses_a_number_absent_from_the_query",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_run_refuses_ungrounded_calls_unless_strict_is_off",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_run_still_refuses_a_non_numeric_engine_flag",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_system_facts_license_relative_dates",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_grounding.py::test_years_carry_across_turns_until_reset",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-grounding",
+        "upstream-grounding"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_inference.py::test_extract_keeps_agent_tools",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-inference"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_inference.py::test_run_agentic_loop",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-inference"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_inference.py::test_structured_extraction",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-inference"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_inference.py::test_tool_call",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-inference"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_inference.py::test_two_agents",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-inference"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_lora.py::test_init_lora_shapes_and_zero_b",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-lora"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_lora.py::test_lora_target_paths_selects_projection_kernels",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-lora"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_lora.py::test_merge_lora_adds_scaled_delta",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-lora"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_lora.py::test_merge_lora_is_identity_when_b_zero",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-lora"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_mlx.py::test_bfloat16_forward_is_as_close_to_float32_as_jax",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_mlx.py::test_exit_depth_matches_jax",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_mlx.py::test_forward_matches_jax[False]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_mlx.py::test_forward_matches_jax[True]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_mlx.py::test_metal_forward_agrees_with_jax",
+      "original": "skipped",
+      "old": "skipped",
+      "old_classification": "unsupported_hardware",
+      "new": "not_run",
+      "new_checks": [],
+      "new_evidence_resolution": "no_current_case_result"
+    },
+    {
+      "case": "tests/test_mlx.py::test_padding_mask_matches_jax",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_mlx.py::test_published_checkpoint_matches_jax",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_mlx.py::test_split_hadamard_perms_match_jax",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_packaging.py::test_setup_scripts_install_extras_that_exist",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-packaging"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_packaging.py::test_training_dependencies_are_not_required_for_runtime",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-packaging"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_a_failed_download_keeps_the_file_it_would_replace",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_confidence_head_detected_from_manifest",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_data_and_tool_files_are_utf8_whatever_the_locale[cp1252]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_data_and_tool_files_are_utf8_whatever_the_locale[cp949]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_download_target_routes_hosted_models",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_errors_carry_code_param_and_url",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_finetune_uploads_submits_waits_and_downloads",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_local_finetune_reads_chat_format",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_missing_key_points_at_the_console",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_platform.py::test_tool_form_conversions",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-platform"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_playground.py::test_a_second_query_on_the_same_tools_rewinds_that_agent",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-playground"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_playground.py::test_a_tuned_agent_is_rewound_through_itself",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-playground"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_playground.py::test_new_tools_build_a_fresh_agent_without_rewinding",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-playground"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_playground.py::test_reset_closes_the_agent_it_drops",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-playground"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_ab_scales_checkpoints_are_rejected",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-quantize-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_cq_quantize_matches_jax[2]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-quantization"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_cq_quantize_matches_jax[4]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-quantization"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_published_checkpoint_quantized_loss_matches_jax",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-quantize-mlx"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_quantized_forward_matches_jax[4-False]",
+      "original": "failed",
+      "old": "failed",
+      "old_classification": "baseline_failed",
+      "new": "not_run",
+      "new_checks": [],
+      "new_evidence_resolution": "no_current_case_result"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_quantized_forward_matches_jax[4-True]",
+      "original": "failed",
+      "old": "failed",
+      "old_classification": "baseline_failed",
+      "new": "not_run",
+      "new_checks": [],
+      "new_evidence_resolution": "no_current_case_result"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_quantized_forward_matches_jax[8-False]",
+      "original": "failed",
+      "old": "failed",
+      "old_classification": "baseline_failed",
+      "new": "not_run",
+      "new_checks": [],
+      "new_evidence_resolution": "no_current_case_result"
+    },
+    {
+      "case": "tests/test_quantize_mlx.py::test_quantized_forward_matches_jax[8-True]",
+      "original": "failed",
+      "old": "failed",
+      "old_classification": "baseline_failed",
+      "new": "not_run",
+      "new_checks": [],
+      "new_evidence_resolution": "no_current_case_result"
+    },
+    {
+      "case": "tests/test_release.py::test_declared_version_above_everything_published_is_released_as_is",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-release"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_release.py::test_existing_release_tag_skips_unchanged_source",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-release"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_release.py::test_manual_bump_on_main_follows_the_published_version",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-release"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_release.py::test_release_tag_contains_versioned_source_and_skips_unchanged_main",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-release"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_release.py::test_tag_step_tolerates_already_versioned_files",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-release"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_encode_loss_mask_targets_only",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_fit_max_len_buckets",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_load_jsonl_shapes_and_skips_invalid",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_render_example_accepts_function_calls_alias",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_render_example_empty_reasoning_omits_think",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_render_example_keeps_unicode",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_render_example_markers",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_render.py::test_render_example_matches_training_template",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-render"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_build_prompt_matches_training_template",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_build_prompt_passthrough_without_tools",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_main_loads_tools_file_and_runs",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-run"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_run.py::test_missing_checkpoint_is_looked_up_under_checkpoints_then_at_the_repo_root",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_needle2_checkpoint_is_rejected_with_a_version_hint",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_read_adapter_rejects_pickle_disguised_as_safetensors",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_read_adapter_rejects_pkl_without_executing",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_read_checkpoint_rejects_pickle_disguised_as_safetensors",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_run.py::test_read_checkpoint_rejects_pkl_without_executing",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-generation"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_tools.py::test_annotated_optional_is_not_required",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_annotated_pep604_optional_is_not_required",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_basic_schema_types_and_required",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_defaults_are_optional",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_docstring_arg_description_keeps_its_wrapped_lines",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_docstring_description_falls_back_to_args",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_field_constraints_and_docstring_args",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_literal_list_and_dict_types",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_model_arguments_keep_their_defs_on_the_tool_parameters",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_numeric_literal_and_int_enum_schema",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_optional_annotated_field_constraints",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_optional_annotation_not_required",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_pep604_none_union_not_required",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_pep604_union_matches_typing_union",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_pydantic_model_schema",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_tool_decorator_preserves_callable",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_tools.py::test_typed_list_items",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-tools",
+        "upstream-tools"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_agent_extract_carries_its_own_system_facts",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_agent_extract_still_carries_weights_strict_and_generation",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_agent_extract_without_system_facts_carries_date_line",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_agent_extract_without_system_facts_sends_none_when_autodate_disabled",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_base_agent_and_tuned_worker_coexist",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_default_agent_is_needle_3",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_extract_uses_an_explicit_tuned_worker",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_extraction_rejects_fabricated_temporal_year",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_generation_2_runs_its_embedded_engine",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_generation_3_without_weights_loads_the_base_archive_in_process",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_platform_tuned_archive_keeps_confidence",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_stateless_agent_resets_before_every_query",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_tool_index_path_agrees_between_the_base_and_tuned_paths",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_tool_index_path_takes_a_path_object",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_tool_result_turns_do_not_count_as_queries",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_tuned_agent_loads_one_worker_and_reuses_it",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_tuned_worker_does_not_rebind_existing_base_agent",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_two_finetunes_use_independent_workers",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_unknown_archive_tag_is_rejected_before_loading",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_unreset_queries_warn_once",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_v2_and_v3_weights_route_to_independent_engines",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_weights.py::test_v3_routes_embeddings_to_its_worker",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-weights",
+        "upstream-weights"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_whistle.py::test_a_cached_model_still_counts_as_a_download",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_audio_path_takes_a_path_as_a_terminal_hands_it_over",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_cli_routes_the_whistle_commands",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_compare_needs_its_extra",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_compare_prints_one_line_per_model_with_dashes_for_missing_timing",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_compare_runs_a_file_the_same_way_the_playground_does",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_counting_a_download_never_breaks_an_offline_load",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_embed_keeps_its_window_and_transcribe_takes_long_audio",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle.py::test_files_that_are_not_pcm_or_float_wav_fail",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_float_and_extensible_wav_files_read_like_pcm[False]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_float_and_extensible_wav_files_read_like_pcm[True]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_listen_feeds_the_microphone_in_seconds_and_prints_words_live",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_listen_reports_a_broken_stream",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_missing_weights_fail_clearly",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_module_level_stream_reuses_one_model",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_module_level_transcribe_reuses_one_model",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_output_buffers_grow_with_the_audio",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_playground_and_compare_share_one_status_line",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_playground_keeps_the_language_when_the_code_is_not_one_of_ours",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_playground_listens_on_enter_once_streaming_is_on",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_playground_prints_text_words_and_timing",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_playground_reports_engine_errors_instead_of_raising",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_rate_counts_steps_after_the_first_mark",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_record_resamples_the_microphone_to_16_khz_and_keeps_everything",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_record_says_what_is_missing",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_samples_accept_lists_arrays_and_float32_bytes",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_silence_is_an_empty_transcript",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle.py::test_speech_weights_come_from_their_own_repo",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_status_reads_a_slow_run_in_seconds",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_stream_feeds_each_chunk_and_flushes_the_tail",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_stream_raises_the_engine_error",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_the_speech_model_loads_into_needle_s_engine",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_transcribe_returns_text_language_and_timed_words",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle.py::test_wav_files_become_16k_mono_floats[16000-1-1]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_wav_files_become_16k_mono_floats[16000-1-2]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_wav_files_become_16k_mono_floats[22050-2-3]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_wav_files_become_16k_mono_floats[44100-2-2]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_wav_files_become_16k_mono_floats[48000-1-4]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle.py::test_wav_files_become_16k_mono_floats[8000-1-2]",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_a_new_language_needs_training_clips",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_bad_lines_name_the_line",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_build_layers_exports_a_decoder_rung",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_build_without_an_adapter_copies_the_published_archive",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_cli_routes_finetune_and_build_and_takes_a_tuned_language",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_declared_tokens_become_one_piece_anywhere_and_match_the_engine_encoder",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_errors_use_the_whisper_normalizers_and_characters_for_unspaced_scripts",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_every_split_needs_clips_within_the_token_limit",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_extended_tokenizer_appends_pieces_and_tags",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_finetune_adds_a_language_and_builds_an_archive_with_it",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_finetune_needs_an_epoch_and_a_batch",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_lines_need_a_language",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_the_adapter_path_is_checked_before_training",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_the_python_encoder_matches_the_engine_embedding",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_tokens_come_from_a_file",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-speech-training-interfaces"
+      ],
+      "new_evidence_resolution": "derived_from_frozen_selector_and_all_pass_group"
+    },
+    {
+      "case": "tests/test_whistle_finetune.py::test_wrong_kinds_of_files_are_refused",
+      "original": "passed",
+      "old": "failed",
+      "old_classification": "regressed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-heavy-whistle-finetune"
+      ],
+      "new_evidence_resolution": "individual_case_in_bound_heavy_receipt"
+    },
+    {
+      "case": "tests/test_worker.py::test_finetunes_run_in_independent_processes",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-worker",
+        "upstream-worker"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_worker.py::test_needle_2_takes_the_text_alone",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-worker",
+        "upstream-worker"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_worker.py::test_tuned_agents_use_independent_workers",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-worker",
+        "upstream-worker"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_worker.py::test_tuned_embeddings_go_through_the_worker",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-worker",
+        "upstream-worker"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_worker.py::test_worker_propagates_native_load_failure",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-worker",
+        "upstream-worker"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    },
+    {
+      "case": "tests/test_worker.py::test_worker_protocol_round_trip",
+      "original": "passed",
+      "old": "passed",
+      "old_classification": "passed",
+      "new": "passed",
+      "new_checks": [
+        "upstream-worker",
+        "upstream-worker"
+      ],
+      "new_evidence_resolution": "individual_case_in_stdout"
+    }
+  ],
+  "case_summary": {
+    "old_baseline": {
+      "passed": 269,
+      "skipped": 1,
+      "failed": 4
+    },
+    "old_candidate": {
+      "failed": 27,
+      "passed": 246,
+      "skipped": 1
+    },
+    "new_on_old_274": {
+      "passed": 269,
+      "not_run": 5
+    },
+    "old_regressions_rechecked": 23,
+    "new_unique_reported_cases": 269
+  },
+  "old_attempts": [
+    {
+      "attempt": 1,
+      "commit": "d27894ae8195e288e6ff53b8061dc063e1a803e3",
+      "counts": {
+        "regressed": 19,
+        "passed": 2
+      },
+      "size": {
+        "source_tokens": 63567,
+        "configuration_tokens": 61557,
+        "total_tokens": 125124,
+        "complete": false
+      },
+      "failed_checks": [
+        "upstream-tools",
+        "upstream-grounding",
+        "upstream-fetch",
+        "upstream-platform",
+        "upstream-playground",
+        "upstream-packaging",
+        "upstream-release",
+        "upstream-worker",
+        "upstream-generate",
+        "upstream-weights",
+        "api-contract",
+        "schema-performance",
+        "upstream-environments",
+        "upstream-speech",
+        "upstream-render",
+        "upstream-lora",
+        "upstream-generation",
+        "upstream-speech-training-interfaces",
+        "tiny-numerical-checkpoint-forward-export-generation"
+      ],
+      "installation": "failed",
+      "at": "2026-11-05T03:48:17.658961+00:00"
+    },
+    {
+      "attempt": 2,
+      "commit": "f02bca91e75115f629605f853f552e9d21f8556b",
+      "counts": {
+        "passed": 5,
+        "regressed": 16
+      },
+      "size": {
+        "source_tokens": 65352,
+        "configuration_tokens": 7479,
+        "total_tokens": 72831,
+        "complete": true
+      },
+      "failed_checks": [
+        "upstream-grounding",
+        "upstream-fetch",
+        "upstream-platform",
+        "upstream-playground",
+        "upstream-packaging",
+        "upstream-release",
+        "upstream-worker",
+        "upstream-generate",
+        "upstream-weights",
+        "api-contract",
+        "upstream-speech",
+        "upstream-render",
+        "upstream-lora",
+        "upstream-generation",
+        "upstream-speech-training-interfaces",
+        "tiny-numerical-checkpoint-forward-export-generation"
+      ],
+      "installation": "failed",
+      "at": "2026-11-05T04:17:11.390754+00:00"
+    },
+    {
+      "attempt": 3,
+      "commit": "e69c91049d47b35284760e57ef98ad6e5a897c2a",
+      "counts": {
+        "passed": 6,
+        "regressed": 15
+      },
+      "size": {
+        "source_tokens": 66306,
+        "configuration_tokens": 2802,
+        "total_tokens": 69108,
+        "complete": true
+      },
+      "failed_checks": [
+        "upstream-grounding",
+        "upstream-fetch",
+        "upstream-platform",
+        "upstream-playground",
+        "upstream-release",
+        "upstream-worker",
+        "upstream-generate",
+        "upstream-weights",
+        "api-contract",
+        "upstream-environments",
+        "upstream-speech",
+        "upstream-render",
+        "upstream-generation",
+        "upstream-speech-training-interfaces",
+        "tiny-numerical-checkpoint-forward-export-generation"
+      ],
+      "installation": "passed",
+      "at": "2026-11-05T04:42:21.799150+00:00"
+    },
+    {
+      "attempt": 4,
+      "commit": "9fca3184ad2a4dd3a2c53334983f45f183ef563a",
+      "counts": {
+        "passed": 12,
+        "regressed": 9
+      },
+      "size": {
+        "source_tokens": 66376,
+        "configuration_tokens": 8584,
+        "total_tokens": 74960,
+        "complete": true
+      },
+      "failed_checks": [
+        "upstream-grounding",
+        "upstream-fetch",
+        "upstream-release",
+        "upstream-generate",
+        "upstream-weights",
+        "upstream-speech",
+        "upstream-generation",
+        "upstream-speech-training-interfaces",
+        "tiny-numerical-checkpoint-forward-export-generation"
+      ],
+      "installation": "passed",
+      "at": "2026-11-05T05:19:19.633996+00:00"
+    },
+    {
+      "attempt": 5,
+      "commit": "9af39d2d201e69ec998f0139143957d02d79074e",
+      "counts": {
+        "passed": 12,
+        "regressed": 9
+      },
+      "size": {
+        "source_tokens": 66070,
+        "configuration_tokens": 8531,
+        "total_tokens": 74601,
+        "complete": true
+      },
+      "failed_checks": [
+        "upstream-grounding",
+        "upstream-fetch",
+        "upstream-release",
+        "upstream-generate",
+        "upstream-weights",
+        "upstream-speech",
+        "upstream-generation",
+        "upstream-speech-training-interfaces",
+        "tiny-numerical-checkpoint-forward-export-generation"
+      ],
+      "installation": "passed",
+      "at": "2026-11-05T05:39:21.405841+00:00"
+    },
+    {
+      "attempt": 6,
+      "commit": "cd6fb43825fdd023c0db4bb58bad61e177d408b8",
+      "counts": null,
+      "size": null,
+      "failed_checks": null,
+      "installation": null
+    },
+    {
+      "attempt": 7,
+      "commit": "5ef1e801b2768b9af5c442304bca97a0df476dac",
+      "counts": {
+        "passed": 14,
+        "regressed": 7
+      },
+      "size": {
+        "source_tokens": 66529,
+        "configuration_tokens": 9138,
+        "total_tokens": 75667,
+        "complete": true
+      },
+      "failed_checks": [
+        "upstream-grounding",
+        "upstream-fetch",
+        "upstream-release",
+        "upstream-weights",
+        "upstream-speech",
+        "upstream-speech-training-interfaces",
+        "tiny-numerical-checkpoint-forward-export-generation"
+      ],
+      "installation": "passed",
+      "at": "2026-11-05T06:10:33.390282+00:00"
+    },
+    {
+      "attempt": 8,
+      "commit": "874499d11896a0b0a975d1b01012cae72e9727c0",
+      "counts": {
+        "passed": 16,
+        "regressed": 5
+      },
+      "size": {
+        "source_tokens": 67087,
+        "configuration_tokens": 9356,
+        "total_tokens": 76443,
+        "complete": true
+      },
+      "failed_checks": [
+        "upstream-grounding",
+        "upstream-release",
+        "upstream-weights",
+        "upstream-speech",
+        "tiny-numerical-checkpoint-forward-export-generation"
+      ],
+      "installation": "passed",
+      "at": "2026-11-05T06:37:04.165793+00:00"
+    }
+  ],
+  "new_attempts": [
+    {
+      "at": "2026-11-09T05:58:57.462718+00:00",
+      "commit": "8a45bd88d16f5f5d68119c73b5d0ab4ae4650e91",
+      "status": "unverified",
+      "verification_scope": "full",
+      "source_tokens": 73935,
+      "total_tokens": 78100,
+      "counts": {
+        "passed": 32,
+        "regressed": 7
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-speech",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-generation",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-heavy-whistle-finetune",
+          "status": "regressed"
+        },
+        {
+          "name": "core-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "training-speech-real-updates",
+          "status": "regressed"
+        }
+      ],
+      "common_passed": 17
+    },
+    {
+      "at": "2026-11-09T06:49:55.429524+00:00",
+      "commit": "fef34a3c4ac8d064e1f5bf5d8417e5e31fad6e0c",
+      "status": "regressed",
+      "verification_scope": "full",
+      "source_tokens": 74062,
+      "total_tokens": 78715,
+      "counts": {
+        "passed": 32,
+        "regressed": 7
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-speech",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-generation",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-heavy-whistle-finetune",
+          "status": "regressed"
+        },
+        {
+          "name": "core-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "training-speech-real-updates",
+          "status": "regressed"
+        }
+      ],
+      "common_passed": 17
+    },
+    {
+      "at": "2026-11-09T07:11:59.264187+00:00",
+      "commit": "8bd88d7b48112c1c4a652d4d278abe8e1aa0ae5d",
+      "status": "regressed",
+      "verification_scope": "full",
+      "source_tokens": 74197,
+      "total_tokens": 78792,
+      "counts": {
+        "passed": 35,
+        "regressed": 4
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-speech",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-heavy-whistle-finetune",
+          "status": "regressed"
+        },
+        {
+          "name": "training-speech-real-updates",
+          "status": "regressed"
+        }
+      ],
+      "common_passed": 19
+    },
+    {
+      "at": "2026-11-09T07:43:27.799606+00:00",
+      "commit": "0fe57d8bab8b1a091620797305e470285a5abd62",
+      "status": "regressed",
+      "verification_scope": "full",
+      "source_tokens": 74176,
+      "total_tokens": 78536,
+      "counts": {
+        "passed": 38,
+        "regressed": 1
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        }
+      ],
+      "common_passed": 20
+    },
+    {
+      "at": "2026-11-09T07:59:03.977713+00:00",
+      "commit": "7e1e7b3f4f0ef92fca60d0871528748d095b3049",
+      "status": "checks_passed",
+      "verification_scope": "full",
+      "source_tokens": 74176,
+      "total_tokens": 89044,
+      "counts": {
+        "passed": 39
+      },
+      "nonpassing_checks": [],
+      "common_passed": 21
+    }
+  ],
+  "old_author_calls": [
+    {
+      "started_utc": "2026-11-05T03:07:29.453155+00:00",
+      "finished_utc": "2026-11-05T03:32:52.862924+00:00",
+      "duration_seconds": 1523.4097690582275,
+      "status": "incomplete",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": null,
+      "observed_usage": {
+        "input_tokens": 8177799,
+        "cached_input_tokens": 8028672,
+        "output_tokens": 40874,
+        "total_tokens": 8218673
+      }
+    },
+    {
+      "started_utc": "2026-11-05T03:48:44.887060+00:00",
+      "finished_utc": "2026-11-05T04:10:13.702926+00:00",
+      "duration_seconds": 1288.8158659934998,
+      "status": "implemented",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "e507f52f51922febfb3515d2a94dd5b8f4b63a6f432c058d927dca7dff86734c",
+      "observed_usage": {
+        "input_tokens": 8159146,
+        "cached_input_tokens": 7854208,
+        "output_tokens": 30793,
+        "total_tokens": 8189939
+      }
+    },
+    {
+      "started_utc": "2026-11-05T04:17:41.867024+00:00",
+      "finished_utc": "2026-11-05T04:35:24.681453+00:00",
+      "duration_seconds": 1062.8144290447235,
+      "status": "incomplete",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "133d0204a1bf2e8b4752722839ff20321f26ce701d82484ab11e50e9ff23be83",
+      "observed_usage": {
+        "input_tokens": 5239298,
+        "cached_input_tokens": 5105536,
+        "output_tokens": 27017,
+        "total_tokens": 5266315
+      }
+    },
+    {
+      "started_utc": "2026-11-05T04:42:54.034714+00:00",
+      "finished_utc": "2026-11-05T04:56:14.736726+00:00",
+      "duration_seconds": 800.7020115852356,
+      "status": "implemented",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "57ef7a3e79e81bfc699fb711e5029acbe281d7c4a060296623f3795b95637c08",
+      "observed_usage": {
+        "input_tokens": 5145936,
+        "cached_input_tokens": 5009792,
+        "output_tokens": 21099,
+        "total_tokens": 5167035
+      }
+    },
+    {
+      "started_utc": "2026-11-05T05:01:23.644331+00:00",
+      "finished_utc": "2026-11-05T05:12:15.898872+00:00",
+      "duration_seconds": 652.2545404434204,
+      "status": "implemented",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "495aced7c2f7e9e2838a9b566a09556db3f2be22b01963ef511ad8d1d27a6c6a",
+      "observed_usage": {
+        "input_tokens": 4065243,
+        "cached_input_tokens": 3945216,
+        "output_tokens": 17682,
+        "total_tokens": 4082925
+      }
+    },
+    {
+      "started_utc": "2026-11-05T05:19:49.618826+00:00",
+      "finished_utc": "2026-11-05T05:32:26.888938+00:00",
+      "duration_seconds": 757.2701115608215,
+      "status": "implemented",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "4eb2aa34350ea4630c9db2582fe70c0ba5f350ffdaef6ea5d8e5488eef7c9066",
+      "observed_usage": {
+        "input_tokens": 5237964,
+        "cached_input_tokens": 5113472,
+        "output_tokens": 19219,
+        "total_tokens": 5257183
+      }
+    },
+    {
+      "started_utc": "2026-11-05T05:39:53.331264+00:00",
+      "finished_utc": "2026-11-05T05:50:55.357391+00:00",
+      "duration_seconds": 662.0261270999908,
+      "status": "incomplete",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "cad4503b4ca6706605f25590b1da892c09ea17a4cec5fb0ce7a86582d3a3a304",
+      "observed_usage": {
+        "input_tokens": 3905463,
+        "cached_input_tokens": 3787520,
+        "output_tokens": 15707,
+        "total_tokens": 3921170
+      }
+    },
+    {
+      "started_utc": "2026-11-05T05:59:35.309790+00:00",
+      "finished_utc": "2026-11-05T06:08:26.473938+00:00",
+      "duration_seconds": 531.1641483306885,
+      "status": "implemented",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "8e22f1bbd4960ddfca1d56d088a40da087681174b9eb1af84cfe1ce3e1f68037",
+      "observed_usage": {
+        "input_tokens": 3700288,
+        "cached_input_tokens": 3600768,
+        "output_tokens": 10906,
+        "total_tokens": 3711194
+      }
+    },
+    {
+      "started_utc": "2026-11-05T06:11:03.040622+00:00",
+      "finished_utc": null,
+      "duration_seconds": null,
+      "status": "interrupted",
+      "process_exit_code": null,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "84c270f29a32016f8ca2566ed4da8fe60b01aafe0234ad106ff14cdef60efd4a",
+      "completion_status_known": false,
+      "resource_release_proof": "owner_backend_cleanup",
+      "resources_released_utc": "2026-11-05T06:13:43.688386+00:00",
+      "owner_interruption_evidence_sha256": "7475c8b97dfc318612479b168d992dc7c845bbfb2b8244bb700e477f52c66c1f",
+      "reason": "The owner cancelled an unfinished author context to coordinate complete repair feedback. No agent completion receipt exists; complete author/helper usage remains unknown. Historical native and task evidence is retained.",
+      "observed_usage": null
+    },
+    {
+      "started_utc": "2026-11-05T06:22:44.890268+00:00",
+      "finished_utc": "2026-11-05T06:34:46.121644+00:00",
+      "duration_seconds": 721.2313756942749,
+      "status": "implemented",
+      "process_exit_code": 0,
+      "model_usage_complete": false,
+      "semantic_clarification_sha256": "ae2dfc7cbcf5191d2b63dfc35a1d8e957eed49c5ade0075e3c0334a839566014",
+      "observed_usage": {
+        "input_tokens": 4253390,
+        "cached_input_tokens": 4135296,
+        "output_tokens": 16310,
+        "total_tokens": 4269700
+      }
+    }
+  ],
+  "new_model_calls": [
+    {
+      "sequence": 1,
+      "role": "controller",
+      "seconds": 81.48876621597447,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 221820,
+      "cached_input_tokens": 185984,
+      "output_tokens": 2407,
+      "total_tokens": 224227
+    },
+    {
+      "sequence": 2,
+      "role": "author/implement",
+      "seconds": 2839.0408411819953,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 9840096,
+      "cached_input_tokens": 9339392,
+      "output_tokens": 112080,
+      "total_tokens": 9952176
+    },
+    {
+      "sequence": 3,
+      "role": "controller",
+      "seconds": 42.01811047701631,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 120328,
+      "cached_input_tokens": 88960,
+      "output_tokens": 940,
+      "total_tokens": 121268
+    },
+    {
+      "sequence": 4,
+      "role": "controller",
+      "seconds": 152.9287114230101,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 413410,
+      "cached_input_tokens": 347136,
+      "output_tokens": 4534,
+      "total_tokens": 417944
+    },
+    {
+      "sequence": 5,
+      "role": "author/repair",
+      "seconds": 475.86104931798764,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 2775833,
+      "cached_input_tokens": 2639360,
+      "output_tokens": 13749,
+      "total_tokens": 2789582
+    },
+    {
+      "sequence": 6,
+      "role": "controller",
+      "seconds": 75.43582511803834,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 250733,
+      "cached_input_tokens": 202880,
+      "output_tokens": 1693,
+      "total_tokens": 252426
+    },
+    {
+      "sequence": 7,
+      "role": "controller",
+      "seconds": 95.20339771802537,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 255982,
+      "cached_input_tokens": 207360,
+      "output_tokens": 2428,
+      "total_tokens": 258410
+    },
+    {
+      "sequence": 8,
+      "role": "author/repair",
+      "seconds": 380.8687387490063,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 1412426,
+      "cached_input_tokens": 1304832,
+      "output_tokens": 11854,
+      "total_tokens": 1424280
+    },
+    {
+      "sequence": 9,
+      "role": "controller",
+      "seconds": 121.60263208497781,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 267503,
+      "cached_input_tokens": 219392,
+      "output_tokens": 3282,
+      "total_tokens": 270785
+    },
+    {
+      "sequence": 10,
+      "role": "controller",
+      "seconds": 183.4253493770375,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 486768,
+      "cached_input_tokens": 426624,
+      "output_tokens": 4899,
+      "total_tokens": 491667
+    },
+    {
+      "sequence": 11,
+      "role": "author/reviewer",
+      "seconds": 334.9210539130145,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 1219183,
+      "cached_input_tokens": 1092480,
+      "output_tokens": 7136,
+      "total_tokens": 1226319
+    },
+    {
+      "sequence": 12,
+      "role": "controller",
+      "seconds": 100.6732950709993,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 289798,
+      "cached_input_tokens": 242816,
+      "output_tokens": 2171,
+      "total_tokens": 291969
+    },
+    {
+      "sequence": 13,
+      "role": "author/repair",
+      "seconds": 210.33801961899735,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 781641,
+      "cached_input_tokens": 713088,
+      "output_tokens": 6227,
+      "total_tokens": 787868
+    },
+    {
+      "sequence": 14,
+      "role": "controller",
+      "seconds": 77.10362460801844,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 240964,
+      "cached_input_tokens": 198528,
+      "output_tokens": 1212,
+      "total_tokens": 242176
+    },
+    {
+      "sequence": 15,
+      "role": "controller",
+      "seconds": 104.70780944701983,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 328881,
+      "cached_input_tokens": 288768,
+      "output_tokens": 2321,
+      "total_tokens": 331202
+    }
+  ],
+  "new_role_usage": {
+    "controller": {
+      "calls": 10,
+      "seconds": 1034.5875215401175,
+      "total_tokens": 2902074,
+      "cached_input_tokens": 2408448,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 493626
+    },
+    "author/implement": {
+      "calls": 1,
+      "seconds": 2839.0408411819953,
+      "total_tokens": 9952176,
+      "cached_input_tokens": 9339392,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 612784
+    },
+    "author/repair": {
+      "calls": 3,
+      "seconds": 1067.0678076859913,
+      "total_tokens": 5001730,
+      "cached_input_tokens": 4657280,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 344450
+    },
+    "author/reviewer": {
+      "calls": 1,
+      "seconds": 334.9210539130145,
+      "total_tokens": 1226319,
+      "cached_input_tokens": 1092480,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 133839
+    }
+  },
+  "old_observed_author_tokens": 48084134,
+  "old_author_usage_complete": false,
+  "old_evaluation": {
+    "observed_total_tokens": 258164,
+    "total_tokens": 258164,
+    "role_tokens": {
+      "examiner": 0,
+      "solver": 258164,
+      "judge": 0
+    },
+    "usage_complete": true,
+    "unknown_or_partial_calls": 0,
+    "calls": 2,
+    "ledger_sha256": "508ff4fdb8d0edcdd16a661440484936b3ff27cdc97eea6eee5088866693e12c",
+    "scope": "Task evaluation only; complete rewrite-author and preparatory usage are not available."
+  },
+  "old_evaluation_scope": "Original development modification task only; candidate and hidden arms never ran.",
+  "new_observed_model_tokens": 19082299,
+  "new_model_usage_scope": "Recorded controller and author model input plus output, including cached input once. Host preparation, supervision and publication excluded. Missing usage is unknown.",
+  "timing": {
+    "old": {
+      "start": "2026-11-05T03:01:52.782144+00:00",
+      "end": "2026-11-05T06:37:45.673586+00:00",
+      "delivered": "2026-11-05T07:03:59.457421+00:00",
+      "job_seconds": 12952.891442,
+      "delivery_seconds": 14526.675277,
+      "phase_seconds": {
+        "queued": 48.024286,
+        "preparing": 8.332937,
+        "baseline": 133.167089,
+        "task_effort_design": 0.022792,
+        "task_effort_original": 179.676316,
+        "workflow": 92.425057,
+        "refactoring": 8176.141957,
+        "failed": 1167.51273,
+        "verifying": 2322.7046250000003,
+        "installing": 205.65367099999997,
+        "repairing": 14.046228,
+        "cancelled": 605.183754
+      },
+      "completed_author_seconds": 7999.688378810883
+    },
+    "new": {
+      "start": "2026-11-09T04:35:22.111821+00:00",
+      "end": "2026-11-09T08:02:22.449789+00:00",
+      "delivered": "2026-11-09T08:12:55.498772+00:00",
+      "job_seconds": 12420.337968,
+      "delivery_seconds": 13053.386951
+    }
+  },
+  "new_operations": [
+    {
+      "name": "create_workspace",
+      "status": "completed",
+      "started_at": "2026-11-09T04:35:57.206186+00:00",
+      "finished_at": "2026-11-09T04:36:14.568937+00:00",
+      "duration_seconds": 17.341313200013246
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "started_at": "2026-11-09T04:37:55.068525+00:00",
+      "finished_at": "2026-11-09T04:50:01.158666+00:00",
+      "duration_seconds": 726.0111149849836
+    },
+    {
+      "name": "run_agent",
+      "status": "failed",
+      "started_at": "2026-11-09T04:50:01.359888+00:00",
+      "finished_at": "2026-11-09T05:37:33.382034+00:00",
+      "duration_seconds": 2851.984490689996
+    },
+    {
+      "name": "save_candidate",
+      "status": "failed",
+      "started_at": "2026-11-09T05:37:33.589734+00:00",
+      "finished_at": "2026-11-09T05:37:43.772177+00:00",
+      "duration_seconds": 9.748730810009874
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T05:37:43.881910+00:00",
+      "finished_at": "2026-11-09T05:37:52.566738+00:00",
+      "duration_seconds": 8.673490785993636
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T05:46:02.892006+00:00",
+      "finished_at": "2026-11-09T05:58:57.554889+00:00",
+      "duration_seconds": 774.6489129909896
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T05:58:57.718707+00:00",
+      "finished_at": "2026-11-09T05:59:16.400480+00:00",
+      "duration_seconds": 18.482527784013655
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T05:59:16.551723+00:00",
+      "finished_at": "2026-11-09T05:59:24.223724+00:00",
+      "duration_seconds": 7.635084319976158
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T05:59:24.381865+00:00",
+      "finished_at": "2026-11-09T05:59:32.858484+00:00",
+      "duration_seconds": 8.460227167990524
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "started_at": "2026-11-09T06:02:20.340997+00:00",
+      "finished_at": "2026-11-09T06:14:15.772928+00:00",
+      "duration_seconds": 715.4109761139844
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T06:14:28.815018+00:00",
+      "finished_at": "2026-11-09T06:22:42.319883+00:00",
+      "duration_seconds": 493.25337881903397
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T06:22:52.660141+00:00",
+      "finished_at": "2026-11-09T06:23:08.902696+00:00",
+      "duration_seconds": 16.228438443038613
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "started_at": "2026-11-09T06:24:44.766820+00:00",
+      "finished_at": "2026-11-09T06:36:56.431535+00:00",
+      "duration_seconds": 731.6497672250262
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T06:37:02.320314+00:00",
+      "finished_at": "2026-11-09T06:49:55.552048+00:00",
+      "duration_seconds": 773.2064578279969
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T06:49:55.767726+00:00",
+      "finished_at": "2026-11-09T06:50:14.144433+00:00",
+      "duration_seconds": 18.36405672400724
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T06:50:14.353780+00:00",
+      "finished_at": "2026-11-09T06:50:22.873661+00:00",
+      "duration_seconds": 8.497425446053967
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T06:52:14.779700+00:00",
+      "finished_at": "2026-11-09T06:58:45.807482+00:00",
+      "duration_seconds": 391.0157442020136
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T06:58:46.073697+00:00",
+      "finished_at": "2026-11-09T06:58:57.885666+00:00",
+      "duration_seconds": 11.798845641955268
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T06:58:58.136397+00:00",
+      "finished_at": "2026-11-09T07:11:59.477654+00:00",
+      "duration_seconds": 781.3294688379974
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T07:11:59.676643+00:00",
+      "finished_at": "2026-11-09T07:12:19.382001+00:00",
+      "duration_seconds": 19.692282307019923
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T07:12:19.618471+00:00",
+      "finished_at": "2026-11-09T07:12:28.407382+00:00",
+      "duration_seconds": 8.767957522009965
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T07:12:28.598951+00:00",
+      "finished_at": "2026-11-09T07:12:38.183504+00:00",
+      "duration_seconds": 9.566042152000591
+    },
+    {
+      "name": "record_unknown",
+      "status": "completed",
+      "started_at": "2026-11-09T07:14:56.414378+00:00",
+      "finished_at": "2026-11-09T07:15:03.014803+00:00",
+      "duration_seconds": 6.586248315987177
+    },
+    {
+      "name": "request_revision",
+      "status": "failed",
+      "started_at": "2026-11-09T07:15:03.225845+00:00",
+      "finished_at": "2026-11-09T07:15:09.512378+00:00",
+      "duration_seconds": 6.272545473009814
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T07:18:34.367476+00:00",
+      "finished_at": "2026-11-09T07:24:19.870283+00:00",
+      "duration_seconds": 345.46334412298165
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T07:26:29.648012+00:00",
+      "finished_at": "2026-11-09T07:30:10.857737+00:00",
+      "duration_seconds": 221.1864659540006
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T07:30:14.817643+00:00",
+      "finished_at": "2026-11-09T07:30:27.809170+00:00",
+      "duration_seconds": 12.958487473020796
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T07:30:28.250462+00:00",
+      "finished_at": "2026-11-09T07:43:27.947302+00:00",
+      "duration_seconds": 779.6797695819987
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T07:43:28.226947+00:00",
+      "finished_at": "2026-11-09T07:43:47.048345+00:00",
+      "duration_seconds": 18.801900233956985
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T07:44:17.523427+00:00",
+      "finished_at": "2026-11-09T07:44:27.109449+00:00",
+      "duration_seconds": 9.562906944018323
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T07:44:27.394758+00:00",
+      "finished_at": "2026-11-09T07:44:37.328025+00:00",
+      "duration_seconds": 9.888175036991015
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T07:46:11.339221+00:00",
+      "finished_at": "2026-11-09T07:59:04.116058+00:00",
+      "duration_seconds": 772.7647119629546
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T07:59:04.422649+00:00",
+      "finished_at": "2026-11-09T07:59:22.583628+00:00",
+      "duration_seconds": 18.140798442007508
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T07:59:23.328860+00:00",
+      "finished_at": "2026-11-09T07:59:32.457358+00:00",
+      "duration_seconds": 9.109306622995064
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T07:59:32.701596+00:00",
+      "finished_at": "2026-11-09T07:59:42.827783+00:00",
+      "duration_seconds": 10.113375879009254
+    },
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T08:01:44.776093+00:00",
+      "finished_at": "2026-11-09T08:01:52.841200+00:00",
+      "duration_seconds": 8.052005780977197
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T08:01:53.084082+00:00",
+      "finished_at": "2026-11-09T08:02:04.927978+00:00",
+      "duration_seconds": 11.83163817197783
+    },
+    {
+      "name": "deliver",
+      "status": "completed",
+      "started_at": "2026-11-09T08:02:05.216874+00:00",
+      "finished_at": "2026-11-09T08:02:22.472141+00:00",
+      "duration_seconds": 17.24164500203915
+    }
+  ],
+  "new_operation_totals": {
+    "create_workspace": {
+      "calls": 1,
+      "seconds": 17.341313200013246,
+      "failed_calls": 0
+    },
+    "capture_baseline": {
+      "calls": 3,
+      "seconds": 2173.071858323994,
+      "failed_calls": 0
+    },
+    "run_agent": {
+      "calls": 5,
+      "seconds": 4302.903423788026,
+      "failed_calls": 1
+    },
+    "save_candidate": {
+      "calls": 4,
+      "seconds": 50.73450236802455,
+      "failed_calls": 1
+    },
+    "measure_code": {
+      "calls": 6,
+      "seconds": 52.24617164104711,
+      "failed_calls": 0
+    },
+    "compare_behavior": {
+      "calls": 5,
+      "seconds": 3881.6293212019373,
+      "failed_calls": 0
+    },
+    "check_installation": {
+      "calls": 5,
+      "seconds": 93.48156549100531,
+      "failed_calls": 0
+    },
+    "evaluate_acceptance": {
+      "calls": 5,
+      "seconds": 49.859458407969214,
+      "failed_calls": 0
+    },
+    "record_unknown": {
+      "calls": 1,
+      "seconds": 6.586248315987177,
+      "failed_calls": 0
+    },
+    "request_revision": {
+      "calls": 1,
+      "seconds": 6.272545473009814,
+      "failed_calls": 1
+    },
+    "select_candidate": {
+      "calls": 1,
+      "seconds": 8.052005780977197,
+      "failed_calls": 0
+    },
+    "deliver": {
+      "calls": 1,
+      "seconds": 17.24164500203915,
+      "failed_calls": 0
+    }
+  },
+  "old_events": [
+    {
+      "time": "2026-11-05T03:01:52.782144+00:00",
+      "phase": "queued"
+    },
+    {
+      "time": "2026-11-05T03:01:56.158970+00:00",
+      "phase": "preparing"
+    },
+    {
+      "time": "2026-11-05T03:02:04.491907+00:00",
+      "phase": "baseline"
+    },
+    {
+      "time": "2026-11-05T03:04:17.658996+00:00",
+      "phase": "task_effort_design"
+    },
+    {
+      "time": "2026-11-05T03:04:17.681788+00:00",
+      "phase": "task_effort_original"
+    },
+    {
+      "time": "2026-11-05T03:07:17.358104+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T03:07:28.940724+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T03:32:57.776218+00:00",
+      "phase": "failed"
+    },
+    {
+      "time": "2026-11-05T03:41:15.638337+00:00",
+      "phase": "queued"
+    },
+    {
+      "time": "2026-11-05T03:41:25.583678+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T03:41:27.874841+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T03:41:37.980514+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T03:41:46.605729+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T03:48:17.658961+00:00",
+      "phase": "installing"
+    },
+    {
+      "time": "2026-11-05T03:48:42.525928+00:00",
+      "phase": "repairing"
+    },
+    {
+      "time": "2026-11-05T03:48:44.522428+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T04:10:24.990352+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T04:10:34.110187+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T04:17:11.390754+00:00",
+      "phase": "installing"
+    },
+    {
+      "time": "2026-11-05T04:17:38.786432+00:00",
+      "phase": "repairing"
+    },
+    {
+      "time": "2026-11-05T04:17:41.200436+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T04:35:35.462236+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T04:35:44.526774+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T04:42:21.799150+00:00",
+      "phase": "installing"
+    },
+    {
+      "time": "2026-11-05T04:42:50.823504+00:00",
+      "phase": "repairing"
+    },
+    {
+      "time": "2026-11-05T04:42:53.460123+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T04:56:19.761866+00:00",
+      "phase": "failed"
+    },
+    {
+      "time": "2026-11-05T05:01:10.319496+00:00",
+      "phase": "queued"
+    },
+    {
+      "time": "2026-11-05T05:01:20.134461+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T05:01:22.299096+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T05:12:26.050029+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T05:12:34.962882+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T05:19:19.633996+00:00",
+      "phase": "installing"
+    },
+    {
+      "time": "2026-11-05T05:19:46.723544+00:00",
+      "phase": "repairing"
+    },
+    {
+      "time": "2026-11-05T05:19:49.052481+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T05:32:37.185104+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T05:32:46.080393+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T05:39:21.405841+00:00",
+      "phase": "installing"
+    },
+    {
+      "time": "2026-11-05T05:39:50.368366+00:00",
+      "phase": "repairing"
+    },
+    {
+      "time": "2026-11-05T05:39:52.785074+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T05:51:05.987283+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T05:51:15.073558+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T05:53:03.881488+00:00",
+      "phase": "failed"
+    },
+    {
+      "time": "2026-11-05T05:59:22.974469+00:00",
+      "phase": "queued"
+    },
+    {
+      "time": "2026-11-05T05:59:32.547805+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T05:59:34.754358+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T06:08:35.734479+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T06:08:44.062131+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T06:10:33.390282+00:00",
+      "phase": "installing"
+    },
+    {
+      "time": "2026-11-05T06:11:00.197088+00:00",
+      "phase": "repairing"
+    },
+    {
+      "time": "2026-11-05T06:11:02.450548+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T06:12:20.298308+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T06:12:20.434697+00:00",
+      "phase": "cancelled"
+    },
+    {
+      "time": "2026-11-05T06:12:20.656388+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T06:12:20.713078+00:00",
+      "phase": "cancelled"
+    },
+    {
+      "time": "2026-11-05T06:13:43.719044+00:00",
+      "phase": "cancelled"
+    },
+    {
+      "time": "2026-11-05T06:22:25.675141+00:00",
+      "phase": "queued"
+    },
+    {
+      "time": "2026-11-05T06:22:40.988959+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T06:22:43.872408+00:00",
+      "phase": "refactoring"
+    },
+    {
+      "time": "2026-11-05T06:34:56.128085+00:00",
+      "phase": "workflow"
+    },
+    {
+      "time": "2026-11-05T06:35:05.199986+00:00",
+      "phase": "verifying"
+    },
+    {
+      "time": "2026-11-05T06:37:04.165793+00:00",
+      "phase": "installing"
+    },
+    {
+      "time": "2026-11-05T06:37:45.673586+00:00",
+      "phase": "failed"
+    }
+  ],
+  "source_evidence": [
+    {
+      "label": "Old published evidence",
+      "sha256": "60e3e5620b14b7a16c574bf565fb9aa9f1379e0ce5be84b1192d58aba1805fdd",
+      "url": "https://al-leanmuscle-club.github.io/lma-graphs/needle-full49-20261105/summary.json",
+      "raw_published": true
+    },
+    {
+      "label": "New published experiment",
+      "sha256": "a27388feaeffe01e58a1cfc95011847d04fc9bb0b25172c1d7d1848c5268994d",
+      "url": "https://al-leanmuscle-club.github.io/lma-graphs/needle-feedback-readable-20261109/experiment.json",
+      "raw_published": true
+    },
+    {
+      "label": "Old final verification",
+      "sha256": "f039c42c06c6074e401779e55d34bf5f195c2b8d8437e7b35b38080133173e8b",
+      "url": null,
+      "raw_published": false
+    },
+    {
+      "label": "New final verification",
+      "sha256": "f888f932bc17a894187dfe98d8fa02fbb17c85852709bdfd4b0ae55294179f64",
+      "url": null,
+      "raw_published": false
+    },
+    {
+      "label": "Old author transport",
+      "sha256": "438636ceedc74c6f0cccb3db7ad536c5e74f10678db5a3c944c6083f4808f897",
+      "url": null,
+      "raw_published": false
+    },
+    {
+      "label": "Old delivery receipt",
+      "sha256": "b0b29caa147c274a7bb0964807c63fdf64dd0f173de4c4bdd500fe38edd18520",
+      "url": null,
+      "raw_published": false
+    },
+    {
+      "label": "New completion receipt",
+      "sha256": "2e38e8d4e8b2b0fc8cad5c9f294f2e8874b7068855912a06539a69e7bde838ab",
+      "url": null,
+      "raw_published": false
+    },
+    {
+      "label": "Final candidate heavy whistle_finetune",
+      "sha256": "912434286c821075a555ea3b5c67a75bb93e3bd46fb3014177239d726fb47844",
+      "result_sha256": "f5adcfca38d55b5766fe7d1d00e6cd483f006991fb30e8f824a570f4e3d36891",
+      "raw_published": false,
+      "url": null
+    },
+    {
+      "label": "Final candidate heavy build",
+      "sha256": "2425903e0c572bfd100375887b705b9b8f5444d76ca0c94bd6c763d8a860efb5",
+      "result_sha256": "dfa0012e6f3d73c1aafd98f85c4b1e4778359d2f636ef4a06886dee49feb7c58",
+      "raw_published": false,
+      "url": null
+    },
+    {
+      "label": "Final candidate heavy whistle",
+      "sha256": "9dc30d9af598bab0238d69d21871feb2b6ff6dba1e7fe1e4c9cdebb3823968f4",
+      "result_sha256": "0cfa01323b60151039a8b1fa3de4d3a953fa2bc6f607849901b259922d0b0220",
+      "raw_published": false,
+      "url": null
+    },
+    {
+      "label": "Final candidate heavy finetune",
+      "sha256": "787c344bcc829d1719ef3797bd6b056fc4e4412bfdfeace86f6642e324e898a1",
+      "result_sha256": "19f58b65e5a4a43d0a27efcb24398eb8df8276564b77984751d0e422d5db250d",
+      "raw_published": false,
+      "url": null
+    },
+    {
+      "label": "Final candidate heavy quantize_mlx",
+      "sha256": "09f12c9ac95569ebee9adfe1d89d035053b1adef69a30e016a5a9cb667b5d397",
+      "result_sha256": "b8961d01bd926539a2f3a9168ec87c015c9e925feef3e2a61bdc3e6c28b0b466",
+      "raw_published": false,
+      "url": null
+    },
+    {
+      "label": "Final candidate heavy mlx",
+      "sha256": "e7651a18fc0be2e71f4ae4aced6ca7bc9d3d1d65f635fb9feac7bbf24d8222a6",
+      "result_sha256": "f2414d9c4dae4d7882b520028c596e7137f4ebe9c819fdc4ff0a0ab614a7de8d",
+      "raw_published": false,
+      "url": null
+    },
+    {
+      "label": "Final candidate heavy run",
+      "sha256": "684eebfb5ae5b98cac8dcf124e94b2060d758fc78ff069770f9ece5dc5c56706",
+      "result_sha256": "dec5ab16722d25c1d673b8455905c9005b7a5eefa49a5d7eb8d8e55d6bc2c7aa",
+      "raw_published": false,
+      "url": null
+    },
+    {
+      "label": "Final candidate heavy environments",
+      "sha256": "279ce9a1fc6b2119de70f363d8e6a2a0b928670258c9ba07954c1ea6ccb95756",
+      "result_sha256": "b642c865aa3a2a2495496ce1e437ca5baffa30841637dc944858998ac8628c5a",
+      "raw_published": false,
+      "url": null
+    }
+  ],
+  "runtime_data_comparison": {
+    "parsed_json_equal": true,
+    "old_tokens": 5783,
+    "new_tokens": 10508
+  },
+  "review_probe": {
+    "name": "Legacy engine embed exception and validation ordering",
+    "method": "Execute the unchanged embed method extracted by AST, with _bind and _check replaced by tracing stubs and generation=2. No model, native engine, target import, or repository edit.",
+    "scope": "Focused supplemental branch probe; not a full native runtime test or part of either historical acceptance.",
+    "results": {
+      "original": {
+        "exception": "ValueError",
+        "message": "embeddings require a Needle 3 model",
+        "calls_before_error": [],
+        "file": "needle/__init__.py",
+        "line": 314,
+        "file_sha256": "541d316cb214f50ffd4d62a4269bf0e5408433b042b1b5152c0ddfe6a24b35f4"
+      },
+      "old": {
+        "exception": "NotImplementedError",
+        "message": "Embeddings require Needle 3",
+        "calls_before_error": [
+          "check"
+        ],
+        "file": "needle/__init__.py",
+        "line": 395,
+        "file_sha256": "0832f2e6820b89e21904a3322210c8d902203052a4ad0105f2a58ac7b79a10d9"
+      },
+      "new": {
+        "exception": "RuntimeError",
+        "message": "embeddings require a Needle 3 model",
+        "calls_before_error": [
+          "bind"
+        ],
+        "file": "needle/__init__.py",
+        "line": 251,
+        "file_sha256": "798ff4d7312ec86999b8a904427f5dd48774b2a64f260f5edd646b01581324d2"
+      }
+    }
+  },
+  "token_summary": {
+    "old": {
+      "total": 48084134,
+      "cached": 46580480,
+      "uncached_input": 1304047,
+      "output": 199607
+    },
+    "new": {
+      "total": 19082299,
+      "cached": 17497600,
+      "uncached_input": 1407766,
+      "output": 176933
+    }
+  }
+}
