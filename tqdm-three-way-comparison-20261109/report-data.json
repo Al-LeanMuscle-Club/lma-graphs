@@ -1,0 +1,1673 @@
+{
+  "schema_version": 1,
+  "title": "tqdm · 三次 nanolize 实验对比",
+  "collected_at": "2026-11-09T01:58:22.653072+00:00",
+  "language": "zh-CN",
+  "runs": {
+    "main": {
+      "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+      "harness_commit": "8c0745a19c40aa7673b28ceeb1b49c7ae2850d78",
+      "started": "2026-11-08T22:03:34.187028+00:00",
+      "ended": "2026-11-08T23:20:11.513228+00:00",
+      "wall_seconds": 4597.3262,
+      "baseline_tokens": {
+        "source_tokens": 45979,
+        "configuration_tokens": 26169,
+        "total_tokens": 72148
+      },
+      "candidate_tokens": {
+        "source_tokens": 27281,
+        "configuration_tokens": 8589,
+        "total_tokens": 35870
+      },
+      "retained_percent": {
+        "source_tokens": 59.33360882141847,
+        "configuration_tokens": 32.82127708357216,
+        "total_tokens": 49.71724787935909
+      },
+      "selected_capabilities": 27,
+      "excluded_capabilities": 0,
+      "historical_checks": {
+        "passed": 26
+      },
+      "budget": {
+        "max_author_calls": 20,
+        "max_optimization_calls": 3,
+        "optimization_calls_used": 0,
+        "task_max_total_tokens": 3000000,
+        "task_repetitions_configured": 1,
+        "task_suite_prefrozen": true
+      },
+      "usage_by_role": {
+        "author": {
+          "calls": 4,
+          "seconds": 1909.851310968399,
+          "unmetered_calls": 1,
+          "input_tokens": 4002745,
+          "cached_input_tokens": 3736192,
+          "output_tokens": 61707,
+          "total_tokens": 4064452,
+          "uncached_input_plus_output": 328260,
+          "usage_complete": false
+        },
+        "task_solver": {
+          "calls": 5,
+          "seconds": 1897.132183790207,
+          "unmetered_calls": 0,
+          "input_tokens": 3126647,
+          "cached_input_tokens": 2934528,
+          "output_tokens": 55181,
+          "total_tokens": 3181828,
+          "uncached_input_plus_output": 247300,
+          "usage_complete": true
+        }
+      },
+      "observed_total_tokens": 7246280,
+      "observed_cached_input_tokens": 6670720,
+      "observed_uncached_input_plus_output": 575560,
+      "usage_complete": false,
+      "performance": {
+        "disabled": 0.9820611328632969,
+        "automatic": 0.9859843061428032,
+        "updates": 0.9375386107631027,
+        "rendered": 1.0052231265183877
+      },
+      "quality_probes": {
+        "maintainer_helpers": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "public_surface": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "range_helpers": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_help": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "archive_version": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_arguments": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "cli_output_streams": {
+          "passed": true,
+          "python_versions": [
+            "3.8",
+            "3.11"
+          ],
+          "flags": [
+            "--help",
+            "--version"
+          ]
+        },
+        "python38_import_iteration": {
+          "passed": true
+        }
+      },
+      "optimization_author_calls": {
+        "calls": 0,
+        "seconds": 0,
+        "observed_tokens": 0
+      },
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-main-full50-20261108/",
+      "name": "Main",
+      "color": "#248b80",
+      "code": {
+        "branch": "examples/tqdm-main-full50-20261108",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-main-full50-20261108",
+        "verified_commit": "2b9a7b270906dba94fd65adc5c882784b463835c",
+        "published_commit": "f70cffc181645918d02fdf0e4ad56e08473e8803",
+        "tree": "8fec2cb8deca44a378418b33fcfe9e6adf98c338",
+        "identical_code_tree": true
+      },
+      "history": [
+        {
+          "index": 1,
+          "head": "60e68b7bd2a40e07b61415cff4ccf0ac306fb2af",
+          "verification_at": null,
+          "source_tokens": 27277,
+          "total_tokens": 35866,
+          "measurement_complete": true,
+          "status": "regressed",
+          "check_counts": {
+            "regressed": 1,
+            "passed": 25
+          },
+          "failed_checks": [
+            "upstream-tqdm"
+          ],
+          "note": "首次实现已经低于总 tokens 上限；25/26 组行为检查通过，nested 参数的错误诊断仍需修复。"
+        },
+        {
+          "index": 2,
+          "head": "090ba5aaa903305a115ae679377cb66c316b384a",
+          "verification_at": null,
+          "source_tokens": 27279,
+          "total_tokens": 35868,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "修复 nested 的诊断文字和换行，26/26 组通过；随后补充检查发现 CLI 正常帮助与版本输出流不兼容。"
+        },
+        {
+          "index": 3,
+          "head": "2b9a7b270906dba94fd65adc5c882784b463835c",
+          "verification_at": null,
+          "source_tokens": 27281,
+          "total_tokens": 35870,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "将成功的 help/version 输出恢复到 stdout，保留前次修复；最终 26/26 组通过，后续任务成本验收未完成。"
+        }
+      ],
+      "calls": [
+        {
+          "role": "author",
+          "started": 1794175985.0292168,
+          "seconds": 1293.7308859825134,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2664554,
+            "cached_input_tokens": 2539520,
+            "output_tokens": 53184
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794177389.1685338,
+          "seconds": 206.57786226272583,
+          "exit_code": -15,
+          "usage": {
+            "input_tokens": 0,
+            "cached_input_tokens": 0,
+            "output_tokens": 0
+          },
+          "usage_complete": false,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794177695.7809002,
+          "seconds": 192.61333990097046,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 666529,
+            "cached_input_tokens": 591872,
+            "output_tokens": 4148
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794178474.7053304,
+          "seconds": 216.92922282218933,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 671662,
+            "cached_input_tokens": 604800,
+            "output_tokens": 4375
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        }
+      ]
+    },
+    "controller": {
+      "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+      "harness_commit": "19793f9e61b42b2aa1f61fe19de9e10b0a8a41fc",
+      "started": "2026-11-08T14:19:13.885413+00:00",
+      "ended": "2026-11-08T17:12:10.949948+00:00",
+      "wall_seconds": 10377.064535,
+      "baseline_tokens": {
+        "source_tokens": 45979,
+        "configuration_tokens": 26169,
+        "total_tokens": 72148
+      },
+      "candidate_tokens": {
+        "source_tokens": 27525,
+        "configuration_tokens": 8548,
+        "total_tokens": 36073
+      },
+      "retained_percent": {
+        "source_tokens": 59.86428586963614,
+        "configuration_tokens": 32.664603156406436,
+        "total_tokens": 49.998613960192934
+      },
+      "selected_capabilities": 27,
+      "excluded_capabilities": 0,
+      "historical_checks": {
+        "passed": 26
+      },
+      "budget": {
+        "max_author_calls": 20,
+        "max_optimization_calls": 4,
+        "optimization_calls_used": 4,
+        "task_max_total_tokens": 1000000,
+        "task_repetitions_configured": 1,
+        "task_suite_prefrozen": false
+      },
+      "usage_by_role": {
+        "author": {
+          "calls": 7,
+          "seconds": 6394.932801376097,
+          "unmetered_calls": 0,
+          "input_tokens": 18219505,
+          "cached_input_tokens": 17391872,
+          "output_tokens": 221179,
+          "total_tokens": 18440684,
+          "uncached_input_plus_output": 1048812,
+          "usage_complete": true
+        },
+        "controller": {
+          "calls": 13,
+          "seconds": 1413.7836781674996,
+          "unmetered_calls": 0,
+          "input_tokens": 3286324,
+          "cached_input_tokens": 2740864,
+          "output_tokens": 27503,
+          "total_tokens": 3313827,
+          "uncached_input_plus_output": 572963,
+          "usage_complete": true
+        },
+        "task_examiner": {
+          "calls": 1,
+          "seconds": 495.7808,
+          "unmetered_calls": 0,
+          "input_tokens": 453390,
+          "cached_input_tokens": 392960,
+          "output_tokens": 20479,
+          "total_tokens": 473869,
+          "uncached_input_plus_output": 80909,
+          "usage_complete": true
+        },
+        "task_solver": {
+          "calls": 1,
+          "seconds": 349.0873,
+          "unmetered_calls": 0,
+          "input_tokens": 527281,
+          "cached_input_tokens": 481792,
+          "output_tokens": 10769,
+          "total_tokens": 538050,
+          "uncached_input_plus_output": 56258,
+          "usage_complete": true
+        }
+      },
+      "observed_total_tokens": 22766430,
+      "observed_cached_input_tokens": 21007488,
+      "observed_uncached_input_plus_output": 1758942,
+      "usage_complete": true,
+      "performance": {
+        "disabled": 0.999157441989726,
+        "automatic": 0.9710414592963902,
+        "updates": 0.9649765567938113,
+        "rendered": 0.998999459007525
+      },
+      "quality_probes": {
+        "maintainer_helpers": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "public_surface": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "range_helpers": {
+          "passed": false,
+          "difference_modules": 10
+        },
+        "archive_help": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "archive_version": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "archive_arguments": {
+          "passed": false,
+          "difference_modules": 0
+        },
+        "cli_output_streams": {
+          "passed": true,
+          "python_versions": [
+            "3.8",
+            "3.11"
+          ],
+          "flags": [
+            "--help",
+            "--version"
+          ]
+        },
+        "python38_import_iteration": {
+          "passed": true
+        }
+      },
+      "optimization_author_calls": {
+        "calls": 4,
+        "seconds": 3433.3132231216878,
+        "observed_tokens": 10961888
+      },
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-full49-controller-20261108/",
+      "name": "Controller",
+      "color": "#5482d2",
+      "code": {
+        "branch": "examples/tqdm-full49-controller-20261108",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-full49-controller-20261108",
+        "verified_commit": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+        "published_commit": "9aee9d7dd9b71d41fb16360188f4e3cf4a6054a1",
+        "tree": "a2e3234ea3e5a231c84f2271d0856eff188df5d3",
+        "identical_code_tree": true
+      },
+      "history": [
+        {
+          "index": 1,
+          "head": "95ab1a30f22f4fb1b9b13a37337f9677f08d00fc",
+          "verification_at": "2026-11-08T14:54:23.191258+00:00",
+          "source_tokens": 28137,
+          "total_tokens": 37634,
+          "measurement_complete": false,
+          "status": "regressed",
+          "check_counts": {
+            "regressed": 4,
+            "passed": 22
+          },
+          "failed_checks": [
+            "upstream-tqdm",
+            "upstream-main",
+            "upstream-contrib_logging",
+            "python314-concurrent"
+          ],
+          "note": "首次实现通过 22/26 组；核心、CLI、日志和 Python 3.14 并发仍有回归。大小清单尚不完整。"
+        },
+        {
+          "index": 2,
+          "head": "38a7b8f36a07b44efa0b48942f1aedf54f58ad2f",
+          "verification_at": "2026-11-08T15:13:05.652539+00:00",
+          "source_tokens": 28227,
+          "total_tokens": 37840,
+          "measurement_complete": false,
+          "status": "regressed",
+          "check_counts": {
+            "regressed": 3,
+            "passed": 23
+          },
+          "failed_checks": [
+            "upstream-tqdm",
+            "upstream-contrib_logging",
+            "python314-concurrent"
+          ],
+          "note": "修复清理、解析、EOF、日志与并发问题，通过 23/26 组；大小清单仍不完整。"
+        },
+        {
+          "index": 3,
+          "head": "88367576d46a0d2a669e9ba518036cd13221cacb",
+          "verification_at": "2026-11-08T15:31:19.406350+00:00",
+          "source_tokens": 28351,
+          "total_tokens": 37952,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "补齐格式、GUI 诊断、锁和日志兼容性，首次 26/26 组通过；总 tokens 仍超过 50%。"
+        },
+        {
+          "index": 4,
+          "head": "73808756ce4f5996ec488c7e5d6bbee1d39b47a3",
+          "verification_at": "2026-11-08T15:48:29.100167+00:00",
+          "source_tokens": 28307,
+          "total_tokens": 37014,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "第 1 次优化：共享 Keras 设置、流包装比较和维护文档，完整总量减少 938 tokens。"
+        },
+        {
+          "index": 5,
+          "head": "66b5365dc6f421ff904eacec77feca6fb1a852e5",
+          "verification_at": "2026-11-08T16:08:54.472035+00:00",
+          "source_tokens": 28085,
+          "total_tokens": 36792,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "第 2 次优化：共享前端与 range 包装，减少 222 tokens；本次统一补测发现 range 兼容性回归仍在最终版中。"
+        },
+        {
+          "index": 6,
+          "head": "9f6b0446bdb5052377d55b519dd93dddf83af654",
+          "verification_at": "2026-11-08T16:23:21.398012+00:00",
+          "source_tokens": 28010,
+          "total_tokens": 36717,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "第 3 次优化：合并旧模块警告，减少 75 tokens；调用期间仍在协调 tokenizer 缓存可用性。"
+        },
+        {
+          "index": 7,
+          "head": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+          "verification_at": "2026-11-08T16:47:41.715028+00:00",
+          "source_tokens": 27525,
+          "total_tokens": 36073,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "第 4 次优化：共享逻辑、维护元数据和缩短说明，减少 644 tokens；总量比 50% 边界少 1 token。"
+        }
+      ],
+      "calls": [
+        {
+          "role": "controller",
+          "started": 1794147569.6134956,
+          "seconds": 89.47161992732435,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 179049,
+            "cached_input_tokens": 149120,
+            "output_tokens": 1725
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794147759.0889492,
+          "seconds": 1620.8321480881423,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2604639,
+            "cached_input_tokens": 2478720,
+            "output_tokens": 63630
+          },
+          "usage_complete": true,
+          "author_task_role": "implement"
+        },
+        {
+          "role": "controller",
+          "started": 1794149405.3581052,
+          "seconds": 65.3171624718234,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 168047,
+            "cached_input_tokens": 135296,
+            "output_tokens": 1204
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "controller",
+          "started": 1794149697.5681202,
+          "seconds": 124.98299058806151,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 307933,
+            "cached_input_tokens": 256512,
+            "output_tokens": 2123
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794149831.1669726,
+          "seconds": 656.143309856765,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 1567747,
+            "cached_input_tokens": 1474560,
+            "output_tokens": 22766
+          },
+          "usage_complete": true,
+          "author_task_role": "repair"
+        },
+        {
+          "role": "controller",
+          "started": 1794150511.2843354,
+          "seconds": 90.43338144570589,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 226991,
+            "cached_input_tokens": 188288,
+            "output_tokens": 1252
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "controller",
+          "started": 1794150816.381471,
+          "seconds": 165.21455159317702,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 507883,
+            "cached_input_tokens": 444032,
+            "output_tokens": 2520
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794151082.1287649,
+          "seconds": 684.6441203095019,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 3199998,
+            "cached_input_tokens": 3072128,
+            "output_tokens": 20016
+          },
+          "usage_complete": true,
+          "author_task_role": "repair"
+        },
+        {
+          "role": "controller",
+          "started": 1794151917.3036683,
+          "seconds": 122.04666534531862,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 222568,
+            "cached_input_tokens": 182912,
+            "output_tokens": 2873
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794152057.501348,
+          "seconds": 741.0463234279305,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2380825,
+            "cached_input_tokens": 2259328,
+            "output_tokens": 23156
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794152958.8772418,
+          "seconds": 115.78955131210387,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 233354,
+            "cached_input_tokens": 190592,
+            "output_tokens": 2496
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794153085.3483737,
+          "seconds": 931.3366296542808,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2599471,
+            "cached_input_tokens": 2481152,
+            "output_tokens": 28518
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794154188.94671,
+          "seconds": 108.70135433133692,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 224306,
+            "cached_input_tokens": 183424,
+            "output_tokens": 2584
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794154308.4983182,
+          "seconds": 601.6249224552885,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2144677,
+            "cached_input_tokens": 2040192,
+            "output_tokens": 17593
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794155053.68232,
+          "seconds": 136.22257037088275,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 249575,
+            "cached_input_tokens": 211968,
+            "output_tokens": 3169
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794155204.501224,
+          "seconds": 1159.305347584188,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 3722148,
+            "cached_input_tokens": 3585792,
+            "output_tokens": 45500
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794156514.287401,
+          "seconds": 101.91365081071854,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 259434,
+            "cached_input_tokens": 210816,
+            "output_tokens": 2348
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "controller",
+          "started": 1794157551.9770107,
+          "seconds": 96.03228485304862,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 287001,
+            "cached_input_tokens": 243968,
+            "output_tokens": 1706
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "controller",
+          "started": 1794157671.6773214,
+          "seconds": 102.36634124070406,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 227879,
+            "cached_input_tokens": 189056,
+            "output_tokens": 1869
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "controller",
+          "started": 1794157800.5485294,
+          "seconds": 95.29155387729406,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 192304,
+            "cached_input_tokens": 154880,
+            "output_tokens": 1634
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        }
+      ]
+    },
+    "memory": {
+      "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+      "harness_commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+      "started": "2026-11-08T22:02:32.887676+00:00",
+      "ended": "2026-11-09T01:40:43.456126+00:00",
+      "wall_seconds": 13090.56845,
+      "baseline_tokens": {
+        "source_tokens": 45979,
+        "configuration_tokens": 26169,
+        "total_tokens": 72148
+      },
+      "candidate_tokens": {
+        "source_tokens": 27959,
+        "configuration_tokens": 9541,
+        "total_tokens": 37500
+      },
+      "retained_percent": {
+        "source_tokens": 60.80819504556428,
+        "configuration_tokens": 36.45916924605449,
+        "total_tokens": 51.976492764872205
+      },
+      "selected_capabilities": 27,
+      "excluded_capabilities": 0,
+      "historical_checks": {
+        "passed": 28
+      },
+      "budget": {
+        "max_author_calls": 20,
+        "max_optimization_calls": 6,
+        "optimization_calls_used": 6,
+        "task_max_total_tokens": 1000000,
+        "task_repetitions_configured": 3,
+        "task_suite_prefrozen": false
+      },
+      "usage_by_role": {
+        "author": {
+          "calls": 10,
+          "seconds": 8091.821409045864,
+          "unmetered_calls": 0,
+          "input_tokens": 19218433,
+          "cached_input_tokens": 18093056,
+          "output_tokens": 265059,
+          "total_tokens": 19483492,
+          "uncached_input_plus_output": 1390436,
+          "usage_complete": true
+        },
+        "controller": {
+          "calls": 13,
+          "seconds": 1438.6256629411655,
+          "unmetered_calls": 0,
+          "input_tokens": 3530166,
+          "cached_input_tokens": 2965888,
+          "output_tokens": 32890,
+          "total_tokens": 3563056,
+          "uncached_input_plus_output": 597168,
+          "usage_complete": true
+        },
+        "task_examiner": {
+          "calls": 2,
+          "seconds": 998.7221,
+          "unmetered_calls": 0,
+          "input_tokens": 814781,
+          "cached_input_tokens": 719488,
+          "output_tokens": 39166,
+          "total_tokens": 853947,
+          "uncached_input_plus_output": 134459,
+          "usage_complete": true
+        },
+        "task_solver": {
+          "calls": 1,
+          "seconds": 308.5278,
+          "unmetered_calls": 0,
+          "input_tokens": 380619,
+          "cached_input_tokens": 341120,
+          "output_tokens": 9036,
+          "total_tokens": 389655,
+          "uncached_input_plus_output": 48535,
+          "usage_complete": true
+        }
+      },
+      "observed_total_tokens": 24290150,
+      "observed_cached_input_tokens": 22119552,
+      "observed_uncached_input_plus_output": 2170598,
+      "usage_complete": true,
+      "performance": {
+        "disabled": 0.9984681739296263,
+        "automatic": 0.9854235667595365,
+        "updates": 1.0198980851550976,
+        "rendered": 1.0977955433337274
+      },
+      "quality_probes": {
+        "maintainer_helpers": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "public_surface": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "range_helpers": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_help": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_version": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_arguments": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "cli_output_streams": {
+          "passed": false,
+          "python_versions": [
+            "3.8",
+            "3.11"
+          ],
+          "flags": [
+            "--help",
+            "--version"
+          ]
+        },
+        "python38_import_iteration": {
+          "passed": true
+        }
+      },
+      "optimization_author_calls": {
+        "calls": 6,
+        "seconds": 5773.146991694928,
+        "observed_tokens": 14258891
+      },
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-feedback-memory-20261108/",
+      "name": "Feedback memory",
+      "color": "#8154d7",
+      "code": {
+        "branch": "examples/tqdm-feedback-memory-20261108",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-feedback-memory-20261108",
+        "verified_commit": "636a6175cf00df463995bc7be7587e620348b2e0",
+        "published_commit": "0e2b13fd8a2fa5cf05f806ee6dd5ee6892a4a8ab",
+        "tree": "a3261588634cf33b6ec056614d1777e41a25d4bd",
+        "identical_code_tree": true
+      },
+      "history": [
+        {
+          "index": 1,
+          "head": "ee57f2a46fd9a70a641f7d2b6bc6b9ba9779706a",
+          "verification_at": "2026-11-08T22:44:06.935443+00:00",
+          "source_tokens": 27862,
+          "total_tokens": 37617,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 26
+          },
+          "failed_checks": [],
+          "note": "首版通过原有 26 组检查，但源码与总量都超过严格 50% 门槛。"
+        },
+        {
+          "index": 2,
+          "head": "85e3d58f2c636dcd076968f71637e706c20c4f43",
+          "verification_at": "2026-11-08T23:10:46.841731+00:00",
+          "source_tokens": 28609,
+          "total_tokens": 38410,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "补充维护工具与公共接口契约并修复；28/28 组通过，源码和总量随兼容性补齐而增加。"
+        },
+        {
+          "index": 3,
+          "head": "6e97135662478094f36c2fa2bc3c48ce90a70461",
+          "verification_at": "2026-11-08T23:31:08.255775+00:00",
+          "source_tokens": 28317,
+          "total_tokens": 37860,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "第 1 次优化：减少 292 个源码 tokens、550 个总 tokens。"
+        },
+        {
+          "index": 4,
+          "head": "600a2225f355df1e670e0624b392c7b295c21928",
+          "verification_at": "2026-11-08T23:40:14.504270+00:00",
+          "source_tokens": 28317,
+          "total_tokens": 37860,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "修复真实 argopt 解析器暴露的归档示例文档分段问题；源码 tokens 不变。"
+        },
+        {
+          "index": 5,
+          "head": "3c542a32a82e0d4b83d944f103cfa4e121ace600",
+          "verification_at": "2026-11-09T00:02:22.046612+00:00",
+          "source_tokens": 28307,
+          "total_tokens": 37768,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "第 2 次优化：源码仅减少 10 tokens；未保留未通过的核心改动。"
+        },
+        {
+          "index": 6,
+          "head": "72eb1b7e61d5886671647c041f440f6f9a8f2158",
+          "verification_at": "2026-11-09T00:25:38.396836+00:00",
+          "source_tokens": 28095,
+          "total_tokens": 37818,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "第 3 次优化：共享下载等辅助逻辑，源码减少 212 tokens；总量反而增加 50 tokens。"
+        },
+        {
+          "index": 7,
+          "head": "ccbdcfb3716a4a15957c2b91ed0fbe0599b5769e",
+          "verification_at": "2026-11-09T00:39:56.176732+00:00",
+          "source_tokens": 28080,
+          "total_tokens": 37539,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "第 4 次优化：CLI 局部去重，源码减少 15 tokens。"
+        },
+        {
+          "index": 8,
+          "head": "631b2facd7116e92614855728397b9dd373b70e8",
+          "verification_at": "2026-11-09T01:01:17.856792+00:00",
+          "source_tokens": 28048,
+          "total_tokens": 37579,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "第 5 次优化：源码减少 32 tokens；总量增加 40 tokens。"
+        },
+        {
+          "index": 9,
+          "head": "173f3d96850a85af9b4048e93fd585cd670cd30b",
+          "verification_at": "2026-11-09T01:24:24.471591+00:00",
+          "source_tokens": 27823,
+          "total_tokens": 37388,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "第 6 次优化：共享 range 包装和旧模块警告，源码减少 225 tokens；补测发现函数信息及动态构造器替换回归。"
+        },
+        {
+          "index": 10,
+          "head": "636a6175cf00df463995bc7be7587e620348b2e0",
+          "verification_at": "2026-11-09T01:36:58.190177+00:00",
+          "source_tokens": 27959,
+          "total_tokens": 37500,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 28
+          },
+          "failed_checks": [],
+          "note": "恢复 10 个模块的普通 range 函数并复核兼容性；28 组与安装检查通过。严格体积目标仍未达到。"
+        }
+      ],
+      "calls": [
+        {
+          "role": "controller",
+          "started": 1794175494.508745,
+          "seconds": 84.7228799170116,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 229273,
+            "cached_input_tokens": 195072,
+            "output_tokens": 2207
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794176440.6020527,
+          "seconds": 1310.5454884200008,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2196780,
+            "cached_input_tokens": 2081024,
+            "output_tokens": 55243
+          },
+          "usage_complete": true,
+          "author_task_role": "implement"
+        },
+        {
+          "role": "controller",
+          "started": 1794177865.404806,
+          "seconds": 90.35442304500611,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 212936,
+            "cached_input_tokens": 164096,
+            "output_tokens": 1826
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "controller",
+          "started": 1794178656.4901142,
+          "seconds": 120.17354021201027,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 317206,
+            "cached_input_tokens": 277376,
+            "output_tokens": 2982
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794178786.1595283,
+          "seconds": 558.8125816919783,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 1509754,
+            "cached_input_tokens": 1422592,
+            "output_tokens": 20708
+          },
+          "usage_complete": true,
+          "author_task_role": "repair"
+        },
+        {
+          "role": "controller",
+          "started": 1794179487.575307,
+          "seconds": 98.80698585702339,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 222631,
+            "cached_input_tokens": 186112,
+            "output_tokens": 2100
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794179602.5718591,
+          "seconds": 958.7430103559745,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2464856,
+            "cached_input_tokens": 2339456,
+            "output_tokens": 30339
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794180710.1462355,
+          "seconds": 133.0462051689974,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 350244,
+            "cached_input_tokens": 304384,
+            "output_tokens": 2483
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794180851.984476,
+          "seconds": 263.17900777299656,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 850489,
+            "cached_input_tokens": 752640,
+            "output_tokens": 7156
+          },
+          "usage_complete": true,
+          "author_task_role": "repair"
+        },
+        {
+          "role": "controller",
+          "started": 1794181262.7976084,
+          "seconds": 111.71285880100913,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 248200,
+            "cached_input_tokens": 199424,
+            "output_tokens": 2512
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794181383.7681236,
+          "seconds": 1054.0133818629547,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2270686,
+            "cached_input_tokens": 2146432,
+            "output_tokens": 30016
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794182593.4846077,
+          "seconds": 124.6471896780422,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 379867,
+            "cached_input_tokens": 327552,
+            "output_tokens": 2579
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794182732.7045243,
+          "seconds": 1098.296164570027,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 3219072,
+            "cached_input_tokens": 3083392,
+            "output_tokens": 33814
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794183986.2558575,
+          "seconds": 94.04786267399322,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 295275,
+            "cached_input_tokens": 249600,
+            "output_tokens": 2560
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794184090.8640685,
+          "seconds": 600.0437716339948,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 1707097,
+            "cached_input_tokens": 1604096,
+            "output_tokens": 21510
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794184843.8026412,
+          "seconds": 98.00183006899897,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 239321,
+            "cached_input_tokens": 195840,
+            "output_tokens": 2614
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794184951.8344555,
+          "seconds": 1012.86210742197,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2116387,
+            "cached_input_tokens": 1992832,
+            "output_tokens": 30149
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794186129.9140134,
+          "seconds": 149.54820790700614,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 333775,
+            "cached_input_tokens": 287744,
+            "output_tokens": 3695
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794186290.7182598,
+          "seconds": 1049.188555850007,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 2304384,
+            "cached_input_tokens": 2156288,
+            "output_tokens": 30581
+          },
+          "usage_complete": true,
+          "author_task_role": "optimize"
+        },
+        {
+          "role": "controller",
+          "started": 1794187516.5857065,
+          "seconds": 96.92382521001855,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 222241,
+            "cached_input_tokens": 186112,
+            "output_tokens": 1907
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "controller",
+          "started": 1794187791.2254362,
+          "seconds": 121.97349607903743,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 244537,
+            "cached_input_tokens": 199680,
+            "output_tokens": 2503
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794187924.7740278,
+          "seconds": 186.1373394659604,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 578928,
+            "cached_input_tokens": 514304,
+            "output_tokens": 5543
+          },
+          "usage_complete": true,
+          "author_task_role": "repair"
+        },
+        {
+          "role": "controller",
+          "started": 1794188277.6055844,
+          "seconds": 114.66635832301108,
+          "exit_code": 0,
+          "usage": {
+            "input_tokens": 234660,
+            "cached_input_tokens": 192896,
+            "output_tokens": 2922
+          },
+          "usage_complete": true,
+          "author_task_role": null
+        }
+      ]
+    }
+  },
+  "quality_matrix": [
+    {
+      "id": "docs",
+      "title": "维护文档模板",
+      "key": "maintainer_helpers",
+      "scope": "维护工具",
+      "detail": "使用原版支持的文档模板占位符和无 pandoc 场景；原版通过。Main 与 Controller 对模板执行 format 时出现 AttributeError，未保留该模板接口。",
+      "results": {
+        "main": "失败：模板字段不兼容",
+        "controller": "失败：模板字段不兼容",
+        "memory": "通过"
+      }
+    },
+    {
+      "id": "stream-wrapper",
+      "title": "DisableOnWriteError 接口",
+      "key": "public_surface",
+      "scope": "公共工具兼容性",
+      "detail": "检验 disable_on_exception 的原有调用约定、错误抑制、弱引用与工作流输入。Main 缺少该方法；Controller 的参数约定与原版不同。脚本遇到首个失败即停止，不能推断后续断言结果。",
+      "results": {
+        "main": "失败：方法缺失",
+        "controller": "失败：调用约定不兼容",
+        "memory": "通过"
+      }
+    },
+    {
+      "id": "range",
+      "title": "range 包装函数",
+      "key": "range_helpers",
+      "scope": "函数信息与动态行为",
+      "detail": "10 个模块比较普通函数类型、module/name/qualname、签名、别名和 pickle roundtrip；std、auto、asyncio 另外检验替换模块构造器后的调用。Controller 将它们变为绑定方法，且未保留动态构造器查找。其 pickle roundtrip 仍通过，不应误称为 pickle 故障。",
+      "results": {
+        "main": "通过",
+        "controller": "失败：10 个模块存在差异",
+        "memory": "通过"
+      }
+    },
+    {
+      "id": "archive-help",
+      "title": "归档示例 --help",
+      "key": "archive_help",
+      "scope": "真实 argopt 0.9.1",
+      "detail": "直接运行 examples/7zx.py --help；原版通过。Main 与 Controller 的真实解析器路径失败；没有执行解压或外部下载。",
+      "results": {
+        "main": "失败",
+        "controller": "失败",
+        "memory": "通过"
+      }
+    },
+    {
+      "id": "archive-version",
+      "title": "归档示例 --version",
+      "key": "archive_version",
+      "scope": "真实 argopt 0.9.1",
+      "detail": "直接运行 examples/7zx.py --version，并比较原版成功输出；Main 与 Memory 通过，Controller 失败。",
+      "results": {
+        "main": "通过",
+        "controller": "失败",
+        "memory": "通过"
+      }
+    },
+    {
+      "id": "archive-args",
+      "title": "归档示例参数别名",
+      "key": "archive_arguments",
+      "scope": "真实参数解析",
+      "detail": "检验原版已有的 debug、trace、compressed、silent、yes 和多个归档操作数；只构造和解析参数，不执行归档提取。",
+      "results": {
+        "main": "失败",
+        "controller": "失败",
+        "memory": "通过"
+      }
+    },
+    {
+      "id": "cli",
+      "title": "CLI 正常输出流",
+      "key": "cli_output_streams",
+      "scope": "Python 3.8 / 3.11",
+      "detail": "tqdm --help 与 --version 在原版中写入 stdout，stderr 为空。Memory 四个复测场景均写入 stderr，stdout 为 0 字节；退出码仍为 0。Main 和 Controller 通过。这会影响从标准输出读取结果的脚本。",
+      "results": {
+        "main": "通过",
+        "controller": "通过",
+        "memory": "失败：正常输出写到 stderr"
+      }
+    },
+    {
+      "id": "py38",
+      "title": "Python 3.8 导入与迭代",
+      "key": "python38_import_iteration",
+      "scope": "基础运行冒烟",
+      "detail": "使用 Python 3.8.20 导入核心、asyncio、concurrent、logging、itertools，并运行禁用显示的迭代。原版和三个版本均通过；这不是完整 Python 3.8 测试套件。",
+      "results": {
+        "main": "通过",
+        "controller": "通过",
+        "memory": "通过"
+      }
+    }
+  ],
+  "task_outcomes": {
+    "main": {
+      "development_original": 733507,
+      "development_candidate": 663628,
+      "development_change_percent": -9.526698450048876,
+      "heldout_original": 495637,
+      "heldout_candidate": 698999,
+      "heldout_raw_change_percent": 41.0304315456675,
+      "heldout_status": "unverified_budget_exhausted",
+      "replay": "A separate hash-checked behavior replay passed; it does not complete the original solver-artifact grading."
+    },
+    "controller": {
+      "status": "blocked",
+      "reason": "Original solver was blocked by instructions referring to withheld accept.py."
+    },
+    "memory": {
+      "status": "incomparable_then_budget_exhausted",
+      "reason": "Original solver changed protected tests; a later task-design attempt exhausted the aggregate budget."
+    }
+  },
+  "methodology": [
+    "Three independent single runs, with different gates, budgets, environments and owner interventions; not a controlled ablation.",
+    "Wall time is submission to final harness event, including queue and recovery; excludes preparation and subsequent host report work.",
+    "Tokens are input plus output, including cached input once; cached input is a subset, not added twice.",
+    "Main includes an interrupted author call without a final usage receipt; observed usage is a lower bound.",
+    "No supervising conversation, preparation or present comparison usage is included.",
+    "Historical performance ratios are matched within each run, not cross-machine absolute timings.",
+    "Supplemental probes were rerun now on all final trees in the same environment; original passes are required.",
+    "Main used a prefrozen task suite, while controller and memory incurred model task-design calls.",
+    "Controller first two size inventories were incomplete; displayed values are observations, not accepted complete totals."
+  ],
+  "limits": [
+    "原有功能图均选择 27/27 项，但选择范围和测试通过不构成完整语义等价证明。",
+    "统一补测只覆盖列出的行为；脚本可能在首个失败处停止。",
+    "通知服务使用 mock；没有进行真实 Slack、Discord、Telegram 消息发送。",
+    "未覆盖真实 Tk 桌面、Windows/macOS 全面运行、外部下载和归档提取的端到端验证。",
+    "性能数据是各次运行内的 5 次重复 CPU 中位数比较；不能视为跨机器统计显著性结论。",
+    "三次运行的约束、任务设计、预算、宿主环境和人工干预不同；结果不能直接归因于 memory 功能。"
+  ],
+  "evidence": {
+    "original_passes": {
+      "maintainer_helpers": true,
+      "public_surface": true,
+      "range_helpers": true,
+      "archive_help": true,
+      "archive_version": true,
+      "archive_arguments": true
+    },
+    "supplemental_probe_script_hashes": {
+      "maintainer_check.py": "c0e2f7baf00d7292b8809e63b0e673a6bec20586751cc4125f2676a89913d64c",
+      "public_surface_check.py": "dc547f14f3408ddeffc5975b4a7ec4c96103141923c655ea4d34acb606d00a05",
+      "range_compat_probe.py": "9dc7dda8af758fe28235fb4fdb85c5410d60ed744a41d3cb1dccafd64ad7f6e8",
+      "archive_cli_probe.py": "8138f8030d8bf8b9c40e902023cc054b745c293933948e692a8be9fa6cdcca57"
+    },
+    "cli_streams": {
+      "original": {
+        "head": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+        "checks": [
+          {
+            "python": "3.8",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 6820,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.8",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 8,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 6820,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 8,
+            "stderr_bytes": 0,
+            "passed": true
+          }
+        ]
+      },
+      "main": {
+        "head": "2b9a7b270906dba94fd65adc5c882784b463835c",
+        "checks": [
+          {
+            "python": "3.8",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 2626,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.8",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 8,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 2626,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 8,
+            "stderr_bytes": 0,
+            "passed": true
+          }
+        ]
+      },
+      "controller": {
+        "head": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+        "checks": [
+          {
+            "python": "3.8",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 1994,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.8",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 7,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 1994,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 7,
+            "stderr_bytes": 0,
+            "passed": true
+          }
+        ]
+      },
+      "memory": {
+        "head": "636a6175cf00df463995bc7be7587e620348b2e0",
+        "checks": [
+          {
+            "python": "3.8",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 0,
+            "stderr_bytes": 2939,
+            "passed": false
+          },
+          {
+            "python": "3.8",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 0,
+            "stderr_bytes": 8,
+            "passed": false
+          },
+          {
+            "python": "3.11",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 0,
+            "stderr_bytes": 2939,
+            "passed": false
+          },
+          {
+            "python": "3.11",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 0,
+            "stderr_bytes": 8,
+            "passed": false
+          }
+        ]
+      }
+    },
+    "python38": {
+      "original": {
+        "head": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+        "import_iteration_passed": true,
+        "cli_help_stdout_passed": true,
+        "python": "3.8.20 (default, Oct  2 2024, 15:14:40) \n[GCC 6.3.0 20170516]"
+      },
+      "main": {
+        "head": "2b9a7b270906dba94fd65adc5c882784b463835c",
+        "import_iteration_passed": true,
+        "cli_help_stdout_passed": true,
+        "python": "3.8.20 (default, Oct  2 2024, 15:14:40) \n[GCC 6.3.0 20170516]"
+      },
+      "controller": {
+        "head": "3dfb0d899a446cad6e4f28f40ce4d1a8b3c7d5e4",
+        "import_iteration_passed": true,
+        "cli_help_stdout_passed": true,
+        "python": "3.8.20 (default, Oct  2 2024, 15:14:40) \n[GCC 6.3.0 20170516]"
+      },
+      "memory": {
+        "head": "636a6175cf00df463995bc7be7587e620348b2e0",
+        "import_iteration_passed": true,
+        "cli_help_stdout_passed": false,
+        "python": "3.8.20 (default, Oct  2 2024, 15:14:40) \n[GCC 6.3.0 20170516]"
+      }
+    }
+  }
+}
