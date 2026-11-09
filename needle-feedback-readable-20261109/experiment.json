@@ -1,0 +1,1672 @@
+{
+  "title": "Needle: readable full-feature rewrite",
+  "goal": "concise readable full functionality; stop after behavior and installation pass",
+  "mandatory_compression_ratio": null,
+  "stopping_rule": "Deliver after retained behavior and fresh installation acceptance; no pure-size optimization.",
+  "generic_harness_advisory_percent": 50,
+  "generic_advisory_note": "Inherited metadata only; not an owner requirement or retry trigger.",
+  "harness_branch": "codex/controller-feedback-memory",
+  "harness_commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+  "original_commit": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+  "harness_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/3aae3d30761fbc67f436d3752be474f9d7e777d3",
+  "original_url": "https://github.com/cactus-compute/needle/tree/278eea197d6a89a274d5505de757f5a3acb7ecfa",
+  "verified_commit": "7e1e7b3f4f0ef92fca60d0871528748d095b3049",
+  "published_commit": "98ee125e73358754eec5fc176255123c26250c3c",
+  "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/needle-feedback-readable-20261109",
+  "identical_verified_code_tree": true,
+  "workflow_status": "succeeded",
+  "selected_capabilities": 31,
+  "excluded_capabilities": 0,
+  "capability_nodes": {
+    "total": 31,
+    "groups": 5,
+    "leaves": 26
+  },
+  "source_tokens": {
+    "before": 101061,
+    "after": 74176,
+    "reduction_percent": 26.602744876856555
+  },
+  "total_tokens": {
+    "before": 175966,
+    "after": 89044,
+    "reduction_percent": 49.39704261050431
+  },
+  "documentation_adjusted_tokens": {
+    "before": 106460,
+    "after": 88976,
+    "reduction_percent": 16.423069697538985,
+    "excluded_before": 69506,
+    "excluded_after": 68,
+    "policy": "Keep the original frozen total and source metrics. Add a supplemental count using the same tokenizer and inventory, excluding only these exact paths on both sides. Newly packaged public environment JSON and new or changed documentation counted by the harness remain counted. No acceptance criterion is changed.",
+    "excluded_paths": [
+      "assets/banner.svg",
+      "assets/benchmarks.svg",
+      "assets/deploy.svg",
+      "assets/finetune.svg",
+      "assets/model.svg",
+      "assets/whistle-benchmarks.svg",
+      "assets/whistle.svg",
+      "llms.txt"
+    ]
+  },
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "author_calls": 5,
+  "optimization_calls": 0,
+  "task_assessment": {
+    "enabled": false,
+    "cost_savings_claimed": false
+  },
+  "checks": [
+    {
+      "name": "upstream-tools",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 17
+          },
+          "seconds": 3.7702
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 17
+          },
+          "seconds": 1.4358
+        }
+      }
+    },
+    {
+      "name": "upstream-grounding",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 36
+          },
+          "seconds": 1.2387
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 36
+          },
+          "seconds": 1.2503
+        }
+      }
+    },
+    {
+      "name": "upstream-fetch",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 23
+          },
+          "seconds": 8.2887
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 23
+          },
+          "seconds": 3.3336
+        }
+      }
+    },
+    {
+      "name": "upstream-platform",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 10
+          },
+          "seconds": 5.8103
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 10
+          },
+          "seconds": 5.5613
+        }
+      }
+    },
+    {
+      "name": "upstream-playground",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "seconds": 2.1499
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "seconds": 2.1475
+        }
+      }
+    },
+    {
+      "name": "upstream-packaging",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "seconds": 2.1266
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "seconds": 2.1673
+        }
+      }
+    },
+    {
+      "name": "upstream-release",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5
+          },
+          "seconds": 2.6911
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5
+          },
+          "seconds": 3.0891
+        }
+      }
+    },
+    {
+      "name": "upstream-worker",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "seconds": 1.3959
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "seconds": 1.7808
+        }
+      }
+    },
+    {
+      "name": "upstream-generate",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 2.3314
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 2.2836
+        }
+      }
+    },
+    {
+      "name": "upstream-weights",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 22
+          },
+          "seconds": 1.1941
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 22
+          },
+          "seconds": 1.2207
+        }
+      }
+    },
+    {
+      "name": "api-contract",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 1.3383
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 1.297
+        }
+      }
+    },
+    {
+      "name": "schema-performance",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.3575
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.3844
+        }
+      }
+    },
+    {
+      "name": "telemetry-policy",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.4066
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.4058
+        }
+      }
+    },
+    {
+      "name": "upstream-environments",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 31
+          },
+          "seconds": 2.4834
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 31
+          },
+          "seconds": 2.3716
+        }
+      }
+    },
+    {
+      "name": "upstream-speech",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 36
+          },
+          "seconds": 6.7889
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 36
+          },
+          "seconds": 4.9556
+        }
+      }
+    },
+    {
+      "name": "upstream-render",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 2.3267
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 2.2826
+        }
+      }
+    },
+    {
+      "name": "upstream-lora",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "seconds": 10.3772
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 4
+          },
+          "seconds": 4.7549
+        }
+      }
+    },
+    {
+      "name": "upstream-quantization",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "seconds": 7.821
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "seconds": 5.1556
+        }
+      }
+    },
+    {
+      "name": "upstream-generation",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 3.7271
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 4.0187
+        }
+      }
+    },
+    {
+      "name": "upstream-speech-training-interfaces",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 5.7247
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 4.8319
+        }
+      }
+    },
+    {
+      "name": "tiny-numerical-checkpoint-forward-export-generation",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 16.547
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 12.7612
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-build",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "seconds": 19.036
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "seconds": 22.9175
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-environments",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 3.2297
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 2.9627
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-finetune",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "seconds": 51.0077
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 6
+          },
+          "seconds": 58.0946
+        }
+      }
+    },
+    {
+      "name": "upstream-inference",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5
+          },
+          "seconds": 2.8727
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 5
+          },
+          "seconds": 2.4929
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-mlx",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "seconds": 77.6071
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 7
+          },
+          "seconds": 93.8214
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-quantize-mlx",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "seconds": 78.7813
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 2
+          },
+          "seconds": 64.286
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-run",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 15.7157
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 24.6496
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-whistle",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 3
+          },
+          "seconds": 3.1933
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 3
+          },
+          "seconds": 3.053
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-whistle-finetune",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 126.5568
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 8
+          },
+          "seconds": 147.7392
+        }
+      }
+    },
+    {
+      "name": "browser-playground-contract",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 12.9837
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 13.0385
+        }
+      }
+    },
+    {
+      "name": "core-fetch",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 19
+          },
+          "seconds": 1.3304
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 19
+          },
+          "seconds": 1.5285
+        }
+      }
+    },
+    {
+      "name": "core-packaging",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.4529
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.443
+        }
+      }
+    },
+    {
+      "name": "core-api-contract",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.6123
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.8615
+        }
+      }
+    },
+    {
+      "name": "core-native-output",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 1.54
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 1.2482
+        }
+      }
+    },
+    {
+      "name": "playground-cli-boundary",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.3242
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {},
+          "seconds": 0.3061
+        }
+      }
+    },
+    {
+      "name": "training-text-real-updates",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 57.3593
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 66.9198
+        }
+      }
+    },
+    {
+      "name": "training-speech-real-updates",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 114.5512
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 1
+          },
+          "seconds": 125.8159
+        }
+      }
+    },
+    {
+      "name": "playground-http-and-tuning",
+      "status": "passed",
+      "arms": {
+        "baseline": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 10
+          },
+          "seconds": 49.8053
+        },
+        "current": {
+          "status": "passed",
+          "pytest_counts": {
+            "passed": 10
+          },
+          "seconds": 56.6375
+        }
+      }
+    }
+  ],
+  "installation_checks_passed": 3,
+  "verification_history": [
+    {
+      "at": "2026-11-09T05:58:57.462718+00:00",
+      "commit": "8a45bd88d16f5f5d68119c73b5d0ab4ae4650e91",
+      "status": "unverified",
+      "verification_scope": "full",
+      "source_tokens": 73935,
+      "total_tokens": 78100,
+      "counts": {
+        "passed": 32,
+        "regressed": 7
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-speech",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-generation",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-heavy-whistle-finetune",
+          "status": "regressed"
+        },
+        {
+          "name": "core-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "training-speech-real-updates",
+          "status": "regressed"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-09T06:49:55.429524+00:00",
+      "commit": "fef34a3c4ac8d064e1f5bf5d8417e5e31fad6e0c",
+      "status": "regressed",
+      "verification_scope": "full",
+      "source_tokens": 74062,
+      "total_tokens": 78715,
+      "counts": {
+        "passed": 32,
+        "regressed": 7
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-speech",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-generation",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-heavy-whistle-finetune",
+          "status": "regressed"
+        },
+        {
+          "name": "core-fetch",
+          "status": "regressed"
+        },
+        {
+          "name": "training-speech-real-updates",
+          "status": "regressed"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-09T07:11:59.264187+00:00",
+      "commit": "8bd88d7b48112c1c4a652d4d278abe8e1aa0ae5d",
+      "status": "regressed",
+      "verification_scope": "full",
+      "source_tokens": 74197,
+      "total_tokens": 78792,
+      "counts": {
+        "passed": 35,
+        "regressed": 4
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-speech",
+          "status": "regressed"
+        },
+        {
+          "name": "upstream-heavy-whistle-finetune",
+          "status": "regressed"
+        },
+        {
+          "name": "training-speech-real-updates",
+          "status": "regressed"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-09T07:43:27.799606+00:00",
+      "commit": "0fe57d8bab8b1a091620797305e470285a5abd62",
+      "status": "regressed",
+      "verification_scope": "full",
+      "source_tokens": 74176,
+      "total_tokens": 78536,
+      "counts": {
+        "passed": 38,
+        "regressed": 1
+      },
+      "nonpassing_checks": [
+        {
+          "name": "upstream-environments",
+          "status": "regressed"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-09T07:59:03.977713+00:00",
+      "commit": "7e1e7b3f4f0ef92fca60d0871528748d095b3049",
+      "status": "checks_passed",
+      "verification_scope": "full",
+      "source_tokens": 74176,
+      "total_tokens": 89044,
+      "counts": {
+        "passed": 39
+      },
+      "nonpassing_checks": []
+    }
+  ],
+  "model_calls": [
+    {
+      "sequence": 1,
+      "role": "controller",
+      "seconds": 81.48876621597447,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 221820,
+      "cached_input_tokens": 185984,
+      "output_tokens": 2407,
+      "total_tokens": 224227
+    },
+    {
+      "sequence": 2,
+      "role": "author/implement",
+      "seconds": 2839.0408411819953,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 9840096,
+      "cached_input_tokens": 9339392,
+      "output_tokens": 112080,
+      "total_tokens": 9952176
+    },
+    {
+      "sequence": 3,
+      "role": "controller",
+      "seconds": 42.01811047701631,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 120328,
+      "cached_input_tokens": 88960,
+      "output_tokens": 940,
+      "total_tokens": 121268
+    },
+    {
+      "sequence": 4,
+      "role": "controller",
+      "seconds": 152.9287114230101,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 413410,
+      "cached_input_tokens": 347136,
+      "output_tokens": 4534,
+      "total_tokens": 417944
+    },
+    {
+      "sequence": 5,
+      "role": "author/repair",
+      "seconds": 475.86104931798764,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 2775833,
+      "cached_input_tokens": 2639360,
+      "output_tokens": 13749,
+      "total_tokens": 2789582
+    },
+    {
+      "sequence": 6,
+      "role": "controller",
+      "seconds": 75.43582511803834,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 250733,
+      "cached_input_tokens": 202880,
+      "output_tokens": 1693,
+      "total_tokens": 252426
+    },
+    {
+      "sequence": 7,
+      "role": "controller",
+      "seconds": 95.20339771802537,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 255982,
+      "cached_input_tokens": 207360,
+      "output_tokens": 2428,
+      "total_tokens": 258410
+    },
+    {
+      "sequence": 8,
+      "role": "author/repair",
+      "seconds": 380.8687387490063,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 1412426,
+      "cached_input_tokens": 1304832,
+      "output_tokens": 11854,
+      "total_tokens": 1424280
+    },
+    {
+      "sequence": 9,
+      "role": "controller",
+      "seconds": 121.60263208497781,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 267503,
+      "cached_input_tokens": 219392,
+      "output_tokens": 3282,
+      "total_tokens": 270785
+    },
+    {
+      "sequence": 10,
+      "role": "controller",
+      "seconds": 183.4253493770375,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 486768,
+      "cached_input_tokens": 426624,
+      "output_tokens": 4899,
+      "total_tokens": 491667
+    },
+    {
+      "sequence": 11,
+      "role": "author/reviewer",
+      "seconds": 334.9210539130145,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 1219183,
+      "cached_input_tokens": 1092480,
+      "output_tokens": 7136,
+      "total_tokens": 1226319
+    },
+    {
+      "sequence": 12,
+      "role": "controller",
+      "seconds": 100.6732950709993,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 289798,
+      "cached_input_tokens": 242816,
+      "output_tokens": 2171,
+      "total_tokens": 291969
+    },
+    {
+      "sequence": 13,
+      "role": "author/repair",
+      "seconds": 210.33801961899735,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 781641,
+      "cached_input_tokens": 713088,
+      "output_tokens": 6227,
+      "total_tokens": 787868
+    },
+    {
+      "sequence": 14,
+      "role": "controller",
+      "seconds": 77.10362460801844,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 240964,
+      "cached_input_tokens": 198528,
+      "output_tokens": 1212,
+      "total_tokens": 242176
+    },
+    {
+      "sequence": 15,
+      "role": "controller",
+      "seconds": 104.70780944701983,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 328881,
+      "cached_input_tokens": 288768,
+      "output_tokens": 2321,
+      "total_tokens": 331202
+    }
+  ],
+  "observed_usage_by_role": {
+    "controller": {
+      "calls": 10,
+      "seconds": 1034.5875215401175,
+      "total_tokens": 2902074,
+      "cached_input_tokens": 2408448,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 493626
+    },
+    "author/implement": {
+      "calls": 1,
+      "seconds": 2839.0408411819953,
+      "total_tokens": 9952176,
+      "cached_input_tokens": 9339392,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 612784
+    },
+    "author/repair": {
+      "calls": 3,
+      "seconds": 1067.0678076859913,
+      "total_tokens": 5001730,
+      "cached_input_tokens": 4657280,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 344450
+    },
+    "author/reviewer": {
+      "calls": 1,
+      "seconds": 334.9210539130145,
+      "total_tokens": 1226319,
+      "cached_input_tokens": 1092480,
+      "usage_complete": true,
+      "uncached_input_plus_output_tokens": 133839
+    }
+  },
+  "operation_history": [
+    {
+      "name": "create_workspace",
+      "status": "completed",
+      "started_at": "2026-11-09T04:35:57.206186+00:00",
+      "finished_at": "2026-11-09T04:36:14.568937+00:00",
+      "duration_seconds": 17.341313200013246
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "started_at": "2026-11-09T04:37:55.068525+00:00",
+      "finished_at": "2026-11-09T04:50:01.158666+00:00",
+      "duration_seconds": 726.0111149849836
+    },
+    {
+      "name": "run_agent",
+      "status": "failed",
+      "started_at": "2026-11-09T04:50:01.359888+00:00",
+      "finished_at": "2026-11-09T05:37:33.382034+00:00",
+      "duration_seconds": 2851.984490689996
+    },
+    {
+      "name": "save_candidate",
+      "status": "failed",
+      "started_at": "2026-11-09T05:37:33.589734+00:00",
+      "finished_at": "2026-11-09T05:37:43.772177+00:00",
+      "duration_seconds": 9.748730810009874
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T05:37:43.881910+00:00",
+      "finished_at": "2026-11-09T05:37:52.566738+00:00",
+      "duration_seconds": 8.673490785993636
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T05:46:02.892006+00:00",
+      "finished_at": "2026-11-09T05:58:57.554889+00:00",
+      "duration_seconds": 774.6489129909896
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T05:58:57.718707+00:00",
+      "finished_at": "2026-11-09T05:59:16.400480+00:00",
+      "duration_seconds": 18.482527784013655
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T05:59:16.551723+00:00",
+      "finished_at": "2026-11-09T05:59:24.223724+00:00",
+      "duration_seconds": 7.635084319976158
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T05:59:24.381865+00:00",
+      "finished_at": "2026-11-09T05:59:32.858484+00:00",
+      "duration_seconds": 8.460227167990524
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "started_at": "2026-11-09T06:02:20.340997+00:00",
+      "finished_at": "2026-11-09T06:14:15.772928+00:00",
+      "duration_seconds": 715.4109761139844
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T06:14:28.815018+00:00",
+      "finished_at": "2026-11-09T06:22:42.319883+00:00",
+      "duration_seconds": 493.25337881903397
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T06:22:52.660141+00:00",
+      "finished_at": "2026-11-09T06:23:08.902696+00:00",
+      "duration_seconds": 16.228438443038613
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "started_at": "2026-11-09T06:24:44.766820+00:00",
+      "finished_at": "2026-11-09T06:36:56.431535+00:00",
+      "duration_seconds": 731.6497672250262
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T06:37:02.320314+00:00",
+      "finished_at": "2026-11-09T06:49:55.552048+00:00",
+      "duration_seconds": 773.2064578279969
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T06:49:55.767726+00:00",
+      "finished_at": "2026-11-09T06:50:14.144433+00:00",
+      "duration_seconds": 18.36405672400724
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T06:50:14.353780+00:00",
+      "finished_at": "2026-11-09T06:50:22.873661+00:00",
+      "duration_seconds": 8.497425446053967
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T06:52:14.779700+00:00",
+      "finished_at": "2026-11-09T06:58:45.807482+00:00",
+      "duration_seconds": 391.0157442020136
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T06:58:46.073697+00:00",
+      "finished_at": "2026-11-09T06:58:57.885666+00:00",
+      "duration_seconds": 11.798845641955268
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T06:58:58.136397+00:00",
+      "finished_at": "2026-11-09T07:11:59.477654+00:00",
+      "duration_seconds": 781.3294688379974
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T07:11:59.676643+00:00",
+      "finished_at": "2026-11-09T07:12:19.382001+00:00",
+      "duration_seconds": 19.692282307019923
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T07:12:19.618471+00:00",
+      "finished_at": "2026-11-09T07:12:28.407382+00:00",
+      "duration_seconds": 8.767957522009965
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T07:12:28.598951+00:00",
+      "finished_at": "2026-11-09T07:12:38.183504+00:00",
+      "duration_seconds": 9.566042152000591
+    },
+    {
+      "name": "record_unknown",
+      "status": "completed",
+      "started_at": "2026-11-09T07:14:56.414378+00:00",
+      "finished_at": "2026-11-09T07:15:03.014803+00:00",
+      "duration_seconds": 6.586248315987177
+    },
+    {
+      "name": "request_revision",
+      "status": "failed",
+      "started_at": "2026-11-09T07:15:03.225845+00:00",
+      "finished_at": "2026-11-09T07:15:09.512378+00:00",
+      "duration_seconds": 6.272545473009814
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T07:18:34.367476+00:00",
+      "finished_at": "2026-11-09T07:24:19.870283+00:00",
+      "duration_seconds": 345.46334412298165
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "started_at": "2026-11-09T07:26:29.648012+00:00",
+      "finished_at": "2026-11-09T07:30:10.857737+00:00",
+      "duration_seconds": 221.1864659540006
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T07:30:14.817643+00:00",
+      "finished_at": "2026-11-09T07:30:27.809170+00:00",
+      "duration_seconds": 12.958487473020796
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T07:30:28.250462+00:00",
+      "finished_at": "2026-11-09T07:43:27.947302+00:00",
+      "duration_seconds": 779.6797695819987
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T07:43:28.226947+00:00",
+      "finished_at": "2026-11-09T07:43:47.048345+00:00",
+      "duration_seconds": 18.801900233956985
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T07:44:17.523427+00:00",
+      "finished_at": "2026-11-09T07:44:27.109449+00:00",
+      "duration_seconds": 9.562906944018323
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T07:44:27.394758+00:00",
+      "finished_at": "2026-11-09T07:44:37.328025+00:00",
+      "duration_seconds": 9.888175036991015
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "started_at": "2026-11-09T07:46:11.339221+00:00",
+      "finished_at": "2026-11-09T07:59:04.116058+00:00",
+      "duration_seconds": 772.7647119629546
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "started_at": "2026-11-09T07:59:04.422649+00:00",
+      "finished_at": "2026-11-09T07:59:22.583628+00:00",
+      "duration_seconds": 18.140798442007508
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "started_at": "2026-11-09T07:59:23.328860+00:00",
+      "finished_at": "2026-11-09T07:59:32.457358+00:00",
+      "duration_seconds": 9.109306622995064
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T07:59:32.701596+00:00",
+      "finished_at": "2026-11-09T07:59:42.827783+00:00",
+      "duration_seconds": 10.113375879009254
+    },
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "started_at": "2026-11-09T08:01:44.776093+00:00",
+      "finished_at": "2026-11-09T08:01:52.841200+00:00",
+      "duration_seconds": 8.052005780977197
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "started_at": "2026-11-09T08:01:53.084082+00:00",
+      "finished_at": "2026-11-09T08:02:04.927978+00:00",
+      "duration_seconds": 11.83163817197783
+    },
+    {
+      "name": "deliver",
+      "status": "completed",
+      "started_at": "2026-11-09T08:02:05.216874+00:00",
+      "finished_at": "2026-11-09T08:02:22.472141+00:00",
+      "duration_seconds": 17.24164500203915
+    }
+  ],
+  "operation_totals": {
+    "create_workspace": {
+      "calls": 1,
+      "seconds": 17.341313200013246,
+      "failed_calls": 0
+    },
+    "capture_baseline": {
+      "calls": 3,
+      "seconds": 2173.071858323994,
+      "failed_calls": 0
+    },
+    "run_agent": {
+      "calls": 5,
+      "seconds": 4302.903423788026,
+      "failed_calls": 1
+    },
+    "save_candidate": {
+      "calls": 4,
+      "seconds": 50.73450236802455,
+      "failed_calls": 1
+    },
+    "measure_code": {
+      "calls": 6,
+      "seconds": 52.24617164104711,
+      "failed_calls": 0
+    },
+    "compare_behavior": {
+      "calls": 5,
+      "seconds": 3881.6293212019373,
+      "failed_calls": 0
+    },
+    "check_installation": {
+      "calls": 5,
+      "seconds": 93.48156549100531,
+      "failed_calls": 0
+    },
+    "evaluate_acceptance": {
+      "calls": 5,
+      "seconds": 49.859458407969214,
+      "failed_calls": 0
+    },
+    "record_unknown": {
+      "calls": 1,
+      "seconds": 6.586248315987177,
+      "failed_calls": 0
+    },
+    "request_revision": {
+      "calls": 1,
+      "seconds": 6.272545473009814,
+      "failed_calls": 1
+    },
+    "select_candidate": {
+      "calls": 1,
+      "seconds": 8.052005780977197,
+      "failed_calls": 0
+    },
+    "deliver": {
+      "calls": 1,
+      "seconds": 17.24164500203915,
+      "failed_calls": 0
+    }
+  },
+  "verification_environment": {
+    "platform": "Linux",
+    "machine": "aarch64",
+    "verification_python": "CPython 3.11.16",
+    "slurm_cpus": 16,
+    "slurm_memory_mb": 65536,
+    "gpu_allocation": 0,
+    "third_party_packages": {
+      "huggingface_hub": "2.4.0",
+      "sentencepiece": "0.2.2",
+      "pytest": "9.2.0",
+      "jaxlib": "0.10.2",
+      "numpy": "2.4.6",
+      "mlx": "0.32.4",
+      "safetensors": "0.8.0",
+      "jax": "0.10.2",
+      "flax": "0.12.8",
+      "pydantic": "2.14.2",
+      "optax": "0.2.8"
+    },
+    "scope": "Metadata of the explicit third-party dependency directory used by the new supplemental verifier; original frozen checks may use their recorded pre-existing verifier environments. No target package imported."
+  },
+  "operational_recoveries": [
+    {
+      "reason": "The successful author process left its offline install probe beneath .cache, which is not excluded by the harness snapshot/integration policy. Its venv symlinks prevented candidate save.",
+      "action": "Moved only .cache to retained-probe-artifacts/author-1-cache; no production or frozen control bytes changed.",
+      "author_exit_code": 0,
+      "author_duration_seconds": 2839.0408411819953,
+      "unchanged_file_count_outside_cache_and_venv": 103,
+      "unchanged_files_sha256": "0837119de9df9e1df40807e28135500b327f96b7cc2d22597c08cfbb50d73a87",
+      "behavior_pass_claimed": false,
+      "candidate": {
+        "candidate_id": "candidate-e6b1c0be3711",
+        "artifact": "candidate-2457a82a8211",
+        "commit": "8a45bd88d16f5f5d68119c73b5d0ab4ae4650e91"
+      },
+      "artifact": "owner_recovery-b9e6e922b796"
+    }
+  ],
+  "knowledge_refinement_review": {
+    "added_contracts": [
+      "owner.first-comparison.download-hook-keywords.20261109",
+      "owner.first-comparison.cached-speech-registration.20261109",
+      "owner.first-comparison.android-libc-selection.20261109",
+      "owner.first-comparison.microphone-visible-prompt.20261109",
+      "owner.first-comparison.live-stream-keyword-hooks.20261109",
+      "owner.first-comparison.legacy-checkpoint-version-diagnostic.20261109",
+      "owner.first-comparison.speech-heldout-score-diagnostic.20261109"
+    ],
+    "added_evidence": "owner.first-comparison-behavior-review.20261109",
+    "original_source_unchanged": true,
+    "scope_unchanged": true,
+    "checks_unchanged": true,
+    "installation_commands_unchanged": true,
+    "frozen_initial_inputs_unchanged": true,
+    "new_source_or_test_bodies_provided": false,
+    "reserved_cases_provided": false,
+    "previous_observations_remain_historical": true,
+    "revision_sha256": "fc43708b43b270c5911a50d561fa895352b5356c632855789b191ee121b1f3e7"
+  },
+  "later_semantic_clarifications": [
+    {
+      "verification": "verification-84045484d691",
+      "candidate_git_head": "8bd88d7b48112c1c4a652d4d278abe8e1aa0ae5d",
+      "facts": "Current-candidate clarification after verification-84045484d691: 35 of 39 groups pass, with installation passed. The three non-resource failed groups have these observed causes. These facts refine public interface behavior and are statically checked by the host against the pinned original. No original implementation, test programs, or reserved cases are supplied.\n\n1. Cached speech model download bookkeeping is PER LOAD REQUEST, not once per process or once per repository for the lifetime of a process. Each call resolving the default speech weights records a best-effort config.json request with force_download=True, even when the weight archive is already cached. Two consecutive load requests therefore produce two bookkeeping requests while reusing the same local weights. The earlier wording 'once-per-repository' meant the relevant repository's event for a load, not global memoization across loads. Do not keep a persistent already-registered-repositories cache. Failures in this bookkeeping remain nonfatal. Preserve the already-fixed named repo_id and filename arguments.\n\n2. Live microphone listening has its OWN visible recording, Enter to stop prompt. It must be printed while capture is active and remain visible when input() is replaced; the separate record() function is already repaired. Live rendering also preserves the pending transcript string's whitespace exactly as supplied by the streaming result, including leading whitespace. Do not strip the provisional pending text. Preserve real streaming, committed text, keyword option forwarding, resampling, cleanup and worker-error propagation.\n\n3. The public needle.agent.whistle.languages(weights) result is an ordered TUPLE, including when a newly trained archive contains an extra language. Its fallback stays the existing LANGUAGES tuple. Parse actual archive contents and convert the discovered sequence to the required tuple; do not return a list or hardcode language extensions. Both remaining speech-training groups completed training/export and failed at this public return-type comparison; preserve the already-working actual optimization, learned vocabulary, archive, and scoring implementation.\n\nThe environment group still awaits host-supplied cases.json. Do not read or invent those payloads. Earlier download/platform and generation failures now pass; preserve those repairs. These observations do not establish that the next candidate passes. The unchanged original baseline remains valid for candidate-only repairs, and a full current-candidate comparison plus fresh installation will be required after the final data integration. No size-only optimization.",
+      "source_hashes": {
+        "needle/agent/fetch.py": "0e84a1c69378d202a0aeabf98721753befd3a36bc887c046f8b947c97ffea9cc",
+        "needle/agent/whistle.py": "88935e847203c2fa2fe66efac331457c4dc5342c21a34f0e68d85c766bcc7769"
+      },
+      "original_source_or_test_bodies_provided": false,
+      "reserved_data_provided": false,
+      "checks_or_scope_changed": false,
+      "behavior_pass_claimed": false
+    }
+  ],
+  "report_check_attribution_review": {
+    "upstream-fetch": {
+      "removed_targets": [
+        "graphify-cli-hosted-211e05abe275",
+        "graphify-cli-speech-dd8082d40471",
+        "graphify-cli-training-b8bfb359aa26"
+      ],
+      "reason": "The frozen group runs tests/test_fetch.py. Its direct CLI assertion covers build/archive download; it does not execute training, hosted CLI, or speech CLI. Speech CLI has a separate direct check in upstream-speech. Preserve remaining results as related context, not a direct local pass."
+    }
+  },
+  "report_source_mapping_review": {
+    "display_only": true,
+    "dropped_non_source_paths": [
+      ".github/workflows/publish-component.yaml",
+      ".github/workflows/release.yaml",
+      "MANIFEST.in",
+      "needle/playground/index.html",
+      "pyproject.toml",
+      "requirements-train.txt",
+      "requirements.txt",
+      "setup",
+      "setup.bat"
+    ],
+    "empty_package_markers_assigned_to_distribution": [
+      "needle/agent/__init__.py",
+      "needle/model/__init__.py",
+      "needle/playground/__init__.py"
+    ],
+    "global_token_counts_unchanged": true,
+    "behavioral_results_unchanged": true,
+    "unmapped_source": [],
+    "check_target_review": {
+      "upstream-fetch": {
+        "removed_targets": [
+          "graphify-cli-hosted-211e05abe275",
+          "graphify-cli-speech-dd8082d40471",
+          "graphify-cli-training-b8bfb359aa26"
+        ],
+        "reason": "The frozen group runs tests/test_fetch.py. Its direct CLI assertion covers build/archive download; it does not execute training, hosted CLI, or speech CLI. Speech CLI has a separate direct check in upstream-speech. Preserve remaining results as related context, not a direct local pass."
+      }
+    }
+  },
+  "preserved_public_case_data": {
+    "method": "Static AST literal extraction of original TEST_CASES; no target imports or execution. JSON-normalized containers compared exactly.",
+    "counts": {
+      "data_capture": 32,
+      "kitchen_appliance": 32,
+      "media_player": 32,
+      "productivity": 32,
+      "smart_home": 32,
+      "wearable": 32
+    },
+    "case_count": 192,
+    "equal": true,
+    "resource_sha256": "7b1ba91d9619892075247a28fe8da16ced64137864db4625b4d7514277d41db9",
+    "author_exposure": false
+  },
+  "installed_case_data_review": {
+    "candidate_git_head": "7e1e7b3f4f0ef92fca60d0871528748d095b3049",
+    "installation_artifact": "installation-4fcd3dabfbc9",
+    "packaging_declares_cases_resource": true,
+    "fresh_wheel_build_log_includes_cases_resource": true,
+    "checks_passed": 3
+  },
+  "observed_model_tokens": 19082299,
+  "usage_complete": true,
+  "usage_scope": "Recorded controller and author model input plus output, including cached input once. Host preparation, supervision and publication excluded. Missing usage is unknown.",
+  "submitted_at": "2026-11-09T04:35:22.111821+00:00",
+  "completed_at": "2026-11-09T08:02:22.449789+00:00",
+  "elapsed_job_seconds_including_queue": 12420.337968,
+  "prior_candidate_implementation_reused": false,
+  "prior_passes_reused": false,
+  "semantic_knowledge_reused_for_identical_source_commit": true,
+  "limitations": [
+    "Passing the declared checks does not establish full semantic equivalence or a percentage of all possible behavior.",
+    "Group counts differ from individual test cases. Detailed skipped or unexecuted paths remain in the evidence.",
+    "Per-node graph sizes use production-source mappings. Combined totals also count configuration, build inputs and the preserved JSON data; shared module sizes must not be summed across nodes.",
+    "Verification uses the recorded Linux ARM64 CPU environment; it does not establish all operating-system or accelerator support.",
+    "Hosted API and release-flow checks use controlled boundaries; no live account operation, deployment or release is performed.",
+    "Training and numerical checks exercise bounded models and existing checkpoint paths, not production-scale training quality.",
+    "Native engine libraries and pretrained weights remain external dependencies, as in the original.",
+    "Public environment benchmark payloads are preserved as non-code data by the host and counted in candidate size. Moving their Python literals into JSON contributes to the source-only reduction; the combined comparison still counts that data.",
+    "The frozen configuration category includes README SVGs and llms.txt. Source-only and a separately documented resource-excluded comparison are shown to avoid confusing documentation removal with implementation simplification.",
+    "Task-cost assessment is disabled; no downstream token or time savings are claimed.",
+    "Source-free authoring is a cooperative workflow boundary on a shared filesystem, not an OS-enforced source-access sandbox."
+  ],
+  "readability_review": {
+    "status": "reviewed_with_limits",
+    "findings": [
+      "All 35 Python production files parse; no semicolon-separated statements or one-line function definitions were found.",
+      "No direct eval, exec or compile calls were found by the Python AST scan; sampled modules use ordinary named functions, explicit algorithms and shared helpers.",
+      "No hardcoded references to the local original checkout or earlier experiment implementations were found in production Python and web files.",
+      "Spot review covered native/runtime boundaries, downloads, speech, JAX/MLX architecture, training and browser code. Recent repairs are small interface changes rather than packed code or substitute outputs.",
+      "The 41 lines longer than 160 characters include tool descriptions and long expressions/signatures; line length is recorded rather than treated as a readability score.",
+      "Original LICENSE bytes are preserved. The final data-integration commit adds only the exact public cases.json resource, leaving implementation source bytes unchanged."
+    ],
+    "limitations": [
+      "Static spot review and formatting heuristics do not establish comprehensive readability or semantic equivalence.",
+      "Agent task-cost evaluation is disabled; cognitive-load and downstream token savings have not been measured.",
+      "Functional acceptance is reported separately from this static review and must bind the same implementation tree."
+    ]
+  }
+}
