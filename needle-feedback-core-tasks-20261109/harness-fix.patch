@@ -1,0 +1,37 @@
+diff --git a/src/nanolize/effort_check.py b/src/nanolize/effort_check.py
+index 7bd463b..da218b6 100644
+--- a/src/nanolize/effort_check.py
++++ b/src/nanolize/effort_check.py
+@@ -46,7 +46,7 @@ def _worker(path, receipt):
+     namespace = {"__name__": "__main__", "__file__": str(path), "__package__": None,
+                  "__cached__": None, counter_name: count}
+     try:
+-        exec(compile(instrumented, str(path), "exec", optimize=0), namespace)
++        exec(compile(instrumented, str(path), "exec", dont_inherit=True, optimize=0), namespace)
+     except AssertionError:
+         # Only an actually executed frozen assertion supports an automatic
+         # implementation-failure verdict. Import/setup/zero-test failures stay
+diff --git a/tests/test_effort_grading.py b/tests/test_effort_grading.py
+index 1f73570..2d12eb1 100644
+--- a/tests/test_effort_grading.py
++++ b/tests/test_effort_grading.py
+@@ -52,6 +52,19 @@ class LightweightGraderTests(unittest.TestCase):
+         self.assertEqual(receipt["result"]["blocker"], "none")
+         self.assertEqual(receipt["command_evidence"]["failed_commands"], 1)
+ 
++    def test_check_annotations_keep_normal_python_semantics(self):
++        receipt = self.grade("def example(value: int) -> str:\n    return str(value)\n"
++                             "assert example.__annotations__['value'] is int\n"
++                             "assert example.__annotations__['return'] is str\n")
++        self.assertEqual(receipt["result"]["status"], "passed", receipt)
++
++    def test_check_can_explicitly_request_postponed_annotations(self):
++        receipt = self.grade("from __future__ import annotations\n"
++                             "def example(value: int) -> str:\n    return str(value)\n"
++                             "assert example.__annotations__['value'] == 'int'\n"
++                             "assert example.__annotations__['return'] == 'str'\n")
++        self.assertEqual(receipt["result"]["status"], "passed", receipt)
++
+     def test_missing_dependency_cannot_trigger_functional_repair(self):
+         receipt = self.grade("import absent_task_dependency_2731\nassert True\n")
+         self.assertEqual(receipt["result"]["status"], "blocked")
