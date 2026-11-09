@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "title": "tqdm · 三次 nanolize 实验对比",
-  "collected_at": "2026-11-09T01:58:22.653072+00:00",
+  "schema_version": 2,
+  "title": "tqdm · 四次 nanolize 实验对比",
+  "collected_at": "2026-11-09T03:58:52.141283+00:00",
   "language": "zh-CN",
   "runs": {
     "main": {
@@ -1339,6 +1339,248 @@
           "author_task_role": null
         }
       ]
+    },
+    "readable": {
+      "name": "Readable",
+      "color": "#b47724",
+      "harness_branch": "codex/controller-feedback-memory",
+      "harness_commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+      "original_commit": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+      "started": "2026-11-09T02:45:41.540606+00:00",
+      "ended": "2026-11-09T03:31:13.752521+00:00",
+      "wall_seconds": 2732.211915,
+      "baseline_tokens": {
+        "source_tokens": 45979,
+        "configuration_tokens": 26169,
+        "total_tokens": 72148
+      },
+      "candidate_tokens": {
+        "source_tokens": 30256,
+        "configuration_tokens": 9763,
+        "total_tokens": 40019
+      },
+      "retained_percent": {
+        "source_tokens": 65.8039539789904,
+        "configuration_tokens": 37.30750124192747,
+        "total_tokens": 55.46792703886456
+      },
+      "selected_capabilities": 27,
+      "excluded_capabilities": 0,
+      "historical_checks": {
+        "passed": 31
+      },
+      "budget": {
+        "max_author_calls": null,
+        "max_optimization_calls": 0,
+        "optimization_calls_used": 0,
+        "task_max_total_tokens": null,
+        "task_repetitions_configured": null,
+        "task_suite_prefrozen": false
+      },
+      "mandatory_compression_ratio": null,
+      "task_effort_enabled": false,
+      "usage_by_role": {
+        "controller": {
+          "calls": 3,
+          "input_tokens": 709254,
+          "cached_input_tokens": 582784,
+          "output_tokens": 6869,
+          "total_tokens": 716123,
+          "usage_complete": true,
+          "seconds": 291.8620096910163,
+          "unmetered_calls": 0,
+          "uncached_input_plus_output": 133339
+        },
+        "author": {
+          "calls": 2,
+          "input_tokens": 3844677,
+          "cached_input_tokens": 3639936,
+          "output_tokens": 75398,
+          "total_tokens": 3920075,
+          "usage_complete": true,
+          "seconds": 1950.6881236519548,
+          "unmetered_calls": 0,
+          "uncached_input_plus_output": 280139
+        }
+      },
+      "usage_complete": true,
+      "observed_total_tokens": 4636198,
+      "observed_cached_input_tokens": 4222720,
+      "observed_uncached_input_plus_output": 413478,
+      "performance": {
+        "disabled": 1.0034154847104757,
+        "automatic": 0.9810014386830315,
+        "updates": 0.9771766145262176,
+        "rendered": 0.9786133538886003
+      },
+      "quality_probes": {
+        "maintainer_helpers": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "public_surface": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "range_helpers": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_help": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_version": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "archive_arguments": {
+          "passed": true,
+          "difference_modules": 0
+        },
+        "cli_output_streams": {
+          "passed": true,
+          "python_versions": [
+            "3.8",
+            "3.11"
+          ],
+          "flags": [
+            "--help",
+            "--version"
+          ]
+        },
+        "python38_import_iteration": {
+          "passed": true
+        }
+      },
+      "optimization_author_calls": {
+        "calls": 0,
+        "seconds": 0,
+        "observed_tokens": 0
+      },
+      "report_url": "https://al-leanmuscle-club.github.io/lma-graphs/tqdm-feedback-readable-20261109/",
+      "code": {
+        "branch": "examples/tqdm-feedback-readable-20261109",
+        "url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/tqdm-feedback-readable-20261109",
+        "verified_commit": "1b04cd38d7f5d52f213a973e6336e2285d8de345",
+        "published_commit": "b5a6808feb6feacc416823c14e50cb4de7102854",
+        "tree": "b0b9ec5f410e8c0d7863a7ce1e7f52f20cca4720",
+        "identical_code_tree": true
+      },
+      "history": [
+        {
+          "index": 1,
+          "head": "db2c3722635d20eca44ef1d2154f3c38af4e5360",
+          "verification_at": "2026-11-09T03:20:48.032377+00:00",
+          "source_tokens": 30226,
+          "total_tokens": 39989,
+          "measurement_complete": true,
+          "status": "regressed",
+          "check_counts": {
+            "regressed": 2,
+            "passed": 29
+          },
+          "failed_checks": [
+            "upstream-tqdm",
+            "upstream-pandas"
+          ],
+          "note": "首版实现通过 29/31 组检查和安装验收；两组失败涉及弃用警告的精确文本与换行。没有体积门槛。"
+        },
+        {
+          "index": 2,
+          "head": "1b04cd38d7f5d52f213a973e6336e2285d8de345",
+          "verification_at": "2026-11-09T03:28:05.190812+00:00",
+          "source_tokens": 30256,
+          "total_tokens": 40019,
+          "measurement_complete": true,
+          "status": "checks_passed",
+          "check_counts": {
+            "passed": 31
+          },
+          "failed_checks": [],
+          "note": "仅修复两个文件中的四条弃用提示；31/31 组及新建环境安装通过。源码与总量均增加 30 tokens，随后停止，没有纯体积优化。"
+        }
+      ],
+      "calls": [
+        {
+          "role": "controller",
+          "started": 1794192377.755003,
+          "seconds": 100.2583393699606,
+          "exit_code": 0,
+          "usage_complete": true,
+          "usage": {
+            "input_tokens": 239463,
+            "cached_input_tokens": 195072,
+            "output_tokens": 2329
+          },
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794192585.7017858,
+          "seconds": 1752.7443972479668,
+          "exit_code": 0,
+          "usage_complete": true,
+          "usage": {
+            "input_tokens": 3253573,
+            "cached_input_tokens": 3113088,
+            "output_tokens": 69619
+          },
+          "author_task_role": "implement"
+        },
+        {
+          "role": "controller",
+          "started": 1794194490.72736,
+          "seconds": 94.49108383600833,
+          "exit_code": 0,
+          "usage_complete": true,
+          "usage": {
+            "input_tokens": 234876,
+            "cached_input_tokens": 193408,
+            "output_tokens": 2073
+          },
+          "author_task_role": null
+        },
+        {
+          "role": "author",
+          "started": 1794194593.2066107,
+          "seconds": 197.94372640398797,
+          "exit_code": 0,
+          "usage_complete": true,
+          "usage": {
+            "input_tokens": 591104,
+            "cached_input_tokens": 526848,
+            "output_tokens": 5779
+          },
+          "author_task_role": "repair"
+        },
+        {
+          "role": "controller",
+          "started": 1794194946.0126648,
+          "seconds": 97.11258648504736,
+          "exit_code": 0,
+          "usage_complete": true,
+          "usage": {
+            "input_tokens": 234915,
+            "cached_input_tokens": 194304,
+            "output_tokens": 2467
+          },
+          "author_task_role": null
+        }
+      ],
+      "readability_review": {
+        "status": "reviewed_with_limits",
+        "findings": [
+          "Static inspection covered 53 authored Python files: no semicolon statement packing or direct exec/eval/compile calls were found.",
+          "Sampled counter support, monitoring, CLI, pandas registration and concurrent mapping use ordinary named functions/classes and structured control flow. Shared formatting, warnings and pandas integration are separated into explicit helpers.",
+          "A normal table of pandas method registrations shares wrapper logic; it is not a custom language or an interpreter for encoded implementation.",
+          "The accepted compatibility repair changes only four public diagnostic message values in two files; it does not undertake volume optimization."
+        ],
+        "limitations": [
+          "This is a static style review and selected manual source inspection, not a measured human-comprehension result.",
+          "No downstream agent task-cost benchmark was run. Passing behavioral checks does not prove full semantic equivalence."
+        ]
+      }
     }
   },
   "quality_matrix": [
@@ -1347,11 +1589,12 @@
       "title": "维护文档模板",
       "key": "maintainer_helpers",
       "scope": "维护工具",
-      "detail": "使用原版支持的文档模板占位符和无 pandoc 场景；原版通过。Main 与 Controller 对模板执行 format 时出现 AttributeError，未保留该模板接口。",
+      "detail": "使用原版支持的文档模板占位符和无 pandoc 场景；原版通过。Main 与 Controller 对模板执行 format 时出现 AttributeError，未保留该模板接口。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "失败：模板字段不兼容",
         "controller": "失败：模板字段不兼容",
-        "memory": "通过"
+        "memory": "通过",
+        "readable": "通过"
       }
     },
     {
@@ -1359,11 +1602,12 @@
       "title": "DisableOnWriteError 接口",
       "key": "public_surface",
       "scope": "公共工具兼容性",
-      "detail": "检验 disable_on_exception 的原有调用约定、错误抑制、弱引用与工作流输入。Main 缺少该方法；Controller 的参数约定与原版不同。脚本遇到首个失败即停止，不能推断后续断言结果。",
+      "detail": "检验 disable_on_exception 的原有调用约定、错误抑制、弱引用与工作流输入。Main 缺少该方法；Controller 的参数约定与原版不同。脚本遇到首个失败即停止，不能推断后续断言结果。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "失败：方法缺失",
         "controller": "失败：调用约定不兼容",
-        "memory": "通过"
+        "memory": "通过",
+        "readable": "通过"
       }
     },
     {
@@ -1371,11 +1615,12 @@
       "title": "range 包装函数",
       "key": "range_helpers",
       "scope": "函数信息与动态行为",
-      "detail": "10 个模块比较普通函数类型、module/name/qualname、签名、别名和 pickle roundtrip；std、auto、asyncio 另外检验替换模块构造器后的调用。Controller 将它们变为绑定方法，且未保留动态构造器查找。其 pickle roundtrip 仍通过，不应误称为 pickle 故障。",
+      "detail": "10 个模块比较普通函数类型、module/name/qualname、签名、别名和 pickle roundtrip；std、auto、asyncio 另外检验替换模块构造器后的调用。Controller 将它们变为绑定方法，且未保留动态构造器查找。其 pickle roundtrip 仍通过，不应误称为 pickle 故障。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "通过",
         "controller": "失败：10 个模块存在差异",
-        "memory": "通过"
+        "memory": "通过",
+        "readable": "通过"
       }
     },
     {
@@ -1383,11 +1628,12 @@
       "title": "归档示例 --help",
       "key": "archive_help",
       "scope": "真实 argopt 0.9.1",
-      "detail": "直接运行 examples/7zx.py --help；原版通过。Main 与 Controller 的真实解析器路径失败；没有执行解压或外部下载。",
+      "detail": "直接运行 examples/7zx.py --help；原版通过。Main 与 Controller 的真实解析器路径失败；没有执行解压或外部下载。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "失败",
         "controller": "失败",
-        "memory": "通过"
+        "memory": "通过",
+        "readable": "通过"
       }
     },
     {
@@ -1395,11 +1641,12 @@
       "title": "归档示例 --version",
       "key": "archive_version",
       "scope": "真实 argopt 0.9.1",
-      "detail": "直接运行 examples/7zx.py --version，并比较原版成功输出；Main 与 Memory 通过，Controller 失败。",
+      "detail": "直接运行 examples/7zx.py --version，并比较原版成功输出；Main 与 Memory 通过，Controller 失败。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "通过",
         "controller": "失败",
-        "memory": "通过"
+        "memory": "通过",
+        "readable": "通过"
       }
     },
     {
@@ -1407,11 +1654,12 @@
       "title": "归档示例参数别名",
       "key": "archive_arguments",
       "scope": "真实参数解析",
-      "detail": "检验原版已有的 debug、trace、compressed、silent、yes 和多个归档操作数；只构造和解析参数，不执行归档提取。",
+      "detail": "检验原版已有的 debug、trace、compressed、silent、yes 和多个归档操作数；只构造和解析参数，不执行归档提取。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "失败",
         "controller": "失败",
-        "memory": "通过"
+        "memory": "通过",
+        "readable": "通过"
       }
     },
     {
@@ -1419,11 +1667,12 @@
       "title": "CLI 正常输出流",
       "key": "cli_output_streams",
       "scope": "Python 3.8 / 3.11",
-      "detail": "tqdm --help 与 --version 在原版中写入 stdout，stderr 为空。Memory 四个复测场景均写入 stderr，stdout 为 0 字节；退出码仍为 0。Main 和 Controller 通过。这会影响从标准输出读取结果的脚本。",
+      "detail": "tqdm --help 与 --version 在原版中写入 stdout，stderr 为空。Memory 四个复测场景均写入 stderr，stdout 为 0 字节；退出码仍为 0。Main 和 Controller 通过。这会影响从标准输出读取结果的脚本。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "通过",
         "controller": "通过",
-        "memory": "失败：正常输出写到 stderr"
+        "memory": "失败：正常输出写到 stderr",
+        "readable": "通过"
       }
     },
     {
@@ -1431,11 +1680,12 @@
       "title": "Python 3.8 导入与迭代",
       "key": "python38_import_iteration",
       "scope": "基础运行冒烟",
-      "detail": "使用 Python 3.8.20 导入核心、asyncio、concurrent、logging、itertools，并运行禁用显示的迭代。原版和三个版本均通过；这不是完整 Python 3.8 测试套件。",
+      "detail": "使用 Python 3.8.20 导入核心、asyncio、concurrent、logging、itertools，并运行禁用显示的迭代。原版和四个版本均通过；这不是完整 Python 3.8 测试套件。 Readable 使用同一补测范围和解释器重新验证，最终代码通过。",
       "results": {
         "main": "通过",
         "controller": "通过",
-        "memory": "通过"
+        "memory": "通过",
+        "readable": "通过"
       }
     }
   ],
@@ -1457,18 +1707,24 @@
     "memory": {
       "status": "incomparable_then_budget_exhausted",
       "reason": "Original solver changed protected tests; a later task-design attempt exhausted the aggregate budget."
+    },
+    "readable": {
+      "status": "disabled",
+      "reason": "Owner requested functional/install acceptance as the stopping rule; no task-design or solver comparison was run.",
+      "savings_claimed": false
     }
   },
   "methodology": [
-    "Three independent single runs, with different gates, budgets, environments and owner interventions; not a controlled ablation.",
+    "Four independent single runs, with different goals, gates, task budgets, environments and owner interventions; not a controlled ablation.",
     "Wall time is submission to final harness event, including queue and recovery; excludes preparation and subsequent host report work.",
     "Tokens are input plus output, including cached input once; cached input is a subset, not added twice.",
     "Main includes an interrupted author call without a final usage receipt; observed usage is a lower bound.",
     "No supervising conversation, preparation or present comparison usage is included.",
     "Historical performance ratios are matched within each run, not cross-machine absolute timings.",
-    "Supplemental probes were rerun now on all final trees in the same environment; original passes are required.",
+    "Original three final trees were checked earlier; the same supplemental scripts/interpreters were now run on Readable and a fresh original control. All observations are bound to unchanged verified commits.",
     "Main used a prefrozen task suite, while controller and memory incurred model task-design calls.",
-    "Controller first two size inventories were incomplete; displayed values are observations, not accepted complete totals."
+    "Controller first two size inventories were incomplete; displayed values are observations, not accepted complete totals.",
+    "Readable uses the same harness commit as Memory, with no mandatory size ratio, zero optimization calls and disabled task assessment. Its knowledge/check set incorporates earlier compatibility findings before execution; the time/token difference cannot isolate the effect of the stopping rule."
   ],
   "limits": [
     "原有功能图均选择 27/27 项，但选择范围和测试通过不构成完整语义等价证明。",
@@ -1476,7 +1732,8 @@
     "通知服务使用 mock；没有进行真实 Slack、Discord、Telegram 消息发送。",
     "未覆盖真实 Tk 桌面、Windows/macOS 全面运行、外部下载和归档提取的端到端验证。",
     "性能数据是各次运行内的 5 次重复 CPU 中位数比较；不能视为跨机器统计显著性结论。",
-    "三次运行的约束、任务设计、预算、宿主环境和人工干预不同；结果不能直接归因于 memory 功能。"
+    "四次运行的约束、任务设计、预算、宿主环境和人工干预不同；结果不能直接归因于 memory 功能。",
+    "Readable 的 31 组验收比旧运行更广；它未做后续任务成本评测，不能把未运行视为通过或成本改善。可读性有静态审阅，未测量人的理解效率。"
   ],
   "evidence": {
     "original_passes": {
@@ -1641,6 +1898,43 @@
             "passed": false
           }
         ]
+      },
+      "readable": {
+        "head": "1b04cd38d7f5d52f213a973e6336e2285d8de345",
+        "checks": [
+          {
+            "python": "3.8",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 2733,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.8",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 7,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--help",
+            "exit_code": 0,
+            "stdout_bytes": 2733,
+            "stderr_bytes": 0,
+            "passed": true
+          },
+          {
+            "python": "3.11",
+            "flag": "--version",
+            "exit_code": 0,
+            "stdout_bytes": 7,
+            "stderr_bytes": 0,
+            "passed": true
+          }
+        ]
       }
     },
     "python38": {
@@ -1667,7 +1961,29 @@
         "import_iteration_passed": true,
         "cli_help_stdout_passed": false,
         "python": "3.8.20 (default, Oct  2 2024, 15:14:40) \n[GCC 6.3.0 20170516]"
+      },
+      "readable": {
+        "head": "1b04cd38d7f5d52f213a973e6336e2285d8de345",
+        "import_iteration_passed": true,
+        "cli_help_stdout_passed": true,
+        "python": "3.8.20 (default, Oct  2 2024, 15:14:40) \n[GCC 6.3.0 20170516]"
       }
+    },
+    "readable_added_at": "2026-11-09T03:57:04.733408+00:00",
+    "readable_original_controls": {
+      "maintainer_helpers": true,
+      "public_surface": true,
+      "range_helpers": true,
+      "archive_help": true,
+      "archive_version": true,
+      "archive_arguments": true
+    },
+    "readable_probe_script_hashes": {
+      "maintainer_check.py": "c0e2f7baf00d7292b8809e63b0e673a6bec20586751cc4125f2676a89913d64c",
+      "public_surface_check.py": "dc547f14f3408ddeffc5975b4a7ec4c96103141923c655ea4d34acb606d00a05",
+      "range_compat_probe.py": "9dc7dda8af758fe28235fb4fdb85c5410d60ed744a41d3cb1dccafd64ad7f6e8",
+      "archive_cli_probe.py": "8138f8030d8bf8b9c40e902023cc054b745c293933948e692a8be9fa6cdcca57"
     }
-  }
+  },
+  "previous_comparison_collected_at": "2026-11-09T01:58:22.653072+00:00"
 }

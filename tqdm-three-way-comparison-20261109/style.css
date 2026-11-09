@@ -14,3 +14,10 @@
 .quality-layout>*{min-width:0}@media(max-width:1150px){.quality-layout{grid-template-columns:minmax(0,1fr)}}
 
 .chart-tools .select-label select{max-width:225px;width:210px}@media(max-width:600px){.chart-tools .select-label select{width:220px;max-width:240px}}
+
+/* Four completed runs: retain the established palette and allow horizontal tables. */
+:root{--readable:#b47724}.run-dot.readable{background:var(--readable)}
+.run-cards,.source-cards{grid-template-columns:repeat(4,minmax(0,1fr))}.narratives{grid-template-columns:repeat(2,minmax(0,1fr))}
+#quality-table{min-width:600px}#overview-table,#method-table,#cost-table{min-width:680px}
+@media(max-width:1150px){.run-cards,.source-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.run-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.source-cards,.narratives{grid-template-columns:1fr}.run-number.precise{font-size:23px}}

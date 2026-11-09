@@ -6,10 +6,10 @@ const fmt = n => new Intl.NumberFormat('en-US').format(n);
 const million = n => (n / 1e6).toFixed(3) + 'M';
 const duration = s => {const t = Math.round(s); return (t >= 3600 ? Math.floor(t / 3600) + '小时 ' : '') + Math.floor(t % 3600 / 60) + '分 ' + t % 60 + '秒';};
 const clockUTC = seconds => new Date(seconds * 1000).toISOString().slice(11,19);
-const runKeys = ['main','controller','memory'];
+const runKeys = ['main','controller','memory','readable'];
 const roleTitles = {author:'实现 / 修复 / 优化',controller:'Controller 决策',task_examiner:'任务出题',task_solver:'任务解题'};
 const roleColors = {author:'#8054d5',controller:'#baa3e9',task_examiner:'#db9e45',task_solver:'#248b80'};
-let data, metric = 'total_tokens', tokenMode = 'total_tokens', selected = {key:'memory',index:10};
+let data, metric = 'total_tokens', tokenMode = 'total_tokens', selected = {key:'readable',index:2};
 const active = new Set(runKeys);
 const header = first => '<thead><tr><th scope="col">' + first + '</th>' + runKeys.map(k => '<th scope="col"><span class="run-dot ' + k + '"></span> ' + esc(data.runs[k].name) + '</th>').join('') + '</tr></thead>';
 const row = (label, values, cls='') => '<tr class="'+cls+'"><th scope="row">'+label+'</th>'+values.map(v=>'<td>'+v+'</td>').join('')+'</tr>';
@@ -22,7 +22,7 @@ function renderOverview(){
     ['最终配置 tokens',runKeys.map(k=>fmt(data.runs[k].candidate_tokens.configuration_tokens))],
     ['源码＋配置 tokens',runKeys.map(k=>'<strong>'+fmt(data.runs[k].candidate_tokens.total_tokens)+'</strong>')],
     ['源码＋配置保留比例',runKeys.map(k=>data.runs[k].retained_percent.total_tokens.toFixed(4)+'%')],
-    ['源码本身低于 50%',runKeys.map(()=>tag(false,'未达到'))],
+    ['体积验收要求',['总量 &lt;50%','总量 &lt;50%','源码与总量各 &lt;50%','<span class="tag neutral">不设比例门槛</span>']],
     ['原流程行为检查',runKeys.map(k=>{const n=data.runs[k].historical_checks.passed;return n+'/'+n+' 组<span class="number-small">检查集合不完全相同</span>';})],
     ['保存的候选版本',runKeys.map(k=>data.runs[k].history.length+' 个')],
     ['Author 调用',runKeys.map(k=>data.runs[k].usage_by_role.author.calls+' 次'+(k==='main'?'<span class="number-small">含 1 次中断</span>':''))],
@@ -52,12 +52,12 @@ function renderCandidate(){
 function renderChart(){
   const container=$('#trajectory-chart'),width=Math.max(350,Math.min(900,container.clientWidth)),height=width<550?270:320;
   const l=43,r=18,t=24,b=42,w=width-l-r,h=height-t-b;
-  const min=metric==='total_tokens'?49.3:49,max=metric==='total_tokens'?53.8:64;
+  const min=metric==='total_tokens'?49.3:49,max=metric==='total_tokens'?56.5:67.5;
   const X=i=>l+(i-1)*w/9,Y=v=>t+(max-v)*h/(max-min);
-  const ticks=metric==='total_tokens'?[49.5,50,51,52,53]:[50,54,58,62];
+  const ticks=metric==='total_tokens'?[50,52,54,56]:[50,54,58,62,66];
   let svg='<svg viewBox="0 0 '+width+' '+height+'" aria-labelledby="trajectory-title"><title id="trajectory-title">'+(metric==='total_tokens'?'源码加配置':'仅源码')+' tokens 保留比例，按候选版本排列</title>';
   ticks.forEach(v=>{svg+='<line class="chart-grid" x1="'+l+'" y1="'+Y(v)+'" x2="'+(width-r)+'" y2="'+Y(v)+'"/><text class="chart-label" x="'+(l-9)+'" y="'+(Y(v)+3)+'" text-anchor="end">'+v+'%</text>';});
-  svg+='<line x1="'+l+'" y1="'+Y(50)+'" x2="'+(width-r)+'" y2="'+Y(50)+'" stroke="#c18c9a" stroke-width="1.2" stroke-dasharray="5 4"/><text class="chart-label" x="'+(width-r)+'" y="'+(Y(50)-7)+'" text-anchor="end" style="fill:#b07c8c">50% 门槛</text>';
+  svg+='<line x1="'+l+'" y1="'+Y(50)+'" x2="'+(width-r)+'" y2="'+Y(50)+'" stroke="#c18c9a" stroke-width="1.2" stroke-dasharray="5 4"/><text class="chart-label" x="'+(width-r)+'" y="'+(Y(50)-7)+'" text-anchor="end" style="fill:#b07c8c">50% 参考线 · Readable 无门槛</text>';
   for(let i=1;i<=10;i++)svg+='<text class="chart-label" x="'+X(i)+'" y="'+(height-18)+'" text-anchor="middle">'+i+'</text>';
   for(const key of runKeys){if(!active.has(key))continue;const run=data.runs[key];const points=run.history.map(p=>({x:X(p.index),y:Y(100*p[metric]/run.baseline_tokens[metric]),p}));
     svg+='<path class="chart-path" stroke="'+run.color+'" d="'+points.map((p,i)=>(i?'L':'M')+p.x.toFixed(2)+' '+p.y.toFixed(2)).join(' ')+'"/>';
@@ -76,7 +76,7 @@ function renderCost(){
   $('#time-bars').innerHTML=runKeys.map(k=>{const r=data.runs[k];return '<div><div class="bar-heading"><span>'+esc(r.name)+'</span><strong>'+duration(r.wall_seconds)+'</strong></div><div class="bar-track"><div class="bar-fill" style="width:'+100*r.wall_seconds/maxTime+'%;background:'+r.color+'"></div></div></div>';}).join('');
   const maxTotal=Math.max(...runKeys.map(k=>Object.values(data.runs[k].usage_by_role).reduce((s,r)=>s+r[tokenMode],0)));
   $('#token-bars').innerHTML=runKeys.map(k=>{const r=data.runs[k];const total=Object.values(r.usage_by_role).reduce((s,r)=>s+r[tokenMode],0);return '<div><div class="bar-heading"><span>'+esc(r.name)+'</span><strong>'+(r.usage_complete?'':'≥ ')+million(total)+'</strong></div><div class="bar-track"><div class="bar-fill" style="width:'+100*total/maxTotal+'%">'+Object.keys(roleTitles).map(role=>{const amount=r.usage_by_role[role]?.[tokenMode]||0;return '<span class="bar-segment" style="width:'+100*amount/total+'%;background:'+roleColors[role]+'" title="'+roleTitles[role]+' '+million(amount)+'"></span>';}).join('')+'</div></div></div>';}).join('');
-  const rows=Object.entries(roleTitles).map(([role,title])=>row(title,runKeys.map(k=>{const usage=data.runs[k].usage_by_role[role];return usage?(usage.usage_complete?'':'≥ ')+million(usage.total_tokens)+'<span class="number-small">'+usage.calls+' 次调用 · '+(usage.seconds/60).toFixed(1)+' 分钟累计</span>':role==='task_examiner'?'本次未模型出题<span class="number-small">使用预先冻结题目</span>':'0<span class="number-small">无独立模型控制器</span>';})));
+  const rows=Object.entries(roleTitles).map(([role,title])=>row(title,runKeys.map(k=>{const usage=data.runs[k].usage_by_role[role];return usage?(usage.usage_complete?'':'≥ ')+million(usage.total_tokens)+'<span class="number-small">'+usage.calls+' 次调用 · '+(usage.seconds/60).toFixed(1)+' 分钟累计</span>':k==='readable'&&role.startsWith('task_')?'未启用<span class="number-small">未运行出题或解题</span>':role==='task_examiner'?'本次未模型出题<span class="number-small">使用预先冻结题目</span>':'0<span class="number-small">无独立模型控制器</span>';})));
   rows.push(row('记录到的总量',runKeys.map(k=>'<strong>'+(data.runs[k].usage_complete?'':'≥ ')+million(data.runs[k].observed_total_tokens)+'</strong>')));
   rows.push(row('其中缓存输入',runKeys.map(k=>million(data.runs[k].observed_cached_input_tokens)+'<span class="number-small">占观测总量 '+(100*data.runs[k].observed_cached_input_tokens/data.runs[k].observed_total_tokens).toFixed(2)+'%</span>')));
   rows.push(row('未缓存输入＋输出',runKeys.map(k=>(data.runs[k].usage_complete?'':'≥ ')+million(data.runs[k].observed_uncached_input_plus_output))));
@@ -89,7 +89,17 @@ function renderCalls(){
   $('#calls-table').innerHTML='<thead><tr><th>序号</th><th>角色</th><th>开始 / UTC</th><th>时长</th><th>观测 tokens</th><th>缓存输入</th><th>计量</th></tr></thead><tbody>'+run.calls.map((c,i)=>{const n=c.usage.input_tokens+c.usage.output_tokens;return '<tr><th scope="row">'+(i+1)+'</th><td>'+esc(c.role==='controller'?'Controller':(labels[c.author_task_role]||'Author'))+'</td><td>'+clockUTC(c.started)+'</td><td>'+(c.seconds/60).toFixed(1)+' 分</td><td>'+(c.usage_complete?fmt(n):'未知 / 未完整计量')+'</td><td>'+(c.usage_complete?fmt(c.usage.cached_input_tokens):'未知')+'</td><td>'+(c.usage_complete?'<span class="tag pass">完整</span>':'<span class="tag warning">中断，无最终回执</span>')+'</td></tr>';}).join('')+'</tbody>';
 }
 function renderMethod(){
-  const rows=[['Harness 提交',runKeys.map(k=>'<code>'+data.runs[k].harness_commit.slice(0,12)+'</code>')],['用户严格体积门槛',['总源码＋配置 &lt;50%','总源码＋配置 &lt;50%','源码、源码＋配置各自 &lt;50%']],['额外功能检查',['原有 26 组','原有 26 组','28 组，另有补充探针']],['任务题目来源',['复用经澄清的冻结题目','本次模型出题','本次模型出题，契约修订后再出题']],['配置的任务重复次数',runKeys.map(k=>data.runs[k].budget.task_repetitions_configured+' 次<span class="number-small">配置值不代表均完成</span>')],['任务用量预算',runKeys.map(k=>million(data.runs[k].budget.task_max_total_tokens))],['压缩优化调用',[ '0 次独立尺寸优化', '4 / 4 次','6 / 6 次']],['监督干预',['补 tokenizer；中断并恢复草稿；加强 CLI 检查','诊断、性能与大小规则复核','追加兼容契约；解析器与 range 修复；提供计数工具']]];
+  const rows=[
+    ['Harness 提交',runKeys.map(k=>'<code>'+data.runs[k].harness_commit.slice(0,12)+'</code>')],
+    ['体积验收要求',['总源码＋配置 &lt;50%','总源码＋配置 &lt;50%','源码、源码＋配置各自 &lt;50%','无强制比例；以简洁、可读为目标']],
+    ['功能检查',['原有 26 组','原有 26 组','28 组，另有补充探针','31 组，已纳入前轮兼容性发现']],
+    ['任务题目来源',['复用经澄清的冻结题目','本次模型出题','本次模型出题，契约修订后再出题','未启用任务成本评测']],
+    ['配置的任务重复次数',runKeys.map(k=>k==='readable'?'不适用':data.runs[k].budget.task_repetitions_configured+' 次<span class="number-small">配置值不代表均完成</span>')],
+    ['任务用量预算',runKeys.map(k=>k==='readable'?'不适用（评测关闭）':million(data.runs[k].budget.task_max_total_tokens))],
+    ['压缩优化调用',['0 次独立尺寸优化','4 / 4 次','6 / 6 次','0 / 0 次']],
+    ['停止条件',['功能修复与后续任务评测','功能修复、体积优化与任务评测','双体积门槛、功能修复与任务评测','功能及安装通过后停止纯体积优化']],
+    ['监督干预',['补 tokenizer；中断并恢复草稿；加强 CLI 检查','诊断、性能与大小规则复核','追加兼容契约；解析器与 range 修复；提供计数工具','开始前扩充共同验收；补充精确警告语义；静态可读性审阅']]
+  ];
   $('#method-table').innerHTML=header('实验设置')+'<tbody>'+rows.map(r=>row(...r)).join('')+'</tbody>';
   $('#limits-list').innerHTML=data.limits.map(x=>'<li>'+esc(x)+'</li>').join('');
 }
