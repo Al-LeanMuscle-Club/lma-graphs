@@ -1,0 +1,1163 @@
+{
+  "as_of": "2026-11-09T08:58:10.385015+00:00",
+  "job_id": "f01f16898abf4ebfba34910986c7da83",
+  "status": "succeeded",
+  "phase": "completed",
+  "author_calls": 4,
+  "optimization_calls": 0,
+  "delivered": true,
+  "model_calls": [
+    {
+      "role": "controller",
+      "started_epoch": 1794212154.1691277,
+      "seconds": 98.10314847528934,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 224800,
+      "cached_input_tokens": 185984,
+      "output_tokens": 2346,
+      "total_tokens": 227146
+    },
+    {
+      "role": "author",
+      "started_epoch": 1794212301.056638,
+      "seconds": 741.5653661051765,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 1369402,
+      "cached_input_tokens": 1281280,
+      "output_tokens": 27945,
+      "total_tokens": 1397347
+    },
+    {
+      "role": "controller",
+      "started_epoch": 1794213131.5397732,
+      "seconds": 95.11673659086227,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 224267,
+      "cached_input_tokens": 187392,
+      "output_tokens": 2141,
+      "total_tokens": 226408
+    },
+    {
+      "role": "author",
+      "started_epoch": 1794213249.386229,
+      "seconds": 206.32254667021334,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 667880,
+      "cached_input_tokens": 590848,
+      "output_tokens": 5238,
+      "total_tokens": 673118
+    },
+    {
+      "role": "controller",
+      "started_epoch": 1794213469.3751688,
+      "seconds": 93.88248075824231,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 215134,
+      "cached_input_tokens": 178688,
+      "output_tokens": 2016,
+      "total_tokens": 217150
+    },
+    {
+      "role": "controller",
+      "started_epoch": 1794213694.2892022,
+      "seconds": 118.3154675271362,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 244925,
+      "cached_input_tokens": 183808,
+      "output_tokens": 2481,
+      "total_tokens": 247406
+    },
+    {
+      "role": "author",
+      "started_epoch": 1794213826.650374,
+      "seconds": 190.3161954311654,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 466444,
+      "cached_input_tokens": 413312,
+      "output_tokens": 4984,
+      "total_tokens": 471428
+    },
+    {
+      "role": "controller",
+      "started_epoch": 1794214101.5732782,
+      "seconds": 113.03544828295708,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 231633,
+      "cached_input_tokens": 186240,
+      "output_tokens": 2240,
+      "total_tokens": 233873
+    },
+    {
+      "role": "author",
+      "started_epoch": 1794214228.9900107,
+      "seconds": 105.7072074925527,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 311908,
+      "cached_input_tokens": 269824,
+      "output_tokens": 2252,
+      "total_tokens": 314160
+    },
+    {
+      "role": "controller",
+      "started_epoch": 1794214420.2094083,
+      "seconds": 142.63672098517418,
+      "exit_code": 0,
+      "usage_complete": true,
+      "input_tokens": 325635,
+      "cached_input_tokens": 275712,
+      "output_tokens": 2967,
+      "total_tokens": 328602
+    }
+  ],
+  "total_observed_tokens": 4336638,
+  "cached_input_tokens": 3753088,
+  "trajectory": [
+    {
+      "kind": "verification",
+      "at": "2026-11-09T08:31:25.149381+00:00",
+      "status": "checks_passed",
+      "candidate": "candidate-4f8737d955e7",
+      "counts": {
+        "passed": 11,
+        "unverified": 3,
+        "out_of_scope": 25
+      },
+      "nonpassing": [],
+      "source_tokens": 13337,
+      "total_tokens": 14048
+    },
+    {
+      "kind": "installation",
+      "at": "2026-11-09T08:31:42.096741+00:00",
+      "status": "passed",
+      "candidate": "candidate-4f8737d955e7",
+      "counts": {
+        "passed": 3
+      },
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    },
+    {
+      "kind": "measurement",
+      "at": "2026-11-09T08:31:50.441029+00:00",
+      "status": null,
+      "candidate": "candidate-4f8737d955e7",
+      "counts": {},
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    },
+    {
+      "kind": "verification",
+      "at": "2026-11-09T08:40:46.759510+00:00",
+      "status": "regressed",
+      "candidate": "candidate-7c57ec382fee",
+      "counts": {
+        "passed": 11,
+        "unverified": 3,
+        "out_of_scope": 25,
+        "regressed": 1
+      },
+      "nonpassing": [
+        {
+          "name": "core-clarified-runtime-boundaries",
+          "status": "regressed"
+        }
+      ],
+      "source_tokens": 13542,
+      "total_tokens": 14253
+    },
+    {
+      "kind": "installation",
+      "at": "2026-11-09T08:41:04.519379+00:00",
+      "status": "passed",
+      "candidate": "candidate-7c57ec382fee",
+      "counts": {
+        "passed": 3
+      },
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    },
+    {
+      "kind": "measurement",
+      "at": "2026-11-09T08:41:12.266582+00:00",
+      "status": null,
+      "candidate": "candidate-7c57ec382fee",
+      "counts": {},
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    },
+    {
+      "kind": "verification",
+      "at": "2026-11-09T08:47:32.079335+00:00",
+      "status": "regressed",
+      "candidate": "candidate-45572ec4584d",
+      "counts": {
+        "passed": 11,
+        "unverified": 3,
+        "out_of_scope": 25,
+        "regressed": 1
+      },
+      "nonpassing": [
+        {
+          "name": "core-clarified-runtime-boundaries",
+          "status": "regressed"
+        }
+      ],
+      "source_tokens": 13551,
+      "total_tokens": 14262
+    },
+    {
+      "kind": "installation",
+      "at": "2026-11-09T08:47:47.780990+00:00",
+      "status": "passed",
+      "candidate": "candidate-45572ec4584d",
+      "counts": {
+        "passed": 3
+      },
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    },
+    {
+      "kind": "measurement",
+      "at": "2026-11-09T08:47:59.606319+00:00",
+      "status": null,
+      "candidate": "candidate-45572ec4584d",
+      "counts": {},
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    },
+    {
+      "kind": "verification",
+      "at": "2026-11-09T08:52:54.729343+00:00",
+      "status": "checks_passed",
+      "candidate": "candidate-94e6d23975b9",
+      "counts": {
+        "passed": 12,
+        "unverified": 3,
+        "out_of_scope": 25
+      },
+      "nonpassing": [],
+      "source_tokens": 13551,
+      "total_tokens": 14262
+    },
+    {
+      "kind": "installation",
+      "at": "2026-11-09T08:53:10.123990+00:00",
+      "status": "passed",
+      "candidate": "candidate-94e6d23975b9",
+      "counts": {
+        "passed": 3
+      },
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    },
+    {
+      "kind": "measurement",
+      "at": "2026-11-09T08:53:17.902491+00:00",
+      "status": null,
+      "candidate": "candidate-94e6d23975b9",
+      "counts": {},
+      "nonpassing": [],
+      "source_tokens": null,
+      "total_tokens": null
+    }
+  ],
+  "limitations": [
+    "Cached input tokens are included in input tokens, not added twice.",
+    "Model usage excludes this coordinating conversation and report preparation.",
+    "Any reduction against the full repository includes removal of out-of-scope features.",
+    "The original source files shared with selected core contain 19045 source tokens; shared files may include excluded behavior.",
+    "Passing selected checks does not prove universal semantic equivalence.",
+    "The frozen total-token metric counts seven README SVG illustrations and llms.txt as configuration. The supplementary metric excludes exactly those paths on both sides; frozen measurements and acceptance remain unchanged.",
+    "The report preserves 25 out-of-scope groups and three mixed original groups marked unverified; their retained core portions use explicit adapted checks. None of those 28 full groups is reported as passed. This is a core-scope result.",
+    "This run alone does not establish Controller efficiency compared with main. Model settings, task assessment and other controls differ from earlier runs.",
+    "Source-free authoring is a cooperative shared-filesystem boundary, not separate operating-system isolation.",
+    "The code branch preserves original tests for audit. Running the entire original suite also exercises deliberately excluded features; the selected acceptance groups define this core run."
+  ],
+  "title": "Needle · Controller feedback memory · Core scope",
+  "harness_branch": "codex/controller-feedback-memory",
+  "harness_commit": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+  "source_commit": "278eea197d6a89a274d5505de757f5a3acb7ecfa",
+  "code_url": "https://github.com/Al-LeanMuscle-Club/nanolize/tree/examples/needle-feedback-core-readable-20261109",
+  "published_commit": "88671a74c716eb095aba879139aeafc83b3170ca",
+  "verified_commit": "618ceae367b8300feb89825687b506090e71517a",
+  "identical_verified_code_tree": true,
+  "model": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "xhigh",
+    "explicit_model_override": false,
+    "source": "selected top-level CLI fields; no credentials copied"
+  },
+  "mandatory_compression_ratio": null,
+  "advisory_percent": 100,
+  "stopping_rule": "Stop after selected functional and fresh-installation acceptance. No pure-size optimization.",
+  "selected": [
+    "Native text engines and weight downloads",
+    "Runtime artifact CLI",
+    "Applications and distribution",
+    "Isolated tuned-model workers",
+    "Installable text runtime",
+    "Needle",
+    "Native text inference and grounded extraction",
+    "Local inference and speech",
+    "Telemetry controls and diagnostics",
+    "Typed tool and extraction schemas"
+  ],
+  "excluded": [
+    "Training checkpoint and speech-weight downloads",
+    "Safe checkpoints and tokenization",
+    "Hosted platform CLI",
+    "Browser playground CLI",
+    "Speech CLI",
+    "Training and reference-model CLI",
+    "Stateful device and application environments",
+    "Portable CACT export and deployment builds",
+    "Reference checkpoint generation",
+    "MLX numerical backend",
+    "JAX attention model and subnetworks",
+    "Model numerics and portable formats",
+    "Training, speech and web distribution extras",
+    "Hosted training and account workflows",
+    "Interactive local browser playground",
+    "Deployment quantization numerics",
+    "Upstream release automation",
+    "Speech transcription and streaming",
+    "Whistle model and speech LoRA tuning",
+    "Text data generation and LoRA tuning",
+    "Training and data generation"
+  ],
+  "source_tokens": {
+    "before": 101061,
+    "after": 13551,
+    "reduction_percent": 86.59126666072966
+  },
+  "total_tokens": {
+    "before": 175966,
+    "after": 14262,
+    "reduction_percent": 91.89502517531795
+  },
+  "configuration_tokens": {
+    "before": 74905,
+    "after": 711,
+    "reduction_percent": 99.05079767705762
+  },
+  "supplementary_without_reference_documentation": {
+    "before": 106460,
+    "after": 14262,
+    "reduction_percent": 86.60341912455382,
+    "excluded_paths": [
+      "assets/banner.svg",
+      "assets/benchmarks.svg",
+      "assets/deploy.svg",
+      "assets/finetune.svg",
+      "assets/model.svg",
+      "assets/whistle-benchmarks.svg",
+      "assets/whistle.svg",
+      "llms.txt"
+    ]
+  },
+  "original_files_shared_with_core_source_tokens": 19045,
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "submitted_at": "2026-11-09T08:14:12.129515+00:00",
+  "finished_at": "2026-11-09T08:56:48.908527+00:00",
+  "wall_seconds_including_queue": 2556.779012,
+  "checks": [
+    {
+      "name": "upstream-tools",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 1.3435,
+        "case_counts": {
+          "passed": 17,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.1114,
+        "case_counts": {
+          "passed": 17,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-grounding",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 1.3074,
+        "case_counts": {
+          "passed": 36,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.1462,
+        "case_counts": {
+          "passed": 36,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-fetch",
+      "scope": "needs_adaptation",
+      "status": "unverified",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-platform",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-playground",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-packaging",
+      "scope": "needs_adaptation",
+      "status": "unverified",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-release",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-worker",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 1.3671,
+        "case_counts": {
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.7511,
+        "case_counts": {
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-generate",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-weights",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 1.4702,
+        "case_counts": {
+          "passed": 22,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.1492,
+        "case_counts": {
+          "passed": 22,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "api-contract",
+      "scope": "needs_adaptation",
+      "status": "unverified",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "schema-performance",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.4605,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3341,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "telemetry-policy",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.4593,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3592,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-environments",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-speech",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-render",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-lora",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-quantization",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-generation",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-speech-training-interfaces",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "tiny-numerical-checkpoint-forward-export-generation",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-heavy-build",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-heavy-environments",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-heavy-finetune",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-inference",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 2.8447,
+        "case_counts": {
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 2.287,
+        "case_counts": {
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-heavy-mlx",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-heavy-quantize-mlx",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-heavy-run",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-heavy-whistle",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "upstream-heavy-whistle-finetune",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "browser-playground-contract",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "core-fetch",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 1.2419,
+        "case_counts": {
+          "passed": 19,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 3.8124,
+        "case_counts": {
+          "passed": 19,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "core-packaging",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.4634,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3814,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "core-api-contract",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.6009,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.5262,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "core-native-output",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 1.1878,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.0743,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "playground-cli-boundary",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "training-text-real-updates",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "training-speech-real-updates",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "playground-http-and-tuning",
+      "scope": "retired",
+      "status": "out_of_scope",
+      "baseline": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "not_run",
+        "seconds": null,
+        "case_counts": {}
+      }
+    },
+    {
+      "name": "core-clarified-runtime-boundaries",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.5019,
+        "case_counts": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.1667,
+        "case_counts": {}
+      }
+    }
+  ],
+  "installation_status": "passed",
+  "installation_checks": 3,
+  "task_assessment_enabled": false,
+  "previous_candidate_reused": false,
+  "previous_passes_reused": false,
+  "same_source_semantic_knowledge_reused": true,
+  "initial_retained_groups": 11,
+  "final_retained_groups": 12,
+  "functional_clarification": "After the initial 11 groups and installation passed, static review confirmed a missing generation-3 platform weight download and contradictory numeric guidance. The host clarified aliases, numeric boundaries and CLI dispatch, and added one comparison group. Initial checks were preserved; subsequent work is functional repair only.",
+  "native_report_generation": {
+    "status": "failed",
+    "reason": "Generated mapping included configuration/bootstrap paths where the renderer accepts source files only."
+  },
+  "host_report_mapping_normalization": {
+    "display_only": true,
+    "dropped_non_source_paths": [
+      "MANIFEST.in",
+      "pyproject.toml",
+      "requirements.txt",
+      "setup",
+      "setup.bat"
+    ],
+    "empty_package_markers": [],
+    "unmapped_source": [],
+    "behavior_results_changed": false
+  },
+  "constructor_normalization_review": {
+    "candidate_git_head": "618ceae367b8300feb89825687b506090e71517a",
+    "source_sha256": "c7ef8d7d325ee667b52b6fa38b9f1e519e2e75ab6d3b1c90e7c555e57b16c5be",
+    "normalization_present": true,
+    "method": "Static AST comparison of the accepted constructor against the reviewed normalization; no extra runtime input cases executed.",
+    "existing_behavior_evidence": "The full 12 retained groups and three fresh-installation stages passed on these unchanged bytes."
+  },
+  "unknowns_after_host_review": {
+    "owner-core-cli-dispatch-answer": "resolved",
+    "owner-core-cli-telemetry-answer": "resolved",
+    "owner-core-deployment-diagnostic": "resolved",
+    "owner-core-generation-coercion": "resolved"
+  },
+  "readability": {
+    "candidate_git_head": "618ceae367b8300feb89825687b506090e71517a",
+    "python_files": 10,
+    "files": [
+      {
+        "path": "needle/__init__.py",
+        "lines": 395,
+        "max_line_length": 130
+      },
+      {
+        "path": "needle/__main__.py",
+        "lines": 3,
+        "max_line_length": 21
+      },
+      {
+        "path": "needle/_grounding.py",
+        "lines": 218,
+        "max_line_length": 164
+      },
+      {
+        "path": "needle/_native.py",
+        "lines": 61,
+        "max_line_length": 112
+      },
+      {
+        "path": "needle/_telemetry.py",
+        "lines": 74,
+        "max_line_length": 112
+      },
+      {
+        "path": "needle/_worker.py",
+        "lines": 218,
+        "max_line_length": 116
+      },
+      {
+        "path": "needle/agent/__init__.py",
+        "lines": 3,
+        "max_line_length": 62
+      },
+      {
+        "path": "needle/agent/fetch.py",
+        "lines": 260,
+        "max_line_length": 141
+      },
+      {
+        "path": "needle/agent/tools.py",
+        "lines": 228,
+        "max_line_length": 116
+      },
+      {
+        "path": "needle/cli.py",
+        "lines": 123,
+        "max_line_length": 117
+      }
+    ],
+    "semicolon_statement_sites": [],
+    "dynamic_execution_calls": [],
+    "lines_over_140_columns": [
+      {
+        "path": "needle/_grounding.py",
+        "line": 14,
+        "length": 164
+      },
+      {
+        "path": "needle/agent/fetch.py",
+        "line": 248,
+        "length": 141
+      }
+    ],
+    "original_tests_and_license_unchanged": true,
+    "protected_file_count": 23,
+    "frozen_run_inputs_unchanged": true,
+    "limitations": [
+      "Static indicators support a readability review but are not a readability score or a proof of behavior."
+    ],
+    "review_findings": [
+      "Ten ordinary Python modules separate schemas, artifacts, grounding, native ABI, worker isolation and the public runtime.",
+      "Native ABI helpers are shared between the in-process runtime and isolated workers.",
+      "No semicolon-packed statement sites or direct eval/exec/compile calls were found.",
+      "Both long lines are ordinary declarative text/expressions; no final code-size or cosmetic rewrite was requested after acceptance.",
+      "Original tests and LICENSE remain unchanged. Selected groups define this core experiment; the full original suite also exercises explicitly excluded features."
+    ]
+  }
+}
