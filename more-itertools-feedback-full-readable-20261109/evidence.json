@@ -1,0 +1,1541 @@
+{
+  "limitations": [
+    "Only summary results are published; captured command output is omitted."
+  ],
+  "status": "checks_passed",
+  "tests": {
+    "original_total": 16,
+    "retained": 23,
+    "retired": 0,
+    "needs_adaptation": 0,
+    "adapted": 0,
+    "contract": 7,
+    "passed": 23,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 0
+  },
+  "capability_results": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-group-grouping-0f67de662740",
+      "status": "passed",
+      "checks": [
+        "upstream-grouping",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+      "status": "passed",
+      "checks": [
+        "upstream-selecting",
+        "upstream-lookahead-and-lookback",
+        "upstream-others",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-windowing-13938674e493",
+      "status": "passed",
+      "checks": [
+        "upstream-windowing",
+        "upstream-statistics",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-augmenting-942a8baac7c5",
+      "status": "passed",
+      "checks": [
+        "upstream-augmenting",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-combining-e593ff250661",
+      "status": "passed",
+      "checks": [
+        "upstream-summarizing",
+        "upstream-combining",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-concurrency-28371556ab0c",
+      "status": "passed",
+      "checks": [
+        "upstream-concurrency",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-summarizing-597959ee0b55",
+      "status": "passed",
+      "checks": [
+        "upstream-combinatorics",
+        "upstream-summarizing",
+        "upstream-integer-math",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-selecting-2acd629a8dd2",
+      "status": "passed",
+      "checks": [
+        "upstream-grouping",
+        "upstream-selecting",
+        "upstream-lookahead-and-lookback",
+        "upstream-combinatorics",
+        "upstream-summarizing",
+        "upstream-augmenting",
+        "upstream-others",
+        "upstream-math",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-combinatorics-c017b5a61e58",
+      "status": "passed",
+      "checks": [
+        "upstream-combinatorics",
+        "upstream-integer-math",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-wrapping-8bd2b305ca81",
+      "status": "passed",
+      "checks": [
+        "upstream-wrapping",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-math-47d46c631488",
+      "status": "passed",
+      "checks": [
+        "upstream-math",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-integer-math-5597b0a74bc3",
+      "status": "passed",
+      "checks": [
+        "upstream-integer-math",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-statistics-e814cd58e630",
+      "status": "passed",
+      "checks": [
+        "upstream-statistics",
+        "upstream-other",
+        "upstream-python314",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-others-a877e275d823",
+      "status": "passed",
+      "checks": [
+        "upstream-selecting",
+        "upstream-others",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "lazy-iteration-and-performance"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-group-other-f0c1a08c0156",
+      "status": "passed",
+      "checks": [
+        "upstream-wrapping",
+        "upstream-other",
+        "upstream-python314",
+        "frozen-doctests-more",
+        "frozen-doctests-recipes",
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-distribution-933548450302",
+      "status": "passed",
+      "checks": [
+        "public-api-python311",
+        "public-api-python314",
+        "typing-stubtest",
+        "documentation-build"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    }
+  ],
+  "checks": [
+    {
+      "name": "upstream-grouping",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-selecting-2acd629a8dd2"
+      ]
+    },
+    {
+      "name": "upstream-selecting",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2"
+      ]
+    },
+    {
+      "name": "upstream-lookahead-and-lookback",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-selecting-2acd629a8dd2"
+      ]
+    },
+    {
+      "name": "upstream-wrapping",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-wrapping-8bd2b305ca81"
+      ]
+    },
+    {
+      "name": "upstream-combinatorics",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-summarizing-597959ee0b55"
+      ]
+    },
+    {
+      "name": "upstream-summarizing",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-summarizing-597959ee0b55"
+      ]
+    },
+    {
+      "name": "upstream-augmenting",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-augmenting-942a8baac7c5",
+        "graphify-group-selecting-2acd629a8dd2"
+      ]
+    },
+    {
+      "name": "upstream-windowing",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-windowing-13938674e493"
+      ]
+    },
+    {
+      "name": "upstream-combining",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-combining-e593ff250661"
+      ]
+    },
+    {
+      "name": "upstream-others",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2"
+      ]
+    },
+    {
+      "name": "upstream-math",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-math-47d46c631488",
+        "graphify-group-selecting-2acd629a8dd2"
+      ]
+    },
+    {
+      "name": "upstream-concurrency",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-concurrency-28371556ab0c"
+      ]
+    },
+    {
+      "name": "upstream-statistics",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-statistics-e814cd58e630",
+        "graphify-group-windowing-13938674e493"
+      ]
+    },
+    {
+      "name": "upstream-other",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-statistics-e814cd58e630"
+      ]
+    },
+    {
+      "name": "upstream-integer-math",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-integer-math-5597b0a74bc3",
+        "graphify-group-summarizing-597959ee0b55"
+      ]
+    },
+    {
+      "name": "upstream-python314",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-augmenting-942a8baac7c5",
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-concurrency-28371556ab0c",
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-integer-math-5597b0a74bc3",
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-math-47d46c631488",
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-statistics-e814cd58e630",
+        "graphify-group-summarizing-597959ee0b55",
+        "graphify-group-windowing-13938674e493",
+        "graphify-group-wrapping-8bd2b305ca81"
+      ]
+    },
+    {
+      "name": "frozen-doctests-more",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-augmenting-942a8baac7c5",
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-concurrency-28371556ab0c",
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-integer-math-5597b0a74bc3",
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-math-47d46c631488",
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-summarizing-597959ee0b55",
+        "graphify-group-windowing-13938674e493",
+        "graphify-group-wrapping-8bd2b305ca81"
+      ]
+    },
+    {
+      "name": "frozen-doctests-recipes",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-augmenting-942a8baac7c5",
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-integer-math-5597b0a74bc3",
+        "graphify-group-math-47d46c631488",
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-statistics-e814cd58e630",
+        "graphify-group-summarizing-597959ee0b55",
+        "graphify-group-windowing-13938674e493",
+        "graphify-group-wrapping-8bd2b305ca81"
+      ]
+    },
+    {
+      "name": "public-api-python311",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-distribution-933548450302",
+        "graphify-group-augmenting-942a8baac7c5",
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-concurrency-28371556ab0c",
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-integer-math-5597b0a74bc3",
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-math-47d46c631488",
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-statistics-e814cd58e630",
+        "graphify-group-summarizing-597959ee0b55",
+        "graphify-group-windowing-13938674e493",
+        "graphify-group-wrapping-8bd2b305ca81"
+      ]
+    },
+    {
+      "name": "public-api-python314",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-distribution-933548450302",
+        "graphify-group-augmenting-942a8baac7c5",
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-concurrency-28371556ab0c",
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-integer-math-5597b0a74bc3",
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-math-47d46c631488",
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-statistics-e814cd58e630",
+        "graphify-group-summarizing-597959ee0b55",
+        "graphify-group-windowing-13938674e493",
+        "graphify-group-wrapping-8bd2b305ca81"
+      ]
+    },
+    {
+      "name": "typing-stubtest",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-distribution-933548450302",
+        "graphify-group-augmenting-942a8baac7c5",
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-concurrency-28371556ab0c",
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-integer-math-5597b0a74bc3",
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-math-47d46c631488",
+        "graphify-group-other-f0c1a08c0156",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-statistics-e814cd58e630",
+        "graphify-group-summarizing-597959ee0b55",
+        "graphify-group-windowing-13938674e493",
+        "graphify-group-wrapping-8bd2b305ca81"
+      ]
+    },
+    {
+      "name": "documentation-build",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-distribution-933548450302"
+      ]
+    },
+    {
+      "name": "lazy-iteration-and-performance",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-group-combinatorics-c017b5a61e58",
+        "graphify-group-combining-e593ff250661",
+        "graphify-group-concurrency-28371556ab0c",
+        "graphify-group-grouping-0f67de662740",
+        "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "graphify-group-others-a877e275d823",
+        "graphify-group-selecting-2acd629a8dd2",
+        "graphify-group-statistics-e814cd58e630",
+        "graphify-group-windowing-13938674e493"
+      ]
+    }
+  ],
+  "actual_size": {
+    "baseline_source_lines": 8841,
+    "source_lines": 4430,
+    "source_files": 8,
+    "retained_percent": 48.23401395378608,
+    "target_percent": 100.0,
+    "target_source_lines": 8841.0,
+    "estimated_source_lines": null,
+    "metric": "tokens",
+    "tokenizer": {
+      "classification": "source_and_configuration_v1",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "encoding": "cl100k_base",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+      "file_boundaries": "independent_sum",
+      "library": "tiktoken",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "special_tokens": "ordinary_text",
+      "text_policy": "raw_decoded_text_per_file",
+      "version": "0.12.0"
+    },
+    "measurement_sha256": "3cd290d654f98166a5a1d6b3393d0177f1c4520839d6c80a9d5de73b9a162b36",
+    "source_tokens": 32412,
+    "configuration_tokens": 5266,
+    "total_tokens": 37678,
+    "baseline_tokens": 78115,
+    "target_tokens": 78115,
+    "source_retained_percent": 50.10745390792897,
+    "complete": true,
+    "target_met": true
+  },
+  "budget_status": "met",
+  "verification_scope": "full",
+  "installation_evidence": {
+    "status": "passed",
+    "checks_passed": 3,
+    "checks_total": 3,
+    "environment_metadata_complete": true
+  },
+  "obligation_ledger": {
+    "records": [
+      {
+        "capability": "graphify-root-ddcb2dfa42d8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-grouping-0f67de662740",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-grouping",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-lookahead-and-lookback-8b672a3a9b09",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-selecting",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-lookahead-and-lookback",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-others",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-windowing-13938674e493",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-windowing",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-statistics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-augmenting-942a8baac7c5",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-augmenting",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-combining-e593ff250661",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-summarizing",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-combining",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-concurrency-28371556ab0c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-concurrency",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-summarizing-597959ee0b55",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-combinatorics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-summarizing",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-integer-math",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-selecting-2acd629a8dd2",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-grouping",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-selecting",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-lookahead-and-lookback",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-combinatorics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-summarizing",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-augmenting",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-others",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-math",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-combinatorics-c017b5a61e58",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-combinatorics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-integer-math",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-wrapping-8bd2b305ca81",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-wrapping",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-math-47d46c631488",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-math",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-integer-math-5597b0a74bc3",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-integer-math",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-statistics-e814cd58e630",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-statistics",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-other",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-others-a877e275d823",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-selecting",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-others",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "lazy-iteration-and-performance",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-group-other-f0c1a08c0156",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-wrapping",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-other",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-more",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "frozen-doctests-recipes",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-distribution-933548450302",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "public-api-python311",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "public-api-python314",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "typing-stubtest",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "documentation-build",
+            "kind": "declared_check"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "retired": 0,
+      "verified": 17,
+      "unknown": 0,
+      "partial": 0,
+      "failed": 0,
+      "total": 17,
+      "retained": 17,
+      "complete": true
+    },
+    "limitations": [
+      "Public summaries omit private evidence bindings and raw output."
+    ]
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "disabled",
+    "binding": {},
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true
+    },
+    "tasks": [],
+    "overhead": {
+      "examiner_tokens": null,
+      "judge_tokens": null,
+      "solver_tokens": null,
+      "total_tokens": null,
+      "usage_complete": false,
+      "observed_total_tokens": null,
+      "role_usage_complete": {
+        "examiner": false,
+        "solver": false,
+        "judge": false
+      }
+    },
+    "resources": {
+      "completed_runs": 0,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0
+    },
+    "iterations": [],
+    "limitations": [
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ]
+  }
+}

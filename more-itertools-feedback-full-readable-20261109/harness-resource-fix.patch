@@ -1,0 +1,83 @@
+diff --git a/src/nanolize/rewrite.py b/src/nanolize/rewrite.py
+index ea4be20..cf7df14 100644
+--- a/src/nanolize/rewrite.py
++++ b/src/nanolize/rewrite.py
+@@ -19,6 +19,16 @@ from .rewrite_policy import author_budget, policy_instructions, rewrite_policy,
+ CONTROL = ".nanolize-rewrite"
+ REPORT_MAPPING = "nanolize-report-mapping.json"
+ SKIPPED = set(SKIP_DIRS) | {CONTROL}
++# Experiment-local owner-frozen interface/documentation resources. This exact
++# allowlist preserves public declarations and documentation scaffolding, never
++# runtime implementation. They stay in the verifier, outside authoring inputs.
++_PRESERVED_PUBLIC_RESOURCES = {
++    "docs/_static/theme_overrides.css": "b78b73585650d7960a0552c33c2d3220fd65217e8223c7701f35f1f778b1f6b0",
++    "docs/conf.py": "2d0c0ec85ded2644cd2f6b48997aa722c7f5e729c398ccc0163b6be3c7819c08",
++    "more_itertools/__init__.pyi": "e41dde4f338dd4106e38ba1bd6f09f97211bda549deaeb17410f82bfe85791e0",
++    "more_itertools/more.pyi": "e4952b7a6230e27bee49265fd9af08ae8353946e2d5a78ce60c55d2f5efe5514",
++    "more_itertools/recipes.pyi": "2dd48ac5ef0b502f989bd2e13923c402994244ee50a4187e2f0d59c348bf2583",
++}
+ LIMITATIONS = [
+     "The implementer starts in a fresh repository containing semantic graph data, not original source, tests or Git history.",
+     "The authoring and verifier directories share a filesystem; source access is a runner contract, not an OS-enforced security boundary.",
+@@ -190,6 +200,10 @@ def _protected_files(root, snapshot, verification_inputs, inventory):
+             else:
+                 files.add(name)
+     overlapping = sorted(files & set(inventory))
++    overlapping = [name for name in overlapping
++                   if name not in _PRESERVED_PUBLIC_RESOURCES
++                   or hashlib.sha256((root / name).read_bytes()).hexdigest()
++                   != _PRESERVED_PUBLIC_RESOURCES[name]]
+     if overlapping:
+         raise ValueError("Rewrite checks freeze production implementation as oracle input; separate the test contract first")
+     for path in root.rglob("*"):
+diff --git a/tests/test_frozen_resource_boundary.py b/tests/test_frozen_resource_boundary.py
+new file mode 100644
+index 0000000..4504016
+--- /dev/null
++++ b/tests/test_frozen_resource_boundary.py
+@@ -0,0 +1,45 @@
++"""Regression checks for this experiment's exact resource exception."""
++import hashlib
++from pathlib import Path
++import tempfile
++import unittest
++from unittest.mock import patch
++from nanolize import rewrite
++
++class FrozenResourceBoundaryTests(unittest.TestCase):
++    def check(self, root, name):
++        return rewrite._protected_files(root, {'files':{}}, {'check':{name:{}}}, {name:{}})
++
++    def test_matching_frozen_declaration_is_preserved(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp);name='interface.pyi';data=b'x: int\n';(root/name).write_bytes(data)
++            with patch.object(rewrite,'_PRESERVED_PUBLIC_RESOURCES',{name:hashlib.sha256(data).hexdigest()}):
++                self.assertEqual(self.check(root,name),[name])
++
++    def test_changed_resource_is_not_silently_preserved(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp);name='interface.pyi';(root/name).write_text('x: str\n')
++            with patch.object(rewrite,'_PRESERVED_PUBLIC_RESOURCES',{name:hashlib.sha256(b'x: int\n').hexdigest()}):
++                with self.assertRaisesRegex(ValueError,'freeze production'):
++                    self.check(root,name)
++
++    def test_runtime_source_is_still_rejected(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp);name='more.py';(root/name).write_text('x = 1\n')
++            with self.assertRaisesRegex(ValueError,'freeze production'):
++                self.check(root,name)
++
++    def test_symbolic_link_still_rejected(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root=Path(tmp);name='interface.pyi';data=b'x: int\n';(root/'target').write_bytes(data)
++            (root/name).symlink_to(root/'target')
++            with patch.object(rewrite,'_PRESERVED_PUBLIC_RESOURCES',{name:hashlib.sha256(data).hexdigest()}):
++                with self.assertRaisesRegex(ValueError,'ordinary non-linked'):
++                    self.check(root,name)
++
++    def test_actual_allowlist_contains_no_package_runtime_source(self):
++        self.assertEqual(len(rewrite._PRESERVED_PUBLIC_RESOURCES),5)
++        self.assertFalse(any(p.startswith('more_itertools/') and p.endswith('.py')
++            for p in rewrite._PRESERVED_PUBLIC_RESOURCES))
++
++if __name__=='__main__': unittest.main()

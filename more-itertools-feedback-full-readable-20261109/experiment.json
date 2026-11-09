@@ -1,0 +1,1981 @@
+{
+  "title": "more-itertools 全功能压缩实验",
+  "status": "succeeded",
+  "source_repository": "https://github.com/more-itertools/more-itertools",
+  "source_commit": "f42daddf205f335fea6e200dad46049f33e71221",
+  "harness_branch": "codex/controller-feedback-memory",
+  "harness_base": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+  "harness_commit": "82b1929f6d8ceaf8a70a307e8e203662749b932e",
+  "harness_resource_correction": {
+    "base": "3aae3d30761fbc67f436d3752be474f9d7e777d3",
+    "patched": "82b1929f6d8ceaf8a70a307e8e203662749b932e",
+    "at": "2026-11-09T13:33:28.502103+00:00",
+    "reason": "Initial run_agent/save_candidate rejected five owner-frozen public typing/documentation resources as runtime implementation. No author model had started.",
+    "change": "Exact path plus SHA-256 allowlist for three .pyi declarations, docs/conf.py and docs CSS. These stay verifier-owned; original runtime source remains prohibited.",
+    "validation": {
+      "new_boundary_tests": 5,
+      "existing_rewrite_tests": 18,
+      "protected_resources": 36,
+      "frozen_input_hashes_unchanged": true
+    },
+    "baseline_reused": true,
+    "initial_original_only_verification_is_not_rewrite_acceptance": true,
+    "author_calls_before_correction": 0,
+    "suspended_slurm_job": "8770204"
+  },
+  "model": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "xhigh",
+    "pinned_from_existing_cli_configuration": true
+  },
+  "code_url": "https://github.com/nanolize/nanolize/tree/examples/more-itertools-feedback-full-readable-20261109",
+  "declaration_knowledge_revision": {
+    "status": "authorized",
+    "owner_revision": "authorization-2d154cda43c6",
+    "contract": "contract-96c61ac7d55e",
+    "environment_revision": 1,
+    "executed_commands": 0,
+    "evidence": "Previous observations retained; current verification must be collected again",
+    "at": "2026-11-09T13:58:42.172603+00:00"
+  },
+  "behavior_knowledge_revision": {
+    "status": "authorized",
+    "owner_revision": "authorization-f2640ce70714",
+    "contract": "contract-2b87bee46409",
+    "environment_revision": 2,
+    "executed_commands": 0,
+    "evidence": "Previous observations retained; current verification must be collected again",
+    "at": "2026-11-09T14:14:27.983977+00:00"
+  },
+  "final_boundary_knowledge_revision": {
+    "status": "authorized",
+    "owner_revision": "authorization-51e0bbfb9dda",
+    "contract": "contract-143b35dc6648",
+    "environment_revision": 3,
+    "executed_commands": 0,
+    "evidence": "Previous observations retained; current verification must be collected again",
+    "at": "2026-11-09T14:17:42.116178+00:00"
+  },
+  "slice_condition_clarification": {
+    "status": "authorized",
+    "owner_revision": "authorization-bbebe8cba2fe",
+    "contract": "contract-753aede74e64",
+    "environment_revision": 4,
+    "executed_commands": 0,
+    "evidence": "Previous observations retained; current verification must be collected again",
+    "at": "2026-11-09T14:36:14.215536+00:00"
+  },
+  "state_semantics_clarification": {
+    "status": "authorized",
+    "owner_revision": "authorization-1ed7f10469fc",
+    "contract": "contract-9ceae7f8e752",
+    "environment_revision": 5,
+    "executed_commands": 0,
+    "evidence": "Previous observations retained; current verification must be collected again",
+    "at": "2026-11-09T14:53:10.843585+00:00"
+  },
+  "verified_commit": "25d7e57bcad9cd6cf61fe8e18273dfcbd7fb7b57",
+  "published_commit": "04ceb1b9ffb6894844235dd7b3afe11782a8ed04",
+  "identical_verified_tree": true,
+  "scope": "all",
+  "public_exports": 176,
+  "selected": [
+    "Exports, typing, documentation and installation",
+    "Augmenting",
+    "Combinatorics",
+    "Combining",
+    "Concurrency",
+    "Grouping",
+    "Integer Math",
+    "Lookahead and lookback",
+    "Math",
+    "Additional public interfaces",
+    "Others",
+    "Selecting",
+    "Statistics",
+    "Summarizing",
+    "Windowing",
+    "Wrapping",
+    "original"
+  ],
+  "excluded": [],
+  "mandatory_compression_ratio": null,
+  "size_target_policy": "advisory",
+  "optimization_calls": 0,
+  "author_calls": 5,
+  "task_assessment_enabled": false,
+  "checks": [
+    {
+      "name": "upstream-grouping",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.343,
+        "cases": {
+          "total": 114,
+          "passed": 114,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.4208,
+        "cases": {
+          "total": 114,
+          "passed": 114,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-selecting",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.4419,
+        "cases": {
+          "total": 131,
+          "passed": 131,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.6225,
+        "cases": {
+          "total": 131,
+          "passed": 131,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-lookahead-and-lookback",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.3197,
+        "cases": {
+          "total": 44,
+          "passed": 44,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3853,
+        "cases": {
+          "total": 44,
+          "passed": 44,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-wrapping",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.5812,
+        "cases": {
+          "total": 25,
+          "passed": 25,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.5717,
+        "cases": {
+          "total": 25,
+          "passed": 25,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-combinatorics",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 1.026,
+        "cases": {
+          "total": 109,
+          "passed": 109,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.1898,
+        "cases": {
+          "total": 109,
+          "passed": 109,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-summarizing",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.348,
+        "cases": {
+          "total": 67,
+          "passed": 67,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.422,
+        "cases": {
+          "total": 67,
+          "passed": 67,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-augmenting",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.3198,
+        "cases": {
+          "total": 41,
+          "passed": 41,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3752,
+        "cases": {
+          "total": 41,
+          "passed": 41,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-windowing",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.3103,
+        "cases": {
+          "total": 28,
+          "passed": 28,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3794,
+        "cases": {
+          "total": 28,
+          "passed": 28,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-combining",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.326,
+        "cases": {
+          "total": 61,
+          "passed": 61,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3892,
+        "cases": {
+          "total": 61,
+          "passed": 61,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-others",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.5077,
+        "cases": {
+          "total": 99,
+          "passed": 99,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.5857,
+        "cases": {
+          "total": 99,
+          "passed": 99,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-math",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 3.1478,
+        "cases": {
+          "total": 13,
+          "passed": 13,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 2.7266,
+        "cases": {
+          "total": 13,
+          "passed": 13,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-concurrency",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 11.2716,
+        "cases": {
+          "total": 6,
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 77.8527,
+        "cases": {
+          "total": 6,
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-statistics",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.8138,
+        "cases": {
+          "total": 14,
+          "passed": 14,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.9591,
+        "cases": {
+          "total": 14,
+          "passed": 14,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-other",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.2762,
+        "cases": {
+          "total": 4,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.3504,
+        "cases": {
+          "total": 4,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-integer-math",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 12.9744,
+        "cases": {
+          "total": 15,
+          "passed": 15,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 15.8323,
+        "cases": {
+          "total": 15,
+          "passed": 15,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "upstream-python314",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 14.2091,
+        "cases": {
+          "total": 771,
+          "passed": 771,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 24.4755,
+        "cases": {
+          "total": 771,
+          "passed": 771,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "frozen-doctests-more",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.4148,
+        "cases": {
+          "total": 580,
+          "passed": 580,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 4.1805,
+        "cases": {
+          "total": 580,
+          "passed": 580,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "frozen-doctests-recipes",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.2567,
+        "cases": {
+          "total": 133,
+          "passed": 133,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 2.6446,
+        "cases": {
+          "total": 133,
+          "passed": 133,
+          "failed": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "public-api-python311",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.1971,
+        "cases": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.2553,
+        "cases": {}
+      }
+    },
+    {
+      "name": "public-api-python314",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.4428,
+        "cases": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 0.5552,
+        "cases": {}
+      }
+    },
+    {
+      "name": "typing-stubtest",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 2.722,
+        "cases": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 6.8701,
+        "cases": {}
+      }
+    },
+    {
+      "name": "documentation-build",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 7.4961,
+        "cases": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 8.4851,
+        "cases": {}
+      }
+    },
+    {
+      "name": "lazy-iteration-and-performance",
+      "scope": "retained",
+      "status": "passed",
+      "baseline": {
+        "status": "passed",
+        "seconds": 0.2831,
+        "cases": {}
+      },
+      "current": {
+        "status": "passed",
+        "seconds": 1.1742,
+        "cases": {}
+      }
+    }
+  ],
+  "installation_status": "passed",
+  "installation_checks": 3,
+  "runtime_observations": [
+    {
+      "check": "upstream-concurrency",
+      "baseline_seconds": 11.2716,
+      "candidate_seconds": 77.8527,
+      "observed_ratio": 6.906978601085915
+    },
+    {
+      "check": "typing-stubtest",
+      "baseline_seconds": 2.722,
+      "candidate_seconds": 6.8701,
+      "observed_ratio": 2.52391623806025
+    }
+  ],
+  "source_tokens": {
+    "before": 72849,
+    "after": 32412,
+    "reduction_percent": 55.50796853766009
+  },
+  "total_tokens": {
+    "before": 78115,
+    "after": 37678,
+    "reduction_percent": 51.76598604621392
+  },
+  "runtime_tokens": {
+    "before": 60016,
+    "after": 19579,
+    "reduction_percent": 67.37703279125566
+  },
+  "normalized_runtime_tokens": {
+    "before": 21005,
+    "after": 19300,
+    "reduction_percent": 8.117114972625561
+  },
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "original_runtime_files": [
+    {
+      "path": "more_itertools/__init__.py",
+      "tokens": 41,
+      "lines": 6,
+      "definitions_with_docstrings": 0,
+      "normalized_without_docstrings_tokens": 21,
+      "direct_dynamic_evaluation": [],
+      "longest_line": 64
+    },
+    {
+      "path": "more_itertools/more.py",
+      "tokens": 46981,
+      "lines": 5659,
+      "definitions_with_docstrings": 132,
+      "normalized_without_docstrings_tokens": 16376,
+      "direct_dynamic_evaluation": [],
+      "longest_line": 116
+    },
+    {
+      "path": "more_itertools/recipes.py",
+      "tokens": 12994,
+      "lines": 1617,
+      "definitions_with_docstrings": 60,
+      "normalized_without_docstrings_tokens": 4608,
+      "direct_dynamic_evaluation": [],
+      "longest_line": 94
+    }
+  ],
+  "candidate_runtime_files": [
+    {
+      "path": "more_itertools/__init__.py",
+      "tokens": 69,
+      "lines": 9,
+      "definitions_with_docstrings": 0,
+      "normalized_without_docstrings_tokens": 56,
+      "direct_dynamic_evaluation": [],
+      "longest_line": 65
+    },
+    {
+      "path": "more_itertools/more.py",
+      "tokens": 14710,
+      "lines": 2129,
+      "definitions_with_docstrings": 0,
+      "normalized_without_docstrings_tokens": 14560,
+      "direct_dynamic_evaluation": [],
+      "longest_line": 147
+    },
+    {
+      "path": "more_itertools/recipes.py",
+      "tokens": 4800,
+      "lines": 733,
+      "definitions_with_docstrings": 0,
+      "normalized_without_docstrings_tokens": 4684,
+      "direct_dynamic_evaluation": [],
+      "longest_line": 98
+    }
+  ],
+  "preserved_resource_count": 36,
+  "started_at": "2026-11-09T13:22:50.531120+00:00",
+  "finished_at": "2026-11-09T15:11:25.738377+00:00",
+  "wall_seconds": 6515.207257,
+  "costs": {
+    "as_of": "2026-11-09T15:13:14.378310+00:00",
+    "job_status": "succeeded",
+    "calls": [
+      {
+        "id": "ad526334d0c5441a98890d1b4768e347",
+        "role": "controller",
+        "started_at": "2026-11-09T13:24:55.345259+00:00",
+        "seconds": 100.75039253698196,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 212959,
+          "output_tokens": 1922,
+          "cached_input_tokens": 177664,
+          "reasoning_output_tokens": 449,
+          "total_tokens": 214881,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "68358ade69b74f27beee8e5427fad153",
+        "role": "controller",
+        "started_at": "2026-11-09T13:30:08.668235+00:00",
+        "seconds": null,
+        "exit_code": null,
+        "status": "interrupted",
+        "usage": {
+          "status": "unavailable",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_output_tokens": null,
+          "total_tokens": null,
+          "source": null,
+          "observed_turns": 0,
+          "reason": "missing_usage",
+          "synthetic": false
+        }
+      },
+      {
+        "id": "3853f09bd550459491169fd7543112f6",
+        "role": "controller",
+        "started_at": "2026-11-09T13:35:39.833221+00:00",
+        "seconds": 119.60216745198704,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 160819,
+          "output_tokens": 2121,
+          "cached_input_tokens": 138112,
+          "reasoning_output_tokens": 441,
+          "total_tokens": 162940,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "411b4c2b80184e92a1287663d320119a",
+        "role": "author",
+        "started_at": "2026-11-09T13:37:50.981447+00:00",
+        "seconds": 1239.0337208739948,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 1668577,
+          "output_tokens": 37352,
+          "cached_input_tokens": 1551872,
+          "reasoning_output_tokens": 10327,
+          "total_tokens": 1705929,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "555d56edecac4e018bb6c44b193e53db",
+        "role": "controller",
+        "started_at": "2026-11-09T13:59:02.749320+00:00",
+        "seconds": 43.96816361701349,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 113526,
+          "output_tokens": 827,
+          "cached_input_tokens": 90624,
+          "reasoning_output_tokens": 222,
+          "total_tokens": 114353,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "1ccc6388f8c24433af38b8998f6babea",
+        "role": "controller",
+        "started_at": "2026-11-09T14:00:37.026478+00:00",
+        "seconds": 97.4737717200187,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 216998,
+          "output_tokens": 2141,
+          "cached_input_tokens": 182400,
+          "reasoning_output_tokens": 708,
+          "total_tokens": 219139,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "53f579741344442394424d1570469b16",
+        "role": "controller",
+        "started_at": "2026-11-09T14:03:50.815143+00:00",
+        "seconds": 181.92083960800664,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 406906,
+          "output_tokens": 4523,
+          "cached_input_tokens": 287488,
+          "reasoning_output_tokens": 1626,
+          "total_tokens": 411429,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "6893a30ba494457e83c1c51837d7ed5d",
+        "role": "author",
+        "started_at": "2026-11-09T14:07:08.229663+00:00",
+        "seconds": 432.65115728095407,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 1452456,
+          "output_tokens": 12843,
+          "cached_input_tokens": 1359104,
+          "reasoning_output_tokens": 5352,
+          "total_tokens": 1465299,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "8265dc8097d948ed91d2c481601a64ab",
+        "role": "controller",
+        "started_at": "2026-11-09T14:14:48.703725+00:00",
+        "seconds": 71.31298040901311,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 170046,
+          "output_tokens": 1347,
+          "cached_input_tokens": 138112,
+          "reasoning_output_tokens": 338,
+          "total_tokens": 171393,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "6bac91e16b8d49009107433dc9e7abcd",
+        "role": "controller",
+        "started_at": "2026-11-09T14:17:58.243594+00:00",
+        "seconds": 77.10775642696535,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 320828,
+          "output_tokens": 1500,
+          "cached_input_tokens": 268544,
+          "reasoning_output_tokens": 329,
+          "total_tokens": 322328,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "e74cf7067a3d4f0ebcfe22abe21f47f6",
+        "role": "controller",
+        "started_at": "2026-11-09T14:22:20.785326+00:00",
+        "seconds": 99.18838412297191,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 333149,
+          "output_tokens": 2413,
+          "cached_input_tokens": 275712,
+          "reasoning_output_tokens": 460,
+          "total_tokens": 335562,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "1e02c971da1b461fb0c8fe45dd38f2db",
+        "role": "author",
+        "started_at": "2026-11-09T14:24:14.776793+00:00",
+        "seconds": 695.357423013018,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 2235249,
+          "output_tokens": 19331,
+          "cached_input_tokens": 2112000,
+          "reasoning_output_tokens": 8027,
+          "total_tokens": 2254580,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "b3b31608cdcc4de29e289f0a094ba02e",
+        "role": "controller",
+        "started_at": "2026-11-09T14:36:22.000832+00:00",
+        "seconds": 82.92337584600318,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 278304,
+          "output_tokens": 1768,
+          "cached_input_tokens": 236160,
+          "reasoning_output_tokens": 366,
+          "total_tokens": 280072,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "aabbd8d443b34183bb6c19c528c48b21",
+        "role": "controller",
+        "started_at": "2026-11-09T14:42:04.922168+00:00",
+        "seconds": 123.46015526901465,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 400067,
+          "output_tokens": 2739,
+          "cached_input_tokens": 339968,
+          "reasoning_output_tokens": 536,
+          "total_tokens": 402806,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "413f8f1033aa412e8f83832d2e4d82a5",
+        "role": "author",
+        "started_at": "2026-11-09T14:44:21.736354+00:00",
+        "seconds": 512.7429839310353,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 1946593,
+          "output_tokens": 14812,
+          "cached_input_tokens": 1806208,
+          "reasoning_output_tokens": 10957,
+          "total_tokens": 1961405,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "16c6dce363df4c3896de2b757e39b19a",
+        "role": "controller",
+        "started_at": "2026-11-09T14:53:36.923598+00:00",
+        "seconds": 66.90228921402013,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 185375,
+          "output_tokens": 1375,
+          "cached_input_tokens": 145664,
+          "reasoning_output_tokens": 273,
+          "total_tokens": 186750,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "541c5b8baa3e434f82aa6a72dba7f91c",
+        "role": "controller",
+        "started_at": "2026-11-09T14:59:07.688311+00:00",
+        "seconds": 115.66007308196276,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 442636,
+          "output_tokens": 2417,
+          "cached_input_tokens": 367488,
+          "reasoning_output_tokens": 347,
+          "total_tokens": 445053,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "a7159b8853534186abaaa6a95461615c",
+        "role": "author",
+        "started_at": "2026-11-09T15:01:17.866502+00:00",
+        "seconds": 173.00285872200038,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 399310,
+          "output_tokens": 4480,
+          "cached_input_tokens": 338304,
+          "reasoning_output_tokens": 1610,
+          "total_tokens": 403790,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "b800592e7640446f8e2efdce3da7ecc0",
+        "role": "controller",
+        "started_at": "2026-11-09T15:04:37.064662+00:00",
+        "seconds": 69.17314646200975,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 190504,
+          "output_tokens": 1307,
+          "cached_input_tokens": 148480,
+          "reasoning_output_tokens": 258,
+          "total_tokens": 191811,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      },
+      {
+        "id": "ee8486657b01469aba9ed01ac8dc4ea4",
+        "role": "controller",
+        "started_at": "2026-11-09T15:09:19.125200+00:00",
+        "seconds": 81.59123248496326,
+        "exit_code": 0,
+        "status": "completed",
+        "usage": {
+          "status": "complete",
+          "input_tokens": 181795,
+          "output_tokens": 1739,
+          "cached_input_tokens": 143232,
+          "reasoning_output_tokens": 426,
+          "total_tokens": 183534,
+          "source": "codex_turn_events",
+          "observed_turns": 1,
+          "reason": null,
+          "synthetic": false
+        }
+      }
+    ],
+    "groups": {
+      "controller": {
+        "calls": 15,
+        "seconds": 1331.034728250932,
+        "known_duration_calls": 14,
+        "usage_complete_calls": 14,
+        "input_tokens": 3613912,
+        "cached_input_tokens": 2939648,
+        "output_tokens": 28139,
+        "total_tokens": 3642051
+      },
+      "author": {
+        "calls": 5,
+        "seconds": 3052.7881438210024,
+        "known_duration_calls": 5,
+        "usage_complete_calls": 5,
+        "input_tokens": 7702185,
+        "cached_input_tokens": 7167488,
+        "output_tokens": 88818,
+        "total_tokens": 7791003
+      }
+    },
+    "observed_total_tokens": 11433054,
+    "complete": false,
+    "author_calls": 5,
+    "optimization_calls": 0,
+    "limitations": [
+      "Cached input is a subset of input; reasoning output is a subset of output.",
+      "Missing provider receipts are unknown, never zero.",
+      "Coordinator, static analysis, preflight and publication costs are excluded. No task-cost assessment was requested for this run."
+    ]
+  },
+  "trajectory": [
+    {
+      "at": "2026-11-09T13:27:57.266012+00:00",
+      "kind": "baseline",
+      "status": "baseline_captured",
+      "counts": {
+        "passed": 23
+      },
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T13:29:41.567449+00:00",
+      "kind": "verification",
+      "status": "checks_passed",
+      "counts": {
+        "passed": 23
+      },
+      "source_tokens": 72849,
+      "candidate_git_head": "f42daddf205f335fea6e200dad46049f33e71221"
+    },
+    {
+      "at": "2026-11-09T13:29:57.763327+00:00",
+      "kind": "installation",
+      "status": "passed",
+      "counts": {
+        "passed": 3
+      },
+      "source_tokens": null,
+      "candidate_git_head": "f42daddf205f335fea6e200dad46049f33e71221"
+    },
+    {
+      "at": "2026-11-09T13:58:30.193713+00:00",
+      "kind": "agent",
+      "status": "passed",
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T13:58:52.546223+00:00",
+      "kind": "candidate",
+      "status": null,
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:00:27.340463+00:00",
+      "kind": "installation",
+      "status": "passed",
+      "counts": {
+        "passed": 3
+      },
+      "source_tokens": null,
+      "candidate_git_head": "4ea31df79b76af67caef40f29d7ae0b457b91713"
+    },
+    {
+      "at": "2026-11-09T14:03:26.188795+00:00",
+      "kind": "checks",
+      "status": "failed",
+      "counts": {
+        "failed": 20,
+        "passed": 3
+      },
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:14:21.060747+00:00",
+      "kind": "agent",
+      "status": "passed",
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:14:37.937942+00:00",
+      "kind": "candidate",
+      "status": null,
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:17:35.506874+00:00",
+      "kind": "baseline",
+      "status": "baseline_captured",
+      "counts": {
+        "passed": 23
+      },
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:20:44.387280+00:00",
+      "kind": "baseline",
+      "status": "baseline_captured",
+      "counts": {
+        "passed": 23
+      },
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:21:54.061849+00:00",
+      "kind": "verification",
+      "status": "regressed",
+      "counts": {
+        "regressed": 13,
+        "passed": 10
+      },
+      "source_tokens": 31899,
+      "candidate_git_head": "422d1d545d7ce71bf3c6397552426633229e80ef"
+    },
+    {
+      "at": "2026-11-09T14:22:10.054480+00:00",
+      "kind": "installation",
+      "status": "passed",
+      "counts": {
+        "passed": 3
+      },
+      "source_tokens": null,
+      "candidate_git_head": "422d1d545d7ce71bf3c6397552426633229e80ef"
+    },
+    {
+      "at": "2026-11-09T14:35:50.320149+00:00",
+      "kind": "agent",
+      "status": "passed",
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:36:00.693685+00:00",
+      "kind": "candidate",
+      "status": null,
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:39:12.666840+00:00",
+      "kind": "baseline",
+      "status": "baseline_captured",
+      "counts": {
+        "passed": 23
+      },
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:41:38.046493+00:00",
+      "kind": "verification",
+      "status": "regressed",
+      "counts": {
+        "regressed": 4,
+        "passed": 19
+      },
+      "source_tokens": 32403,
+      "candidate_git_head": "a3ab01ef6301b6b590c26b681cfcc9656102af33"
+    },
+    {
+      "at": "2026-11-09T14:41:54.013089+00:00",
+      "kind": "installation",
+      "status": "passed",
+      "counts": {
+        "passed": 3
+      },
+      "source_tokens": null,
+      "candidate_git_head": "a3ab01ef6301b6b590c26b681cfcc9656102af33"
+    },
+    {
+      "at": "2026-11-09T14:52:54.637066+00:00",
+      "kind": "agent",
+      "status": "passed",
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:53:25.874904+00:00",
+      "kind": "candidate",
+      "status": null,
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:56:12.795762+00:00",
+      "kind": "baseline",
+      "status": "baseline_captured",
+      "counts": {
+        "passed": 23
+      },
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T14:58:38.272098+00:00",
+      "kind": "verification",
+      "status": "regressed",
+      "counts": {
+        "regressed": 3,
+        "passed": 20
+      },
+      "source_tokens": 32363,
+      "candidate_git_head": "cf392ab0ae2daf4690d638d33f6de9aeb9cbf1a8"
+    },
+    {
+      "at": "2026-11-09T14:58:56.286154+00:00",
+      "kind": "installation",
+      "status": "passed",
+      "counts": {
+        "passed": 3
+      },
+      "source_tokens": null,
+      "candidate_git_head": "cf392ab0ae2daf4690d638d33f6de9aeb9cbf1a8"
+    },
+    {
+      "at": "2026-11-09T15:04:11.142608+00:00",
+      "kind": "agent",
+      "status": "passed",
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T15:04:23.509691+00:00",
+      "kind": "candidate",
+      "status": null,
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    },
+    {
+      "at": "2026-11-09T15:08:44.719539+00:00",
+      "kind": "verification",
+      "status": "checks_passed",
+      "counts": {
+        "passed": 23
+      },
+      "source_tokens": 32412,
+      "candidate_git_head": "25d7e57bcad9cd6cf61fe8e18273dfcbd7fb7b57"
+    },
+    {
+      "at": "2026-11-09T15:09:05.473784+00:00",
+      "kind": "installation",
+      "status": "passed",
+      "counts": {
+        "passed": 3
+      },
+      "source_tokens": null,
+      "candidate_git_head": "25d7e57bcad9cd6cf61fe8e18273dfcbd7fb7b57"
+    },
+    {
+      "at": "2026-11-09T15:10:55.117629+00:00",
+      "kind": "measurement",
+      "status": null,
+      "counts": {},
+      "source_tokens": null,
+      "candidate_git_head": null
+    }
+  ],
+  "operations": [
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T14:16:02.832485+00:00",
+      "started_at": "2026-11-09T14:16:02.853839+00:00",
+      "finished_at": "2026-11-09T14:16:08.138540+00:00",
+      "duration_seconds": 5.272349129023496
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T14:41:38.421078+00:00",
+      "started_at": "2026-11-09T14:41:38.443100+00:00",
+      "finished_at": "2026-11-09T14:41:54.044890+00:00",
+      "duration_seconds": 15.59083030797774
+    },
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T14:54:47.507450+00:00",
+      "started_at": "2026-11-09T14:54:47.528189+00:00",
+      "finished_at": "2026-11-09T14:54:53.788786+00:00",
+      "duration_seconds": 6.247522339050192
+    },
+    {
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-09T15:10:45.053681+00:00",
+      "started_at": "2026-11-09T15:10:45.079814+00:00",
+      "finished_at": "2026-11-09T15:10:55.155407+00:00",
+      "duration_seconds": 10.060518154001329
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T13:28:11.152186+00:00",
+      "started_at": "2026-11-09T13:28:11.187178+00:00",
+      "finished_at": "2026-11-09T13:29:41.687218+00:00",
+      "duration_seconds": 90.4829722130089
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T15:05:58.146913+00:00",
+      "started_at": "2026-11-09T15:05:58.199726+00:00",
+      "finished_at": "2026-11-09T15:08:44.883520+00:00",
+      "duration_seconds": 166.65419932600344
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T15:01:07.644844+00:00",
+      "started_at": "2026-11-09T15:01:07.666464+00:00",
+      "finished_at": "2026-11-09T15:04:11.175620+00:00",
+      "duration_seconds": 183.49219673499465
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T14:44:11.845213+00:00",
+      "started_at": "2026-11-09T14:44:11.863592+00:00",
+      "finished_at": "2026-11-09T14:52:54.664049+00:00",
+      "duration_seconds": 522.7875388520188
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T14:16:08.262149+00:00",
+      "started_at": "2026-11-09T14:16:08.281318+00:00",
+      "finished_at": "2026-11-09T14:17:35.531260+00:00",
+      "duration_seconds": 87.23828410700662
+    },
+    {
+      "name": "request_revision",
+      "status": "failed",
+      "created_at": "2026-11-09T14:03:32.182301+00:00",
+      "started_at": "2026-11-09T14:03:32.201440+00:00",
+      "finished_at": "2026-11-09T14:03:37.552863+00:00",
+      "duration_seconds": 5.340388002980035
+    },
+    {
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-09T14:03:26.502790+00:00",
+      "started_at": "2026-11-09T14:03:26.532352+00:00",
+      "finished_at": "2026-11-09T14:03:32.055805+00:00",
+      "duration_seconds": 5.50457995798206
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T14:39:12.968875+00:00",
+      "started_at": "2026-11-09T14:39:12.987255+00:00",
+      "finished_at": "2026-11-09T14:41:38.172479+00:00",
+      "duration_seconds": 145.17336783598876
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T14:24:03.284084+00:00",
+      "started_at": "2026-11-09T14:24:03.304131+00:00",
+      "finished_at": "2026-11-09T14:35:50.487432+00:00",
+      "duration_seconds": 707.1706456399988
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T14:06:56.283571+00:00",
+      "started_at": "2026-11-09T14:06:59.769037+00:00",
+      "finished_at": "2026-11-09T14:14:21.086367+00:00",
+      "duration_seconds": 441.29951148096006
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T14:20:44.567493+00:00",
+      "started_at": "2026-11-09T14:20:44.586798+00:00",
+      "finished_at": "2026-11-09T14:21:54.183495+00:00",
+      "duration_seconds": 69.5865146019496
+    },
+    {
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T13:37:42.397340+00:00",
+      "started_at": "2026-11-09T13:37:42.425013+00:00",
+      "finished_at": "2026-11-09T13:58:30.219031+00:00",
+      "duration_seconds": 1247.7809083149768
+    },
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T15:05:50.476987+00:00",
+      "started_at": "2026-11-09T15:05:50.498786+00:00",
+      "finished_at": "2026-11-09T15:05:57.805683+00:00",
+      "duration_seconds": 7.2954526579706
+    },
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T13:59:49.970183+00:00",
+      "started_at": "2026-11-09T13:59:51.905664+00:00",
+      "finished_at": "2026-11-09T13:59:57.259880+00:00",
+      "duration_seconds": 5.336084251001012
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T14:21:54.360563+00:00",
+      "started_at": "2026-11-09T14:21:54.378985+00:00",
+      "finished_at": "2026-11-09T14:22:10.083969+00:00",
+      "duration_seconds": 15.692609292978887
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T13:26:39.748464+00:00",
+      "started_at": "2026-11-09T13:26:39.767065+00:00",
+      "finished_at": "2026-11-09T13:27:57.284212+00:00",
+      "duration_seconds": 77.50274678895948
+    },
+    {
+      "name": "deliver",
+      "status": "completed",
+      "created_at": "2026-11-09T15:11:05.934981+00:00",
+      "started_at": "2026-11-09T15:11:05.973317+00:00",
+      "finished_at": "2026-11-09T15:11:25.756916+00:00",
+      "duration_seconds": 19.763214985956438
+    },
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T14:37:48.343991+00:00",
+      "started_at": "2026-11-09T14:37:48.365305+00:00",
+      "finished_at": "2026-11-09T14:37:54.404274+00:00",
+      "duration_seconds": 6.02494284696877
+    },
+    {
+      "name": "compare_behavior",
+      "status": "failed",
+      "created_at": "2026-11-09T13:59:57.374887+00:00",
+      "started_at": "2026-11-09T13:59:58.318138+00:00",
+      "finished_at": "2026-11-09T14:00:03.739799+00:00",
+      "duration_seconds": 5.406011011975352
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T14:19:25.337797+00:00",
+      "started_at": "2026-11-09T14:19:25.496199+00:00",
+      "finished_at": "2026-11-09T14:20:44.407351+00:00",
+      "duration_seconds": 78.8268369990401
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T13:29:41.772902+00:00",
+      "started_at": "2026-11-09T13:29:41.801323+00:00",
+      "finished_at": "2026-11-09T13:29:57.782703+00:00",
+      "duration_seconds": 15.957958248036448
+    },
+    {
+      "name": "save_candidate",
+      "status": "failed",
+      "created_at": "2026-11-09T13:28:04.248688+00:00",
+      "started_at": "2026-11-09T13:28:04.270688+00:00",
+      "finished_at": "2026-11-09T13:28:11.071338+00:00",
+      "duration_seconds": 6.789082626986783
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T14:37:54.642475+00:00",
+      "started_at": "2026-11-09T14:37:54.659908+00:00",
+      "finished_at": "2026-11-09T14:39:12.717501+00:00",
+      "duration_seconds": 78.04720517998794
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T14:58:38.706483+00:00",
+      "started_at": "2026-11-09T14:58:38.727372+00:00",
+      "finished_at": "2026-11-09T14:58:56.318294+00:00",
+      "duration_seconds": 17.577156169048976
+    },
+    {
+      "name": "create_workspace",
+      "status": "completed",
+      "created_at": "2026-11-09T13:24:24.673422+00:00",
+      "started_at": "2026-11-09T13:24:24.699849+00:00",
+      "finished_at": "2026-11-09T13:24:45.171697+00:00",
+      "duration_seconds": 20.455229551997036
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T14:52:55.153481+00:00",
+      "started_at": "2026-11-09T14:53:14.488435+00:00",
+      "finished_at": "2026-11-09T14:53:26.024837+00:00",
+      "duration_seconds": 11.520483498985413
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T14:14:21.217256+00:00",
+      "started_at": "2026-11-09T14:14:27.980689+00:00",
+      "finished_at": "2026-11-09T14:14:38.014200+00:00",
+      "duration_seconds": 10.017859640996903
+    },
+    {
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T14:54:54.077713+00:00",
+      "started_at": "2026-11-09T14:54:54.096209+00:00",
+      "finished_at": "2026-11-09T14:56:12.899300+00:00",
+      "duration_seconds": 78.7869667619816
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T14:00:04.699925+00:00",
+      "started_at": "2026-11-09T14:00:06.483965+00:00",
+      "finished_at": "2026-11-09T14:00:27.360243+00:00",
+      "duration_seconds": 16.86614867200842
+    },
+    {
+      "name": "run_agent",
+      "status": "failed",
+      "created_at": "2026-11-09T13:27:57.355601+00:00",
+      "started_at": "2026-11-09T13:27:57.376178+00:00",
+      "finished_at": "2026-11-09T13:28:04.105069+00:00",
+      "duration_seconds": 6.716312623990234
+    },
+    {
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "created_at": "2026-11-09T15:10:55.438168+00:00",
+      "started_at": "2026-11-09T15:10:55.465573+00:00",
+      "finished_at": "2026-11-09T15:11:05.573412+00:00",
+      "duration_seconds": 10.082586307020392
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T15:04:11.566283+00:00",
+      "started_at": "2026-11-09T15:04:11.599798+00:00",
+      "finished_at": "2026-11-09T15:04:23.634637+00:00",
+      "duration_seconds": 12.019094485032838
+    },
+    {
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-09T14:56:13.149647+00:00",
+      "started_at": "2026-11-09T14:56:13.176374+00:00",
+      "finished_at": "2026-11-09T14:58:38.417258+00:00",
+      "duration_seconds": 145.22696730704047
+    },
+    {
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-09T15:08:45.224988+00:00",
+      "started_at": "2026-11-09T15:08:45.247934+00:00",
+      "finished_at": "2026-11-09T15:09:05.507767+00:00",
+      "duration_seconds": 20.24690158298472
+    },
+    {
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-09T14:02:17.488666+00:00",
+      "started_at": "2026-11-09T14:02:17.514860+00:00",
+      "finished_at": "2026-11-09T14:03:26.215728+00:00",
+      "duration_seconds": 68.67894419300137
+    },
+    {
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T14:19:18.843191+00:00",
+      "started_at": "2026-11-09T14:19:18.860780+00:00",
+      "finished_at": "2026-11-09T14:19:24.479255+00:00",
+      "duration_seconds": 5.6001615800196305
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T14:35:50.950839+00:00",
+      "started_at": "2026-11-09T14:35:50.979316+00:00",
+      "finished_at": "2026-11-09T14:36:00.768644+00:00",
+      "duration_seconds": 9.771345435001422
+    },
+    {
+      "name": "compare_behavior",
+      "status": "failed",
+      "created_at": "2026-11-09T14:17:35.663206+00:00",
+      "started_at": "2026-11-09T14:17:42.113732+00:00",
+      "finished_at": "2026-11-09T14:17:47.909176+00:00",
+      "duration_seconds": 5.782088575011585
+    },
+    {
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T13:58:31.134309+00:00",
+      "started_at": "2026-11-09T13:58:42.172210+00:00",
+      "finished_at": "2026-11-09T13:58:52.605011+00:00",
+      "duration_seconds": 10.002142851008102
+    }
+  ],
+  "non_author_operation_totals": {
+    "select_candidate": {
+      "calls": 6,
+      "completed": 6,
+      "failed": 0,
+      "seconds": 35.7765128040337
+    },
+    "check_installation": {
+      "calls": 6,
+      "completed": 6,
+      "failed": 0,
+      "seconds": 101.93160427303519
+    },
+    "measure_code": {
+      "calls": 1,
+      "completed": 1,
+      "failed": 0,
+      "seconds": 10.060518154001329
+    },
+    "compare_behavior": {
+      "calls": 7,
+      "completed": 5,
+      "failed": 2,
+      "seconds": 628.3121208709781
+    },
+    "capture_baseline": {
+      "calls": 5,
+      "completed": 5,
+      "failed": 0,
+      "seconds": 400.40203983697575
+    },
+    "request_revision": {
+      "calls": 1,
+      "completed": 0,
+      "failed": 1,
+      "seconds": 5.340388002980035
+    },
+    "record_unknown": {
+      "calls": 1,
+      "completed": 1,
+      "failed": 0,
+      "seconds": 5.50457995798206
+    },
+    "deliver": {
+      "calls": 1,
+      "completed": 1,
+      "failed": 0,
+      "seconds": 19.763214985956438
+    },
+    "save_candidate": {
+      "calls": 6,
+      "completed": 5,
+      "failed": 1,
+      "seconds": 60.12000853801146
+    },
+    "create_workspace": {
+      "calls": 1,
+      "completed": 1,
+      "failed": 0,
+      "seconds": 20.455229551997036
+    },
+    "evaluate_acceptance": {
+      "calls": 1,
+      "completed": 1,
+      "failed": 0,
+      "seconds": 10.082586307020392
+    },
+    "run_checks": {
+      "calls": 1,
+      "completed": 1,
+      "failed": 0,
+      "seconds": 68.67894419300137
+    }
+  },
+  "execution": {
+    "cpus": 8,
+    "memory_mb": 32768,
+    "gpus": 0,
+    "python_versions": [
+      "3.11.16",
+      "3.14.7"
+    ],
+    "max_parallel_authors": 1,
+    "baseline_reused_after_harness_resource_fix": true,
+    "same_requested_resources_and_dependencies": true,
+    "same_slurm_allocation": false
+  },
+  "report_mapping_review": {
+    "display_only": true,
+    "dropped_non_source_paths": [],
+    "preserved_resource_mappings_added": [
+      "docs/_static/theme_overrides.css",
+      "docs/conf.py",
+      "more_itertools/__init__.pyi",
+      "more_itertools/more.pyi",
+      "more_itertools/recipes.pyi"
+    ],
+    "unmapped_source": [],
+    "behavior_results_changed": false
+  },
+  "verification_dependencies": {
+    "mypy": "2.4.1",
+    "sphinx": "9.0.4",
+    "sphinx-rtd-theme": "3.1.0",
+    "furo": "2025.12.19",
+    "flit_core": "4.2.0",
+    "build": "1.6.1",
+    "pytest": "9.2.0"
+  },
+  "static_readability_review": {
+    "candidate_git_head": "25d7e57bcad9cd6cf61fe8e18273dfcbd7fb7b57",
+    "static_screen_passed": true,
+    "files": [
+      {
+        "path": "more_itertools/__init__.py",
+        "sha256": "c469db68fd210e2ccddd0ac59c671fd86cfd62fedaf0937f2eee7b0e525a4747",
+        "imports": [],
+        "nonstdlib_imports": [],
+        "direct_dynamic_evaluation": [],
+        "environment_or_verifier_markers": [],
+        "strings_over_2000_characters": [],
+        "lines": 9,
+        "longest_line": 65
+      },
+      {
+        "path": "more_itertools/more.py",
+        "sha256": "a53d88bfb3442c38572e0b404502ae53a218907d132ad582886d245049c48225",
+        "imports": [
+          "bisect",
+          "cmath",
+          "collections",
+          "concurrent",
+          "functools",
+          "heapq",
+          "itertools",
+          "math",
+          "operator",
+          "queue",
+          "random",
+          "threading",
+          "time",
+          "warnings"
+        ],
+        "nonstdlib_imports": [],
+        "direct_dynamic_evaluation": [],
+        "environment_or_verifier_markers": [],
+        "strings_over_2000_characters": [],
+        "lines": 2129,
+        "longest_line": 147
+      },
+      {
+        "path": "more_itertools/recipes.py",
+        "sha256": "924fca7923c0489c18d0a46ac9ba1e8768b5132d0beb3c76fb5a720de56f4257",
+        "imports": [
+          "collections",
+          "dataclasses",
+          "heapq",
+          "itertools",
+          "math",
+          "operator",
+          "random",
+          "warnings"
+        ],
+        "nonstdlib_imports": [],
+        "direct_dynamic_evaluation": [],
+        "environment_or_verifier_markers": [],
+        "strings_over_2000_characters": [],
+        "lines": 733,
+        "longest_line": 98
+      }
+    ],
+    "limitations": [
+      "Static indicators do not prove readability, semantic equivalence or absence of all dynamic behavior."
+    ]
+  },
+  "limitations": [
+    "验收覆盖本次冻结的检查及环境；通过不证明所有输入上的完整语义等价。",
+    "原仓库支持 Python 3.11–3.15；本次实际验证 3.11 与 3.14，其他版本未运行。",
+    "源码 tokens 按原始文本计算，包含注释、docstring、类型声明及被识别为源码的文档资源。删除说明文字也会降低该指标。",
+    "文档构建通过不表示生成的 API 说明与原版同样完整；候选 docstring 减少，相关说明文字也会减少。",
+    "额外列出运行时 Python 的统一 AST 格式、去 docstring tokens；这是辅助静态口径，不代表可读性或维护成本。",
+    "36 份原始类型、测试、许可证、文档、构建和 CI 资源原样保留，不算模型独立生成的实现。",
+    "任务成本评测未开启；这里统计重写和 Controller 的生成成本，不是压缩版解决未来任务的成本。",
+    "模型输入 tokens 已包含缓存输入，输出已包含推理输出，不重复相加；tokens 也不等于费用。",
+    "源码体积使用 cl100k_base 编码计算；模型调用消耗采用提供方回执，二者是不同统计口径。",
+    "每组检查的执行时间是单次观察，受缓存、测试顺序和机器状态影响，不是重复采样的性能基准。",
+    "模型总账本不包括主持会话、静态知识准备、预检、报告制作与发布；缺少回执的用量保留为未知。",
+    "首次资源边界错误后的行为和安装检查运行的是原版，不能当作压缩成功；最终交付绑定重新生成并验收的候选。",
+    "源代码隔离由协作规则与独立工作区实现，不是操作系统强隔离。"
+  ]
+}
