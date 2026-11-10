@@ -1,0 +1,1698 @@
+{
+  "limitations": [
+    "Only summary results are published; captured command output is omitted."
+  ],
+  "status": "checks_passed",
+  "tests": {
+    "original_total": 33,
+    "retained": 38,
+    "retired": 0,
+    "needs_adaptation": 0,
+    "adapted": 0,
+    "contract": 5,
+    "passed": 38,
+    "failed": 0,
+    "fixed_baseline_failure": 0,
+    "not_run": 0
+  },
+  "capability_results": [
+    {
+      "id": "graphify-root-ddcb2dfa42d8",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-version-domain-b88da794992a",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-dependency-domain-c6aa525c845e",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-metadata-domain-287befef99df",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-compatibility-domain-bd77371a9ad1",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-delivery-domain-7c1b212d0a63",
+      "status": "passed",
+      "checks": [],
+      "check_status": "passed",
+      "baseline_status": "not_run",
+      "candidate_status": "not_run"
+    },
+    {
+      "id": "graphify-versions-4612828a45f1",
+      "status": "passed",
+      "checks": [
+        "upstream-version",
+        "property-ranges_cross_epoch",
+        "property-ranges_pep440_extended",
+        "property-ranges_pubgrub",
+        "property-ranges_set_algebra",
+        "property-ranges_set_relations",
+        "property-ranges_to_specifier_set",
+        "property-specifier_comparison",
+        "property-specifier_extended",
+        "property-specifier_implied",
+        "property-specifier_matching",
+        "property-version_format",
+        "property-version_normalization",
+        "property-version_ordering",
+        "property-version_releases",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows",
+        "representative-workloads"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-specifiers-b1e4f11fac7d",
+      "status": "passed",
+      "checks": [
+        "upstream-specifiers",
+        "property-ranges_cross_epoch",
+        "property-ranges_pep440_extended",
+        "property-ranges_pubgrub",
+        "property-ranges_set_algebra",
+        "property-ranges_set_relations",
+        "property-ranges_to_specifier_set",
+        "property-specifier_comparison",
+        "property-specifier_extended",
+        "property-specifier_implied",
+        "property-specifier_matching",
+        "property-version_format",
+        "property-version_normalization",
+        "property-version_ordering",
+        "property-version_releases",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows",
+        "representative-workloads"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-ranges-47da8304ae59",
+      "status": "passed",
+      "checks": [
+        "upstream-specifiers",
+        "upstream-ranges",
+        "property-ranges_cross_epoch",
+        "property-ranges_pep440_extended",
+        "property-ranges_pubgrub",
+        "property-ranges_set_algebra",
+        "property-ranges_set_relations",
+        "property-ranges_to_specifier_set",
+        "property-specifier_comparison",
+        "property-specifier_extended",
+        "property-specifier_implied",
+        "property-specifier_matching",
+        "property-version_format",
+        "property-version_normalization",
+        "property-version_ordering",
+        "property-version_releases",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows",
+        "representative-workloads"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-requirements-10762e1094db",
+      "status": "passed",
+      "checks": [
+        "upstream-requirements",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows",
+        "representative-workloads"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-markers-0c72058cb79c",
+      "status": "passed",
+      "checks": [
+        "upstream-markers",
+        "upstream-pylock_select",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows",
+        "representative-workloads"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-groups-4ed379d418bb",
+      "status": "passed",
+      "checks": [
+        "upstream-dependency_groups",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-metadata-45447b7afbd5",
+      "status": "passed",
+      "checks": [
+        "upstream-metadata",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-direct-urls-07ddfc839810",
+      "status": "passed",
+      "checks": [
+        "upstream-direct_url",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-lockfiles-63f559f98ac5",
+      "status": "passed",
+      "checks": [
+        "upstream-pylock",
+        "upstream-pylock_select",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-licenses-46610887a791",
+      "status": "passed",
+      "checks": [
+        "upstream-licenses",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-tags-978c2f894135",
+      "status": "passed",
+      "checks": [
+        "upstream-pylock_select",
+        "upstream-tags",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-platforms-0684f6b9c83d",
+      "status": "passed",
+      "checks": [
+        "upstream-elffile",
+        "upstream-manylinux",
+        "upstream-musllinux",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-names-aeb24056810d",
+      "status": "passed",
+      "checks": [
+        "upstream-utils",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows",
+        "representative-workloads"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-distribution-933548450302",
+      "status": "passed",
+      "checks": [
+        "upstream-version",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-errors-be4bd5677277",
+      "status": "passed",
+      "checks": [
+        "upstream-metadata",
+        "upstream-dependency_groups",
+        "upstream-errors",
+        "python-310-upstream-complete",
+        "python-314-upstream-complete",
+        "behavior-public-workflows"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-maintainers-23cf4ac77727",
+      "status": "passed",
+      "checks": [
+        "workflow-maintainers"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-benchmarks-cb1d2fdcc86c",
+      "status": "passed",
+      "checks": [
+        "workflow-benchmarks"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    },
+    {
+      "id": "graphify-documentation-caf9f906b16a",
+      "status": "passed",
+      "checks": [
+        "workflow-documentation"
+      ],
+      "check_status": "passed",
+      "baseline_status": "passed",
+      "candidate_status": "passed"
+    }
+  ],
+  "checks": [
+    {
+      "name": "upstream-version",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-distribution-933548450302"
+      ]
+    },
+    {
+      "name": "upstream-specifiers",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "upstream-ranges",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "upstream-requirements",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-requirements-10762e1094db"
+      ]
+    },
+    {
+      "name": "upstream-markers",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-markers-0c72058cb79c"
+      ]
+    },
+    {
+      "name": "upstream-metadata",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-metadata-45447b7afbd5",
+        "graphify-errors-be4bd5677277"
+      ]
+    },
+    {
+      "name": "upstream-dependency_groups",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-groups-4ed379d418bb",
+        "graphify-errors-be4bd5677277"
+      ]
+    },
+    {
+      "name": "upstream-direct_url",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-direct-urls-07ddfc839810"
+      ]
+    },
+    {
+      "name": "upstream-pylock",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-lockfiles-63f559f98ac5"
+      ]
+    },
+    {
+      "name": "upstream-pylock_select",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-lockfiles-63f559f98ac5",
+        "graphify-tags-978c2f894135",
+        "graphify-markers-0c72058cb79c"
+      ]
+    },
+    {
+      "name": "upstream-licenses",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-licenses-46610887a791"
+      ]
+    },
+    {
+      "name": "upstream-errors",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-errors-be4bd5677277"
+      ]
+    },
+    {
+      "name": "upstream-utils",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-names-aeb24056810d"
+      ]
+    },
+    {
+      "name": "upstream-tags",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-tags-978c2f894135"
+      ]
+    },
+    {
+      "name": "upstream-elffile",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-platforms-0684f6b9c83d"
+      ]
+    },
+    {
+      "name": "upstream-manylinux",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-platforms-0684f6b9c83d"
+      ]
+    },
+    {
+      "name": "upstream-musllinux",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-platforms-0684f6b9c83d"
+      ]
+    },
+    {
+      "name": "property-ranges_cross_epoch",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-ranges_pep440_extended",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-ranges_pubgrub",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-ranges_set_algebra",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-ranges_set_relations",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-ranges_to_specifier_set",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-specifier_comparison",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-specifier_extended",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-specifier_implied",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-specifier_matching",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-version_format",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-version_normalization",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-version_ordering",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "property-version_releases",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59"
+      ]
+    },
+    {
+      "name": "python-310-upstream-complete",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59",
+        "graphify-requirements-10762e1094db",
+        "graphify-markers-0c72058cb79c",
+        "graphify-groups-4ed379d418bb",
+        "graphify-metadata-45447b7afbd5",
+        "graphify-direct-urls-07ddfc839810",
+        "graphify-lockfiles-63f559f98ac5",
+        "graphify-licenses-46610887a791",
+        "graphify-tags-978c2f894135",
+        "graphify-platforms-0684f6b9c83d",
+        "graphify-names-aeb24056810d",
+        "graphify-distribution-933548450302",
+        "graphify-errors-be4bd5677277"
+      ]
+    },
+    {
+      "name": "python-314-upstream-complete",
+      "status": "passed",
+      "role": "original",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59",
+        "graphify-requirements-10762e1094db",
+        "graphify-markers-0c72058cb79c",
+        "graphify-groups-4ed379d418bb",
+        "graphify-metadata-45447b7afbd5",
+        "graphify-direct-urls-07ddfc839810",
+        "graphify-lockfiles-63f559f98ac5",
+        "graphify-licenses-46610887a791",
+        "graphify-tags-978c2f894135",
+        "graphify-platforms-0684f6b9c83d",
+        "graphify-names-aeb24056810d",
+        "graphify-distribution-933548450302",
+        "graphify-errors-be4bd5677277"
+      ]
+    },
+    {
+      "name": "behavior-public-workflows",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59",
+        "graphify-requirements-10762e1094db",
+        "graphify-markers-0c72058cb79c",
+        "graphify-groups-4ed379d418bb",
+        "graphify-metadata-45447b7afbd5",
+        "graphify-direct-urls-07ddfc839810",
+        "graphify-lockfiles-63f559f98ac5",
+        "graphify-licenses-46610887a791",
+        "graphify-tags-978c2f894135",
+        "graphify-platforms-0684f6b9c83d",
+        "graphify-names-aeb24056810d",
+        "graphify-distribution-933548450302",
+        "graphify-errors-be4bd5677277"
+      ]
+    },
+    {
+      "name": "workflow-maintainers",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-maintainers-23cf4ac77727"
+      ]
+    },
+    {
+      "name": "workflow-benchmarks",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-benchmarks-cb1d2fdcc86c"
+      ]
+    },
+    {
+      "name": "workflow-documentation",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-documentation-caf9f906b16a"
+      ]
+    },
+    {
+      "name": "representative-workloads",
+      "status": "passed",
+      "role": "contract",
+      "scope": "retained",
+      "capabilities": [
+        "graphify-versions-4612828a45f1",
+        "graphify-specifiers-b1e4f11fac7d",
+        "graphify-ranges-47da8304ae59",
+        "graphify-requirements-10762e1094db",
+        "graphify-markers-0c72058cb79c",
+        "graphify-names-aeb24056810d"
+      ]
+    }
+  ],
+  "actual_size": {
+    "baseline_source_lines": 14981,
+    "source_lines": 6936,
+    "source_files": 38,
+    "retained_percent": 65.09696740615823,
+    "target_percent": 100.0,
+    "target_source_lines": 14981.0,
+    "estimated_source_lines": null,
+    "metric": "tokens",
+    "tokenizer": {
+      "classification": "source_and_configuration_v1",
+      "decoding": "python_encoding_cookie_else_utf8_strict",
+      "encoding": "cl100k_base",
+      "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+      "file_boundaries": "independent_sum",
+      "library": "tiktoken",
+      "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "special_tokens": "ordinary_text",
+      "text_policy": "raw_decoded_text_per_file",
+      "version": "0.12.0"
+    },
+    "measurement_sha256": "6df80f05887b75d74b0369bc2da613ead7e4d16a995a249127ee4c45ef3c3e5c",
+    "source_tokens": 77260,
+    "configuration_tokens": 34684,
+    "total_tokens": 111944,
+    "baseline_tokens": 171965,
+    "target_tokens": 171965,
+    "source_retained_percent": 46.298644950270344,
+    "complete": true,
+    "target_met": true
+  },
+  "budget_status": "met",
+  "verification_scope": "full",
+  "installation_evidence": {
+    "status": "passed",
+    "checks_passed": 3,
+    "checks_total": 3,
+    "environment_metadata_complete": true
+  },
+  "obligation_ledger": {
+    "records": [
+      {
+        "capability": "graphify-root-ddcb2dfa42d8",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-version-domain-b88da794992a",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-dependency-domain-c6aa525c845e",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-metadata-domain-287befef99df",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-compatibility-domain-bd77371a9ad1",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-delivery-domain-7c1b212d0a63",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          },
+          {
+            "status": "verified",
+            "kind": "retained_child"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-versions-4612828a45f1",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-version",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_cross_epoch",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_pep440_extended",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_pubgrub",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_set_algebra",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_set_relations",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_to_specifier_set",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_comparison",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_extended",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_implied",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_matching",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_format",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_normalization",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_ordering",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_releases",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "representative-workloads",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-specifiers-b1e4f11fac7d",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-specifiers",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_cross_epoch",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_pep440_extended",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_pubgrub",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_set_algebra",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_set_relations",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_to_specifier_set",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_comparison",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_extended",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_implied",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_matching",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_format",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_normalization",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_ordering",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_releases",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "representative-workloads",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-ranges-47da8304ae59",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-specifiers",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-ranges",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_cross_epoch",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_pep440_extended",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_pubgrub",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_set_algebra",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_set_relations",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-ranges_to_specifier_set",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_comparison",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_extended",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_implied",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-specifier_matching",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_format",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_normalization",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_ordering",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "property-version_releases",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "representative-workloads",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-requirements-10762e1094db",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-requirements",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "representative-workloads",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-markers-0c72058cb79c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-markers",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-pylock_select",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "representative-workloads",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-groups-4ed379d418bb",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-dependency_groups",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-metadata-45447b7afbd5",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-metadata",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-direct-urls-07ddfc839810",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-direct_url",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-lockfiles-63f559f98ac5",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-pylock",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-pylock_select",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-licenses-46610887a791",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-licenses",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-tags-978c2f894135",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-pylock_select",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-tags",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-platforms-0684f6b9c83d",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-elffile",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-manylinux",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-musllinux",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-names-aeb24056810d",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-utils",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "representative-workloads",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-distribution-933548450302",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-version",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-errors-be4bd5677277",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "upstream-metadata",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-dependency_groups",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "upstream-errors",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-310-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "python-314-upstream-complete",
+            "kind": "declared_check"
+          },
+          {
+            "status": "verified",
+            "check": "behavior-public-workflows",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-maintainers-23cf4ac77727",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "workflow-maintainers",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-benchmarks-cb1d2fdcc86c",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "workflow-benchmarks",
+            "kind": "declared_check"
+          }
+        ]
+      },
+      {
+        "capability": "graphify-documentation-caf9f906b16a",
+        "status": "verified",
+        "obligations": [
+          {
+            "status": "verified",
+            "check": "workflow-documentation",
+            "kind": "declared_check"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "failed": 0,
+      "unknown": 0,
+      "partial": 0,
+      "retired": 0,
+      "verified": 24,
+      "total": 24,
+      "retained": 24,
+      "complete": true
+    },
+    "limitations": [
+      "Public summaries omit private evidence bindings and raw output."
+    ]
+  },
+  "task_effort": {
+    "schema_version": 1,
+    "operation": "task_effort_evaluation",
+    "status": "disabled",
+    "binding": {},
+    "policy": {
+      "comparison": "empirical_range",
+      "strict_all_tasks": true
+    },
+    "tasks": [],
+    "overhead": {
+      "examiner_tokens": null,
+      "judge_tokens": null,
+      "solver_tokens": null,
+      "total_tokens": null,
+      "usage_complete": false,
+      "observed_total_tokens": null,
+      "role_usage_complete": {
+        "examiner": false,
+        "solver": false,
+        "judge": false
+      }
+    },
+    "resources": {
+      "completed_runs": 0,
+      "cleanup_pending": false,
+      "cleanup_pending_runs": 0
+    },
+    "iterations": [],
+    "limitations": [
+      "Task effort measures these tasks under the recorded agent settings; it is not a universal measure of human cognitive burden.",
+      "Tokens count solver model inputs and outputs, including cached input. Missing usage is unavailable, never zero. Examiner and judge overhead is separate.",
+      "Empirical ranges describe repeated observations, not statistical confidence intervals. Failed or unrun tasks do not establish an improvement.",
+      "Task links identify assessed capabilities only; they do not change module behavior verification badges.",
+      "Task prompts, hidden inputs, judging rubrics, source excerpts, raw traces and local paths are omitted from this public report."
+    ]
+  }
+}

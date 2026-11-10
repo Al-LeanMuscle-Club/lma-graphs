@@ -1,0 +1,5991 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-10T01:40:29.878312+00:00",
+  "status": "succeeded",
+  "phase": "completed",
+  "source": {
+    "repository": "pypa/packaging",
+    "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+    "version": "26.4.dev0"
+  },
+  "harness": {
+    "repository": "nanolize/nanolize",
+    "branch": "codex/controller-history-recovery",
+    "commit": "55ceb832425e745aad255c83bef42631218b1f7d"
+  },
+  "scope": {
+    "name": "all",
+    "kept": [
+      "graphify-benchmarks-cb1d2fdcc86c",
+      "graphify-compatibility-domain-bd77371a9ad1",
+      "graphify-delivery-domain-7c1b212d0a63",
+      "graphify-dependency-domain-c6aa525c845e",
+      "graphify-direct-urls-07ddfc839810",
+      "graphify-distribution-933548450302",
+      "graphify-documentation-caf9f906b16a",
+      "graphify-errors-be4bd5677277",
+      "graphify-groups-4ed379d418bb",
+      "graphify-licenses-46610887a791",
+      "graphify-lockfiles-63f559f98ac5",
+      "graphify-maintainers-23cf4ac77727",
+      "graphify-markers-0c72058cb79c",
+      "graphify-metadata-45447b7afbd5",
+      "graphify-metadata-domain-287befef99df",
+      "graphify-names-aeb24056810d",
+      "graphify-platforms-0684f6b9c83d",
+      "graphify-ranges-47da8304ae59",
+      "graphify-requirements-10762e1094db",
+      "graphify-root-ddcb2dfa42d8",
+      "graphify-specifiers-b1e4f11fac7d",
+      "graphify-tags-978c2f894135",
+      "graphify-version-domain-b88da794992a",
+      "graphify-versions-4612828a45f1"
+    ],
+    "removed": [],
+    "functional_leaves": 18,
+    "preserved_nonproduction_files": 47
+  },
+  "policy": {
+    "mandatory_retention_ratio": null,
+    "size_only_optimization_limit": 0,
+    "agent_task_evaluation": false,
+    "source_free_authoring": true,
+    "stop": "After functional, installation and representative performance acceptance."
+  },
+  "knowledge_provenance": "Fresh Graphify 0.9.100 extraction: 3981 nodes, 9736 edges, 177 communities. Reviewed into 18 functional leaves and 1574 semantic/interface contracts. Previously reviewed semantic extraction scaffolding reused only after matching the identical upstream commit; no old candidate code or pass reused.",
+  "source_preparation": "Original checkout unchanged. Responsibilities of the original 39 production Python files independently reauthored in 38 files, including maintenance, benchmarks and documentation configuration. Original tests and 47 nonproduction resources preserved.",
+  "installation_environment": "Fresh virtual environment installs a wheel rebuilt from candidate sdist using pre-staged flit_core. No target package reused. Module origins audited. No blank-machine internet dependency resolution.",
+  "coverage_limits": [
+    "Observed contract coverage is not proof of complete semantic equivalence",
+    "Linux aarch64, Python 3.10/3.11/3.14 executed; native Windows, macOS and other Python versions not executed",
+    "Actual release publishing, live PyPI sampling and remote SPDX registry updates not performed",
+    "Remote downstream project suites not executed; documentation check builds strict HTML, not LaTeX or doctest builders",
+    "Agent-designed task assessment disabled; no claims about task-token savings"
+  ],
+  "original_code": {
+    "complete": true,
+    "configuration_tokens": 34684,
+    "incomplete_counts_are_observed_subtotals": true,
+    "metric": "tokens",
+    "schema_version": 1,
+    "source_tokens": 137281,
+    "total_tokens": 171965
+  },
+  "tokenizer": {
+    "classification": "source_and_configuration_v1",
+    "decoding": "python_encoding_cookie_else_utf8_strict",
+    "encoding": "cl100k_base",
+    "exclusion_policy": "unchanged_original_tests_documentation_binary_assets",
+    "file_boundaries": "independent_sum",
+    "library": "tiktoken",
+    "ranks_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "special_tokens": "ordinary_text",
+    "text_policy": "raw_decoded_text_per_file",
+    "version": "0.12.0"
+  },
+  "selected_candidate": {
+    "id": "candidate-5a247fcc389d",
+    "reason": "Select the cumulative repair successfully integrated by decision-12-2 as candidate-65ae89ea73b0. The current draft matches this saved candidate with no later changes; the latest repair modified only src/packaging/ranges.py after the owner clarified no-op subtraction flags, canonical post-release recovery, and the measured range-algebra regression. Preserve all earlier fixes and all 38 original behavior obligations. The 18 historical issues await retest, so earlier passes and diagnostics are not acceptance for these bytes. Collect fresh full behavior, all three installation groups, representative performance and code measurement before deciding delivery. No size optimization or task assessment is requested."
+  },
+  "author_calls": 6,
+  "size_optimization_calls": 0,
+  "artifacts": [
+    {
+      "id": "baseline-d09a9e7dcdb3",
+      "kind": "baseline",
+      "created_at": "2026-11-09T22:55:37.535591+00:00",
+      "evidence_sha256": "4bff0f8779924fc8d582f3c3e64515d642061691e273b37cca72ba3a42bf7907",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "status": "baseline_captured",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "upstream-version",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 29.2487,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-specifiers",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 3.1456,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-ranges",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 2.2348,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-requirements",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 4.9595,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-markers",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 2.2434,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-metadata",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.3423,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-dependency_groups",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.0877,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-direct_url",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.2464,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-pylock",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.0898,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-pylock_select",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.0998,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-licenses",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.0559,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-errors",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.2355,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-utils",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.1165,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-tags",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.3169,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-elffile",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.2591,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-manylinux",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.0885,
+          "output_truncated": false
+        },
+        {
+          "name": "upstream-musllinux",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.2559,
+          "output_truncated": false
+        },
+        {
+          "name": "property-ranges_cross_epoch",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 3.9718,
+          "output_truncated": false
+        },
+        {
+          "name": "property-ranges_pep440_extended",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 17.9171,
+          "output_truncated": false
+        },
+        {
+          "name": "property-ranges_pubgrub",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.0444,
+          "output_truncated": false
+        },
+        {
+          "name": "property-ranges_set_algebra",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 23.011,
+          "output_truncated": false
+        },
+        {
+          "name": "property-ranges_set_relations",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 8.7124,
+          "output_truncated": false
+        },
+        {
+          "name": "property-ranges_to_specifier_set",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 4.9823,
+          "output_truncated": false
+        },
+        {
+          "name": "property-specifier_comparison",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 13.4986,
+          "output_truncated": false
+        },
+        {
+          "name": "property-specifier_extended",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 3.3084,
+          "output_truncated": false
+        },
+        {
+          "name": "property-specifier_implied",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 19.9565,
+          "output_truncated": false
+        },
+        {
+          "name": "property-specifier_matching",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 12.0129,
+          "output_truncated": false
+        },
+        {
+          "name": "property-version_format",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 7.1688,
+          "output_truncated": false
+        },
+        {
+          "name": "property-version_normalization",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 12.9502,
+          "output_truncated": false
+        },
+        {
+          "name": "property-version_ordering",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 6.7056,
+          "output_truncated": false
+        },
+        {
+          "name": "property-version_releases",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 11.4834,
+          "output_truncated": false
+        },
+        {
+          "name": "python-310-upstream-complete",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 48.8274,
+          "output_truncated": false
+        },
+        {
+          "name": "python-314-upstream-complete",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 41.0999,
+          "output_truncated": false
+        },
+        {
+          "name": "behavior-public-workflows",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.2897,
+          "output_truncated": false
+        },
+        {
+          "name": "workflow-maintainers",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.8118,
+          "output_truncated": false
+        },
+        {
+          "name": "workflow-benchmarks",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.387,
+          "output_truncated": false
+        },
+        {
+          "name": "workflow-documentation",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 9.2417,
+          "output_truncated": false
+        },
+        {
+          "name": "representative-workloads",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.7827,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 38
+      },
+      "obligations": null
+    },
+    {
+      "id": "agent-e12c2315f1f5",
+      "kind": "agent",
+      "created_at": "2026-11-09T23:19:52.035126+00:00",
+      "evidence_sha256": "e05b53b967128a6aea1c3374829e9506a77c92e3ebecc4f10c4e8a9763897c8b",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "implement",
+      "status": "passed",
+      "duration_seconds": 1435.7049918258563
+    },
+    {
+      "id": "candidate-2fc055f97847",
+      "kind": "candidate",
+      "created_at": "2026-11-09T23:20:25.975855+00:00",
+      "evidence_sha256": "23299f15f124b85292dc374f83fcdc99ab3cf079011fe99c87c0e671b63a4de6",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-190ac0466700",
+      "commit": "7d58f516b1de72359ad9156e32025f4aef622169",
+      "reason": "Archive the initial dependency-cohesive foundation tranche for incremental full-scope implementation. This is a partial implementation checkpoint, not acceptance; inspect integration results before binding candidate checks."
+    },
+    {
+      "id": "agent-8af896cf33e3",
+      "kind": "agent",
+      "created_at": "2026-11-09T23:40:33.503344+00:00",
+      "evidence_sha256": "28cecc90c70d07e3ae0c0bb7feb7d92fa6d4875e616f21af54aba1dabe055db0",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "implement",
+      "status": "passed",
+      "duration_seconds": 1072.9286932172254
+    },
+    {
+      "id": "candidate-823f5388aea2",
+      "kind": "candidate",
+      "created_at": "2026-11-09T23:41:12.415597+00:00",
+      "evidence_sha256": "20217f250e591bd22fe234a6f72892a63d11507a3d357ece0b22c0b42e442c21",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-e3369d0133a8",
+      "commit": "9a727bbc07c9e07b38c730b101cedda3d4f9ba9e",
+      "reason": "Preserve the next dependency layer and the three owner-reviewed foundation corrections as an integrated candidate; verification remains required."
+    },
+    {
+      "id": "agent-92fa2689fa2e",
+      "kind": "agent",
+      "created_at": "2026-11-10T00:07:44.279524+00:00",
+      "evidence_sha256": "d8efa1803d98670fbeb05186a23e905c7e9ed758dd57c6d68982b6af3cb17017",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "implement",
+      "status": "passed",
+      "duration_seconds": 1131.2603062790004
+    },
+    {
+      "id": "candidate-acab51ba9774",
+      "kind": "candidate",
+      "created_at": "2026-11-10T00:09:46.260959+00:00",
+      "evidence_sha256": "8d66cebba10b948ad378c1f685c457399965ba1723bfd14fbf40aea33c9ba47c",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-540e91fd9da4",
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "reason": "Preserve the existing foundation and owner-clarified fixes while integrating the remaining lockfile and developer-workflow implementation. This is a checkpoint for subsequent full behavior and installation verification, not an acceptance claim."
+    },
+    {
+      "id": "verification-26c478ab213f",
+      "kind": "verification",
+      "created_at": "2026-11-10T00:16:32.934726+00:00",
+      "evidence_sha256": "1abf51373d574cbe83b62fce2f731181526426919903a7267984e3dc1c4a735b",
+      "binding": {
+        "candidate": "candidate-540e91fd9da4",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3"
+      },
+      "status": "regressed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "upstream-version",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-specifiers",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-ranges",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-requirements",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-markers",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-metadata",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-dependency_groups",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-direct_url",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock_select",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-licenses",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-errors",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-utils",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-tags",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-elffile",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-manylinux",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-musllinux",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_cross_epoch",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pep440_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pubgrub",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_algebra",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_relations",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_to_specifier_set",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_comparison",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_implied",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_matching",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_format",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_normalization",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_ordering",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_releases",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-310-upstream-complete",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-314-upstream-complete",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior-public-workflows",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-maintainers",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-benchmarks",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-documentation",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "representative-workloads",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "regressed": 17,
+        "passed": 21
+      },
+      "obligations": {
+        "complete": false,
+        "failed": 23,
+        "partial": 0,
+        "retained": 24,
+        "retired": 0,
+        "total": 24,
+        "unknown": 0,
+        "verified": 1
+      },
+      "actual_size": {
+        "baseline_source_lines": 14981,
+        "baseline_tokens": 171965,
+        "complete": true,
+        "configuration_files": 21,
+        "configuration_tokens": 34684,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "1b7bece119815f75f299cc3764d101babd3b4031fbbbbd78ba1197fd358b2205",
+        "metric": "tokens",
+        "retained_percent": 63.904282848254006,
+        "source_files": 37,
+        "source_lines": 6737,
+        "source_retained_percent": 44.97029570789667,
+        "source_tokens": 75209,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 14981.0,
+        "target_tokens": 171965,
+        "total_tokens": 109893
+      },
+      "verified_commit": "9c223d59004d799a348fa3d836b844f2f863d7e3"
+    },
+    {
+      "id": "installation-a5e23a5f2545",
+      "kind": "installation",
+      "created_at": "2026-11-10T00:16:56.109952+00:00",
+      "evidence_sha256": "8694fc448126aeb70d546a3acd89721849eec4f4786a74e12f7b5e9b8a7fbd50",
+      "binding": {
+        "candidate": "candidate-540e91fd9da4",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "build-wheel-sdist-and-install",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.4908,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-public-apis-resources",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.1423,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-dependency-consistency",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.3663,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 3
+      },
+      "obligations": null
+    },
+    {
+      "id": "checks-82e98e89bafc",
+      "kind": "checks",
+      "created_at": "2026-11-10T00:17:08.926298+00:00",
+      "evidence_sha256": "232551bbbd0989ac9c4a067208f207385d12f6aa5fd01d318ba359231a04dac8",
+      "binding": {
+        "candidate": "candidate-540e91fd9da4",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3"
+      },
+      "status": "failed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "representative-performance-regression",
+          "status": "failed",
+          "exit_code": 1,
+          "duration_seconds": 1.9534,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "failed": 1
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-45a73dfb8a10",
+      "kind": "measurement",
+      "created_at": "2026-11-10T00:17:22.748243+00:00",
+      "evidence_sha256": "da3bc2b433e88a01ae90f50714fb3ac9f48c0377dba03b8c31a897f23225db1d",
+      "binding": {
+        "candidate": "candidate-540e91fd9da4",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 34684,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 75209,
+        "total_tokens": 109893
+      }
+    },
+    {
+      "id": "agent-0c19b5775fcd",
+      "kind": "agent",
+      "created_at": "2026-11-10T00:35:37.011961+00:00",
+      "evidence_sha256": "b53b4178fd09d13f178084f4c12cf0147962b818f68c84bd396b23346d798119",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "repair",
+      "status": "passed",
+      "duration_seconds": 717.0330437090015
+    },
+    {
+      "id": "candidate-0ec030fcb65a",
+      "kind": "candidate",
+      "created_at": "2026-11-10T00:37:03.538488+00:00",
+      "evidence_sha256": "19bda8d5c7148c801b77cfdc84612e98b4b631a5049c384f59801f0e6573abbd",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-34941703daed",
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "reason": "Archive the cumulative local repairs based on current owner-approved behavior and performance diagnostics, preserving prior implementation and all retained workflows. This is a repair candidate awaiting fresh full verification, not a claim of acceptance or a size-based selection."
+    },
+    {
+      "id": "verification-86e698eefae3",
+      "kind": "verification",
+      "created_at": "2026-11-10T00:45:07.528561+00:00",
+      "evidence_sha256": "5096900975bf2d16bf30390b9db964a5d50e0a3fb3767adcc0e3a2422cc743e9",
+      "binding": {
+        "candidate": "candidate-34941703daed",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c"
+      },
+      "status": "regressed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "upstream-version",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-specifiers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-ranges",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-requirements",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-markers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-metadata",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-dependency_groups",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-direct_url",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock_select",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-licenses",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-errors",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-utils",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-tags",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-elffile",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-manylinux",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-musllinux",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_cross_epoch",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pep440_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pubgrub",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_algebra",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_relations",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_to_specifier_set",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_comparison",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_implied",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_matching",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_format",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_normalization",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_ordering",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_releases",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-310-upstream-complete",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-314-upstream-complete",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior-public-workflows",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-maintainers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-benchmarks",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-documentation",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "representative-workloads",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 33,
+        "regressed": 5
+      },
+      "obligations": {
+        "complete": false,
+        "failed": 22,
+        "partial": 0,
+        "retained": 24,
+        "retired": 0,
+        "total": 24,
+        "unknown": 0,
+        "verified": 2
+      },
+      "actual_size": {
+        "baseline_source_lines": 14981,
+        "baseline_tokens": 171965,
+        "complete": true,
+        "configuration_files": 21,
+        "configuration_tokens": 34684,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "02bccacf29822f6daae4b9752e76b12a21a571fbdc376c70f53348281db138a3",
+        "metric": "tokens",
+        "retained_percent": 64.73759195185066,
+        "source_files": 38,
+        "source_lines": 6870,
+        "source_retained_percent": 45.85808691008611,
+        "source_tokens": 76642,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 14981.0,
+        "target_tokens": 171965,
+        "total_tokens": 111326
+      },
+      "verified_commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c"
+    },
+    {
+      "id": "installation-69b38f7509e5",
+      "kind": "installation",
+      "created_at": "2026-11-10T00:45:32.889758+00:00",
+      "evidence_sha256": "0e219c446d0e35aab9e46027d2dffdb91c6428926bf4b0a04b29601ea6bfce58",
+      "binding": {
+        "candidate": "candidate-34941703daed",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "build-wheel-sdist-and-install",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.5915,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-public-apis-resources",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.1482,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-dependency-consistency",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.3777,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 3
+      },
+      "obligations": null
+    },
+    {
+      "id": "checks-8bbfb739e1f0",
+      "kind": "checks",
+      "created_at": "2026-11-10T00:45:47.068070+00:00",
+      "evidence_sha256": "a61bc44fc58f1c569b41add8206018a04b60bdcdd67415314d0a328755a45b49",
+      "binding": {
+        "candidate": "candidate-34941703daed",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c"
+      },
+      "status": "failed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "representative-performance-regression",
+          "status": "failed",
+          "exit_code": 1,
+          "duration_seconds": 1.8307,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "failed": 1
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-ae698803e945",
+      "kind": "measurement",
+      "created_at": "2026-11-10T00:46:02.454547+00:00",
+      "evidence_sha256": "3754530dd3c8b6c4f304c86b03df32f5859c50b006675a8f282e1017abe4032e",
+      "binding": {
+        "candidate": "candidate-34941703daed",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 34684,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 76642,
+        "total_tokens": 111326
+      }
+    },
+    {
+      "id": "agent-35b35989cf38",
+      "kind": "agent",
+      "created_at": "2026-11-10T01:00:31.876890+00:00",
+      "evidence_sha256": "08f66ce507b397a7b6868a755e21587cb3509436b05644671021d2d06b03a876",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "repair",
+      "status": "passed",
+      "duration_seconds": 612.4664273129893
+    },
+    {
+      "id": "candidate-950804de3f65",
+      "kind": "candidate",
+      "created_at": "2026-11-10T01:01:57.079407+00:00",
+      "evidence_sha256": "07e999d2f1524061ecbc70f0b222b2509cc7378b030901d42a9d686f7a07c915",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-f645f5abb7af",
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "reason": "Archive the focused cumulative range-algebra, boundary/recovery, absent-metadata-payload and strict-documentation repairs, preserving the previously passing implementation and workflows. This integration requests a real candidate for subsequent full verification and fresh required performance evidence; it does not claim acceptance or perform volume optimization."
+    },
+    {
+      "id": "verification-3401d1a6f508",
+      "kind": "verification",
+      "created_at": "2026-11-10T01:10:10.877889+00:00",
+      "evidence_sha256": "bb00de73861f96503731c6abfbe829ba0cefa8cc7fc94592574be049044689cf",
+      "binding": {
+        "candidate": "candidate-f645f5abb7af",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19"
+      },
+      "status": "regressed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "upstream-version",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-specifiers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-ranges",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-requirements",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-markers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-metadata",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-dependency_groups",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-direct_url",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock_select",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-licenses",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-errors",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-utils",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-tags",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-elffile",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-manylinux",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-musllinux",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_cross_epoch",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pep440_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pubgrub",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_algebra",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_relations",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_to_specifier_set",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_comparison",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_implied",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_matching",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_format",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_normalization",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_ordering",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_releases",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-310-upstream-complete",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-314-upstream-complete",
+          "status": "regressed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior-public-workflows",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-maintainers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-benchmarks",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-documentation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "representative-workloads",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 35,
+        "regressed": 3
+      },
+      "obligations": {
+        "complete": false,
+        "failed": 21,
+        "partial": 0,
+        "retained": 24,
+        "retired": 0,
+        "total": 24,
+        "unknown": 0,
+        "verified": 3
+      },
+      "actual_size": {
+        "baseline_source_lines": 14981,
+        "baseline_tokens": 171965,
+        "complete": true,
+        "configuration_files": 21,
+        "configuration_tokens": 34684,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "fe32d5c66628fe2cb729bf3883e9b7afaa669ccc8a41b8e5f5db4c7cd99ff525",
+        "metric": "tokens",
+        "retained_percent": 65.02951181926555,
+        "source_files": 38,
+        "source_lines": 6926,
+        "source_retained_percent": 46.23189373206061,
+        "source_tokens": 77144,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 14981.0,
+        "target_tokens": 171965,
+        "total_tokens": 111828
+      },
+      "verified_commit": "88d858bc2060c949a6c26abb713a5bd08c317c19"
+    },
+    {
+      "id": "installation-fb2367fc8e22",
+      "kind": "installation",
+      "created_at": "2026-11-10T01:10:36.348052+00:00",
+      "evidence_sha256": "7367396a402cc28a984320c1cc959ca0fdf65c4359ab70c039522e6737e377bf",
+      "binding": {
+        "candidate": "candidate-f645f5abb7af",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "build-wheel-sdist-and-install",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.5697,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-public-apis-resources",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.1547,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-dependency-consistency",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.3875,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 3
+      },
+      "obligations": null
+    },
+    {
+      "id": "checks-06b6350a003b",
+      "kind": "checks",
+      "created_at": "2026-11-10T01:10:50.415451+00:00",
+      "evidence_sha256": "cbe84dcd1a402141c895106451948199d988d6d3298c20312b492fbea0761b56",
+      "binding": {
+        "candidate": "candidate-f645f5abb7af",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19"
+      },
+      "status": "failed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "representative-performance-regression",
+          "status": "failed",
+          "exit_code": 1,
+          "duration_seconds": 1.8088,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "failed": 1
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-9d5544571615",
+      "kind": "measurement",
+      "created_at": "2026-11-10T01:11:05.485882+00:00",
+      "evidence_sha256": "4d9e32882439ae548a658b35a587def4b599ce3808eb5efbf73882d1acb6f3fd",
+      "binding": {
+        "candidate": "candidate-f645f5abb7af",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 34684,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 77144,
+        "total_tokens": 111828
+      }
+    },
+    {
+      "id": "agent-e8e4c81371c4",
+      "kind": "agent",
+      "created_at": "2026-11-10T01:25:45.065024+00:00",
+      "evidence_sha256": "1cb77204c4cbb1922e9ece7618a7321a1795aa5736f529a7d38c316afeb5248a",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "role": "repair",
+      "status": "passed",
+      "duration_seconds": 474.0440388689749
+    },
+    {
+      "id": "candidate-65ae89ea73b0",
+      "kind": "candidate",
+      "created_at": "2026-11-10T01:26:55.532320+00:00",
+      "evidence_sha256": "716b7335581ed425f2ec481a09f536fa4ef4da290ccd38f52e463d34b5b4fbce",
+      "binding": {
+        "candidate": null,
+        "contract": null,
+        "environment_revision": null,
+        "owner_revision": null,
+        "commit": null
+      },
+      "candidate_id": "candidate-5a247fcc389d",
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "reason": "Archive the focused range semantics and whole-path performance repair based on current owner_diagnostics-984f3d6da1e7 and owner_diagnostics-2e0cc0f16fe7, preserving the cumulative generated implementation and all original requirements. This save is not acceptance. Its returned success and real candidate ID must be inspected before explicit selection and fresh full behavior, installation, declared performance, measurement and delivery evaluation. No volume optimization or publication is requested."
+    },
+    {
+      "id": "verification-93bac99c19f8",
+      "kind": "verification",
+      "created_at": "2026-11-10T01:35:32.513880+00:00",
+      "evidence_sha256": "d7eb4f7303d69e7dc538788b9d2bf68a3e4e1e52f35cb9612903b8dd3e57dbf9",
+      "binding": {
+        "candidate": "candidate-5a247fcc389d",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "061b837e146366ae5a263c49f92acd901b6d4d22"
+      },
+      "status": "checks_passed",
+      "verification_scope": "full",
+      "checks": [
+        {
+          "name": "upstream-version",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-specifiers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-ranges",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-requirements",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-markers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-metadata",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-dependency_groups",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-direct_url",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-pylock_select",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-licenses",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-errors",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-utils",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-tags",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-elffile",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-manylinux",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "upstream-musllinux",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_cross_epoch",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pep440_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_pubgrub",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_algebra",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_set_relations",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-ranges_to_specifier_set",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_comparison",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_extended",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_implied",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-specifier_matching",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_format",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_normalization",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_ordering",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "property-version_releases",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-310-upstream-complete",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "python-314-upstream-complete",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "behavior-public-workflows",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-maintainers",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-benchmarks",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "workflow-documentation",
+          "status": "passed",
+          "scope": "retained"
+        },
+        {
+          "name": "representative-workloads",
+          "status": "passed",
+          "scope": "retained"
+        }
+      ],
+      "counts": {
+        "passed": 38
+      },
+      "obligations": {
+        "complete": true,
+        "failed": 0,
+        "partial": 0,
+        "retained": 24,
+        "retired": 0,
+        "total": 24,
+        "unknown": 0,
+        "verified": 24
+      },
+      "actual_size": {
+        "baseline_source_lines": 14981,
+        "baseline_tokens": 171965,
+        "complete": true,
+        "configuration_files": 21,
+        "configuration_tokens": 34684,
+        "estimated_source_lines": null,
+        "incomplete_counts_are_observed_subtotals": true,
+        "measurement_sha256": "6df80f05887b75d74b0369bc2da613ead7e4d16a995a249127ee4c45ef3c3e5c",
+        "metric": "tokens",
+        "retained_percent": 65.09696740615823,
+        "source_files": 38,
+        "source_lines": 6936,
+        "source_retained_percent": 46.298644950270344,
+        "source_tokens": 77260,
+        "target_met": true,
+        "target_percent": 100.0,
+        "target_source_lines": 14981.0,
+        "target_tokens": 171965,
+        "total_tokens": 111944
+      },
+      "verified_commit": "061b837e146366ae5a263c49f92acd901b6d4d22"
+    },
+    {
+      "id": "installation-992e7c9dee48",
+      "kind": "installation",
+      "created_at": "2026-11-10T01:36:01.462010+00:00",
+      "evidence_sha256": "07ee3c1f08021fb7679fbbf7aec2c5d00bc2bbcd9f33d8a1e619a29766762881",
+      "binding": {
+        "candidate": "candidate-5a247fcc389d",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "061b837e146366ae5a263c49f92acd901b6d4d22"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "build-wheel-sdist-and-install",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 2.3389,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-public-apis-resources",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.2087,
+          "output_truncated": false
+        },
+        {
+          "name": "installed-dependency-consistency",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 0.424,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 3
+      },
+      "obligations": null
+    },
+    {
+      "id": "checks-e1f4301c15fc",
+      "kind": "checks",
+      "created_at": "2026-11-10T01:36:17.621312+00:00",
+      "evidence_sha256": "931852ea506474c4dfb5d791f8cb096ddf2f16dcf4bc266587f4827d6042a680",
+      "binding": {
+        "candidate": "candidate-5a247fcc389d",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "061b837e146366ae5a263c49f92acd901b6d4d22"
+      },
+      "status": "passed",
+      "verification_scope": null,
+      "checks": [
+        {
+          "name": "representative-performance-regression",
+          "status": "passed",
+          "exit_code": 0,
+          "duration_seconds": 1.7715,
+          "output_truncated": false
+        }
+      ],
+      "counts": {
+        "passed": 1
+      },
+      "obligations": null
+    },
+    {
+      "id": "measurement-16566a3a533b",
+      "kind": "measurement",
+      "created_at": "2026-11-10T01:36:34.904254+00:00",
+      "evidence_sha256": "b5af54ee887a8289d77d60fb13b0d14c71cdd1034a7cf76ac6831f6d68e87822",
+      "binding": {
+        "candidate": "candidate-5a247fcc389d",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "061b837e146366ae5a263c49f92acd901b6d4d22"
+      },
+      "code": {
+        "complete": true,
+        "configuration_tokens": 34684,
+        "incomplete_counts_are_observed_subtotals": true,
+        "metric": "tokens",
+        "schema_version": 1,
+        "source_tokens": 77260,
+        "total_tokens": 111944
+      }
+    },
+    {
+      "id": "delivery-52c429b7134a",
+      "kind": "delivery",
+      "created_at": "2026-11-10T01:39:18.591277+00:00",
+      "evidence_sha256": "bbe16b9594e8f85b19caf976ef5acd18e79ef848128995ff064210ced179f391",
+      "binding": {
+        "candidate": "candidate-5a247fcc389d",
+        "contract": "contract-138cf9e038dd",
+        "environment_revision": 0,
+        "owner_revision": null,
+        "commit": "061b837e146366ae5a263c49f92acd901b6d4d22"
+      },
+      "acceptance": {
+        "status": "passed",
+        "gaps": [],
+        "failed": false,
+        "limitations": [
+          "Passing checks is not proof of semantic equivalence.",
+          "Criteria do not prescribe a next action."
+        ]
+      }
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "workspace",
+      "name": "create_workspace",
+      "status": "completed",
+      "created_at": "2026-11-09T22:46:00.063294+00:00",
+      "started_at": "2026-11-09T22:46:00.109593+00:00",
+      "finished_at": "2026-11-09T22:47:41.761908+00:00",
+      "duration_seconds": 101.63515432178974
+    },
+    {
+      "operation_id": "decision-1-0",
+      "name": "capture_baseline",
+      "status": "completed",
+      "created_at": "2026-11-09T22:49:49.802824+00:00",
+      "started_at": "2026-11-09T22:49:49.828171+00:00",
+      "finished_at": "2026-11-09T22:55:37.562015+00:00",
+      "duration_seconds": 347.7020477494225
+    },
+    {
+      "operation_id": "decision-1-1",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T22:55:37.748881+00:00",
+      "started_at": "2026-11-09T22:55:37.778830+00:00",
+      "finished_at": "2026-11-09T23:19:52.081293+00:00",
+      "duration_seconds": 1454.2781749060377
+    },
+    {
+      "operation_id": "owner-relay-initial-semantics",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:15:27.586803+00:00",
+      "started_at": "2026-11-09T23:19:52.102659+00:00",
+      "finished_at": "2026-11-09T23:20:05.841930+00:00",
+      "duration_seconds": 13.71836968883872
+    },
+    {
+      "operation_id": "decision-1-2",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T23:19:52.504010+00:00",
+      "started_at": "2026-11-09T23:20:05.927329+00:00",
+      "finished_at": "2026-11-09T23:20:26.127043+00:00",
+      "duration_seconds": 20.1756153376773
+    },
+    {
+      "operation_id": "owner-relay-range-semantics",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:21:32.497363+00:00",
+      "started_at": "2026-11-09T23:22:12.968129+00:00",
+      "finished_at": "2026-11-09T23:22:22.925515+00:00",
+      "duration_seconds": 9.94319868274033
+    },
+    {
+      "operation_id": "decision-2-0",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T23:22:13.060420+00:00",
+      "started_at": "2026-11-09T23:22:22.943768+00:00",
+      "finished_at": "2026-11-09T23:40:33.523760+00:00",
+      "duration_seconds": 1090.5658806730062
+    },
+    {
+      "operation_id": "owner-relay-metadata-semantics",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:33:38.498156+00:00",
+      "started_at": "2026-11-09T23:40:40.022916+00:00",
+      "finished_at": "2026-11-09T23:40:50.155253+00:00",
+      "duration_seconds": 10.11609475966543
+    },
+    {
+      "operation_id": "decision-2-1",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-09T23:40:33.722730+00:00",
+      "started_at": "2026-11-09T23:40:50.186874+00:00",
+      "finished_at": "2026-11-09T23:41:12.587844+00:00",
+      "duration_seconds": 22.383873529732227
+    },
+    {
+      "operation_id": "owner-relay-content-type-semantics",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:43:43.133745+00:00",
+      "started_at": "2026-11-09T23:43:43.157238+00:00",
+      "finished_at": "2026-11-09T23:43:53.038980+00:00",
+      "duration_seconds": 9.865328280255198
+    },
+    {
+      "operation_id": "decision-3-0",
+      "name": "get_operation_history",
+      "status": "completed",
+      "created_at": "2026-11-09T23:46:11.291224+00:00",
+      "started_at": "2026-11-09T23:46:11.312144+00:00",
+      "finished_at": "2026-11-09T23:46:11.369462+00:00",
+      "duration_seconds": null
+    },
+    {
+      "operation_id": "decision-3-1",
+      "name": "audit_coverage",
+      "status": "completed",
+      "created_at": "2026-11-09T23:46:11.762311+00:00",
+      "started_at": "2026-11-09T23:46:11.781015+00:00",
+      "finished_at": "2026-11-09T23:46:23.941728+00:00",
+      "duration_seconds": 12.14837756700581
+    },
+    {
+      "operation_id": "decision-4-0",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-09T23:48:37.842500+00:00",
+      "started_at": "2026-11-09T23:48:37.864963+00:00",
+      "finished_at": "2026-11-10T00:07:44.307807+00:00",
+      "duration_seconds": 1146.4232919109636
+    },
+    {
+      "operation_id": "owner-relay-pylock-semantics",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:55:26.395086+00:00",
+      "started_at": "2026-11-10T00:07:44.335945+00:00",
+      "finished_at": "2026-11-10T00:07:55.616280+00:00",
+      "duration_seconds": 11.265852277167141
+    },
+    {
+      "operation_id": "owner-relay-maintenance-cli",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:56:03.352788+00:00",
+      "started_at": "2026-11-10T00:07:55.651065+00:00",
+      "finished_at": "2026-11-10T00:08:06.055468+00:00",
+      "duration_seconds": 10.392299339175224
+    },
+    {
+      "operation_id": "owner-relay-nox-sessions",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:58:00.636729+00:00",
+      "started_at": "2026-11-10T00:08:06.097881+00:00",
+      "finished_at": "2026-11-10T00:08:16.657323+00:00",
+      "duration_seconds": 10.546807207167149
+    },
+    {
+      "operation_id": "owner-relay-nox-release",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-09T23:59:01.371973+00:00",
+      "started_at": "2026-11-10T00:08:16.680650+00:00",
+      "finished_at": "2026-11-10T00:08:27.483842+00:00",
+      "duration_seconds": 10.792154070921242
+    },
+    {
+      "operation_id": "owner-relay-benchmark-lock-boundaries",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-10T00:03:12.432258+00:00",
+      "started_at": "2026-11-10T00:08:27.501147+00:00",
+      "finished_at": "2026-11-10T00:08:38.340367+00:00",
+      "duration_seconds": 10.819585094228387
+    },
+    {
+      "operation_id": "owner-relay-workflow-import",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-10T00:07:38.808618+00:00",
+      "started_at": "2026-11-10T00:08:38.361606+00:00",
+      "finished_at": "2026-11-10T00:08:49.637466+00:00",
+      "duration_seconds": 11.264221303164959
+    },
+    {
+      "operation_id": "decision-4-1",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T00:07:44.497074+00:00",
+      "started_at": "2026-11-10T00:08:49.669297+00:00",
+      "finished_at": "2026-11-10T00:09:46.830953+00:00",
+      "duration_seconds": 57.139813744986895
+    },
+    {
+      "operation_id": "decision-5-0",
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T00:11:55.021072+00:00",
+      "started_at": "2026-11-10T00:11:55.057520+00:00",
+      "finished_at": "2026-11-10T00:12:06.050796+00:00",
+      "duration_seconds": 10.976453846960794
+    },
+    {
+      "operation_id": "decision-5-1",
+      "name": "get_operation_history",
+      "status": "completed",
+      "created_at": "2026-11-10T00:12:06.240832+00:00",
+      "started_at": "2026-11-10T00:12:06.257439+00:00",
+      "finished_at": "2026-11-10T00:12:06.594040+00:00",
+      "duration_seconds": null
+    },
+    {
+      "operation_id": "decision-5-2",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-10T00:12:06.750150+00:00",
+      "started_at": "2026-11-10T00:12:06.776369+00:00",
+      "finished_at": "2026-11-10T00:16:33.090157+00:00",
+      "duration_seconds": 266.30063995003
+    },
+    {
+      "operation_id": "decision-5-3",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-10T00:16:33.289456+00:00",
+      "started_at": "2026-11-10T00:16:33.315019+00:00",
+      "finished_at": "2026-11-10T00:16:56.146979+00:00",
+      "duration_seconds": 22.807098329009023
+    },
+    {
+      "operation_id": "decision-5-4",
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-10T00:16:56.321803+00:00",
+      "started_at": "2026-11-10T00:16:56.343647+00:00",
+      "finished_at": "2026-11-10T00:17:08.962003+00:00",
+      "duration_seconds": 12.59709614602616
+    },
+    {
+      "operation_id": "decision-5-5",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-10T00:17:09.151925+00:00",
+      "started_at": "2026-11-10T00:17:09.172450+00:00",
+      "finished_at": "2026-11-10T00:17:22.781991+00:00",
+      "duration_seconds": 13.37355659698369
+    },
+    {
+      "operation_id": "decision-6-0",
+      "name": "get_feedback_history",
+      "status": "completed",
+      "created_at": "2026-11-10T00:19:56.062638+00:00",
+      "started_at": "2026-11-10T00:19:56.076055+00:00",
+      "finished_at": "2026-11-10T00:19:57.219075+00:00",
+      "duration_seconds": null
+    },
+    {
+      "operation_id": "decision-6-1",
+      "name": "get_operation_history",
+      "status": "completed",
+      "created_at": "2026-11-10T00:19:57.457997+00:00",
+      "started_at": "2026-11-10T00:19:57.579814+00:00",
+      "finished_at": "2026-11-10T00:19:57.856156+00:00",
+      "duration_seconds": null
+    },
+    {
+      "operation_id": "decision-6-2",
+      "name": "get_operation_history",
+      "status": "completed",
+      "created_at": "2026-11-10T00:19:58.029685+00:00",
+      "started_at": "2026-11-10T00:19:58.050837+00:00",
+      "finished_at": "2026-11-10T00:19:58.134941+00:00",
+      "duration_seconds": null
+    },
+    {
+      "operation_id": "decision-6-3",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-10T00:19:58.326500+00:00",
+      "started_at": "2026-11-10T00:20:08.591105+00:00",
+      "finished_at": "2026-11-10T00:20:18.568303+00:00",
+      "duration_seconds": 9.956992341962177
+    },
+    {
+      "operation_id": "decision-6-4",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-10T00:20:18.762310+00:00",
+      "started_at": "2026-11-10T00:20:18.789576+00:00",
+      "finished_at": "2026-11-10T00:20:29.100060+00:00",
+      "duration_seconds": 10.298993042029906
+    },
+    {
+      "operation_id": "decision-7-0",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-10T00:23:17.316837+00:00",
+      "started_at": "2026-11-10T00:23:22.957059+00:00",
+      "finished_at": "2026-11-10T00:35:37.054700+00:00",
+      "duration_seconds": 734.0692336729844
+    },
+    {
+      "operation_id": "decision-7-1",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T00:35:37.290433+00:00",
+      "started_at": "2026-11-10T00:35:50.027322+00:00",
+      "finished_at": "2026-11-10T00:37:04.189585+00:00",
+      "duration_seconds": 74.1456988810096
+    },
+    {
+      "operation_id": "decision-8-0",
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T00:39:06.790384+00:00",
+      "started_at": "2026-11-10T00:39:06.818592+00:00",
+      "finished_at": "2026-11-10T00:39:18.385273+00:00",
+      "duration_seconds": 11.555791663005948
+    },
+    {
+      "operation_id": "decision-8-1",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-10T00:39:18.563838+00:00",
+      "started_at": "2026-11-10T00:39:18.582590+00:00",
+      "finished_at": "2026-11-10T00:45:07.725825+00:00",
+      "duration_seconds": 349.12564149603713
+    },
+    {
+      "operation_id": "decision-8-2",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-10T00:45:07.963675+00:00",
+      "started_at": "2026-11-10T00:45:08.061937+00:00",
+      "finished_at": "2026-11-10T00:45:32.939728+00:00",
+      "duration_seconds": 24.864123995008413
+    },
+    {
+      "operation_id": "decision-8-3",
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-10T00:45:33.179708+00:00",
+      "started_at": "2026-11-10T00:45:33.200316+00:00",
+      "finished_at": "2026-11-10T00:45:47.139573+00:00",
+      "duration_seconds": 13.925550748012029
+    },
+    {
+      "operation_id": "decision-8-4",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-10T00:45:47.363782+00:00",
+      "started_at": "2026-11-10T00:45:47.391488+00:00",
+      "finished_at": "2026-11-10T00:46:02.524547+00:00",
+      "duration_seconds": 15.11491996597033
+    },
+    {
+      "operation_id": "decision-8-5",
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "created_at": "2026-11-10T00:46:02.775607+00:00",
+      "started_at": "2026-11-10T00:46:02.797345+00:00",
+      "finished_at": "2026-11-10T00:46:18.904334+00:00",
+      "duration_seconds": 16.091840866021812
+    },
+    {
+      "operation_id": "decision-9-0",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-10T00:49:33.290699+00:00",
+      "started_at": "2026-11-10T00:49:39.045911+00:00",
+      "finished_at": "2026-11-10T00:49:50.026748+00:00",
+      "duration_seconds": 10.940604884002823
+    },
+    {
+      "operation_id": "decision-9-1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-10T00:49:50.262072+00:00",
+      "started_at": "2026-11-10T00:49:50.286288+00:00",
+      "finished_at": "2026-11-10T00:50:01.700117+00:00",
+      "duration_seconds": 11.399352023028769
+    },
+    {
+      "operation_id": "decision-9-2",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-10T00:50:01.978005+00:00",
+      "started_at": "2026-11-10T00:50:01.999644+00:00",
+      "finished_at": "2026-11-10T01:00:31.937680+00:00",
+      "duration_seconds": 629.9235910240095
+    },
+    {
+      "operation_id": "owner-relay-inert-flags",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-10T00:58:40.686051+00:00",
+      "started_at": "2026-11-10T01:00:39.235871+00:00",
+      "finished_at": "2026-11-10T01:00:49.788733+00:00",
+      "duration_seconds": 10.53629170358181
+    },
+    {
+      "operation_id": "decision-9-3",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T01:00:32.223913+00:00",
+      "started_at": "2026-11-10T01:00:49.804645+00:00",
+      "finished_at": "2026-11-10T01:01:57.660419+00:00",
+      "duration_seconds": 67.84332428197376
+    },
+    {
+      "operation_id": "decision-10-0",
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T01:04:15.941710+00:00",
+      "started_at": "2026-11-10T01:04:16.033660+00:00",
+      "finished_at": "2026-11-10T01:04:27.641903+00:00",
+      "duration_seconds": 11.594625686993822
+    },
+    {
+      "operation_id": "decision-10-1",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-10T01:04:27.910593+00:00",
+      "started_at": "2026-11-10T01:04:27.930933+00:00",
+      "finished_at": "2026-11-10T01:10:11.101623+00:00",
+      "duration_seconds": 343.15829805395333
+    },
+    {
+      "operation_id": "decision-10-2",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-10T01:10:11.378085+00:00",
+      "started_at": "2026-11-10T01:10:11.405413+00:00",
+      "finished_at": "2026-11-10T01:10:36.413783+00:00",
+      "duration_seconds": 24.98304838198237
+    },
+    {
+      "operation_id": "decision-10-3",
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-10T01:10:36.724310+00:00",
+      "started_at": "2026-11-10T01:10:36.751692+00:00",
+      "finished_at": "2026-11-10T01:10:50.494105+00:00",
+      "duration_seconds": 13.723360067990143
+    },
+    {
+      "operation_id": "decision-10-4",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-10T01:10:50.768029+00:00",
+      "started_at": "2026-11-10T01:10:51.000091+00:00",
+      "finished_at": "2026-11-10T01:11:05.564305+00:00",
+      "duration_seconds": 14.552105629001744
+    },
+    {
+      "operation_id": "decision-10-5",
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "created_at": "2026-11-10T01:11:05.864092+00:00",
+      "started_at": "2026-11-10T01:11:05.884825+00:00",
+      "finished_at": "2026-11-10T01:11:21.850767+00:00",
+      "duration_seconds": 15.947182988049462
+    },
+    {
+      "operation_id": "decision-11-0",
+      "name": "get_operation_history",
+      "status": "completed",
+      "created_at": "2026-11-10T01:14:00.991308+00:00",
+      "started_at": "2026-11-10T01:14:01.052257+00:00",
+      "finished_at": "2026-11-10T01:14:01.171714+00:00",
+      "duration_seconds": null
+    },
+    {
+      "operation_id": "decision-11-1",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-10T01:14:01.492965+00:00",
+      "started_at": "2026-11-10T01:14:13.369315+00:00",
+      "finished_at": "2026-11-10T01:14:24.329424+00:00",
+      "duration_seconds": 10.938563735981006
+    },
+    {
+      "operation_id": "decision-11-2",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-10T01:14:24.618979+00:00",
+      "started_at": "2026-11-10T01:14:24.642600+00:00",
+      "finished_at": "2026-11-10T01:14:36.384268+00:00",
+      "duration_seconds": 11.731176831002813
+    },
+    {
+      "operation_id": "decision-11-3",
+      "name": "request_clarification",
+      "status": "completed",
+      "created_at": "2026-11-10T01:14:36.714068+00:00",
+      "started_at": "2026-11-10T01:14:36.737730+00:00",
+      "finished_at": "2026-11-10T01:14:47.999556+00:00",
+      "duration_seconds": 11.249839698022697
+    },
+    {
+      "operation_id": "decision-12-0",
+      "name": "record_unknown",
+      "status": "completed",
+      "created_at": "2026-11-10T01:17:13.037568+00:00",
+      "started_at": "2026-11-10T01:17:18.742591+00:00",
+      "finished_at": "2026-11-10T01:17:30.989560+00:00",
+      "duration_seconds": 12.226333955011796
+    },
+    {
+      "operation_id": "decision-12-1",
+      "name": "run_agent",
+      "status": "completed",
+      "created_at": "2026-11-10T01:17:31.534046+00:00",
+      "started_at": "2026-11-10T01:17:31.557624+00:00",
+      "finished_at": "2026-11-10T01:25:45.145104+00:00",
+      "duration_seconds": 493.57219561503734
+    },
+    {
+      "operation_id": "decision-12-2",
+      "name": "save_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T01:25:45.537046+00:00",
+      "started_at": "2026-11-10T01:25:45.560395+00:00",
+      "finished_at": "2026-11-10T01:26:56.365501+00:00",
+      "duration_seconds": 70.78263607999543
+    },
+    {
+      "operation_id": "decision-13-0",
+      "name": "select_candidate",
+      "status": "completed",
+      "created_at": "2026-11-10T01:29:22.785428+00:00",
+      "started_at": "2026-11-10T01:29:22.837451+00:00",
+      "finished_at": "2026-11-10T01:29:35.742939+00:00",
+      "duration_seconds": 12.88525395502802
+    },
+    {
+      "operation_id": "decision-13-1",
+      "name": "compare_behavior",
+      "status": "completed",
+      "created_at": "2026-11-10T01:29:36.109887+00:00",
+      "started_at": "2026-11-10T01:29:36.138830+00:00",
+      "finished_at": "2026-11-10T01:35:32.754922+00:00",
+      "duration_seconds": 356.5906709220144
+    },
+    {
+      "operation_id": "decision-13-2",
+      "name": "check_installation",
+      "status": "completed",
+      "created_at": "2026-11-10T01:35:33.119193+00:00",
+      "started_at": "2026-11-10T01:35:33.147763+00:00",
+      "finished_at": "2026-11-10T01:36:01.550891+00:00",
+      "duration_seconds": 28.392820052977186
+    },
+    {
+      "operation_id": "decision-13-3",
+      "name": "run_checks",
+      "status": "completed",
+      "created_at": "2026-11-10T01:36:01.934842+00:00",
+      "started_at": "2026-11-10T01:36:01.951210+00:00",
+      "finished_at": "2026-11-10T01:36:17.770984+00:00",
+      "duration_seconds": 15.800836685986724
+    },
+    {
+      "operation_id": "decision-13-4",
+      "name": "measure_code",
+      "status": "completed",
+      "created_at": "2026-11-10T01:36:18.184128+00:00",
+      "started_at": "2026-11-10T01:36:18.205645+00:00",
+      "finished_at": "2026-11-10T01:36:35.011584+00:00",
+      "duration_seconds": 16.791792845004238
+    },
+    {
+      "operation_id": "decision-13-5",
+      "name": "evaluate_acceptance",
+      "status": "completed",
+      "created_at": "2026-11-10T01:36:35.445761+00:00",
+      "started_at": "2026-11-10T01:36:35.472027+00:00",
+      "finished_at": "2026-11-10T01:36:54.747917+00:00",
+      "duration_seconds": 19.255065934965387
+    },
+    {
+      "operation_id": "decision-14-0",
+      "name": "deliver",
+      "status": "completed",
+      "created_at": "2026-11-10T01:38:42.029122+00:00",
+      "started_at": "2026-11-10T01:38:42.082335+00:00",
+      "finished_at": "2026-11-10T01:39:18.825521+00:00",
+      "duration_seconds": 36.716649570968
+    }
+  ],
+  "model_calls": [
+    {
+      "id": "350eaa62a38a49c4a5d98859f66cae27",
+      "role": "controller",
+      "started_at": "2026-11-09T22:48:00.682569+00:00",
+      "duration_seconds": 102.95865106396377,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 141892,
+        "cached_input_tokens": 108032,
+        "output_tokens": 2067,
+        "total_tokens": 143959
+      }
+    },
+    {
+      "id": "2f2ba900019644abbe412108728cd4c4",
+      "role": "author",
+      "started_at": "2026-11-09T22:55:56.933972+00:00",
+      "duration_seconds": 1434.8450747439638,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 2871665,
+        "cached_input_tokens": 2724480,
+        "output_tokens": 48980,
+        "total_tokens": 2920645
+      }
+    },
+    {
+      "id": "fb39a70697224886af2ebe99872889a0",
+      "role": "controller",
+      "started_at": "2026-11-09T23:20:48.038693+00:00",
+      "duration_seconds": 78.80384999047965,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 117501,
+        "cached_input_tokens": 91904,
+        "output_tokens": 1739,
+        "total_tokens": 119240
+      }
+    },
+    {
+      "id": "605470d3b32f41489c7c1d5673a38d28",
+      "role": "author",
+      "started_at": "2026-11-09T23:22:41.157698+00:00",
+      "duration_seconds": 1072.069009223953,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 3699337,
+        "cached_input_tokens": 3568000,
+        "output_tokens": 36118,
+        "total_tokens": 3735455
+      }
+    },
+    {
+      "id": "1a945afbf7a6454997a19d392298e067",
+      "role": "controller",
+      "started_at": "2026-11-09T23:44:53.236613+00:00",
+      "duration_seconds": 72.46674214897212,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 172606,
+        "cached_input_tokens": 138240,
+        "output_tokens": 1542,
+        "total_tokens": 174148
+      }
+    },
+    {
+      "id": "9ecd849a34c94effb33521ab273b8e74",
+      "role": "controller",
+      "started_at": "2026-11-09T23:46:42.952568+00:00",
+      "duration_seconds": 109.56224244902842,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 206438,
+        "cached_input_tokens": 173184,
+        "output_tokens": 2272,
+        "total_tokens": 208710
+      }
+    },
+    {
+      "id": "930c5a829b5d472a8e37c66d88579a3c",
+      "role": "author",
+      "started_at": "2026-11-09T23:48:54.230156+00:00",
+      "duration_seconds": 1129.238849365036,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 3900376,
+        "cached_input_tokens": 3762176,
+        "output_tokens": 41563,
+        "total_tokens": 3941939
+      }
+    },
+    {
+      "id": "3c5e31a53005480c9a5f833f385ff214",
+      "role": "controller",
+      "started_at": "2026-11-10T00:10:35.729228+00:00",
+      "duration_seconds": 73.97880767699098,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 173774,
+        "cached_input_tokens": 134144,
+        "output_tokens": 1652,
+        "total_tokens": 175426
+      }
+    },
+    {
+      "id": "88ef74c0fc3c43c089bd71e7e59b1f0b",
+      "role": "controller",
+      "started_at": "2026-11-10T00:17:41.283675+00:00",
+      "duration_seconds": 128.91530149802566,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 316797,
+        "cached_input_tokens": 266112,
+        "output_tokens": 3190,
+        "total_tokens": 319987
+      }
+    },
+    {
+      "id": "21bfbdf3d4d74598b72da71dc9f1e148",
+      "role": "controller",
+      "started_at": "2026-11-10T00:20:48.057524+00:00",
+      "duration_seconds": 142.73416846100008,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 401202,
+        "cached_input_tokens": 340352,
+        "output_tokens": 3180,
+        "total_tokens": 404382
+      }
+    },
+    {
+      "id": "a842685ef1564ec8a19d5955910ee3d5",
+      "role": "author",
+      "started_at": "2026-11-10T00:23:41.195195+00:00",
+      "duration_seconds": 715.0000972400303,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 3510610,
+        "cached_input_tokens": 3366400,
+        "output_tokens": 22140,
+        "total_tokens": 3532750
+      }
+    },
+    {
+      "id": "1bdd0723e0e643b0b003d3acec9d3a29",
+      "role": "controller",
+      "started_at": "2026-11-10T00:37:25.236977+00:00",
+      "duration_seconds": 95.49928131402703,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 208781,
+        "cached_input_tokens": 171264,
+        "output_tokens": 1768,
+        "total_tokens": 210549
+      }
+    },
+    {
+      "id": "b1e00a06a261414cbdeced8a645706e6",
+      "role": "controller",
+      "started_at": "2026-11-10T00:46:40.975793+00:00",
+      "duration_seconds": 166.20286312996177,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 292559,
+        "cached_input_tokens": 246016,
+        "output_tokens": 4715,
+        "total_tokens": 297274
+      }
+    },
+    {
+      "id": "c2a2239ca2fe4e01826ad2f54669c5e2",
+      "role": "author",
+      "started_at": "2026-11-10T00:50:20.802245+00:00",
+      "duration_seconds": 610.0782700489508,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 1957167,
+        "cached_input_tokens": 1839360,
+        "output_tokens": 17906,
+        "total_tokens": 1975073
+      }
+    },
+    {
+      "id": "2e2743e449a84033952c3ba14724236d",
+      "role": "controller",
+      "started_at": "2026-11-10T01:02:19.661882+00:00",
+      "duration_seconds": 109.98817355098436,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 283360,
+        "cached_input_tokens": 238848,
+        "output_tokens": 2387,
+        "total_tokens": 285747
+      }
+    },
+    {
+      "id": "3a7482aa49f74562902ba21c25b89868",
+      "role": "controller",
+      "started_at": "2026-11-10T01:11:42.568060+00:00",
+      "duration_seconds": 131.57673505996354,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 280207,
+        "cached_input_tokens": 235520,
+        "output_tokens": 3461,
+        "total_tokens": 283668
+      }
+    },
+    {
+      "id": "78670149f6e84ef49976c3fee5757e4e",
+      "role": "controller",
+      "started_at": "2026-11-10T01:15:09.011003+00:00",
+      "duration_seconds": 116.6817343790317,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 257934,
+        "cached_input_tokens": 207872,
+        "output_tokens": 3542,
+        "total_tokens": 261476
+      }
+    },
+    {
+      "id": "939037fc43c44f878192d2156e231fbf",
+      "role": "author",
+      "started_at": "2026-11-10T01:17:52.329311+00:00",
+      "duration_seconds": 471.9393261100049,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 1463821,
+        "cached_input_tokens": 1383040,
+        "output_tokens": 13018,
+        "total_tokens": 1476839
+      }
+    },
+    {
+      "id": "be45883b78144c438c838adb6f0cc2ad",
+      "role": "controller",
+      "started_at": "2026-11-10T01:27:19.908579+00:00",
+      "duration_seconds": 115.64690134098055,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 289700,
+        "cached_input_tokens": 246656,
+        "output_tokens": 1939,
+        "total_tokens": 291639
+      }
+    },
+    {
+      "id": "0736e37fe645475b99c4deb50866ee26",
+      "role": "controller",
+      "started_at": "2026-11-10T01:37:18.037724+00:00",
+      "duration_seconds": 76.34100836899597,
+      "exit_code": 0,
+      "complete": true,
+      "observed_turns": 1,
+      "usage": {
+        "input_tokens": 144433,
+        "cached_input_tokens": 117120,
+        "output_tokens": 1667,
+        "total_tokens": 146100
+      }
+    }
+  ],
+  "upstream_test_receipts": [
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794263655.4532666,
+      "seconds": 41.57482862472534,
+      "exit_code": 0,
+      "receipt": "8682d7769fe348da956f08426a673c54.json",
+      "counts": {
+        "passed": 63465,
+        "skipped": 3
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.14.7 (main, Aug 25 2026, 13:59:49) [Clang 22.1.3 ]",
+      "started_epoch": 1794263656.1769946,
+      "seconds": 40.01216530799866,
+      "exit_code": 0,
+      "receipt": "3feed7b6c2c54b699b70cbc80c2862e8.json",
+      "counts": {
+        "passed": 63468
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.10.21 (main, Aug 25 2026, 14:00:33) [Clang 22.1.3 ]",
+      "started_epoch": 1794263656.2434504,
+      "seconds": 49.46220684051514,
+      "exit_code": 0,
+      "receipt": "f9545f3fea61411b8d210ae21478f084.json",
+      "counts": {
+        "passed": 63465,
+        "skipped": 3
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794263698.3916686,
+      "seconds": 141.79635381698608,
+      "exit_code": 0,
+      "receipt": "83f78e7ea1434a79a9eda23cded82473.json",
+      "counts": {
+        "passed": 441
+      },
+      "test_files": [
+        "tests/property/test_ranges_cross_epoch.py",
+        "tests/property/test_ranges_pep440_extended.py",
+        "tests/property/test_ranges_pubgrub.py",
+        "tests/property/test_ranges_set_algebra.py",
+        "tests/property/test_ranges_set_relations.py",
+        "tests/property/test_ranges_to_specifier_set.py",
+        "tests/property/test_specifier_comparison.py",
+        "tests/property/test_specifier_extended.py",
+        "tests/property/test_specifier_implied.py",
+        "tests/property/test_specifier_matching.py",
+        "tests/property/test_version_format.py",
+        "tests/property/test_version_normalization.py",
+        "tests/property/test_version_ordering.py",
+        "tests/property/test_version_releases.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264615.4662595,
+      "seconds": 26.676108360290527,
+      "exit_code": 0,
+      "receipt": "dc3d901fc9934ccfbf9b78549446f88c.json",
+      "counts": {
+        "passed": 51524
+      },
+      "test_files": [
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264644.3380456,
+      "seconds": 2.5928547382354736,
+      "exit_code": 0,
+      "receipt": "42bfd2fb2f1f45029c4671f692419ef9.json",
+      "counts": {
+        "passed": 2089,
+        "skipped": 2
+      },
+      "test_files": [
+        "tests/test_specifiers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264647.5408237,
+      "seconds": 1.6999456882476807,
+      "exit_code": 0,
+      "receipt": "8e3f417b96314ea9aa829e0318304f7b.json",
+      "counts": {
+        "passed": 1235
+      },
+      "test_files": [
+        "tests/test_ranges.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264649.8225806,
+      "seconds": 4.349488019943237,
+      "exit_code": 0,
+      "receipt": "97b38cf5744f408b9f8043ff02dc941d.json",
+      "counts": {
+        "passed": 5359,
+        "skipped": 1
+      },
+      "test_files": [
+        "tests/test_requirements.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264654.8261974,
+      "seconds": 1.7001855373382568,
+      "exit_code": 0,
+      "receipt": "47efe1e1496e4d969fd21c5927d1e0a7.json",
+      "counts": {
+        "passed": 2327
+      },
+      "test_files": [
+        "tests/test_markers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264657.1300752,
+      "seconds": 0.8264265060424805,
+      "exit_code": 0,
+      "receipt": "2d6c203fc18a4b8d9e246419c62b0bc4.json",
+      "counts": {
+        "passed": 344
+      },
+      "test_files": [
+        "tests/test_metadata.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264658.5239336,
+      "seconds": 0.5899291038513184,
+      "exit_code": 0,
+      "receipt": "760df93350f34848b88952bca5d4e86e.json",
+      "counts": {
+        "passed": 43
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264659.6471157,
+      "seconds": 0.751772403717041,
+      "exit_code": 0,
+      "receipt": "0c926cc1977946ac8d35d01423ea1ad1.json",
+      "counts": {
+        "passed": 46
+      },
+      "test_files": [
+        "tests/test_direct_url.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264660.969023,
+      "seconds": 0.5908982753753662,
+      "exit_code": 0,
+      "receipt": "07f265023c7642c3894f7aaaec1b26e4.json",
+      "counts": {
+        "passed": 74
+      },
+      "test_files": [
+        "tests/test_pylock.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264662.120498,
+      "seconds": 0.5848326683044434,
+      "exit_code": 0,
+      "receipt": "637751b8f9884e098e9d70a60f498148.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_pylock_select.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264663.4849093,
+      "seconds": 0.5484800338745117,
+      "exit_code": 0,
+      "receipt": "028aed325c204d8bb86b2da2ff2097af.json",
+      "counts": {
+        "passed": 11
+      },
+      "test_files": [
+        "tests/test_licenses.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264664.5840526,
+      "seconds": 0.7423679828643799,
+      "exit_code": 0,
+      "receipt": "4ec2226064014a0a9157763320b8accb.json",
+      "counts": {
+        "passed": 7
+      },
+      "test_files": [
+        "tests/test_errors.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264665.9318275,
+      "seconds": 0.5651113986968994,
+      "exit_code": 0,
+      "receipt": "bdfc0c17e0624773b9c79043590e4d1a.json",
+      "counts": {
+        "passed": 79
+      },
+      "test_files": [
+        "tests/test_utils.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264667.0448737,
+      "seconds": 0.8082985877990723,
+      "exit_code": 0,
+      "receipt": "cc11efd584e844c9a82fd5be7fa00864.json",
+      "counts": {
+        "passed": 238
+      },
+      "test_files": [
+        "tests/test_tags.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264668.4056015,
+      "seconds": 0.7631711959838867,
+      "exit_code": 0,
+      "receipt": "41b3e932c07f4840acaf3ce2ca33fef0.json",
+      "counts": {
+        "passed": 15
+      },
+      "test_files": [
+        "tests/test_elffile.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264669.7858362,
+      "seconds": 0.5539367198944092,
+      "exit_code": 0,
+      "receipt": "6888423e76f3479ba78e3bdbe8bacb6d.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_manylinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264670.880349,
+      "seconds": 0.7659633159637451,
+      "exit_code": 0,
+      "receipt": "08fad735875a456eba916137e225b25e.json",
+      "counts": {
+        "passed": 10
+      },
+      "test_files": [
+        "tests/test_musllinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264672.1921883,
+      "seconds": 3.480865240097046,
+      "exit_code": 0,
+      "receipt": "9f161b0f6e7948f4849247b0fbc52a4a.json",
+      "counts": {
+        "passed": 3
+      },
+      "test_files": [
+        "tests/property/test_ranges_cross_epoch.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264676.2549148,
+      "seconds": 17.395270347595215,
+      "exit_code": 0,
+      "receipt": "9950fe37e4594d6bb12b83bfafc6be8b.json",
+      "counts": {
+        "passed": 19
+      },
+      "test_files": [
+        "tests/property/test_ranges_pep440_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264694.3058267,
+      "seconds": 7.5239880084991455,
+      "exit_code": 0,
+      "receipt": "cec128ec93eb4b9f968e3043e1ccb70a.json",
+      "counts": {
+        "passed": 20
+      },
+      "test_files": [
+        "tests/property/test_ranges_pubgrub.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264702.4822028,
+      "seconds": 22.420781135559082,
+      "exit_code": 0,
+      "receipt": "141afc9e6ee2484daae4e0cea39f1b3d.json",
+      "counts": {
+        "passed": 45
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_algebra.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264725.548591,
+      "seconds": 8.121034860610962,
+      "exit_code": 0,
+      "receipt": "0a01735a579740618b36d733919bfcaa.json",
+      "counts": {
+        "passed": 13
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_relations.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264734.2065194,
+      "seconds": 4.478385925292969,
+      "exit_code": 0,
+      "receipt": "d4ac4a94679d4484a91d4bd643dc7edd.json",
+      "counts": {
+        "passed": 9
+      },
+      "test_files": [
+        "tests/property/test_ranges_to_specifier_set.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264739.2460892,
+      "seconds": 12.987897872924805,
+      "exit_code": 0,
+      "receipt": "2e7084b64bc64668b46984240801e822.json",
+      "counts": {
+        "passed": 50
+      },
+      "test_files": [
+        "tests/property/test_specifier_comparison.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264752.7556396,
+      "seconds": 2.8228561878204346,
+      "exit_code": 0,
+      "receipt": "4206eeab39324a07be7b5be1365d7194.json",
+      "counts": {
+        "passed": 6
+      },
+      "test_files": [
+        "tests/property/test_specifier_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264756.1309059,
+      "seconds": 19.454561471939087,
+      "exit_code": 0,
+      "receipt": "4137b7025ad94d1a8df55554fa5507a4.json",
+      "counts": {
+        "passed": 47
+      },
+      "test_files": [
+        "tests/property/test_specifier_implied.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264776.142783,
+      "seconds": 11.503942489624023,
+      "exit_code": 0,
+      "receipt": "93ad3511e4384b77b5f81836429d9ca2.json",
+      "counts": {
+        "passed": 55
+      },
+      "test_files": [
+        "tests/property/test_specifier_matching.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264788.2008474,
+      "seconds": 6.645367383956909,
+      "exit_code": 0,
+      "receipt": "499a55542347434e9a44ee2b2ca715d2.json",
+      "counts": {
+        "passed": 44
+      },
+      "test_files": [
+        "tests/property/test_version_format.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264795.419033,
+      "seconds": 12.450023412704468,
+      "exit_code": 0,
+      "receipt": "0980ffb62c204d249664a4959133e7da.json",
+      "counts": {
+        "passed": 41
+      },
+      "test_files": [
+        "tests/property/test_version_normalization.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264808.4083185,
+      "seconds": 6.210949420928955,
+      "exit_code": 0,
+      "receipt": "0c9622af07454299ab6267be7a9eff31.json",
+      "counts": {
+        "passed": 28
+      },
+      "test_files": [
+        "tests/property/test_version_ordering.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794264815.1832192,
+      "seconds": 10.968682765960693,
+      "exit_code": 0,
+      "receipt": "67df66a2b0e0498a84eaf7c622f5f119.json",
+      "counts": {
+        "passed": 61
+      },
+      "test_files": [
+        "tests/property/test_version_releases.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.10.21 (main, Aug 25 2026, 14:00:33) [Clang 22.1.3 ]",
+      "started_epoch": 1794264827.2977092,
+      "seconds": 45.76938796043396,
+      "exit_code": 0,
+      "receipt": "318a77a65f0840058029743b0789d5c3.json",
+      "counts": {
+        "passed": 63465,
+        "skipped": 3
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+      "python": "3.14.7 (main, Aug 25 2026, 13:59:49) [Clang 22.1.3 ]",
+      "started_epoch": 1794264876.1747255,
+      "seconds": 38.41515326499939,
+      "exit_code": 0,
+      "receipt": "cfb4e15648374407b410d5d651c852c1.json",
+      "counts": {
+        "passed": 63468
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269543.4317553,
+      "seconds": 27.381258487701416,
+      "exit_code": 1,
+      "receipt": "b9bffff796f941efbde0b9eeb6c8f328.json",
+      "counts": {
+        "passed": 51519,
+        "failed": 5
+      },
+      "test_files": [
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269573.0713685,
+      "seconds": 5.068483352661133,
+      "exit_code": 1,
+      "receipt": "78d2e4bacaee408aab55c7b0aebf35c6.json",
+      "counts": {
+        "passed": 2051,
+        "skipped": 2,
+        "failed": 38
+      },
+      "test_files": [
+        "tests/test_specifiers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269578.7380486,
+      "seconds": 1.087096929550171,
+      "exit_code": 2,
+      "receipt": "2ba5b17c4b1e48b7a276dfd6ed9ae997.json",
+      "counts": {
+        "failed": 1
+      },
+      "test_files": [
+        "tests/test_ranges.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269580.3564544,
+      "seconds": 4.351950645446777,
+      "exit_code": 1,
+      "receipt": "70b6e5f767c442c880aae73696f95511.json",
+      "counts": {
+        "passed": 5345,
+        "failed": 14,
+        "skipped": 1
+      },
+      "test_files": [
+        "tests/test_requirements.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269585.5447705,
+      "seconds": 1.5292859077453613,
+      "exit_code": 1,
+      "receipt": "e4800f46de7548b0acc4479599038e0b.json",
+      "counts": {
+        "passed": 2326,
+        "failed": 1
+      },
+      "test_files": [
+        "tests/test_markers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269587.6729965,
+      "seconds": 0.7310388088226318,
+      "exit_code": 2,
+      "receipt": "d671d9538a4c4e038ecdef6c23ff6261.json",
+      "counts": {
+        "failed": 1
+      },
+      "test_files": [
+        "tests/test_metadata.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269588.9568453,
+      "seconds": 0.664933443069458,
+      "exit_code": 1,
+      "receipt": "5e755f78ed864538bfd8eded7f723a9c.json",
+      "counts": {
+        "passed": 42,
+        "failed": 1
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269590.1548865,
+      "seconds": 0.5333383083343506,
+      "exit_code": 0,
+      "receipt": "0dfc21cefe66450c980f7105333bc752.json",
+      "counts": {
+        "passed": 46
+      },
+      "test_files": [
+        "tests/test_direct_url.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269591.2356853,
+      "seconds": 0.6212432384490967,
+      "exit_code": 0,
+      "receipt": "5cd367544b0b43679dede39b22d6c6d5.json",
+      "counts": {
+        "passed": 74
+      },
+      "test_files": [
+        "tests/test_pylock.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269592.4110334,
+      "seconds": 0.6232759952545166,
+      "exit_code": 1,
+      "receipt": "57867f7f3e264a2592c598e878872849.json",
+      "counts": {
+        "passed": 29,
+        "failed": 3
+      },
+      "test_files": [
+        "tests/test_pylock_select.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269593.5984204,
+      "seconds": 0.557539701461792,
+      "exit_code": 0,
+      "receipt": "23b399058e2343108b648f40598801b9.json",
+      "counts": {
+        "passed": 11
+      },
+      "test_files": [
+        "tests/test_licenses.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269594.7079601,
+      "seconds": 0.5062475204467773,
+      "exit_code": 0,
+      "receipt": "6edae2c482474d0e9139d66137bfc6cc.json",
+      "counts": {
+        "passed": 7
+      },
+      "test_files": [
+        "tests/test_errors.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269595.959393,
+      "seconds": 0.542961835861206,
+      "exit_code": 0,
+      "receipt": "082475c0acdb4b63a2b8fdec25fbcbc5.json",
+      "counts": {
+        "passed": 79
+      },
+      "test_files": [
+        "tests/test_utils.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269597.0593734,
+      "seconds": 1.3443748950958252,
+      "exit_code": 1,
+      "receipt": "b748c1c962ac4481953ccf2704fadd04.json",
+      "counts": {
+        "passed": 228,
+        "failed": 10
+      },
+      "test_files": [
+        "tests/test_tags.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269598.9444623,
+      "seconds": 0.7867662906646729,
+      "exit_code": 1,
+      "receipt": "676fe2fb8b8b4f49b6c5eb0492a801d2.json",
+      "counts": {
+        "passed": 13,
+        "failed": 2
+      },
+      "test_files": [
+        "tests/test_elffile.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269600.275311,
+      "seconds": 0.5638766288757324,
+      "exit_code": 1,
+      "receipt": "e8da7a68ba334d13952555751fd21332.json",
+      "counts": {
+        "passed": 31,
+        "failed": 1
+      },
+      "test_files": [
+        "tests/test_manylinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269601.3749602,
+      "seconds": 0.5607047080993652,
+      "exit_code": 1,
+      "receipt": "d16c6e4ddbb64f7f94562d33611bbce1.json",
+      "counts": {
+        "passed": 7,
+        "failed": 3
+      },
+      "test_files": [
+        "tests/test_musllinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269602.4710054,
+      "seconds": 3.679316520690918,
+      "exit_code": 0,
+      "receipt": "da27c3ec0b9b44efbcdfbe29da8a9fb6.json",
+      "counts": {
+        "passed": 3
+      },
+      "test_files": [
+        "tests/property/test_ranges_cross_epoch.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269606.6900616,
+      "seconds": 17.47688603401184,
+      "exit_code": 0,
+      "receipt": "cf523264d6fc4058b81f790f11edd091.json",
+      "counts": {
+        "passed": 19
+      },
+      "test_files": [
+        "tests/property/test_ranges_pep440_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269624.7048159,
+      "seconds": 7.0603556632995605,
+      "exit_code": 0,
+      "receipt": "db31e0e0ee9b4db891c328116a470ff2.json",
+      "counts": {
+        "passed": 20
+      },
+      "test_files": [
+        "tests/property/test_ranges_pubgrub.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269632.3047388,
+      "seconds": 23.539677143096924,
+      "exit_code": 0,
+      "receipt": "3d594c4578544e9a8a294650b81f27cb.json",
+      "counts": {
+        "passed": 45
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_algebra.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269656.408856,
+      "seconds": 11.077462434768677,
+      "exit_code": 0,
+      "receipt": "5bc5ca2b469746fea7186d7bc659f865.json",
+      "counts": {
+        "passed": 13
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_relations.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269668.0378122,
+      "seconds": 5.565730571746826,
+      "exit_code": 1,
+      "receipt": "b89b00cfa7e84f538d1f8586f9567e77.json",
+      "counts": {
+        "passed": 8,
+        "failed": 1
+      },
+      "test_files": [
+        "tests/property/test_ranges_to_specifier_set.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269674.1554298,
+      "seconds": 12.93862795829773,
+      "exit_code": 0,
+      "receipt": "ff04174157cb444cae7132d451f7e9cc.json",
+      "counts": {
+        "passed": 50
+      },
+      "test_files": [
+        "tests/property/test_specifier_comparison.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269687.6236365,
+      "seconds": 2.864166498184204,
+      "exit_code": 0,
+      "receipt": "ee87ab1994aa4557b191fecd0b264f54.json",
+      "counts": {
+        "passed": 6
+      },
+      "test_files": [
+        "tests/property/test_specifier_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269691.0230312,
+      "seconds": 19.620025873184204,
+      "exit_code": 0,
+      "receipt": "07f7b5c370bf40bc95d41a2c7d3e1ea9.json",
+      "counts": {
+        "passed": 47
+      },
+      "test_files": [
+        "tests/property/test_specifier_implied.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269711.220206,
+      "seconds": 11.258614540100098,
+      "exit_code": 0,
+      "receipt": "f82b323e7a794b60a0daf9956fabd34a.json",
+      "counts": {
+        "passed": 55
+      },
+      "test_files": [
+        "tests/property/test_specifier_matching.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269723.0202577,
+      "seconds": 6.334141492843628,
+      "exit_code": 0,
+      "receipt": "aa800619eba54dac81967158ce6859d9.json",
+      "counts": {
+        "passed": 44
+      },
+      "test_files": [
+        "tests/property/test_version_format.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269729.9232864,
+      "seconds": 12.377047538757324,
+      "exit_code": 0,
+      "receipt": "14b8fbf38e9044cdb6f94010156db831.json",
+      "counts": {
+        "passed": 41
+      },
+      "test_files": [
+        "tests/property/test_version_normalization.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269742.84581,
+      "seconds": 6.1945884227752686,
+      "exit_code": 0,
+      "receipt": "9d24967d549a4e19991149773205bb36.json",
+      "counts": {
+        "passed": 28
+      },
+      "test_files": [
+        "tests/property/test_version_ordering.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794269749.5720365,
+      "seconds": 10.832376480102539,
+      "exit_code": 0,
+      "receipt": "316f40ca794547ea99d96f782a0a2870.json",
+      "counts": {
+        "passed": 61
+      },
+      "test_files": [
+        "tests/property/test_version_releases.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.10.21 (main, Aug 25 2026, 14:00:33) [Clang 22.1.3 ]",
+      "started_epoch": 1794269761.2794795,
+      "seconds": 7.4622862339019775,
+      "exit_code": 2,
+      "receipt": "1881c1d678e444a18608608abc6c69a2.json",
+      "counts": {
+        "failed": 2
+      },
+      "test_files": [
+        "tests/test_metadata.py",
+        "tests/test_ranges.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "python": "3.14.7 (main, Aug 25 2026, 13:59:49) [Clang 22.1.3 ]",
+      "started_epoch": 1794269769.9742422,
+      "seconds": 7.228692531585693,
+      "exit_code": 2,
+      "receipt": "83e62481cfdf4655b7572190c6283cd7.json",
+      "counts": {
+        "failed": 2
+      },
+      "test_files": [
+        "tests/test_metadata.py",
+        "tests/test_ranges.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271175.3655477,
+      "seconds": 27.205225229263306,
+      "exit_code": 0,
+      "receipt": "6cbab764764c48e18888ed4d4a311ecf.json",
+      "counts": {
+        "passed": 51524
+      },
+      "test_files": [
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271204.8779697,
+      "seconds": 2.9352452754974365,
+      "exit_code": 0,
+      "receipt": "1aa7c70709cb4409a2ff4f5ec50ed357.json",
+      "counts": {
+        "passed": 2089,
+        "skipped": 2
+      },
+      "test_files": [
+        "tests/test_specifiers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271208.5406408,
+      "seconds": 3.576317548751831,
+      "exit_code": 1,
+      "receipt": "df7f8fa23b95452fa81bf929e54bb913.json",
+      "counts": {
+        "passed": 1209,
+        "failed": 26
+      },
+      "test_files": [
+        "tests/test_ranges.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271212.7134275,
+      "seconds": 4.145618200302124,
+      "exit_code": 0,
+      "receipt": "280248bbc40f4db2bee2edd0de455875.json",
+      "counts": {
+        "passed": 5359,
+        "skipped": 1
+      },
+      "test_files": [
+        "tests/test_requirements.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271217.5917609,
+      "seconds": 1.5444164276123047,
+      "exit_code": 0,
+      "receipt": "3e2726671d0e4c628ee75ca3979a204c.json",
+      "counts": {
+        "passed": 2327
+      },
+      "test_files": [
+        "tests/test_markers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271219.7551546,
+      "seconds": 0.9038057327270508,
+      "exit_code": 1,
+      "receipt": "9ff53d3b06144acdaa34e2bb05252506.json",
+      "counts": {
+        "passed": 341,
+        "failed": 3
+      },
+      "test_files": [
+        "tests/test_metadata.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271221.2431197,
+      "seconds": 0.617682933807373,
+      "exit_code": 0,
+      "receipt": "2cd301b1d92a47e5ad683d5b6b4a3733.json",
+      "counts": {
+        "passed": 43
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271222.4386568,
+      "seconds": 0.590221643447876,
+      "exit_code": 0,
+      "receipt": "27fe185615944d8c8d2cd23778c04ceb.json",
+      "counts": {
+        "passed": 46
+      },
+      "test_files": [
+        "tests/test_direct_url.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271223.6917698,
+      "seconds": 0.6171786785125732,
+      "exit_code": 0,
+      "receipt": "8a5d768f82ea4f9fbaf06449c7f6d637.json",
+      "counts": {
+        "passed": 74
+      },
+      "test_files": [
+        "tests/test_pylock.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271224.871959,
+      "seconds": 0.573307991027832,
+      "exit_code": 0,
+      "receipt": "5871afa0d58141719273e04f745a155b.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_pylock_select.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271226.016624,
+      "seconds": 0.5437836647033691,
+      "exit_code": 0,
+      "receipt": "bce5cf3c3979469ba7f647768d2204b1.json",
+      "counts": {
+        "passed": 11
+      },
+      "test_files": [
+        "tests/test_licenses.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271227.1231236,
+      "seconds": 0.521522045135498,
+      "exit_code": 0,
+      "receipt": "7272a4a1d842437a970007652c3ac4d3.json",
+      "counts": {
+        "passed": 7
+      },
+      "test_files": [
+        "tests/test_errors.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271228.230292,
+      "seconds": 0.5595948696136475,
+      "exit_code": 0,
+      "receipt": "ef225c279f1442e893202c23f49a430c.json",
+      "counts": {
+        "passed": 79
+      },
+      "test_files": [
+        "tests/test_utils.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271229.3589706,
+      "seconds": 0.8049843311309814,
+      "exit_code": 0,
+      "receipt": "8954f06db71c4511a7f4f961cc9b5607.json",
+      "counts": {
+        "passed": 238
+      },
+      "test_files": [
+        "tests/test_tags.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271230.740536,
+      "seconds": 0.5539126396179199,
+      "exit_code": 0,
+      "receipt": "129a1842bbc044cda33c485a35428459.json",
+      "counts": {
+        "passed": 15
+      },
+      "test_files": [
+        "tests/test_elffile.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271231.858999,
+      "seconds": 0.5532026290893555,
+      "exit_code": 0,
+      "receipt": "4f6ec15a930149fa86ee9fda35e17b75.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_manylinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271233.0025413,
+      "seconds": 0.5485930442810059,
+      "exit_code": 0,
+      "receipt": "77393089c301435dac95abfe7210da55.json",
+      "counts": {
+        "passed": 10
+      },
+      "test_files": [
+        "tests/test_musllinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271234.127042,
+      "seconds": 4.078679323196411,
+      "exit_code": 0,
+      "receipt": "484d6d7fdb1c4441bf9020026dd5d8d3.json",
+      "counts": {
+        "passed": 3
+      },
+      "test_files": [
+        "tests/property/test_ranges_cross_epoch.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271238.7790983,
+      "seconds": 17.302644729614258,
+      "exit_code": 0,
+      "receipt": "4af1235e0c854545935de43a80df1618.json",
+      "counts": {
+        "passed": 19
+      },
+      "test_files": [
+        "tests/property/test_ranges_pep440_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271256.6993747,
+      "seconds": 6.913370132446289,
+      "exit_code": 0,
+      "receipt": "e02b77f089c444c1b2f2c06f181dc753.json",
+      "counts": {
+        "passed": 20
+      },
+      "test_files": [
+        "tests/property/test_ranges_pubgrub.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271264.2185404,
+      "seconds": 22.847517728805542,
+      "exit_code": 0,
+      "receipt": "fd7c6674b45d40b2a5761631e20ecc98.json",
+      "counts": {
+        "passed": 45
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_algebra.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271287.638908,
+      "seconds": 9.976602792739868,
+      "exit_code": 0,
+      "receipt": "1670ff611c24400880187d9d592ff17e.json",
+      "counts": {
+        "passed": 13
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_relations.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271298.2034388,
+      "seconds": 4.8790528774261475,
+      "exit_code": 0,
+      "receipt": "411b9e8bd5cf4079a3d27f18344ec4c0.json",
+      "counts": {
+        "passed": 9
+      },
+      "test_files": [
+        "tests/property/test_ranges_to_specifier_set.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271303.6397762,
+      "seconds": 12.833600044250488,
+      "exit_code": 0,
+      "receipt": "696b478f18c24f6c8b51e0717e190293.json",
+      "counts": {
+        "passed": 50
+      },
+      "test_files": [
+        "tests/property/test_specifier_comparison.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271317.0376322,
+      "seconds": 2.925412893295288,
+      "exit_code": 0,
+      "receipt": "fa15e7f3a7ff48208dad8e77fc5a3e8b.json",
+      "counts": {
+        "passed": 6
+      },
+      "test_files": [
+        "tests/property/test_specifier_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271320.5666862,
+      "seconds": 19.30785346031189,
+      "exit_code": 0,
+      "receipt": "a482573dba8e41c39a2d7e1a299b7a82.json",
+      "counts": {
+        "passed": 47
+      },
+      "test_files": [
+        "tests/property/test_specifier_implied.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271340.432172,
+      "seconds": 11.488587856292725,
+      "exit_code": 0,
+      "receipt": "81cca206d92042eab950557224172b62.json",
+      "counts": {
+        "passed": 55
+      },
+      "test_files": [
+        "tests/property/test_specifier_matching.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271352.5317767,
+      "seconds": 6.4897990226745605,
+      "exit_code": 0,
+      "receipt": "f8d473de47754693adbbc084fffb5cb1.json",
+      "counts": {
+        "passed": 44
+      },
+      "test_files": [
+        "tests/property/test_version_format.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271359.648455,
+      "seconds": 13.18139910697937,
+      "exit_code": 0,
+      "receipt": "df50f53e769646e4a0317b2e8805e8ca.json",
+      "counts": {
+        "passed": 41
+      },
+      "test_files": [
+        "tests/property/test_version_normalization.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271373.4216685,
+      "seconds": 6.306978702545166,
+      "exit_code": 0,
+      "receipt": "1763442283fb432cb658a2177fea3e83.json",
+      "counts": {
+        "passed": 28
+      },
+      "test_files": [
+        "tests/property/test_version_ordering.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794271380.314976,
+      "seconds": 11.082998752593994,
+      "exit_code": 0,
+      "receipt": "d6a630d408204a48b23104765199a91b.json",
+      "counts": {
+        "passed": 61
+      },
+      "test_files": [
+        "tests/property/test_version_releases.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.10.21 (main, Aug 25 2026, 14:00:33) [Clang 22.1.3 ]",
+      "started_epoch": 1794271392.2649152,
+      "seconds": 50.6820285320282,
+      "exit_code": 1,
+      "receipt": "b8116953778b49c0ad131685f61fc105.json",
+      "counts": {
+        "passed": 63436,
+        "failed": 29,
+        "skipped": 3
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "python": "3.14.7 (main, Aug 25 2026, 13:59:49) [Clang 22.1.3 ]",
+      "started_epoch": 1794271446.1232328,
+      "seconds": 40.837398052215576,
+      "exit_code": 1,
+      "receipt": "91d2a36b709f45d182f32eb9c52af6e2.json",
+      "counts": {
+        "passed": 63439,
+        "failed": 29
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272685.339095,
+      "seconds": 27.06960916519165,
+      "exit_code": 0,
+      "receipt": "46c88cea0b294d9fb09740e8381363f2.json",
+      "counts": {
+        "passed": 51524
+      },
+      "test_files": [
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272714.8012245,
+      "seconds": 2.910531997680664,
+      "exit_code": 0,
+      "receipt": "9d1fee5cbc524329903dd14eb52f0b40.json",
+      "counts": {
+        "passed": 2089,
+        "skipped": 2
+      },
+      "test_files": [
+        "tests/test_specifiers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272718.3679137,
+      "seconds": 2.263129949569702,
+      "exit_code": 1,
+      "receipt": "e2eefc38da8a488186a253833806cfd0.json",
+      "counts": {
+        "passed": 1232,
+        "failed": 3
+      },
+      "test_files": [
+        "tests/test_ranges.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272721.2380857,
+      "seconds": 4.133594989776611,
+      "exit_code": 0,
+      "receipt": "12f55fc460bd48979308be8e1ab7bbf4.json",
+      "counts": {
+        "passed": 5359,
+        "skipped": 1
+      },
+      "test_files": [
+        "tests/test_requirements.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272726.071872,
+      "seconds": 1.5233349800109863,
+      "exit_code": 0,
+      "receipt": "ff26114404a743f1a4354a2775c857b6.json",
+      "counts": {
+        "passed": 2327
+      },
+      "test_files": [
+        "tests/test_markers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272728.2233624,
+      "seconds": 0.8341958522796631,
+      "exit_code": 0,
+      "receipt": "89dd32c0fcd542e9b52cee4520cbc76b.json",
+      "counts": {
+        "passed": 344
+      },
+      "test_files": [
+        "tests/test_metadata.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272729.6483696,
+      "seconds": 0.6363084316253662,
+      "exit_code": 0,
+      "receipt": "0ecb7e1a29284969b6b8d5bd1f7fa4a7.json",
+      "counts": {
+        "passed": 43
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272730.8720856,
+      "seconds": 0.5693502426147461,
+      "exit_code": 0,
+      "receipt": "a9f77de1e9cb4d4fa6a8280fc85c287c.json",
+      "counts": {
+        "passed": 46
+      },
+      "test_files": [
+        "tests/test_direct_url.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272732.1799924,
+      "seconds": 0.6353919506072998,
+      "exit_code": 0,
+      "receipt": "328e905ca1804aafac09aef2dbcda975.json",
+      "counts": {
+        "passed": 74
+      },
+      "test_files": [
+        "tests/test_pylock.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272733.4448464,
+      "seconds": 0.6094861030578613,
+      "exit_code": 0,
+      "receipt": "e1c72baf76674c85ba5eb48066b05122.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_pylock_select.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272734.640162,
+      "seconds": 0.6462466716766357,
+      "exit_code": 0,
+      "receipt": "b445adf747904dc8880e36d964af464d.json",
+      "counts": {
+        "passed": 11
+      },
+      "test_files": [
+        "tests/test_licenses.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272735.8666034,
+      "seconds": 0.5627281665802002,
+      "exit_code": 0,
+      "receipt": "d9d36f28a2c54ef4abde152665df5737.json",
+      "counts": {
+        "passed": 7
+      },
+      "test_files": [
+        "tests/test_errors.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272736.9983,
+      "seconds": 0.573937177658081,
+      "exit_code": 0,
+      "receipt": "07d7b7e54bf04a3b92db483135be0f39.json",
+      "counts": {
+        "passed": 79
+      },
+      "test_files": [
+        "tests/test_utils.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272738.1516907,
+      "seconds": 0.8370890617370605,
+      "exit_code": 0,
+      "receipt": "ed965e2b69cd478992031e9970bd41b3.json",
+      "counts": {
+        "passed": 238
+      },
+      "test_files": [
+        "tests/test_tags.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272739.5867977,
+      "seconds": 0.5732903480529785,
+      "exit_code": 0,
+      "receipt": "1879544704144127900b61107f6d4178.json",
+      "counts": {
+        "passed": 15
+      },
+      "test_files": [
+        "tests/test_elffile.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272740.7345552,
+      "seconds": 0.5869040489196777,
+      "exit_code": 0,
+      "receipt": "bd8b62c7879743a391f8fffa97fe7ca6.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_manylinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272741.9877071,
+      "seconds": 0.5888891220092773,
+      "exit_code": 0,
+      "receipt": "9df2dc557538401c87cf906a8c883e37.json",
+      "counts": {
+        "passed": 10
+      },
+      "test_files": [
+        "tests/test_musllinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272743.1704965,
+      "seconds": 3.545459270477295,
+      "exit_code": 0,
+      "receipt": "0d22004a94294ec79e02ef066a295347.json",
+      "counts": {
+        "passed": 3
+      },
+      "test_files": [
+        "tests/property/test_ranges_cross_epoch.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272747.3479614,
+      "seconds": 17.369329690933228,
+      "exit_code": 0,
+      "receipt": "feca777d46d64c97a71dc186d368e05e.json",
+      "counts": {
+        "passed": 19
+      },
+      "test_files": [
+        "tests/property/test_ranges_pep440_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272765.307961,
+      "seconds": 6.926841735839844,
+      "exit_code": 0,
+      "receipt": "df722acb4cf44570999de41a914761f8.json",
+      "counts": {
+        "passed": 20
+      },
+      "test_files": [
+        "tests/property/test_ranges_pubgrub.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272772.8240275,
+      "seconds": 23.164968490600586,
+      "exit_code": 0,
+      "receipt": "c3f033dca43c47498a56eda4a04fbd00.json",
+      "counts": {
+        "passed": 45
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_algebra.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272796.5910728,
+      "seconds": 10.054608821868896,
+      "exit_code": 0,
+      "receipt": "f2ebbb75d6ee4c27b603d82dbc1b35fe.json",
+      "counts": {
+        "passed": 13
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_relations.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272807.7055595,
+      "seconds": 4.9588189125061035,
+      "exit_code": 0,
+      "receipt": "9a1504fd28114b229e58caea3ec8d5bc.json",
+      "counts": {
+        "passed": 9
+      },
+      "test_files": [
+        "tests/property/test_ranges_to_specifier_set.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272813.253385,
+      "seconds": 13.108689785003662,
+      "exit_code": 0,
+      "receipt": "1fef6204f464490faf41ed73afc60c0c.json",
+      "counts": {
+        "passed": 50
+      },
+      "test_files": [
+        "tests/property/test_specifier_comparison.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272826.9449995,
+      "seconds": 2.89538311958313,
+      "exit_code": 0,
+      "receipt": "5fcab70ff58c4b1fbc411921519e2fcd.json",
+      "counts": {
+        "passed": 6
+      },
+      "test_files": [
+        "tests/property/test_specifier_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272830.4306371,
+      "seconds": 19.678199291229248,
+      "exit_code": 0,
+      "receipt": "a9aa41db75e0415e8d3994036a89face.json",
+      "counts": {
+        "passed": 47
+      },
+      "test_files": [
+        "tests/property/test_specifier_implied.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272850.7323527,
+      "seconds": 11.58862590789795,
+      "exit_code": 0,
+      "receipt": "14f4b2ab11994db9997bec3c25c3e546.json",
+      "counts": {
+        "passed": 55
+      },
+      "test_files": [
+        "tests/property/test_specifier_matching.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272862.9376116,
+      "seconds": 6.563432931900024,
+      "exit_code": 0,
+      "receipt": "7a86da990ff74471bc8137b4d78cb7fb.json",
+      "counts": {
+        "passed": 44
+      },
+      "test_files": [
+        "tests/property/test_version_format.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272870.1602056,
+      "seconds": 12.737741231918335,
+      "exit_code": 0,
+      "receipt": "34d19b84d7d74534b94852a760a35579.json",
+      "counts": {
+        "passed": 41
+      },
+      "test_files": [
+        "tests/property/test_version_normalization.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272883.48894,
+      "seconds": 6.395111083984375,
+      "exit_code": 0,
+      "receipt": "313b06c30a9a4d4a994615bd3fa7db8d.json",
+      "counts": {
+        "passed": 28
+      },
+      "test_files": [
+        "tests/property/test_version_ordering.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794272890.4822419,
+      "seconds": 11.086739540100098,
+      "exit_code": 0,
+      "receipt": "9bff2b5e203044ef8c4eb7ed34048e6a.json",
+      "counts": {
+        "passed": 61
+      },
+      "test_files": [
+        "tests/property/test_version_releases.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.10.21 (main, Aug 25 2026, 14:00:33) [Clang 22.1.3 ]",
+      "started_epoch": 1794272902.5081336,
+      "seconds": 46.99621081352234,
+      "exit_code": 1,
+      "receipt": "d4b4960fee1a44e29962238c720c77fe.json",
+      "counts": {
+        "passed": 63462,
+        "failed": 3,
+        "skipped": 3
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "python": "3.14.7 (main, Aug 25 2026, 13:59:49) [Clang 22.1.3 ]",
+      "started_epoch": 1794272952.6273754,
+      "seconds": 37.98345947265625,
+      "exit_code": 1,
+      "receipt": "efc2f46610424e6783edc230ed07ae4c.json",
+      "counts": {
+        "passed": 63465,
+        "failed": 3
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274195.7958484,
+      "seconds": 27.441447257995605,
+      "exit_code": 0,
+      "receipt": "e4a537dcb6f44e52b73541bca8e05f66.json",
+      "counts": {
+        "passed": 51524
+      },
+      "test_files": [
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274225.8107152,
+      "seconds": 3.00301456451416,
+      "exit_code": 0,
+      "receipt": "004fe6b3b7ad43c7a6690980f7588aca.json",
+      "counts": {
+        "passed": 2089,
+        "skipped": 2
+      },
+      "test_files": [
+        "tests/test_specifiers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274229.5457354,
+      "seconds": 2.106745481491089,
+      "exit_code": 0,
+      "receipt": "6a2e2bcc19fe4b80ae532a2921281ce8.json",
+      "counts": {
+        "passed": 1235
+      },
+      "test_files": [
+        "tests/test_ranges.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274232.2926807,
+      "seconds": 4.410474538803101,
+      "exit_code": 0,
+      "receipt": "492efad99d654f6eb579b2c58ab8dcba.json",
+      "counts": {
+        "passed": 5359,
+        "skipped": 1
+      },
+      "test_files": [
+        "tests/test_requirements.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274237.5222263,
+      "seconds": 1.6797239780426025,
+      "exit_code": 0,
+      "receipt": "f05b9c1cbb994b7c86a5dfd0c5f96a44.json",
+      "counts": {
+        "passed": 2327
+      },
+      "test_files": [
+        "tests/test_markers.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274239.932533,
+      "seconds": 0.9263131618499756,
+      "exit_code": 0,
+      "receipt": "fa509c2ccb714e7183f6671493a45541.json",
+      "counts": {
+        "passed": 344
+      },
+      "test_files": [
+        "tests/test_metadata.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274241.4979463,
+      "seconds": 0.6738400459289551,
+      "exit_code": 0,
+      "receipt": "3fb0fddfd42344cdb96c3b4c2d32d750.json",
+      "counts": {
+        "passed": 43
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274242.840242,
+      "seconds": 0.6167163848876953,
+      "exit_code": 0,
+      "receipt": "a5baea28bda949acad7388d1bf0bc341.json",
+      "counts": {
+        "passed": 46
+      },
+      "test_files": [
+        "tests/test_direct_url.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274244.2074583,
+      "seconds": 0.6930074691772461,
+      "exit_code": 0,
+      "receipt": "502a9a3a261a4d36b68a8b393d1c8af6.json",
+      "counts": {
+        "passed": 74
+      },
+      "test_files": [
+        "tests/test_pylock.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274245.5860426,
+      "seconds": 0.7413973808288574,
+      "exit_code": 0,
+      "receipt": "78276d13b34242909db7137a5f88e995.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_pylock_select.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274247.024918,
+      "seconds": 0.6167256832122803,
+      "exit_code": 0,
+      "receipt": "e95ea65b6b9e4b5a942d16b0aaefb5a0.json",
+      "counts": {
+        "passed": 11
+      },
+      "test_files": [
+        "tests/test_licenses.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274248.266723,
+      "seconds": 0.6559116840362549,
+      "exit_code": 0,
+      "receipt": "43c933a4c4ac4b489808296ca560ccb1.json",
+      "counts": {
+        "passed": 7
+      },
+      "test_files": [
+        "tests/test_errors.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274249.557385,
+      "seconds": 0.6694104671478271,
+      "exit_code": 0,
+      "receipt": "3df55afba5e2403e91c827111e9f3e7c.json",
+      "counts": {
+        "passed": 79
+      },
+      "test_files": [
+        "tests/test_utils.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274250.8738406,
+      "seconds": 0.8528122901916504,
+      "exit_code": 0,
+      "receipt": "6376cabdda454b0eb1983a4f92fb7bee.json",
+      "counts": {
+        "passed": 238
+      },
+      "test_files": [
+        "tests/test_tags.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274252.3770466,
+      "seconds": 0.621368408203125,
+      "exit_code": 0,
+      "receipt": "7e827e25b92b40a09ebe1101d2597abd.json",
+      "counts": {
+        "passed": 15
+      },
+      "test_files": [
+        "tests/test_elffile.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274253.6061814,
+      "seconds": 0.667858362197876,
+      "exit_code": 0,
+      "receipt": "f80dbaf7742343de9a5a921750d1ac3b.json",
+      "counts": {
+        "passed": 32
+      },
+      "test_files": [
+        "tests/test_manylinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274254.9329307,
+      "seconds": 0.6622519493103027,
+      "exit_code": 0,
+      "receipt": "4f00ad04a1ea40ee8d5ac3b4caba2900.json",
+      "counts": {
+        "passed": 10
+      },
+      "test_files": [
+        "tests/test_musllinux.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274256.4180121,
+      "seconds": 3.8674540519714355,
+      "exit_code": 0,
+      "receipt": "253871c47eb54fcf99372fe0da82dc02.json",
+      "counts": {
+        "passed": 3
+      },
+      "test_files": [
+        "tests/property/test_ranges_cross_epoch.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274260.986526,
+      "seconds": 17.75717806816101,
+      "exit_code": 0,
+      "receipt": "7d871a31bf7f4d6ebf6725e71d611452.json",
+      "counts": {
+        "passed": 19
+      },
+      "test_files": [
+        "tests/property/test_ranges_pep440_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274279.3953326,
+      "seconds": 6.990849018096924,
+      "exit_code": 0,
+      "receipt": "2c3ee65ac82e48ac87d82c96e3b02e37.json",
+      "counts": {
+        "passed": 20
+      },
+      "test_files": [
+        "tests/property/test_ranges_pubgrub.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274287.0727327,
+      "seconds": 23.92086958885193,
+      "exit_code": 0,
+      "receipt": "df518668e85140eb93ae3652291f8812.json",
+      "counts": {
+        "passed": 45
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_algebra.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274311.608651,
+      "seconds": 10.239612817764282,
+      "exit_code": 0,
+      "receipt": "9d8d16bc9c804e62a8776b49c589233f.json",
+      "counts": {
+        "passed": 13
+      },
+      "test_files": [
+        "tests/property/test_ranges_set_relations.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274322.5028477,
+      "seconds": 5.052322626113892,
+      "exit_code": 0,
+      "receipt": "5f4486dcf6da4d20954d4713b04e6a8d.json",
+      "counts": {
+        "passed": 9
+      },
+      "test_files": [
+        "tests/property/test_ranges_to_specifier_set.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274328.226253,
+      "seconds": 13.411455392837524,
+      "exit_code": 0,
+      "receipt": "826a30c315504aaa9e643d5aa3657bc2.json",
+      "counts": {
+        "passed": 50
+      },
+      "test_files": [
+        "tests/property/test_specifier_comparison.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274342.3022344,
+      "seconds": 2.9277358055114746,
+      "exit_code": 0,
+      "receipt": "1a9b98f562ea4441b11b0cf140c0d65c.json",
+      "counts": {
+        "passed": 6
+      },
+      "test_files": [
+        "tests/property/test_specifier_extended.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274345.8731537,
+      "seconds": 20.228378295898438,
+      "exit_code": 0,
+      "receipt": "af3fc4bd523d41bab61b179220a26eaf.json",
+      "counts": {
+        "passed": 47
+      },
+      "test_files": [
+        "tests/property/test_specifier_implied.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274366.7354488,
+      "seconds": 11.928670167922974,
+      "exit_code": 0,
+      "receipt": "cb9628c3379647839d0d2b106b573715.json",
+      "counts": {
+        "passed": 55
+      },
+      "test_files": [
+        "tests/property/test_specifier_matching.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274379.3692698,
+      "seconds": 6.9964377880096436,
+      "exit_code": 0,
+      "receipt": "ccc70a39160b4e9083a6fd204f6a58c0.json",
+      "counts": {
+        "passed": 44
+      },
+      "test_files": [
+        "tests/property/test_version_format.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274387.1054773,
+      "seconds": 12.753153800964355,
+      "exit_code": 0,
+      "receipt": "81d5c5fe55144c899b7528585699ab1d.json",
+      "counts": {
+        "passed": 41
+      },
+      "test_files": [
+        "tests/property/test_version_normalization.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274400.4830205,
+      "seconds": 6.604823589324951,
+      "exit_code": 0,
+      "receipt": "5257e403c8954ada8a1682a8c8dc27f6.json",
+      "counts": {
+        "passed": 28
+      },
+      "test_files": [
+        "tests/property/test_version_ordering.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.11.16 (main, Aug 14 2026, 15:34:07) [Clang 22.1.3 ]",
+      "started_epoch": 1794274407.8477774,
+      "seconds": 11.372554063796997,
+      "exit_code": 0,
+      "receipt": "de2d005e709d4781bf5cfbb88f745d0d.json",
+      "counts": {
+        "passed": 61
+      },
+      "test_files": [
+        "tests/property/test_version_releases.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.10.21 (main, Aug 25 2026, 14:00:33) [Clang 22.1.3 ]",
+      "started_epoch": 1794274420.1935666,
+      "seconds": 47.270201206207275,
+      "exit_code": 0,
+      "receipt": "d0969c7131a04538aa7e405d48893af4.json",
+      "counts": {
+        "passed": 63465,
+        "skipped": 3
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    },
+    {
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "python": "3.14.7 (main, Aug 25 2026, 13:59:49) [Clang 22.1.3 ]",
+      "started_epoch": 1794274470.6696973,
+      "seconds": 38.52674174308777,
+      "exit_code": 0,
+      "receipt": "1739f6883f5f4bc0a0a4654f79b8e186.json",
+      "counts": {
+        "passed": 63468
+      },
+      "test_files": [
+        "tests/test_dependency_groups.py",
+        "tests/test_direct_url.py",
+        "tests/test_elffile.py",
+        "tests/test_errors.py",
+        "tests/test_licenses.py",
+        "tests/test_manylinux.py",
+        "tests/test_markers.py",
+        "tests/test_metadata.py",
+        "tests/test_musllinux.py",
+        "tests/test_pylock.py",
+        "tests/test_pylock_select.py",
+        "tests/test_ranges.py",
+        "tests/test_requirements.py",
+        "tests/test_specifiers.py",
+        "tests/test_tags.py",
+        "tests/test_utils.py",
+        "tests/test_version.py"
+      ],
+      "origins_checked": true
+    }
+  ],
+  "performance": [
+    {
+      "candidate_commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "status": "passed",
+      "workloads": {
+        "version_parse": {
+          "before_seconds": 2.203353001580884e-05,
+          "after_seconds": 2.7865346637554467e-05,
+          "ratio": 1.2646791783958973,
+          "output_equal": true,
+          "passed": true
+        },
+        "version_sort": {
+          "before_seconds": 0.00012289349009127667,
+          "after_seconds": 0.00014363648331103225,
+          "ratio": 1.1687883809333524,
+          "output_equal": true,
+          "passed": true
+        },
+        "specifier_filter": {
+          "before_seconds": 6.0125506521823506e-05,
+          "after_seconds": 0.0001101921865483746,
+          "ratio": 1.832702839823538,
+          "output_equal": true,
+          "passed": true
+        },
+        "requirements": {
+          "before_seconds": 3.745970665477216e-05,
+          "after_seconds": 4.55845333635807e-05,
+          "ratio": 1.2168950970088144,
+          "output_equal": true,
+          "passed": true
+        },
+        "marker_evaluate": {
+          "before_seconds": 1.0351229963513712e-05,
+          "after_seconds": 1.9413790044685206e-05,
+          "ratio": 1.8755056271685049,
+          "output_equal": true,
+          "passed": true
+        },
+        "range_algebra": {
+          "before_seconds": 9.496494332173218e-05,
+          "after_seconds": 0.0001529353765848403,
+          "ratio": 1.6104403502533544,
+          "output_equal": true,
+          "passed": true
+        },
+        "name_normalize": {
+          "before_seconds": 1.2518700289850434e-06,
+          "after_seconds": 3.9020801583925884e-06,
+          "ratio": 3.117001020909662,
+          "output_equal": true,
+          "passed": true
+        }
+      },
+      "method": "Paired fixed seven workloads on the same CPU node; five timed rounds of 300 calls after 30 warmups. Each median <= max(2x original,50 microseconds); outputs equal. Limited to these representative workloads."
+    },
+    {
+      "candidate_commit": "ec03a3b1cdd7a4c7e583ca5543c3ac6921738c4c",
+      "status": "failed",
+      "workloads": {
+        "version_parse": {
+          "before_seconds": 2.2040866509390373e-05,
+          "after_seconds": 2.7897813318607707e-05,
+          "ratio": 1.2657312409528918,
+          "output_equal": true,
+          "passed": true
+        },
+        "version_sort": {
+          "before_seconds": 0.00012302409333642573,
+          "after_seconds": 0.00014386708343711992,
+          "ratio": 1.169422017553068,
+          "output_equal": true,
+          "passed": true
+        },
+        "specifier_filter": {
+          "before_seconds": 6.0103509846764305e-05,
+          "after_seconds": 0.00011017158666315179,
+          "ratio": 1.833030832043545,
+          "output_equal": true,
+          "passed": true
+        },
+        "requirements": {
+          "before_seconds": 3.716390987392515e-05,
+          "after_seconds": 4.539846675470471e-05,
+          "ratio": 1.2215740192222637,
+          "output_equal": true,
+          "passed": true
+        },
+        "marker_evaluate": {
+          "before_seconds": 1.0410896696460743e-05,
+          "after_seconds": 1.9316523297068973e-05,
+          "ratio": 1.8554139821246867,
+          "output_equal": true,
+          "passed": true
+        },
+        "range_algebra": {
+          "before_seconds": 9.50107432436198e-05,
+          "after_seconds": 0.00021747169996766993,
+          "ratio": 2.2889169428981777,
+          "output_equal": true,
+          "passed": false
+        },
+        "name_normalize": {
+          "before_seconds": 1.2440032636125882e-06,
+          "after_seconds": 3.981146534594396e-06,
+          "ratio": 3.2002701689327875,
+          "output_equal": true,
+          "passed": true
+        }
+      },
+      "method": "Paired fixed seven workloads on the same CPU node; five timed rounds of 300 calls after 30 warmups. Each median <= max(2x original,50 microseconds); outputs equal. Limited to these representative workloads."
+    },
+    {
+      "candidate_commit": "88d858bc2060c949a6c26abb713a5bd08c317c19",
+      "status": "failed",
+      "workloads": {
+        "version_parse": {
+          "before_seconds": 2.2105930062631768e-05,
+          "after_seconds": 2.789774676784873e-05,
+          "ratio": 1.262002851217174,
+          "output_equal": true,
+          "passed": true
+        },
+        "version_sort": {
+          "before_seconds": 0.0001226736232638359,
+          "after_seconds": 0.00014308001341608665,
+          "ratio": 1.1663470076885432,
+          "output_equal": true,
+          "passed": true
+        },
+        "specifier_filter": {
+          "before_seconds": 6.01183733670041e-05,
+          "after_seconds": 0.00010979364994758119,
+          "ratio": 1.8262910953582339,
+          "output_equal": true,
+          "passed": true
+        },
+        "requirements": {
+          "before_seconds": 3.692797346351047e-05,
+          "after_seconds": 4.571993350206564e-05,
+          "ratio": 1.2380840109529092,
+          "output_equal": true,
+          "passed": true
+        },
+        "marker_evaluate": {
+          "before_seconds": 1.0454499861225486e-05,
+          "after_seconds": 1.932359009515494e-05,
+          "ratio": 1.8483514612519985,
+          "output_equal": true,
+          "passed": true
+        },
+        "range_algebra": {
+          "before_seconds": 9.505200995287548e-05,
+          "after_seconds": 0.00021997903648298233,
+          "ratio": 2.3143017869063756,
+          "output_equal": true,
+          "passed": false
+        },
+        "name_normalize": {
+          "before_seconds": 1.274070042806367e-06,
+          "after_seconds": 3.9476800399521985e-06,
+          "ratio": 3.0984796026258707,
+          "output_equal": true,
+          "passed": true
+        }
+      },
+      "method": "Paired fixed seven workloads on the same CPU node; five timed rounds of 300 calls after 30 warmups. Each median <= max(2x original,50 microseconds); outputs equal. Limited to these representative workloads."
+    },
+    {
+      "candidate_commit": "9c223d59004d799a348fa3d836b844f2f863d7e3",
+      "status": "failed",
+      "workloads": {
+        "version_parse": {
+          "before_seconds": 2.205399660548816e-05,
+          "after_seconds": 2.7484750025905667e-05,
+          "ratio": 1.2462480391905955,
+          "output_equal": true,
+          "passed": true
+        },
+        "version_sort": {
+          "before_seconds": 0.0001230772933922708,
+          "after_seconds": 0.00013870966989391794,
+          "ratio": 1.1270126769185913,
+          "output_equal": true,
+          "passed": true
+        },
+        "specifier_filter": {
+          "before_seconds": 6.134471002345283e-05,
+          "after_seconds": 0.00012609390328483034,
+          "ratio": 2.055497584659266,
+          "output_equal": true,
+          "passed": false
+        },
+        "requirements": {
+          "before_seconds": 3.697791000983367e-05,
+          "after_seconds": 4.567379985625545e-05,
+          "ratio": 1.235164449372862,
+          "output_equal": true,
+          "passed": true
+        },
+        "marker_evaluate": {
+          "before_seconds": 1.0360629918674628e-05,
+          "after_seconds": 1.791425340343267e-05,
+          "ratio": 1.7290699063715163,
+          "output_equal": true,
+          "passed": true
+        },
+        "range_algebra": {
+          "before_seconds": 9.509927670781811e-05,
+          "after_seconds": 0.0002808871566473196,
+          "ratio": 2.953620325739321,
+          "output_equal": true,
+          "passed": false
+        },
+        "name_normalize": {
+          "before_seconds": 1.2713366110498707e-06,
+          "after_seconds": 3.946810029447078e-06,
+          "ratio": 3.104457147810602,
+          "output_equal": true,
+          "passed": true
+        }
+      },
+      "method": "Paired fixed seven workloads on the same CPU node; five timed rounds of 300 calls after 30 warmups. Each median <= max(2x original,50 microseconds); outputs equal. Limited to these representative workloads."
+    }
+  ],
+  "model_usage": {
+    "complete": true,
+    "roles": {
+      "author": {
+        "input_tokens": 17402976,
+        "cached_input_tokens": 16643456,
+        "output_tokens": 179725,
+        "total_tokens": 17582701
+      },
+      "controller": {
+        "input_tokens": 3287184,
+        "cached_input_tokens": 2715264,
+        "output_tokens": 35121,
+        "total_tokens": 3322305
+      }
+    },
+    "observed_subtotals": {
+      "author": {
+        "input_tokens": 17402976,
+        "cached_input_tokens": 16643456,
+        "output_tokens": 179725,
+        "total_tokens": 17582701
+      },
+      "controller": {
+        "input_tokens": 3287184,
+        "cached_input_tokens": 2715264,
+        "output_tokens": 35121,
+        "total_tokens": 3322305
+      }
+    }
+  },
+  "clarifications": [
+    {
+      "request_id": "clarification_request-06be03a8bb6c",
+      "status": "answered",
+      "response_id": "clarification_answer-81ae956d385e"
+    },
+    {
+      "request_id": "clarification_request-0834fcb2da52",
+      "status": "answered",
+      "response_id": "clarification_answer-b43c79c2115d"
+    },
+    {
+      "request_id": "clarification_request-0d83e256a779",
+      "status": "answered",
+      "response_id": "clarification_answer-4f9a557e2928"
+    },
+    {
+      "request_id": "clarification_request-3cb691adf8b7",
+      "status": "answered",
+      "response_id": "clarification_answer-a3b896171970"
+    },
+    {
+      "request_id": "clarification_request-43339dd2eb09",
+      "status": "answered",
+      "response_id": "clarification_answer-ad7884183a9e"
+    },
+    {
+      "request_id": "clarification_request-5891d2e1a7ee",
+      "status": "answered",
+      "response_id": "clarification_answer-d86439a81a83"
+    },
+    {
+      "request_id": "clarification_request-59d67e32a50a",
+      "status": "answered",
+      "response_id": "clarification_answer-fa8023a7b5f2"
+    },
+    {
+      "request_id": "clarification_request-6933882e1734",
+      "status": "answered",
+      "response_id": "clarification_answer-709d1061ea6c"
+    },
+    {
+      "request_id": "clarification_request-6a30c6b210d2",
+      "status": "answered",
+      "response_id": "clarification_answer-d4cd1e42fd0e"
+    },
+    {
+      "request_id": "clarification_request-703c18076ae9",
+      "status": "answered",
+      "response_id": "clarification_answer-6f73b6bca19a"
+    },
+    {
+      "request_id": "clarification_request-742114b3aade",
+      "status": "answered",
+      "response_id": "clarification_answer-c9aba8022bb8"
+    },
+    {
+      "request_id": "clarification_request-b0fabf75c2fe",
+      "status": "answered",
+      "response_id": "clarification_answer-b2e6a50c61c4"
+    },
+    {
+      "request_id": "clarification_request-d6e4eb9275f1",
+      "status": "answered",
+      "response_id": "clarification_answer-57265b83f50f"
+    },
+    {
+      "request_id": "clarification_request-df58b07fa99b",
+      "status": "answered",
+      "response_id": "clarification_answer-47d58cc9e85b"
+    },
+    {
+      "request_id": "clarification_request-f62a2f466545",
+      "status": "answered",
+      "response_id": "clarification_answer-3ea64ec8f984"
+    }
+  ],
+  "resource_checkpoint": {
+    "time": "2026-11-09T23:41:14.447422+00:00",
+    "saved_candidate": "candidate-e3369d0133a8",
+    "completed_author_calls": 2,
+    "reason": "Completed author-stage checkpoint before an allocation limit, then native resume; candidate, baseline, answers and usage preserved."
+  },
+  "delivery_metrics": {
+    "before_tokens": 171965,
+    "after_tokens": 111944,
+    "reduction_percent": 34.903032593841765,
+    "code": {
+      "repository": "nanolize/nanolize",
+      "branch": "examples/packaging-history-readable-20261109",
+      "commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "verified_commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+      "url": "https://github.com/nanolize/nanolize/tree/examples/packaging-history-readable-20261109",
+      "behavior_groups": 38,
+      "installation_groups": 3,
+      "performance": "passed"
+    },
+    "primary_python": "3.11",
+    "primary_counts": {
+      "passed": 63465,
+      "skipped": 3
+    },
+    "property_counts": {
+      "passed": 441
+    },
+    "behavior_groups": 38,
+    "installation_groups": 3,
+    "performance": "passed",
+    "native_run_wall_seconds": 10780.706472,
+    "conservative_actual_size": {
+      "baseline_source_lines": 14981,
+      "baseline_tokens": 171965,
+      "complete": true,
+      "configuration_files": 21,
+      "configuration_tokens": 34684,
+      "estimated_source_lines": null,
+      "incomplete_counts_are_observed_subtotals": true,
+      "measurement_sha256": "6df80f05887b75d74b0369bc2da613ead7e4d16a995a249127ee4c45ef3c3e5c",
+      "metric": "tokens",
+      "retained_percent": 65.09696740615823,
+      "source_files": 38,
+      "source_lines": 6936,
+      "source_retained_percent": 46.298644950270344,
+      "source_tokens": 77260,
+      "target_met": true,
+      "target_percent": 100.0,
+      "target_source_lines": 14981.0,
+      "target_tokens": 171965,
+      "total_tokens": 111944
+    }
+  },
+  "elapsed_definition": "Native submission through delivery acceptance, including queue, baseline, author/controller calls and checks. Host discovery/preparation and final Chinese website publication excluded.",
+  "usage_definition": "Recorded native controller/author input and output only. Cached input is a subset, not added twice. Host conversation, discovery and website-writing usage excluded. Not a task-effort comparison.",
+  "annotation_audit": {
+    "source": "original public callable type declarations only",
+    "missing": [],
+    "original_commit": "713d0d78924ab2686c513dde058ce6aafc63e766",
+    "candidate_commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+    "matched_callables": 157,
+    "limits": "Only same-path, same-qualified-name callables are matched. Review inherited/relocated declarations and equivalent parameter spellings before treating a row as a defect."
+  },
+  "artifact_audit": {
+    "candidate_commit": "061b837e146366ae5a263c49f92acd901b6d4d22",
+    "original_tests_unchanged": true,
+    "protected_resources_unchanged": 47,
+    "frozen_inputs_unchanged": 58,
+    "original_checkout_clean": true,
+    "harness_checkout_clean": true,
+    "executable_metadata_preserved": true,
+    "spdx_mit_notice_preserved": true,
+    "annotation_audit_bound": true,
+    "author_command_scan": {
+      "observed_unique_commands": 189,
+      "potential_original_access_matches": 0,
+      "non_json_log_lines": 2,
+      "limit": "Bounded command-log pattern review, not a sandbox or semantic-equivalence proof."
+    }
+  }
+}
