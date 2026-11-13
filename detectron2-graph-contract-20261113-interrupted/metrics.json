@@ -1,0 +1,607 @@
+{
+  "schema_version": 1,
+  "job_id": "be06d80fcb5e4af08653719577e452de",
+  "updated_utc": "2026-11-13T08:24:40.688251+00:00",
+  "status": "cancelled",
+  "phase": "cancelled",
+  "terminal": true,
+  "verification_status": null,
+  "size": {},
+  "quality": {},
+  "proposal": {
+    "checks_kept": 137,
+    "checks_left_out": 23,
+    "checks_not_inspected": 0,
+    "external_capabilities_without_check": 0,
+    "internal_capabilities_not_reached": 0,
+    "unresolved_exports": 1,
+    "carry_candidates": 4
+  },
+  "designed": {
+    "accepted_files": null,
+    "accepted_capabilities": null,
+    "rejected_proposals": null,
+    "runner_failures": null
+  },
+  "unverified_leaves": 87,
+  "refused_files": 0,
+  "refusal_count": 0,
+  "roles": {
+    "role-calls": {
+      "completed": 188,
+      "cost_usd": 135.58139826000001,
+      "session_seconds": 17152.87656344287,
+      "cost_missing": 0,
+      "replayed": 148
+    },
+    "model-calls": {
+      "completed": 1,
+      "cost_usd": 0.37658764000000006,
+      "session_seconds": 9.148712917231023,
+      "cost_missing": 0,
+      "replayed": 0
+    },
+    "job1/role-calls": {
+      "completed": 148,
+      "cost_usd": 200.38424802,
+      "session_seconds": 25574.726431773044,
+      "cost_missing": 0,
+      "replayed": 0
+    },
+    "job1/model-calls": {
+      "completed": 1,
+      "cost_usd": 0.37808364,
+      "session_seconds": 8.889432175084949,
+      "cost_missing": 0,
+      "replayed": 0
+    },
+    "review-fanout/role-calls": {
+      "completed": 2,
+      "cost_usd": 4.285325440000001,
+      "session_seconds": 181.92163637839258,
+      "cost_missing": 0,
+      "replayed": 1
+    },
+    "review-fanout/model-calls": {
+      "completed": 0,
+      "cost_usd": 0,
+      "session_seconds": 0,
+      "cost_missing": 0,
+      "replayed": 0
+    }
+  },
+  "cost_usd": 341.005643,
+  "wall_hours": 5.204875741388889,
+  "baseline_passed": 137,
+  "validated_leaves": 0,
+  "validation_exempted_leaves": [
+    "graphify-build-documentation-a024028466ca",
+    "graphify-configs-recipes-d7c50142927c"
+  ],
+  "unverified_leaf_ids": [
+    "graphify-build-development-93f202daed5c",
+    "graphify-build-package-8317e92aba48",
+    "graphify-data-augmentation-e9460ecffbe6",
+    "graphify-data-catalog-f8276da19cca",
+    "graphify-data-cityscapes-ca90cea53faa",
+    "graphify-data-coco-fe37cefe1051",
+    "graphify-data-loading-044ab0ed7436",
+    "graphify-data-lvis-130a73732ce2",
+    "graphify-data-mapping-6348cdbbf33f",
+    "graphify-data-preparation-c157e9b195fd",
+    "graphify-data-sampling-967bea808cd7",
+    "graphify-data-voc-5ed18399156b",
+    "graphify-dp-augmentation-76f71696db75",
+    "graphify-dp-bootstrap-fcd6ec15e6d3",
+    "graphify-dp-chart-02fc2726dd6c",
+    "graphify-dp-conversion-23af1487ef92",
+    "graphify-dp-cse-288797dbb0e8",
+    "graphify-dp-data-c2f5ca8392ca",
+    "graphify-dp-evaluation-8067d11cc998",
+    "graphify-dp-foundation-255d9e9edcf4",
+    "graphify-dp-hrnet-513ae06a19fb",
+    "graphify-dp-model-runtime-c162f4cd216b",
+    "graphify-dp-packaging-dbb36f9b3f06",
+    "graphify-dp-training-102bc4a39533",
+    "graphify-dp-visualization-2477a7aca5fe",
+    "graphify-eval-cityscapes-c6661271d45f",
+    "graphify-eval-coco-10a5f2f9f672",
+    "graphify-eval-coco-native-3ab465ff764e",
+    "graphify-eval-lvis-958c09e23304",
+    "graphify-eval-panoptic-cc1324e45951",
+    "graphify-eval-runner-aa0f83d4a7f8",
+    "graphify-eval-semantic-eb8bf0b46d40",
+    "graphify-eval-voc-ae12c35fa070",
+    "graphify-export-caffe2-4cd7e5f760b9",
+    "graphify-export-torchscript-e238ccd25f26",
+    "graphify-extension-batchnorm-246f3bab91ae",
+    "graphify-extension-bridge-db3224bba915",
+    "graphify-extension-deeplab-f1458dac25ed",
+    "graphify-extension-mvitv2-60eed55e8a9c",
+    "graphify-extension-panoptic-deeplab-04870bfd0722",
+    "graphify-extension-pointrend-225583431997",
+    "graphify-extension-pointsup-d9d2bb2a21e1",
+    "graphify-extension-tensormask-a41083dbfbfb",
+    "graphify-extension-tridentnet-53993fa96360",
+    "graphify-extension-vitdet-2363882b8065",
+    "graphify-foundation-checkpoint-0b90fe7c6d42",
+    "graphify-foundation-config-d9928761e096",
+    "graphify-foundation-layers-00c1d3b4535b",
+    "graphify-foundation-runtime-2dde3d14987a",
+    "graphify-foundation-structures-585ecc6f966f",
+    "graphify-model-cascade-ad593b4827bf",
+    "graphify-model-deformable-convolution-f3ee69da92d3",
+    "graphify-model-fcos-2f75f9b458d8",
+    "graphify-model-feature-pyramid-f12dadde8427",
+    "graphify-model-generalized-rcnn-b92273d43fa6",
+    "graphify-model-keypoint-head-3e0a27a18177",
+    "graphify-model-mask-head-b1330c760b1a",
+    "graphify-model-mmdetection-5c58bbf72c9d",
+    "graphify-model-mvit-82124c91dbdf",
+    "graphify-model-panoptic-fpn-60089489c75d",
+    "graphify-model-regnet-0ba36c2b4c85",
+    "graphify-model-resnet-4461614c3a2b",
+    "graphify-model-retinanet-b003c5b2fc90",
+    "graphify-model-roi-box-74b7ff0ac572",
+    "graphify-model-rotated-detection-7a246d01a50b",
+    "graphify-model-rpn-0ca332bc5509",
+    "graphify-model-runtime-b90d1e1976ad",
+    "graphify-model-semantic-segmentation-9d1deb223810",
+    "graphify-model-swin-13bcdc145006",
+    "graphify-model-test-time-augmentation-9c6120b2688f",
+    "graphify-model-vit-e03812b273a4",
+    "graphify-model-zoo-e39fd191c368",
+    "graphify-tool-analysis-3b2af0e6d99f",
+    "graphify-tool-benchmark-a1609e306237",
+    "graphify-tool-deployment-f18e01fda453",
+    "graphify-tool-inference-f30d91360045",
+    "graphify-tool-tracking-11ffc3f3e65c",
+    "graphify-tool-visualization-4be34ca6337b",
+    "graphify-train-defaults-cf7eb0ea604e",
+    "graphify-train-distributed-18f816492152",
+    "graphify-train-engine-698165daf2a6",
+    "graphify-train-entrypoints-e5ba0eadeacd",
+    "graphify-train-hooks-902b2af7421a",
+    "graphify-train-lightning-f15cf581fdfb",
+    "graphify-train-optimization-ce1475246040",
+    "graphify-train-scheduling-703f41336d19",
+    "graphify-train-telemetry-c3fe0dc767da"
+  ],
+  "unverified_leaf_reasons": {
+    "graphify-build-development-93f202daed5c": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-build-package-8317e92aba48": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-augmentation-e9460ecffbe6": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-catalog-f8276da19cca": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-cityscapes-ca90cea53faa": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-coco-fe37cefe1051": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-loading-044ab0ed7436": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-lvis-130a73732ce2": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-mapping-6348cdbbf33f": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-preparation-c157e9b195fd": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-sampling-967bea808cd7": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-data-voc-5ed18399156b": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-augmentation-76f71696db75": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-bootstrap-fcd6ec15e6d3": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-chart-02fc2726dd6c": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-conversion-23af1487ef92": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-cse-288797dbb0e8": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-data-c2f5ca8392ca": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-evaluation-8067d11cc998": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-foundation-255d9e9edcf4": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-hrnet-513ae06a19fb": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-model-runtime-c162f4cd216b": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-packaging-dbb36f9b3f06": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-training-102bc4a39533": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-dp-visualization-2477a7aca5fe": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-cityscapes-c6661271d45f": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-coco-10a5f2f9f672": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-coco-native-3ab465ff764e": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-lvis-958c09e23304": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-panoptic-cc1324e45951": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-runner-aa0f83d4a7f8": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-semantic-eb8bf0b46d40": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-eval-voc-ae12c35fa070": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-export-caffe2-4cd7e5f760b9": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-export-torchscript-e238ccd25f26": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-batchnorm-246f3bab91ae": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-bridge-db3224bba915": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-deeplab-f1458dac25ed": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-mvitv2-60eed55e8a9c": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-panoptic-deeplab-04870bfd0722": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-pointrend-225583431997": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-pointsup-d9d2bb2a21e1": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-tensormask-a41083dbfbfb": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-tridentnet-53993fa96360": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-extension-vitdet-2363882b8065": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-foundation-checkpoint-0b90fe7c6d42": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-foundation-config-d9928761e096": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-foundation-layers-00c1d3b4535b": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-foundation-runtime-2dde3d14987a": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-foundation-structures-585ecc6f966f": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-cascade-ad593b4827bf": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-deformable-convolution-f3ee69da92d3": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-fcos-2f75f9b458d8": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-feature-pyramid-f12dadde8427": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-generalized-rcnn-b92273d43fa6": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-keypoint-head-3e0a27a18177": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-mask-head-b1330c760b1a": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-mmdetection-5c58bbf72c9d": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-mvit-82124c91dbdf": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-panoptic-fpn-60089489c75d": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-regnet-0ba36c2b4c85": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-resnet-4461614c3a2b": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-retinanet-b003c5b2fc90": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-roi-box-74b7ff0ac572": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-rotated-detection-7a246d01a50b": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-rpn-0ca332bc5509": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-runtime-b90d1e1976ad": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-semantic-segmentation-9d1deb223810": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-swin-13bcdc145006": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-test-time-augmentation-9c6120b2688f": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-vit-e03812b273a4": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-model-zoo-e39fd191c368": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-tool-analysis-3b2af0e6d99f": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-tool-benchmark-a1609e306237": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-tool-deployment-f18e01fda453": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-tool-inference-f30d91360045": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-tool-tracking-11ffc3f3e65c": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-tool-visualization-4be34ca6337b": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-defaults-cf7eb0ea604e": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-distributed-18f816492152": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-engine-698165daf2a6": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-entrypoints-e5ba0eadeacd": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-hooks-902b2af7421a": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-lightning-f15cf581fdfb": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-optimization-ce1475246040": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-scheduling-703f41336d19": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ],
+    "graphify-train-telemetry-c3fe0dc767da": [
+      "no_behavioral_knockout_failure",
+      "role_not_proven"
+    ]
+  },
+  "accepted_test_capability_ids": [],
+  "cost_complete_for_finished_calls": true,
+  "calls_with_missing_cost": [
+    {
+      "call": "role-calls/10890f0bf3f54619a53d0f001d99f0ca",
+      "status": "timeout",
+      "seconds": 900.6715,
+      "reason": "adapter_ended_without_cost_receipt"
+    },
+    {
+      "call": "job1/role-calls/effad9a50e57441788e5ed3918bdccaf",
+      "status": "timeout",
+      "seconds": 901.7068,
+      "reason": "adapter_ended_without_cost_receipt"
+    },
+    {
+      "call": "job1/role-calls/bee5a2e0abfe40448b99d276d1cf505b",
+      "status": "cancelled",
+      "seconds": null,
+      "reason": "adapter_ended_without_cost_receipt"
+    },
+    {
+      "call": "job1/role-calls/896f5abb2c424f2da6ae1bcb04d19bee",
+      "status": "cancelled",
+      "seconds": null,
+      "reason": "adapter_ended_without_cost_receipt"
+    },
+    {
+      "call": "job1/role-calls/0dbd274f41d54238b47b7009bd56f1b7",
+      "status": "cancelled",
+      "seconds": null,
+      "reason": "adapter_ended_without_cost_receipt"
+    },
+    {
+      "call": "job1/role-calls/c9fdca716bbf47ffad0652fdd461acf1",
+      "status": "cancelled",
+      "seconds": null,
+      "reason": "adapter_ended_without_cost_receipt"
+    }
+  ],
+  "cost_is_lower_bound": true,
+  "job_wall_hours": 2.4667373458333333,
+  "prior_job_ids": [
+    "9c1cf543373c4310b3d505a78c8e8bd2"
+  ],
+  "harness_settings": {
+    "harness_branch": "claude/graph-contract",
+    "harness_commit": "eb54c4328809d3e37b83301d8a934e520aa84234",
+    "harness_local_branch": "local/detectron2-graph-contract",
+    "harness_local_commit": "9f97feff007a9826abfc2acdcb542b106c01b1a2"
+  },
+  "rewrite_started": false,
+  "design_finalized": false,
+  "design_pretrial": {
+    "utc": "2026-11-13T07:56:47.364895+00:00",
+    "job_id": "be06d80fcb5e4af08653719577e452de",
+    "round": 1,
+    "designer_calls_completed": 86,
+    "designer_calls_timed_out": 1,
+    "proposed_files_from_completed_calls": 213,
+    "proposing_nodes": 84,
+    "trial_files": 174,
+    "trial_node_directories": 72,
+    "note": "Intermediate evidence only: files committed for trial have passed static proposal gates, not execution, knockout or final review."
+  },
+  "design_round1_static": {
+    "designer_calls": 87,
+    "completed": 86,
+    "proposed_files": 213,
+    "static_ok_files": 174,
+    "leaves_with_static_ok": 72,
+    "static_rejected_files": 39,
+    "static_rejection_codes": {
+      "forbidden_call": 21,
+      "invalid_facts": 8,
+      "private_name": 6,
+      "outside_external_contract": 4,
+      "fact_names_a_test": 3
+    },
+    "matches_committed_trial_files": true
+  },
+  "overlap_evaluated": false,
+  "deviations": [
+    "Test design uses half the remaining job time after local patch 9f97fef, instead of the original policy budget_seconds deadline.",
+    "Large reviews are split into independent batches; an incomplete batch rejects only its files, whereas the original all-or-nothing review rejects all files.",
+    "18 upstream GPU test files outside the external contract do not count as acceptance criteria."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "operation": "report_site",
+  "public_safe": true,
+  "report_id": "detectron2-graph-contract-20261113",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "3eb7e6462fd571d32612c1d506f6bfbb72e9aea55dbb11bbdb3c72c5beb0df24"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "91c7849b409b09520e606e745c309170f3b35d961975ebddfb9c4895c6900cb6"
+    },
+    {
+      "path": "issues.json",
+      "sha256": "99ff75c22974f065fe9b81ee579a3964778f48b0612f978260dfd2ac254ac030"
+    }
+  ]
+}
